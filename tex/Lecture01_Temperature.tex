@@ -12,7 +12,7 @@
 \begin{Large}
 \bch
 热学 \\
-第1讲 温度和热量的本质
+第1讲 温度，温标和理想气体
 
 {\vskip 0.3in}
 
@@ -169,7 +169,7 @@ https://github.com/zqhuang/SYSU\_TD
 \bmini{0.75}
 \begin{itemize}
 \item[1]{ “热平衡”是什么？}
-\item[2]{ 为什么我们认为达到热平衡时温度计与冰水混合物的温度相同？}
+\item[2]{ 为什么我们认为(或者说，能够规定）达到热平衡时的温度计与冰水混合物的温度相同？}
 \end{itemize}
 \emini
 \ech
@@ -205,9 +205,10 @@ https://github.com/zqhuang/SYSU\_TD
 
 comments:
 \begin{itemize}
-\item{“在外界影响隔绝的条件下”是一句很正确的废话。{\small（我们既然讨论热平衡，就已经假定了这个条件。）}}
-\item{要求C“处于确定状态”非常重要。{\small (如果允许C的状态发生变化，由于A和C，B和C都总能分别达到热平衡，我们就得到任何两个物体A和B是热平衡的这样的荒谬结论。)}}
-\item{热力学第零定律是一条实验定律。{\small (无须推导。）}}
+\item{“在外界影响隔绝的条件下”是一句很正确的废话。{\small（既然讨论热平衡，就已经假定了这个条件。）}}
+\item{要求C“处于确定状态”非常重要。（如果去掉“处于确定状态”，请试举个反例）}
+\item{热力学第零定律是一条实验定律。}
+\item{有了热力学第零定律，我们就能规定所有达到热平衡的物体具有相同的温度。}
 \end{itemize}
 \ech
 \end{frame}
@@ -246,7 +247,7 @@ comments:
 
 \bitem
 \item{除了热胀冷缩，温变电阻金属的电阻随温度变化，热电偶效应等也都可以用来定义温标。}
-\item{同样，不同测温属性定义的温标不会完全相同，但日常测温需求往往可以忽略这些差别。}
+\item{不同测温属性定义的温标不完全相同，但日常测温需求往往可以忽略这些差别。}
 \eitem
 
 \bcenter
@@ -265,103 +266,208 @@ comments:
 \skipline
 
 \bitem
-\item{有。例如{\bf 绝对零度}和{\bf 水的三相点}等是更好的固定标准点。(\wulian 这些都是什么鬼)}
+\item{有。例如{\bf 绝对零度}和{\bf 水的三相点}都是更好的固定标准点。(\wulian 这些都是什么鬼)}
 \eitem
 
 \ech
 \end{frame}
 
 \begin{frame}
+\chtitle{感想}
 \bch
-学习了这么多互有差异的温标，我们真是太开心了\wulian
+学习了这么多温标，真是太开心了\wulian
 
-\skipline
+\skiplines
 
-大学套路深，我要回小学\bye
+大学套路深，我要回小学\wulian
 
+\skiplines
+
+能不能就爽快点告诉我，以后我们用哪种温标\wulian
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{告诉你们一个好消息}
+\bch
+前面讲的温标，以后我们都不用\bye
 \ech
 \end{frame}
 
 \begin{frame}
 \chtitle{热力学温标}
 \bch
+在热力学里我们使用热力学温标。
+
+\includegraphics[width=3in]{absoluteTdef.png}
 \bitem
-\item{在热力学里，我们将使用“热力学温标”。（是的，前面讲的温标我们都不用\bye）}
-\item{热力学温标的定义不涉及测温物质和测温属性。（是的，所谓的“三要素”是逗你玩的\bye）}
-\item{热力学温标选取的固定标准点为绝对零度(规定为$0K$)和水的三相点（规定为$273.16K$)。（是不是除了数字你什么也没看懂\bye）}
+\item{热力学温标的定义不涉及测温物质和测温属性。{\small \darkgray（所谓的“三要素”是逗你玩的\bye）}}
+\item{热力学温标选取的固定标准点为绝对零度(规定为$0K$)和水的三相点（规定为$273.16K$)。 {\small \darkgray（是不是除了数字什么也没看懂\bye）}}
 \eitem
 
-取$273.16K$这样一个看起来很奇怪的数字是为了使$1K$的温度变化和$1\cdeg$的温度变化相同。在摄氏温标中，水的三相点为$0.01\cdeg$。所以摄氏温标转换到热力学温标只需数值上平移
-$273.15$。例如： 
+{\small
+取$273.16K$这个特定的数字是为了使$1K$的温度变化和$1\cdeg$的温度变化非常接近。}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{热力学温标和摄氏温标之间的转换}
+\bch
+\includegraphics[width=3in]{absoluteTdef.png}
+
+一般不指定特定的测温物质时，我们就认为变化$1\cdeg$等价于变化$1K$。 
+
+在摄氏温标中，水的三相点为$0.01\cdeg$，对应于热力学温度$273.16K$。所以摄氏温标转换到热力学温标只需数值上平移$273.15$。例如： 
 $$0\cdeg = 273.15 K$$
 $$100\cdeg = 373.15K$$
-
+$$0K = -273.15 \cdeg$$
 \ech
 \end{frame}
 
-
 \begin{frame}
-\chtitle{热力学温标}
+\chtitle{等等，还有很多疑问}
 \bch
-等等，还有很多疑问：
 \bitem
 \item{热力学温标是如何做到不依赖测温物质和测温属性进行标度的？}
-\item{什么是绝对零度？}
-\item{什么是水的三相点？}
-\item{摄氏温标中$1\cdeg$的变化量和热力学温标$1K$的变化量相同，是指水银温度计标度的$1\cdeg$还是酒精温度计标度的$1\cdeg$，还是其他？}
+\item{什么是绝对零度？为什么没有比绝对零度更低的温度？}
+\item{什么是水的三相点？为什么它不像冰点和沸点那样依赖于压强？}
 \eitem
 \ech
 \end{frame}
 
 
+\begin{frame}
+\chtitle{热力学温度也可以等价地用理想气体来标度}
+\bch
+热力学温标的诸多问题都比较深刻，将在后面的课程中逐步介绍。
+
+\skiplines
+
+我们先介绍一个用理想气体标度热力学温度的简单方法（即和热力学温标等价的理想气体温标）。
+
+\skiplines
+
+
+理想气体是把稀薄的实际气体进行理想化的一种假想物质。从微观上描述，理想气体分子有如下特性：
+\bitem
+\item{分子的大小远远小于分子之间平均距离。}
+\item{除了分子之间以及分子和容器壁之间发生时间短暂得可以忽略的弹性碰撞外，分子不受任何外力作用做匀速直线运动。}
+\eitem
+常温下的实际稀薄的气体的属性非常接近理想气体。
+
+\ech
+\end{frame}
+
+
 
 \begin{frame}
-\chtitle{理想气体状态方程}
+\chtitle{用理想气体标度热力学温度的理论根据——理想气体状态方程}
 \bch
 {\large 达到平衡状态的理想气体的摩尔数$\nu$, 压强$p$, 体积$V$，热力学温度$T$满足
 {\color{blue}
 $$p V = \nu RT$$
 }
-其中$R=8.31451 \mathrm{J/(mol\cdot K)}$为{\bf 普适气体常量}。
+其中$R=8.31 \mathrm{J/(mol\cdot K)}$为{\bf 普适气体常量}。
 }
 
 {\small
 \begin{itemize}
-\item{实际稀薄的气体的属性接近理想气体，固定$p$, $V$, $T$中的一个即分别得到历史上的气体实验定律：盖吕萨克定律，查理定律，波意耳定律。}
-\item{在我们学习气体的统计描述方法之后，理想气体状态方程可以从微观上进行推导。这里我们先把它当作是对稀薄气体的实验定律进行外推得到的。}
+\item{回顾下“摩尔”的定义：每mol 物质包含 $6.02\times 10^{23}$个微粒。}
+\item{固定$p$, $V$, $T$中的一个即分别得到历史上的气体实验定律：盖吕萨克定律，查理定律，波意耳定律。}
+\item{从理想气体状态方程可以推出化学课上学过的阿伏伽德罗定律：标准状态($1$ atm, $0\cdeg$)下1 mol理想气体的体积为$22.4L$。}
 \end{itemize}
 }
 \ech
 \end{frame}
 
-
 \begin{frame}
-\chtitle{温度的比值}
+\chtitle{用理想气体标度热力学温度：气体温度计}
 \bch
-如果固定理想气体的体积，则温度的比值等于压强的比值：
-$$T_1/T_2 = p_1/p_2$$
 
-\skipline
-同样，如果固定理想气体的压强，则温度的比值等于体积的比值：
-$$T_1/T_2 = V_1/V_2$$
+\includegraphics[width=3.2in]{gas_thermometer.png}
 
+
+定压气体温度计 \hspace{0.5in} 定体气体温度计
+
+固定$p$，$T\propto V$ \hspace{0.6in}  固定$V$，$T\propto p$
 
 \ech
 \end{frame}
 
 
-
+\begin{frame}
+\bch
+下面我们讲关于热力学温度的一些补充知识
+\ech
+\end{frame}
 
 \begin{frame}
-\chtitle{常见温度计}
-\includegraphics[width=0.5in]{thermometer.jpg}
-\hspace{0.2in}
-\includegraphics[width=2.5in]{gas_thermometer.png}
+\chtitle{热力学温度的微观意义}
+\bch
+\bitem
+\item{物质是由微观粒子(分子或者原子)组成的。温度越高，代表微观粒子的能量越高（对于气体分子而言，这就意味着粒子的运动越剧烈）。}
+\item{统计上讲，微观粒子总是更趋向于能量低的状态。一个微观状态的能量越高，粒子处在这个状态上的概率越小。粒子在各个微观状态上的出现概率，随各个状态的能量呈现一个指数衰减的规律，且衰减率反比于热力学温度。
 
-\includegraphics[width=1.3in]{resistance_thermometer.png}
-\hspace{0.2in}
-\includegraphics[width=1.1in]{thermocouple.jpg}
+具体地讲，假设粒子可以处在状态$1,2,3,\ldots$每个状态的能量分别为$\varepsilon_1$, $\varepsilon_2$, $\varepsilon_3$, $\ldots$那么粒子处在某状态$i$的概率正比于
+$$e^{-\frac{\epsilon_i}{k T}}\, ,$$其中$k=1.38\times 10^{-23} J/K$为玻尔兹曼常数。
+}
+\eitem
+
+\ech
 \end{frame}
+
+\begin{frame}
+\chtitle{理想气体分子的位置和速度分布}
+\bch
+理想气体分子的状态由位置$\mathbf{x} = (x_1, x_2, x_3)$和速度$\mathbf{\upsilon} = (\upsilon_1, \upsilon_2, \upsilon_3)$来描述。也就是说，分子的每一个状态对应于位置空间的一个点$(x_1, x_2, x_3)$和"速度空间"({\darkblue 这是我们假想的一个空间，和“看得见摸得着”的位置空间不同})的一个点$(\upsilon_1, \upsilon_2, \upsilon_3)$。
+
+\skipline
+
+由于位置和能量无关，分子处在容器内任何位置的概率相同。
+
+\skipline
+
+由于速度和能量的关系为$\varepsilon = \frac{1}{2} m \upsilon^2$，其中$m$为分子质量，所以分子处在速度为$\mathbf{\upsilon}$的状态的概率正比于
+$$e^{-\frac{m\upsilon^2}{2kT}}$$
+
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{理想气体分子的位置和速度分布(续)}
+\bch
+
+在速度空间中，考虑半径在$\upsilon$和$\upsilon+d\upsilon$之间的一层“球壳”。速度点落在这个球壳内的微观状态的数目正比于球壳的体积$4\pi \upsilon^2 d\upsilon$（这里我们假定了速度空间是离散化的，且每个微观状态占据的体积相等）。
+
+综上，分子速率在$\upsilon$和$\upsilon+d\upsilon$的概率正比于微观态数目和落在微观态上的概率的乘积，即
+
+$$(4\pi \upsilon^2 d\upsilon) (e^{-\frac{m\upsilon^2}{2kT}}) \propto  \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}} d\upsilon  $$
+
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{理想气体分子的平均动能}
+\bch
+理想气体分子的平均动能只需要对各个速率的分子的动能按出现概率进行加权平均：
+
+{\scriptsize
+\bea
+\bar\varepsilon &=& \frac{\int_0^\infty (\frac{1}{2}m\upsilon^2) \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}} d\upsilon}{\int_0^\infty \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}} d\upsilon} \newl
+&=& \frac{-\frac{kT}{2}\int_0^\infty  \upsilon^3 d\left(e^{-\frac{m\upsilon^2}{2kT}}\right) }{\int_0^\infty \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}} d\upsilon} \newl
+&=& \frac{-\frac{kT}{2}\left[ \left.\upsilon^3 e^{-\frac{m\upsilon^2}{2kT}}\right\vert^{\infty}_{0} - \int_0^\infty e^{-\frac{m\upsilon^2}{2kT}} d\left(\upsilon^3\right)\right]}{\int_0^\infty \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}} d\upsilon} \newl
+&=&\frac{\frac{3kT}{2} \int_0^\infty \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}} d \upsilon}{\int_0^\infty \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}} d\upsilon} \newl
+&=&\frac{3kT}{2}
+\eea
+}
+\ech
+\end{frame}
+
 
 
 
