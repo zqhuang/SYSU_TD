@@ -297,11 +297,10 @@ comments:
 \end{frame}
 
 \begin{frame}
-\chtitle{热力学温标}
+\chtitle{在热力学里我们使用热力学温标}
 \bch
-在热力学里我们使用热力学温标。
 
-\includegraphics[width=3in]{absoluteTdef.png}
+\includegraphics[width=3.2in]{absoluteTdef.png}
 \bitem
 \item{热力学温标的定义不涉及测温物质和测温属性。{\small \darkgray（所谓的“三要素”是逗你玩的\bye）}}
 \item{热力学温标选取的固定标准点为绝对零度(规定为$0K$)和水的三相点（规定为$273.16K$)。 {\small \darkgray（是不是除了数字什么也没看懂\bye）}}
@@ -316,7 +315,7 @@ comments:
 \begin{frame}
 \chtitle{热力学温标和摄氏温标之间的转换}
 \bch
-\includegraphics[width=3in]{absoluteTdef.png}
+\includegraphics[width=3.2in]{absoluteTdef.png}
 
 一般不指定特定的测温物质时，我们就认为变化$1\cdeg$等价于变化$1K$。 
 
@@ -375,7 +374,7 @@ $$p V = \nu RT$$
 
 {\small
 \begin{itemize}
-\item{回顾下“摩尔”的定义：每mol 物质包含 $6.02\times 10^{23}$个微粒。}
+\item{回顾下“摩尔”的定义：每mol 物质包含 $N_A = 6.02\times 10^{23}$个微粒。}
 \item{固定$p$, $V$, $T$中的一个即分别得到历史上的气体实验定律：盖吕萨克定律，查理定律，波意耳定律。}
 \item{从理想气体状态方程可以推出化学课上学过的阿伏伽德罗定律：标准状态($1$ atm, $0\cdeg$)下1 mol理想气体的体积为$22.4L$。}
 \end{itemize}
@@ -458,7 +457,7 @@ $$(4\pi \upsilon^2 d\upsilon) (e^{-\frac{m\upsilon^2}{2kT}}) \propto  \upsilon^2
 
 {\scriptsize
 \bea
-\bar\varepsilon &=& \frac{\int_0^\infty (\frac{1}{2}m\upsilon^2) \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}} d\upsilon}{\int_0^\infty \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}} d\upsilon} \newl
+\overline\varepsilon &=& \frac{\int_0^\infty (\frac{1}{2}m\upsilon^2) \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}} d\upsilon}{\int_0^\infty \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}} d\upsilon} \newl
 &=& \frac{-\frac{kT}{2}\int_0^\infty  \upsilon^3 d\left(e^{-\frac{m\upsilon^2}{2kT}}\right) }{\int_0^\infty \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}} d\upsilon} \newl
 &=& \frac{-\frac{kT}{2}\left[ \left.\upsilon^3 e^{-\frac{m\upsilon^2}{2kT}}\right\vert^{\infty}_{0} - \int_0^\infty e^{-\frac{m\upsilon^2}{2kT}} d\left(\upsilon^3\right)\right]}{\int_0^\infty \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}} d\upsilon} \newl
 &=&\frac{\frac{3kT}{2} \int_0^\infty \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}} d \upsilon}{\int_0^\infty \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}} d\upsilon} \newl
@@ -469,6 +468,40 @@ $$(4\pi \upsilon^2 d\upsilon) (e^{-\frac{m\upsilon^2}{2kT}}) \propto  \upsilon^2
 \end{frame}
 
 
+\begin{frame}
+\chtitle{理想气体分子的压强}
+\bch
+{\scriptsize
+考虑理想气体容器壁右侧的垂直于$x$轴的小面积元$dS$，时间$dt$内传递给容器壁的动量为
+$$\sum_{\upsilon_x>0}(2p_x)\left(n(\upsilon_x)\upsilon_x dtdS  \right)$$
+其中$n(\upsilon_x)$是$x$方向速度分量为$\upsilon_x$  的分子数密度，动量$p_x= m\upsilon_x$。
 
+因为统计上$\upsilon_x>0$和$\upsilon_x<0$的粒子数密度相等，总分子数密度
+$$n = 2\sum_{\upsilon_x>0} n(\upsilon_x)$$ 
+
+所以压强为
+\bea
+\sum_{\upsilon_x}(2p_x\upsilon_x) n(\upsilon_x) &=& n \frac{\sum_{\upsilon_x>0}(2p_x\upsilon_x) n(\upsilon_x)}{2\sum_{\upsilon_x>0} n(\upsilon_x)} \newl
+&=& n \overline{p_x \upsilon_x}|_{\upsilon_x>0} \newl
+&=& n \overline{p_x \upsilon_x} \newl
+&=& \frac{1}{3}n\left(\overline{p_x \upsilon_x} +  \overline{p_y \upsilon_y} + \overline{p_z \upsilon_z} \right) \newl
+&=& \frac{1}{3}n\, \overline{\mathbf{p}\cdot\mathbf{\upsilon}}
+\eea
+}
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{理想气体状态方程的微观推导}
+\bch
+非相对论气体$\overline{\mathbf{p}\cdot\mathbf{\upsilon}} = m\overline{\upsilon^2} = 2\overline{\varepsilon} = 3 k T$。
+
+所以压强
+$$p=nkT = \frac{\nu N_A}{V} k T  $$
+
+定义$R= k N_A$，即得到理想气体状态方程。
+\ech
+\end{frame}
 
 \end{document}
