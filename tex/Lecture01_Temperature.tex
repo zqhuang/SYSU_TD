@@ -98,40 +98,239 @@ https://github.com/zqhuang/SYSU\_TD
 \ech
 \end{frame}
 
+
+
 \begin{frame}
+\chtitle{温标的定义方法}
 \bch
-刚刚复习了一些小学知识，下面我们要进行深邃的思考……
+以水银温度计校准的摄（华）氏温标为例：
+\bmini{0.8}
+\begin{itemize}
+\item{{\bf 固定标准点}：规定一个标准大气压下，水的冰点为$0\cdeg$ ($32\fdeg$)，水的沸点为$100\cdeg$ ($212\fdeg$)。}
+\item{{\bf 测温物质}: 水银。}
+\item{{\bf 测温属性}: 热胀冷缩，规定温度与水银体积成线性关系。} 
+\end{itemize}
+\emini
+\bmini{0.15}
+\includegraphics[width=0.6in]{thermometer.jpg}
+\emini
+
+\skipline
+
+一般地，定义一个温标需要上述三要素：固定标准点，测温物质，测温属性。
 \ech
 \end{frame}
 
 \begin{frame}
-\chtitle{讨论：摄氏温标到底是怎么定义的？}
+\chtitle{幻想实验：标度一个水银温度计}
 \bch
+\bmini{0.3}
+\includegraphics[width=0.8in]{scale0deg.png}
+
+{\scriptsize 1)放入1 atm下的冰水混合物，达到热平衡时在水银柱最高处标上$0\cdeg$。}
+\emini
+\hspace{0.1in}
+\bmini{0.3}
+\includegraphics[width=0.8in]{scale100deg.png}
+
+{\vskip 0.3in}
+
+{\scriptsize 2)放入1 atm下的沸水，达到热平衡时在水银柱最高处标上$100\cdeg$。}
+\emini
+\hspace{0.1in}
+\bmini{0.3}
+\includegraphics[width=0.8in]{scalefull.png}
+
+{\vskip 0.3in}
+
+{\scriptsize 3)均匀地标上其他刻度
+
+\vspace{0.36in} 
+
+}
+\emini
 \ech
 \end{frame}
+
+\begin{frame}
+\bch
+刚刚复习了一些小学知识，下面我们要进行深邃的思考……
+
+\begin{center}\includegraphics[width=1in]{think.jpg}\end{center}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\bch
+\bmini{0.2}
+\includegraphics[width=0.8in]{scale0deg.png}
+\emini
+\bmini{0.75}
+\begin{itemize}
+\item[1]{ “热平衡”是什么？}
+\item[2]{ 为什么我们认为达到热平衡时温度计与冰水混合物的温度相同？}
+\end{itemize}
+\emini
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{热平衡}
+\bch
+在外界条件影响隔绝的条件下，当两个宏观物体发生接触时，可能发生热传导，力的相互作用，化学反应，电磁相互作用等。
+
+\skipline
+
+物体所有宏观性质不发生变化 = 热平衡 + 力学平衡 + 化学平衡 + 电磁平衡 + ... 
+
+\skiplines
+
+在我们的幻想实验里，我们用真空玻璃管隔离了水银和冰水混合物，使得它们之间只能发生热传导，在这个设定下：
+
+\skipline
+
+物体所有宏观性质不发生变化 = 热平衡
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{热力学第零定律}
+\bch
+{\large \bluetext{在外界影响隔绝的条件下，如果物体A、B分别与{\bf 处于确定状态}的物体C达到热平衡，则物体A和B也是相互热平衡的。}}
+
+\skiplines
+
+comments:
+\begin{itemize}
+\item{“在外界影响隔绝的条件下”是一句很正确的废话。{\small（我们既然讨论热平衡，就已经假定了这个条件。）}}
+\item{要求C“处于确定状态”非常重要。{\small (如果允许C的状态发生变化，由于A和C，B和C都总能分别达到热平衡，我们就得到任何两个物体A和B是热平衡的这样的荒谬结论。)}}
+\item{热力学第零定律是一条实验定律。{\small (无须推导。）}}
+\end{itemize}
+\ech
+\end{frame}
+
+\begin{frame}
+\bch
+解决了水银温度计的标度问题，我们再进一步思考更深邃的问题……
+\begin{center}
+\includegraphics[width=2in]{think2.jpg}
+\end{center}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{更深邃的问题1}
+\bch
+一定要用水银作为测温物质吗？
+
+\skiplines
+
+\begin{itemize}
+\item{如果用酒精，固定压强的气体等代替水银，因为我们人为地“规定”了温度随体积线性地变化，那么水银温标和酒精温标、气体温标并不一定会完全相同。}
+\item{日常所需测量的温度往往不需要非常精确，不同温标之间的微小差异（一般不大于$0.1\cdeg$的数量级）可以忽略。}
+\end{itemize}
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{更深邃的问题2}
+\bch
+一定要用热胀冷缩的测温属性吗？
+
+\skipline
+
+\bitem
+\item{除了热胀冷缩，温变电阻金属的电阻随温度变化，热电偶效应等也都可以用来定义温标。}
+\item{同样，不同测温属性定义的温标不会完全相同，但日常测温需求往往可以忽略这些差别。}
+\eitem
+
+\bcenter
+\includegraphics[width=1.4in]{resistance_thermometer.png}\hspace{0.1in}
+\includegraphics[width=2.2in]{thermocouple2.jpg}
+\ecenter
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{更深邃的问题3}
+\bch
+除了水的冰点和沸点，还有其他固定标准点吗？
+
+\skipline
+
+\bitem
+\item{有。例如{\bf 绝对零度}和{\bf 水的三相点}等是更好的固定标准点。(\wulian 这些都是什么鬼)}
+\eitem
+
+\ech
+\end{frame}
+
+\begin{frame}
+\bch
+学习了这么多互有差异的温标，我们真是太开心了\wulian
+
+\skipline
+
+大学套路深，我要回小学\bye
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{热力学温标}
+\bch
+\bitem
+\item{在热力学里，我们将使用“热力学温标”。（是的，前面讲的温标我们都不用\bye）}
+\item{热力学温标的定义不涉及测温物质和测温属性。（是的，所谓的“三要素”是逗你玩的\bye）}
+\item{热力学温标选取的固定标准点为绝对零度(规定为$0K$)和水的三相点（规定为$273.16K$)。（是不是除了数字你什么也没看懂\bye）}
+\eitem
+
+取$273.16K$这样一个看起来很奇怪的数字是为了使$1K$的温度变化和$1\cdeg$的温度变化相同。在摄氏温标中，水的三相点为$0.01\cdeg$。所以摄氏温标转换到热力学温标只需数值上平移
+$273.15$。例如： 
+$$0\cdeg = 273.15 K$$
+$$100\cdeg = 373.15K$$
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{热力学温标}
+\bch
+等等，还有很多疑问：
+\bitem
+\item{热力学温标是如何做到不依赖测温物质和测温属性进行标度的？}
+\item{什么是绝对零度？}
+\item{什么是水的三相点？}
+\item{摄氏温标中$1\cdeg$的变化量和热力学温标$1K$的变化量相同，是指水银温度计标度的$1\cdeg$还是酒精温度计标度的$1\cdeg$，还是其他？}
+\eitem
+\ech
+\end{frame}
+
+
 
 \begin{frame}
 \chtitle{理想气体状态方程}
 \bch
-达到平衡状态的理想气体的摩尔数$\nu$, 压强$p$, 体积$V$，热力学温度$T$满足
+{\large 达到平衡状态的理想气体的摩尔数$\nu$, 压强$p$, 体积$V$，热力学温度$T$满足
 {\color{blue}
 $$p V = \nu RT$$
 }
 其中$R=8.31451 \mathrm{J/(mol\cdot K)}$为{\bf 普适气体常量}。
+}
 
-{\scriptsize
+{\small
 \begin{itemize}
 \item{实际稀薄的气体的属性接近理想气体，固定$p$, $V$, $T$中的一个即分别得到历史上的气体实验定律：盖吕萨克定律，查理定律，波意耳定律。}
 \item{在我们学习气体的统计描述方法之后，理想气体状态方程可以从微观上进行推导。这里我们先把它当作是对稀薄气体的实验定律进行外推得到的。}
 \end{itemize}
 }
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{摄氏度到底是怎么定义的}
-\bch
 \ech
 \end{frame}
 
