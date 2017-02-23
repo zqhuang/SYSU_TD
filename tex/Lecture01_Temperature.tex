@@ -481,18 +481,18 @@ $$(4\pi \upsilon^2 d\upsilon) (e^{-\frac{m\upsilon^2}{2kT}}) \propto  \upsilon^2
 \emini
 \bmini{0.66}
 考虑理想气体容器壁右侧的垂直于$x$轴的小面积元$dS$，时间$dt$内传递给容器壁的动量为
-$$\sum_{\upsilon_x>0}(2p_x)\left[n(\vecv) dS (\upsilon_x dt)  \right]$$
-其中$n(\vecv)$是速度为$\vecv$ (满足$\upsilon_x>0$)的分子数密度；动量的x分量$p_x= m\upsilon_x$(每次弹性反射都传递动量$2p_x$)。
+$$\sum_{\upsilon_x>0}(2\calp_x)\left[n(\vecv) dS (\upsilon_x dt)  \right]$$
+其中$n(\vecv)$是速度为$\vecv$ (满足$\upsilon_x>0$)的分子数密度；动量的x分量$\calp_x= m\upsilon_x$(每次弹性反射都传递动量$2\calp_x$)。
 \emini
 
 因为统计上$\upsilon_x>0$和$\upsilon_x<0$的粒子数密度相等，故总分子数密度$n = \sum_{\upsilon_x>0} 2n(\vecv)$，所以压强为
 \bmini{0.66}
 \bea
-2\sum_{\upsilon_x>0}p_x\upsilon_x n(\vecv) &=& n \frac{\sum_{\upsilon_x>0}p_x\upsilon_x n(\vecv)}{\sum_{\upsilon_x>0} n(\vecv)} \newl
-&=& \left. n \overline{p_x \upsilon_x} \right\vert_{\upsilon_x>0} \newl
-&=& n \overline{p_x \upsilon_x} \newl
-&=& \frac{1}{3}n\left(\overline{p_x \upsilon_x} +  \overline{p_y \upsilon_y} + \overline{p_z \upsilon_z} \right) \newl
-&=& \frac{1}{3}n\, \overline{\mathbf{p}\cdot\vecv}
+p = 2\sum_{\upsilon_x>0}\calp_x\upsilon_x n(\vecv) &=& n \frac{\sum_{\upsilon_x>0}\calp_x\upsilon_x n(\vecv)}{\sum_{\upsilon_x>0} n(\vecv)} \newl
+&=& \left. n \overline{\calp_x \upsilon_x} \right\vert_{\upsilon_x>0} \newl
+&=& n \overline{\calp_x \upsilon_x} \newl
+&=& \frac{1}{3}n\left(\overline{\calp_x \upsilon_x} +  \overline{\calp_y \upsilon_y} + \overline{\calp_z \upsilon_z} \right) \newl
+&=& \frac{1}{3}n\, \overline{\mathbf{\calp}\cdot\vecv}
 \eea
 \emini
 \bmini{0.3}
@@ -511,7 +511,7 @@ $$\sum_{\upsilon_x>0}(2p_x)\left[n(\vecv) dS (\upsilon_x dt)  \right]$$
 \begin{frame}
 \chtitle{理想气体状态方程的微观推导}
 \bch
-非相对论气体$\overline{\mathbf{p}\cdot\vecv} = m\overline{\upsilon^2} = 2\overline{\varepsilon} = 3 k T$。
+非相对论气体$\overline{\mathbf{\calp}\cdot\vecv} = m\overline{\upsilon^2} = 2\overline{\varepsilon} = 3 k T$。
 
 所以压强
 $$p=nkT = \frac{\nu N_A}{V} k T  $$
@@ -524,11 +524,11 @@ $$p=nkT = \frac{\nu N_A}{V} k T  $$
 \chtitle{更一般的推导——能均分定理}
 \bch
 {\scriptsize
-在非相对论情形下，平动、转动、小振幅振动的能量都可以写成（广义）动量的二次型。假设微观粒子有多个独立的自由度，则我们仅需取其中某自由度考虑，其能量为$ c p^2$ ($c$为正常数），（广义）动量在$p$和$p+dp$之间的状态数正比于$dp$(现在是一维的情况就不需要乘以$4\pi p^2$了)，该自由度动量在$p$附近的概率正比于$e^{-\frac{cp^2}{kT}}$。所以该自由度平均能量为
+在非相对论情形下，平动、转动、小振幅振动的能量都可以写成（广义）动量的二次型。假设微观粒子有多个独立的自由度，则我们仅需取其中某自由度考虑，其能量为$ c \calp^2$ ($c$为正常数），（广义）动量在$\calp$和$\calp+d\calp$之间的状态数正比于$d\calp$(现在是一维的情况就不需要乘以$4\pi \calp^2$了)，该自由度动量在$\calp$附近的概率正比于$e^{-\frac{c\calp^2}{kT}}$。所以该自由度平均能量为
 \bea
-\frac{\int_{-\infty}^{\infty} cp^2e^{-\frac{-cp^2}{kT}}dp }{\int_{-\infty}^{\infty} e^{-\frac{-cp^2}{kT}}dp } &=& \frac{-\frac{kT}{2}\int_{-\infty}^{\infty} p d \left(e^{-\frac{-cp^2}{kT}}\right)  }{\int_{-\infty}^{\infty} e^{-\frac{-cp^2}{kT}}dp }  \newl
-&=& \frac{-\frac{kT}{2}\left[\left.p e^{-\frac{-cp^2}{kT}}\right\vert_{-\infty}^{\infty}-\int_{-\infty}^{\infty} e^{-\frac{-cp^2}{kT}}dp\right]  }{\int_{-\infty}^{\infty} e^{-\frac{-cp^2}{kT}}dp }  \newl
-&=& \frac{\frac{kT}{2}\int_{-\infty}^{\infty} e^{-\frac{-cp^2}{kT}}dp  }{\int_{-\infty}^{\infty} e^{-\frac{-cp^2}{kT}}dp }  \newl
+\frac{\int_{-\infty}^{\infty} c\calp^2e^{-\frac{-c\calp^2}{kT}}d\calp }{\int_{-\infty}^{\infty} e^{-\frac{-c\calp^2}{kT}}d\calp } &=& \frac{-\frac{kT}{2}\int_{-\infty}^{\infty} \calp d \left(e^{-\frac{-c\calp^2}{kT}}\right)  }{\int_{-\infty}^{\infty} e^{-\frac{-c\calp^2}{kT}}d\calp }  \newl
+&=& \frac{-\frac{kT}{2}\left[\left.\calp e^{-\frac{-c\calp^2}{kT}}\right\vert_{-\infty}^{\infty}-\int_{-\infty}^{\infty} e^{-\frac{-c\calp^2}{kT}}d\calp\right]  }{\int_{-\infty}^{\infty} e^{-\frac{-c\calp^2}{kT}}d\calp }  \newl
+&=& \frac{\frac{kT}{2}\int_{-\infty}^{\infty} e^{-\frac{-c\calp^2}{kT}}d\calp  }{\int_{-\infty}^{\infty} e^{-\frac{-c\calp^2}{kT}}d\calp }  \newl
 &=& \frac{kT}{2}
 \eea
 }
