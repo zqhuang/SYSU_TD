@@ -162,6 +162,7 @@ https://github.com/zqhuang/SYSU\_TD
 
 
 \begin{frame}
+\chtitle{深邃的思考……}
 \bch
 \bmini{0.2}
 \includegraphics[width=0.8in]{scale0deg.png}
@@ -208,7 +209,7 @@ comments:
 \item{“在外界影响隔绝的条件下”是一句很正确的废话。{\small（既然讨论热平衡，就已经假定了这个条件。）}}
 \item{要求C“处于确定状态”非常重要。（如果去掉“处于确定状态”，请试举个反例）}
 \item{热力学第零定律是一条实验定律。}
-\item{有了热力学第零定律，我们就能规定所有达到热平衡的物体具有相同的温度。}
+\item{有了热力学第零定律，我们就能规定所有达到热平衡的物体具有相同的温度，不必担心引起逻辑上的矛盾。}
 \end{itemize}
 \ech
 \end{frame}
@@ -251,8 +252,8 @@ comments:
 \eitem
 
 \bcenter
-\includegraphics[width=1.4in]{resistance_thermometer.png}\hspace{0.1in}
-\includegraphics[width=2.2in]{thermocouple2.jpg}
+\includegraphics[width=1.5in]{resistance_thermometer.png}\hspace{0.1in}
+\includegraphics[width=2.5in]{thermocouple2.jpg}
 \ecenter
 \ech
 \end{frame}
@@ -337,19 +338,21 @@ $$0K = -273.15 \cdeg$$
 \ech
 \end{frame}
 
+\begin{frame}
+\chtitle{对上述疑问的初步解答}
+\bch
+\bitem
+\item{热力学温标的不涉及测温物质和测温属性的标度方法涉及第四章的热力学第二定律，暂时还无法讲解。今天我们只能先介绍一个用理想气体标度热力学温度的简单方法。理想气体温标和热力学温标是严格等价的。}
+\item{绝对零度的概念必须涉及量子力学才能完全说清楚。现在我们只能从经典的角度理解：物体内微观粒子的运动越剧烈，物体就越热。反之，物体内粒子运动越缓慢，物体就越冷。从经典意义上我们认为当所有微观粒子趋向于静止时，物体趋向于绝对零度（当我们学习了量子力学之后会知道这样的理解并非完全正确）。}
+\item{水的三相点是气态，液态，固态共存的状态。我们会下节课学习为什么三相点温度不依赖于压强。}
+\eitem
+\ech
+\end{frame}
+
 
 \begin{frame}
 \chtitle{热力学温度也可以等价地用理想气体来标度}
 \bch
-热力学温标的诸多问题都比较深刻，将在后面的课程中逐步介绍。
-
-\skiplines
-
-我们先介绍一个用理想气体标度热力学温度的简单方法（即和热力学温标等价的理想气体温标）。
-
-\skiplines
-
-
 理想气体是把稀薄的实际气体进行理想化的一种假想物质。从微观上描述，理想气体分子有如下特性：
 \bitem
 \item{分子的大小远远小于分子之间平均距离。}
@@ -421,7 +424,7 @@ $$e^{-\frac{\epsilon_i}{k T}}\, ,$$其中$k=1.38\times 10^{-23} J/K$为玻尔兹
 \begin{frame}
 \chtitle{理想气体分子的位置和速度分布}
 \bch
-理想气体分子的状态由位置$\mathbf{x} = (x_1, x_2, x_3)$和速度$\mathbf{\upsilon} = (\upsilon_1, \upsilon_2, \upsilon_3)$来描述。也就是说，分子的每一个状态对应于位置空间的一个点$(x_1, x_2, x_3)$和"速度空间"({\darkblue 这是我们假想的一个空间，和“看得见摸得着”的位置空间不同})的一个点$(\upsilon_1, \upsilon_2, \upsilon_3)$。
+理想气体分子的状态由位置$\mathbf{x} = (x_1, x_2, x_3)$和速度$\vecv = (\upsilon_1, \upsilon_2, \upsilon_3)$来描述。也就是说，分子的每一个状态对应于位置空间的一个点$(x_1, x_2, x_3)$和"速度空间"({\darkblue 这是我们假想的一个空间，和“看得见摸得着”的位置空间不同})的一个点$(\upsilon_1, \upsilon_2, \upsilon_3)$。
 
 \skipline
 
@@ -429,7 +432,7 @@ $$e^{-\frac{\epsilon_i}{k T}}\, ,$$其中$k=1.38\times 10^{-23} J/K$为玻尔兹
 
 \skipline
 
-由于速度和能量的关系为$\varepsilon = \frac{1}{2} m \upsilon^2$，其中$m$为分子质量，所以分子处在速度为$\mathbf{\upsilon}$的状态的概率正比于
+由于速度和能量的关系为$\varepsilon = \frac{1}{2} m \upsilon^2$，其中$m$为分子质量，所以分子处在速度为$\vecv$的状态的概率正比于
 $$e^{-\frac{m\upsilon^2}{2kT}}$$
 
 
@@ -472,21 +475,34 @@ $$(4\pi \upsilon^2 d\upsilon) (e^{-\frac{m\upsilon^2}{2kT}}) \propto  \upsilon^2
 \chtitle{理想气体分子的压强}
 \bch
 {\scriptsize
+
+\bmini{0.3}
+\includegraphics[width=1.2in]{calcpressure.png}
+\emini
+\bmini{0.66}
 考虑理想气体容器壁右侧的垂直于$x$轴的小面积元$dS$，时间$dt$内传递给容器壁的动量为
-$$\sum_{\upsilon_x>0}(2p_x)\left(n(\upsilon_x)\upsilon_x dtdS  \right)$$
-其中$n(\upsilon_x)$是$x$方向速度分量为$\upsilon_x$  的分子数密度，动量$p_x= m\upsilon_x$。
+$$\sum_{\upsilon_x>0}(2p_x)\left[n(\vecv) dS (\upsilon_x dt)  \right]$$
+其中$n(\vecv)$是速度为$\vecv$ (满足$\upsilon_x>0$)的分子数密度；动量的x分量$p_x= m\upsilon_x$(每次弹性反射都传递动量$2p_x$)。
+\emini
 
-因为统计上$\upsilon_x>0$和$\upsilon_x<0$的粒子数密度相等，总分子数密度
-$$n = 2\sum_{\upsilon_x>0} n(\upsilon_x)$$ 
-
-所以压强为
+因为统计上$\upsilon_x>0$和$\upsilon_x<0$的粒子数密度相等，故总分子数密度$n = \sum_{\upsilon_x>0} 2n(\vecv)$，所以压强为
+\bmini{0.66}
 \bea
-\sum_{\upsilon_x}(2p_x\upsilon_x) n(\upsilon_x) &=& n \frac{\sum_{\upsilon_x>0}(2p_x\upsilon_x) n(\upsilon_x)}{2\sum_{\upsilon_x>0} n(\upsilon_x)} \newl
-&=& n \overline{p_x \upsilon_x}|_{\upsilon_x>0} \newl
+2\sum_{\upsilon_x}p_x\upsilon_x n(\vecv) &=& n \frac{\sum_{\upsilon_x>0}p_x\upsilon_x n(\vecv)}{\sum_{\upsilon_x>0} n(\vecv)} \newl
+&=& \left. n \overline{p_x \upsilon_x} \right\vert_{\upsilon_x>0} \newl
 &=& n \overline{p_x \upsilon_x} \newl
 &=& \frac{1}{3}n\left(\overline{p_x \upsilon_x} +  \overline{p_y \upsilon_y} + \overline{p_z \upsilon_z} \right) \newl
-&=& \frac{1}{3}n\, \overline{\mathbf{p}\cdot\mathbf{\upsilon}}
+&=& \frac{1}{3}n\, \overline{\mathbf{p}\cdot\vecv}
 \eea
+\emini
+\bmini{0.3}
+\vspace{0.35in}
+利用了左右对称性
+
+\vspace{0.1in}
+
+利用了各向同性对称性
+\emini
 }
 
 \ech
@@ -495,12 +511,40 @@ $$n = 2\sum_{\upsilon_x>0} n(\upsilon_x)$$
 \begin{frame}
 \chtitle{理想气体状态方程的微观推导}
 \bch
-非相对论气体$\overline{\mathbf{p}\cdot\mathbf{\upsilon}} = m\overline{\upsilon^2} = 2\overline{\varepsilon} = 3 k T$。
+非相对论气体$\overline{\mathbf{p}\cdot\vecv} = m\overline{\upsilon^2} = 2\overline{\varepsilon} = 3 k T$。
 
 所以压强
 $$p=nkT = \frac{\nu N_A}{V} k T  $$
 
 定义$R= k N_A$，即得到理想气体状态方程。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{更一般的推导——能均分定理}
+\bch
+{\scriptsize
+在非相对论情形下，平动、转动、小振幅振动的能量都可以写成（广义）动量的二次型。假设微观粒子有多个独立的自由度，则我们仅需取其中某自由度考虑，其能量为$ c p^2$ ($c$为正常数），（广义）动量在$p$和$p+dp$之间的状态数正比于$dp$(现在是一维的情况就不需要乘以$4\pi p^2$了)，该自由度动量在$p$附近的概率正比于$e^{-\frac{cp^2}{kT}}$。所以该自由度平均能量为
+\bea
+\frac{\int_{-\infty}^{\infty} cp^2e^{-\frac{-cp^2}{kT}}dp }{\int_{-\infty}^{\infty} e^{-\frac{-cp^2}{kT}}dp } &=& \frac{-\frac{kT}{2}\int_{-\infty}^{\infty} p d \left(e^{-\frac{-cp^2}{kT}}\right)  }{\int_{-\infty}^{\infty} e^{-\frac{-cp^2}{kT}}dp }  \newl
+&=& \frac{-\frac{kT}{2}\left[\left.p e^{-\frac{-cp^2}{kT}}\right\vert_{-\infty}^{\infty}-\int_{-\infty}^{\infty} e^{-\frac{-cp^2}{kT}}dp\right]  }{\int_{-\infty}^{\infty} e^{-\frac{-cp^2}{kT}}dp }  \newl
+&=& \frac{\frac{kT}{2}\int_{-\infty}^{\infty} e^{-\frac{-cp^2}{kT}}dp  }{\int_{-\infty}^{\infty} e^{-\frac{-cp^2}{kT}}dp }  \newl
+&=& \frac{kT}{2}
+\eea
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{第1周作业（第3周3月9日课间交）}
+\bch
+\bitem
+\item[1]{人体腋窝正常温度一般不超过37.2$\cdeg$，小明用体温计测得腋温$100\fdeg$，请问他发烧了吗？}
+\item[2]{第一章习题1-7}
+\item[3]{把1 mol的理想气体保持恒温300K进行等温压缩，使得体积变为原来一半，要做多少功？}
+\eitem
+ 
 \ech
 \end{frame}
 
