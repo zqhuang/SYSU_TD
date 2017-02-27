@@ -547,6 +547,27 @@ $$\left(\frac{d p}{d V}\right)_{T=T_K} = \left(\frac{d^2 p}{d V^2}\right)_{T=T_K
 \end{frame}
 
 \begin{frame}
+\chtitle{相对论气体的压强（本页内容仅供娱乐）}
+\bch
+{\small
+如果气体分子的运动接近光速$\upsilon \approx c$，则分子能量为$\varepsilon = \sqrt{\calp^2c^2 + m^2}\approx \calp c$。
+压强
+$$ p = \frac{1}{3}n \overline{\calp\cdot \vecv} \approx \frac{1}{3} n \bar{\varepsilon}$$
+这跟非相对论气体$p = \frac{2}{3}n \bar{\varepsilon}$差别了一个因子2。
+
+如果是静质量为零的气体$m=0$，上述结论就是严格的，且气体的能量密度可以写成$\rho = n\bar{\varepsilon}$。我们即得到光子气体的状态方程：
+$$p = \frac{1}{3}\rho$$
+}
+{\darkblue \scriptsize 脑洞大开：在广义相对论里，很多时候我们可以用能量动量张量的迹$(\rho + 3p)/c^2$来代替牛顿万有引力公式里的质量密度（这是我编的，正式场合慎用）。
+\bitem
+\item{\darkblue  因为光子气体的$3p = \rho$，考虑压强修正算出来的光线偏折角是不考虑压强修正时的计算结果的两倍，历史上著名的广义相对论的星光偏折实验就是在验证这个因子2。}
+\item{\darkblue  在现代宇宙学里的暗能量是压强$ p \approx -\rho$的模型，于是$\rho + 3p = -2\rho <0$，产生了“负引力”，导致宇宙加速膨胀。}
+\eitem
+}
+\ech
+\end{frame}
+
+\begin{frame}
 \chtitle{进阶知识II：实际气体的范德瓦尔斯方程(van der Waals Equation of State)}
 \bch
 范德瓦尔斯方程是对理想气体状态方程$pV = \nu RT$的修正：
@@ -566,6 +587,9 @@ $$ V_{\rm eff} = V - \nu b$$
 \eitem
 \ech
 \end{frame}
+
+
+
 
 \begin{frame}
 \chtitle{范德瓦尔斯方程(续)：分子力修正}
@@ -610,6 +634,24 @@ T_K &=& \frac{8 a}{27 Rb} \newl
 V_K &=& 3\nu b \newl
 p_K &=& \frac{a}{27 b^2} 
 \eea
+由此得到“临界系数” $K = \frac{\nu RT_K}{p_K V_K} = 2.667$，实际物质的临界系数并非常数，大约为3到4之间。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{对应态方程 （该内容仅供娱乐）}
+\bch
+可以用临界点的温度，压强和体积为单位把范德瓦尔斯方程无量纲化。定义
+
+对应温度$\tau = T/T_K$, 
+
+对应体积$\omega = V/V_K$，
+
+对应压强$\pi = p/p_K$，
+
+就得到对应态方程
+$$\left(\pi + \frac{3}{\omega^2} \right)(3\omega - 1) = 8\tau$$
 
 \ech
 \end{frame}
@@ -617,7 +659,9 @@ p_K &=& \frac{a}{27 b^2}
 \begin{frame}
 \chtitle{位力展开（该内容仅供娱乐）}
 \bch
-由理想气体状态方程得到的压强$p$需要乘一个修正因子，把这个修正因子对$\frac{\nu}{V}$进行泰勒展开：
+我们考虑用理想气体状态方程得到的压强$p$乘一个修正因子的方法来描述实际气体。
+
+把这个修正因子对$\frac{\nu}{V}$进行泰勒展开：
 $$p = \frac{\nu RT}{V}\left[1+ \frac{\nu}{V}B(T) + \frac{\nu}{V}C(T) + \ldots \right]$$
 $B(T)$（又可以大声读了…）和$C(T)$称为第二和第三位力系数。
 
@@ -642,7 +686,7 @@ $$ |p_k + p_U| \ll |p_U|\approx |p_k|$$
 \begin{frame}
 \chtitle{进阶知识IV：液体表面张力}
 \bch
- 液体表面是不对称的，如果液体处处分子数密度一样的话，内部分子要扩散到表面相对于表面分子扩散到内部需要克服较大的引力，就会使分子扩散不平衡（更多表面分子跑到内部去）。当达到{\bf 扩散平衡时，液体表面分子数密度比内部小。} 
+ 液体表面是不对称的，如果液体处处分子数密度一样的话，“内部分子扩散到表面”要难于“表面分子扩散到内部”，因为前者需要克服较大的分子引力。这种分子扩散不平衡会导致更多表面分子跑到内部去。当达到{\bf 扩散平衡时，液体表面分子数密度比内部小。} 
 
 \skipline
 
@@ -678,14 +722,14 @@ $$ |p_k + p_U| \ll |p_U|\approx |p_k|$$
 \end{frame}
 
 \begin{frame}
-\chtitle{共价健}
+\chtitle{共价健 }
 \bch
 
 {\bf 共价键是两个原子共享价电子形成的} （“共享”的原理涉及量子力学，我们先呵呵\bye)。
 
 \skiplines
 
-共价键和离子健对应的束缚能都是$\sim 100 \SIkJ/\SImol$的数量级。氧气$O_2$的共价键$O=O$强度约为$120 \SIkcal/\SImol$，可以用来估算燃烧释放的热量。
+共价键和离子健对应的束缚能都是$\sim 100 \SIkJ/\SImol$的数量级。氧气$O_2$的共价键$O=O$强度约为$120 \SIkcal/\SImol$，在燃烧反应中，仅考虑氧气的$O=O$断裂释放出的能量，忽略其他发生变化的键的能量，可以粗略估算燃烧释放的热量（见教材例题5和思考题1-16， 1-17）。
 \ech
 \end{frame}
 
@@ -725,7 +769,9 @@ $$ |p_k + p_U| \ll |p_U|\approx |p_k|$$
 
 \skipline
 
-冰和接近$0\cdeg$的水里有很多氢键，随着温度升高氢键被破坏而变得越来越少。氢键使得水分子容易排列成空旷的六角晶格，所以氢键越多，体积越大。随着温度升高氢键断裂，体积变小。这个效应和热胀冷缩效应相互竞争，导致了水在$4\cdeg$以下热缩冷胀的奇特性质。
+
+冰和接近$0\cdeg$的水里有很多氢键，随着温度升高氢键被破坏而变得越来越少。氢键使得水分子容易排列成空旷的六角晶格，所以氢键越多，体积越大。随着温度升高氢键断裂，体积变小。
+这个效应和热胀冷缩效应相互竞争，导致了水在$4\cdeg$以下热缩冷胀的奇特性质。
 
 
 \ech
