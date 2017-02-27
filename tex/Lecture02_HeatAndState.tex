@@ -42,7 +42,7 @@ $$1\SIcal = 4.184 \SIJ$$
 \bch
 \bitem
 \item{物质温度升高（降低）$1\SIK$时所吸收（放出）的热量，代表了该物质存储热量的能力，我们称之为称为{\bf 热容量}，通常用大写$C$来表示。}
-\item{单位质量物质的热容量称为{\bf 比热容}，或简称比热，通常用小写$c$来表示。撇开对环境的弱依赖性不谈，我们可粗略地说水的比热容是$4190\SIJ/(\SIkg\cdot\SIK)$，水银的比热容是$139\SIJ/(\SIkg\cdot\SIK)$, 铝的比热容是$900\SIJ/(\SIkg\cdot\SIK)$，等等。}
+\item{{\bf 单位质量物质的热容量称为 比热容}，或简称比热，通常用小写$c$来表示。撇开对环境的弱依赖性不谈，我们可粗略地说水的比热容是$4190\SIJ/(\SIkg\cdot\SIK)$，水银的比热容是$139\SIJ/(\SIkg\cdot\SIK)$, 铝的比热容是$900\SIJ/(\SIkg\cdot\SIK)$，等等。}
 \item{在常见物质中，水的比热几乎是最大的。}
 \item{我们也可以定义每$\SImol$物质的热容量为摩尔热容(记为$C^{\SImol}$)，了解即可，在本课就不多做介绍了。}
 \eitem
@@ -61,12 +61,6 @@ $$1\SIcal = 4.184 \SIJ$$
 \ech
 \end{frame}
 
-\begin{frame}
-\chtitle{思考题}
-\bch
-水银的比热大概是水的比热的$1/30$，密度是水的密度的$13.6$倍，问同体积的水银和水的热容量之比是多少？
-\ech
-\end{frame}
 
 \begin{frame}
 \chtitle{思考题}
@@ -112,7 +106,7 @@ $$1\SIcal = 4.184 \SIJ$$
 \begin{frame}
 \chtitle{思考题}
 \bch
-在$1\atm$下$80\cdeg$的水和$0\cdeg$的等质量冰混合，恰好把所有冰熔化，热平衡后成为$0\cdeg$的水。求水的熔化热。
+$1\atm$下冰的熔化热为$333 \SIkJ/\SIkg$，请估算大约什么温度的热水恰好可以熔化等质量的冰。
 \ech
 \end{frame}
 
@@ -191,7 +185,7 @@ $E_B$的强弱取决于化学键形式，一般在$\mathrm{eV}$附近几个数�
 \item[3]{如果物质分子量为$A$，密度为$\rho$，证明分子之间的平均距离约为
 $$\left(\frac{1.66 A }{\rho / (\mathrm{g}\cdot \mathrm{cm}^{-3})}\right)^{1/3}\angstrom$$
 }
-\item[3]{试估算通常状态下液态水(原子量18，密度$1\SIg/\SIcm^3$)和铁块(原子量56，密度$7.9\SIg/\SIcm^3$)分子之间的平均距离，并跟典型的$r_0$比较。}
+\item[3]{试估算通常状态下液态水(原子量18，密度$1\SIg/\SIcm^3$)分子之间的平均距离和铁块(原子量56，密度$7.9\SIg/\SIcm^3$)分子之间的平均距离，分别跟典型的$r_0$比较。}
 \eitem
 \ech
 \end{frame}
@@ -329,18 +323,28 @@ $$\left(\frac{1.66 A }{\rho / (\mathrm{g}\cdot \mathrm{cm}^{-3})}\right)^{1/3}\a
 \ech
 \end{frame}
 
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\bcenter
+\includegraphics[width=1.5in]{think3.jpg}
+\ecenter
+
+为什么自然界中大多数物质都是晶体？
+\ech
+
+\end{frame}
+
+
 \begin{frame}
 \chtitle{快速淬火制作非晶体}
 \bch
-为什么自然界中很多物质都是晶体？
+因为自然界中物态变化的过程都相对缓慢，物质中的分子有足够的时间“排好队”，就会形成全局能量最低态——晶体。
 
 \skipline
 
-因为自然界中物态变化的过程都相对缓慢，物质中的分子有足够的时间“排好队”。
-
-\skipline
-
-如果把熔点附近的液体以极快的速度降温，使它的温度快速跨过熔点（即凝固点），并迅速降到某个比熔点更低的温度“玻璃化点”，物质中的分子没有足够的时间“排好队”，就得到“排得不那么整齐”的非晶体。这种技术叫做“快速淬火”。几乎所有物质都可以通过这种方法人工制成非晶体。
+如果把熔点附近的液体以极快的速度降温，使它的温度快速跨过熔点（即凝固点），并迅速降到某个比熔点更低的温度“玻璃化点”，物质中的分子没有足够的时间“排好队”，就得到“排得不那么整齐”的非晶体（局域能量最低态）。这种技术叫做“快速淬火”。几乎所有物质都可以通过这种方法人工制成非晶体。
 
 \ech
 
@@ -621,8 +625,53 @@ $$ \left(p+\frac{\nu^2 a}{V^2}\right)\left(V - \nu b\right) = \nu R T$$
 \ech
 \end{frame}
 
+
 \begin{frame}
-\chtitle{实际气体的临界温度$T_K$ （该内容仅供娱乐）}
+\chtitle{范德瓦尔斯方程的应用举例(该内容仅供娱乐)}
+\bch
+{\small 
+我们用范德瓦尔斯方程来求解课本习题1-2，设定体温度计内气体体积为$V$,三次测量时气体的单位体积摩尔数分别为$x_1$, $x_2$, $x_3$。设待测温度为$T$，由范德瓦尔斯方程
+\bea
+500\SImmHg + a x_1^2 &=& \frac{x_1 R\Tthree}{1 - bx_1},\ 734\SImmHg + a x_1^2 = \frac{x_1 R T}{1 - bx_1}\newl
+200\SImmHg + a x_2^2 &=& \frac{x_2 R\Tthree}{1 - bx_2},\  293.4\SImmHg + a x_2^2 = \frac{x_2 R T}{1 - bx_2}\newl
+100\SImmHg + a x_3^2 &=& \frac{x_3 R\Tthree}{1 - bx_3},\  146.68\SImmHg + a x_3^2 = \frac{x_3 RT}{1- bx_3}
+\eea
+由于$R$和$\Tthree$是已知的，一共有六个方程和六个未知数，数值求解得到$T\approx 400.628\SIK$，但是，解出来的$b<0$，跟我们最初推导范德瓦尔斯方程的假设不符。如果强行要求$b>0$，并取误差最小的点作为近似解，则得到$T \approx 400.584\SIK$，这个结果就和用最小二乘法推出来的结果($400.575\SIK$)相近了。
+}
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{技能回顾：最小二乘法（\bye学霸请自动跳过）}
+\bch
+{\scriptsize
+课本习题1-2的最小二乘法计算细节：已知数据点为
+\bea
+(p_1, T_1) &=&  (734 \SImmHg, \frac{734}{500}\times 273.16 \SIK) = (734\SImmHg, 400.999\SIK) \newl
+(p_2, T_2) &=&  (293.4 \SImmHg, \frac{293.4}{200}\times 273.16 \SIK) = (293.4\SImmHg, 400.726\SIK) \newl
+(p_3, T_3) &=&  (146.68\SImmHg, \frac{146.68}{100}\times 273.16\SIK) = (146.68\SImmHg, 400.671\SIK)
+\eea
+求平均，并每个数据点减去平均：
+\bea
+(\bar{p},\bar{T}) &=& \left(\frac{p_1+p_2+p_3}{3},\frac{T_1+T_2+T_3}{3}\right) = (391.36\SImmHg, 400.799\SIK) \newl
+(\Delta p_1, \Delta T_1) &=& (p_1-\bar{p}, T_1-\bar{T})=(342.64 \SImmHg, 0.200\SIK), \newl
+(\Delta p_2, \Delta T_2) &=& (p_2-\bar{p}, T_2-\bar{T})= (-97.96 \SImmHg, -0.073\SIK), \newl
+(\Delta p_3, \Delta T_3) &=& (p_3-\bar{p}, T_3-\bar{T})= (-244.68 \SImmHg, -0.128\SIK)
+\eea
+设拟合直线为$T = kp + b$，则
+\be
+k = \frac{\sum \Delta p \Delta T}{\sum \Delta p^2}= 0.0005726 \SImmHg/\SIK, \ b = \bar{T} - k\bar{p} = 400.575 \SIK
+\ee
+所以外推到$p=0$时$T = b = 400.575\SIK$，这就是所求的温度。
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{计算实际气体的临界温度$T_K$ （该内容仅供娱乐）}
 \bch
 范德瓦尔斯方程可以写成
 $$ p = \frac{\nu R T}{V - \nu b} - \frac{\nu^2 a}{V^2}$$
@@ -661,7 +710,7 @@ $$\left(\pi + \frac{3}{\omega^2} \right)(3\omega - 1) = 8\tau$$
 \bch
 我们考虑用理想气体状态方程得到的压强$p$乘一个修正因子的方法来描述实际气体。
 
-把这个修正因子对$\frac{\nu}{V}$进行泰勒展开：
+把这个修正因子对$\frac{\nu}{V}$(因为$\frac{\nu}{V}$代表了气体的稀薄程度)进行泰勒展开：
 $$p = \frac{\nu RT}{V}\left[1+ \frac{\nu}{V}B(T) + \frac{\nu}{V}C(T) + \ldots \right]$$
 $B(T)$（又可以大声读了…）和$C(T)$称为第二和第三位力系数。
 
@@ -673,6 +722,8 @@ $$B(T) = b - \frac{a}{RT}, \ C(T) = b^2$$
 在“波意耳”温度$T_B = \frac{a}{Rb} = \frac{27}{8}T_K$，第二位力系数消失，这时物态方程与波意耳定律偏离最小。
 \ech
 \end{frame}
+
+
 
 \begin{frame}
 \chtitle{进阶知识III：液体的压强}
@@ -779,11 +830,11 @@ $$ |p_k + p_U| \ll |p_U|\approx |p_k|$$
 
 
 \begin{frame}
-\chtitle{第二周作业（续第一周作业1.-3.）}
+\chtitle{第二周作业（编号续第一周作业1.-3.）}
 \bch
 \bitem
 \item[4]{一碗米饭大概含有$300\SIkcal$的热量，试估算这些能量能够把一个体重$60\SIkg$的人举到多高。}
-\item[5]{可以浮在水上的金属纳（原子量23，密度$0.97\SIg/\SIcm^3$）是比较另类的金属，试估算它的原子间平均距离。}
+\item[5]{日常环境下，水银的比热是$139 \SIJ/(\SIkg\cdot\SIK)$，密度是$13.6\SIg/\SIcm^3$。请问同体积的水银和水哪个升高$1\cdeg$需要的吸收热量更多？}
 \item[6]{教材习题1-16}
 \eitem
 \ech
