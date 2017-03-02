@@ -8,6 +8,37 @@
 \tpage{2}{热量与物态}
 
 \begin{frame}
+\chtitle{上节课内容回顾}
+\bch
+\bitem
+\item{温度是热的强度，它代表了物体内部微观粒子的运动剧烈程度。}
+\item{传统温标由固定标准点，测温物质和测温属性来确定。但最后我们将使用与测温物质和测温属性无关的热力学温标，热力学理论用热力学温标来表述是最简洁的。}
+\item{理想气体状态方程$pV = \nu RT$可以由微观粒子在各个态上的分布规律($P_i\propto e^{-\frac{\varepsilon_i}{kT}}$)推出。}
+\eitem
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{理想气体分子平均动能正比于温度}
+\bch
+{\small
+参看教材26页的例子，质量为$m$速度为$\vecv$的分子和质量为$M$速度为$\mathbf{V}$的分子碰撞。由于速度的改变量和参照系无关，可以取质心系，计算出两者速度的变化为
+$$\Delta \vecv = \frac{2M}{m+M}\left(\mathbf{V}-\vecv\right);\ \Delta \mathbf{V} = \frac{2m}{m+M}\left(\vecv-\mathbf{V}\right)$$
+回到原参考系，质量为$m$的粒子获得的能量为
+$$\Delta\varepsilon = \frac{1}{2}m\Delta\vecv\cdot(2\vecv + \Delta\vecv) = \frac{2mM}{(m+M)^2}\left[MV^2-m\upsilon^2 +(m-M)\vecv\cdot\mathbf{V}\right]$$
+
+
+\skipline
+
+设$\vecv\cdot\mathbf{V}$的统计平均为零，则统计上两个分子碰撞时能量从动能大的分子流向动能小的分子。可见分子平均动能具有温度的性质。上节课我们已经算出了分子平均动能为$\bar{\varepsilon} = \frac{3}{2}kT$。
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
 \bch
 今天的内容比较乱，请做好风中凌乱的准备…
 \ech
@@ -560,11 +591,8 @@ $$\left(\frac{d p}{d V}\right)_{T=T_K} = \left(\frac{d^2 p}{d V^2}\right)_{T=T_K
 
 \skipline
 
-对于理想气体，这是很容易理解的：各组分的气体分子虽然会发生碰撞，但因为已经达到了化学平衡和热平衡，各组分气体分子的速度和位置分布密度不因碰撞而发生改变。按照上节课我们对理想气体压强的推导（也可参考教材第28页），每种气体对压强都有$\frac{1}{3}n\overline{\veccalp\cdot\vecv}$ 的独立贡献。
+这是很容易理解的：各组分的气体分子虽然会发生碰撞，但因为已经达到了化学平衡和热平衡，各组分气体分子的速度和位置分布密度不因碰撞而发生改变。按照上节课我们对气体压强的推导（也可参考教材第28页），每种气体对压强都有$\frac{1}{3}n\overline{\veccalp\cdot\vecv}$ 的独立贡献。
 
-\skipline
-
-对于实际气体，道尔顿分压定律并非严格的定律，但往往是很好的近似。
 \ech
 \end{frame}
 
@@ -588,12 +616,12 @@ $$ p = \frac{1}{3}n \overline{\calp\cdot \vecv} \approx \frac{1}{3} n \bar{\vare
 如果是静质量为零的气体$m=0$，上述结论就是严格的，且气体的能量密度可以写成$\rho = n\bar{\varepsilon}$。我们即得到光子气体的状态方程：
 $$p = \frac{1}{3}\rho$$
 }
-{\darkblue \scriptsize 脑洞大开：在广义相对论里，很多时候我们可以用能量动量张量的迹$(\rho + 3p)/c^2$来代替牛顿万有引力公式里的质量密度（这是我编的，正式场合慎用）。
-\bitem
-\item{\darkblue  因为光子气体的$3p = \rho$，考虑压强修正算出来的光线偏折角是不考虑压强修正时的计算结果的两倍，历史上著名的广义相对论的星光偏折实验就是在验证这个因子2。}
-\item{\darkblue  在现代宇宙学里的暗能量是压强$ p \approx -\rho$的模型，于是$\rho + 3p = -2\rho <0$，产生了“负引力”，导致宇宙加速膨胀。}
-\eitem
-}
+%{\darkblue \scriptsize 脑洞大开：在广义相对论里，很多时候我们可以用能量动量张量的迹$(\rho + 3p)/c^2$来代替牛顿万有引力公式里的质量密度（这是我编的，正式场合慎用）。
+%\bitem
+%\item{\darkblue  因为光子气体的$3p = \rho$，考虑压强修正算出来的光线偏折角是不考虑压强修正时的计算结果的两倍，历史上著名的广义相对论的星光偏折实验就是在验证这个因子2。}
+%\item{\darkblue  在现代宇宙学里的暗能量是压强$ p \approx -\rho$的模型，于是$\rho + 3p = -2\rho <0$，产生了“负引力”，导致宇宙加速膨胀。}
+%\eitem
+%}
 \ech
 \end{frame}
 
