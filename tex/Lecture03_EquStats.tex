@@ -1,0 +1,215 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\input{titlepage.tex}
+\title{Lesson 03 - Statistics of Equilibrium States}
+  \author{}
+  \date{}
+\begin{document}
+\tpage{3}{热平衡态的统计分布律}
+
+\section{Reivew of Last Lecture}
+
+\begin{frame}
+\chtitle{上一讲课内容回顾}
+\bch
+上一讲的内容基本上都不考
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{好吧，还是有些内容需要掌握的}
+\bch
+\bitem
+\item{热量是能量的一种形式: $1 \SIcal \approx 4.2 \SIJ$。}
+\item{物质升温（降温）吸收（放出)的热量为热容量。单位质量物质的热容量称为比热。水的比热较大，约为$1\SIcal/\SIg$.}
+\item{熔化（凝固），汽化（液化）都是吸热（放热）且温度不变的过程。单位质量吸的热分别称为熔化热和汽化热。}
+\item{晶体长程有序。非晶体和液体都是短程有序，长程无序（区别是非晶体的分子位置是固定的）。}
+\eitem
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{本讲内容预告}
+\bch
+\bitem
+\item{微观粒子的态}
+\item{热平衡的微观描述：细致平衡}
+\item{H定理和熵}
+\item{热平衡态下微观态的分布律}
+\eitem
+\ech
+\end{frame}
+
+\section{Microstate}
+
+
+
+
+\begin{frame}
+\chtitle{态的例子}
+\bch
+\bitem
+\item{硬币有两种态：正面朝上，反面朝上
+
+\addfig{0.7}{coins.jpg}
+}
+\item{骰子有六种态：1，2，3，4，5，6
+
+\addfig{0.3}{touzi.png}
+}
+\item{同学们有很多种态：上课，吃饭，睡觉，和床引力战斗……
+
+\addfig{1.5}{xbxstates.jpg}
+}
+
+\eitem
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{有的人反对了: 骰子的六种态不一定是1，2，3，4，5，6
+}
+\bch
+
+\addfig{1.5}{touzi_work.jpg}
+
+\skipline
+
+\wulian好吧，这不是我们今天要讲的重点…
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{相空间}
+\bch
+分子的“态”由位置$(x, y, z)$和速度$(\upsilon_x, \upsilon_y, \upsilon_z)$描述：
+$$(x, y, z, \upsilon_x, \upsilon_y, \upsilon_z)$$
+或者更专业的说法是由位置和动量描述：
+$$(x, y, z, \calp_x, \calp_y, \calp_z)$$
+
+由$x, y, z, \calp_x, \calp_y, \calp_z$这六个变量（坐标轴）张成的空间称为{\blue \bf 相空间}。
+
+\bitem
+\item{经典图像（错误）：分子的态由相空间中的一个点来描述。}
+\item{量子图像（正确）：{\bf \blue 分子的态由相空间中的一个“小块”来描述。}}
+\eitem
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{相空间里的“小块”是什么鬼？}
+\bch
+以一维空间为例，相空间是$(x, \calp)$构成的二维空间，相空间里的“小块”如下图所示:
+\bmini{0.35}
+\addfig{0.8}{phasespaceblock.png}
+\emini
+\bmini{0.6}
+\bitem
+\item{普朗克常数$h=6.63\times 10^{-34}\SIJ\cdot\SIs$}
+\item{只要面积为$h$，即是合法的“小块”。如何取$\Delta x$或$\Delta \calp$视测量需要而定。}
+\item{量子力学的测不准原理保证了“小块”内的点是无法通过测量区分的。}
+\eitem
+\emini
+
+\skipline
+
+在三维空间的情况，相空间为六维空间，“小块”体积为$h^3$ (六条边长满足$\Delta \calp_x\Delta x =\Delta \calp_y\Delta y =\Delta \calp_z\Delta z = h$)
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{态是离散的相空间小块}
+\bch
+\bitem
+\item{\bf $n$维空间$(x_1, x_2, \ldots, x_n)$对应的相空间为$2n$维相空间$(x_1, x_2, \ldots, x_n, \calp_1, \calp_2, \ldots, \calp_n)$。}
+\item{\bf 相空间内“小块”是一个假想的$2n$维体。在每个轴方向上的边长依次为$(\Delta x_1, \Delta x_2, \ldots, \Delta x_n, \Delta \calp_1, \Delta \calp_2, \ldots, \Delta \calp_n)$。边长两两成对满足$\Delta x_i \cdot \Delta \calp_i = h$ ($i=1, 2, \ldots, n$)。显然，“小块”的体积为$h^n$。}
+\item{\bf 在每个维度上如何取$\Delta x_i$则视测量需求而定，有时甚至可以取$\Delta x_i$为宏观尺度。}
+\item{\bf 相空间的每个“小块”对应一个微观粒子的态。虽然数学上“小块”仍然是无限可分的，在物理上却由于测不准原理而无法再划分更细的状态。}
+\eitem
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+一个边长为$0.663\SIm$的正方体容器里，质量为$10^{-26}\SIkg$，速度不超过$10^3\SIm\SIs^{-1}$的粒子共有多少种可能的态？
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+一个边长为$0.663\SIm$的正方体容器里，质量为$10^{-26}\SIkg$，速度不超过$0.8$倍光速的粒子共有多少种可能的态？
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{测量空气分子的动量}
+\bch
+考虑装在一个边长$L= 1\SIm$的正方体容器里的空气。取空气分子的平均质量，$\bar{m} = \frac{29\SIg\cdot\SImol^{-1}}{6.02\times 10^{23}\SImol^{-1}}\approx 5 \times 10^{-26}\SIkg$
+
+取室温$T=300K$，则空气分子动量大小的数量级为
+$$\calp \sim \sqrt{m^2\overline{\upsilon^2}} \sim \sqrt{3mkT} \approx 2\times 10^{-23} \SIkg \SIm\SIs^{-1} $$
+
+我们准备测量空气分子的速度的分布规律，希望动量空间的分辨率尽可能地高，所以在位置空间尽可能地降低分辨率：取$\Delta x=\Delta y=\Delta z = L$（也就是说我们只要求分子在容器内，而不去测量它的具体位置）。那么动量空间的分辨率(即小块沿动量轴方向的边长)为
+$$\Delta \calp_x = \Delta \calp_y = \Delta \calp_z= \frac{h}{L} = 6.63\times 10^{-34} \SIkg\SIm\SIs^{-1} \sim 10^{-11} \calp$$
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{测量空气分子的动量(续）}
+\bch
+现在我们更贪心，希望把分子的位置确定到分子平均距离的数量级（$d\sim 3\times 10^{-9}\SIm$)，这时动量分辨率约为
+$$\Delta \calp \sim \frac{h}{d} \sim 10^{-25} \SIkg\SIm\SIs^{-1} \sim 10^{-2} \calp$$
+
+也就是说，课本上第二章讨论玻尔兹曼分布时的经典图像（同时知道分子的位置和动量），大致上可以实现。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{麦克斯韦分布(Maxwell distribution)}
+\bch
+现在我们考虑非相对论气体分子的速度分布规律。
+
+\skipline
+
+{\blue \bf 分子的“态” = 分子在相空间的哪个小块里 }
+
+\skipline
+
+我们仍取$\Delta x$, $\Delta y$, $\Delta z$为整个容器的长，宽，高。那么在位置空间就不需要进行划分了。分子的态由动量空间的坐标$(\calp_x, \calp_y, \calp_z)$唯一决定。当然，$\calp_x$, $\calp_y$, $\calp_z$的取值并不是连续的，它们分别是$\Delta \calp_x=\frac{h}{\Delta x}$, $\Delta \calp_y=\frac{h}{\Delta y}$, $\Delta \calp_z=\frac{h}{\Delta z}$的整数倍。
+
+\skipline
+根据我们第一讲给的“万能法则”，达到热平衡时，分子处在一个能量为$\varepsilon$的态的概率正比于$e^{-\frac{\varepsilon}{kT}}$。
+所以，质量为$m$的分子处在任何一个态$(\calp_x, \calp_y, \calp_z)$的概率正比于
+$$e^{-\frac{m\upsilon^2}{2kT}}$$
+其中
+$\upsilon = \frac{\sqrt{\calp_x^2 +\calp_y^2+ \calp_z^2}}{m}$
+是分子速率。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{麦克斯韦分布(续)}
+\bch
+分子速率在$\upsilon$和$\upsilon+d\upsilon$之间的态（“小块”）有多少个呢？很简单，用相空间的体积除以小块的体积$h^3$即可。
+$$N(\upsilon)d\upsilon = \frac{(\Delta x \Delta y \Delta z )4\pi (m\upsilon)^2d(m\upsilon)}{h^3}\propto \upsilon^2d\upsilon$$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{}
+\bch
+\ech
+\end{frame}
+
+\end{document}
