@@ -7,7 +7,7 @@
 \begin{document}
 \tpage{3}{热平衡态的统计分布律}
 
-\section{Reivew of Last Lecture}
+\section{Reivew}
 
 \begin{frame}
 \chtitle{上一讲课内容回顾}
@@ -34,9 +34,8 @@
 \bch
 \bitem
 \item{微观粒子的态}
-\item{热平衡的微观描述：细致平衡}
-\item{H定理和熵}
-\item{热平衡态下微观态的分布律}
+\item{麦克斯韦分布}
+\item{麦克斯韦-玻尔兹曼分布}
 \eitem
 \ech
 \end{frame}
@@ -68,11 +67,11 @@
 \end{frame}
 
 \begin{frame}
-\chtitle{有的人反对了: 骰子的六种态不一定是1，2，3，4，5，6
+\chtitle{有的人反对了: 骰子的六种态不一定是123456
 }
 \bch
 
-\addfig{1.5}{touzi_work.jpg}
+\addfig{1.2}{touzi_work.jpg}
 
 \skipline
 
@@ -83,7 +82,7 @@
 \begin{frame}
 \chtitle{相空间}
 \bch
-分子的“态”由位置$(x, y, z)$和速度$(\upsilon_x, \upsilon_y, \upsilon_z)$描述：
+气体分子的“态”由位置$(x, y, z)$和速度$(\upsilon_x, \upsilon_y, \upsilon_z)$描述：
 $$(x, y, z, \upsilon_x, \upsilon_y, \upsilon_z)$$
 或者更专业的说法是由位置和动量描述：
 $$(x, y, z, \calp_x, \calp_y, \calp_z)$$
@@ -102,7 +101,7 @@ $$(x, y, z, \calp_x, \calp_y, \calp_z)$$
 \begin{frame}
 \chtitle{相空间里的“小块”是什么鬼？}
 \bch
-以一维空间为例，相空间是$(x, \calp)$构成的二维空间，相空间里的“小块”如下图所示:
+假设位置空间$x$是一维的，则相空间是$(x, \calp)$构成的二维空间，相空间里的“小块”如下图所示:
 \bmini{0.35}
 \addfig{0.8}{phasespaceblock.png}
 \emini
@@ -125,7 +124,7 @@ $$(x, y, z, \calp_x, \calp_y, \calp_z)$$
 \chtitle{态是离散的相空间小块}
 \bch
 \bitem
-\item{\bf $n$维空间$(x_1, x_2, \ldots, x_n)$对应的相空间为$2n$维相空间$(x_1, x_2, \ldots, x_n, \calp_1, \calp_2, \ldots, \calp_n)$。}
+\item{\bf $n$维位置空间$(x_1, x_2, \ldots, x_n)$对应$2n$维相空间$(x_1, x_2, \ldots, x_n, \calp_1, \calp_2, \ldots, \calp_n)$。}
 \item{\bf 相空间内“小块”是一个假想的$2n$维体。在每个轴方向上的边长依次为$(\Delta x_1, \Delta x_2, \ldots, \Delta x_n, \Delta \calp_1, \Delta \calp_2, \ldots, \Delta \calp_n)$。边长两两成对满足$\Delta x_i \cdot \Delta \calp_i = h$ ($i=1, 2, \ldots, n$)。显然，“小块”的体积为$h^n$。}
 \item{\bf 在每个维度上如何取$\Delta x_i$则视测量需求而定，有时甚至可以取$\Delta x_i$为宏观尺度。}
 \item{\bf 相空间的每个“小块”对应一个微观粒子的态。虽然数学上“小块”仍然是无限可分的，在物理上却由于测不准原理而无法再划分更细的状态。}
@@ -175,6 +174,8 @@ $$\Delta \calp \sim \frac{h}{d} \sim 10^{-25} \SIkg\SIm\SIs^{-1} \sim 10^{-2} \c
 \end{frame}
 
 
+\section{Maxwell Distribution}
+
 \begin{frame}
 \chtitle{麦克斯韦分布(Maxwell distribution)}
 \bch
@@ -201,15 +202,293 @@ $\upsilon = \frac{\sqrt{\calp_x^2 +\calp_y^2+ \calp_z^2}}{m}$
 \begin{frame}
 \chtitle{麦克斯韦分布(续)}
 \bch
-分子速率在$\upsilon$和$\upsilon+d\upsilon$之间的态（“小块”）有多少个呢？很简单，用相空间的体积除以小块的体积$h^3$即可。
-$$N(\upsilon)d\upsilon = \frac{(\Delta x \Delta y \Delta z )4\pi (m\upsilon)^2d(m\upsilon)}{h^3}\propto \upsilon^2d\upsilon$$
+分子速率在$\upsilon$和$\upsilon+d\upsilon$之间的态（相空间“小块”）有多少个呢？很简单，用相空间的体积除以小块的体积$h^3$即可。
+
+\skipline
+
+
+态的数目 = $ \frac{(\Delta x \Delta y \Delta z )4\pi (m\upsilon)^2d(m\upsilon)}{h^3}\propto \upsilon^2d\upsilon$
 \ech
 \end{frame}
 
 \begin{frame}
-\chtitle{}
+\chtitle{麦克斯韦分布(续)}
 \bch
+{\small 分子速率在$\upsilon$和$\upsilon+d\upsilon$之间的概率=每个态上出现的概率$\times$态的数目}，
+$$F_M(\upsilon) d\upsilon \propto \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}}d\upsilon.$$
+上式中的$F_M(\upsilon)$是分子速率为$\upsilon$的概率密度，满足归一化条件$\int_0^\infty F_M(\upsilon)d\upsilon = 1$。在三维速度空间，分子速度为$\vecv$(注意这是个三维矢量)的概率密度
+$$f_M(\vecv) = \frac{1}{4\pi|\vecv|^2}F_M(|\vecv|)\, ,$$
+满足归一化条件$\int f_M(\vecv) d^3\vecv = 1$ (积分元$d^3\vecv \equiv d\upsilon_xd\upsilon_yd\upsilon_z$).
+
+教材上有时把$f_M(\vecv)$写成$f_M(\upsilon)$, $f_M(\upsilon^2)$,$f(\upsilon)$等等，你们当作没看见就行\wulian
+
 \ech
 \end{frame}
+
+\begin{frame}
+\chtitle{麦克斯韦分布的归一化系数}
+\bch
+设
+$$F_M(\upsilon) = C \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}}.$$
+由归一化条件$\int_0^\infty F_M(\upsilon)d\upsilon = 1$得到
+$$ C = \frac{1}{\int_0^\infty \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}}d\upsilon} \, . $$
+下面我们来计算这个积分。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{数学技能：高斯积分}
+\bch
+{\blue
+$$\int_{-\infty}^\infty e^{-ax^2}dx =\sqrt{\frac{\pi}{a}} \, \ \ \ \ (a>0).$$}
+
+{\scriptsize
+证明：设$I = \int_{-\infty}^\infty e^{-ax^2}dx$, 则
+
+\bmini{0.6}
+\bea
+I^2 &=& \left(\int_{-\infty}^\infty e^{-ax^2}dx\right) \left(\int_{-\infty}^\infty e^{-ay^2}dy\right) \newl 
+&=& \int_{-\infty}^\infty dx \int_{-\infty}^\infty dy \, e^{-a(x^2+y^2)}  \newl
+&=& \int_0^\infty dr \int_0^{2\pi} rd\theta \, e^{-ar^2}  \newl  
+&=& 2\pi \int_0^{\infty} r e^{-ar^2}dr \newl
+&=& -\left.\frac{\pi}{a} e^{-ar^2}\right\vert_0^{\infty} \newl
+&=& \frac{\pi}{a}
+\eea
+\emini
+\bmini{0.35}
+\hspace{0.2in}
+
+转换到极坐标$(r,\theta)$,面积元变为 $r dr d\theta$
+\emini
+
+又显然 $I>0$，故$I =\sqrt{\frac{\pi}{a}}$.
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{数学技能：加权的高斯积分}
+\bch
+{\small
+对高斯积分中的$a$求导数
+$$\frac{d}{da}\int_{-\infty}^\infty e^{-ax^2}dx =-\frac{\sqrt{\pi}}{2a^{3/2}} \,.$$
+（心安理得地，无视数学老师地\bye）交换积分和求导的次序
+$$\int_{-\infty}^\infty \frac{d }{da}e^{-ax^2} dx =-\frac{\sqrt{\pi}}{2a^{3/2}} \,.$$
+即得到
+$$\int_{-\infty}^\infty x^2 e^{-ax^2} dx =\frac{\sqrt{\pi}}{2a^{3/2}} \,.$$
+令$a = \frac{m}{2kT}$，即有
+$$\int_0^\infty \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}}d\upsilon =\frac{1}{2}\int_{-\infty}^\infty \upsilon^2 e^{-\frac{m\upsilon^2}{2kT}}d\upsilon = \frac{\sqrt{\pi}}{4}\left(\frac{2kT}{m}\right)^{3/2}=\frac{1}{4\pi}\left(\frac{2\pi kT}{m}\right)^{3/2} $$
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+
+\addfig{0.8}{think2.jpg}
+
+你能用不激怒数学老师的方法证明
+$$\int_{-\infty}^\infty x^2 e^{-ax^2} dx =\frac{\sqrt{\pi}}{2a^{3/2}} \,.$$
+吗？
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{归一化的麦克斯韦速度分布函数}
+\bch
+{\small
+于是我们得到
+$$F_M(\upsilon) = 4\pi \upsilon^2 \left(\frac{m}{2\pi kT}\right)^{3/2} e^{-\frac{m\upsilon^2}{2kT}}\,.$$
+
+写成{\bf \blue 麦克斯韦速度分布函数（即三维速度空间的概率密度）：
+$$f_M(\vecv) = \left(\frac{m}{2\pi kT}\right)^{3/2} e^{-\frac{m|\vecv|^2}{2kT}}\, .$$}
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{另一种推导方法(更方便快捷)}
+\bch
+{\small
+由于动能在三个自由度上的贡献是独立的，我们由“万能法则”可以得到$\upsilon_x$的概率密度函数为
+$$ f_{1D}(\upsilon_x) =  C e^{-\frac{m\upsilon_x^2}{2kT}}$$
+由归一化条件$\int_{-\infty}^\infty f(\upsilon_x)d\upsilon_x = 1$以及高斯积分公式($a = \frac{m}{2kT}$)，得到
+
+$$ f_{1D}(\upsilon_x) =   \sqrt{\frac{m}{2\pi kT}} e^{-\frac{m\upsilon_x^2}{2kT}}$$
+显然对$\upsilon_y$, $\upsilon_z$可以得到一样的结果，因为综合事件的概率等于每一个独立子事件的概率的乘积，所以对$\vecv = (\upsilon_x, \upsilon_y, \upsilon_z)$有
+$$f_M(\vecv) = f_{1D}(\upsilon_x)f_{1D}(\upsilon_y)f_{1D}(\upsilon_z)=  \left(\frac{m}{2\pi kT}\right)^{3/2} e^{-\frac{m(\upsilon_x^2+\upsilon_y^2+\upsilon_z^2)}{2kT}}   \, .$$
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{统计平均量}
+\bch
+速度的任何函数$g(\vecv)$的统计平均显然为
+{\blue $$\overline{g(\vecv)} = \int f_M(\vecv) g(\vecv) d^3\vecv$$}
+如果$g$只是速率的函数，则其统计平均可以写成
+{\blue $$\overline{g(\upsilon)} = \int_0^{\infty} F_M(\upsilon) g(\upsilon)d\upsilon.$$}
+如果$g$只是单独一个自由度$\upsilon_x$的函数，则其统计平均
+{\blue $$\overline{g(\upsilon_x)} = \int_{-\infty}^{\infty} f_{1D}(\upsilon_x) g(\upsilon_x)d\upsilon_x.$$}
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{练习题}
+\bch
+{\small
+按麦克斯韦分布的三维概率密度形式：
+$$f_M(\upsilon_x, \upsilon_y, \upsilon_z) =\left(\frac{m}{2\pi kT}\right)^{3/2} e^{-\frac{m(\upsilon_x^2+\upsilon_y^2+\upsilon_z^2)}{2kT}}   \, .$$
+或者其径向一维概率密度形式：
+$$F_M(\upsilon) = 4\pi \upsilon^2 \left(\frac{m}{2\pi kT}\right)^{3/2} e^{-\frac{m\upsilon^2}{2kT}}\,\ \ \ \ (\upsilon>0)$$
+或其单独一个自由度的一维概率密度形式：
+$$ f_{1D}(\upsilon_x) =   \sqrt{\frac{m}{2\pi kT}} e^{-\frac{m\upsilon_x^2}{2kT}}$$
+
+计算下列函数的统计平均量
+\bitem
+\item{ $\overline{\upsilon}$ }
+\item{ $\overline{\upsilon^2}$ }
+\item{ $\overline{\upsilon_x\theta(\upsilon_x)}$，其中台阶函数$\theta(x)$当$x\ge 0$时取值为$1$,否则为零。}
+\eitem}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{方均根速率(root mean square velocity)}
+\bch
+方均根速率$\upsilon_{\rm rms}$定义为
+$$\upsilon_{\rm rms} \equiv \sqrt{\overline{\upsilon^2}}$$
+它表征的是分子平均动能的大小。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{平均速率(root mean square velocity)}
+\bch
+平均速率$\upsilon_{\rm rms}$定义为$$\overline{\upsilon}$$
+它可以用来计算分子的平均自由程。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{泄流速率(root mean square velocity)}
+\bch
+泄流速率定义为
+$$\overline{\upsilon_x^+} \equiv \overline{\upsilon_x\theta(\upsilon_x)}$$
+设分子数密度为$n$，在容器壁上挖个小孔，则单位时间从单位面积上泄出的分子数为
+$n \overline{\upsilon_x^+}$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{0.8}{think3.jpg}
+“泄流”和“泻流”哪个词里的汉字用法更为正确？
+\ech
+\end{frame}
+
+
+\section{MB distribution}
+
+\begin{frame}
+\chtitle{麦克斯韦-玻尔兹曼分布(Maxwell-Boltzmann Distribution)}
+\bch
+\bitem
+\item{如果分子在不同位置有不同的势能，则分子在位置空间的分布就不是均匀的了。也就是说，气体各处会产生密度梯度。}
+\item{如果我们希望同时描述分子在位置空间和速度空间的分布规律，划分相空间“小块”时就要两者兼顾了: 即$\Delta x$和
+$\Delta \calp_x$都必须远小于我们测量的精度，才能用连续的概率密度函数来描述分子的分布。}
+\eitem
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{重力势能的情况}
+\bch
+假设沿$z$方向有强度为$g$的重力场，则分子的能量
+$$\varepsilon = \frac{1}{2}m\upsilon^2 + mgz$$
+
+按照“万能法则”，分子在相空间某小块(设坐标为$(x, y, z, \calp_x, \calp_y, \calp_z)$）出现的概率正比于：
+
+$$f_{MB}(x, y, z, \upsilon_x, \upsilon_y,\upsilon_z) \propto e^{-\frac{\frac{1}{2}m\upsilon^2 + mgz}{kT}}$$
+
+上式可以拆成两个独立分布的乘积：
+$$f_{MB}(x, y, z, \upsilon_x, \upsilon_y,\upsilon_z) \propto e^{-\frac{m\upsilon^2}{2kT}} e^{-\frac{mgz}{kT}}$$
+
+可以看到，在速度空间的分布和在位置空间的分布互不干扰，所以我们可以得到分子数密度
+$$n = n_0 e^{-\frac{mgz}{kT}}\, ,$$
+其中$n_0$为$z=0$处的分子数密度。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{离心力势能}
+\bch
+在旋转参照系中，离心力势能可以写成
+$$U(r) = -\frac{1}{2}m\omega^2r^2$$
+其中$r$为离旋转中心的径向距离，$\omega$为旋转系相对于惯性系的旋转角速度。
+
+\skipline
+
+根据一样的推导过程，可以得到
+$$n = n_0 e^{\frac{m\omega^2r^2}{2kT}}$$
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{0.8}{think.jpg}
+你能否解释台风的“外围狂风暴雨，中心风和日丽”的奇特现象？
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{麦克斯韦-玻尔兹曼能量分布律}
+\bch
+一般地，如果位置空间和速度空间的能量形式没有交叉项，我们可以分离位置空间和速度空间的分布（概率密度），得到分子在相空间的概率密度为：
+$$f_{MB}(x, y, z,\upsilon_x, \upsilon_y,\upsilon_z) = n_0 \left(\frac{m}{2\pi kT}\right)^{3/2} e^{-\frac{\varepsilon}{kT}} $$
+其中能量$\varepsilon$是动能与势能之和：
+$$\varepsilon = \frac{1}{2}m\upsilon^2 + U(x,y,z)$$
+这是著名的麦克斯韦-玻尔兹曼能量分布律（\wulian 好像跟我们反复念叨的万能法则是一回事）。
+\ech
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
