@@ -360,9 +360,29 @@ $$ f_{1D}(\upsilon_x) =   \sqrt{\frac{m}{2\pi kT}} e^{-\frac{m\upsilon_x^2}{2kT}
 \begin{frame}
 \chtitle{方均根速率(root mean square velocity)}
 \bch
-方均根速率$\upsilon_{\rm rms}$定义为
+{\small 方均根速率$\upsilon_{\rm rms}$定义为
 $$\upsilon_{\rm rms} \equiv \sqrt{\overline{\upsilon^2}}$$
-它表征的是分子平均动能的大小。
+它表征的是分子平均动能的大小。麦克斯韦分布的方均根速率为$\upsilon_{\rm rms} = \sqrt{\frac{3kT}{m}}$，证明如下：}
+{\tiny
+\bmini{0.6}
+\bea
+\overline{\upsilon^2} &=& \int F_M(\upsilon) \upsilon^2d\upsilon \newl
+&=& 4\pi  \left(\frac{m}{2\pi kT}\right)^{3/2} \int_0^\infty \upsilon^4 e^{-\frac{m\upsilon^2}{2kT}} d\upsilon \newl
+&=& 4\pi  \left(\frac{\alpha}{\pi}\right)^{3/2}\left. \frac{d^2}{d\alpha^2}\left(\int_0^\infty e^{-\alpha \upsilon^2}d\upsilon \right)\right\vert_{\alpha = m/(2kT)} \newl
+&=& 4\pi  \left(\frac{\alpha}{\pi}\right)^{3/2} \left. \frac{d^2}{d\alpha^2}\left(\frac{1}{2}\sqrt{\frac{\pi}{\alpha}}\right)\right\vert_{\alpha = m/(2kT)} \newl
+&=& 4\pi  \left.\left(\frac{\alpha}{\pi}\right)^{3/2} \frac{3}{8\alpha^2} \sqrt{\frac{\pi}{\alpha}} \right\vert_{\alpha = m/(2kT)} \newl
+&=& \frac{3kT}{m} 
+\eea 
+\emini
+\bmini{0.35}
+把$\upsilon^4$看成是两次求导的产物，并心安理得地交换了积分和求导次序
+
+\skiplines
+
+积分范围是$0$到$\infty$,所以是高斯积分的一半。
+\vspace{0.05in}
+\emini
+}
 \ech
 \end{frame}
 
@@ -370,8 +390,26 @@ $$\upsilon_{\rm rms} \equiv \sqrt{\overline{\upsilon^2}}$$
 \begin{frame}
 \chtitle{平均速率(root mean square velocity)}
 \bch
+{\small 
 平均速率$\upsilon_{\rm rms}$定义为$$\overline{\upsilon}$$
-它可以用来计算分子的平均自由程。
+它可以用来计算分子的平均自由程。麦克斯韦分布的平均速率为$\bar{\upsilon} = \sqrt{\frac{8kT}{\pi m}}$，证明如下:}
+{\tiny
+\bmini{0.6}
+\bea
+\bar{\upsilon} &=& \int_0^\infty F_M(\upsilon)\upsilon d\upsilon \newl
+&=& 4\pi  \left(\frac{m}{2\pi kT}\right)^{3/2} \int_0^\infty \upsilon^3 e^{-\frac{m\upsilon^2}{2kT}} d\upsilon \newl
+&=& 4\pi  \left(\frac{\alpha}{\pi}\right)^{3/2}\left. \frac{d}{d\alpha}\left(\int_0^\infty (-\upsilon e^{-\alpha \upsilon^2})d\upsilon \right)\right\vert_{\alpha = m/(2kT)} \newl
+&=& 4\pi  \left(\frac{\alpha}{\pi}\right)^{3/2}\left. \frac{d}{d\alpha}\left(\left.\frac{1}{2\alpha} e^{-\alpha \upsilon^2}\right\vert_0^\infty \right)\right\vert_{\alpha = m/(2kT)} \newl
+&=& 4\pi  \left(\frac{\alpha}{\pi}\right)^{3/2}\left. \frac{d}{d\alpha}\left(-\frac{1}{2\alpha} \right)\right\vert_{\alpha = m/(2kT)} \newl
+&=& \sqrt{\frac{8kT}{\pi m}}
+\eea
+\emini
+\bmini{0.35}
+把$(-\upsilon^2)$看成是一次求导的产物，交换了积分和求导次序
+
+\vspace{0.3in}
+\emini
+}
 \ech
 \end{frame}
 
@@ -379,10 +417,21 @@ $$\upsilon_{\rm rms} \equiv \sqrt{\overline{\upsilon^2}}$$
 \begin{frame}
 \chtitle{泄流速率(root mean square velocity)}
 \bch
+{\small
 泄流速率定义为
 $$\overline{\upsilon_x^+} \equiv \overline{\upsilon_x\theta(\upsilon_x)}$$
 设分子数密度为$n$，在容器壁上挖个小孔，则单位时间从单位面积上泄出的分子数为
-$n \overline{\upsilon_x^+}$
+$n \overline{\upsilon_x^+}$。麦克斯韦分布下的泄流速率为$\sqrt{\frac{kT}{2\pi m}}$，证明如下：}
+{\tiny
+\bea
+\overline{\upsilon_x^+} &=& \int_{-\infty}^\infty f_{1D}(\upsilon_x) \upsilon_x \theta(\upsilon_x) d\upsilon_x \newl
+ &=& \int_0^\infty f_{1D}(\upsilon_x) \upsilon_x  d\upsilon_x \newl
+ &=& \int_0^\infty \sqrt{\frac{m}{2\pi kT}} e^{-\frac{m\upsilon_x^2}{2kT}}\upsilon_x d\upsilon_x \newl
+&=& \sqrt{\frac{m}{2\pi kT}} \left(-\frac{kT}{m}\right) \left. e^{-\frac{m\upsilon_x^2}{2kT}}\right\vert_0^{\infty} \newl
+&=& \sqrt{\frac{kT}{2\pi m}}
+\eea
+}
+
 \ech
 \end{frame}
 
