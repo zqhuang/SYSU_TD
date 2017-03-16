@@ -110,7 +110,7 @@ $-100\le x, y \le 100$。
 \chtitle{数学概念充电：多元变量的概率密度}
 \bch
 
-\addfig{1}{think.jpg}
+\addfig{0.8}{mouse.jpg}
 
 {\bf 以$x$为变量}，田鼠窝在$x=50$处的{\bf 概率密度}是多少？
 
@@ -122,9 +122,20 @@ $-100\le x, y \le 100$。
 \chtitle{数学概念充电：多元变量的概率密度}
 \bch
 
-\addfig{1}{think.jpg}
+\addfig{0.8}{mouse.jpg}
 
 {\bf 以$s\equiv x^2$为变量}，田鼠窝在$s=2500$处的概率密度是多少？
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{数学概念充电：多元变量的概率密度}
+\bch
+
+\addfig{0.8}{mouse.jpg}
+
+{\bf 以$s_x\equiv x^2$, $s_y \equiv y^2$为变量}，田鼠窝在$s_x=2500, s_y=2500$处的概率密度是多少？
 
 \ech
 \end{frame}
@@ -136,7 +147,6 @@ $-100\le x, y \le 100$。
 \bitem
 \item{能均分定理与热容量}
 \item{熵 (entropy)}
-\item{量子气体简介}
 \eitem
 \ech
 \end{frame}
@@ -168,10 +178,69 @@ $-100\le x, y \le 100$。
 &=& \frac{\frac{kT}{2}\int_{-\infty}^{\infty} e^{-\frac{c\calp^2}{kT}}d\calp  }{\int_{-\infty}^{\infty} e^{-\frac{c\calp^2}{kT}}d\calp }  \newl
 &=& \frac{kT}{2}
 \eea
+
+计算也可以直接用上节课讲的“交换积分和求导次序”的办法来进行。
 }
 \ech
 \end{frame}
 
+\begin{frame}
+\chtitle{坐标二次型能量的能均分定理证明}
+\bch
+坐标二次型的情况，把上述证明中的$\calp$换成$x$即可。
+
+\skiplines
+
+证明都是利用了相空间（的态）是按坐标和动量均匀划分的。
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{0.8}{think2.jpg}
+如果能量是某自由度动量的四次型$\varepsilon = cp^4$ ($c>0$为常量)，那么能均分定理还成立吗？
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{摩尔定体热容量$C_V^{\rm mol}$}
+\bch
+摩尔定体热容量$C_V^{\rm mol}$ $\equiv$ $1\SImol$ 固定体积的气体升高$1\SIK$需要吸收的热量
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{摩尔定体热容量$C_V^{\rm mol}$}
+\bch
+若分子的自由度为$s$个，由能均分定理，$1\SImol$气体包含内能为
+
+$$U^{\rm mol} = N_A \frac{skT}{2} = \frac{sRT}{2}$$
+
+固定体积意味着不做功，内能的增长来自于吸收的热量，于是固定体积的摩尔热容为
+$$C_V^{\rm mol} = \frac{s}{2} R$$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+理想情况下，下列物质的摩尔定体热容量为多少？
+
+\bitem
+\item{单原子气体}
+\item{双原子气体}
+\item{构成正三角形的三原子分子}
+\item{固体}
+\eitem
+\ech
+\end{frame}
 
 
 \section{Entropy}
@@ -820,7 +889,11 @@ $$\dbar Q = N\sum_a \epsilon_a d p_a = T dS $$
 \begin{frame}
 \chtitle{第四周作业(序号接第三周）}
 \bch
-
+\bitem
+\item{教材习题2-7}
+\item{教材习题2-22}
+\item{教材习题2-23}
+\eitem
 \ech
 \end{frame}
 
