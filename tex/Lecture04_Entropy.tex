@@ -219,7 +219,7 @@ $-100\le x, y \le 100$。
 \begin{frame}
 \chtitle{摩尔定体热容量$C_V^{\rm mol}$}
 \bch
-若分子的自由度为$s$个，由能均分定理，$1\SImol$气体包含内能为
+若分子的有$s$项二次型能量，由能均分定理，$1\SImol$气体包含内能为
 
 $$U^{\rm mol} = N_A \frac{skT}{2} = \frac{sRT}{2}$$
 
@@ -242,8 +242,30 @@ $$C_V^{\rm mol} = \frac{s}{2} R$$
 \ech
 \end{frame}
 
+\begin{frame}
+\chtitle{二次型能量的数法}
+\bch
+$s =$ 质心平动自由度数（气体3； 固体0） + 确定方向需要的转动参数个数 （点0；线2；面和体3）+ 弹簧个数$\times 2$  
+
+\bitem
+\item{单原子气体: $s = 3 + 0 + 0 = 3$}
+\item{双原子气体: $s = 3 + 2 + 1\times 2 = 7$}
+\item{构成正三角形的三原子分子: $s = 3 + 3 + 3\times 2 = 12$}
+\item{固体（假设正方体晶格): $s = 0 + 0 + 3 \times 2 = 6$}
+\eitem
+\ech
+\end{frame}
 
 \section{Entropy}
+
+
+\begin{frame}
+\bch
+下面我们来讨论“熵”
+\ech
+\end{frame}
+
+
 
 \begin{frame}
 \chtitle{玻尔兹曼的墓碑(Boltzmann's Grave)}
@@ -890,9 +912,9 @@ $$\dbar Q = N\sum_a \epsilon_a d p_a = T dS $$
 \chtitle{第四周作业(序号接第三周）}
 \bch
 \bitem
-\item{教材习题2-7}
-\item{教材习题2-22}
-\item{教材习题2-23}
+\item[10]{教材习题2-7}
+\item[11]{教材习题2-22}
+\item[12]{教材习题2-23}
 \eitem
 \ech
 \end{frame}
