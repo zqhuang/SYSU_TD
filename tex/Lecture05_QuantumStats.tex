@@ -457,17 +457,17 @@ $$ p = \frac{2}{5} n \varepsilon_F \sim 4\times 10^{10}\SIPa$$
 \end{frame}
 
 \begin{frame}
-\chtitle{光子气体}
+\chtitle{斯特藩-玻尔兹曼(Stefan-Boltzmann)定律}
 \bch
 光子的能量$\varepsilon = \calp c$，基态能量为$0$。当有一个温度为$T$的辐射源和光子气体达到热平衡时，光子的化学势达到$\mu = 0$。
 
 可以计算热辐射的光子气体的能量为
-$$\int_0^\infty \frac{\calp c}{e^{\frac{\calp c}{kT}}-1} \frac{g V 4\pi\calp^2 d\calp}{h^3} $$
+$$E = \int_0^\infty \frac{\calp c}{e^{\frac{\calp c}{kT}}-1} \frac{g V 4\pi\calp^2 d\calp}{h^3} $$
 其中$g=2$是光子的内禀态数（自旋为$1$和$-1$)，$V$是体积。
 
-上式稍加整理即得到斯特藩-玻尔兹曼(Stefan-Boltzmann)定律，
-$$u = a T^4$$
-其中斯特藩-玻尔兹曼常数$a$为
+上式稍加整理即得到光子气体的能量密度
+$$u = \frac{E}{V}= a T^4$$
+这称为斯特藩-玻尔兹曼定律，其中斯特藩-玻尔兹曼常数$a$为
 $$a = \frac{k^4}{\pi^2c^3\hbar^3}\int_0^\infty  \frac{x^3 }{e^x-1} dx$$
 
 \ech
@@ -550,10 +550,10 @@ $\sigma = \frac{ac}{4} = 5.67 \times 10^{-8} \SIW/(\SIm^2 \SIK^4)$有时也叫�
 
 太阳表面温度约为$6000\SIK$。我们估算太阳表面辐射强度为
 $$j = \sigma T^4 = 10^8 \SIW/\SIm^2 $$
-因为辐射强度按平方反比衰减，从太阳半径约为(2.3光秒）处到地球（日地距离约500光秒），衰减了约5万倍。
+因为中心辐射强度按距离平方反比衰减，从太阳表面（半径约2.3光秒）到地球（日地距离约500光秒），衰减了约5万倍。
 地球上接收到的太阳辐射强度约为$2000\SIW/\SIm^2$。
 
-\skiplines
+\addfig{1.2}{sunshine.jpg}
 
 考虑到大气的屏蔽以及大多数地区和时间太阳光都不是直射的，实际可用的太阳能比上述结果几乎要小一个数量级。
 
@@ -571,7 +571,7 @@ $$j = \sigma T^4 = 10^8 \SIW/\SIm^2 $$
 \scriptsize
 提示：利用摩尔定体热容和理想气体状态方程。
 }
-\item[15]{计算和温度为$T$的辐射源达到热平衡的光子气体的光子数密度$n$。
+\item[15]{计算温度为$T$的光子气体的光子数密度$n$。
 
 \skipline
 
