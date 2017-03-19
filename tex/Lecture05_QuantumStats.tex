@@ -14,7 +14,7 @@
 \bch
 \bitem
 \item{能均分定理}
-\item{理想摩尔定体热容 = $\frac{R}{2}\times$ 二次型能量的项数}
+\item{{\bf 理想}摩尔定体热容 = $\frac{R}{2}\times$ 二次型能量的项数}
 \item{概率的熵，多可能性事件的熵，多次重复多可能性事件的熵 （理解即可）}
 \item{孤立系统的熵增大原理$\Rightarrow$热平衡与热力学温度的数学定义（理解即可）}
 \eitem
@@ -35,17 +35,45 @@
 \section{Quantum States}
 
 \begin{frame}
+\chtitle{生活中有很多“理想很丰满，现实很骨感”的例子}
 \bch
-上节课介绍的能均分定理假设了分子的能量分布是连续的。
+\includegraphics[height=1.5in]{expectation_nn.png}\includegraphics[height=1.52in]{reality_nn.png}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{理想很丰满，现实很骨感}
+\bch
+上节课由能均分定理计算了{\bf 理想}摩尔定体热容。
+
+但实际气体或固体的摩尔定体热容往往比理想值要低很多，这是为什么呢？
+
+
+\addfig{2}{expectation_and_reality.jpg}
 
 \skipline
 
-这对束系统的能量一般不成立。下面我们计算一些简单的束缚系统的量子能级。
-
-
+赶紧去翻翻上节课后习题11是不是做对了\bye
 
 \ech
 \end{frame}
+
+
+\begin{frame}
+\chtitle{量子力学又不乖}
+\bch
+\bmini{0.4}
+\addfig{1.2}{buguai.png}
+\emini
+\bmini{0.55}
+经典图像：粒子的能量可以连续变化
+
+量子力学：束缚态的能级一般是离散的
+\emini
+\ech
+\end{frame}
+
+
 
 \begin{frame}
 \chtitle{束缚系统量子态的离散性-谐振子}
@@ -73,7 +101,7 @@ $$n = \frac{2\pi E}{ h \omega}$$
 $$ E_n \approx \frac{ n h\omega}{2\pi}$$
 量子力学的严格计算结果为
 $$ E_n = \frac{ (n+1/2) h\omega}{2\pi}\ \ (n = 0,1,2,\ldots)$$
-量子力学里经常用一个符号$\hbar = \frac{h}{2\pi}$，则
+量子力学里经常用一个符号{\blue $\hbar = \frac{h}{2\pi}$}，则
 $$ E_n = \left(n + \frac{1}{2}\right) \hbar\omega\ \ (n = 0,1,2,\ldots)$$
 
 }
@@ -85,7 +113,7 @@ $$ E_n = \left(n + \frac{1}{2}\right) \hbar\omega\ \ (n = 0,1,2,\ldots)$$
 \chtitle{振动特征温度}
 \bch
 {\small 
-显然，要使处于能量最低($n=0$)态的谐振子发生振动（即到$n>0$的态去)，最起码要吸收$\hbar \omega$的能量。
+显然，要使处于能量最低($n=0$)态的谐振子发生振动（即到$n>0$的态去)，最起码要给予它$\hbar \omega$的能量。
 
 \skipline
 
@@ -99,7 +127,7 @@ $$ E_n = \left(n + \frac{1}{2}\right) \hbar\omega\ \ (n = 0,1,2,\ldots)$$
 \chtitle{振动特征温度的数量级}
 \bch
 {\small
-我们仍然考虑一个双原子气体分子，假设是共价键，典型的键能为$100\SIkcal/\SImol$，即每个键结合能为
+我们考虑一个“长度”为$1\angstrom$的共价键，典型的键能为$100\SIkcal/\SImol$，即每个键结合能为
 $E_b\sim \frac{4.2\times 10^5J}{6.02\times 10^{23}} \sim 0.7\times 10^{-18}J$
 
 我们近似取弹性系数
@@ -107,11 +135,11 @@ $m\omega^2 \sim  \frac{2E_b}{(1 \angstrom)^2} \sim 140 \SIN/\SIm$，并取等效
 
 故振动特征温度
 $$\Theta_{\rm osc} =\frac{\hbar \omega}{k} \sim 10^3\SIK \times \sqrt{\frac{5(A_1+A_2)}{A_1A_2}} $$
-该估算比较粗糙。实际的双原子气体的$\Theta_{\rm osc}$一般在若干个$10^3\SIK$之上。所以{\blue 室温下大多数双原子气体的振动自由度不被激发。}
-
-\skipline
-
-{\blue 固体如果有比较强的键，则有些振动自由度也会被冻结，出现$C^{\rm mol}_V \ll 3R$的情况。}
+该估算比较粗糙，实际材料会有一个数量级的上下浮动。
+\bitem
+\item{大多数双原子气体的$\Theta_{\rm osc}$一般在若干个$10^3\SIK$之上。所以{\blue 室温下大多数双原子气体的振动自由度不被激发}。}
+\item{固体的$\Theta_{\rm osc}$则通常要小于室温。所以{\blue 室温下大多数固体的振动自由度是被激发的}。}
+\eitem
 }
 \ech
 \end{frame}
@@ -139,7 +167,6 @@ $$E_n = \frac{n(n+1)\hbar^2}{2I}$$
 
 \ech
 \end{frame}
-
 
 \begin{frame}
 \chtitle{转动特征温度的数量级}
@@ -193,9 +220,14 @@ $$\Theta_{\rm trans} = \frac{h^2}{8mkL^2} = 2.4\times 10^{-18}\SIK \times \frac{
 \bch
 需要理解的内容讲完了。
 
-\skiplines
+\skipline
 
 下面我要开始乱讲，听不懂不要慌，因为——不——考。
+
+\skiplines
+
+\includegraphics[width=1.5in]{notlove.jpg} \hspace{0.1in} \includegraphics[width=1.5in]{notexam.jpg}
+
 \ech
 \end{frame}
 
@@ -247,16 +279,18 @@ $$\Theta_{\rm trans} = \frac{h^2}{8mkL^2} = 2.4\times 10^{-18}\SIK \times \frac{
 \begin{frame}
 \chtitle{玻色子和费米子}
 \bch
+
 根据二次量子化的对易假设不同，可以得到两种性质不同的粒子。
 
 \bitem
-\item{可以在一个“粒子态”上放任意个粒子，我们称之为玻色子(Boson)。例如光子。}
-\item{最多只能在一个“粒子态”上放一个粒子，我们称之为费米子(Fermion)。例如电子，质子。}
+\item{可以在一个“粒子态”上放任意个粒子，我们称之为{\blue 玻色子(Boson)}。例如光子。}
+\item{最多只能在一个“粒子态”上放一个粒子，我们称之为{\blue 费米子(Fermion)}。例如电子，质子。}
 \eitem
 
-两个费米子不能在完全相同的态上，这称为“泡利(Pauli)不相容原理”。
+{\blue 两个费米子不能在完全相同的态上}，这称为“{\blue 泡利(Pauli)不相容原理}”。
 
-注意粒子往往有一些内禀自由度（自旋等）。“泡利不相容原理”仅对“态”
+{\small
+注意粒子往往有一些内禀自由度（自旋等）。之前我们讨论能级的时候，当一个自旋向上的电子和一个自旋向下的电子处于相空间的同一个“小块”时，我们并没有区分它们所处的态（因为并不对分布律的推导造成任何影响）。现在情况有所不同了：{\blue “泡利不相容原理”仅对“包含一切自由度的态”适用}。所以我们{\blue 计算态的个数（允许填充的费米子的个数）时，需要把内禀自由度算上}。}
 \ech
 \end{frame}
 
@@ -347,7 +381,7 @@ $$e^{-\frac{n_a(\varepsilon_a-\mu)+n_b(\varepsilon_b-\mu)+n_c(\varepsilon_c-\mu)
 \begin{frame}
 \chtitle{思考题：简并压和费米能的关系}
 \bch
-考虑仅有平动自由度的费米气体: $\varepsilon = \frac{\calp^2}{2m}$。设粒子数密度为$n$。
+考虑理想费米气体: $\varepsilon = \frac{\calp^2}{2m}$。设粒子数密度为$n$。
 
 \skiplines
 
@@ -426,9 +460,102 @@ $$ p = \frac{2}{5} n \varepsilon_F \sim 4\times 10^{10}\SIPa$$
 \chtitle{光子气体}
 \bch
 光子的能量$\varepsilon = \calp c$，基态能量为$0$。当有一个温度为$T$的辐射源和光子气体达到热平衡时，光子的化学势达到$\mu = 0$。
-可以计算光子气体的能量为
+
+可以计算热辐射的光子气体的能量为
 $$\int_0^\infty \frac{\calp c}{e^{\frac{\calp c}{kT}}-1} \frac{g V 4\pi\calp^2 d\calp}{h^3} $$
 其中$g=2$是光子的内禀态数（自旋为$1$和$-1$)，$V$是体积。
+
+上式稍加整理即得到斯特藩-玻尔兹曼(Stefan-Boltzmann)定律，
+$$u = a T^4$$
+其中斯特藩-玻尔兹曼常数$a$为
+$$a = \frac{k^4}{\pi^2c^3\hbar^3}\int_0^\infty  \frac{x^3 }{e^x-1} dx$$
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{计算斯特藩-玻尔兹曼常数}
+\bch
+{\scriptsize
+$$a = \frac{k^4}{\pi^2c^3\hbar^3}\int_0^\infty \frac{x^3 }{e^x-1} dx$$
+利用级数展开以及反复分部积分的方法，可以把右边的积分化为一个级数的和：
+\bea
+\int_0^\infty  \frac{x^3 }{e^x-1} dx &=& \int_0^\infty\frac{x^3e^{-x}}{1-e^{-x}}dx \newl
+&=& \sum_{n=1}^\infty  \int_0^\infty  x^3 e^{-nx} dx \newl
+&=& \sum_{n=1}^\infty \frac{3}{n} \int_0^\infty  x^2 e^{-nx} dx \newl
+&=& \sum_{n=1}^\infty \frac{6}{n^2} \int_0^\infty  x e^{-nx} dx \newl
+&=& \sum_{n=1}^\infty \frac{6}{n^3} \int_0^\infty  e^{-nx} dx \newl
+&=& \sum_{n=1}^\infty \frac{6}{n^4}
+\eea
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{计算斯特藩-玻尔兹曼常数（续）}
+\bch
+{\scriptsize
+我们知道
+$$\sin x = x-\frac{x^3}{6}+\frac{x^5}{120} - \ldots$$
+把$\sin x$看成一个无穷阶多项式，它的根为$0, \pm\pi, \pm 2\pi, \ldots$。故乘积表达式可以写成
+$$\sin x = x\prod_{n=1}^{\infty} \left(1-\frac{x}{n\pi}\right)\left(1+\frac{x}{n\pi}\right) = x\prod_{n=1}^{\infty} \left(1-\frac{x^2}{(n\pi)^2}\right)$$
+对比$x^3$的系数，得到
+\begin{equation}
+\sum_{n=1} \frac{1}{n^2} = \frac{\pi^2}{6} \label{eq:n2}
+\end{equation}
+再对比$x^5$的系数，得到
+\begin{equation}
+\sum_{n>m\ge 1}\frac{1}{n^2}\frac{1}{m^2} = \frac{\pi^4}{120} \label{eq:n4}
+\end{equation}
+\eqref{eq:n2}平方再减去\eqref{eq:n4}的两倍，得到：
+$$\sum_{n=1}^\infty \frac{1}{n^4} = \frac{\pi^4}{90} $$
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{计算斯特藩-玻尔兹曼常数（续）}
+\bch
+{\small 
+最后我们得到
+$$a = \frac{\pi^2 k^4}{15c^3\hbar^3} = 7.566 \times 10^{-16} \SIJ/(\SIm^3\SIK^4) $$
+由光子能量密度
+$$u = a T^4$$
+还能算出压强(单位时间穿过的动量）
+$$p = \frac{1}{3}u = \frac{a}{3} T^4$$
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{斯特藩-玻尔兹曼定律的另一种表述方式}
+\bch
+{\small 
+如果在热辐射光子气体中放一个接收板，则单位时间单位面积接收的能量为
+$$j = \frac{ac}{4}T^4 = \sigma T^4 $$
+{\scriptsize (证明非常简单，请自己尝试一下。)}
+
+$\sigma = \frac{ac}{4} = 5.67 \times 10^{-8} \SIW/(\SIm^2 \SIK^4)$有时也叫做斯特藩-玻尔兹曼常数（\wulian反正$a$和$\sigma$都不是基本常数，别太在意）。
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{估算太阳能辐射强度}
+\bch
+
+太阳表面温度约为$6000\SIK$。我们估算太阳表面辐射强度为
+$$j = \sigma T^4 = 10^8 \SIW/\SIm^2 $$
+因为辐射强度按平方反比衰减，从太阳半径约为(2.3光秒）处到地球（日地距离约500光秒），衰减了约5万倍。
+地球上接收到的太阳辐射强度约为$2000\SIW/\SIm^2$。
+
+\skiplines
+
+考虑到大气的屏蔽以及大多数地区和时间太阳光都不是直射的，实际可用的太阳能比上述结果几乎要小一个数量级。
 
 \ech
 \end{frame}
@@ -438,9 +565,18 @@ $$\int_0^\infty \frac{\calp c}{e^{\frac{\calp c}{kT}}-1} \frac{g V 4\pi\calp^2 d
 \chtitle{第五周作业(序号接第四周）}
 \bch
 \bitem
-\item[13]{}
-\item[14]{}
-\item[15]{}
+\item[13]{能均分定理也适用于水中的浮游微粒，试由此求解教材习题2-24。}
+\item[14]{把室温下$1\SImol$稀薄氢气保持压强不变缓慢地加热，使得它温度升高$1\SIK$。在这个过程中氢气吸收了多少热量？
+
+\scriptsize
+提示：利用摩尔定体热容和理想气体状态方程。
+}
+\item[15]{计算和温度为$T$的辐射源达到热平衡的光子气体的光子数密度$n$。
+
+\skipline
+
+{\scriptsize 提示 ： 要用到数学常数Ap{\'e}ry's constant
+$$\zeta(3) = \sum_{n=1}^\infty \frac{1}{n^3} \approx 1.2020569\ldots $$}}
 \eitem
 \ech
 \end{frame}
