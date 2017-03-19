@@ -1,0 +1,448 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\input{titlepage.tex}
+\title{Lesson 05 - Quantum Statistics}
+  \author{}
+  \date{}
+\begin{document}
+\tpage{5}{量子统计}
+
+\section{Reivew}
+
+\begin{frame}
+\chtitle{上一讲内容回顾}
+\bch
+\bitem
+\item{能均分定理}
+\item{理想摩尔定体热容 = $\frac{R}{2}\times$ 二次型能量的项数}
+\item{概率的熵，多可能性事件的熵，多次重复多可能性事件的熵 （理解即可）}
+\item{孤立系统的熵增大原理$\Rightarrow$热平衡与热力学温度的数学定义（理解即可）}
+\eitem
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{本讲内容}
+\bch
+\bitem
+\item{离散能级和实际摩尔定体热容}
+\item{玻色气体和费米气体}
+\eitem
+\ech
+\end{frame}
+
+\section{Quantum States}
+
+\begin{frame}
+\bch
+上节课介绍的能均分定理假设了分子的能量分布是连续的。
+
+\skipline
+
+这对束系统的能量一般不成立。下面我们计算一些简单的束缚系统的量子能级。
+
+
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{束缚系统量子态的离散性-谐振子}
+\bch
+{\small 
+考虑一个质量为$m$，固有圆频率为$\omega$(即弹性系数为$m\omega^2$)的谐振子
+\addfig{1.5}{harmonic_oscillator.png}
+现在考虑所有能量小于$E$的谐振子的态的个数。若能量小于$E$，谐振子的位移$x$和动量$\calp$满足
+$$\frac{1}{2}m \omega^2 x^2 + \frac{p^2}{2m} \le E $$
+写成椭圆方程标准形式：
+$$\frac{x^2} {a^2} + \frac{p^2}{b^2} \le 1 $$
+其中$a = \frac{1}{\omega}\sqrt{\frac{2E}{m}}$, $b = \sqrt{2mE}$。故上述方程描述的相空间椭圆的面积为$ \pi a b = \frac{2\pi E}{\omega}$。
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{束缚系统量子态的离散性-谐振子}
+\bch
+{\small 
+谐振子能量小于$E$的相空间的态的个数为
+$$n = \frac{2\pi E}{ h \omega}$$
+若把态按能量从低到高排，则第$n$个态的能量为
+$$ E_n \approx \frac{ n h\omega}{2\pi}$$
+量子力学的严格计算结果为
+$$ E_n = \frac{ (n+1/2) h\omega}{2\pi}\ \ (n = 0,1,2,\ldots)$$
+量子力学里经常用一个符号$\hbar = \frac{h}{2\pi}$，则
+$$ E_n = \left(n + \frac{1}{2}\right) \hbar\omega\ \ (n = 0,1,2,\ldots)$$
+
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{振动特征温度}
+\bch
+{\small 
+显然，要使处于能量最低($n=0$)态的谐振子发生振动（即到$n>0$的态去)，最起码要吸收$\hbar \omega$的能量。
+
+\skipline
+
+如果$kT\ll \hbar\omega$ ，则谐振子无法被热运动激发（因分子碰撞只能把$\sim kT$的动能传递给谐振子)。我们把$\Theta_{\rm osc} = \frac{\hbar\omega}{k}$叫做振动特征温度。
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{振动特征温度的数量级}
+\bch
+{\small
+我们仍然考虑一个双原子气体分子，假设是共价键，典型的键能为$100\SIkcal/\SImol$，即每个键结合能为
+$E_b\sim \frac{4.2\times 10^5J}{6.02\times 10^{23}} \sim 0.7\times 10^{-18}J$
+
+我们近似取弹性系数
+$m\omega^2 \sim  \frac{2E_b}{(1 \angstrom)^2} \sim 140 \SIN/\SIm$，并取等效质量$m = \frac{A_1A_2}{(A_1+A_2)\times 6.02\times 10^{26}} \SIkg$，则$\omega \sim 10^{14}\SIHz \times \sqrt{\frac{8.4(A_1+A_2)}{A_1A_2}} $
+
+故振动特征温度
+$$\Theta_{\rm osc} =\frac{\hbar \omega}{k} \sim 10^3\SIK \times \sqrt{\frac{5(A_1+A_2)}{A_1A_2}} $$
+该估算比较粗糙。实际的双原子气体的$\Theta_{\rm osc}$一般在若干个$10^3\SIK$之上。所以{\blue 室温下大多数双原子气体的振动自由度不被激发。}
+
+\skipline
+
+{\blue 固体如果有比较强的键，则有些振动自由度也会被冻结，出现$C^{\rm mol}_V \ll 3R$的情况。}
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{转动的离散能级}
+\bch
+现在考虑绕固定轴的逆时针转动，设转动惯量为$I$。广义位置为转动角$\theta$，广义动量为$\calp = I\omega$ (这里$\omega = \frac{d\theta}{dt}$为转动角速度）。
+
+若要转动能量低于$E$，则$\frac{1}{2}I\omega^2 \le E$，或者写成$0\le \calp \le \sqrt{2I E}$。又$0\le \theta \le 2\pi$。则相空间内能量低于$E$的态个数为
+$$n = \frac{2\pi \sqrt{2IE}}{h} = \frac{\sqrt{2IE}}{\hbar}$$
+若把态按能量从低到高排，则第$n$个态的能量为
+$$E_n \approx \frac{n^2\hbar^2}{2I}$$
+严格的量子力学计算结果为
+$$E_n = \frac{n(n+1)\hbar^2}{2I}$$
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{转动特征温度}
+\bch
+同样道理，若$kT\ll \frac{\hbar^2}{2I}$，则热运动无法激发转动，我们把$\Theta_{\rm rot} = \frac{\hbar^2}{2kI}$叫做转动特征温度。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{转动特征温度的数量级}
+\bch
+我们考虑一个双原子气体分子，设两个原子间的距离为$r$，两个原子的原子量分别为$A_1$和$A_2$，则转动惯量为
+$$I = 10^{-46} \SIkg\cdot\SIm^2 \times \frac{ A_1A_2}{6.02(A_1+A_2)} \left(\frac{r}{1\angstrom}\right)^2 $$
+ 特征温度为
+$$\Theta_{\rm rot} =  \frac{\hbar^2}{2kI} = 24\SIK \times \frac{(A_1+A_2)}{ A_1A_2} \left(\frac{1\angstrom}{r}\right)^2$$
+一般都远远低于室温（特别是当$A_1$, $A_2$都较大时）。
+
+所以{\blue 室温下气体分子的转动自由度一般是被激发的}。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+先考虑简单的一维情形，设分子被限制在$0<x<L$的一维盒子里。
+\bitem
+\item{能量小于$E$的相空间的态有多少个？}
+\item{估算第$n$个能级的能量。}
+\eitem
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{平动特征温度}
+\bch
+把思考题的结果推广到三维，就可以得到边长为$L$的容器内气体的平动特征温度：
+$$\Theta_{\rm trans} = \frac{h^2}{8mkL^2} = 2.4\times 10^{-18}\SIK \times \frac{1}{A}\left(\frac{1\SIm}{L}\right)^2$$
+可见，在{\blue 宏观尺度的容器里，平动自由度一般都是被激发的}。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{双原子气体的摩尔定体热容随温度的变化}
+\bch
+如果从低温开始到高温，双原子气体的转动自由度，振动自由度会被相继激发。摩尔定体热容就从$\frac{3}{2}R$增长到$\frac{5}{2}R$再到$\frac{7}{2}R$.
+
+\addfig{2.5}{CVmol_T.png}
+
+请再参考教材85页 图2-14
+\ech
+\end{frame}
+
+\section{Bosons and Fermions}
+
+\begin{frame}
+\bch
+需要理解的内容讲完了。
+
+\skiplines
+
+下面我要开始乱讲，听不懂不要慌，因为——不——考。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{玻尔兹曼不知道的绕口令}
+\bch
+在玻尔兹曼的时代，量子力学还没被发现，遑论后来量子力学里的再次革命——“二次量子化”。
+
+\skiplines
+
+在二次量子化之后，我们把“测量到a态上有两个粒子”这句话重新进行了描述：“测量到有两个a粒子的态”。
+
+\skipline
+
+\wulian绕口令说得不错
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{玻尔兹曼的描述}
+\bch
+\addfig{1.2}{E_classic.png}
+
+测到a态有3个光子，b态有2个光子，c态有1个光子。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{二次量子化描述}
+\bch
+\bmini{0.41}
+\addfig{1.5}{E_quantum.png}
+\emini
+\bmini{0.55}
+测到光子场处在(3a，2b, 1c)态。
+
+\skiplines
+
+我们以前描述的“粒子态”是用来描述单个粒子的（可以说某粒子处在某态）。而二次量子化之后的“场态”则是描述比粒子更基本的“场”的（\bye 你们已经穿越到研究生噩梦课程《量子场论》了）。
+
+\emini
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{玻色子和费米子}
+\bch
+根据二次量子化的对易假设不同，可以得到两种性质不同的粒子。
+
+\bitem
+\item{可以在一个“粒子态”上放任意个粒子，我们称之为玻色子(Boson)。例如光子。}
+\item{最多只能在一个“粒子态”上放一个粒子，我们称之为费米子(Fermion)。例如电子，质子。}
+\eitem
+
+两个费米子不能在完全相同的态上，这称为“泡利(Pauli)不相容原理”。
+
+注意粒子往往有一些内禀自由度（自旋等）。“泡利不相容原理”仅对“态”
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{费米场的态}
+\bch
+\addfig{1.5}{E_fermion.png}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{稍作修改的“万能法则”}
+\bch
+我们现在要对“万能法则”稍作修改：场态$(n_a a, n_bb, n_c c,\ldots)$出现的概率正比于
+$$e^{-\frac{n_a(\varepsilon_a-\mu)+n_b(\varepsilon_b-\mu)+n_c(\varepsilon_c-\mu)+\ldots}{kT}} = e^{-\frac{\varepsilon_{\rm total} - \mu_{\rm total}}{kT}}$$
+
+\skiplines
+
+这里的$\mu$开始变得重要了，它称为化学势，是一个依赖于温度和总粒子数的量。它随着温度升高而降低，随着总粒子数增大而增大。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{费米-狄拉克分布(Fermi-Dirac distribution)}
+\bch
+现在考虑某粒子态a，对费米子而言，粒子态a上可以有$n=0,1$个粒子，出现概率依次正比于$e^{-\frac{n(\varepsilon_a-\mu)}{kT}}$。
+平均粒子数为
+
+\bea
+\bar{n} &=& \frac{\sum_{n=0}^1 ne^{-\frac{n(\varepsilon_a-\mu)}{kT}}}{\sum_{n=0}^1 e^{-\frac{n(\varepsilon_a-\mu)}{kT}}}  \newl
+&=& \frac{ e^{-\frac{\varepsilon_a-\mu}{kT}}}{1+ e^{-\frac{\varepsilon_a-\mu}{kT}}}  \newl
+&=& \frac{ 1}{e^{\frac{\varepsilon_a-\mu}{kT}}+1}  
+\eea
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{玻色-爱因斯坦分布(Bose-Einstein distribution)}
+\bch
+玻色子的情况要稍复杂，对$n$的求和要从$0$到$\infty$。
+{\scriptsize
+\bea
+\bar{n} &=& \frac{\sum_{n=0}^{\infty} ne^{-\frac{n(\varepsilon_a-\mu)}{kT}}}{\sum_{n=0}^1 e^{-\frac{n(\varepsilon_a-\mu)}{kT}}}  \newl
+&=& \left. \frac{\sum_{n=0}^{\infty} ne^{-nx}}{\sum_{n=0}^1 e^{-nx}}\right\vert_{x = \frac{\varepsilon_a-\mu}{kT}}  \newl
+&=& \left. \frac{-\frac{d}{d x}\sum_{n=0}^{\infty} e^{-nx}}{\sum_{n=0}^1 e^{-nx}}\right\vert_{x = \frac{\varepsilon_a-\mu}{kT}}  \newl
+&=& \left. \frac{-\frac{d}{d x}\frac{1}{1- e^{-x}} }{ \frac{1}{1- e^{-x}} }\right\vert_{x = \frac{\varepsilon_a-\mu}{kT}}  \newl
+&=& \frac{ 1}{e^{\frac{\varepsilon_a-\mu}{kT}}-1}  
+\eea
+显然，对玻色子，$\mu$不能高于基态（能量最低的态，注意这可以是多个能量相等的态）的能量。
+}
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{$T\rightarrow 0K$时的极限}
+\bch
+当温度$T\rightarrow 0$，不管是费米子还是玻色子，都尽量往低能级跑。于是产生了两种结果：
+\bitem
+\item{玻色子都集中在基态，形成一个“凝聚体”，称为“{\blue 玻色-爱因斯坦凝聚}”（BE condensation)。}
+\item{费米子则因为每个态最多只能放一个粒子，就只能按能量从低到高选择不同的态依次填充。当所有费米子都用完时，填到的那个态的能量$\varepsilon_F$称为{\blue 费米能}。}
+\eitem
+
+\skipline
+
+费米气体在$0\SIK$时也会有大量粒子处在激烈运动的非基态，形成的动理压强称为{\blue 简并压}(degeneracy pressure)。这完全是一个量子力学效应。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+试证明当$T\rightarrow 0$时
+\bitem
+\item{玻色子$\mu \rightarrow $基态能量}
+\item{而费米子$\mu \rightarrow \varepsilon_F$}
+\eitem
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题：简并压和费米能的关系}
+\bch
+考虑仅有平动自由度的费米气体: $\varepsilon = \frac{\calp^2}{2m}$。设粒子数密度为$n$。
+
+\skiplines
+
+回忆气体动理压强公式：$p =\frac{2}{3}n\bar\varepsilon$ (非相对论情形）及$p =\frac{1}{3}n\bar\varepsilon$ （相对论情形）。对费米气体，证明简并压
+\bitem
+\item{在非相对论的情形为$\frac{2}{5}n\varepsilon_F$}
+\item{在相对论的情形为$\frac{1}{4}n\varepsilon_F$}
+\eitem
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{估算费米能}
+\bch
+{\small
+考虑某个内禀态数为$g$(例如电子有自旋向上和自旋向下两个内禀态）的费米气体，当温度降为$0\SIK$，动量低于$\calp_{\max}$的态的总数为
+$$ N =  g \frac{V \left(\frac{4\pi}{3} \calp_{\max}^3\right)}{h^3} $$
+由于$0\SIK$时每个态都填了一个费米子，$n = N/V$即是粒子数密度，我们得到
+
+非相对论情形
+$$\varepsilon_F = \frac{\calp_{\max}^2}{2m} =  \left(\frac{3n}{4\pi g}\right)^{2/3} \frac{h^2}{2m} = \left(\frac{6\pi^2 n}{ g}\right)^{2/3} \frac{\hbar^2}{2m}$$
+
+极端相对论情形
+$$\varepsilon_F = c\calp_{\max} =  \left(\frac{3n}{4\pi g}\right)^{1/3} hc = \left(\frac{6\pi^2 n}{ g}\right)^{1/3} \hbar c$$
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{解除量子特性需要的温度}
+\bch
+现在考虑从$0\SIK$逐渐升高温度。
+\bitem
+\item{玻色子：逐渐有粒子逃离基态。到某个临界温度时$\Theta_B$时，大多数玻色子逃离基态，BE凝聚被破坏。这个临界温度称为{\blue 玻色-爱因斯坦凝聚点}。}
+\item{费米子：当从$0\SIK$逐渐升高温度，开始有费米子跑到能量高于$\varepsilon_F$的态去。当$T> \Theta_F = \varepsilon_F/k$时，可以认为费米气体的简并压解除。这个温度$\Theta_F$称为{\blue 费米简并温度}。}
+\eitem
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{金属内电子的简并温度和简并压}
+\bch
+金属中电子的数密度和原子数密度为同一数量级$n\sim 10^{29} \SIm^{-3}$ （还记得估算金属原子平均间距为$2\angstrom$左右吗)。
+电子质量$m\approx 10^{-30} \SIkg$。电子内禀自由度为$g = 2$。由此估算出
+$$\varepsilon_F = \left(\frac{6\pi^2 n}{ g}\right)^{2/3} \frac{\hbar^2}{2m} \sim 10^{-18}J $$
+从而简并温度
+$$\Theta_F \sim 8\times 10^4 \SIK$$
+
+
+所以金属的电子在室温下有简并压。我们还可以估算出简并压为
+$$ p = \frac{2}{5} n \varepsilon_F \sim 4\times 10^{10}\SIPa$$
+
+
+金属抗压几乎全靠的就是电子简并压。参见教材101页表2-10。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{白矮星和中子星}
+\bch
+\bitem
+\item{白矮星是靠电子简并压抗衡引力的高密度天体。}
+\item{中子星是靠中子简并压抗衡引力的高密度天体。}
+\eitem
+
+课本上有些定性的讨论，参考102-106页。我们不再展开。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{光子气体}
+\bch
+光子的能量$\varepsilon = \calp c$，基态能量为$0$。当有一个温度为$T$的辐射源和光子气体达到热平衡时，光子的化学势达到$\mu = 0$。
+可以计算光子气体的能量为
+$$\int_0^\infty \frac{\calp c}{e^{\frac{\calp c}{kT}}-1} \frac{g V 4\pi\calp^2 d\calp}{h^3} $$
+其中$g=2$是光子的内禀态数（自旋为$1$和$-1$)，$V$是体积。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{第五周作业(序号接第四周）}
+\bch
+\bitem
+\item[13]{}
+\item[14]{}
+\item[15]{}
+\eitem
+\ech
+\end{frame}
+
+\end{document}
