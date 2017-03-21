@@ -368,7 +368,7 @@ $$\tilde{f}_{\rm 1D}(u_x) |d u_x| = f_{\rm 1D}(\upsilon_x) |d\upsilon_x|$$
 {\scriptsize 概率密度$ \frac{1}{\sqrt{2\pi}} e^{-\frac{u_x^2}{2}}$称为标准正则分布，记作$N(u_x)$。
 
 容易计算出下列平均值：
-$$\bar{u_x} = \bar{u_x^3} = 0,\ \overline{|u_x|} = \sqrt{\frac{2}{\pi}} ,\ \bar{u_x^2} = 1, \ \bar{u_x^4} = 3$$
+$$\bar{u_x} = \bar{u_x^3} = 0,\ \ \overline{|u_x|} = \sqrt{\frac{2}{\pi}} ,\ \ \bar{u_x^2} = 1,\ \ \bar{|u_x|^3} = \sqrt{\frac{8}{\pi}},\ \ \bar{u_x^4} = 3$$
 }
 
 \ech
@@ -392,7 +392,7 @@ $$\tilde{F}_M(u) =  \sqrt{\frac{2}{\pi}}u^2 e^{-\frac{u^2}{2}} $$
 \chtitle{正则分布的区间积分}
 \bch
 {\scriptsize
-下面我们计算$u_x$在[-a,a]内的概率($a>0$)。
+下面我们计算$u_x$在[-a,a]内的概率($a\ge 0$)。
 $$P(-a<u_x<a) = \frac{1}{\sqrt{2\pi}} \int_{-a}^a e^{-\frac{u_x^2}{2}}du_x \approx  \sqrt{1-e^{-\frac{a^2}{2}\left(\frac{\frac{4}{\pi}+ca^2}{1+ca^2}\right)}}$$
 最后一步只是一个好用的近似公式，其中$c = \frac{4(\pi-3)}{3\pi(4-\pi)} \approx 0.07$。易算出
 $$P(-1<u_x<1) =  0.683$$
