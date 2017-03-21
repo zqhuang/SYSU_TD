@@ -1,0 +1,308 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\input{titlepage.tex}
+\title{Lesson 07 - 1st Law of Thermaldynamics}
+  \author{}
+  \date{}
+\begin{document}
+\tpage{7}{热力学第一定律}
+
+\section{1st Law}
+
+\begin{frame}
+\chtitle{内能是个态函数}
+\bch
+\bitem
+\item{\bf 态函数里的“态”：指热平衡态。}
+\item{\bf 态函数定义：态函数由系统的宏观状态参量确定，和如何达到这个状态的过程无关。}
+\eitem
+
+\bex
+气体的内能$U$由体积$V$和温度$T$决定，
+$$ U  = U(V, T)$$
+\eex
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{热力学第一定律的数学表达式}
+\bch
+热力学第一定律：
+
+{\blue
+$$ \Delta U = A + Q$$
+内能的增加等于对系统做的功和传给系统的热量之和。
+}
+
+\skiplines
+
+这里的功是{\blue 广义功}，可以是机械功$-\int pdV$，也可以是电流做功$\int UIdt$等。
+
+
+
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{准静态过程}
+\bch
+准静态过程的定义：{\blue 进行得足够缓慢，以至于系统连续经过的每个中间态都可以近似看成平衡态。}
+
+\skiplines
+
+{\small 例如：缓慢加热的过程，缓慢压缩气体的过程，SYSU-SECURE数据传输过程，政府工作人员的办公过程等等}
+
+\addfig{2}{slowmotion.jpg}
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{准静态过程的热力学第一定律表述}
+\bch
+准静态过程下内能在过程中间都是有定义的，所以：
+{\blue
+$$dU = \dbar A + \dbar Q$$
+}
+
+热学里特有的符号$\dbar$代表这个微元和过程有关。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{$p$-$V$图和做的功}
+\bch
+准静态过程可以用在$p$-$V$图上的一条曲线描述。气体对外界做功（为了区别外界对气体做功，通常加一撇）
+$$ A' = \int p dV $$
+等于$p$-$V$曲线下的面积
+\addfig{2}{pdVwork.png}
+
+\ech
+\end{frame}
+
+\section{Application}
+\begin{frame}
+\chtitle{理想气体等温过程}
+\bch
+理想气体的等温过程比较简单，利用理想气体状态方程$pV = \nu RT$即可求出对理想气体做的功
+$$ A = -\int p dV = -\nu R T \int \frac{dV}{V} =- \nu R T\ln\frac{V_{\rm fin}}{V_{\rm ini}}$$
+如果没有额外的自由度被激发，理想气体的内能不变。则可推算出等温过程吸收的热量为
+$$ Q = - A $$
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{理想气体绝热过程（adiabatic process)}
+\bch
+{\small
+理想气体的绝热过程则稍显复杂，由$\dbar Q=0$得到
+$$ dU = -p dV$$
+又$$ dU = \nu C_V^{\rm mol} dT = \frac{C_V^{\rm mol}}{R}(p dV + V dp)$$
+两式相减得到
+$$ C_V^{\rm mol} Vdp + C_p^{\rm mol} p dV = 0$$
+其中$C_p^{\rm mol} = C_V^{\rm mol} + R$是摩尔定压热容（推导见题霸集最后一题）。
+记$$\gamma = \frac{C_p^{\rm mol}}{C_V^{\rm mol}}$$
+对理想气体$\gamma$是个常数（对很多实际气体也是近似常数)，由上述方程可推出{\blue 理想气体绝热状态方程}(又称{\bf 泊松公式})
+{\blue 
+$$p V^\gamma = \const$$}
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{各种气体的$\gamma$}
+\bch
+{\small
+对单元子理想气体，$\gamma = \frac{5}{3}$。
+
+\skipline
+
+对室温下的双原子理想气体，$\gamma \approx \frac{7}{5}$。
+
+\skipline
+
+因空气大部分都是氮气和氧气（双原子分子），所以我们可以近似认为室温下空气的$\gamma = \frac{7}{5}$。
+}
+
+由$pV^\gamma = \const $以及理想气体状态方程可推出绝热状态方程的另外两个形式：
+
+$$ TV^{\gamma-1} = \const$$
+
+$$T p^{\frac{1}{\gamma}-1} = \const $$
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{高处不胜寒}
+\bch
+{\small 
+我们以前计算大气压强梯度时把空气温度当成了常数，事实上我们都知道“高处不胜寒”。因为大气是热的不良导体，绝热近似是更好的描述。
+
+由力学平衡有
+$$dp = -\rho g dz$$
+由$Tp^{\frac{1}{\gamma}-1}= \const$，可得$dT = \left(1-\frac{1}{\gamma}\right)\frac{T}{p} dp $，
+故
+$$\frac{dT}{dz} = -\frac{\gamma - 1}{\gamma} \frac{T}{p}\rho g= -\frac{\gamma - 1}{\gamma} \frac{V}{\nu R}\rho g =  -\frac{\gamma - 1}{\gamma} \frac{M^{\rm mol}}{ R} g$$
+取$\gamma  = 7/5$, $M^{\rm mol} = 29\SIg/\SImol$，$g = 9.8 \mathrm{N}/\SIkg$得到
+$$\frac{dT}{dz} \approx -10\SIK/\SIkm$$
+这个结果的数量级是正确的，但实际温度梯度往往比它小。空气里的饱和水蒸气是一个重要的影响因素（见教材152页）。
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{多方过程(polytropic process)}
+\bch
+满足状态方程$pV^n = C $（{\bf 多方指数}$n$为常数, $C$为常数）的过程称为{\bf 多方过程}。
+
+多方过程对外界做功为：
+\bea
+A' &=& \int p dV \newl
+ &=& C \int \frac{dV}{V^n} \newl
+ &=& \frac{C}{n-1}\left(V_{\rm ini}^{1-n} -  V_{\rm fin}^{1-n}\right) \newl
+ &=& \frac{1}{n-1}\left(p_{\rm ini}V_{\rm ini} -  p_{\rm fin}V_{\rm fin}\right) \newl
+ &=& -\frac{\nu R}{n-1}\Delta T 
+\eea
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{理想气体多方过程的热容量}
+\bch
+{\small
+多方过程的热容量$C_n$满足
+$$dU = C_VdT = C_n dT - pdV$$
+即
+$$pdV + (C_V - C_n) \frac{pdV+Vdp}{\nu R} = 0$$
+又由多方过程的定义可推出
+$$pdV + (n-1)(pdV + Vdp) = 0$$
+对比两式即得
+$$C_n = C_V - \frac{\nu R}{n-1}$$
+
+或者写成摩尔热容
+$$C_n^{\rm mol} = C_V^{\rm mol} - \frac{R}{n-1}$$
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{多方过程的例子：等压过程}
+\bch
+\bex
+等压过程是$n=0$的多方过程。故
+做功
+$$A' = \nu R\Delta T $$
+热容量
+$$C_p^{\rm mol} = C_V^{\rm mol}+ R $$
+
+\skipline
+
+我们可以通过计算内能变化来检验上面的结果：
+$$ \Delta U = -A' + Q = -\nu R\Delta T +(C_V + \nu R)\Delta T =  C_V\Delta T$$
+
+\eex
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{多方过程的例子：绝热过程}
+\bch
+\bex
+绝热过程是$n=\gamma$的多方过程。故
+做功
+$$A' = -\frac{\nu R}{\gamma-1}\Delta T$$
+热容量
+$$C = 0 $$
+
+我们可以通过计算内能变化来检验上面的结果：
+$$ \Delta U = -A' + Q = \frac{\nu R}{\gamma-1} \Delta T  =  C_V\Delta T$$
+
+\eex
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{多方过程的例子：等体过程}
+\bch
+\bex
+等体过程是$n=\infty$的多方过程。故
+做功
+$$A' = 0$$
+热容量
+$$C = C_V $$
+
+我们可以通过计算内能变化来检验上面的结果：
+$$ \Delta U = -A' + Q =  C_V\Delta T$$
+
+\eex
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{多方过程的例子：等温过程}
+\bch
+\bex
+等温过程是$n=1$的多方过程。这时无法直接用多方过程的做功公式。我们考虑$n=1+\epsilon$的情形，再让$\epsilon \rightarrow 0$。
+
+做功
+$$\dbar A' = -\frac{\nu R}{\epsilon}dT = \frac{\nu R}{\epsilon}\frac{T\epsilon}{V}dV = \nu RT d\ln V $$
+积分即得
+$$ A' = -\frac{\nu R}{\epsilon}dT = \frac{\nu R}{\epsilon}\frac{T\epsilon}{V}dV = \nu RT \Delta(\ln V) $$
+热容量
+$$C = \infty $$
+
+\eex
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{消化下栗子}
+\bch
+\addfig{1}{chibaolizi.jpg}
+$1\SImol$氧气经过$n=2$的多方过程从$T=300K$升温到$T=310K$。问这个过程中对氧气做功多少？氧气吸热多少？
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{什么？栗子太好消化了？}
+\bch
+
+下周期中考试
+
+
+前面所有课的讲义（包括题霸集）有看不懂的地方（或者发现错误的地方）请举手提问。
+
+\addfig{2}{wdsws.jpg}
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{第七八周作业（序号接第六周）}
+\bch
+\bitem
+\item[19]{教材思考题3-18 (简单叙述理由即可，请勿长篇大论)}
+\item[20]{教材习题3-5}
+\item[21]{教材习题3-6}
+\eitem
+\ech
+\end{frame}
+
+
+\end{document}
