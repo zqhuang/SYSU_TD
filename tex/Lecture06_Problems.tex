@@ -1,0 +1,709 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\input{titlepage.tex}
+\title{Lesson 05 - Problems}
+  \author{}
+  \date{}
+\begin{document}
+\tpage{6}{一二章知识的应用（题霸版）}
+
+\section{Temperature}
+
+\begin{frame}
+\chtitle{温标之间的非线性关系例1}
+\bch
+{\blue 教材习题1-4}
+
+{\scriptsize
+\bitem
+\item[(1)]{$\mathcal{E}(-100\cdeg) = [0.21\times (-100) - 10^{-4}\times (-100)^2] \SImV = -22 \SImV$
+
+其余以及图略。}
+\item[(2)]{ $\mathcal{E}(0^\circ) =\mathcal{E}(0\cdeg) = 0 \SImV$, $\mathcal{E}(100^\circ) = \mathcal{E}(100\cdeg) = 20 \SImV$
+$$a = \frac{100^\circ - 0^\circ}{20\SImV} =5 ^\circ/\SImV,\ b = 0$$ 图略}
+\item[(3)]{$t = -100\cdeg$时， $t^*=-22\SImV \times 5^\circ/\SImV = -110^\circ$，其余类似，略。}
+\item[(4)]{$t^*$和$t$除了在两个固定标准点被规定相等，两者成非线性关系，一般来说并不相等。}
+\eitem
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{温标之间的非线性关系例2}
+\bch
+{\blue 教材习题1-6}
+
+{\scriptsize
+\bitem
+\item[(1)]{由于定体温度计的理想气体温度$T$（或热力学温度）和压强$p$成正比，所以 $t^* = \left[\ln (T/\SIK) + c\right]^\circ$ ($c$为常数)。由$T=273.16\SIK$时$t^* = 273.16^\circ$可以确定$c=273.16-\ln 273.16$。所以 $t^* = \left[\ln \frac{T}{273.16\SIK} + 273.16\right]^\circ$}
+\item[(2)]{冰点$T = 273.15\SIK$，$t^* = \left[\ln \frac{273.15}{273.16}+273.16\right]^\circ = 273.159963^\circ$；
+
+沸点$T=373.15\SIK$, $t^* =  \left[\ln \frac{373.15}{273.16}+273.16\right]^\circ = 273.471923^\circ$。}
+\item[(3)]{存在，当$T=273.16\times e^{-273.16}\SIK$时，$t^* = 0^\circ$。}
+\eitem
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{定体气体温度计外推法例1}
+\bch
+{\blue 教材习题1-2}
+
+{\scriptsize
+我们先假设理想气体状态方程，在不同压强下计算待测温度，然后用外推的方法得到$p=0$时的待测温度：
+\bea
+(p_1, T_1) &=&  (734 \SImmHg, \frac{734}{500}\times 273.16 \SIK) = (734\SImmHg, 400.999\SIK) \newl
+(p_2, T_2) &=&  (293.4 \SImmHg, \frac{293.4}{200}\times 273.16 \SIK) = (293.4\SImmHg, 400.726\SIK) \newl
+(p_3, T_3) &=&  (146.68\SImmHg, \frac{146.68}{100}\times 273.16\SIK) = (146.68\SImmHg, 400.671\SIK)
+\eea
+求平均，并每个数据点减去平均：
+\bea
+(\bar{p},\bar{T}) &=& \left(\frac{p_1+p_2+p_3}{3},\frac{T_1+T_2+T_3}{3}\right) = (391.36\SImmHg, 400.799\SIK) \newl
+(\Delta p_1, \Delta T_1) &=& (p_1-\bar{p}, T_1-\bar{T})=(342.64 \SImmHg, 0.200\SIK), \newl
+(\Delta p_2, \Delta T_2) &=& (p_2-\bar{p}, T_2-\bar{T})= (-97.96 \SImmHg, -0.073\SIK), \newl
+(\Delta p_3, \Delta T_3) &=& (p_3-\bar{p}, T_3-\bar{T})= (-244.68 \SImmHg, -0.128\SIK)
+\eea
+设拟合直线为$T = ap + b$，则
+\be
+a = \frac{\sum \Delta p \Delta T}{\sum \Delta p^2}= 0.0005726 \SImmHg/\SIK, \ b = \bar{T} - k\bar{p} = 400.575 \SIK
+\ee
+所以外推到$p=0$时$T = b = 400.575\SIK$，这就是所求的温度。
+}
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{定体温度计外推法例2}
+\bch
+{\blue 教材习题1-3}
+
+{\scriptsize
+定体气体温度计的$T/p$随着$p\rightarrow 0$而趋向于一个常数$\frac{V}{\nu R}$。
+由数据点
+
+$(p_1, T_1/p_1) = (0.400\atm, 682.875 \SIK/\atm)$
+
+$(p_2, T_2/p_2) = (0.546\atm, 683.425 \SIK/\atm)$
+
+拟合直线为
+$$\frac{T}{p} = \left[3.767\frac{p}{\atm} + 681.368\right]\SIK/\atm $$
+
+\bitem
+\item[(1)]{$p=0.100\atm$时，$T=0.100\times(3.767\times 0.1 + 681.368)\SIK = 68.17\SIK$}
+\item[(2)]{$T=444.60\cdeg = 717.75\SIK$，可以先忽略$3.767\frac{p}{\atm} $这项修正项，估算出
+$$p \approx {717.75\over 681.368} \atm = 1.053\atm$$
+然后再迭代计算更精确的解：
+$$ p = \frac{717.75}{681.368 + 3.767\times 1.053} \atm = 1.047 \atm $$
+}
+\eitem
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{定体温度计外推法例2：另一种解法}
+\bch
+{\blue 教材习题1-3}
+
+{\scriptsize
+我们考虑另一种拟合方案，拟合$p/T$为$p$的线性函数：
+
+$(p_1, p_1/T_1) = (0.400\atm, 0.00146440 \atm/\SIK)$
+
+$(p_2, p_2/T_2) = (0.546\atm, 0.00146322  \atm/\SIK)$
+
+拟合直线为
+$$\frac{p}{T} = \left[-8.082\times 10^{-6}\frac{p}{\atm} + 0.00146763\right]\atm/\SIK $$
+
+\bitem
+\item[(1)]{$p=0.100\atm$时，
+$$T  = \frac{0.1}{-8.082\times 10^{-6}\times 0.1 + 0.00146763} = 68.17\SIK$$
+}
+\item[(2)]{$T=444.60\cdeg = 717.75\SIK$，可以先忽略$-8.082\times 10^{-6}\frac{p}{\atm} $这项修正项，估算出
+$$p \approx 0.00146763\times 717.75 \atm = 1.053\atm$$
+然后再迭代计算更精确的解：
+$$ p = 717.75\times(-8.082\times 10^{-6}\times 1.053 + 0.00146763) \atm = 1.047 \atm $$
+}
+\eitem
+
+{\bf 虽然各种线性拟合的假设不同，但因为实际气体偏离理想气体较小，得到的结果往往是一致的。}
+
+}
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{定体温度计外推法例2：应该扣一半分的解法}
+\bch
+{\blue 教材习题1-3}
+
+\skipline
+
+{\scriptsize
+我们考虑直接使用那个啥定律（忘了是查理还是波意儿还是…）：
+
+直接拟合$T$为$p$的线性函数：
+$$ T = (684.932\frac{p}{\atm} -0.8228)\SIK$$
+(虽然我们明知这当$p\rightarrow 0$时误差较大）
+
+\bitem
+\item[(1)]{$p=0.100\atm$时，$T=67.67\SIK$}
+\item[(2)]{$T=444.60\cdeg = 717.75\SIK$，$p  = 1.049\atm$}
+\eitem
+
+{\bf 这种拟合方法相当于没有使用$(p=0, T=0)$这个隐藏数据点，所以比较不精确 (不要迷信教材给的答案)。}
+
+}
+
+\ech
+\end{frame}
+
+
+\section{Gas EOS}
+
+
+
+\begin{frame}
+\chtitle{$pV =\nu RT$的简单应用例1}
+\bch
+{\blue 教材习题1-7}
+
+\skipline
+
+{\small
+固定温度时，$pV$正比于摩尔数，所以我们可以用$pV$来代表“氧气的量”。可以用的天数为
+$$\frac{130\times 32 - 10\times 32}{1\times 400} = 9.6 $$
+所以每隔9天就要去充气。
+}
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{$pV =\nu RT$的简单应用例2}
+\bch
+{\blue 教材习题1-10}
+
+{\scriptsize
+由于空气比水银密度小，灌入水银时右侧管以及底管的空气都会直接或者以气泡的方式漏出。而左侧管的空气则会被压缩。由理想气体状态方程得到
+$$ p_0 h_1 = \left(p_0+\rho g (h_2-h)\right) (h_1-h)$$
+其中$p_0 =750 \SImmHg$为大气压强。上式可以化简为
+$$ 1500 = (275- \frac{h}{\SIcm}) (20 - \frac{h}{\SIcm})$$
+
+可以直接由二次方程求根公式求解上式得到$h=14.24742\SIcm$。下面介绍一个利用物理近似迭代求解的方法，求解更复杂的方程时它往往非常有用：
+
+先由近似$275-\frac{h}{\SIcm}\approx 275$得到零级近似$h \approx (20-1500/275)\SIcm=14.55\SIcm$，然后迭代:
+
+一级近似$h\approx \left(20 - \frac{1500}{275-14.55}\right)\SIcm = 14.241\SIcm$
+
+二级近似$h\approx \left(20 - \frac{1500}{275-14.241}\right)\SIcm = 14.2476\SIcm$
+
+三级近似$h\approx \left(20 - \frac{1500}{275-14.2476}\right)\SIcm = 14.24742\SIcm$
+
+对结果要求不太精确的问题，往往一两次迭代就足够精确了。
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{$pV =\nu RT$的简单应用例3}
+\bch
+{\blue 教材习题1-13}
+
+\skipline
+
+{\scriptsize
+取大气压为$76\SIcm$汞柱, 步骤(1), (2)可以得到体积比为
+$$\frac{V_{AC}}{V_{ABC}} = \frac{76}{76+12.5}$$
+由$V_{ABC} = 1000\SIcm^3$即得$V_{AC} = 858.76 \SIcm^3$。
+
+设矿物体积为$V_m$，由步骤(3),(4)可以得到
+$$\frac{V_{AC}-V_{\rm m}}{V_{ABC}-V_m} = \frac{76}{76+23.7}$$
+代入$V_{AC}$, $V_{ABC}$的值即得$V_m = 405.84\SIcm^3$。
+
+故密度$\rho = 400\SIg/(405.84\SIcm^3) = 0.986 \SIg/\SIcm^3$
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{阿伏伽德罗定律}
+\bch
+{\blue 教材习题1-15}
+
+\skipline
+
+{\scriptsize
+氮气的摩尔质量$28\SIg/\SImol$, 氧气的摩尔质量$32\SIg/\SImol$，氩气的摩尔质量$40\SIg/\SImol$。
+
+空气的摩尔质量
+$$\frac{1\SIg}{\frac{0.76\SIg}{28\SIg/\SImol}+\frac{0.23\SIg}{32\SIg/\SImol}+\frac{0.01\SIg}{40\SIg/\SImol}} = 28.9\SIg/\SImol $$
+
+标准状态下的空气密度
+$$\rho = \frac{28.9\SIg}{22.4\mathrm{L}} = 1.29\SIkg/\SIm^3$$
+
+{\bf 当然，阿伏伽德罗定律只是理想气体状态方程在$T=273.15\SIK$, $p = 1\atm$时的特殊情形，并不需要额外记忆。}
+}
+\ech
+\end{frame}
+
+
+
+
+\begin{frame}
+\chtitle{道尔顿分压定律例1}
+\bch
+{\blue 教材习题1-17}
+
+\skipline
+
+{\scriptsize
+氮气压强变为
+$$p_{N_2} = \frac{0.5}{0.2}\times 1.0\times 10^5\SIPa = 2.5\times 10^5\SIPa$$
+混合气体压强为
+$$p = p_{N_2} + p_{O_2} = 2.5\times 10^5 \SIPa + 1.0\times 10^5\SIPa = 3.5\times 10^5 \SIPa$$
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{道尔顿分压定律例2}
+\bch
+{\blue 教材习题1-16}
+
+\skipline
+
+{\scriptsize
+收集的气体分压为$p_0=767.5\SImmHg - 17.5\SImmHg = 750\SImmHg$， 体积$V_0=150\SIcm^3$，温度$T_0=293.15\SIK$。
+在$0\cdeg$干燥时，压强$p_1 = 767.5\SImmHg$，温度$T_1 = 273.15\SIK$。故体积
+$$V_1 = \frac{\nu R T_1}{p_1} = \frac{p_0V_0 T_1}{T_0 p_1} = 150\SIcm^3 \times \frac{750}{767.5}\frac{273.15}{293.15} = 136.64 \SIcm^3 $$
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{缓慢状态变化做功$= -\int p dV$}
+\bch
+{\blue 作业题3: 把1 mol的理想气体保持恒温300K进行等温压缩，使得体积变为原来一半，最少要做多少功？}
+
+\skipline
+
+{\scriptsize
+“保持恒温”意味着一直处于热平衡（至少就我们目前接触的温度定义而言），由理想气体状态方程得到做的功为：
+\bea
+ W &=& -\int_{V_0}^{V_0/2} p dV \newl
+&=& -\nu R T\int_{V_0}^{ V_0/2} \frac{dV}{V} \newl
+&=& \nu R T \ln 2 \newl
+&=& 1.73\times 10^3 \SIJ
+\eea
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{范德瓦尔斯方程}
+\bch
+{\blue 教材习题1-20}
+
+\skipline
+
+{\scriptsize
+$CO_2$的分子量为$44$，故摩尔数为
+$$\nu = \frac{1.1\SIkg}{44\SIg/\SImol} = 25\SImol$$
+温度$T = 286.15\SIK$， 体积$V=0.02\SIm^3$
+
+按范德瓦尔斯方程
+$$ p = \frac{\nu RT}{V-\nu b} -a\left(\frac{\nu}{V}\right)^2 = 2.573\times 10^6\SIPa$$
+按理想气体状态方程
+$$ p = \frac{\nu R T}{V} = 2.974\times 10^6\SIPa$$
+}
+\ech
+\end{frame}
+
+\section{Probablity Density}
+
+\begin{frame}
+\chtitle{无量纲速度的概率密度}
+\bch
+
+我们定义温度$T$对应的特征速率$\upsilon_c = \sqrt{\frac{kT}{m}}$，并对理想气体分子定义无量纲速度$\mathbf{u} \equiv \frac{\vecv}{\upsilon_c}$。试写出下列概率密度函数：
+\bitem
+\item{以$u_x$为变量的概率密度$\tilde{f}_{\rm 1D}(u_x) $}
+\item{以$u_x, u_y, u_z$为变量的三维概率密度$\tilde{f}_{\rm M}(u_x, u_y, u_z)$}
+\item{以$u = |\mathbf{u}|$为变量的概率密度$\tilde{F}_{M}(u)$ （$u\ge 0$)}
+\eitem
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{无量纲速度的概率密度(续)}
+\bch
+\bmini{0.55}
+{\scriptsize
+因为是一一映射，换算概率密度就比较容易。由
+$$\tilde{f}_{\rm 1D}(u_x) |d u_x| = f_{\rm 1D}(\upsilon_x) |d\upsilon_x|$$
+得到
+\bea
+\tilde{f}_{\rm 1D}(u_x) &=& f_{\rm 1D}(\upsilon_x) \left\vert\frac{d\upsilon_x}{du_x}\right\vert \newl
+&=& \frac{1}{\sqrt{2\pi}\upsilon_c} e^{-\frac{\upsilon_x^2}{2 \upsilon_c^2}} \upsilon_c \newl
+&=& \frac{1}{\sqrt{2\pi}} e^{-\frac{u_x^2}{2}}
+\eea
+}
+\emini
+\bmini{0.4}
+\addfig{1.5}{f1D.pdf}
+\emini
+
+{\scriptsize 概率密度$ \frac{1}{\sqrt{2\pi}} e^{-\frac{u_x^2}{2}}$称为标准正则分布，记作$N(u_x)$。
+
+容易计算出下列平均值：
+$$\bar{u_x} = \bar{u_x^3} = 0,\ \overline{|u_x|} = \sqrt{\frac{2}{\pi}} ,\ \bar{u_x^2} = 1, \ \bar{u_x^4} = 3$$
+}
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{无量纲速度的概率密度(续)}
+\bch
+{\scriptsize
+因为$u_x$, $u_y$, $u_z$的分布相互独立，就有
+$$\tilde{f}_M(u_x, u_y, u_z) =  N(u_x)N(u_y) N(u_z) = \left(\frac{1}{2\pi}\right)^{\frac{3}{2}}e^{-\frac{u_x^2+u_y^2+u_z^2}{2}}$$ 
+转换到球坐标即可求出无量纲速率分布在$u$和$u+du$之间的概率，除以$du$得到：
+$$\tilde{F}_M(u) =  \sqrt{\frac{2}{\pi}}u^2 e^{-\frac{u^2}{2}} $$
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{正则分布的区间积分}
+\bch
+{\scriptsize
+下面我们计算$u_x$在[-a,a]内的概率($a>0$)。
+$$P(-a<u_x<a) = \frac{1}{\sqrt{2\pi}} \int_{-a}^a e^{-\frac{u_x^2}{2}}du_x \approx  \sqrt{1-e^{-\frac{a^2}{2}\left(\frac{\frac{4}{\pi}+ca^2}{1+ca^2}\right)}}$$
+最后一步只是一个好用的近似公式，其中$c = \frac{4(\pi-3)}{3\pi(4-\pi)} \approx 0.07$。易算出
+$$P(-1<u_x<1) =  0.683$$
+$$P(-2<u_x<2) = 0.954$$
+$$P(-3<u_x<3) = 0.9973$$
+$$P(-4<u_x<4) = 0.999937$$
+$$P(-5<u_x<5) = 0.99999943$$
+在科学研究中，常常要用到上述置信区间。在论文中常可以看到"68.3\% confidence level" , "95.4\% confidence level" 等术语。粒子物理实验往往要求达到$5\sigma$精度，就是指可信度$99.999943\%$。
+}
+\ech
+\end{frame}
+
+
+
+\section{Maxwell Distribution}
+
+
+\begin{frame}
+\chtitle{Maxwell分布例1}
+\bch
+{\blue 教材习题2-8}
+
+{\scriptsize
+\bitem
+\item[(1)]{由$\overline{u_x^2} = 1$ 得到$\overline{\upsilon_x^2} = \upsilon_c^2$，即一维的$\upsilon_{\rm rms} = \upsilon_c = \sqrt{\frac{kT}{m}}$}
+\item[(2)]{由$\overline{|u_x|} = \sqrt{\frac{2}{\pi}}$  得到一维的$\bar{\upsilon} =  \sqrt{\frac{2}{\pi}}\upsilon_c = \sqrt{\frac{2kT}{\pi m}}$}
+\item[(3)]{显然一维情况$\upsilon_{\max} = 0$}
+\eitem
+
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{Maxwell分布例2}
+\bch
+{\blue 教材习题2-7}
+
+{\scriptsize
+\bitem
+\item[(1)]{由$\overline{u_x^2} = \overline{u_y^2} = 1$ 得到$\overline{\upsilon_x^2+\upsilon_y^2} = 2\upsilon_c^2$，即二维的$\upsilon_{\rm rms} = \sqrt{2}\upsilon_c = \sqrt{\frac{2kT}{m}}$}
+\item[(2)]{二维的无量纲速率的概率密度为 $\tilde{F}_M(u) = 2\pi u \left(\frac{1}{2\pi} e^{-u^2/2}\right)= u e^{-u^2/2}$，所以平均无量纲速率：
+$$\bar{u} = \int_0^\infty u^2 e^{-u^2/2} du = -\left.\frac{d}{d\alpha}\int_0^\infty e^{-\alpha u^2}du\right\vert_{\alpha=1/2}= \sqrt{\frac{\pi}{2}}$$ 
+即$\bar{\upsilon} = \bar{u}\upsilon_c = \sqrt{\frac{\pi kT}{2m}}$
+}
+\item[(3)]{对$\tilde{F}_M(u)$求导并令其为零，得到$u_{\max} = 1$。 故$\upsilon_{\max} = \upsilon_c = \sqrt{\frac{kT}{m}}$}
+\eitem
+
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{Maxwell分布例3}
+\bch
+{\blue 教材习题2-3}
+
+{\scriptsize
+\bea
+\overline{\left(\frac{1}{\upsilon}\right)} &=& \frac{1}{\upsilon_c} \overline{\left(\frac{1}{u}\right)} \newl
+&=& \frac{1}{\upsilon_c} \int_0^\infty \frac{1}{u}\tilde{F}_M(u) du \newl
+&=& \sqrt{\frac{2}{\pi}}\frac{1}{\upsilon_c} \int_0^\infty \frac{1}{u}  u^2e^{-u^2/2} du \newl
+&=& \sqrt{\frac{2}{\pi}}\frac{1}{\upsilon_c}\left. e^{-u^2/2}\right\vert_0^\infty \newl
+&=& \sqrt{\frac{2}{\pi}}\frac{1}{\upsilon_c} \newl
+&=& \sqrt{\frac{2m}{\pi kT}} 
+\eea
+
+又由 $\bar{\upsilon} = \sqrt{\frac{8kT}{\pi m}}$，
+$$\overline{\left(\frac{1}{\upsilon}\right)} = \frac{4}{\pi} \frac{1}{\bar{\upsilon}}>\frac{1}{\bar{\upsilon}} $$  
+}
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{Maxwell分布例4}
+\bch
+{\blue 计算使 $F_M(\upsilon)$最大的“最概然速率”$\upsilon_{\max}$}
+
+\skipline
+
+{\small
+设$u_{\max}$使$\tilde{F}_M(u)$最大， 显然$\upsilon_{\max} = \upsilon_c u_{\max}$
+
+由
+$$\frac{d \tilde{F}_M(u)}{du}\vert_{u=u_{\max}} = 0$$
+就可以解出$u_{\max} = \sqrt{2}$，故
+$$\upsilon_{\max} = \sqrt{2}\upsilon_c = \sqrt{\frac{2kT}{m}}$$ }
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{Maxwell分布例5}
+\bch
+{\blue 教材习题 2-14}
+
+{\scriptsize
+条件$\upsilon> \upsilon_{\max}$等同于 $u>\sqrt{2}$。其概率为
+\bea
+\int_{\sqrt{2}}^\infty \tilde{F}_M(u) du &=& \sqrt{\frac{2}{\pi}} \int_{\sqrt{2}}^\infty u^2e^{-\frac{u^2}{2}} du \newl
+ &=& -\left.\sqrt{\frac{2}{\pi}} u e^{-\frac{u^2}{2}}\right\vert_{\sqrt{2}}^\infty +\sqrt{\frac{2}{\pi}} \int_{\sqrt{2}}^\infty e^{-\frac{u^2}{2}} du \newl
+ &=& \frac{2}{e\sqrt{\pi}} + 1 - \sqrt{\frac{1}{2\pi}} \int_{-\sqrt{2}}^{\sqrt{2}} e^{-\frac{u^2}{2}} du \newl
+&\approx & \frac{2}{e\sqrt{\pi}} + 1- \sqrt{1-e^{-\left(\frac{\frac{4}{\pi}+ 0.14}{1+0.14}\right)}} \newl
+&=& 0.572\newl
+\eea
+同样的方法可以求出$\upsilon>2\upsilon_{\max}$的概率为 $0.0459$。
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{Maxwell分布例6}
+\bch
+{\blue 教材思考题2-10}
+
+{\scriptsize
+设$\upsilon_0 = u_0 \upsilon_c$，则用和上例同样的方法可以算出
+
+\bea
+\frac{1}{2} &=& \int_{0}^{u_0} \tilde{F}_M(u) du \newl
+&\approx & -\sqrt{\frac{2}{\pi}} u_0 e^{-u_0^2/2} +  \sqrt{1-e^{-\frac{u_0^2}{2}\left(\frac{\frac{4}{\pi}+ 0.07 u_0^2}{1+ 0.07 u_0^2}\right)}}  \newl
+&\equiv& G(u_0)
+\eea
+把$u_0=1$作为零级近似，迭代计算出
+
+一级近似$u_0 = 1 + \frac{0.5-G(1)}{\tilde{F}_M(1)} = 1.6223 $
+
+二级近似$u_0 = 1.6223+\frac{0.5-G(1.6223)}{\tilde{F}_M(1.6223)} = 1.5364$
+
+三级近似$u_0 = 1.5364+\frac{0.5-G(1.5364)}{\tilde{F}_M(1.5364)} = 1.5377$
+
+
+从而$\upsilon_0 = 1.5377\sqrt{\frac{kT}{m}}$
+
+显然，$\upsilon_0$和方均根速率$1.73\sqrt{\frac{kT}{m}}$，平均速率$1.60\sqrt{\frac{kT}{m}}$，泻流速率$0.40\sqrt{\frac{kT}{m}}$都不相同。
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{方均根速率例1}
+\bch
+{\blue 教材习题2-24}
+
+\skipline
+
+{\small
+温度$T = 273.15\SIK$。
+
+如果认为灰尘的自由度为2（仅在水面运动），则方均根速率为
+$$\sqrt{\frac{2kT}{m}} = 2.7\times 10^{-5} \SIm/\SIs$$  
+}
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{方均根速率例2}
+\bch
+{\blue 教材习题2-24}
+
+\skipline
+
+{\small
+温度$T = 300.15\SIK$。
+
+浮游微粒的的自由度为3，则方均根速率为
+$$\sqrt{\frac{3kT}{m}} = 3.5\times 10^{-4} \SIm/\SIs$$  
+}
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{方均根速率$\ge$平均速率}
+\bch
+{\blue 教材思考题2-9}
+
+{\small
+\bea
+0 &\le& \overline{\left(\upsilon- \overline{\upsilon}\right)^2} \newl
+&=& \overline{\upsilon^2} + \overline{\upsilon}^2 - 2\overline{\upsilon\bar{\upsilon}} \newl 
+&=& \overline{\upsilon^2} + \overline{\upsilon}^2 - 2\overline{\upsilon}^2 \newl 
+&=& \overline{\upsilon^2} - \overline{\upsilon}^2 
+\eea
+从而有
+$$ \overline{\upsilon^2} \ge \overline{\upsilon}^2 $$
+两边开平方即有
+$$ \upsilon_{\rm rms} \ge \overline{\upsilon}$$
+}
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{方均根速率$\ge$平均速率(另一种证明方法)}
+\bch
+{\blue 教材思考题2-9}
+
+{\small
+令$f(x) = - x^2$，则$f''(x) = -2<0$。故$f(x)$为凸函数。根据琴生不等式得到
+$$ \overline{f(\upsilon)} \le f(\overline{\upsilon})$$
+即
+$$  - \overline{\upsilon^2} \le - \overline{\upsilon}^2$$
+即
+$$  \overline{\upsilon^2} \ge \overline{\upsilon}^2$$
+等号当且仅当所有速率均相等时才能取到。
+上式开平方即得
+$$ \upsilon_{\rm rms} \ge \overline{\upsilon}$$
+
+利用这种证明方法还可以迅速得到一系列和分布函数无关的不等式：
+$$\overline{\left(\frac{1}{\upsilon}\right)} \ge \frac{1}{\bar{\upsilon}},\ \ \ \overline{\upsilon^4} \ge \bar{\upsilon}^4, \ \ \overline{\sqrt{\upsilon}} \le \sqrt{\bar{\upsilon}} \ldots $$
+
+}
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{各向同性分布：泻流速率和平均速率的关系}
+\bch
+{\blue 当速率分布各向同性时，泻流速率总是平均速率的$\frac{1}{4}$}
+
+\skipline
+
+{\scriptsize
+设三维概率密度函数为$f(\upsilon_x, \upsilon_y,\upsilon_z) = g(\upsilon)$ (因各向同性所以可以这样设)，在球坐标里计算泻流速率，体积元为$\upsilon^2 d\upsilon \sin\theta d\theta d\varphi$，$\upsilon_z = \upsilon\cos\theta$
+
+
+\bea
+\overline{\upsilon^+_z} &=& \int_0^\infty \upsilon^2 d\upsilon \int_0^{\frac{\pi}{2}} \sin\theta d\theta \int_0^{2\pi} d\varphi \,(\upsilon \cos\theta) g(\upsilon) \newl
+&=& \pi \int_0^\infty \upsilon^2 d\upsilon\,  \upsilon g(\upsilon) \newl
+&=& \frac{1}{4} \bar{\upsilon}
+\eea
+
+}
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{泻流法提纯}
+\bch
+{\blue 教材习题2-5}
+
+\skipline
+
+{\scriptsize
+因泻流分子数正比于$n\overline{\upsilon^+_x} \propto \frac{n}{\sqrt{m}}$每次泻流之后$U^{235}$和$U^{238}$分子数密度之比提高了
+$$\sqrt{\frac{m_{U^{238}F_6}}{m_{U^{238}F_6}}} = \sqrt{\frac{238+19\times 6}{235+19\times 6}} = 1.0042888$$
+倍。
+所以需要提纯
+$$ n = \frac{\ln \frac{\frac{0.99}{0.01}}{\frac{0.007}{0.993}}}{\ln 1.0042888} = 2232$$
+次  
+}
+\ech
+\end{frame}
+
+\section{MB Distribution}
+
+\begin{frame}
+\chtitle{压强随高度变化}
+\bch
+{\blue 教材习题2-18}
+
+\skipline
+
+{\scriptsize
+由“万能法则”（或按2，3班的叫法：玻尔兹曼分布），分子数密度正比于$e^{-\frac{mgh}{kT}}$，又由理想气体状态方程，压强正比于分子数密度。故
+$$ e^{-\frac{mgh}{kT}} = \frac{0.8\atm}{1\atm} = 0.8$$
+空气分子平均质量
+$$m = \frac{29\SIg}{6.02\times 10^{23}} = 4.82\times 10^{-26}\SIkg$$
+即
+$$h = -\frac{kT\ln 0.8}{mg} = 1.96\times 10^3 \SIm$$ 
+}
+\ech
+\end{frame}
+
+\section{Heat Capacity}
+
+
+\begin{frame}
+\chtitle{气体的定压比热容}
+\bch
+{\blue 证明理想气体的摩尔定压比热容$C_p^{\rm mol}$和摩尔定体比热容$C_V^{\rm mol}$相差$R$}
+
+\skipline
+{\scriptsize
+气体的内能$U(T)$ 满足
+$$\frac{dU}{dT} = \nu C_V^{\rm mol}$$
+在固定压强时，当气体温度变化$dT$，体积变化$dV = \frac{ \nu R dT}{p}$
+故对气体做功为
+$$-p dV = - \nu R dT$$
+设气体吸收热量$dQ$，则由能量守恒，有
+$$dQ - pdV = dU$$
+(我们以后会叫它热力学第一定律)，即
+$$dQ = dU + pdV =  \nu C_V^{\rm mol}dT + \nu RdT$$
+所以
+$$C_p^{\rm mol} = \frac{1}{\nu} \frac{dQ}{dT} = C_V + R$$
+
+}
+\ech
+\end{frame}
+
+\end{document}
