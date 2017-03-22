@@ -140,7 +140,7 @@ $$ p = 717.75\times(-8.082\times 10^{-6}\times 1.053 + 0.00146763) \atm = 1.047 
 
 
 \begin{frame}
-\chtitle{定体温度计外推法例2：应该扣一半分的解法}
+\chtitle{定体温度计外推法例2：比较粗糙的解法}
 \bch
 {\blue 教材习题1-3}
 
@@ -158,7 +158,7 @@ $$ T = (684.932\frac{p}{\atm} -0.8228)\SIK$$
 \item[(2)]{$T=444.60\cdeg = 717.75\SIK$，$p  = 1.049\atm$}
 \eitem
 
-{\bf 这种拟合方法相当于没有使用$(p=0, T=0)$这个隐藏数据点，所以比较不精确 (不要迷信教材给的答案)。}
+{\bf 这种拟合方法相当于没有使用$(p=0, T=0)$这个隐藏数据点，所以比较不精确。}
 
 }
 
@@ -330,7 +330,127 @@ $$ p = \frac{\nu R T}{V} = 2.974\times 10^6\SIPa$$
 \ech
 \end{frame}
 
-\section{Probablity Density}
+\section{General Distribution}
+
+\begin{frame}
+\bch
+{\Large
+一般性分布的例子
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{方均根速率$\ge$平均速率}
+\bch
+{\blue 教材思考题2-9}
+
+{\small
+\bea
+0 &\le& \overline{\left(\upsilon- \overline{\upsilon}\right)^2} \newl
+&=& \overline{\upsilon^2} + \overline{\upsilon}^2 - 2\overline{\upsilon\bar{\upsilon}} \newl 
+&=& \overline{\upsilon^2} + \overline{\upsilon}^2 - 2\overline{\upsilon}^2 \newl 
+&=& \overline{\upsilon^2} - \overline{\upsilon}^2 
+\eea
+从而有
+$$ \overline{\upsilon^2} \ge \overline{\upsilon}^2 $$
+两边开平方即有
+$$ \upsilon_{\rm rms} \ge \overline{\upsilon}$$
+}
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{方均根速率$\ge$平均速率(另一种证明方法)}
+\bch
+{\blue 教材思考题2-9}
+
+{\small
+令$f(x) = - x^2$，则$f''(x) = -2<0$。故$f(x)$为凸函数。根据琴生不等式得到
+$$ \overline{f(\upsilon)} \le f(\overline{\upsilon})$$
+即
+$$  - \overline{\upsilon^2} \le - \overline{\upsilon}^2$$
+即
+$$  \overline{\upsilon^2} \ge \overline{\upsilon}^2$$
+等号当且仅当所有速率均相等时才能取到。
+上式开平方即得
+$$ \upsilon_{\rm rms} \ge \overline{\upsilon}$$
+
+利用这种证明方法还可以迅速得到一系列和分布函数无关的不等式：
+$$\overline{\left(\frac{1}{\upsilon}\right)} \ge \frac{1}{\bar{\upsilon}},\ \ \ \overline{\upsilon^4} \ge \bar{\upsilon}^4, \ \ \overline{\sqrt{\upsilon}} \le \sqrt{\bar{\upsilon}} \ldots $$
+
+}
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{各向同性分布：对称性考虑}
+\bch
+{\blue \small 设气体是各向同性的，对气体分子的速度$\vecv=(\upsilon_x, \upsilon_y, \upsilon_z)$和速率$\upsilon = \sqrt{\upsilon_x^2+\upsilon_y^2+\upsilon_z^2}$求下列事件的概率：
+\bitem
+\item[1]{\blue $\upsilon_x>\upsilon_y$}
+\item[2]{\blue $\upsilon_x>0$且$\upsilon_y>0$且$\upsilon_z>0$}
+\item[3]{\blue $|\upsilon_x|>\frac{1}{3}\upsilon$}
+\eitem
+}
+
+{\scriptsize
+
+\bitem
+\item[1]{由对称性，$P(\upsilon_x>\upsilon_y) = P(\upsilon_x<\upsilon_y)=\frac{1}{2}$}
+\item[2]{由对称性，$P(\upsilon_x>0) = P(\upsilon_y>0) = P(\upsilon_z>0) = \frac{1}{2}$，又$\upsilon_x$, $\upsilon_y$, $\upsilon_z$的分布互不相关，故联立事件$P(\upsilon_x>0, \upsilon_y>0, \upsilon_z>0) =\left(\frac{1}{2}\right)^3=\frac{1}{8}$}
+\item[3]{取$\upsilon_x$方向为南北极轴，建立速度空间的球坐标系，则$\upsilon_x = \upsilon \cos\theta$。所以$|\upsilon_x|>\frac{1}{3}\upsilon$的概率即$|\cos\theta| > \frac{1}{3}$的概率。
+
+
+球坐标的体积元为$\upsilon^2d\upsilon\sin\theta d\theta d\varphi = -\upsilon^2d\upsilon d(\cos\theta) d\varphi$，故对各向同性分布（只依赖于$\upsilon$的分布$f(\upsilon)$)而言，以$\mu = \cos\theta$为变量的概率密度
+$$\frac{dP}{d\mu} = \int_0^\infty \upsilon^2d\upsilon f(\upsilon) \int d\varphi $$ 
+是常数。$\cos\theta$的范围是$[-1,1]$，故$|\cos\theta|>\frac{1}{3}$的概率是$\frac{2}{3}$。}
+\eitem
+
+}
+
+\ech
+\end{frame}
+
+
+
+
+\begin{frame}
+\chtitle{各向同性分布：泻流速率和平均速率的关系}
+\bch
+{\blue 当速率分布各向同性时，泻流速率总是平均速率的$\frac{1}{4}$}
+
+\skipline
+
+{\scriptsize
+设三维概率密度函数为$f(\upsilon_x, \upsilon_y,\upsilon_z) = g(\upsilon)$ (因各向同性所以可以这样设)，在球坐标里计算泻流速率，体积元为$\upsilon^2 d\upsilon \sin\theta d\theta d\varphi$，$\upsilon_z = \upsilon\cos\theta$
+
+
+\bea
+\overline{\upsilon^+_z} &=& \int_0^\infty \upsilon^2 d\upsilon \int_0^{\frac{\pi}{2}} \sin\theta d\theta \int_0^{2\pi} d\varphi \,(\upsilon \cos\theta) g(\upsilon) \newl
+&=& \pi \int_0^\infty \upsilon^2 d\upsilon\,  \upsilon g(\upsilon) \newl
+&=& \frac{1}{4} \bar{\upsilon}
+\eea
+
+}
+
+\ech
+\end{frame}
+
+
+\section{Maxwell Distribution}
+
+\begin{frame}
+\bch
+{\Large
+麦克斯韦分布的应用
+}
+\ech
+\end{frame}
 
 \begin{frame}
 \chtitle{无量纲速度的概率密度}
@@ -405,9 +525,6 @@ $$P(-5<u_x<5) = 0.99999943$$
 \ech
 \end{frame}
 
-
-
-\section{Maxwell Distribution}
 
 
 \begin{frame}
@@ -574,75 +691,6 @@ $$\sqrt{\frac{3kT}{m}} = 3.5\times 10^{-4} \SIm/\SIs$$
 
 
 \begin{frame}
-\chtitle{方均根速率$\ge$平均速率}
-\bch
-{\blue 教材思考题2-9}
-
-{\small
-\bea
-0 &\le& \overline{\left(\upsilon- \overline{\upsilon}\right)^2} \newl
-&=& \overline{\upsilon^2} + \overline{\upsilon}^2 - 2\overline{\upsilon\bar{\upsilon}} \newl 
-&=& \overline{\upsilon^2} + \overline{\upsilon}^2 - 2\overline{\upsilon}^2 \newl 
-&=& \overline{\upsilon^2} - \overline{\upsilon}^2 
-\eea
-从而有
-$$ \overline{\upsilon^2} \ge \overline{\upsilon}^2 $$
-两边开平方即有
-$$ \upsilon_{\rm rms} \ge \overline{\upsilon}$$
-}
-
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{方均根速率$\ge$平均速率(另一种证明方法)}
-\bch
-{\blue 教材思考题2-9}
-
-{\small
-令$f(x) = - x^2$，则$f''(x) = -2<0$。故$f(x)$为凸函数。根据琴生不等式得到
-$$ \overline{f(\upsilon)} \le f(\overline{\upsilon})$$
-即
-$$  - \overline{\upsilon^2} \le - \overline{\upsilon}^2$$
-即
-$$  \overline{\upsilon^2} \ge \overline{\upsilon}^2$$
-等号当且仅当所有速率均相等时才能取到。
-上式开平方即得
-$$ \upsilon_{\rm rms} \ge \overline{\upsilon}$$
-
-利用这种证明方法还可以迅速得到一系列和分布函数无关的不等式：
-$$\overline{\left(\frac{1}{\upsilon}\right)} \ge \frac{1}{\bar{\upsilon}},\ \ \ \overline{\upsilon^4} \ge \bar{\upsilon}^4, \ \ \overline{\sqrt{\upsilon}} \le \sqrt{\bar{\upsilon}} \ldots $$
-
-}
-
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{各向同性分布：泻流速率和平均速率的关系}
-\bch
-{\blue 当速率分布各向同性时，泻流速率总是平均速率的$\frac{1}{4}$}
-
-\skipline
-
-{\scriptsize
-设三维概率密度函数为$f(\upsilon_x, \upsilon_y,\upsilon_z) = g(\upsilon)$ (因各向同性所以可以这样设)，在球坐标里计算泻流速率，体积元为$\upsilon^2 d\upsilon \sin\theta d\theta d\varphi$，$\upsilon_z = \upsilon\cos\theta$
-
-
-\bea
-\overline{\upsilon^+_z} &=& \int_0^\infty \upsilon^2 d\upsilon \int_0^{\frac{\pi}{2}} \sin\theta d\theta \int_0^{2\pi} d\varphi \,(\upsilon \cos\theta) g(\upsilon) \newl
-&=& \pi \int_0^\infty \upsilon^2 d\upsilon\,  \upsilon g(\upsilon) \newl
-&=& \frac{1}{4} \bar{\upsilon}
-\eea
-
-}
-
-\ech
-\end{frame}
-
-
-\begin{frame}
 \chtitle{泻流法提纯}
 \bch
 {\blue 教材习题2-5}
@@ -711,7 +759,7 @@ $$C_p^{\rm mol} = \frac{1}{\nu} \frac{dQ}{dT} = C_V + R$$
 \bch
 \bitem
 \item[16]{一个氦气定体温度计在$T = 250\SIK$, $300\SIK$, $350\SIK$时的压强读数分别为$1.0000\atm$, $1.1189\atm$, $1.3974\atm$。试估算它在$T=150\SIK$时的压强读数。}
-\item[17]{对温度为$T$，分子质量为$m$的理想气体，计算分子的速率平方倒数的平均$$\overline{\left(\frac{1}{\upsilon^2}\right)}$$它和$\frac{1}{\overline{\upsilon}^2}$比较哪个大？}
+\item[17]{对温度为$T$，分子质量为$m$的理想气体，计算分子的速率平方倒数的平均$$\overline{\left(\frac{1}{\upsilon^2}\right)}.$$它和$\frac{1}{\overline{\upsilon}^2}$比较哪个大？这两者的大小关系对一般性分布成立吗？}
 \item[18]{在温度为$300\SIK$，压强$p = 1\atm$的氧气中放一个纳米音乐盒。音乐盒有个表面积为$10^{-4}\SImm^2$的探头。当有速率超过$2792\SIm/\SIs$的氧气分子撞击探头表面时将触动音乐盒开关。问：音乐盒开关平均多久被触发一次？}
 \eitem
 \ech
