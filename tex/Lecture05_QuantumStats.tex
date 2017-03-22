@@ -60,15 +60,18 @@
 
 
 \begin{frame}
-\chtitle{量子力学又不乖}
+\chtitle{量子力学的离散能级}
 \bch
-\bmini{0.4}
-\addfig{1.2}{buguai.png}
-\emini
-\bmini{0.55}
-经典图像：粒子的能量可以连续变化
+\bmini{0.45}
+经典图像：粒子的能量可以连续变化 
 
+\includegraphics[width=1.5in]{slope.jpg}
+\emini
+\hspace{0.2in}
+\bmini{0.45}
 量子力学：束缚态的能级一般是离散的
+
+ \includegraphics[width=1.4in]{steps.jpg}  
 \emini
 \ech
 \end{frame}
@@ -226,7 +229,7 @@ $$\Theta_{\rm trans} = \frac{h^2}{8mkL^2} = 2.4\times 10^{-18}\SIK \times \frac{
 
 \skiplines
 
-\includegraphics[width=1.5in]{notlove.jpg} \hspace{0.1in} \includegraphics[width=1.5in]{notexam.jpg}
+\includegraphics[width=1.5in]{notlove.jpg} \hspace{0.25in} \includegraphics[width=1.5in]{notexam.jpg}
 
 \ech
 \end{frame}
@@ -287,7 +290,7 @@ $$\Theta_{\rm trans} = \frac{h^2}{8mkL^2} = 2.4\times 10^{-18}\SIK \times \frac{
 \item{最多只能在一个“粒子态”上放一个粒子，我们称之为{\blue 费米子(Fermion)}。例如电子，质子。}
 \eitem
 
-{\blue 两个费米子不能在完全相同的态上}，这称为“{\blue 泡利(Pauli)不相容原理}”。
+{\blue 两个全同费米子不能在完全相同的态上}，这称为“{\blue 泡利(Pauli)不相容原理}”。
 
 {\small
 注意粒子往往有一些内禀自由度（自旋等）。之前我们讨论能级的时候，当一个自旋向上的电子和一个自旋向下的电子处于相空间的同一个“小块”时，我们并没有区分它们所处的态（因为并不对分布律的推导造成任何影响）。现在情况有所不同了：{\blue “泡利不相容原理”仅对“包含一切自由度的态”适用}。所以我们{\blue 计算态的个数（允许填充的费米子的个数）时，需要把内禀自由度算上}。}
@@ -298,6 +301,8 @@ $$\Theta_{\rm trans} = \frac{h^2}{8mkL^2} = 2.4\times 10^{-18}\SIK \times \frac{
 \begin{frame}
 \chtitle{费米场的态}
 \bch
+例子：如果没有内禀自由度，则三个态上最多放三个费米子，一共有八种放法。
+
 \addfig{1.5}{E_fermion.png}
 \ech
 \end{frame}
@@ -311,7 +316,7 @@ $$e^{-\frac{n_a(\varepsilon_a-\mu)+n_b(\varepsilon_b-\mu)+n_c(\varepsilon_c-\mu)
 
 \skiplines
 
-这里的$\mu$开始变得重要了，它称为化学势，是一个依赖于温度和总粒子数的量。它随着温度升高而降低，随着总粒子数增大而增大。
+这里的$\mu$开始变得重要了，它称为化学势。
 \ech
 \end{frame}
 
@@ -323,7 +328,7 @@ $$e^{-\frac{n_a(\varepsilon_a-\mu)+n_b(\varepsilon_b-\mu)+n_c(\varepsilon_c-\mu)
 平均粒子数为
 
 \bea
-\bar{n} &=& \frac{\sum_{n=0}^1 ne^{-\frac{n(\varepsilon_a-\mu)}{kT}}}{\sum_{n=0}^1 e^{-\frac{n(\varepsilon_a-\mu)}{kT}}}  \newl
+\bar{n}_a &=& \frac{\sum_{n=0}^1 ne^{-\frac{n(\varepsilon_a-\mu)}{kT}}}{\sum_{n=0}^1 e^{-\frac{n(\varepsilon_a-\mu)}{kT}}}  \newl
 &=& \frac{ e^{-\frac{\varepsilon_a-\mu}{kT}}}{1+ e^{-\frac{\varepsilon_a-\mu}{kT}}}  \newl
 &=& \frac{ 1}{e^{\frac{\varepsilon_a-\mu}{kT}}+1}  
 \eea
@@ -338,90 +343,201 @@ $$e^{-\frac{n_a(\varepsilon_a-\mu)+n_b(\varepsilon_b-\mu)+n_c(\varepsilon_c-\mu)
 玻色子的情况要稍复杂，对$n$的求和要从$0$到$\infty$。
 {\scriptsize
 \bea
-\bar{n} &=& \frac{\sum_{n=0}^{\infty} ne^{-\frac{n(\varepsilon_a-\mu)}{kT}}}{\sum_{n=0}^1 e^{-\frac{n(\varepsilon_a-\mu)}{kT}}}  \newl
+\bar{n}_a &=& \frac{\sum_{n=0}^{\infty} ne^{-\frac{n(\varepsilon_a-\mu)}{kT}}}{\sum_{n=0}^1 e^{-\frac{n(\varepsilon_a-\mu)}{kT}}}  \newl
 &=& \left. \frac{\sum_{n=0}^{\infty} ne^{-nx}}{\sum_{n=0}^1 e^{-nx}}\right\vert_{x = \frac{\varepsilon_a-\mu}{kT}}  \newl
 &=& \left. \frac{-\frac{d}{d x}\sum_{n=0}^{\infty} e^{-nx}}{\sum_{n=0}^1 e^{-nx}}\right\vert_{x = \frac{\varepsilon_a-\mu}{kT}}  \newl
 &=& \left. \frac{-\frac{d}{d x}\frac{1}{1- e^{-x}} }{ \frac{1}{1- e^{-x}} }\right\vert_{x = \frac{\varepsilon_a-\mu}{kT}}  \newl
 &=& \frac{ 1}{e^{\frac{\varepsilon_a-\mu}{kT}}-1}  
 \eea
-显然，对玻色子，$\mu$不能高于基态（能量最低的态，注意这可以是多个能量相等的态）的能量。
 }
-
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{$T\rightarrow 0K$时的极限}
-\bch
-当温度$T\rightarrow 0$，不管是费米子还是玻色子，都尽量往低能级跑。于是产生了两种结果：
-\bitem
-\item{玻色子都集中在基态，形成一个“凝聚体”，称为“{\blue 玻色-爱因斯坦凝聚}”（BE condensation)。}
-\item{费米子则因为每个态最多只能放一个粒子，就只能按能量从低到高选择不同的态依次填充。当所有费米子都用完时，填到的那个态的能量$\varepsilon_F$称为{\blue 费米能}。}
-\eitem
-
-\skipline
-
-费米气体在$0\SIK$时也会有大量粒子处在激烈运动的非基态，形成的动理压强称为{\blue 简并压}(degeneracy pressure)。这完全是一个量子力学效应。
 \ech
 \end{frame}
 
 
 \begin{frame}
-\chtitle{思考题}
+\chtitle{$\mu$不能高于基态能量}
 \bch
-试证明当$T\rightarrow 0$时
-\bitem
-\item{玻色子$\mu \rightarrow $基态能量}
-\item{而费米子$\mu \rightarrow \varepsilon_F$}
-\eitem
-
+玻色-爱因斯坦分布
+\be
+\bar{n}_a = \frac{ 1}{e^{\frac{\varepsilon_a-\mu}{kT}}-1}  
+\ee
+我们把{\blue 能量最低的态叫做基态}。显然要使基态上的平均粒子数为非负，{\blue 玻色子的化学势$\mu$不能高于基态的能量}。
 \ech
 \end{frame}
 
 \begin{frame}
-\chtitle{思考题：简并压和费米能的关系}
+\chtitle{量子效应是“群鸟争巢”效应}
 \bch
-考虑理想费米气体: $\varepsilon = \frac{\calp^2}{2m}$。设粒子数密度为$n$。
+显然，当$\bar{n}\ll 1$时，FD分布和BE分布都趋向于经典分布（玻尔兹曼分布）。
 
 \skiplines
 
-回忆气体动理压强公式：$p =\frac{2}{3}n\bar\varepsilon$ (非相对论情形）及$p =\frac{1}{3}n\bar\varepsilon$ （相对论情形）。对费米气体，证明简并压
+{\bf \blue 量子效应通常是全同粒子“争抢”态造成的}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{量子动量}
+\bch
+设粒子的内禀态数为$g$，粒子动量的数量级为$\sim \calp$，则总态数数量级为$N_s \sim g \calp^3 V\hbar^{-3}$。
 \bitem
-\item[(1)]{在非相对论的情形为$\frac{2}{5}n\varepsilon_F$}
-\item[(2)]{在相对论的情形为$\frac{1}{4}n\varepsilon_F$}
+\item{当总粒子数$N\ll N_s$时，粒子几乎不需要“争抢”态，经典近似适用。}
+\item{当总粒子数$N\gtrsim N_s$时，粒子之间需要“争抢”态，必须用量子图像。}
 \eitem
+也就是说，存在一个典型的“量子动量”$$\calp_q= \left(\frac{N}{gV}\right)^{1/3} = \left(\frac{n}{g}\right)^{1/3}\hbar$$
+当粒子动量大多低于$\calp_q$时，系统的量子特性就开始显现。
+
 \ech
 \end{frame}
 
 
 \begin{frame}
-\chtitle{估算费米能}
+\chtitle{非相对论粒子体系的量子能量和量子温度}
+\bch
+对非相对论粒子系统，$\varepsilon = \frac{\calp^2}{2m}$，所以“量子能量”
+$$\varepsilon_q =  \frac{\calp_q^2}{2m} =  \left(\frac{n}{g}\right)^{2/3}\frac{\hbar^2}{2m}$$
+和量子温度
+$$T_q=  \frac{\varepsilon_q}{k} =  \left(\frac{n}{g}\right)^{2/3}\frac{\hbar^2}{2mk}$$
+{\blue 当气体温度远高于量子温度时，可以忽略量子效应。}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{极端相对论粒子体系的量子能量和量子温度}
+\bch
+对极端相对论粒子系统，$\varepsilon = \frac{\calp}c$，
+$$\varepsilon_q =  \calp_qc =  \left(\frac{n}{g}\right)^{1/3}\hbar c$$
+和量子温度
+$$T_q =  \frac{\varepsilon_q}{k} =  \left(\frac{n}{g}\right)^{1/3}\frac{\hbar c}{k}$$
+{\blue 当气体温度远高于量子温度时，可以忽略量子效应。}
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{$\mu$由归一化条件决定}
+\bch
+费米-狄拉克(FD)分布和玻色-爱因斯坦(BE)分布
+\be
+\bar{n}_a = \frac{ 1}{e^{\frac{\varepsilon_a-\mu}{kT}}\pm 1}  
+\ee
+中的化学势要由总能量来确定。
+
+\be
+\sum_a \frac{\varepsilon_a}{e^{\frac{\varepsilon_a-\mu}{kT}}\pm 1}   = U
+\ee
+
+实际材料低温时的内能都不大容易计算，所以上式并不如想象中那么好用。下面我们来考虑几种极限情况加深理解。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{经典极限下的$\mu$}
+\bch
+经典极限下
+$$\bar{n}_a =  nh^3 \left(\frac{1}{2\pi mkT}\right)^{3/2} e^{-\frac{\calp_a^2}{2m kT}}$$
+所以
+$$\mu = kT \ln\left(nh^3 \left(\frac{1}{2\pi mkT}\right)^{3/2}\right) \sim -\frac{3}{2}kT\ln \frac{T}{T_q} $$
+当然，上式仅当$T\gg T_q$时适用。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{固定粒子数的玻色理想气体的$\mu$-$T$图}
+\bch
+\bmini{0.5}
+{\small
+由于理想气体分子的基态（$\calp = 0$) 能量为零。对玻色理想气体而言，必须有$\mu \le 0$。又$T \rightarrow 0\SIK$时，玻色子都涌往基态，形成一个“凝聚体”，称为“{\blue 玻色-爱因斯坦凝聚}”（BE condensation)。这时要使BE分布有意义，必须有$\mu \rightarrow 0$。
+
+当我们从$0\SIK$逐渐升高温度，达到某一个临界温度$\Theta_B$（称为{\blue BE凝聚温度})时，大多数粒子都离开了基态，BE凝聚被破坏，$\mu$也开始向经典极限转变。
+
+于是我们大致可以画出一个$\mu$-$T$关系图：}
+\emini
+\bmini{0.45}
+\addfig{1.7}{boson_mu_T.png}
+\emini
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{固定粒子数的费米理想气体的$\mu$-$T$图}
+\bch
+\bmini{0.5}
+{\small
+当$T \rightarrow 0\SIK$时，费米子因为每个态最多只能放一个粒子，就只能按能量从低到高选择不同的态依次填充。当所有费米子都用完时，填到的那个态的能量$\varepsilon_F$称为{\blue 费米能}。
+
+即能量低于$\varepsilon_F$的态均有$\bar{n} = 1$，否则$\bar{n} = 0$ （这种类似于一个平台的分布称为费米简并）。由FD分布公式可直接看出$\mu(T\rightarrow 0\SIK) \rightarrow \varepsilon_F$。
+
+
+当我们从$0\SIK$逐渐升高温度，达到某一个临界温度$\Theta_F = \varepsilon_F/k $（称为{\blue 费米简并温度})时，费米简并被破坏，$\mu$也开始向经典极限转变。
+
+根据刚才讨论的群鸟争巢图像，显然有$\varepsilon_F \sim \varepsilon_q$,  $\Theta_F \sim T_q$。
+
+于是我们大致可以画出一个$\mu$-$T$关系图：}
+\emini
+\bmini{0.45}
+\addfig{1.7}{fermion_mu_T.png}
+\emini
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{$T\lesssim \Theta_F$时的费米简并压}
+\bch
+
+
+费米气体在$T\lesssim \Theta_F$，甚至$T\rightarrow 0\SIK$时也会有大量粒子处在激烈运动的非基态，形成的动理压强称为{\blue 简并压}(degeneracy pressure)。这完全是一个量子力学效应。
+
+\skipline
+
+取决于我们讨论的是什么系统，$\Theta_F$未必是一个很低的温度。例如金属中的电子气，其$\Theta_F$可以高达数万$\SIK$。
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{费米理想气体的费米能}
 \bch
 {\small
-考虑某个内禀态数为$g$(例如电子有自旋向上和自旋向下两个内禀态）的费米气体，当温度降为$0\SIK$，动量低于$\calp_{\max}$的态的总数为
+我们已经知道了$\varepsilon_F\sim \varepsilon_q$，对理想气体我们可以更精确地计算出两者之比。
+
+考虑某个内禀态数为$g$(例如电子有自旋向上和自旋向下两个内禀态）的费米理想气体，当温度降为$0\SIK$，动量低于$\calp_{\max}$的态的总数为
 $$ N =  g \frac{V \left(\frac{4\pi}{3} \calp_{\max}^3\right)}{h^3} $$
 由于$0\SIK$时每个态都填了一个费米子，$n = N/V$即是粒子数密度，我们得到
 
 非相对论情形
-$$\varepsilon_F = \frac{\calp_{\max}^2}{2m} =  \left(\frac{3n}{4\pi g}\right)^{2/3} \frac{h^2}{2m} = \left(\frac{6\pi^2 n}{ g}\right)^{2/3} \frac{\hbar^2}{2m}$$
+$$\varepsilon_F = \frac{\calp_{\max}^2}{2m} =  \left(\frac{3n}{4\pi g}\right)^{2/3} \frac{h^2}{2m} = \left(\frac{6\pi^2 n}{ g}\right)^{2/3} \frac{\hbar^2}{2m} = 15.2 \varepsilon_q$$
 
 极端相对论情形
-$$\varepsilon_F = c\calp_{\max} =  \left(\frac{3n}{4\pi g}\right)^{1/3} hc = \left(\frac{6\pi^2 n}{ g}\right)^{1/3} \hbar c$$
+$$\varepsilon_F = c\calp_{\max} =  \left(\frac{3n}{4\pi g}\right)^{1/3} hc = \left(\frac{6\pi^2 n}{ g}\right)^{1/3} \hbar c = 3.9 \varepsilon_q$$
 }
 \ech
 \end{frame}
 
-
 \begin{frame}
-\chtitle{解除量子特性需要的温度}
+\chtitle{思考题：费米理想气体简并压和费米能的关系}
 \bch
-现在考虑从$0\SIK$逐渐升高温度。
+设理想费米气体粒子数密度为$n$。
+
+\skiplines
+
+回忆气体动理压强公式：$p =\frac{2}{3}n\bar\varepsilon$ (非相对论情形）及$p =\frac{1}{3}n\bar\varepsilon$ （相对论情形）。对费米理想气体，证明简并压
 \bitem
-\item{玻色子：逐渐有粒子逃离基态。到某个临界温度时$\Theta_B$时，大多数玻色子逃离基态，BE凝聚被破坏。这个临界温度称为{\blue 玻色-爱因斯坦凝聚点}。}
-\item{费米子：当从$0\SIK$逐渐升高温度，开始有费米子跑到能量高于$\varepsilon_F$的态去。当$T> \Theta_F = \varepsilon_F/k$时，可以认为费米气体的简并压解除。这个温度$\Theta_F$称为{\blue 费米简并温度}。}
+\item[(1)]{在非相对论的情形为$\frac{2}{5}n\varepsilon_F \propto n^{5/3}$}
+\item[(2)]{在相对论的情形为$\frac{1}{4}n\varepsilon_F \propto n^{4/3}$}
 \eitem
 \ech
 \end{frame}
+
 
 \begin{frame}
 \chtitle{金属内电子的简并温度和简并压}
@@ -456,10 +572,27 @@ $$ p = \frac{2}{5} n \varepsilon_F \sim 4\times 10^{10}\SIPa$$
 \ech
 \end{frame}
 
+
+\begin{frame}
+\bch
+{\Large
+下面我们讨论一下光子气体
+}
+
+\addfig{2}{godsaylight.jpg}
+
+{\scriptsize
+神说：要有光。于是白昼和黑夜分开了…
+
+GF说：要有钱。于是你和GF分开了…}
+\ech
+\end{frame}
+
 \begin{frame}
 \chtitle{斯特藩-玻尔兹曼(Stefan-Boltzmann)定律}
 \bch
-光子的能量$\varepsilon = \calp c$，基态能量为$0$。当有一个温度为$T$的辐射源和光子气体达到热平衡时，光子的化学势达到$\mu = 0$。
+{\small
+光子的能量$\varepsilon = \calp c$，基态能量为$0$。当有一个温度为$T$的辐射源和光子气体达到热平衡时，光子的化学势达到$\mu = 0$（当粒子数可以随意变化时化学势为零，这和我们之前讨论的粒子数固定系统的化学势不一样)。
 
 可以计算热辐射的光子气体的能量为
 $$E = \int_0^\infty \frac{\calp c}{e^{\frac{\calp c}{kT}}-1} \frac{g V 4\pi\calp^2 d\calp}{h^3} $$
@@ -469,7 +602,7 @@ $$E = \int_0^\infty \frac{\calp c}{e^{\frac{\calp c}{kT}}-1} \frac{g V 4\pi\calp
 $$u = \frac{E}{V}= a T^4$$
 这称为斯特藩-玻尔兹曼定律，其中斯特藩-玻尔兹曼常数$a$为
 $$a = \frac{k^4}{\pi^2c^3\hbar^3}\int_0^\infty  \frac{x^3 }{e^x-1} dx$$
-
+}
 \ech
 \end{frame}
 
@@ -536,8 +669,8 @@ $$p = \frac{1}{3}u = \frac{a}{3} T^4$$
 \bch
 {\small 
 如果在热辐射光子气体中放一个接收板，则单位时间单位面积接收的能量为
-$$j = \frac{ac}{4}T^4 = \sigma T^4 $$
-{\scriptsize (对各向同性分布，泻流速率总是平均速率的$\frac{1}{4}$。)}
+$$j = \frac{c}{4}aT^4 = \sigma T^4 $$
+{\scriptsize (我们下节课会证明：对各向同性分布，泻流速率总是平均速率的$\frac{1}{4}$。)}
 
 $\sigma = \frac{ac}{4} = 5.67 \times 10^{-8} \SIW/(\SIm^2 \SIK^4)$有时也叫做斯特藩-玻尔兹曼常数（\wulian反正$a$和$\sigma$都不是基本常数，别太在意）。
 }
@@ -563,7 +696,7 @@ $$j = \sigma T^4 = 10^8 \SIW/\SIm^2 $$
 \chtitle{思考题}
 \bch
 
-\addfig{1.in}{think.jpg}
+\addfig{1.}{think.jpg}
 
 为什么地面上接收到的实际可用的太阳能往往比上述计算结果几乎要小一个数量级。
 
@@ -575,10 +708,10 @@ $$j = \sigma T^4 = 10^8 \SIW/\SIm^2 $$
 \bch
 \bitem
 \item[13]{能均分定理也适用于水中的浮游微粒，试由此求解教材习题2-24。}
-\item[14]{把室温下$1\SImol$稀薄氢气保持压强不变缓慢地加热，使得它温度升高$1\SIK$。在这个过程中氢气吸收了多少热量？
+\item[14]{把室温下$1\SImol$稀薄氢气保持{\bf 压强不变}缓慢地加热，使得它温度升高$1\SIK$。在这个过程中氢气吸收了多少热量？
 
 \scriptsize
-提示：利用摩尔定体热容和理想气体状态方程。
+提示：注意气体会膨胀做功，跟定体加热相比需要更多的热量。利用摩尔定体热容和理想气体状态方程。
 }
 \item[15]{计算温度为$T$的光子气体的光子数密度$n$。
 

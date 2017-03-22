@@ -528,7 +528,7 @@ $$P(-5<u_x<5) = 0.99999943$$
 
 
 \begin{frame}
-\chtitle{Maxwell分布例1}
+\chtitle{Maxwell分布例1 （一维Maxwell分布）}
 \bch
 {\blue 教材习题2-8}
 
@@ -545,7 +545,7 @@ $$P(-5<u_x<5) = 0.99999943$$
 
 
 \begin{frame}
-\chtitle{Maxwell分布例2}
+\chtitle{Maxwell分布例2 （二维Maxwell分布）}
 \bch
 {\blue 教材习题2-7}
 
@@ -565,7 +565,7 @@ $$\bar{u} = \int_0^\infty u^2 e^{-u^2/2} du = -\left.\frac{d}{d\alpha}\int_0^\in
 
 
 \begin{frame}
-\chtitle{Maxwell分布例3}
+\chtitle{Maxwell分布例3 （速度的函数的平均值）}
 \bch
 {\blue 教材习题2-3}
 
@@ -588,25 +588,33 @@ $$\overline{\left(\frac{1}{\upsilon}\right)} = \frac{4}{\pi} \frac{1}{\bar{\upsi
 
 
 \begin{frame}
-\chtitle{Maxwell分布例4}
+\chtitle{Maxwell分布例4 (小区间求概率的近似方法）}
 \bch
-{\blue 计算使 $F_M(\upsilon)$最大的“最概然速率”$\upsilon_{\max}$}
+{\blue 教材习题2-2}
 
 \skipline
 
-{\small
-设$u_{\max}$使$\tilde{F}_M(u)$最大， 显然$\upsilon_{\max} = \upsilon_c u_{\max}$
+{\scriptsize
+设$u_{\max}$使$\tilde{F}_M(u)$最大， 由$\frac{d \tilde{F}_M(u)}{du}\vert_{u=u_{\max}} = 0$解出$u_{\max} = \sqrt{2}$，故$\upsilon_{\max} = \sqrt{2}\upsilon_c = \sqrt{\frac{2kT}{m}}$ 
 
-由
-$$\frac{d \tilde{F}_M(u)}{du}\vert_{u=u_{\max}} = 0$$
-就可以解出$u_{\max} = \sqrt{2}$，故
-$$\upsilon_{\max} = \sqrt{2}\upsilon_c = \sqrt{\frac{2kT}{m}}$$ }
+\bitem
+\item[(1)]{由于速度变化范围小，可以近似认为概率密度在该范围内不变，计算出概率为
+$$ \left.\tilde{F}_M(u) \delta u\right\vert_{u = \sqrt{2}} = \left.(0.02 u) \tilde{F}_M(u)\right\vert_{u = \sqrt{2}} =\left.0.02\sqrt{\frac{2}{\pi}}u^3 e^{-u^2/2}\right\vert_{u = \sqrt{2}} = 0.0166$$
+}
+\item[(2)]{$$\left.\tilde{f}_{\rm 1D}(u_x) \delta u_x\right\vert_{u_x = \sqrt{2}}= \left. (0.02 u_x) \tilde{f}_{\rm 1D}(u_x) \right\vert_{u_x = \sqrt{2}} =\left. \frac{0.02}{\sqrt{2\pi}} u_x e^{-u_x^2/2} \right\vert_{u_x = \sqrt{2}} = 0.00415$$
+}
+\item[(3)]{由于三个速度分量的分布互相独立，故概率为$(0.00415)^3 = 7.15\times 10^{-8}$.
+}
+\eitem
+}
 
 \ech
 \end{frame}
 
+
+
 \begin{frame}
-\chtitle{Maxwell分布例5}
+\chtitle{Maxwell分布例5 （大区间求概率）}
 \bch
 {\blue 教材习题 2-14}
 
@@ -626,7 +634,7 @@ $$\upsilon_{\max} = \sqrt{2}\upsilon_c = \sqrt{\frac{2kT}{m}}$$ }
 
 
 \begin{frame}
-\chtitle{Maxwell分布例6}
+\chtitle{Maxwell分布例6 （大区间求概率，迭代法求解）}
 \bch
 {\blue 教材思考题2-10}
 
