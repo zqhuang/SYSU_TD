@@ -485,7 +485,7 @@ $$\tilde{f}_{\rm 1D}(u_x) |d u_x| = f_{\rm 1D}(\upsilon_x) |d\upsilon_x|$$
 \addfig{1.5}{f1D.pdf}
 \emini
 
-{\scriptsize 概率密度$ \frac{1}{\sqrt{2\pi}} e^{-\frac{u_x^2}{2}}$称为标准正则分布，记作$N(u_x)$。
+{\scriptsize 概率密度$ \frac{1}{\sqrt{2\pi}} e^{-\frac{u_x^2}{2}}$称为标准正则分布，记作$N(u_x)$。{\blue 无量纲速度的每个分量都服从标准正则分布。}
 
 容易计算出下列平均值：
 $$\bar{u_x} = \bar{u_x^3} = 0,\ \ \overline{|u_x|} = \sqrt{\frac{2}{\pi}} ,\ \ \bar{u_x^2} = 1,\ \ \bar{|u_x|^3} = \sqrt{\frac{8}{\pi}},\ \ \bar{u_x^4} = 3$$
@@ -501,30 +501,59 @@ $$\bar{u_x} = \bar{u_x^3} = 0,\ \ \overline{|u_x|} = \sqrt{\frac{2}{\pi}} ,\ \ \
 {\scriptsize
 因为$u_x$, $u_y$, $u_z$的分布相互独立，就有
 $$\tilde{f}_M(u_x, u_y, u_z) =  N(u_x)N(u_y) N(u_z) = \left(\frac{1}{2\pi}\right)^{\frac{3}{2}}e^{-\frac{u_x^2+u_y^2+u_z^2}{2}}$$ 
-转换到球坐标即可求出无量纲速率分布在$u$和$u+du$之间的概率，除以$du$得到：
-$$\tilde{F}_M(u) =  \sqrt{\frac{2}{\pi}}u^2 e^{-\frac{u^2}{2}} $$
+转换到球坐标即可求出{\blue 无量纲速率分布：
+
+$$\tilde{F}_M(u) =  \sqrt{\frac{2}{\pi}}u^2 e^{-\frac{u^2}{2}} $$}
 }
 \ech
 \end{frame}
 
 
 \begin{frame}
-\chtitle{正则分布的区间积分}
+\chtitle{正则分布的小区间积分}
 \bch
 {\scriptsize
-下面我们计算$u_x$在[-a,a]内的概率($a\ge 0$)。
-$$P(-a<u_x<a) = \frac{1}{\sqrt{2\pi}} \int_{-a}^a e^{-\frac{u_x^2}{2}}du_x \approx  \sqrt{1-e^{-\frac{a^2}{2}\left(\frac{\frac{4}{\pi}+ca^2}{1+ca^2}\right)}}$$
-最后一步只是一个好用的近似公式，其中$c = \frac{4(\pi-3)}{3\pi(4-\pi)} \approx 0.07$。易算出
-$$P(-1<u_x<1) =  0.683$$
-$$P(-2<u_x<2) = 0.954$$
-$$P(-3<u_x<3) = 0.9973$$
-$$P(-4<u_x<4) = 0.999937$$
-$$P(-5<u_x<5) = 0.99999943$$
-在科学研究中，常常要用到上述置信区间。在论文中常可以看到"68.3\% confidence level" , "95.4\% confidence level" 等术语。粒子物理实验往往要求达到$5\sigma$精度，就是指可信度$99.999943\%$。
+如果积分范围比较小，我们可以假设概率密度函数在小区间内是常数，用乘法代替积分。
+
+\skipline
+
+例如分子速率在 $\bar{\upsilon}$附近$\pm 1\%$之内的概率为
+$$ \tilde{F}_M(\sqrt{\frac{8}{\pi}}) (\sqrt{\frac{8}{\pi}} \times 0.02) =\sqrt{\frac{2}{\pi}} \frac{8}{\pi}e^{-4/\pi} \times\left(\sqrt{\frac{8}{\pi}}\times 0.02 \right) \approx 0.018  $$
 }
 \ech
 \end{frame}
 
+
+\begin{frame}
+\chtitle{正则分布的大区间积分}
+\bch
+{\scriptsize
+下面我们计算$u_x$在[-a,a]内的概率($a\ge 0$)。
+$$P(-a<u_x<a) = \frac{1}{\sqrt{2\pi}} \int_{-a}^a e^{-\frac{u_x^2}{2}}du_x \approx  \sqrt{1-e^{-\frac{a^2}{2}\left(\frac{\frac{4}{\pi}+ 0.074a^2}{1+0.074a^2}\right)}}$$
+最后一步只是一个好用的近似公式，在$a \le 5 $的范围内都表现优异。当$a > 5$时，我们可以用下列近似
+$$P(-a<u_x<a) \approx \frac{e^{-a^2/2}}{\sqrt{\pi(\frac{a^2}{2}+1)}}, \ \ a>5 $$
+
+在教材上定义了误差函数$\erf(x) \equiv \frac{2}{\sqrt{\pi}}\int_0^x e^{-x^2}dx $，则
+$$P(-a<u_x<a) = \erf\left(\frac{a}{ \sqrt{2}}\right)$$
+当然，这只是个定义而已。
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{正则分布的大区间积分}
+\bch
+{\scriptsize
+易算出
+$$P(-1<u_x<1) =  0.68$$
+$$P(-2<u_x<2) = 0.95$$
+$$P(-3<u_x<3) = 0.997$$
+$$P(-4<u_x<4) = 0.99994$$
+$$P(-5<u_x<5) = 0.9999994$$
+在科学研究中，常常要用到上述置信区间。在论文中常可以看到"68\% confidence level" , "95\% confidence level" 等术语。粒子物理实验往往要求达到$5\sigma$精度，就是指可信度$99.99994\%$。
+}
+\ech
+\end{frame}
 
 
 \begin{frame}
@@ -624,10 +653,10 @@ $$ \left.\tilde{F}_M(u) \delta u\right\vert_{u = \sqrt{2}} = \left.(0.02 u) \til
 \int_{\sqrt{2}}^\infty \tilde{F}_M(u) du &=& \sqrt{\frac{2}{\pi}} \int_{\sqrt{2}}^\infty u^2e^{-\frac{u^2}{2}} du \newl
  &=& -\left.\sqrt{\frac{2}{\pi}} u e^{-\frac{u^2}{2}}\right\vert_{\sqrt{2}}^\infty +\sqrt{\frac{2}{\pi}} \int_{\sqrt{2}}^\infty e^{-\frac{u^2}{2}} du \newl
  &=& \frac{2}{e\sqrt{\pi}} + 1 - \sqrt{\frac{1}{2\pi}} \int_{-\sqrt{2}}^{\sqrt{2}} e^{-\frac{u^2}{2}} du \newl
-&\approx & \frac{2}{e\sqrt{\pi}} + 1- \sqrt{1-e^{-\left(\frac{\frac{4}{\pi}+ 0.14}{1+0.14}\right)}} \newl
+&\approx & \frac{2}{e\sqrt{\pi}} + 1- \sqrt{1-e^{-\left(\frac{\frac{4}{\pi}+ 0.148}{1+0.148}\right)}} \newl
 &=& 0.572\newl
 \eea
-同样的方法可以求出$\upsilon>2\upsilon_{\max}$的概率为 $0.0459$。
+同样的方法可以求出$\upsilon>2\upsilon_{\max}$的概率为 $0.046$。
 }
 \ech
 \end{frame}
@@ -643,19 +672,19 @@ $$ \left.\tilde{F}_M(u) \delta u\right\vert_{u = \sqrt{2}} = \left.(0.02 u) \til
 
 \bea
 \frac{1}{2} &=& \int_{0}^{u_0} \tilde{F}_M(u) du \newl
-&\approx & -\sqrt{\frac{2}{\pi}} u_0 e^{-u_0^2/2} +  \sqrt{1-e^{-\frac{u_0^2}{2}\left(\frac{\frac{4}{\pi}+ 0.07 u_0^2}{1+ 0.07 u_0^2}\right)}}  \newl
+&\approx & -\sqrt{\frac{2}{\pi}} u_0 e^{-u_0^2/2} +  \sqrt{1-e^{-\frac{u_0^2}{2}\left(\frac{\frac{4}{\pi}+ 0.074 u_0^2}{1+ 0.074 u_0^2}\right)}}  \newl
 &\equiv& G(u_0)
 \eea
 把$u_0=1$作为零级近似，迭代计算出
 
-一级近似$u_0 = 1 + \frac{0.5-G(1)}{\tilde{F}_M(1)} = 1.6223 $
+一级近似$u_0 = 1 + \frac{0.5-G(1)}{\tilde{F}_M(1)} = 1.623 $
 
-二级近似$u_0 = 1.6223+\frac{0.5-G(1.6223)}{\tilde{F}_M(1.6223)} = 1.5364$
+二级近似$u_0 = 1.623+\frac{0.5-G(1.623)}{\tilde{F}_M(1.623)} = 1.537$
 
-三级近似$u_0 = 1.5364+\frac{0.5-G(1.5364)}{\tilde{F}_M(1.5364)} = 1.5377$
+三级近似$u_0 = 1.537+\frac{0.5-G(1.537)}{\tilde{F}_M(1.537)} = 1.538$
 
 
-从而$\upsilon_0 = 1.5377\sqrt{\frac{kT}{m}}$
+从而$\upsilon_0 = 1.538\sqrt{\frac{kT}{m}}$
 
 显然，$\upsilon_0$和方均根速率$1.73\sqrt{\frac{kT}{m}}$，平均速率$1.60\sqrt{\frac{kT}{m}}$，泻流速率$0.40\sqrt{\frac{kT}{m}}$都不相同。
 }
@@ -756,7 +785,7 @@ $$dQ - pdV = dU$$
 (我们以后会叫它热力学第一定律)，即
 $$dQ = dU + pdV =  \nu C_V^{\rm mol}dT + \nu RdT$$
 所以
-$$C_p^{\rm mol} = \frac{1}{\nu} \frac{dQ}{dT} = C_V + R$$
+$$C_p^{\rm mol} = \frac{1}{\nu} \frac{dQ}{dT} = C_V^{\rm mol} + R$$
 
 }
 \ech
