@@ -344,9 +344,9 @@ $$e^{-\frac{n_a(\varepsilon_a-\mu)+n_b(\varepsilon_b-\mu)+n_c(\varepsilon_c-\mu)
 玻色子的情况要稍复杂，对$n$的求和要从$0$到$\infty$。
 {\scriptsize
 \bea
-\bar{n}_a &=& \frac{\sum_{n=0}^{\infty} ne^{-\frac{n(\varepsilon_a-\mu)}{kT}}}{\sum_{n=0}^1 e^{-\frac{n(\varepsilon_a-\mu)}{kT}}}  \newl
-&=& \left. \frac{\sum_{n=0}^{\infty} ne^{-nx}}{\sum_{n=0}^1 e^{-nx}}\right\vert_{x = \frac{\varepsilon_a-\mu}{kT}}  \newl
-&=& \left. \frac{-\frac{d}{d x}\sum_{n=0}^{\infty} e^{-nx}}{\sum_{n=0}^1 e^{-nx}}\right\vert_{x = \frac{\varepsilon_a-\mu}{kT}}  \newl
+\bar{n}_a &=& \frac{\sum_{n=0}^{\infty} ne^{-\frac{n(\varepsilon_a-\mu)}{kT}}}{\sum_{n=0}^\infty e^{-\frac{n(\varepsilon_a-\mu)}{kT}}}  \newl
+&=& \left. \frac{\sum_{n=0}^{\infty} ne^{-nx}}{\sum_{n=0}^\infty e^{-nx}}\right\vert_{x = \frac{\varepsilon_a-\mu}{kT}}  \newl
+&=& \left. \frac{-\frac{d}{d x}\sum_{n=0}^{\infty} e^{-nx}}{\sum_{n=0}^\infty e^{-nx}}\right\vert_{x = \frac{\varepsilon_a-\mu}{kT}}  \newl
 &=& \left. \frac{-\frac{d}{d x}\frac{1}{1- e^{-x}} }{ \frac{1}{1- e^{-x}} }\right\vert_{x = \frac{\varepsilon_a-\mu}{kT}}  \newl
 &=& \frac{ 1}{e^{\frac{\varepsilon_a-\mu}{kT}}-1}  
 \eea
@@ -422,7 +422,7 @@ $$T_q=  \frac{\varepsilon_q}{k} =  \left(\frac{6\pi^2 n}{g}\right)^{2/3}\frac{\h
 \begin{frame}
 \chtitle{极端相对论粒子体系的量子能量和量子温度}
 \bch
-对极端相对论粒子系统，$\varepsilon = \frac{\calp}c$，
+对极端相对论粒子系统，$\varepsilon = \calp c$，
 $$\varepsilon_q =  \calp_qc =  \left(\frac{6\pi^2 n}{g}\right)^{1/3}\hbar c$$
 和量子温度
 $$T_q =  \frac{\varepsilon_q}{k} =  \left(\frac{6\pi^2 n}{g}\right)^{1/3}\frac{\hbar c}{k}$$
