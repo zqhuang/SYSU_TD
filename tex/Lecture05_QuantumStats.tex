@@ -311,12 +311,13 @@ $$\Theta_{\rm trans} = \frac{h^2}{8mkL^2} = 2.4\times 10^{-18}\SIK \times \frac{
 \begin{frame}
 \chtitle{稍作修改的“万能法则”}
 \bch
-我们现在要对“万能法则”稍作修改：场态$(n_a a, n_bb, n_c c,\ldots)$出现的概率正比于
+我们现在要对“万能法则”稍作修改：场态$(n_a a, n_bb, n_c c,\ldots)$出现的概率{\bf 正比于}
 $$e^{-\frac{n_a(\varepsilon_a-\mu)+n_b(\varepsilon_b-\mu)+n_c(\varepsilon_c-\mu)+\ldots}{kT}} = e^{-\frac{\varepsilon_{\rm total} - \mu_{\rm total}}{kT}}$$
 
 \skiplines
 
 这里的$\mu$开始变得重要了，它称为化学势。
+
 \ech
 \end{frame}
 
@@ -353,9 +354,8 @@ $$e^{-\frac{n_a(\varepsilon_a-\mu)+n_b(\varepsilon_b-\mu)+n_c(\varepsilon_c-\mu)
 \ech
 \end{frame}
 
-
 \begin{frame}
-\chtitle{$\mu$不能高于基态能量}
+\chtitle{玻色子$\mu$不能高于基态能量}
 \bch
 玻色-爱因斯坦分布
 \be
@@ -372,20 +372,36 @@ $$e^{-\frac{n_a(\varepsilon_a-\mu)+n_b(\varepsilon_b-\mu)+n_c(\varepsilon_c-\mu)
 
 \skiplines
 
-{\bf \blue 量子效应通常是全同粒子“争抢”态造成的}
+{\bf \blue 量子效应是全同粒子“争抢”态造成的}
 \ech
 \end{frame}
+
+
+\begin{frame}
+\chtitle{等等，好像有bug！}
+\bch
+
+既然经典近似要求$\bar{n} \ll 1$，那么
+
+\addfig{1.}{think.jpg}
+我们之前推算经典粒子系统的熵的玻尔兹曼诠释的时候假设了$Np_i \gg 1 (i=1,2,\ldots, m)$，是自相矛盾了吗？
+
+\ech
+\end{frame}
+
+
 
 \begin{frame}
 \chtitle{量子动量}
 \bch
-设粒子的内禀态数为$g$，粒子动量的数量级为$\sim \calp$，则总态数数量级为$N_s \sim g \calp^3 V\hbar^{-3}$。
+设粒子的内禀态数为$g$，粒子动量的数量级为$\sim \calp$，则总态数数量级为$N_s \sim \frac{4\pi}{3} g \calp^3 V h^{-3}$。
 \bitem
 \item{当总粒子数$N\ll N_s$时，粒子几乎不需要“争抢”态，经典近似适用。}
 \item{当总粒子数$N\gtrsim N_s$时，粒子之间需要“争抢”态，必须用量子图像。}
 \eitem
-也就是说，存在一个典型的“量子动量”$$\calp_q= \left(\frac{N}{gV}\right)^{1/3} = \left(\frac{n}{g}\right)^{1/3}\hbar$$
-当粒子动量大多低于$\calp_q$时，系统的量子特性就开始显现。
+也就是说，存在一个典型的{\blue
+“量子动量”$$\calp_q=  \left(\frac{6\pi^2 n}{g}\right)^{1/3}\hbar$$
+当粒子动量大多低于$\calp_q$时，系统的量子特性就开始显现。}
 
 \ech
 \end{frame}
@@ -395,9 +411,9 @@ $$e^{-\frac{n_a(\varepsilon_a-\mu)+n_b(\varepsilon_b-\mu)+n_c(\varepsilon_c-\mu)
 \chtitle{非相对论粒子体系的量子能量和量子温度}
 \bch
 对非相对论粒子系统，$\varepsilon = \frac{\calp^2}{2m}$，所以“量子能量”
-$$\varepsilon_q =  \frac{\calp_q^2}{2m} =  \left(\frac{n}{g}\right)^{2/3}\frac{\hbar^2}{2m}$$
+$$\varepsilon_q =  \frac{\calp_q^2}{2m} =  \left(\frac{6\pi^2 n}{g}\right)^{2/3}\frac{\hbar^2}{2m}$$
 和量子温度
-$$T_q=  \frac{\varepsilon_q}{k} =  \left(\frac{n}{g}\right)^{2/3}\frac{\hbar^2}{2mk}$$
+$$T_q=  \frac{\varepsilon_q}{k} =  \left(\frac{6\pi^2 n}{g}\right)^{2/3}\frac{\hbar^2}{2mk}$$
 {\blue 当气体温度远高于量子温度时，可以忽略量子效应。}
 \ech
 \end{frame}
@@ -407,9 +423,9 @@ $$T_q=  \frac{\varepsilon_q}{k} =  \left(\frac{n}{g}\right)^{2/3}\frac{\hbar^2}{
 \chtitle{极端相对论粒子体系的量子能量和量子温度}
 \bch
 对极端相对论粒子系统，$\varepsilon = \frac{\calp}c$，
-$$\varepsilon_q =  \calp_qc =  \left(\frac{n}{g}\right)^{1/3}\hbar c$$
+$$\varepsilon_q =  \calp_qc =  \left(\frac{6\pi^2 n}{g}\right)^{1/3}\hbar c$$
 和量子温度
-$$T_q =  \frac{\varepsilon_q}{k} =  \left(\frac{n}{g}\right)^{1/3}\frac{\hbar c}{k}$$
+$$T_q =  \frac{\varepsilon_q}{k} =  \left(\frac{6\pi^2 n}{g}\right)^{1/3}\frac{\hbar c}{k}$$
 {\blue 当气体温度远高于量子温度时，可以忽略量子效应。}
 \ech
 \end{frame}
@@ -499,26 +515,28 @@ $$\mu = kT \ln\left(nh^3 \left(\frac{1}{2\pi mkT}\right)^{3/2}\right) \sim -\fra
 \skipline
 
 取决于我们讨论的是什么系统，$\Theta_F$未必是一个很低的温度。例如金属中的电子气，其$\Theta_F$可以高达数万$\SIK$。
+
+下面我们来进行一些估算。
 \ech
 \end{frame}
 
 
 
 \begin{frame}
-\chtitle{费米理想气体的费米能}
+\chtitle{思考题}
 \bch
 {\small
-我们已经知道了$\varepsilon_F\sim \varepsilon_q$，对理想气体我们可以更精确地计算出两者之比。
 
-考虑某个内禀态数为$g$(例如电子有自旋向上和自旋向下两个内禀态）的费米理想气体，当温度降为$0\SIK$，动量低于$\calp_{\max}$的态的总数为
-$$ N =  g \frac{V \left(\frac{4\pi}{3} \calp_{\max}^3\right)}{h^3} $$
-由于$0\SIK$时每个态都填了一个费米子，$n = N/V$即是粒子数密度，我们得到
+考虑非相对论的玻色理想气体和费米理想气体。
 
-非相对论情形
-$$\varepsilon_F = \frac{\calp_{\max}^2}{2m} =  \left(\frac{3n}{4\pi g}\right)^{2/3} \frac{h^2}{2m} = \left(\frac{6\pi^2 n}{ g}\right)^{2/3} \frac{\hbar^2}{2m} = 15.2 \varepsilon_q$$
+\skipline
 
-极端相对论情形
-$$\varepsilon_F = c\calp_{\max} =  \left(\frac{3n}{4\pi g}\right)^{1/3} hc = \left(\frac{6\pi^2 n}{ g}\right)^{1/3} \hbar c = 3.9 \varepsilon_q$$
+我们根据量子力学的物理图像知道了玻色子的BE凝聚温度$\Theta_B \sim T_q$，费米子的简并温度$\Theta_F\sim T_q$。对玻色子，计算有些麻烦，我们这里仅仅给出结果：$\Theta_B \approx 0.44 T_q$。对费米子——
+
+\addfig{0.8}{think2.jpg}
+
+试证明费米子的$\varepsilon_F$严格等于$\varepsilon_q$，从而$\Theta_F = T_q$。
+
 }
 \ech
 \end{frame}
