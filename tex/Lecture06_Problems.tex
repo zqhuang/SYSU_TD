@@ -445,18 +445,30 @@ $$\frac{dP}{d\mu} = \int_0^\infty \upsilon^2d\upsilon f(\upsilon) \int d\varphi 
 \section{Maxwell Distribution}
 
 \begin{frame}
+\chtitle{麦克斯韦分布的计算技能}
 \bch
-{\Large
-麦克斯韦分布的应用
-}
+\bmini{0.35}
+\addfig{1}{newtech.jpg}
+\emini
+\bmini{0.61}
+\tbox{\blue 无量纲速度：去掉讨厌的系数}
+\tbox{无穷区间积分: 化为0和1}
+\tbox{小区间积分：当成常数}
+\tbox{尾区间积分：小窍门}
+\tbox{大区间积分：神奇的近似公式}
+\emini
 \ech
 \end{frame}
+
 
 \begin{frame}
 \chtitle{无量纲速度的概率密度}
 \bch
 
-我们定义温度$T$对应的特征速率$\upsilon_c = \sqrt{\frac{kT}{m}}$，并对理想气体分子定义无量纲速度$\mathbf{u} \equiv \frac{\vecv}{\upsilon_c}$。试写出下列概率密度函数：
+麦克斯韦分布的计算中总带着一堆讨厌的$k, T, m$，一不小心就写错。为此，我们定义特征速率$\upsilon_c = \sqrt{\frac{kT}{m}}$，并对理想气体分子定义无量纲速度$\mathbf{u} \equiv \frac{\vecv}{\upsilon_c}$。
+
+
+然后我们考虑无量纲速度的概率密度函数：
 \bitem
 \item{以$u_x$为变量的概率密度$\tilde{f}_{\rm 1D}(u_x) $}
 \item{以$u_x, u_y, u_z$为变量的三维概率密度$\tilde{f}_{\rm M}(u_x, u_y, u_z)$}
@@ -485,10 +497,11 @@ $$\tilde{f}_{\rm 1D}(u_x) |d u_x| = f_{\rm 1D}(\upsilon_x) |d\upsilon_x|$$
 \addfig{1.5}{f1D.pdf}
 \emini
 
-{\scriptsize 概率密度$ \frac{1}{\sqrt{2\pi}} e^{-\frac{u_x^2}{2}}$称为标准正则分布，记作$N(u_x)$。{\blue 无量纲速度的每个分量都服从标准正则分布。}
+{\scriptsize
 
-容易计算出下列平均值：
-$$\bar{u_x} = \bar{u_x^3} = 0,\ \ \overline{|u_x|} = \sqrt{\frac{2}{\pi}} ,\ \ \bar{u_x^2} = 1,\ \ \bar{|u_x|^3} = \sqrt{\frac{8}{\pi}},\ \ \bar{u_x^4} = 3$$
+概率密度$ \frac{1}{\sqrt{2\pi}} e^{-\frac{u_x^2}{2}}$称为标准正态分布。容易验证服从标准正态分布的变量的平方平均为$1$： $\overline{u_x^2} = 1$。
+
+{\blue 无量纲速度的每个分量都服从标准正态分布。}
 }
 
 \ech
@@ -508,27 +521,133 @@ $$\tilde{F}_M(u) =  \sqrt{\frac{2}{\pi}}u^2 e^{-\frac{u^2}{2}} $$}
 \ech
 \end{frame}
 
+\begin{frame}
+\chtitle{无量纲速度总结}
+\bch
+\bitem
+\item{用$\upsilon_c \equiv \sqrt{\frac{kT}{m}}$作为单位就得到了速度的无量纲表示。}
+\item{无量纲速度的分布是固定的（不随$m$,$T$变化）：它的每个分量独立地服从标准正态分布:
+$$\tilde{f}_{1D}(u_x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{u_x^2}{2}}$$
+服从标准正态分布的变量的平方平均为$1$。
+}
+\item{无量纲速率的分布为
+$$\tilde{F}_{M}(u) = \sqrt{\frac{2}{\pi}} u^2 e^{-\frac{u^2}{2}}, \ \ \ u\ge 0$$
+}
+\eitem
+\ech
+\end{frame}
 
 \begin{frame}
-\chtitle{正则分布的小区间积分}
+\chtitle{麦克斯韦分布的计算技能}
+\bch
+\bmini{0.35}
+\addfig{1}{newtech.jpg}
+\emini
+\bmini{0.61}
+\tbox{\blue 无量纲速度：去掉讨厌的系数}
+\tbox{\blue 无穷区间积分: 化为0和1}
+\tbox{小区间积分：当成常数}
+\tbox{尾区间积分：小窍门}
+\tbox{大区间积分：神奇的近似公式}
+\emini
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{无穷区间积分：化为0和1}
 \bch
 {\scriptsize
+我们常常需要对服从标准正态分布的变量$x$计算$|x|^n$，它可以写成
+{\blue
+$$\overline{|x|^n} = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty|x|^ne^{-x^2/2}dx = \sqrt{\frac{2}{\pi}}\int_0^\infty x^n e^{-x^2/2} dx$$}
+显然
+\bea
+\overline{|x|^0} &=&  1 \newl 
+\overline{|x|} &=& \left.\sqrt{\frac{2}{\pi}}e^{-x^2/2}\right\vert^\infty_0 = \sqrt{\frac{2}{\pi}} 
+\eea
+对$n>1$，则可分部积分得到
+\bea
+\overline{|x|^n} &=& -\sqrt{\frac{2}{\pi}}\int_0^\infty x^{n-1}d\left(e^{-x^2/2}\right) \newl
+ &=& \left.-x^{n-1}e^{-x^2/2}\right\vert_0^\infty+\sqrt{\frac{2}{\pi}}\int_0^\infty (n-1)x^{n-2} e^{-x^2/2}dx \newl
+&=&  (n-1)\sqrt{\frac{2}{\pi}}\int_0^\infty x^{n-2} e^{-x^2/2}dx \newl
+&=& (n-1) \overline{|x|^{n-2}}
+\eea
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{无穷区间积分：化为0和1}
+\bch
+{总结起来就是，对服从正态分布的变量$x$，其绝对值的$n$次平均
+{\blue
+$$\overline{|x|^n} = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty|x|^ne^{-x^2/2}dx = \sqrt{\frac{2}{\pi}}\int_0^\infty x^n e^{-x^2/2} dx$$}
+可以由下列递归关系求出：{\blue
+\bea
+\overline{|x|^0} &=&  1 \newl 
+\overline{|x|} &=&  \sqrt{\frac{2}{\pi}}  \newl
+\overline{|x|^n} &=& (n-1) \overline{|x|^{n-2}}, \ \ n\ge 2 
+\eea
+}
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{麦克斯韦分布的计算技能}
+\bch
+\bmini{0.35}
+\addfig{1}{newtech.jpg}
+\emini
+\bmini{0.61}
+\tbox{\blue 无量纲速度：去掉讨厌的系数}
+\tbox{\blue 无穷区间积分: 化为0和1}
+\tbox{\blue 小区间积分：当成常数}
+\tbox{尾区间积分：小窍门}
+\tbox{大区间积分：神奇的近似公式}
+\emini
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{小区间积分：当成常数}
+\bch
+{\small
 如果积分范围比较小，我们可以假设概率密度函数在小区间内是常数，用乘法代替积分。
 
 \skipline
 
 例如分子速率在 $\bar{\upsilon}$附近$\pm 1\%$之内的概率为
 $$ \tilde{F}_M(\sqrt{\frac{8}{\pi}}) (\sqrt{\frac{8}{\pi}} \times 0.02) =\sqrt{\frac{2}{\pi}} \frac{8}{\pi}e^{-4/\pi} \times\left(\sqrt{\frac{8}{\pi}}\times 0.02 \right) \approx 0.018  $$
+注意我们已经开始使用无量纲速度来进行计算。
 }
 \ech
 \end{frame}
 
+
 \begin{frame}
-\chtitle{正则分布的尾积分}
+\chtitle{麦克斯韦分布的计算技能}
+\bch
+\bmini{0.35}
+\addfig{1}{newtech.jpg}
+\emini
+\bmini{0.61}
+\tbox{\blue 无量纲速度：去掉讨厌的系数}
+\tbox{\blue 无穷区间积分: 化为0和1}
+\tbox{\blue 小区间积分：当成常数}
+\tbox{\blue 尾区间积分：小窍门}
+\tbox{大区间积分：神奇的近似公式}
+\emini
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{尾区间积分：小窍门}
 \bch
 {\scriptsize
 有时候我们要做风险评估，计算超出平均值很多倍的事件的概率。即对$a\gg 1$，要计算
-$P(u_x >a)$， $P(|u_x|>a)$，$P(u>a)$等。下面我们介绍这种积分的计算方法：
+$P(u_x >a)$， $P(|u_x|>a)$，$P(u>a)$等。下面我们介绍这种积分的小窍门：
 一般地，我们考虑积分
 $$P = \int_a^\infty x^n e^{-x^2/2}dx,  \ \ a\gg \sqrt{n} $$
 对$x\gg \sqrt{n}$，有
@@ -540,28 +659,66 @@ $$P \approx \left.\left(-\left(x+\frac{1}{x}\right)^{n-1}e^{-x^2/2}\right)\right
 \end{frame}
 
 \begin{frame}
-\chtitle{正则分布的大区间积分}
+\chtitle{尾区间积分总结}
 \bch
-{\scriptsize
-下面我们计算$u_x$在[-a,a]内的概率($0\le a \lesssim 10$)。
-$$P(-a<u_x<a) = \frac{1}{\sqrt{2\pi}} \int_{-a}^a e^{-\frac{u_x^2}{2}}du_x \approx  \sqrt{1-e^{-\frac{a^2}{2}\left(\frac{\frac{4}{\pi}+ 0.074a^2}{1+0.074a^2}\right)}}$$
-最后一步只是一个好用的近似公式，在$a\lesssim 10$的范围内都很好用。当$a$很大时我们要用前面介绍的正则分布的尾积分的计算方法。
+{\blue
+$$ \int_a^\infty x^n e^{-x^2/2}dx \approx  \left(a+\frac{1}{a}\right)^{n-1}e^{-a^2/2}, \ \ a\gg \sqrt{n}$$
+}
+虽然我们是在$a\gg \sqrt{n}$的情况下推导的，实际上在{\blue $n$不大时该近似公式对$a>2$都是不错的近似}。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{麦克斯韦分布的计算技能}
+\bch
+\bmini{0.35}
+\addfig{1}{newtech.jpg}
+\emini
+\bmini{0.61}
+\tbox{\blue 无量纲速度：去掉讨厌的系数}
+\tbox{\blue 无穷区间积分: 化为0和1}
+\tbox{\blue 小区间积分：当成常数}
+\tbox{\blue 尾区间积分：小窍门}
+\tbox{\blue 大区间积分：神奇的近似公式}
+\emini
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{大区间积分：神奇的近似公式}
+\bch
+{\small
+如果既不是小区间，又不是尾区间的积分问题，我们就不得不祭出最后一招必杀技：
+{\blue
+对满足标准正态分布的变量$x$，
+$$P(|x|<a) = \frac{1}{\sqrt{2\pi}} \int_{-a}^a e^{-\frac{x^2}{2}}d x \approx  \sqrt{1-e^{-\frac{a^2}{2}\left(\frac{\frac{4}{\pi}+ 0.074a^2}{1+0.074a^2}\right)}}$$}
+最后一步只是一个好用的近似公式，在{\blue $a\lesssim 10$的范围内都很好用}。当$a$很大时我们要用前面介绍的尾区间积分的计算方法。
 }
 \ech
 \end{frame}
 
 \begin{frame}
-\chtitle{正则分布的大区间积分}
+\chtitle{置信区间和置信度}
 \bch
 {\scriptsize
-易算出
-$$P(-1<u_x<1) =  0.68$$
-$$P(-2<u_x<2) = 0.95$$
-$$P(-3<u_x<3) = 0.997$$
-$$P(-4<u_x<4) = 0.99994$$
-$$P(-5<u_x<5) = 0.9999994$$
-在科学研究中，常常要用到上述置信区间。在论文中常可以看到"68\% confidence level" , "95\% confidence level" 等术语。粒子物理实验往往要求达到$5\sigma$精度，就是指可信度$99.99994\%$。
+对满足标准正态分布的变量$x$，易由前面介绍的方法算出
+\bea
+P(|x|<1) &=& 0.683 \newl
+P(|x|<2) &=& 0.954 \newl
+P(|x|<3) &=& 0.997 \newl
+P(|x|<4) &=& 0.99994 \newl
+P(|x|<5) &=& 0.9999994 
+\eea
+在科学研究中，常常使用置信区间和置信度。在论文中常可以看到"68.3\% confidence level" , "95.4\% confidence level" 等术语。粒子物理实验往往要求达到$5\sigma$精度，就是指可信度$99.99994\%$。
 }
+\ech
+\end{frame}
+
+
+\begin{frame}
+\bch
+{\Large 麦克斯韦分布应用举例}
 \ech
 \end{frame}
 
@@ -571,7 +728,7 @@ $$P(-5<u_x<5) = 0.9999994$$
 \bch
 {\blue 教材习题2-8}
 
-{\scriptsize
+{\small
 \bitem
 \item[(1)]{由$\overline{u_x^2} = 1$ 得到$\overline{\upsilon_x^2} = \upsilon_c^2$，即一维的$\upsilon_{\rm rms} = \upsilon_c = \sqrt{\frac{kT}{m}}$}
 \item[(2)]{由$\overline{|u_x|} = \sqrt{\frac{2}{\pi}}$  得到一维的$\bar{\upsilon} =  \sqrt{\frac{2}{\pi}}\upsilon_c = \sqrt{\frac{2kT}{\pi m}}$}
@@ -592,8 +749,9 @@ $$P(-5<u_x<5) = 0.9999994$$
 \bitem
 \item[(1)]{由$\overline{u_x^2} = \overline{u_y^2} = 1$ 得到$\overline{\upsilon_x^2+\upsilon_y^2} = 2\upsilon_c^2$，即二维的$\upsilon_{\rm rms} = \sqrt{2}\upsilon_c = \sqrt{\frac{2kT}{m}}$}
 \item[(2)]{二维的无量纲速率的概率密度为 $\tilde{F}_M(u) = 2\pi u \left(\frac{1}{2\pi} e^{-u^2/2}\right)= u e^{-u^2/2}$，所以平均无量纲速率：
-$$\bar{u} = \int_0^\infty u^2 e^{-u^2/2} du = -\left.\frac{d}{d\alpha}\int_0^\infty e^{-\alpha u^2}du\right\vert_{\alpha=1/2}= \sqrt{\frac{\pi}{2}}$$ 
-即$\bar{\upsilon} = \bar{u}\upsilon_c = \sqrt{\frac{\pi kT}{2m}}$
+$$\bar{u} = \int_0^\infty u^2 e^{-u^2/2} du = \sqrt{\frac{\pi}{2}}\left(\sqrt{\frac{2}{\pi}}\int_0^\infty u^2 e^{-u^2/2} du\right)$$ 
+括号内的积分可以看成标准正态分布变量的平方平均。故按递归公式等于$1$。所以$\bar{u} = \sqrt{\pi/2}$，即
+$$\bar{\upsilon} = \bar{u}\upsilon_c = \sqrt{\frac{\pi kT}{2m}}$$
 }
 \item[(3)]{对$\tilde{F}_M(u)$求导并令其为零，得到$u_{\max} = 1$。 故$\upsilon_{\max} = \upsilon_c = \sqrt{\frac{kT}{m}}$}
 \eitem
@@ -609,14 +767,15 @@ $$\bar{u} = \int_0^\infty u^2 e^{-u^2/2} du = -\left.\frac{d}{d\alpha}\int_0^\in
 {\blue 教材习题2-3}
 
 {\scriptsize
+
+先用无量纲速率进行计算：
 \bea
-\overline{\left(\frac{1}{\upsilon}\right)} &=& \frac{1}{\upsilon_c} \overline{\left(\frac{1}{u}\right)} \newl
-&=& \frac{1}{\upsilon_c} \int_0^\infty \frac{1}{u}\tilde{F}_M(u) du \newl
-&=& \sqrt{\frac{2}{\pi}}\frac{1}{\upsilon_c} \int_0^\infty \frac{1}{u}  u^2e^{-u^2/2} du \newl
-&=& \sqrt{\frac{2}{\pi}}\frac{1}{\upsilon_c}\left. e^{-u^2/2}\right\vert_0^\infty \newl
-&=& \sqrt{\frac{2}{\pi}}\frac{1}{\upsilon_c} \newl
-&=& \sqrt{\frac{2m}{\pi kT}} 
+\overline{\left(\frac{1}{u}\right)} &=& \int_0^\infty \frac{1}{u}\tilde{F}_M(u) du \newl
+&=& \sqrt{\frac{2}{\pi}} \int_0^\infty \frac{1}{u}  u^2e^{-u^2/2} du \newl
+&=& \sqrt{\frac{2}{\pi}} \int_0^\infty   u e^{-u^2/2} du 
 \eea
+上式可以看成标准正态分布变量$x$的 $|x|$的平均，故等于 $\sqrt{\frac{2}{\pi}}$。再换回到普通单位制：
+$$\overline{\left(\frac{1}{\upsilon}\right)} = \sqrt{\frac{2 m}{\pi kT}}$$
 
 又由 $\bar{\upsilon} = \sqrt{\frac{8kT}{\pi m}}$，
 $$\overline{\left(\frac{1}{\upsilon}\right)} = \frac{4}{\pi} \frac{1}{\bar{\upsilon}}>\frac{1}{\bar{\upsilon}} $$  
@@ -827,7 +986,7 @@ $$C_p^{\rm mol} = \frac{1}{\nu} \frac{dQ}{dT} = C_V^{\rm mol} + R$$
 \bch
 \bitem
 \item[16]{一个氦气定体温度计在$T = 250\SIK$, $300\SIK$, $350\SIK$时的压强读数分别为$1.0000\atm$, $1.1189\atm$, $1.3974\atm$。试估算它在$T=150\SIK$时的压强读数。}
-\item[17]{对温度为$T$，分子质量为$m$的理想气体，计算分子的速率平方倒数的平均$$\overline{\left(\frac{1}{\upsilon^2}\right)}.$$它和$\frac{1}{\overline{\upsilon}^2}$比较哪个大？这两者的大小关系对一般性分布成立吗？}
+\item[17]{对温度为$T$，分子质量为$m$的理想气体，计算分子的速率平方倒数的平均$$\overline{\left(\frac{1}{\upsilon^2}\right)}.$$它和$\frac{1}{\overline{\upsilon}^2}$比较哪个大？这两者的大小关系对任意非平衡速度分布成立吗？}
 \item[18]{在温度为$300\SIK$，压强$p = 1\atm$的氧气中放一个纳米音乐盒。音乐盒有个表面积为$10^{-4}\SImm^2$的探头。当有速率超过$2792\SIm/\SIs$的氧气分子撞击探头表面时将触动音乐盒开关。问：音乐盒开关平均多久被触发一次？}
 \eitem
 \ech
