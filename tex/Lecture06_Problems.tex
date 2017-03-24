@@ -523,19 +523,29 @@ $$ \tilde{F}_M(\sqrt{\frac{8}{\pi}}) (\sqrt{\frac{8}{\pi}} \times 0.02) =\sqrt{\
 \ech
 \end{frame}
 
+\begin{frame}
+\chtitle{正则分布的尾积分}
+\bch
+{\scriptsize
+有时候我们要做风险评估，计算超出平均值很多倍的事件的概率。即对$a\gg 1$，要计算
+$P(u_x >a)$， $P(|u_x|>a)$，$P(u>a)$等。下面我们介绍这种积分的计算方法：
+一般地，我们考虑积分
+$$P = \int_a^\infty x^n e^{-x^2/2}dx,  \ \ a\gg \sqrt{n} $$
+对$x\gg \sqrt{n}$，有
+$$\frac{d}{dx} \left(-\left(x+\frac{1}{x}\right)^{n-1}e^{-x^2/2}\right) = x^n e^{-x^2/2}\left(1+O\left(\left(\frac{n}{x^2}\right)^2\right)\right)$$
+忽略掉$O\left(\left(\frac{n}{x^2}\right)^2\right)$并两边积分，即有
+$$P \approx \left.\left(-\left(x+\frac{1}{x}\right)^{n-1}e^{-x^2/2}\right)\right\vert_{a}^\infty = \left(a+\frac{1}{a}\right)^{n-1}e^{-a^2/2}$$
+}
+\ech
+\end{frame}
 
 \begin{frame}
 \chtitle{正则分布的大区间积分}
 \bch
 {\scriptsize
-下面我们计算$u_x$在[-a,a]内的概率($a\ge 0$)。
+下面我们计算$u_x$在[-a,a]内的概率($0\le a \lesssim 10$)。
 $$P(-a<u_x<a) = \frac{1}{\sqrt{2\pi}} \int_{-a}^a e^{-\frac{u_x^2}{2}}du_x \approx  \sqrt{1-e^{-\frac{a^2}{2}\left(\frac{\frac{4}{\pi}+ 0.074a^2}{1+0.074a^2}\right)}}$$
-最后一步只是一个好用的近似公式，在$a \le 5 $的范围内都表现优异。当$a > 5$时，我们可以用下列近似
-$$P(-a<u_x<a) \approx 1-\frac{e^{-a^2/2}}{\sqrt{\pi(\frac{a^2}{2}+1)}}, \ \ a>5 $$
-
-在教材上定义了误差函数$\erf(x) \equiv \frac{2}{\sqrt{\pi}}\int_0^x e^{-x^2}dx $，则
-$$P(-a<u_x<a) = \erf\left(\frac{a}{ \sqrt{2}}\right)$$
-当然，这只是个定义而已。
+最后一步只是一个好用的近似公式，在$a\lesssim 10$的范围内都很好用。当$a$很大时我们要用前面介绍的正则分布的尾积分的计算方法。
 }
 \ech
 \end{frame}
@@ -641,9 +651,28 @@ $$ \left.\tilde{F}_M(u) \delta u\right\vert_{u = \sqrt{2}} = \left.(0.02 u) \til
 \end{frame}
 
 
+\begin{frame}
+\chtitle{Maxwell分布例5 （尾积分）}
+\bch
+{\blue 教材习题2-15}
+
+{\scriptsize
+
+$\upsilon>10\upsilon_{\max}$等价于$u>10 u_{\max} = 10\sqrt{2}$，所以概率为
+\bea
+P &=& \int_{10\sqrt{2}}^\infty \tilde{F}_M(u)du \newl
+&=& \sqrt{\frac{2}{\pi}}\int_{10\sqrt{2}}^\infty u^2e^{-u^2/2} du \newl
+&\approx & \sqrt{\frac{2}{\pi}} \left(10\sqrt{2}+\frac{1}{10\sqrt{2}}\right)e^{-(10\sqrt{2})^2/2} \newl
+&=& 4.219 \times 10^{-43}
+\eea
+(计算机给出的精确数值解为$4.206\times 10^{-43}$，尾积分近似方法的相对误差仅为千分之三)
+}
+\ech
+\end{frame}
+
 
 \begin{frame}
-\chtitle{Maxwell分布例5 （大区间求概率）}
+\chtitle{Maxwell分布例6 （大区间求概率）}
 \bch
 {\blue 教材习题 2-14}
 
@@ -657,13 +686,15 @@ $$ \left.\tilde{F}_M(u) \delta u\right\vert_{u = \sqrt{2}} = \left.(0.02 u) \til
 &=& 0.572\newl
 \eea
 同样的方法可以求出$\upsilon>2\upsilon_{\max}$的概率为 $0.046$。
+
+用尾积分的方法求解则分别得到$0.62$以及$0.047$，可见当对结果精度要求不高时，尾积分近似甚至可以适用于$a\sim 1$的情形。
 }
 \ech
 \end{frame}
 
 
 \begin{frame}
-\chtitle{Maxwell分布例6 （大区间求概率，迭代法求解）}
+\chtitle{Maxwell分布例7 （大区间求概率，迭代法求解）}
 \bch
 {\blue 教材思考题2-10}
 
