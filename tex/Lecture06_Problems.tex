@@ -508,6 +508,7 @@ $$\frac{dP}{d\mu} = \int_0^\infty \upsilon^2d\upsilon f(\upsilon) \int d\varphi 
 \end{frame}
 
 
+
 \section{Maxwell Distribution}
 
 \begin{frame}
@@ -1034,6 +1035,58 @@ $$ n = \frac{\ln \frac{\frac{0.99}{0.01}}{\frac{0.007}{0.993}}}{\ln 1.0042888} =
 }
 \ech
 \end{frame}
+
+
+\begin{frame}
+\chtitle{绝热箱泻漏能量流}
+\bch
+{\blue \scriptsize 很大的真空室内有一容积为$V=1\SIm^3$的绝热容器，内装有热平衡的单原子理想气体。在容器壁上开一个面积为$S=10^{-6}\SIm^2$的小孔，经过$\Delta t = 10\SIs$后把小孔堵上，发现容器内气体压强降低了$0.1\%$。因漏气的过程缓慢，可近似认为整个过程中容器内气体一直处于热平衡。试估算容器内气体的平均速率。}
+
+\skipline
+
+{\scriptsize
+设分子数密度为$n$，分子质量为$m$，气体能量密度为$\rho = \frac{1}{2}nm\overline{\upsilon^2}$。
+
+泄漏能量流为
+$\frac{n}{4}\overline{\upsilon\varepsilon} = \frac{mn}{8}\overline{\upsilon^3} = \frac{\rho}{4}\frac{\overline{\upsilon^3}}{\overline{\upsilon^2}}$
+
+单原子理想气体的内能为$\frac{3}{2}\nu RT = \frac{3}{2}pV$，故压强的降低百分比即内能的降低百分比。泄漏的能量占总能量的比例为：
+$\frac{ \frac{\rho}{4}\frac{\overline{\upsilon^3}}{\overline{\upsilon^2}} S\Delta t}{\rho V} = 10^{-3}$
+
+从而解出$\frac{\overline{\upsilon^3}}{\overline{\upsilon^2}} = 400\SIm/\SIs$
+
+对服从麦克斯韦分布的理想气体，我们先对无量纲速率计算出
+$$\frac{\overline{u^3}}{\overline{u^2}} = \frac{\sqrt{\frac{2}{\pi}}\int_0^\infty u^5e^{-u^2/2}du}{\sqrt{\frac{2}{\pi}}\int_0^\infty u^4e^{-u^2/2}du} = \frac{4\times 2\times\sqrt{\frac{2}{\pi}}}{3\times 1} = \frac{4}{3} \sqrt{\frac{8}{\pi}} = \frac{4}{3}\bar{u}$$
+
+换算到普通单位制即有 $\bar{\upsilon} =\frac{3}{4} \frac{\overline{\upsilon^3}}{\overline{\upsilon^2}} = 300\SIm/\SIs $
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{绝热箱泻漏能量流总结}
+\bch
+如果把绝热箱泄漏气体当作准静态过程，则单位时间气体分子数降低百分比为$\frac{S}{4V}\bar{\upsilon }$，压强（或者内能）降低百分比为$\frac{S}{3V}\bar{\upsilon }$，从而可推算出温度降低百分比为
+$\frac{S}{12V}\bar{\upsilon }$，平均速率降低百分比为$\frac{S}{24V}\bar{\upsilon }$。
+
+对平均速率$\bar{\upsilon}$我们不难写出它的演化方程：
+$$\frac{d \bar{\upsilon}}{dt} =  -\frac{S}{24V}\bar{\upsilon}^2 $$
+即
+$$\Delta\left(\frac{1}{\bar{\upsilon}}\right) =  \frac{S \Delta t}{24 V} $$
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{1}{think3.jpg}
+很大的真空室内有一装有温度为$300\SIK$的单原子理想气体的绝热容器，现在容器上打一个很小的孔，经过一小时容器内气体温度变为$270\SIK$。问：再经过一小时容器内气体的温度为多少？
+\ech
+\end{frame}
+
+
 
 \section{MB Distribution}
 
