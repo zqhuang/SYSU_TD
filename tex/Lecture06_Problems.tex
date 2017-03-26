@@ -363,7 +363,13 @@ $$ \upsilon_{\rm rms} \ge \overline{\upsilon}$$
 \end{frame}
 
 \begin{frame}
-\chtitle{方均根速率$\ge$平均速率(另一种证明方法)}
+\bch
+下面再介绍两种“超纲”的解法，如果觉得学习难度太大可以暂时跳过。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{方均根速率$\ge$平均速率(第二种证明方法及推广)}
 \bch
 {\blue 教材思考题2-9}
 
@@ -385,6 +391,55 @@ $$\overline{\left(\frac{1}{\upsilon}\right)} \ge \frac{1}{\bar{\upsilon}},\ \ \ 
 
 \ech
 \end{frame}
+
+
+\begin{frame}
+\chtitle{方均根速率$\ge$平均速率 （第三种证明方法及推广）}
+\bch
+{\blue 教材思考题2-9}
+
+{\scriptsize
+设有$N$个分子，速率分别为$\upsilon_i (i = 1, 2, \ldots, N)$。对任何$1\le i, j\le N$，显然有
+$$(\upsilon_i - \upsilon_j)^2 > 0$$
+上式展开
+$$ \upsilon_i^2 +  \upsilon_j^2 - 2 \upsilon_i\upsilon_j \ge 0$$
+上式对$i, j$求和，即
+$$ N \sum_{i=1}^N \upsilon_i^2 + N \sum_{j=1}^n \upsilon_j^2  - 2\sum_{i=1}^N \upsilon_i \sum_{j=1}^N\upsilon_j \ge 0$$
+或者写成
+$$2 N^2 \overline{\upsilon^2} - 2\left(N\overline{\upsilon}\right)^2 \ge 0$$
+即 
+$$ \overline{\upsilon^2} \ge \left(\overline{\upsilon}\right)^2 $$
+两边开平方即得证。
+}
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+{\scriptsize
+\bitem
+\item[1]{对同号的$p, q$，显然有$(\upsilon_i^p - \upsilon_j^p)(\upsilon_i^q - \upsilon_j^q) \ge 0$，试证明
+$$\overline{\upsilon^{p+q}} \ge \overline{\upsilon^p}\; \overline{\upsilon^q} $$}
+\item[2]{
+对异号的$p, q$，显然有$(\upsilon_i^p - \upsilon_j^p)(\upsilon_i^q - \upsilon_j^q) \le 0$，试证明
+$$\overline{\upsilon^{p+q}} \le \overline{\upsilon^p}\,\overline{\upsilon^q} $$}
+\item[3]{对同号的$p, q$ 以及任意$m$，显然有$\upsilon_i^m\upsilon_j^m(\upsilon_i^p - \upsilon_j^p)(\upsilon_i^q - \upsilon_j^q) \ge 0$，试证明
+$$\overline{\upsilon^{p+q+m}} \;\overline{\upsilon^{m}} \ge \overline{\upsilon^{p+m}}\; \overline{\upsilon^{q+m}} $$}
+\item[4]{对异号的$p, q$ 以及任意$m$，显然有$\upsilon_i^m\upsilon_j^m(\upsilon_i^p - \upsilon_j^p)(\upsilon_i^q - \upsilon_j^q) \le 0$，试证明
+$$\overline{\upsilon^{p+q+m}} \;\overline{\upsilon^{m}} \le \overline{\upsilon^{p+m}}\; \overline{\upsilon^{q+m}} $$}
+\item[5]{对任意个同号的数$p_1, p_2, \ldots, p_n$，用归纳法证明
+$$\overline{\upsilon^{p_1+p_2+\ldots+p_n}} \ge \overline{\upsilon^{p_1}}\; \overline{\upsilon^{p_2}}\, \ldots\,\overline{\upsilon^{p_n}} $$
+}
+\item[6]{对同号的$p_1,p_2,\ldots, p_n$ 以及任意$m$，用归纳法证明
+$$\overline{\upsilon^{p_1+p_2+\ldots+p_n+m}}\; \left(\overline{\upsilon^m}\right)^{n-1}  \ge \overline{\upsilon^{p_1+m}}\; \overline{\upsilon^{p_2+m}}\, \ldots\,\overline{\upsilon^{p_n+m}} $$
+}
+\eitem
+}
+\ech
+\end{frame}
+
 
 
 \begin{frame}
@@ -434,13 +489,16 @@ $$\frac{dP}{d\mu} = \int_0^\infty \upsilon^2d\upsilon f(\upsilon) \int d\varphi 
 
 \skipline
 
-{\scriptsize
-设三维概率密度函数为$f(\upsilon_x, \upsilon_y,\upsilon_z) = g(\upsilon)$ (因各向同性所以可以这样设)，在球坐标里计算泻流速率，体积元为$\upsilon^2 d\upsilon \sin\theta d\theta d\varphi$，$\upsilon_z = \upsilon\cos\theta$
+{\small
+设三维概率密度函数为$f(\upsilon_x, \upsilon_y,\upsilon_z) = g(\upsilon)$ (因各向同性所以可以这样设)，则速率$\upsilon$的概率密度函数为$4\pi\upsilon^2g(\upsilon)$。
+
+在球坐标里计算泻流速率，体积元为$\upsilon^2 d\upsilon \sin\theta d\theta d\varphi$，$\upsilon_z = \upsilon\cos\theta$
 
 
 \bea
 \overline{\upsilon^+_z} &=& \int_0^\infty \upsilon^2 d\upsilon \int_0^{\frac{\pi}{2}} \sin\theta d\theta \int_0^{2\pi} d\varphi \,(\upsilon \cos\theta) g(\upsilon) \newl
 &=& \pi \int_0^\infty \upsilon^2 d\upsilon\,  \upsilon g(\upsilon) \newl
+&=& \frac{1}{4} \int_0^\infty \upsilon\left(4\pi\upsilon^2g(\upsilon) d\upsilon\right) \newl
 &=& \frac{1}{4} \bar{\upsilon}
 \eea
 
@@ -588,16 +646,36 @@ $$\overline{|x|^n} = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty|x|^ne^{-x^2/2}dx
 \begin{frame}
 \chtitle{无穷区间积分：递归公式}
 \bch
-{总结起来就是，对服从正态分布的变量$x$，其绝对值的$n$次平均
+{\small
+总结起来就是，对服从标准正态分布的变量$x$，其绝对值的$n$次平均等价于下述两种积分表达式：
 {\blue
 $$\overline{|x|^n} = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty|x|^ne^{-x^2/2}dx = \sqrt{\frac{2}{\pi}}\int_0^\infty x^n e^{-x^2/2} dx$$}
-可以由下列递归关系求出：{\blue
+它可以由下列递归关系求出：{\blue
 \bea
 \overline{|x|^0} &=&  1 \newl 
 \overline{|x|} &=&  \sqrt{\frac{2}{\pi}}  \newl
 \overline{|x|^n} &=& (n-1) \overline{|x|^{n-2}}, \ \ n\ge 2 
 \eea
 }
+}
+{\scriptsize
+不难求出$\overline{|x|^2} = 1$, $\overline{|x|^3} = \sqrt{\frac{8}{\pi}}$, $\overline{|x|^4} = 3$, $\ldots$
+
+很多高斯类的分布（并不需要是正态分布）的平均值问题都可以转化成上面的积分式，从而转化为标准正态分布的$\overline{|x|^n}$计算问题。
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{无穷区间积分：递归公式}
+\bch
+{\small
+例如，麦克斯韦分布的平均速率可以写成（先用无量纲速率来计算）
+$$\overline{u} = \sqrt{\frac{2}{\pi}} \int_0^\infty  u (u^2 e^{-u^2/2}) du $$
+这在数学上等价于标准正态分布变量$x$的绝对值三次平均$\overline{|x|^3}$，故等于$ (3-1)\overline{|x|} = \sqrt{\frac{8}{\pi}}$。
+再回到普通单位制，即有
+$$\bar{\upsilon} =  \sqrt{\frac{8kT}{\pi m}} $$
 }
 \ech
 \end{frame}
@@ -724,6 +802,18 @@ P(|x|<5) &=& 0.9999994
 \ech
 \end{frame}
 
+\begin{frame}
+\chtitle{高斯类积分技巧总结}
+\bch
+
+\bitem
+\item{需要记住高斯积分$$\int_{-\infty}^\infty e^{-ax^2} dx= \sqrt{\frac{\pi}{a}}$$或者记住标准正态分布$$\frac{1}{\sqrt{2\pi}}e^{-x^2/2}$$（其归一化因子隐含了高斯积分的结果）。}
+\item{如果你选择记住高斯积分，则需要掌握分部积分和交换积分和求导次序这两种常用技巧。如果你选择记住标准正态分布，则需要掌握$\overline{|x|^n}$的递归计算法。}
+\item{尾区间积分和大区间积分属于“超纲”内容，如果觉得太难学不会，可在计算时保留积分表达式而不给出数值结果。}
+\eitem
+
+\ech
+\end{frame}
 
 \begin{frame}
 \bch
@@ -756,13 +846,13 @@ P(|x|<5) &=& 0.9999994
 
 {\scriptsize
 \bitem
-\item[(1)]{由$\overline{u_x^2} = \overline{u_y^2} = 1$ 得到$\overline{\upsilon_x^2+\upsilon_y^2} = 2\upsilon_c^2$，即二维的$\upsilon_{\rm rms} = \sqrt{2}\upsilon_c = \sqrt{\frac{2kT}{m}}$}
+\item[(1)]{由$\overline{u_x^2} = \overline{u_y^2} = 1$ 得到二维的$\overline{u^2} = 2$，即二维的$u_{\rm rms} =  \sqrt{2}$，回到普通单位制即$\upsilon_{\rm rms} = \sqrt{\frac{2kT}{m}}$。}
 \item[(2)]{二维的无量纲速率的概率密度为 $\tilde{F}_M(u) = 2\pi u \left(\frac{1}{2\pi} e^{-u^2/2}\right)= u e^{-u^2/2}$，所以平均无量纲速率：
 $$\bar{u} = \int_0^\infty u^2 e^{-u^2/2} du = \sqrt{\frac{\pi}{2}}\left(\sqrt{\frac{2}{\pi}}\int_0^\infty u^2 e^{-u^2/2} du\right)$$ 
-括号内的积分可以看成标准正态分布变量的平方平均（注意这仅仅是在数学上相等，$u$本身并不服从正态分布），故按递归公式等于$1$。所以$\bar{u} = \sqrt{\pi/2}$，即
-$$\bar{\upsilon} = \bar{u}\upsilon_c = \sqrt{\frac{\pi kT}{2m}}$$
+括号内的积分在数学上等于标准正态分布变量$x$的$|x|^2$的平均，故按递归公式等于$(2-1)\overline{|x|^0} = 1$。所以$\bar{u} = \sqrt{\pi/2}$，回到普通单位制，即
+$$\bar{\upsilon} = \sqrt{\frac{\pi kT}{2m}}$$
 }
-\item[(3)]{对$\tilde{F}_M(u)$求导并令其为零，得到$u_{\max} = 1$。 故$\upsilon_{\max} = \upsilon_c = \sqrt{\frac{kT}{m}}$}
+\item[(3)]{对$\tilde{F}_M(u)$求导并令其为零，得到$u_{\max} = 1$。 回到普通单位制$\upsilon_{\max} =  \sqrt{\frac{kT}{m}}$}
 \eitem
 
 }
@@ -783,7 +873,7 @@ $$\bar{\upsilon} = \bar{u}\upsilon_c = \sqrt{\frac{\pi kT}{2m}}$$
 &=& \sqrt{\frac{2}{\pi}} \int_0^\infty \frac{1}{u}  u^2e^{-u^2/2} du \newl
 &=& \sqrt{\frac{2}{\pi}} \int_0^\infty   u e^{-u^2/2} du 
 \eea
-上式可以看成标准正态分布变量$x$的 $|x|$的平均（注意这仅仅是在数学上相等，$u$本身并不服从正态分布），故等于 $\sqrt{\frac{2}{\pi}}$。再换回到普通单位制：
+这在数学上等于标准正态分布变量$x$的 $|x|$的平均，故等于 $\sqrt{\frac{2}{\pi}}$。再换回到普通单位制：
 $$\overline{\left(\frac{1}{\upsilon}\right)} = \sqrt{\frac{2 m}{\pi kT}}$$
 
 又由 $\bar{\upsilon} = \sqrt{\frac{8kT}{\pi m}}$，
@@ -802,7 +892,7 @@ $$\overline{\left(\frac{1}{\upsilon}\right)} = \frac{4}{\pi} \frac{1}{\bar{\upsi
 \skipline
 
 {\scriptsize
-设$u_{\max}$使$\tilde{F}_M(u)$最大， 由$\frac{d \tilde{F}_M(u)}{du}\vert_{u=u_{\max}} = 0$解出$u_{\max} = \sqrt{2}$，故$\upsilon_{\max} = \sqrt{2}\upsilon_c = \sqrt{\frac{2kT}{m}}$ 
+设$u_{\max}$使$\tilde{F}_M(u)$最大， 由$\frac{d \tilde{F}_M(u)}{du}\vert_{u=u_{\max}} = 0$解出$u_{\max} = \sqrt{2}$。回到普通单位制$\upsilon_{\max} = \sqrt{\frac{2kT}{m}}$ 
 
 \bitem
 \item[(1)]{由于速度变化范围小，可以近似认为概率密度在该范围内不变，计算出概率为
@@ -867,7 +957,7 @@ P &=& \int_{10\sqrt{2}}^\infty \tilde{F}_M(u)du \newl
 {\blue 教材思考题2-10}
 
 {\scriptsize
-设$\upsilon_0 = u_0 \upsilon_c$，则用和上例同样的方法可以算出
+设$\upsilon_0 = u_0 \sqrt{\frac{kT}{m}}$，则用和上例同样的方法可以算出
 
 \bea
 \frac{1}{2} &=& \int_{0}^{u_0} \tilde{F}_M(u) du \newl
@@ -993,11 +1083,19 @@ $$C_p^{\rm mol} = \frac{1}{\nu} \frac{dQ}{dT} = C_V^{\rm mol} + R$$
 \begin{frame}
 \chtitle{第六周习题(序号接第五周)}
 \bch
+{\small
 \bitem
 \item[16]{某$300\SIK$的恒温容器内$1\SImol$的氦气压强为$0.20000\atm$。把氦气抽掉$0.2\SImol$，压强变为$0.1584\atm$。再把氦气抽掉$0.2\SImol$，压强变为$0.1176\atm$。试估算容器体积。}
-\item[17]{对温度为$T$，分子质量为$m$的理想气体，计算分子的速率平方倒数的平均$$\overline{\left(\frac{1}{\upsilon^2}\right)}.$$它和$\frac{1}{\overline{\upsilon}^2}$比较哪个大？这两者的大小关系对任意非平衡速度分布成立吗？}
+\item[17]{对温度为$T$，分子质量为$m$的热平衡理想气体
+\bitem
+\item[(1)]{分别计算分子速率四次方的平均$\overline{\upsilon^4}$和速率三次方的平均$\overline{\upsilon^3}$。}
+\item[(2)]{证明两者之比不小于分子平均速率:
+$$ \frac{\overline{\upsilon^4}}{\overline{\upsilon^3}} \ge \overline{\upsilon}$$}
+\item[(3)]{证明上述不等式对任意速度分布成立。}
+\eitem}
 \item[18]{在温度为$300\SIK$，压强$p = 1\atm$的氧气中放一个纳米音乐盒。音乐盒有个表面积为$10^{-4}\SImm^2$的探头。当有速率超过$2792\SIm/\SIs$的氧气分子撞击探头表面时将触动音乐盒开关。问：音乐盒开关平均多久被触发一次？}
 \eitem
+}
 \ech
 \end{frame}
 
