@@ -166,6 +166,7 @@ $$\frac{dT}{dz} \approx -10\SIK/\SIkm$$
 满足状态方程$pV^n = C $（{\bf 多方指数}$n$为常数, $C$为常数）的过程称为{\bf 多方过程}。
 
 多方过程对外界做功为：
+{\scriptsize
 \bea
 A' &=& \int p dV \newl
  &=& C \int \frac{dV}{V^n} \newl
@@ -173,6 +174,11 @@ A' &=& \int p dV \newl
  &=& \frac{1}{n-1}\left(p_{\rm ini}V_{\rm ini} -  p_{\rm fin}V_{\rm fin}\right) \newl
  &=& -\frac{\nu R}{n-1}\Delta T 
 \eea
+}
+即
+{\blue
+$$ A' = -\frac{\nu R}{n-1} \Delta T$$
+}
 \ech
 \end{frame}
 
@@ -187,7 +193,10 @@ $$pdV + (C_V - C_n) \frac{pdV+Vdp}{\nu R} = 0$$
 又由多方过程的定义可推出
 $$pdV + (n-1)(pdV + Vdp) = 0$$
 对比两式即得
+{\blue
 $$C_n = C_V - \frac{\nu R}{n-1}$$
+}
+这结果很好理解，$C_V$用于描述内能的增加，$- \frac{\nu R}{n-1}$用于描述气体对外做功消耗的能量。
 
 或者写成摩尔热容
 $$C_n^{\rm mol} = C_V^{\rm mol} - \frac{R}{n-1}$$

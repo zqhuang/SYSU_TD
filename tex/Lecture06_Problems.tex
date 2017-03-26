@@ -460,7 +460,7 @@ $$\frac{dP}{d\mu} = \int_0^\infty \upsilon^2d\upsilon f(\upsilon) \int d\varphi 
 \emini
 \bmini{0.61}
 \tbox{\blue 无量纲速度：去掉讨厌的系数}
-\tbox{无穷区间积分: 化为0和1}
+\tbox{无穷区间积分: 递归公式}
 \tbox{小区间积分：当成常数}
 \tbox{尾区间积分：小窍门}
 \tbox{大区间积分：神奇的近似公式}
@@ -554,7 +554,7 @@ $$\tilde{F}_{M}(u) = \sqrt{\frac{2}{\pi}} u^2 e^{-\frac{u^2}{2}}, \ \ \ u\ge 0$$
 \emini
 \bmini{0.61}
 \tbox{\blue 无量纲速度：去掉讨厌的系数}
-\tbox{\blue 无穷区间积分: 化为0和1}
+\tbox{\blue 无穷区间积分: 递归公式}
 \tbox{小区间积分：当成常数}
 \tbox{尾区间积分：小窍门}
 \tbox{大区间积分：神奇的近似公式}
@@ -563,7 +563,7 @@ $$\tilde{F}_{M}(u) = \sqrt{\frac{2}{\pi}} u^2 e^{-\frac{u^2}{2}}, \ \ \ u\ge 0$$
 \end{frame}
 
 \begin{frame}
-\chtitle{无穷区间积分：化为0和1}
+\chtitle{无穷区间积分：递归公式}
 \bch
 {\scriptsize
 我们常常需要对服从标准正态分布的变量$x$计算$|x|^n$，它可以写成
@@ -586,7 +586,7 @@ $$\overline{|x|^n} = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty|x|^ne^{-x^2/2}dx
 \end{frame}
 
 \begin{frame}
-\chtitle{无穷区间积分：化为0和1}
+\chtitle{无穷区间积分：递归公式}
 \bch
 {总结起来就是，对服从正态分布的变量$x$，其绝对值的$n$次平均
 {\blue
@@ -611,7 +611,7 @@ $$\overline{|x|^n} = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty|x|^ne^{-x^2/2}dx
 \emini
 \bmini{0.61}
 \tbox{\blue 无量纲速度：去掉讨厌的系数}
-\tbox{\blue 无穷区间积分: 化为0和1}
+\tbox{\blue 无穷区间积分: 递归公式}
 \tbox{\blue 小区间积分：当成常数}
 \tbox{尾区间积分：小窍门}
 \tbox{大区间积分：神奇的近似公式}
@@ -643,7 +643,7 @@ $$ \tilde{F}_M(\sqrt{\frac{8}{\pi}}) (\sqrt{\frac{8}{\pi}} \times 0.02) =\sqrt{\
 \emini
 \bmini{0.61}
 \tbox{\blue 无量纲速度：去掉讨厌的系数}
-\tbox{\blue 无穷区间积分: 化为0和1}
+\tbox{\blue 无穷区间积分: 递归公式}
 \tbox{\blue 小区间积分：当成常数}
 \tbox{\blue 尾区间积分：小窍门}
 \tbox{大区间积分：神奇的近似公式}
@@ -660,8 +660,8 @@ $P(u_x >a)$， $P(|u_x|>a)$，$P(u>a)$等。下面我们介绍这种积分的小
 一般地，我们考虑积分
 $$P = \int_a^\infty x^n e^{-x^2/2}dx,  \ \ a\gg \sqrt{n} $$
 对$x\gg \sqrt{n}$，有
-$$\frac{d}{dx} \left(-\left(x+\frac{1}{x}\right)^{n-1}e^{-x^2/2}\right) = x^n e^{-x^2/2}\left(1+O\left(\left(\frac{n}{x^2}\right)^2\right)\right)$$
-忽略掉$O\left(\left(\frac{n}{x^2}\right)^2\right)$并两边积分，即有
+$$\frac{d}{dx} \left(-\left(x+\frac{1}{x}\right)^{n-1}e^{-x^2/2}\right) = x^n e^{-x^2/2}\left(1+O\left(\left(\frac{\sqrt{n}}{x}\right)^4\right)\right)$$
+忽略掉$O\left(\left(\frac{\sqrt{n}}{x}\right)^4\right)$并两边积分，即有
 $$P \approx \left.\left(-\left(x+\frac{1}{x}\right)^{n-1}e^{-x^2/2}\right)\right\vert_{a}^\infty = \left(a+\frac{1}{a}\right)^{n-1}e^{-a^2/2}$$
 }
 \ech
@@ -686,7 +686,7 @@ $$ \int_a^\infty x^n e^{-x^2/2}dx \approx  \left(a+\frac{1}{a}\right)^{n-1}e^{-a
 \emini
 \bmini{0.61}
 \tbox{\blue 无量纲速度：去掉讨厌的系数}
-\tbox{\blue 无穷区间积分: 化为0和1}
+\tbox{\blue 无穷区间积分: 递归公式}
 \tbox{\blue 小区间积分：当成常数}
 \tbox{\blue 尾区间积分：小窍门}
 \tbox{\blue 大区间积分：神奇的近似公式}
@@ -759,7 +759,7 @@ P(|x|<5) &=& 0.9999994
 \item[(1)]{由$\overline{u_x^2} = \overline{u_y^2} = 1$ 得到$\overline{\upsilon_x^2+\upsilon_y^2} = 2\upsilon_c^2$，即二维的$\upsilon_{\rm rms} = \sqrt{2}\upsilon_c = \sqrt{\frac{2kT}{m}}$}
 \item[(2)]{二维的无量纲速率的概率密度为 $\tilde{F}_M(u) = 2\pi u \left(\frac{1}{2\pi} e^{-u^2/2}\right)= u e^{-u^2/2}$，所以平均无量纲速率：
 $$\bar{u} = \int_0^\infty u^2 e^{-u^2/2} du = \sqrt{\frac{\pi}{2}}\left(\sqrt{\frac{2}{\pi}}\int_0^\infty u^2 e^{-u^2/2} du\right)$$ 
-括号内的积分可以看成标准正态分布变量的平方平均。故按递归公式等于$1$。所以$\bar{u} = \sqrt{\pi/2}$，即
+括号内的积分可以看成标准正态分布变量的平方平均（注意这仅仅是在数学上相等，$u$本身并不服从正态分布），故按递归公式等于$1$。所以$\bar{u} = \sqrt{\pi/2}$，即
 $$\bar{\upsilon} = \bar{u}\upsilon_c = \sqrt{\frac{\pi kT}{2m}}$$
 }
 \item[(3)]{对$\tilde{F}_M(u)$求导并令其为零，得到$u_{\max} = 1$。 故$\upsilon_{\max} = \upsilon_c = \sqrt{\frac{kT}{m}}$}
@@ -783,7 +783,7 @@ $$\bar{\upsilon} = \bar{u}\upsilon_c = \sqrt{\frac{\pi kT}{2m}}$$
 &=& \sqrt{\frac{2}{\pi}} \int_0^\infty \frac{1}{u}  u^2e^{-u^2/2} du \newl
 &=& \sqrt{\frac{2}{\pi}} \int_0^\infty   u e^{-u^2/2} du 
 \eea
-上式可以看成标准正态分布变量$x$的 $|x|$的平均，故等于 $\sqrt{\frac{2}{\pi}}$。再换回到普通单位制：
+上式可以看成标准正态分布变量$x$的 $|x|$的平均（注意这仅仅是在数学上相等，$u$本身并不服从正态分布），故等于 $\sqrt{\frac{2}{\pi}}$。再换回到普通单位制：
 $$\overline{\left(\frac{1}{\upsilon}\right)} = \sqrt{\frac{2 m}{\pi kT}}$$
 
 又由 $\bar{\upsilon} = \sqrt{\frac{8kT}{\pi m}}$，
