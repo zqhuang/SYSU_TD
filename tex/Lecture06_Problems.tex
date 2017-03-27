@@ -485,23 +485,53 @@ $$\frac{dP}{d\mu} = \int_0^\infty \upsilon^2d\upsilon f(\upsilon) \int d\varphi 
 \begin{frame}
 \chtitle{各向同性分布：泻流速率和平均速率的关系}
 \bch
-{\blue 当速率分布各向同性时，泻流速率总是平均速率的$\frac{1}{4}$}
+{\blue 当速率分布各向同性时，泻流速率(单位时间单位面积泄漏的分子数和箱内的分子数密度之比)总是平均速率的$\frac{1}{4}$}
 
 \skipline
 
 {\small
 设三维概率密度函数为$f(\upsilon_x, \upsilon_y,\upsilon_z) = g(\upsilon)$ (因各向同性所以可以这样设)，则速率$\upsilon$的概率密度函数为$4\pi\upsilon^2g(\upsilon)$。
 
-在球坐标里计算泻流速率，体积元为$\upsilon^2 d\upsilon \sin\theta d\theta d\varphi$，$\upsilon_z = \upsilon\cos\theta$
+不妨设小孔开在$z$方向，在球坐标里计算泻流速率，体积元为$\upsilon^2 d\upsilon \sin\theta d\theta d\varphi$，$\upsilon_z = \upsilon\cos\theta$
 
 
 \bea
-\overline{\upsilon^+_z} &=& \int_0^\infty \upsilon^2 d\upsilon \int_0^{\frac{\pi}{2}} \sin\theta d\theta \int_0^{2\pi} d\varphi \,(\upsilon \cos\theta) g(\upsilon) \newl
+\upsilon_{n,\rm leak} &=& \int_0^\infty \upsilon^2 d\upsilon \int_0^{\frac{\pi}{2}} \sin\theta d\theta \int_0^{2\pi} d\varphi \,(\upsilon \cos\theta) g(\upsilon) \newl
 &=& \pi \int_0^\infty \upsilon^2 d\upsilon\,  \upsilon g(\upsilon) \newl
 &=& \frac{1}{4} \int_0^\infty \upsilon\left(4\pi\upsilon^2g(\upsilon) d\upsilon\right) \newl
 &=& \frac{1}{4} \bar{\upsilon}
 \eea
 
+}
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{各向同性分布：泻能速率}
+\bch
+{\blue \small 一个绝热箱上有个小孔，当箱内分子速率分布各向同性时，泻能速率（单位时间单位面积泄漏能量和箱内能量密度之比）为$\frac{\overline{\upsilon\varepsilon}}{4\overline\varepsilon}$。\bitem
+\item{如果是处于热平衡的非相对论单原子理想气体，则根据麦克斯韦分布，泻能速率等于$\frac{1}{3}\overline{\upsilon}$。}
+\item{在极端非相对论情形，泻能速率等于$\frac{1}{4}c$。}
+\eitem}
+
+\skipline
+
+{\scriptsize
+与前面一样在球坐标里计算泻能速率，
+\be
+\upsilon_{\varepsilon,\rm leak} = \int_0^\infty \upsilon^2 d\upsilon \int_0^{\frac{\pi}{2}} \sin\theta d\theta \int_0^{2\pi} d\varphi \,(\frac{\varepsilon}{\bar{\varepsilon}} \upsilon\cos\theta) g(\upsilon)=\frac{\overline{\varepsilon\upsilon}}{4\overline{\varepsilon}} 
+\ee
+对处于热平衡的非相对论单原子理想气体，能量仅为平动动能，即$\varepsilon\propto \upsilon^2$，所以
+\be
+\upsilon_{\varepsilon,\rm leak}  =\frac{\overline{\upsilon^3}}{4\overline{\upsilon^2}} = \frac{1}{3}\overline{\upsilon}
+\ee
+最后一步用到了类高斯积分的一些技巧，我们后面会更详细地介绍。
+
+
+
+极端相对论情形$\bar{\upsilon} = c$，结论显然。
 }
 
 \ech
@@ -672,11 +702,15 @@ $$\overline{|x|^n} = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty|x|^ne^{-x^2/2}dx
 \chtitle{无穷区间积分：递归公式}
 \bch
 {\small
-例如，麦克斯韦分布的平均速率可以写成（先用无量纲速率来计算）
-$$\overline{u} = \sqrt{\frac{2}{\pi}} \int_0^\infty  u (u^2 e^{-u^2/2}) du $$
-这在数学上等价于标准正态分布变量$x$的绝对值三次平均$\overline{|x|^3}$，故等于$ (3-1)\overline{|x|} = \sqrt{\frac{8}{\pi}}$。
-再回到普通单位制，即有
-$$\bar{\upsilon} =  \sqrt{\frac{8kT}{\pi m}} $$
+例如，我们前面计算非相对论单原子理想气体的泻能速率时需要证明
+$$\overline{u^3} = \frac{4}{3}\overline{u^2}\;\overline{u}$$
+这只要直接计算即可，设$x$为满足标准正态分布的变量，
+\bea
+\overline{u^3} &=& \sqrt{\frac{2}{\pi}} \int_0^\infty  u^3 (u^2 e^{-u^2/2}) du =\overline{|x|^5}= (5-1)\times (3-1) \overline{|x|} = 8\sqrt{\frac{2}{\pi}} \newl
+\overline{u^2} &=& \sqrt{\frac{2}{\pi}} \int_0^\infty  u^2 (u^2 e^{-u^2/2}) du =\overline{|x|^4}= (4-1)\times (2-1) \overline{|x|^0} = 3 \newl
+\overline{u}   &=& \sqrt{\frac{2}{\pi}} \int_0^\infty  u   (u^2 e^{-u^2/2}) du =\overline{|x|^3}= (3-1)\overline{|x|} = 2\sqrt{\frac{2}{\pi}}
+\eea
+注意，我们只是把$u$的某种平均和$|x|$的若干次平均通过相同的积分式联系起来，$u$本身并不服从标准正态分布。
 }
 \ech
 \end{frame}
@@ -1038,42 +1072,19 @@ $$ n = \frac{\ln \frac{\frac{0.99}{0.01}}{\frac{0.007}{0.993}}}{\ln 1.0042888} =
 
 
 \begin{frame}
-\chtitle{绝热箱泻漏能量流}
+\chtitle{绝热箱泻压}
 \bch
-{\blue \scriptsize 很大的真空室内有一容积为$V=1\SIm^3$的绝热容器，内装有热平衡的单原子理想气体。在容器壁上开一个面积为$S=10^{-6}\SIm^2$的小孔，经过$\Delta t = 10\SIs$后把小孔堵上，发现容器内气体压强降低了$0.1\%$。因漏气的过程缓慢，可近似认为整个过程中容器内气体一直处于热平衡。试估算容器内气体的平均速率。}
+{\blue \small 很大的真空室内有一容积为$V=1\SIm^3$的绝热容器，内装有热平衡的单原子理想气体。在容器壁上开一个面积为$S=10^{-6}\SIm^2$的小孔，经过$\Delta t = 10\SIs$后把小孔堵上，发现容器内气体压强降低了$0.1\%$。因漏气的过程缓慢，可近似认为整个过程中容器内气体一直处于热平衡。试估算容器内气体的平均速率。}
 
 \skipline
 
-{\scriptsize
-设分子数密度为$n$，分子质量为$m$，气体能量密度为$\rho = \frac{1}{2}nm\overline{\upsilon^2}$。
+{\small
 
-泄漏能量流为
-$\frac{n}{4}\overline{\upsilon\varepsilon} = \frac{mn}{8}\overline{\upsilon^3} = \frac{\rho}{4}\frac{\overline{\upsilon^3}}{\overline{\upsilon^2}}$
+理想气体内能为$\nu C_V^{\rm mol} T = \frac{C_V^{\rm mol}}{R} pV$，故压强的降低百分比即内能的降低百分比。内能降低百分比可以用单原子理想气体的泻能速率进行计算：
+$$\frac{1}{3}\overline{\upsilon} \frac{S\Delta t}{V} = 10^{-3}$$
 
-单原子理想气体的内能为$\frac{3}{2}\nu RT = \frac{3}{2}pV$，故压强的降低百分比即内能的降低百分比。泄漏的能量占总能量的比例为：
-$\frac{ \frac{\rho}{4}\frac{\overline{\upsilon^3}}{\overline{\upsilon^2}} S\Delta t}{\rho V} = 10^{-3}$
-
-从而解出$\frac{\overline{\upsilon^3}}{\overline{\upsilon^2}} = 400\SIm/\SIs$
-
-对服从麦克斯韦分布的理想气体，我们先对无量纲速率计算出
-$$\frac{\overline{u^3}}{\overline{u^2}} = \frac{\sqrt{\frac{2}{\pi}}\int_0^\infty u^5e^{-u^2/2}du}{\sqrt{\frac{2}{\pi}}\int_0^\infty u^4e^{-u^2/2}du} = \frac{4\times 2\times\sqrt{\frac{2}{\pi}}}{3\times 1} = \frac{4}{3} \sqrt{\frac{8}{\pi}} = \frac{4}{3}\bar{u}$$
-
-换算到普通单位制即有 $\bar{\upsilon} =\frac{3}{4} \frac{\overline{\upsilon^3}}{\overline{\upsilon^2}} = 300\SIm/\SIs $
+从而解出$\overline{\upsilon} = 300\SIm/\SIs$。
 }
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{绝热箱泻漏能量流总结}
-\bch
-如果把绝热箱泄漏气体当作准静态过程，则单位时间气体分子数降低百分比为$\frac{S}{4V}\bar{\upsilon }$，压强（或者内能）降低百分比为$\frac{S}{3V}\bar{\upsilon }$，从而可推算出温度降低百分比为
-$\frac{S}{12V}\bar{\upsilon }$，平均速率降低百分比为$\frac{S}{24V}\bar{\upsilon }$。
-
-对平均速率$\bar{\upsilon}$我们不难写出它的演化方程：
-$$\frac{d \bar{\upsilon}}{dt} =  -\frac{S}{24V}\bar{\upsilon}^2 $$
-即
-$$\Delta\left(\frac{1}{\bar{\upsilon}}\right) =  \frac{S \Delta t}{24 V} $$
-
 \ech
 \end{frame}
 
@@ -1081,11 +1092,22 @@ $$\Delta\left(\frac{1}{\bar{\upsilon}}\right) =  \frac{S \Delta t}{24 V} $$
 \begin{frame}
 \chtitle{思考题}
 \bch
-\addfig{1}{think3.jpg}
+\addfig{1}{think2.jpg}
+
 很大的真空室内有一装有温度为$300\SIK$的单原子理想气体的绝热容器，现在容器上打一个很小的孔，经过一小时容器内气体温度变为$270\SIK$。问：再经过一小时容器内气体的温度为多少？
 \ech
 \end{frame}
 
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{1}{think3.jpg}
+
+很大的真空室内有体积为$1\SIm^3$的绝热容器，容器内装有分子平均速率为$400\SIm/\SIs$的热平衡单原子理想气体，现在容器上打一个面积为$10^{-6}\SIm^2$的孔，问：经过一小时容器内气体分子平均速率变为多少？
+\ech
+\end{frame}
 
 
 \section{MB Distribution}
