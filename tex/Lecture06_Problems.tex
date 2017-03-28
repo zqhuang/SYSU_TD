@@ -7,6 +7,16 @@
 \begin{document}
 \tpage{6}{一二章知识的应用（题霸版）}
 
+\begin{frame}
+\bch
+
+\addfig{2}{think3.jpg}
+
+你不是在做题，你是在收割寂寞
+\ech
+\end{frame}
+
+
 \section{Temperature}
 
 \begin{frame}
@@ -265,7 +275,7 @@ $$\rho = \frac{28.9\SIg}{22.4\mathrm{L}} = 1.29\SIkg/\SIm^3$$
 
 \skipline
 
-{\scriptsize
+{\small
 氮气压强变为
 $$p_{N_2} = \frac{0.5}{0.2}\times 1.0\times 10^5\SIPa = 2.5\times 10^5\SIPa$$
 混合气体压强为
@@ -281,7 +291,7 @@ $$p = p_{N_2} + p_{O_2} = 2.5\times 10^5 \SIPa + 1.0\times 10^5\SIPa = 3.5\times
 
 \skipline
 
-{\scriptsize
+{\small
 收集的气体分压为$p_0=767.5\SImmHg - 17.5\SImmHg = 750\SImmHg$， 体积$V_0=150\SIcm^3$，温度$T_0=293.15\SIK$。
 在$0\cdeg$干燥时，压强$p_1 = 767.5\SImmHg$，温度$T_1 = 273.15\SIK$。故体积
 $$V_1 = \frac{\nu R T_1}{p_1} = \frac{p_0V_0 T_1}{T_0 p_1} = 150\SIcm^3 \times \frac{750}{767.5}\frac{273.15}{293.15} = 136.64 \SIcm^3 $$
@@ -363,13 +373,7 @@ $$ \upsilon_{\rm rms} \ge \overline{\upsilon}$$
 \end{frame}
 
 \begin{frame}
-\bch
-下面再介绍两种“超纲”的解法，如果觉得学习难度太大可以暂时跳过。
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{方均根速率$\ge$平均速率(第二种证明方法及推广)}
+\chtitle{方均根速率$\ge$平均速率(第二种证明方法及推广，仅供娱乐)}
 \bch
 {\blue 教材思考题2-9}
 
@@ -394,7 +398,7 @@ $$\overline{\left(\frac{1}{\upsilon}\right)} \ge \frac{1}{\bar{\upsilon}},\ \ \ 
 
 
 \begin{frame}
-\chtitle{方均根速率$\ge$平均速率 （第三种证明方法及推广）}
+\chtitle{方均根速率$\ge$平均速率 （第三种证明方法及推广，仅供娱乐）}
 \bch
 {\blue 教材思考题2-9}
 
@@ -416,7 +420,7 @@ $$ \overline{\upsilon^2} \ge \left(\overline{\upsilon}\right)^2 $$
 \end{frame}
 
 \begin{frame}
-\chtitle{思考题}
+\chtitle{思考题（仅供娱乐）}
 \bch
 {\scriptsize
 \bitem
@@ -509,7 +513,7 @@ $$\frac{dP}{d\mu} = \int_0^\infty \upsilon^2d\upsilon f(\upsilon) \int d\varphi 
 
 
 \begin{frame}
-\chtitle{各向同性分布：泻能速率}
+\chtitle{各向同性分布：泻能速率 （难度稍大的内容）}
 \bch
 {\blue \small 一个绝热箱上有个小孔，当箱内分子速率分布各向同性时，泻能速率（单位时间单位面积泄漏能量和箱内能量密度之比）为$\frac{\overline{\upsilon\varepsilon}}{4\overline\varepsilon}$。\bitem
 \item{如果是处于热平衡的非相对论单原子理想气体，则根据麦克斯韦分布，泻能速率等于$\frac{1}{3}\overline{\upsilon}$。}
@@ -765,7 +769,7 @@ $$ \tilde{F}_M(\sqrt{\frac{8}{\pi}}) (\sqrt{\frac{8}{\pi}} \times 0.02) =\sqrt{\
 \end{frame}
 
 \begin{frame}
-\chtitle{尾区间积分：小窍门}
+\chtitle{尾区间积分：小窍门 （仅供娱乐）}
 \bch
 {\scriptsize
 有时候我们要做风险评估，计算超出平均值很多倍的事件的概率。即对$a\gg 1$，要计算
@@ -808,7 +812,7 @@ $$ \int_a^\infty x^n e^{-x^2/2}dx \approx  \left(a+\frac{1}{a}\right)^{n-1}e^{-a
 \end{frame}
 
 \begin{frame}
-\chtitle{大区间积分：神奇的近似公式}
+\chtitle{大区间积分：神奇的近似公式 （仅供娱乐）}
 \bch
 {\small
 如果既不是小区间，又不是尾区间的积分问题，我们就不得不祭出最后一招必杀技：
@@ -821,7 +825,7 @@ $$P(|x|<a) = \frac{1}{\sqrt{2\pi}} \int_{-a}^a e^{-\frac{x^2}{2}}d x \approx  \s
 \end{frame}
 
 \begin{frame}
-\chtitle{置信区间和置信度}
+\chtitle{置信区间和置信度 （仅供娱乐）}
 \bch
 {\scriptsize
 对满足标准正态分布的变量$x$，易由前面介绍的方法算出
@@ -844,7 +848,7 @@ P(|x|<5) &=& 0.9999994
 \bitem
 \item{需要记住高斯积分$$\int_{-\infty}^\infty e^{-ax^2} dx= \sqrt{\frac{\pi}{a}}$$或者记住标准正态分布$$\frac{1}{\sqrt{2\pi}}e^{-x^2/2}$$（其归一化因子隐含了高斯积分的结果）。}
 \item{如果你选择记住高斯积分，则需要掌握分部积分和交换积分和求导次序这两种常用技巧。如果你选择记住标准正态分布，则需要掌握$\overline{|x|^n}$的递归计算法。}
-\item{尾区间积分和大区间积分属于“超纲”内容，如果觉得太难学不会，可在计算时保留积分表达式而不给出数值结果。}
+\item{尾区间积分和大区间积分属于“仅供娱乐”内容，如果觉得太难学不会，可在计算时保留积分表达式而不给出数值结果。}
 \eitem
 
 \ech
@@ -946,7 +950,7 @@ $$ \left.\tilde{F}_M(u) \delta u\right\vert_{u = \sqrt{2}} = \left.(0.02 u) \til
 
 
 \begin{frame}
-\chtitle{Maxwell分布例5 （尾积分）}
+\chtitle{Maxwell分布例5 （尾区间积分，仅供娱乐）}
 \bch
 {\blue 教材习题2-15}
 
@@ -966,7 +970,7 @@ P &=& \int_{10\sqrt{2}}^\infty \tilde{F}_M(u)du \newl
 
 
 \begin{frame}
-\chtitle{Maxwell分布例6 （大区间求概率）}
+\chtitle{Maxwell分布例6 （大区间积分，仅供娱乐）}
 \bch
 {\blue 教材习题 2-14}
 
@@ -988,7 +992,7 @@ P &=& \int_{10\sqrt{2}}^\infty \tilde{F}_M(u)du \newl
 
 
 \begin{frame}
-\chtitle{Maxwell分布例7 （大区间求概率，迭代法求解）}
+\chtitle{Maxwell分布例7 （大区间积分和迭代法，仅供娱乐）}
 \bch
 {\blue 教材思考题2-10}
 
@@ -1016,44 +1020,9 @@ P &=& \int_{10\sqrt{2}}^\infty \tilde{F}_M(u)du \newl
 \ech
 \end{frame}
 
-\begin{frame}
-\chtitle{方均根速率例1}
-\bch
-{\blue 教材习题2-24}
-
-\skipline
-
-{\small
-温度$T = 273.15\SIK$。
-
-如果认为灰尘的自由度为2（仅在水面运动），则方均根速率为
-$$\sqrt{\frac{2kT}{m}} = 2.7\times 10^{-5} \SIm/\SIs$$  
-}
-
-\ech
-\end{frame}
-
 
 \begin{frame}
-\chtitle{方均根速率例2}
-\bch
-{\blue 教材习题2-24}
-
-\skipline
-
-{\small
-温度$T = 300.15\SIK$。
-
-浮游微粒的的自由度为3，则方均根速率为
-$$\sqrt{\frac{3kT}{m}} = 3.5\times 10^{-4} \SIm/\SIs$$  
-}
-
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{泻流法提纯}
+\chtitle{Maxwell分布例8 （泻流法提纯）}
 \bch
 {\blue 教材习题2-5}
 
@@ -1072,7 +1041,7 @@ $$ n = \frac{\ln \frac{\frac{0.99}{0.01}}{\frac{0.007}{0.993}}}{\ln 1.0042888} =
 
 
 \begin{frame}
-\chtitle{绝热箱泻压}
+\chtitle{Maxwell分布例9 （绝热箱泻流，难度稍大的内容）}
 \bch
 {\blue \small 很大的真空室内有一容积为$V=1\SIm^3$的绝热容器，内装有热平衡的单原子理想气体。在容器壁上开一个面积为$S=10^{-6}\SIm^2$的小孔，经过$\Delta t = 10\SIs$后把小孔堵上，发现容器内气体压强降低了$0.1\%$。因漏气的过程缓慢，可近似认为整个过程中容器内气体一直处于热平衡。试估算容器内气体的平均速率。}
 
@@ -1090,7 +1059,7 @@ $$\frac{1}{3}\overline{\upsilon} \frac{S\Delta t}{V} = 10^{-3}$$
 
 
 \begin{frame}
-\chtitle{思考题}
+\chtitle{思考题（难度稍大的内容）}
 \bch
 \addfig{1}{think2.jpg}
 
@@ -1101,7 +1070,7 @@ $$\frac{1}{3}\overline{\upsilon} \frac{S\Delta t}{V} = 10^{-3}$$
 
 
 \begin{frame}
-\chtitle{思考题}
+\chtitle{思考题 （难度稍大的内容）}
 \bch
 \addfig{1}{think3.jpg}
 
@@ -1110,17 +1079,84 @@ $$\frac{1}{3}\overline{\upsilon} \frac{S\Delta t}{V} = 10^{-3}$$
 \end{frame}
 
 
+
+\begin{frame}
+\chtitle{能均分定理}
+\bch
+{\small
+{\blue 每个独立的二次型能量项都对分子平均能量有$\frac{1}{2}kT$的贡献。（推广：一般地，$n$次型能量对分子平均动能有$\frac{1}{n}kT$的贡献。）}
+
+阅读教材时注意各种概念：
+\bitem
+\item{自由度：描述物体状态需要的独立变量数。$n$-原子的分子，如果没有自由度被冻结，则有$3n$个自由度。理想刚体则有6个宏观自由度。}
+\item{能均分定理是按二次型能量项数来计算的，不是按自由度（注意教材中有含混不清的地方）。每个平动和转动自由度都对应一个二次型能量项，每个振动自由度则对应2个二次型能量项。}
+\item{大多数晶体分子在室温下有3个振动自由度，摩尔定体热容约为$3R$。当化学键比较强时，固体某些振动自由度也可能被冻结，例如金刚石的摩尔定体热容远小于$3R$。}
+\item{单原子气体有3个平动自由度，摩尔定体热容约为$\frac{3}{2}R$。双原子气体的转动自由度在几$\SIK$或者几十$\SIK$下被激发，而振动自由度要到几千$\SIK$才被激发，故摩尔定体热容从$\frac{3}{2}RT$（低温）逐步变化到$\frac{5}{2}R$（室温）再逐步变化到$\frac{7}{2}R$（高温）。}
+\eitem
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{能均分定理例1}
+\bch
+{\blue 教材习题2-24}
+
+\skipline
+
+{\small
+温度$T = 273.15\SIK$。
+
+如果认为灰尘的自由度为2（仅在水面运动），则方均根速率为
+$$\sqrt{\frac{2kT}{m}} = 2.7\times 10^{-5} \SIm/\SIs$$  
+}
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{能均分定理例2}
+\bch
+{\blue 教材习题2-24}
+
+\skipline
+
+{\small
+温度$T = 300.15\SIK$。
+
+浮游微粒的的自由度为3，则方均根速率为
+$$\sqrt{\frac{3kT}{m}} = 3.5\times 10^{-4} \SIm/\SIs$$  
+}
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{练习}
+\bch
+{\blue 教材思考题2-21到2-28}
+\ech
+\end{frame}
+
 \section{MB Distribution}
 
 \begin{frame}
-\chtitle{压强随高度变化}
+\chtitle{麦克斯韦-玻尔兹曼分布}
+\bch
+应用麦克斯韦玻尔兹曼分布时，难点在于计算势能，这往往涉及到其他物理学分支的知识（\bye 祝福力学没有学好的同学）
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{MB分布例1：压强随高度变化}
 \bch
 {\blue 教材习题2-18}
 
 \skipline
 
 {\scriptsize
-由“万能法则”（或按2，3班的叫法：玻尔兹曼分布），分子数密度正比于$e^{-\frac{mgh}{kT}}$，又由理想气体状态方程，压强正比于分子数密度。故
+分子数密度正比于$e^{-\frac{mgh}{kT}}$，又由理想气体状态方程，压强正比于分子数密度。故
 $$ e^{-\frac{mgh}{kT}} = \frac{0.8\atm}{1\atm} = 0.8$$
 空气分子平均质量
 $$m = \frac{29\SIg}{6.02\times 10^{23}} = 4.82\times 10^{-26}\SIkg$$
@@ -1132,7 +1168,7 @@ $$h = -\frac{kT\ln 0.8}{mg} = 1.96\times 10^3 \SIm$$
 
 
 \begin{frame}
-\chtitle{离心力和压强}
+\chtitle{MB分布例2：离心力和压强}
 \bch
 {\blue 半径为$1\SIm$，温度为$300\SIK$的圆柱形恒温容器里装有氮气。容器绕中心轴以每秒10圈的速度旋转，求中心轴附近氮气压强和容器壁附近氮气压强之比。}
 
@@ -1146,6 +1182,26 @@ e^{-\frac{mr^2\omega^2}{2kT}} = e^{-\frac{28\times 1.66\times 10^{-27}\times 1^2
 \ee
 
 }
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{0.8}{think3.jpg}
+
+我们讨论气体压强随高度变化时为什么没有考虑地球自转造成的离心力势？进一步考虑：如果是同步卫星中的气体呢？
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{0.8}{think3.jpg}
+如果把金属放入匀强电场中，金属中的电子会形成一个指数型的密度分布吗？
 \ech
 \end{frame}
 

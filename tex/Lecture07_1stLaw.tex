@@ -7,7 +7,31 @@
 \begin{document}
 \tpage{7}{热力学第一定律}
 
-\section{1st Law}
+
+\section{Review}
+
+\begin{frame}
+\chtitle{上讲内容回顾}
+\bch
+\bitem
+\item{上讲证明了：我们根本没有学会第一二章}
+\eitem
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{本讲内容}
+\bch
+\bitem
+\item{内能}
+\item{热力学第一定律}
+\item{理想气体的各种准静态过程}
+\eitem
+\ech
+\end{frame}
+
+
+\section{Internal Energy}
 
 \begin{frame}
 \chtitle{内能是个态函数}
@@ -25,6 +49,54 @@ $$ U  = U(V, T)$$
 \ech
 \end{frame}
 
+\begin{frame}
+\chtitle{赶紧抢答：50\%送分几率}
+\bch
+下面的量是不是态函数
+\bitem
+\item{温度$T$}
+\item{热量$Q$}
+\item{压强$p$}
+\item{体积$V$}
+\item{做功$A$}
+\item{摩尔数$\nu$}
+\item{平衡态的分子平均速率$\overline{\upsilon}$}
+\eitem
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{理想气体的内能}
+\bch
+理想气体的定体热容只和温度有关，又在经典图像下$U(T\rightarrow 0) = 0$，所以
+$$ U(V, T) = U(V, 0) + \int_0^T \nu C_V(T') dT' =\nu  \int_0^T C_V(T') dT'  $$
+
+可见，固定摩尔数的理想气体的内能只是温度的函数。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{1}{think2.jpg}
+
+考虑实际气体分子之间有微弱的吸引力，实际气体的内能$U(V,T)$对体积有微弱的依赖。问：$\left(\frac{\partial U}{\partial V}\right)_T$是正的还是负的？
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{1}{think2.jpg}
+
+由于$p, V, T$中只有两个是独立的，我们也可以把内能写成$U(p, T)$。对理想气体和实际气体$\left(\frac{\partial U}{\partial p}\right)_T$的符号分别是什么（正，负，或为零）？
+
+\ech
+\end{frame}
+
+
+\section{1st Law}
 
 \begin{frame}
 \chtitle{热力学第一定律的数学表达式}
@@ -50,7 +122,7 @@ $$ \Delta U = A + Q$$
 
 \skiplines
 
-{\small 例如：缓慢加热的过程，缓慢压缩气体的过程，SYSU-SECURE数据传输过程，政府工作人员的办公过程等等}
+{\small 例如：缓慢加热的过程，缓慢压缩气体的过程，政府工作人员的办公过程等等}
 
 \addfig{2}{slowmotion.jpg}
 
@@ -142,7 +214,7 @@ $$T p^{\frac{1}{\gamma}-1} = \const $$
 
 
 \begin{frame}
-\chtitle{高处不胜寒}
+\chtitle{又恐琼楼玉宇，高处不胜寒}
 \bch
 {\small 
 我们以前计算大气压强梯度时把空气温度当成了常数，事实上我们都知道“高处不胜寒”。因为大气是热的不良导体，绝热近似是更好的描述。
@@ -278,16 +350,16 @@ $$C = \infty $$
 
 
 \begin{frame}
-\chtitle{消化下栗子}
+\chtitle{消化下}
 \bch
-\addfig{1}{chibaolizi.jpg}
+\addfig{1}{songfen.jpg}
 $1\SImol$氧气经过$n=2$的多方过程从$T=300K$升温到$T=310K$。问这个过程中对氧气做功多少？氧气吸热多少？
 \ech
 \end{frame}
 
 
 \begin{frame}
-\chtitle{什么？栗子太好消化了？}
+\chtitle{什么？太好消化了？}
 \bch
 
 下周期中考试
