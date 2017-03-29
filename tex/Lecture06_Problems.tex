@@ -16,6 +16,42 @@
 \ech
 \end{frame}
 
+\begin{frame}
+\chtitle{常识测验}
+\bch
+\bitem
+\item{原子质量的数量级是多少？}
+\eitem
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{常识测验}
+\bch
+\bitem
+\item{室内气体分子的平均速率的数量级是多少？}
+\eitem
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{常识测验}
+\bch
+\bitem
+\item{固体分子间平均距离的数量级是多少？}
+\eitem
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{常识测验}
+\bch
+\bitem
+\item{气体分子间平均距离的数量级是多少？}
+\eitem
+\ech
+\end{frame}
 
 \section{Temperature}
 
@@ -819,7 +855,7 @@ $$ \int_a^\infty x^n e^{-x^2/2}dx \approx  \left(a+\frac{1}{a}\right)^{n-1}e^{-a
 {\blue
 对满足标准正态分布的变量$x$，
 $$P(|x|<a) = \frac{1}{\sqrt{2\pi}} \int_{-a}^a e^{-\frac{x^2}{2}}d x \approx  \sqrt{1-e^{-\frac{a^2}{2}\left(\frac{\frac{4}{\pi}+ 0.074a^2}{1+0.074a^2}\right)}}$$}
-最后一步只是一个好用的近似公式，在{\blue $a\lesssim 10$的范围内都很好用}。当$a$很大时我们要用前面介绍的尾区间积分的计算方法。
+最后一步只是一个好用的近似公式，在{\blue $a\lesssim 5$的范围内都很好用}。当$a$很大时我们要用前面介绍的尾区间积分的计算方法。
 }
 \ech
 \end{frame}
@@ -1079,17 +1115,17 @@ $$\frac{1}{3}\overline{\upsilon} \frac{S\Delta t}{V} = 10^{-3}$$
 \end{frame}
 
 
-
 \begin{frame}
 \chtitle{能均分定理}
 \bch
-{\small
-{\blue 每个独立的二次型能量项都对分子平均能量有$\frac{1}{2}kT$的贡献。（推广：一般地，$n$次型能量对分子平均动能有$\frac{1}{n}kT$的贡献。）}
+{\scriptsize
+{\blue 每个独立的二次型能量项都对分子平均能量有$\frac{1}{2}kT$的贡献。（推广：一般地，独立$n$次型能量对分子平均能量有$\frac{1}{n}kT$的贡献。）}
 
 阅读教材时注意各种概念：
 \bitem
 \item{自由度：描述物体状态需要的独立变量数。$n$-原子的分子，如果没有自由度被冻结，则有$3n$个自由度。理想刚体则有6个宏观自由度。}
-\item{能均分定理是按二次型能量项数来计算的，不是按自由度（注意教材中有含混不清的地方）。每个平动和转动自由度都对应一个二次型能量项，每个振动自由度则对应2个二次型能量项。}
+\item{能均分定理是按独立二次型能量项数来计算的，不是按自由度（注意教材中有含混不清的地方）。每个平动和转动自由度都对应一个独立二次型能量项，每个振动自由度则对应2个独立二次型能量项。}
+\item{能均分定理里的“{\bf 独立二次型能量项}”指的是{\bf 动量或者坐标的一个分量的二次型}。其关键是微观态（相空间小块）对这个分量而言是均匀分布的。所以，虽然$\frac{\calp^2}{2m}$看起来虽然也是二次型，但必须把它分解为$\frac{\calp_x^2}{2m}+\frac{\calp_y^2}{2m}+\frac{\calp_z^2}{2m}$才能得到正确的分子平均动能。}
 \item{大多数晶体分子在室温下有3个振动自由度，摩尔定体热容约为$3R$。当化学键比较强时，固体某些振动自由度也可能被冻结，例如金刚石的摩尔定体热容远小于$3R$。}
 \item{单原子气体有3个平动自由度，摩尔定体热容约为$\frac{3}{2}R$。双原子气体的转动自由度在几$\SIK$或者几十$\SIK$下被激发，而振动自由度要到几千$\SIK$才被激发，故摩尔定体热容从$\frac{3}{2}RT$（低温）逐步变化到$\frac{5}{2}R$（室温）再逐步变化到$\frac{7}{2}R$（高温）。}
 \eitem
@@ -1131,6 +1167,40 @@ $$\sqrt{\frac{3kT}{m}} = 3.5\times 10^{-4} \SIm/\SIs$$
 
 \ech
 \end{frame}
+
+
+\begin{frame}
+\chtitle{能均分定理例3}
+\bch
+{\blue 取地面为重力势能的零点，把大气理想化为恒温且无限厚的气体。求大气分子的平均重力势能。}
+
+{\small
+因为重力势能$E_{\rm grav} = mgz$是一次型能量，所以按推广的能均分定理，其分子平均值为$kT$。
+
+\skipline
+
+当然，如果你不大放心，可以直接计算：
+\be
+\overline{E_{\rm grav}} = \frac{\int_0^\infty e^{-\frac{mgz}{kT}} mgz dz}{\int_0^\infty e^{-\frac{mgz}{kT}}dz} =kT
+\ee
+
+}
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题（难度稍大）}
+\bch
+
+\addfig{1}{think3.jpg}
+
+极端相对论气体的粒子平均能量可以用能均分定理来计算吗？
+
+\ech
+\end{frame}
+
 
 \begin{frame}
 \chtitle{练习}
