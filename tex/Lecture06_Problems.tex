@@ -701,12 +701,12 @@ $$\overline{|x|^n} = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty|x|^ne^{-x^2/2}dx
 显然
 \bea
 \overline{|x|^0} &=&  1 \newl 
-\overline{|x|} &=& \left.\sqrt{\frac{2}{\pi}}e^{-x^2/2}\right\vert^\infty_0 = \sqrt{\frac{2}{\pi}} 
+\overline{|x|} &=& -\left.\sqrt{\frac{2}{\pi}}e^{-x^2/2}\right\vert^\infty_0 = \sqrt{\frac{2}{\pi}} 
 \eea
 对$n>1$，则可分部积分得到
 \bea
 \overline{|x|^n} &=& -\sqrt{\frac{2}{\pi}}\int_0^\infty x^{n-1}d\left(e^{-x^2/2}\right) \newl
- &=& \left.-x^{n-1}e^{-x^2/2}\right\vert_0^\infty+\sqrt{\frac{2}{\pi}}\int_0^\infty (n-1)x^{n-2} e^{-x^2/2}dx \newl
+ &=& \left.-\sqrt{\frac{2}{\pi}}x^{n-1}e^{-x^2/2}\right\vert_0^\infty+\sqrt{\frac{2}{\pi}}\int_0^\infty (n-1)x^{n-2} e^{-x^2/2}dx \newl
 &=&  (n-1)\sqrt{\frac{2}{\pi}}\int_0^\infty x^{n-2} e^{-x^2/2}dx \newl
 &=& (n-1) \overline{|x|^{n-2}}
 \eea
