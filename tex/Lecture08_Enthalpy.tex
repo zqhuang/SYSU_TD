@@ -27,6 +27,7 @@
 \chtitle{本讲内容}
 \bch
 \bitem
+\item{数学准备知识：循环偏微分乘积定理}
 \item{焓}
 \item{节流过程（等焓的非准静态过程)}
 \item{化学反应和生成焓}
@@ -34,12 +35,44 @@
 \ech
 \end{frame}
 
-\section{Enthalpy}
-
-
+\section{Math}
 
 \begin{frame}
-\chtitle{焓的概念}
+\chtitle{数学准备知识：循环偏微分乘积定理}
+\bch
+设三个变量$X$, $Y$, $Z$满足某状态方程，则
+{\blue 
+$$\pfrac XYZ  \pfrac YZX \pfrac ZXY = -1$$
+}
+当然，我们这是讨论物理问题，可以假设状态方程足够光滑，且不出现偏导数无穷大的情况。
+
+\skipline
+
+\bye不会证的请默默捧起数学书。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{什么，数学书早卖了？}
+\bch
+{\scriptsize
+证明：设状态方程为$S(X, Y, Z) = 0$，取状态方程曲面上的一条等高线($dZ = 0$)，在等高线上有
+$$\pfrac SX{YZ} dX + \pfrac SY{ZX} dY = 0$$
+又根据偏导数的定义，等高线上的$dX/dY$即$\pfrac XYZ$。故有
+$$\pfrac XYZ = -\frac{\pfrac SY{ZX}}{\pfrac SX{ZY}}$$
+同理可证
+$$\pfrac YZX = -\frac{\pfrac SZ{XY}}{\pfrac SY{ZX}}$$
+$$\pfrac ZXY = -\frac{\pfrac SX{YZ}}{\pfrac SZ{XY}}$$
+三式相乘即得证
+}
+\ech
+\end{frame}
+
+
+\section{Enthalpy}
+
+\begin{frame}
+\chtitle{焓}
 \bch
 
 内能 $\Rightarrow$ 你房子的价值
@@ -75,9 +108,176 @@ $$H = U(T) + pV = U(T) + \nu R T$$
 \end{frame}
 
 \begin{frame}
-\chtitle{节流过程和焦耳-汤姆孙效应}
+\chtitle{实际气体的焓}
 \bch
+由于理想气体近似已经给出
+$$\pfrac HTp =  C_V+ \nu R > 0$$
+实际气体一般只是对上式稍有偏离，并不会影响$\pfrac HTp $的正负符号。
+
+比较不确定的是$H$对$p$的依赖关系，因为理想气体近似给出$\pfrac HpT = 0$，实际气体如果有所偏离的话，是往哪个方向偏离呢？
 \ech
 \end{frame}
 
+\begin{frame}
+\chtitle{$\pfrac HpT$的计算公式}
+\bch
+{\small
+我们上一讲中提到了一个普适内能方程{\blue
+$$\pfrac UVT = T\pfrac pTV - p$$}
+由此可以得到
+$$\pfrac UpT = \pfrac UVT\pfrac VpT= \left(T\pfrac pTV - p\right) \pfrac VpT$$
+所以
+$$\pfrac HpT = \pfrac UpT  + p\pfrac VpT + V = T\pfrac pTV \pfrac VpT + V$$
+最后我们利用循环偏微分乘积定理，得到$\pfrac pTV \pfrac VpT = - \pfrac VTp$，即
+{\blue
+$$\pfrac HpT = - T\pfrac VTp + V$$
+}}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{实际气体的$\pfrac HpT$}
+\bch
+
+对范德瓦尔斯气体，我们可以直接算出
+$$\pfrac HpT = V\frac{\frac{\nu b}{V} - \frac{2p_U}{p_k}\left(1- \frac{\nu b}{V}\right)}{1 - \frac{2p_U}{p_k}\left(1-\frac{\nu b}{V}\right)}\approx V\left(\frac{\nu b}{V} - \frac{2p_U}{p_k}\right)$$
+
+它的符号取决于体积修正和压强修正的相对大小。
+
+\bmini{0.48}
+\lfig{1.9}{pfracHpT.jpg}
+\emini
+\bmini{0.48}
+{\small 
+实验表明，在常温常压下，氢气和氦气$\pfrac HpT > 0$，而大多数其他气体则有$\pfrac HpT < 0$。
+
+在高温高压下，体积修正是主导项，所有气体均有$\pfrac HpT > 0$。
+}
+\emini
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{节流过程和焦耳-汤姆孙效应}
+\bch
+
+\bmini{0.48}
+\addfig{2}{throttling_process.png}
+\emini
+\bmini{0.48}
+用多孔塞把绝热箱隔开，两端分别施以恒定压强$p_1$, $p_2$ （$p_1>p_2$）。
+\emini
+
+{\small
+
+假设一开始气体都在左边，体积为$V_1$，内能为$U_1$。经过一段时间，左边的气体都通过多孔塞被压到了右边，体积和内能变为$V_2$, $U_2$。
+
+那么由于左边活塞对气体做功$p_1V_1$，右边活塞对气体做功$-p_2V_2$，所以气体内能变化为
+
+$$U_2 - U_1  = p_1V_1 - p_2V_2$$
+
+即
+$$ U_1 + p_1V_1 = U_2 + p_2V_2 $$
+{\blue \bf 节流过程是等焓过程} （注意：节流过程一般不是准静态过程）
+
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{焦耳-汤姆孙效应}
+\bch
+{\small
+我们可以根据焦耳-汤姆孙系数$\alpha \equiv \pfrac TpH$来计算的温度的升降。
+
+根据循环偏微分乘积定理：
+$$\pfrac TpH \pfrac pHT \pfrac HTp = -1$$
+和$\pfrac HTp > 0$，就知道$\pfrac TpH$和$\pfrac HpT$符号相反。
+
+也就是说，在常温常压下，对氢气和氦气$\pfrac TpH < 0$， 对大多数其他气体$\pfrac TpH > 0$。
+
+因为节流过程是降压过程，所以对{\bf 大部分气体（空气，氮气，氧气等）节流过程是降温过程（正节流效应），而对氢气和氦气是升温过程（负节流效应）}。这些效应统称{\bf 焦耳-汤姆孙效应}。
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{节流液化气体}
+\bch
+{\small
+根据范德瓦尔斯状态方程的定性分析，在高温高压下，气体呈现负节流效应，在低温低压下，气体呈现正节流效应。那么只要把气体降温到某个温度之下使得节流效应为正，则节流效应可以对气体无限降温使它最终液化。
+
+\skiplines
+
+请参考教材图3-15的节流液化装置。
+
+\skiplines
+
+\bitem
+\item{实际气体在极低温时未必符合范德瓦尔斯模型，具体例子可见教材140页图3-13，氢气在极低温时也有一部分负节流效应区域。这样氢气的节流液化过程就会有一定的参数限制。}
+\item{自由膨胀也能给气体降温。柯林斯液化机就是结合自由膨胀和节流两种方法。}
+\eitem
+
+}
+\ech
+\end{frame}
+
+\section{Enthalpy of Reaction}
+
+
+\begin{frame}
+\chtitle{化学反应热和生成焓}
+\bch
+定义化学反应热 = 外界给系统的热量
+
+\skipline
+
+\bitem
+\item{定体化学反应 $\Rightarrow$ 内能变化 = 反应热}
+\item{定压化学反应 $\Rightarrow$ 焓变化 = 反应热}
+\eitem
+
+\skipline
+
+定压反应的反应热又称为反应焓。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{焓的参考点：标准生成焓}
+\bch
+焓和势能一样，可以取任意参考点，习惯上定义$1\atm$, $25\cdeg$的纯元素的焓为零。
+
+\skipline
+
+$1\atm$，$25\cdeg$下化合物的生成焓定义为化合物的标准生成焓。
+
+\skipline
+
+$1\atm$，$25\cdeg$下，
+
+化学反应的反应焓 = 合成物的标准生成焓 - 反应物的标准生成焓
+
+\skiplines
+
+标准生成焓可以通过查表获得。见教材145页表3-3。计算化学反应的反应焓的例子见145页至146页。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{第九周作业（序号接第八周）}
+\bch
+\bitem
+\item[22]{}
+\item[23]{}
+\item[24]{}
+\eitem
+\ech
+\end{frame}
 \end{document}

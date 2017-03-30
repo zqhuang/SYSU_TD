@@ -174,6 +174,70 @@ $$ Q = - A $$
 
 
 \begin{frame}
+\chtitle{实际气体的等温过程}
+\bch
+对实际气体，当保持温度不变改变体积时，分子之间的吸引力做功，使得气体的内势能改变，内压强做的功就等于内势能的减小量。
+
+根据能均分定理，气体分子的平动动能和内部自由度的能量的平均值在等温过程中不变。
+
+因此，等温过程中气体的内能减小量等于内压强做的功。
+
+$$\Delta U = - p_u \Delta V$$
+
+所以
+
+$$\pfrac UVT = - p_U  $$
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{实际气体的等温过程（续）}
+\bch
+{\small
+如果气体的体积固定而改变$T$，动理压强$p_k \propto T$，而内压强不变，所以
+$$\pfrac pTV = \pfrac{p_k}TV = \frac{p_k}{T}$$
+从而得到
+$$p_k = T \pfrac pTV$$
+于是
+$$\pfrac UVT = -p_U = p_k - p = T \pfrac pTV - p$$
+}
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{内能和物态方程的普适关系}
+\bch
+{\small
+实际上
+{\blue 
+$$\pfrac UVT = T \pfrac pTV - p $$
+}
+是一个对所有物质适用的普适方程。
+
+我们将来会证明，它和热力学第二定律是等价的。
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{范德瓦尔斯气体}
+\bch
+{\small
+对范德瓦尔斯气体，我们假设了内压强$P_U = -\frac{a\nu^2}{V^2}$，故
+$$\pfrac UVT = \frac{a\nu^2}{V^2}$$
+由此可以积分得到
+$$U(V, T) = \int_{T_0}^T C_V dT -\frac{\nu^2a}{V} + U_0$$
+}
+\ech
+\end{frame}
+
+
+
+\begin{frame}
 \chtitle{理想气体绝热过程（adiabatic process)}
 \bch
 {\small
@@ -380,7 +444,7 @@ $1\SImol$氧气经过$n=2$的多方过程从$T=300K$升温到$T=310K$。问这�
 \chtitle{第七八周作业（序号接第六周）}
 \bch
 \bitem
-\item[19]{教材思考题3-18 (送分题，简单叙述拿分走人，请勿长篇大论累死助教)}
+\item[19]{教材习题3-2}
 \item[20]{教材习题3-5}
 \item[21]{教材习题3-6}
 \eitem
