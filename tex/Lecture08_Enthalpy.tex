@@ -10,11 +10,12 @@
 \section{Review}
 
 \begin{frame}
-\chtitle{上讲内容回顾}
+\chtitle{上讲需要掌握的内容非常少}
 \bch
 \bitem
 \item{内能是态函数}
 \item{热力学第一定律：$\Delta U = A + Q$。}
+\item{实际气体等温过程的内能减少量等于内压强做功；普适内能方程$\pfrac UVT = T\pfrac pTV - p$；克拉珀龙方程；范德瓦尔斯气体的内能。}
 \item{绝热过程状态方程：$pV^\gamma = \const$ ，其中$\gamma = C_p/C_V = (C_V + \nu R)/C_V$。}
 \item{大气的绝热近似$\rightarrow \frac{dT}{dz} \approx -10 \SIK/\SIkm$。}
 \item{多方过程气体对外做功$A' = -\frac{\nu R}{n-1}\Delta T$ （等温过程$n=1$则需要另算）。}
@@ -22,6 +23,77 @@
 \eitem
 \ech
 \end{frame}
+
+\begin{frame}
+\chtitle{关于大气垂直温差的补充知识}
+\bch
+{\small
+对水蒸气饱和的空气，做功等于内能改变量加上汽化热：
+$$ -pdV = C_V dT + \Lambda d(c\nu) $$
+其中$\nu$为空气摩尔数，$c$为空气中水蒸气的摩尔百分比，$\Lambda$为摩尔汽化热。又
+$$pdV + Vdp = \nu R dT + \nu \Lambda dc$$
+两式相加得到
+$$ Vdp = C_p  dT + \nu \Lambda dc $$
+再由力学平衡$ dp = -\rho g dz$，即有
+$$ \frac{dT}{dz} =-\frac{\rho g V + \nu\Lambda\frac{dc}{dz}}{C_p} = -\frac{\gamma-1}{\gamma}\left(\frac{M^{\rm mol}g}{R}+\frac{\Lambda}{R}\frac{dc}{dz}\right)$$
+因为饱和蒸气压随着温度降低而降低（请回忆三相图），在有饱和蒸汽的空气里，气团继续上升会造成水蒸气凝结，$ \frac{dc}{dz} < 0 $，垂直温度梯度就会小于$-10\SIK/\SIs$。
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{关于空气中声速的补充知识}
+\bch
+
+\addfig{1.5}{soundwave.jpg}
+
+{\scriptsize
+力学里无敌公式$F = ma$:
+
+$$ -dp dy dz = (\rho dx dy dz) \left(\frac{d\upsilon}{dx/\upsilon}\right) $$
+即
+$$ dp = - \rho \upsilon d\upsilon $$
+
+然后根据物质流守恒：$ \rho \upsilon = (\rho + d\rho)(\upsilon+d\upsilon)$
+忽略高阶小量即$ -\rho d\upsilon = \upsilon d\rho$
+代入前面的$dp$表达式得到：
+$$ dp = \upsilon ^2 d\rho$$
+即
+$$\upsilon = \sqrt{\frac{dp}{d\rho}}$$
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{关于空气中声速的补充知识（续）}
+\bch
+{\small
+空气是热的不良导体，故做绝热近似 
+$$p\rho^{-\gamma} = \const$$
+即 $$\frac{dp}{d\rho} = \gamma \frac{p}{\rho} =  \frac{\gamma R T}{M^{\rm mol}}$$
+其中空气摩尔质量$M^{\rm mol} = 0.0289 \SIkg/\SImol$
+算出空气中声速为
+$$c_s = \sqrt{\frac{\gamma RT}{M^{\rm mol}}} = 347 \sqrt{\frac{T}{300\SIK}} \SIm/\SIs$$
+用无量纲速率来表示就是
+$$u_s = \sqrt{\gamma}$$
+因此声速和空气分子方均根速率之比为（见课本习题3-21）
+$$\sqrt{\frac{\gamma}{3}} = \sqrt{\frac{7}{15}} = 0.683$$
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+
+\addfig{1.}{songfen.jpg}
+
+前面关于空气中声速和空气分子的方均根速率的比的计算是有点问题的，你能指出问题在哪里吗？
+
+\ech
+\end{frame}
+
 
 \begin{frame}
 \chtitle{本讲内容}
@@ -65,6 +137,20 @@ $$\pfrac YZX = -\frac{\pfrac SZ{XY}}{\pfrac SY{ZX}}$$
 $$\pfrac ZXY = -\frac{\pfrac SX{YZ}}{\pfrac SZ{XY}}$$
 三式相乘即得证
 }
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{1}{songfen2.jpg}
+
+证明气体定体比热容可以写成:
+
+$$
+C_V =  - \pfrac UVT \pfrac VTU 
+$$
+
 \ech
 \end{frame}
 
@@ -136,14 +222,15 @@ $$\pfrac HpT = - T\pfrac VTp + V$$
 \end{frame}
 
 
+
 \begin{frame}
 \chtitle{实际气体的$\pfrac HpT$}
 \bch
 
 对范德瓦尔斯气体，我们可以直接算出
-$$\pfrac HpT = V\frac{\frac{\nu b}{V} - \frac{2p_U}{p_k}\left(1- \frac{\nu b}{V}\right)}{1 - \frac{2p_U}{p_k}\left(1-\frac{\nu b}{V}\right)}\approx V\left(\frac{\nu b}{V} - \frac{2p_U}{p_k}\right)$$
+$$\pfrac HpT = V\frac{\frac{\nu b}{V} + \frac{2p_U}{p_k}\left(1- \frac{\nu b}{V}\right)}{1 + \frac{2p_U}{p_k}\left(1-\frac{\nu b}{V}\right)}\approx V\left(\frac{\nu b}{V} +\frac{2p_U}{p_k}\right)$$
 
-它的符号取决于体积修正和压强修正的相对大小。
+注意$p_U/p_k<0$，所以上式的符号取决于体积修正和压强修正的相对大小。
 
 \bmini{0.48}
 \lfig{1.9}{pfracHpT.jpg}
@@ -159,6 +246,16 @@ $$\pfrac HpT = V\frac{\frac{\nu b}{V} - \frac{2p_U}{p_k}\left(1- \frac{\nu b}{V}
 \ech
 \end{frame}
 
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{0.8}{think.jpg}
+
+根据范德瓦尔斯模型，$$\pfrac HpT\approx V\left(\frac{\nu b}{V} + \frac{2p_U}{p_k}\right)$$
+可以看成体积修正项($>0$)与压强修正项（$<0$)相互竞争的结果。在常温常压下，对小分子气体，为什么反而结果是$\pfrac HpT > 0$，即体积修正项为主导呢？
+
+\ech
+\end{frame}
 
 \begin{frame}
 \chtitle{节流过程和焦耳-汤姆孙效应}
@@ -244,29 +341,48 @@ $$\pfrac TpH \pfrac pHT \pfrac HTp = -1$$
 
 \skipline
 
-定压反应的反应热又称为反应焓。
+定压反应的反应热又称为{\blue 反应焓}。
 \ech
 \end{frame}
 
 \begin{frame}
 \chtitle{焓的参考点：标准生成焓}
 \bch
-焓和势能一样，可以取任意参考点，习惯上定义$1\atm$, $25\cdeg$的纯元素的焓为零。
+焓和势能一样，可以取任意参考点，{\blue 习惯上定义 $1\atm$, $25\cdeg$的纯元素的焓为零}。
 
 \skipline
 
-$1\atm$，$25\cdeg$下化合物的生成焓定义为化合物的标准生成焓。
+{\blue $1\atm$，$25\cdeg$下化合物的生成焓定义为化合物的标准生成焓(用$\stdHf$表示)}。
 
 \skipline
 
-$1\atm$，$25\cdeg$下，
+{\blue $1\atm$，$25\cdeg$下，
 
-化学反应的反应焓 = 合成物的标准生成焓 - 反应物的标准生成焓
+ 反应焓 = 合成物的标准生成焓 - 反应物的标准生成焓}
 
 \skiplines
 
-标准生成焓可以通过查表获得。见教材145页表3-3。计算化学反应的反应焓的例子见145页至146页。
+标准生成焓可以通过查表获得。见教材145页表3-3。
 
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{反应焓计算举例}
+\bch
+\bex
+教材习题3-23
+\eex
+
+\skipline
+
+记给的三个燃烧反应为$A, B, C$。则 $2A + \frac{3}{2}B - \frac{1}{2}C$就等价于所需要的纯元素合成反应。故
+{\small
+\bea
+\stdHf({\rm C_2H_6}) &=&\left[ 2\times (-393.5) + \frac{3}{2}\times (-571.7)-\frac{1}{2}\times(-1560)\right]\SIkJ/\SImol\newl
+&=&-864.6\SIkJ/\SImol
+\eea
+}
 \ech
 \end{frame}
 
@@ -276,8 +392,8 @@ $1\atm$，$25\cdeg$下，
 \bitem
 \item[22]{证明气体的定压比热容$C_p$可以写成
 $$C_p = - \pfrac pTH \pfrac HpT $$}
-\item[23]{教材习题3-22}
-\item[24]{教材习题3-23}
+\item[23]{教材习题3-14}
+\item[24]{教材习题3-24}
 \eitem
 \ech
 \end{frame}
