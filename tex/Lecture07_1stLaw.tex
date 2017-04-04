@@ -14,7 +14,8 @@
 \chtitle{上讲内容回顾}
 \bch
 \bitem
-\item{上讲证明了：我们根本没有学会第一二章}
+\item{我们根本没有学会第一二章}
+\item{我们根本不知道期中考什么}
 \eitem
 \ech
 \end{frame}
@@ -26,6 +27,7 @@
 \item{内能}
 \item{热力学第一定律}
 \item{理想气体的各种准静态过程}
+\item{传热的本质和热量的显式方程}
 \eitem
 \ech
 \end{frame}
@@ -67,21 +69,29 @@ $$ U  = U(V, T)$$
 \end{frame}
 
 \begin{frame}
-\chtitle{理想气体的内能}
+\chtitle{理想气体的内能只跟温度有关}
 \bch
-理想气体的定体热容只和温度有关，又在经典图像下$U(T\rightarrow 0) = 0$，所以
+
+理想气体的定体热容$C_V$只和温度有关，又在经典图像下$U(T\rightarrow 0) = 0$，所以
 $$ U(V, T) = U(V, 0) + \int_0^T \nu C_V(T') dT' =\nu  \int_0^T C_V(T') dT'  $$
 
 可见，固定摩尔数的理想气体的内能只是温度的函数。
+
+\skiplines
+
+另一种理解方式：理想气体每个分子的平均能量（由能均分定理）被温度唯一决定，而分子之间相互作用的势能在理想气体模型中被认为是零，故内能只是温度的函数。
+
 \ech
 \end{frame}
+
+
 
 \begin{frame}
 \chtitle{思考题}
 \bch
-\addfig{1}{think2.jpg}
+\addfig{1}{songfen.jpg}
 
-考虑实际气体分子之间有微弱的吸引力，实际气体的内能$U(V,T)$对体积有微弱的依赖。问：$\left(\frac{\partial U}{\partial V}\right)_T$是正的还是负的？
+考虑实际气体分子之间有微弱的吸引力，实际气体的内能$U(V,T)$对体积有微弱的依赖。问：$\left(\frac{\partial U}{\partial V}\right)_T$一般是正的还是负的？
 
 \skiplines
 
@@ -93,13 +103,10 @@ $$ U(V, T) = U(V, 0) + \int_0^T \nu C_V(T') dT' =\nu  \int_0^T C_V(T') dT'  $$
 \begin{frame}
 \chtitle{思考题}
 \bch
-\addfig{1}{think2.jpg}
+\addfig{1}{songfen2.jpg}
 
-由于$p, V, T$中只有两个是独立的，我们也可以把内能写成$U(p, T)$。对理想气体和实际气体$\left(\frac{\partial U}{\partial p}\right)_T$的符号分别是什么（正，负，或为零）？
+由于$p, V, T$中只有两个是独立的，我们也可以把内能写成$U(p, T)$。那么实际气体的$\pfrac HpT$的符号一般是什么呢？
 
-\skiplines
-
-关于这些结论的实验验证，请阅读课本2.2节：焦耳实验以及其改进。
 \ech
 \end{frame}
 
@@ -107,7 +114,7 @@ $$ U(V, T) = U(V, 0) + \int_0^T \nu C_V(T') dT' =\nu  \int_0^T C_V(T') dT'  $$
 \section{1st Law}
 
 \begin{frame}
-\chtitle{热力学第一定律的数学表达式：先约定下符号}
+\chtitle{热力学第一定律：先约定下符号}
 \bch
 
 \bmini{0.5}
@@ -126,7 +133,7 @@ $$ U(V, T) = U(V, 0) + \int_0^T \nu C_V(T') dT' =\nu  \int_0^T C_V(T') dT'  $$
 \end{frame}
 
 \begin{frame}
-\chtitle{热力学第一定律的数学表达式：先约定下符号}
+\chtitle{热力学第一定律：先约定下符号}
 \bch
 
 \bmini{0.5}
@@ -140,7 +147,69 @@ $$ U(V, T) = U(V, 0) + \int_0^T \nu C_V(T') dT' =\nu  \int_0^T C_V(T') dT'  $$
 \bmini{0.46}
 
 输入能量不带撇；输出能量就带撇。
+
+\huaixiao 你答对了吗？
+
+
 \emini
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{热力学第一定律：先约定下符号}
+\bch
+
+显然$A'=-A$, $Q'=-Q$，要那么多符号干什么呢？
+
+\skiplines
+
+\huaixiao不把你绕晕怎么体现热学的难度呢。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{经济学第一定律}
+\bch
+\tbox{
+存款增加 = 收入 - 支出
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{热力学第一定律}
+\bch
+\tbox
+{系统内能的增加$\Delta U$ = 从环境吸热$Q$ $-$  系统对环境做功$A'$}
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{热力学第一定律}
+\bch
+\tbox
+{系统内能的增加$\Delta U$ = 环境对系统做功$A$ $-$ 对环境放热$Q'$}
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{热力学第一定律}
+\bch
+\tbox
+{系统内能的增加$\Delta U$ = 从环境吸热$Q$ $+$ 环境对系统做功$A$}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{热力学第一定律}
+\bch
+
+\huaixiao 热学是不是比经济学难很多？
 \ech
 \end{frame}
 
@@ -148,19 +217,13 @@ $$ U(V, T) = U(V, 0) + \int_0^T \nu C_V(T') dT' =\nu  \int_0^T C_V(T') dT'  $$
 \begin{frame}
 \chtitle{热力学第一定律的数学表达式}
 \bch
-热力学第一定律：
-
-{\blue
-$$ \Delta U = A + Q$$
-内能的增加等于对系统做的功和传给系统的热量之和。
-}
+$$ \Delta U =  Q + A $$
 
 \skiplines
 
-这里的功是{\blue 广义功}，可以是机械功$-\int pdV$，也可以是电流做功$\int UIdt$等。
+这里功$A$是{\blue 广义功}，可以是机械功$-\int pdV$，也可以是电流做功$\int UIdt$等。
 \ech
 \end{frame}
-
 
 \begin{frame}
 \chtitle{准静态过程}
@@ -196,7 +259,7 @@ $$dU = \dbar A + \dbar Q$$
 \begin{frame}
 \chtitle{$p$-$V$图和做的功}
 \bch
-准静态过程可以用在$p$-$V$图上的一条曲线描述。气体对外界做功（为了区别外界对气体做功，通常加一撇）
+准静态过程可以用在$p$-$V$图上的一条曲线描述。气体对外界做功
 $$ A' = \int p dV $$
 等于$p$-$V$曲线下的面积
 \addfig{2}{pdVwork.png}
@@ -213,142 +276,6 @@ $$ A' = \int p dV $$
 $$ A = -\int p dV = -\nu R T \int \frac{dV}{V} =- \nu R T\ln\frac{V_{\rm fin}}{V_{\rm ini}}$$
 如果没有额外的自由度被激发，理想气体的内能不变。则可推算出等温过程吸收的热量为
 $$ Q = - A $$
-\ech
-\end{frame}
-
-\begin{frame}
-\bch
-
-想必你们已经发现了，到现在为止我都是在说一些显而易见的废话\bye。
-
-\ech
-\end{frame}
-
-\begin{frame}
-\bch
-
-那么，我们插播一段烧脑洞的。
-
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{实际气体的等温过程}
-\bch
-对实际气体，当保持温度不变改变体积时，分子之间的吸引力做功，使得气体的内势能改变，内压强做的功就等于内势能的减小量。
-
-根据能均分定理，气体分子的平动动能和内部自由度的能量的平均值在等温过程中不变。
-
-因此，等温过程中气体的内能减小量等于内压强做的功。
-
-$$\Delta U = - p_u \Delta V$$
-
-所以
-
-$$\pfrac UVT = - p_U  $$
-
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{实际气体的等温过程（续）}
-\bch
-{\small
-如果气体的体积固定而改变$T$，动理压强$p_k \propto T$，而内压强不变，所以
-$$\pfrac pTV = \pfrac{p_k}TV = \frac{p_k}{T}$$
-从而得到
-$$p_k = T \pfrac pTV$$
-于是
-$$\pfrac UVT = -p_U = p_k - p = T \pfrac pTV - p$$
-}
-\ech
-\end{frame}
-
-
-
-\begin{frame}
-\chtitle{内能和物态方程的普适关系}
-\bch
-{\small
-实际上
-{\blue 
-$$\pfrac UVT = T \pfrac pTV - p $$
-}
-是一个对所有物质适用的普适方程。
-
-\skipline
-
-我们将来会证明，它和热力学第二定律是等价的。
-}
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{克拉珀龙(Clapeyron)方程}
-\bch
-{\small
-
-在恒定压强$p$下，物质相变时保持相变温度$T$不变（当然，非晶体除外），设每摩尔物质从$\alpha$态变到$\beta$态需要吸热量为$\Lambda^{\rm mol}$，$\alpha$态和$\beta$态的摩尔体积分别为$V_\alpha^{\rm mol}$和$V_\beta^{\rm mol}$。
-
-\skipline
-
-我们曾经定性地分析过，相变温度$T$对压强$p$有依赖性，相变过程体积变化($V_\beta^{\rm mol}-V_\alpha^{\rm mol}$)越大，依赖性越强。
-
-\skipline
-
-克拉珀龙(Clapeyron)方程把这种依赖性定量化了：
-$$\frac{dT}{dp} = \frac{T\left(V_\beta^{\rm mol}-V_\alpha^{\rm mol}\right)}{\Lambda^{\rm mol}}$$
-或者更常见的写法：
-$$ \frac{dp}{dT} = \frac{\Lambda^{\rm mol}}{T\left(V_\beta^{\rm mol} - V_\alpha^{\rm mol}\right)}$$
-我们下面用普适内能方程来证明它。}
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{克拉珀龙(Clapeyron)方程}
-\bch
-\lfig{1.8}{PVTdiagram.png}\hspace{0.1in}\lfig{1.8}{PTdiagram.png}
-
-三相图上有三个两相共存的曲面（固液共存，气液共存，固气共存），这些曲面投影到三相图($PT$图）上后即为三条相变曲线。
-这些曲线的斜率反映了相变温度随压强变化的情况。
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{克拉珀龙(Clapeyron)方程}
-\bch
-假设有摩尔数为$d\nu$的$\alpha$态物质转化为$\beta$态物质，根据热力学第一定律
-$$ \Lambda^{\rm mol} d\nu = \pfrac UVT dV+ p dV $$
-把内能的普适方程$\pfrac UVT = T\pfrac pTV - p$代入上式得到
-$$ \Lambda^{\rm mol} d\nu = T\pfrac pTV dV $$
-再根据$dV = \left(V_\beta^{\rm mol} - V_\alpha^{\rm mol}\right)d\nu$，即有
-$$ \pfrac pTV = \frac{\Lambda^{\rm mol}}{T\left(V_\beta^{\rm mol} - V_\alpha^{\rm mol}\right)}$$
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{顺便讨论下：范德瓦尔斯气体的内能}
-\bch
-{\small
-对范德瓦尔斯气体，我们假设了内压强$P_U = -\frac{a\nu^2}{V^2}$，故
-$$\pfrac UVT = \frac{a\nu^2}{V^2}$$
-由此可以积分得到
-$$U(V, T) = \int_{T_0}^T C_V dT -\frac{\nu^2a}{V} + U_0$$
-}
-\ech
-\end{frame}
-
-
-\begin{frame}
-\bch
-
-好了，插播结束，继续补习初中物理。
-
 \ech
 \end{frame}
 
@@ -536,16 +463,246 @@ $$C = \infty $$
 \chtitle{消化下}
 \bch
 \addfig{1}{songfen.jpg}
-$1\SImol$氧气经过$n=2$的多方过程从$T=300K$升温到$T=310K$。问这个过程中对氧气做功多少？氧气吸热多少？
+$1\SImol$氧气经过$n=2$的多方过程从$T=300K$升温到$T=310K$。问这个过程中氧气对环境做功多少？从环境吸热多少？
 \ech
 \end{frame}
 
 
 \begin{frame}
-\chtitle{什么？太好消化了？}
+\chtitle{传热的本质}
+\bch
+初中物理复习完了，下面我们开始深邃的思考
+
+\addfig{2}{think3.jpg}
+
+热一律里$Q$和$A$的界限在哪里？“传热”难道不是很多微观的“做功”的和吗？
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{吸热的本质（续）}
+\bch
+我们把热一律写成“收入=存款+开支”的形式：
+$$ \dbar Q =  d U + \dbar A'$$
+为了简化讨论，我们只考虑非相对论的粒子数守恒系统，并假设分子自由度只依赖于温度。先考虑准静态过程。
+
+\skipline
+
+先把内能分为两部分。我们知道每个分子单独具有的平均能量只是温度的函数，我们把这样的能量加起来，称之为{\blue 局部内能$U_{\rm local}$}。此外，分子之间还有相互作用的势能，我们把这部分能量称为{\blue 全局内能$U_{\rm global}$}。
+
+
+再把物质对外做功也分为两部分。因为分子运动造成的{\blue 动理压强$p_k$对外做功记$ A_k'$}，因为分子之间相互吸引造成的{\blue 内压强$p_U$对外做功记为$ A'_U$}。显然
+{\blue
+$$ d U_{\rm global} = - \dbar A'_U$$
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{吸热的本质（续）}
+\bch
+因为$d U_{\rm global}$和$\dbar A'_U$互相抵消，热一律就可以写成：
+$$ \dbar Q = d U_{\rm local}  +\dbar A'_k  $$
+它揭示了准静态过程的吸热量$Q$的本质：
+
+\tbox{\blue 准静态过程吸热量用来提高系统的局部内能和提供系统动理压强做功。}
+
+更具体地说：吸热确实是很多次系统分子和环境分子的微观碰撞的总和。这些微观碰撞一方面改变了系统分子的平均能量（改变系统局部内能)，另一方面又做了功（宏观上表现为动理压强做功）。
+
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{热量的显式方程}
+\bch
+根据能均分定理，局部内能只是温度的函数，
+$$d U_{\rm local} = f(T) dT$$
+其中$f(T)$是由能均分定理决定的函数。
+
+\skipline
+
+动理压强$p_k = \frac{2}{3}n_{\rm eff}\overline{\varepsilon}$，其中分子平均平动动能$\overline{\varepsilon}$和温度成正比，但这里的“有效分子数密度”$n_{\rm eff}$一般来讲不是真正的分子数密度，因为在大多数物质中分子并不能随心所欲地在整个体积内运动（只有理想气体分子可以）。我们可以一般地假设$n_{\rm eff}$是体积的函数，并把动理压强写成
+$$ p_k = g(V) T$$
+这样，动理压强做功为$g(V)T dV$。最后得到热量显式方程：$$\dbar Q = f(T)dT + Tg(V) dV$$
+下面我们来求$f(T)$和$g(V)$。
+
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{$f(T)$和$g(V)$的数学表达式}
+\bch
+显然，因为只和分子平均距离有关，{\blue 全局势能和内压强只是体积的函数}。所以固定体积时，
+
+\bitem
+\item{内能对温度的偏导数等于局部内能对温度的偏导数：
+$$ \pfrac UTV = \pfrac {U_{\rm local}}TV = f(T) $$
+也就是说$f(T)$其实就是$C_V$。}
+\item{
+总压强对温度的偏导数等于动理压强对温度的偏导数：
+$$\pfrac pTV = \pfrac {p_k}TV = g(V)$$}
+\eitem
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{总结}
+\bch
+准静态过程热量的显式方程
+\tbox
+{$$\dbar Q = C_V(T)dT + T g(V) dV$$}
+其中$C_V(T)$代表了分子自由度数目随温度变化的情况；$Tg(V)$是动理压强，其中
+\tbox{
+$$g(V) = \pfrac pTV $$}
+代表了能够和环境发生碰撞的有效分子数密度随总体积变化的情况。
+
+\ech
+\end{frame}
+
+\begin{frame}
 \bch
 
-下周期中考试
+下面我们用热量的显式方程来推导一系列超出初中水平的结果
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{内能和物态方程的关系}
+\bch
+固定温度，变化体积时：
+$$\dbar Q = T g(V)dV = T\pfrac pTV dV$$
+$$\dbar A = -pdV$$
+故
+$$dU = \left(T \pfrac pTV - p\right)dV$$
+即{\blue
+$$\pfrac UVT = T \pfrac pTV - p$$
+}
+这是一个非常重要的方程，它把物质的内能和状态方程联系起来了。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{相变温度和相变压强的关系}
+\bch
+{\small
+
+在恒定压强$p$下，物质相变时保持相变温度$T$不变（当然，非晶体除外），设每摩尔物质从$\alpha$态变到$\beta$态需要吸热量为$\Lambda^{\rm mol}$，$\alpha$态和$\beta$态的摩尔体积分别为$V_\alpha^{\rm mol}$和$V_\beta^{\rm mol}$。
+
+\skipline
+
+我们曾经定性地分析过，相变温度$T$对压强$p$有依赖性，相变过程体积变化($V_\beta^{\rm mol}-V_\alpha^{\rm mol}$)越大，相变温度对$p$的依赖性越强。
+
+\skipline
+
+下面我们来把这种依赖性定量化。
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{图解}
+\bch
+先从图像上理解我们要计算的是什么量：
+
+\lfig{1.8}{PVTdiagram.png}\hspace{0.1in}\lfig{1.8}{PTdiagram.png}
+
+三相图上有三个两相共存的曲面（固液共存，气液共存，固气共存），这些曲面投影到三相图($PT$图）上后即为三条相变曲线。
+这些曲线的斜率反映了相变温度随压强变化的情况。我们要求解的就是这些曲面上的$\pfrac pTV$。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{克拉珀龙(Clapeyron)方程}
+\bch
+假设有摩尔数为$d\nu$的$\alpha$态物质转化为$\beta$态物质，因为温度不变，吸热量等于$Tg(V)dV$
+$$ \Lambda^{\rm mol} d\nu = Tg(V)dV = T\pfrac pTV dV $$
+再根据$dV = \left(V_\beta^{\rm mol} - V_\alpha^{\rm mol}\right)d\nu$，即得到
+{\blue 克拉珀龙(Clapeyron)方程
+$$ \pfrac pTV = \frac{\Lambda^{\rm mol}}{T\left(V_\beta^{\rm mol} - V_\alpha^{\rm mol}\right)}$$}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{范德瓦尔斯气体的内能}
+\bch
+{\small
+固定温度改变体积时，局部内能不变，全局内能因内压强做功而改变。
+
+对范德瓦尔斯气体，我们假设了内压强$P_U = -\frac{a\nu^2}{V^2}$，故
+$$\pfrac UVT = \frac{a\nu^2}{V^2}$$
+由此可以积分得到
+$$U(V, T) = \int_{T_0}^T C_V(T) dT -\frac{\nu^2a}{V} + U_0$$
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{克劳修斯熵}
+\bch
+假设物质从状态$(T_1, V_1)$经过准静态过程变化到$(T_2, V_2)$，则可以定义{\blue（克劳修斯）熵变：
+$$ \Delta S \equiv \int\frac{\dbar Q}{T} = \int_{T_1}^{T_2} \frac{C_V(T)}{T}dT + \int_{V_1}^{V_2} g(V)dV$$}
+显然，{\blue $S$是和过程无关的态函数}。
+
+准静态过程的吸热量可以写成
+$$ \dbar Q  = T dS$$
+热力学第一定律微分形式就可以写成：
+{\blue $$ dU = TdS - pdV$$}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{非准静态过程的本质和热力学第二定律}
+\bch
+{\blue 当宏观过程发生得很快，物质和环境的分子碰撞来不及提供动理压强做功和改变局部内能，这样的过程就是非准静态过程。非准静态过程是不可逆的，也称为不可逆过程。}
+
+现在考虑一个温度变化$\Delta T/T$很小的任意过程，设初态和末态均为平衡态，则
+{\blue
+$$ Q \le T \Delta S $$
+当且仅当过程为准静态时，等号成立}。这就是{\blue 热力学第二定律}。
+
+因孤立系统的$Q=0$，故{\blue $\Delta S\ge 0$}，这就是{\blue 孤立系统的熵不减原理}。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{热机效率和卡诺定理}
+\bch
+考虑一个从温度为$T_1$的高温热源吸热$Q_1$，向温度为$T_2$的低温热源放热$Q_2'$，做功$A = Q_1-Q_2'$，并回到初始状态的热机循环过程。
+根据热二律：
+$$\frac{Q_1}{T_1} - \frac{Q_2'}{T_2} \le \Delta S_1 + \Delta S_2 = 0 $$
+故$$\frac{Q_2'}{Q_1} \ge \frac{T_2}{T_1}$$
+即热机效率
+{\blue $$\eta \equiv \frac{A}{Q_1}  = 1 - \frac{Q_2'}{Q_1} \le 1 - \frac{T_2}{T_1}$$
+等号当且仅当热机经历的过程均为可逆过程（即热机为可逆热机）时成立}
+这就是{\blue 卡诺定理}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\bch
+\bigwulian {\Large 一不小心没刹住车把三四章都讲完了}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{下周期中考试}
+\bch
 
 
 前面所有课的讲义（包括题霸集）有看不懂的地方（或者发现错误的地方）请举手提问。
