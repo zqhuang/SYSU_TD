@@ -105,7 +105,7 @@ $$ U(V, T) = U(V, 0) + \int_0^T \nu C_V(T') dT' =\nu  \int_0^T C_V(T') dT'  $$
 \bch
 \addfig{1}{songfen2.jpg}
 
-由于$p, V, T$中只有两个是独立的，我们也可以把内能写成$U(p, T)$。那么实际气体的$\pfrac HpT$的符号一般是什么呢？
+由于$p, V, T$中只有两个是独立的，我们也可以把内能写成$U(p, T)$。那么实际气体的$\pfrac UpT$的符号一般是什么呢？
 
 \ech
 \end{frame}
@@ -182,7 +182,7 @@ $$ U(V, T) = U(V, 0) + \int_0^T \nu C_V(T') dT' =\nu  \int_0^T C_V(T') dT'  $$
 \chtitle{热力学第一定律}
 \bch
 \tbox
-{系统内能的增加$\Delta U$ = 从环境吸热$Q$ $-$  系统对环境做功$A'$}
+{\small 系统内能增加$\Delta U$ = 系统从环境吸热$Q$ $-$  系统对环境做功$A'$}
 
 \ech
 \end{frame}
@@ -192,7 +192,7 @@ $$ U(V, T) = U(V, 0) + \int_0^T \nu C_V(T') dT' =\nu  \int_0^T C_V(T') dT'  $$
 \chtitle{热力学第一定律}
 \bch
 \tbox
-{系统内能的增加$\Delta U$ = 环境对系统做功$A$ $-$ 对环境放热$Q'$}
+{\small 系统内能增加$\Delta U$ = 环境对系统做功$A$ $-$ 系统对环境放热$Q'$}
 
 \ech
 \end{frame}
@@ -201,7 +201,7 @@ $$ U(V, T) = U(V, 0) + \int_0^T \nu C_V(T') dT' =\nu  \int_0^T C_V(T') dT'  $$
 \chtitle{热力学第一定律}
 \bch
 \tbox
-{系统内能的增加$\Delta U$ = 从环境吸热$Q$ $+$ 环境对系统做功$A$}
+{\small 系统内能增加$\Delta U$ = 系统从环境吸热$Q$ $+$ 环境对系统做功$A$}
 \ech
 \end{frame}
 
@@ -243,15 +243,12 @@ $$ \Delta U =  Q + A $$
 \begin{frame}
 \chtitle{准静态过程的热力学第一定律表述}
 \bch
-准静态过程下内能在过程中间都是有定义的，所以：
+准静态过程中内能在过程中间都是有定义的，所以：
 {\blue
 $$dU = \dbar A + \dbar Q$$
 }
 热学里特有的符号$\dbar$代表这个微元和过程有关。
 
-\skiplines
-
-非准静态过程无法定义$dU$，所以不存在热力学第一定律的微分形式。
 \ech
 \end{frame}
 
@@ -524,7 +521,7 @@ $1\SImol$氧气经过$n=2$的多方过程从$T=300K$升温到$T=310K$。问这�
 \bch
 初中物理复习完了，下面我们开始深邃的思考
 
-\addfig{2}{think3.jpg}
+\addfig{2}{think4.jpg}
 
 热一律里$Q$和$A$的界限在哪里？“传热”难道不是很多微观的“做功”的和吗？
 
@@ -641,6 +638,17 @@ $$\pfrac UVT = T \pfrac pTV - p$$
 \ech
 \end{frame}
 
+\begin{frame}
+\chtitle{思考题}
+\bch
+
+\addfig{1}{think2.jpg}
+$$\pfrac UVT = T \pfrac pTV - p$$
+这个方程的右边是什么物理量？试直接给出该方程的物理诠释。
+
+\ech
+\end{frame}
+
 
 \begin{frame}
 \chtitle{相变温度和相变压强的关系}
@@ -716,48 +724,8 @@ $$ \dbar Q  = T dS$$
 
 
 \begin{frame}
-\chtitle{非准静态过程的本质和热力学第二定律}
-\bch
-{\blue 当宏观过程发生得很快，物质和环境的分子碰撞来不及提供动理压强做功和改变局部内能，这样的过程就是非准静态过程。非准静态过程是不可逆的，也称为不可逆过程。}
-
-现在考虑一个温度变化$\Delta T/T$很小的任意过程，设初态和末态均为平衡态，则
-{\blue
-$$ Q \le T \Delta S $$
-当且仅当过程为准静态时，等号成立}。这就是{\blue 热力学第二定律}。
-
-因孤立系统的$Q=0$，故{\blue $\Delta S\ge 0$}，这就是{\blue 孤立系统的熵不减原理}。
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{热机效率和卡诺定理}
-\bch
-考虑一个从温度为$T_1$的高温热源吸热$Q_1$，向温度为$T_2$的低温热源放热$Q_2'$，做功$A = Q_1-Q_2'$，并回到初始状态的热机循环过程。
-根据热二律：
-$$\frac{Q_1}{T_1} - \frac{Q_2'}{T_2} \le \Delta S_1 + \Delta S_2 = 0 $$
-故$$\frac{Q_2'}{Q_1} \ge \frac{T_2}{T_1}$$
-即热机效率
-{\blue $$\eta \equiv \frac{A}{Q_1}  = 1 - \frac{Q_2'}{Q_1} \le 1 - \frac{T_2}{T_1}$$
-等号当且仅当热机经历的过程均为可逆过程（即热机为可逆热机）时成立}
-这就是{\blue 卡诺定理}
-\ech
-\end{frame}
-
-
-\begin{frame}
-\bch
-\bigwulian {\Large 一不小心没刹住车把三四章都讲完了}
-\ech
-\end{frame}
-
-
-\begin{frame}
 \chtitle{下周期中考试}
 \bch
-
-
-前面所有课的讲义（包括题霸集）有看不懂的地方（或者发现错误的地方）请举手提问。
 
 \addfig{2}{wdsws.jpg}
 

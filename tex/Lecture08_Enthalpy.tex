@@ -16,7 +16,7 @@
 \item{内能是态函数}
 \item{热力学第一定律：$\Delta U = A + Q$。}
 \item{绝热过程状态方程：$pV^\gamma = \const$ ，其中$\gamma = C_p/C_V = (C_V + \nu R)/C_V$。}
-\item{大气的绝热近似$\rightarrow \frac{dT}{dz} \approx -10 \SIK/\SIkm$。}
+\item{大气的绝热近似：空气中的声速$u_s =\sqrt{\gamma}$；干燥空气垂直温度梯度$\frac{dT}{dz} \approx -10 \SIK/\SIkm$。}
 \item{多方过程气体对外做功$A' = -\frac{\nu R}{n-1}\Delta T$ （等温过程$n=1$则需要另算）。}
 \item{多方过程热容$C_n =C_V -\frac{\nu R}{n-1}$ （等温过程$C = \infty$）。}
 \item{吸热的本质；内能和状态方程的关系$\pfrac UVT = T\pfrac pTV - p$；克拉珀龙方程；范德瓦尔斯气体的内能；热力学第二定律；孤立系它熵不减原理；卡诺定理……}
@@ -42,29 +42,6 @@ $$ \frac{dT}{dz} =-\frac{\rho g V + \nu\Lambda\frac{dc}{dz}}{C_p} = -\frac{\gamm
 \ech
 \end{frame}
 
-
-\begin{frame}
-\chtitle{关于空气中声速的补充知识}
-\bch
-
-\addfig{1.5}{soundwave.jpg}
-
-{\scriptsize
-力学里无敌公式$F = ma$:
-
-$$ -dp dy dz = (\rho dx dy dz) \left(\frac{d\upsilon}{dx/\upsilon}\right) $$
-即
-$$ dp = - \rho \upsilon d\upsilon $$
-
-然后根据物质流守恒：$ \rho \upsilon = (\rho + d\rho)(\upsilon+d\upsilon)$
-忽略高阶小量即$ -\rho d\upsilon = \upsilon d\rho$
-代入前面的$dp$表达式得到：
-$$ dp = \upsilon ^2 d\rho$$
-即
-$$\upsilon = \sqrt{\frac{dp}{d\rho}}$$
-}
-\ech
-\end{frame}
 
 
 
