@@ -21,6 +21,24 @@
 \end{frame}
 
 \begin{frame}
+\chtitle{不信的话来检测一下}
+\bch
+{\blue 已知无量纲速度的概率密度函数为
+$$f(u_x,u_y,u_z) = Cu_x^2 e^{-u}$$
+其中$C$待定的归一化常数，$u = \sqrt{u_x^2+u_y^2+u_z^2}$为速率。
+\bitem
+\item{求$u$的概率密度函数}
+\item{求平均速率$\bar{u}$}
+\item{求方均根速率$u_{\rm rms}$}
+\item{求$x$方向的泻流速率$u_{n, x, \rm leak}$}
+\item{求$z$方向的泻流速率$u_{n, z, \rm leak}$}
+\eitem
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
 \chtitle{本讲内容}
 \bch
 \bitem
@@ -722,24 +740,33 @@ $$ \dbar Q  = T dS$$
 \ech
 \end{frame}
 
-
 \begin{frame}
-\chtitle{下周期中考试}
+\chtitle{偏导数的噩梦}
 \bch
-
-\addfig{2}{wdsws.jpg}
-
+根据上面熵$S$的积分表达式，不难写出
+\bea
+\pfrac STV &=& \frac{C_V}{T} = \frac{1}{T} \pfrac UTV \newl
+\pfrac SVT &=& g(V) = \pfrac pTV \newl
+\eea
+热学里可以写出几十个这样“莫名其妙”的偏导数等式，我们之后会系统地学习怎样推导它们（三四章的难点）。
 \ech
 \end{frame}
 
 
+
+
 \begin{frame}
-\chtitle{第七八周作业（序号接第六周）}
+\chtitle{第七-八周作业（序号接第六周）}
 \bch
+已知无量纲速度的概率密度函数为
+$$f(u_x,u_y,u_z) = C u_x^4 e^{-u}$$
+其中$C$待定的归一化常数，$u = \sqrt{u_x^2+u_y^2+u_z^2}$为速率。
 \bitem
-\item[19]{教材习题3-2}
-\item[20]{教材习题3-5}
-\item[21]{教材习题3-6}
+\item[19]{求$u$的概率密度函数}
+\item[20]{求平均速率$\bar{u}$}
+\item[21]{求方均根速率$u_{\rm rms}$}
+\item[22]{求$x$方向的泻流速率$u_{n, x, \rm leak}$}
+\item[23]{求$z$方向的泻流速率$u_{n, z, \rm leak}$}
 \eitem
 \ech
 \end{frame}
