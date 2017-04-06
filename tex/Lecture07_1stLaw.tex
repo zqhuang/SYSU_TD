@@ -23,9 +23,27 @@
 \begin{frame}
 \chtitle{不信的话来检测一下}
 \bch
-{ 已知无量纲速度的概率密度函数为
-$$f(u_x,u_y,u_z) = Cu_x^2 e^{-u}$$
-其中$C$待定的归一化常数，$u = \sqrt{u_x^2+u_y^2+u_z^2}$为速率。
+回答下列概念题
+\bitem
+\item[1]{最该然速率的定义是什么？}
+\item[2]{平均速率的定义是什么？}
+\item[3]{方均根速率的定义是什么？}
+\item[4]{泻流速率的定义是什么？}
+\item[5]{泻能速率的定义是什么？}
+\item[6]{把平均速率，方均根速率和泻流速率按大小排序，并说明排序的理由。}
+\item[7]{泻能速率和泻流速率哪个比较大？为什么？}
+\item[8]{最概然速率和其他速率之间的大小关系是确定的吗？为什么？}
+\eitem
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{不信的话来检测一下}
+\bch
+{ 已知无量纲速度的概率密度函数正比于
+$$f(u_x,u_y,u_z) \propto u_x^2 e^{-u}$$
+$u = \sqrt{u_x^2+u_y^2+u_z^2}$为速率。
 \bitem
 \item{求$u$的概率密度函数}
 \item{求平均速率$\bar{u}$}
@@ -37,7 +55,6 @@ $$f(u_x,u_y,u_z) = Cu_x^2 e^{-u}$$
 }
 \ech
 \end{frame}
-
 
 \begin{frame}
 \chtitle{本讲内容}
@@ -535,223 +552,6 @@ $1\SImol$氧气经过$n=2$的多方过程从$T=300K$升温到$T=310K$。问这�
 \end{frame}
 
 
-\begin{frame}
-\chtitle{传热的本质}
-\bch
-初中物理复习完了，下面我们开始深邃的思考
-
-\addfig{2}{think4.jpg}
-
-热一律里$Q$和$A$的界限在哪里？“传热”难道不是很多微观的“做功”的和吗？
-
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{吸热的本质（续）}
-\bch
-我们把热一律写成“收入=存款+开支”的形式：
-$$ \dbar Q =  d U + \dbar A'$$
-为了简化讨论，我们只考虑非相对论的粒子数守恒系统，并假设分子自由度只依赖于温度。先考虑准静态过程。
-
-\skipline
-
-先把内能分为两部分。我们知道每个分子单独具有的平均能量只是温度的函数，我们把这样的能量加起来，称之为{\blue 局部内能$U_{\rm local}$}。此外，分子之间还有相互作用的势能，我们把这部分能量称为{\blue 全局内能$U_{\rm global}$}。
-
-
-再把物质对外做功也分为两部分。因为分子运动造成的{\blue 动理压强$p_k$对外做功记$ A_k'$}，因为分子之间相互吸引造成的{\blue 内压强$p_U$对外做功记为$ A'_U$}。显然
-{\blue
-$$ d U_{\rm global} = - \dbar A'_U$$
-}
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{吸热的本质（续）}
-\bch
-因为$d U_{\rm global}$和$\dbar A'_U$互相抵消，热一律就可以写成：
-$$ \dbar Q = d U_{\rm local}  +\dbar A'_k  $$
-它揭示了准静态过程的吸热量$Q$的本质：
-
-\tbox{\blue 准静态过程吸热量用来提高系统的局部内能和提供系统动理压强做功。}
-
-更具体地说：吸热确实是很多次系统分子和环境分子的微观碰撞的总和。这些微观碰撞一方面改变了系统分子的平均能量（改变系统局部内能)，另一方面又做了功（宏观上表现为动理压强做功）。
-
-
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{热量的显式方程}
-\bch
-根据能均分定理，{\blue 局部内能只是温度的函数}，
-$$d U_{\rm local} = f(T) dT$$
-其中$f(T)$是由能均分定理决定的函数。
-
-\skipline
-
-动理压强$p_k = \frac{2}{3}n_{\rm eff}\overline{\varepsilon}$，其中分子平均平动动能$\overline{\varepsilon}$和温度成正比，但这里的“有效分子数密度”$n_{\rm eff}$一般来讲不是真正的分子数密度，因为在大多数物质中分子并不能随心所欲地在整个体积内运动（只有理想气体分子可以）。我们可以一般地假设$n_{\rm eff}$是体积的函数，并把动理压强写成
-{\blue
-$$ p_k = g(V) T$$}
-这样，动理压强做功为$g(V)T dV$。最后得到热量显式方程：$$\dbar Q = f(T)dT + Tg(V) dV$$
-下面我们来求$f(T)$和$g(V)$。
-
-\ech
-\end{frame}
-
-
-
-\begin{frame}
-\chtitle{$f(T)$和$g(V)$的数学表达式}
-\bch
-显然，因为只和分子平均距离有关，{\blue 全局内能和内压强只是体积的函数}。所以固定体积时，
-
-\bitem
-\item{内能对温度的偏导数等于局部内能对温度的偏导数：
-$$ \pfrac UTV = \pfrac {U_{\rm local}}TV = f(T) $$
-也就是说$f(T)$其实就是$C_V$。}
-\item{
-总压强对温度的偏导数等于动理压强对温度的偏导数：
-$$\pfrac pTV = \pfrac {p_k}TV = g(V)$$}
-\eitem
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{总结}
-\bch
-准静态过程热量的显式方程
-\tbox
-{$$\dbar Q = C_V(T)dT + T g(V) dV$$}
-其中$C_V(T)$代表了分子自由度数目随温度变化的情况；$Tg(V)$是动理压强，其中
-\tbox{
-$$g(V) = \pfrac pTV $$}
-代表了能够和环境发生碰撞的有效分子数密度随总体积变化的情况。
-
-\ech
-\end{frame}
-
-\begin{frame}
-\bch
-
-下面我们用热量的显式方程来推导一系列超出初中水平的结果
-
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{内能和物态方程的关系}
-\bch
-固定温度，变化体积时：
-$$\dbar Q = T g(V)dV = T\pfrac pTV dV$$
-$$\dbar A = -pdV$$
-故
-$$dU = \left(T \pfrac pTV - p\right)dV$$
-即{\blue
-$$\pfrac UVT = T \pfrac pTV - p$$
-}
-这是一个非常重要的方程，它把物质的内能和状态方程联系起来了。
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{思考题}
-\bch
-
-\addfig{1}{think2.jpg}
-$$\pfrac UVT = T \pfrac pTV - p$$
-这个方程的右边是什么物理量？试直接给出该方程的物理诠释。
-
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{相变温度和相变压强的关系}
-\bch
-{\small
-
-在恒定压强$p$下，物质相变时保持相变温度$T$不变（不考虑非晶体等特殊情形），设每摩尔物质从$\alpha$态变到$\beta$态需要吸热量为$\Lambda^{\rm mol}$，$\alpha$态和$\beta$态的摩尔体积分别为$V_\alpha^{\rm mol}$和$V_\beta^{\rm mol}$。
-
-\skipline
-
-我们曾经定性地分析过，相变温度$T$对压强$p$有依赖性，相变过程体积变化($V_\beta^{\rm mol}-V_\alpha^{\rm mol}$)越大，相变温度对$p$的依赖性越强。
-
-\skipline
-
-下面我们来把这种依赖性定量化。
-}
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{图解}
-\bch
-先从图像上理解我们要计算的是什么量：
-
-\lfig{1.8}{PVTdiagram.png}\hspace{0.1in}\lfig{1.8}{PTdiagram.png}
-
-三相图上有三个两相共存的曲面（固液共存，气液共存，固气共存），这些曲面投影到三相图($PT$图）上后即为三条相变曲线。
-这些曲线的斜率反映了相变温度随压强变化的情况。我们要求解的就是这些曲面上的$\pfrac pTV$。
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{克拉珀龙(Clapeyron)方程}
-\bch
-假设有摩尔数为$d\nu$的$\alpha$态物质转化为$\beta$态物质，因为温度不变，吸热量等于$Tg(V)dV$
-$$ \Lambda^{\rm mol} d\nu = Tg(V)dV = T\pfrac pTV dV $$
-再根据$dV = \left(V_\beta^{\rm mol} - V_\alpha^{\rm mol}\right)d\nu$，即得到
-{\blue 克拉珀龙(Clapeyron)方程
-$$ \pfrac pTV = \frac{\Lambda^{\rm mol}}{T\left(V_\beta^{\rm mol} - V_\alpha^{\rm mol}\right)}$$}
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{范德瓦尔斯气体的内能}
-\bch
-{\small
-固定温度改变体积时，局部内能不变，全局内能因内压强做功而改变。
-
-对范德瓦尔斯气体，我们假设了内压强$P_U = -\frac{a\nu^2}{V^2}$，故
-$$\pfrac UVT = \frac{a\nu^2}{V^2}$$
-由此可以积分得到
-$$U(V, T) = \int_{T_0}^T C_V(T) dT -\frac{\nu^2a}{V} + U_0$$
-}
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{克劳修斯熵}
-\bch
-假设物质从状态$(T_1, V_1)$经过准静态过程变化到$(T_2, V_2)$，则可以定义{\blue（克劳修斯）熵变：
-$$ \Delta S \equiv \int\frac{\dbar Q}{T} = \int_{T_1}^{T_2} \frac{C_V(T)}{T}dT + \int_{V_1}^{V_2} g(V)dV$$}
-显然，{\blue $S$是和过程无关的态函数}。
-
-准静态过程的吸热量可以写成
-$$ \dbar Q  = T dS$$
-热力学第一定律微分形式就可以写成：
-{\blue $$ dU = TdS - pdV$$}
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{偏导数的噩梦}
-\bch
-根据上面熵$S$的积分表达式，不难写出
-\bea
-\pfrac STV &=& \frac{C_V}{T} = \frac{1}{T} \pfrac UTV \newl
-\pfrac SVT &=& g(V) = \pfrac pTV \newl
-\eea
-热学里可以写出几十个这样“莫名其妙”的偏导数等式，我们之后会系统地学习怎样推导它们（三四章的难点）。
-\ech
-\end{frame}
 
 \begin{frame}
 \chtitle{下周期中考试}
@@ -765,9 +565,9 @@ $$ \dbar Q  = T dS$$
 \chtitle{第七-八周作业}
 \bch
 \bitem
-\item[19]{ 已知无量纲速度的概率密度函数为
-$$f(u_x,u_y,u_z) = C (u_x^2+u_y^2) e^{-u}$$
-其中$C$待定的归一化常数，$u = \sqrt{u_x^2+u_y^2+u_z^2}$为速率。
+\item[19]{ 已知无量纲速度的概率密度函数正比于
+$$f(u_x,u_y,u_z) \propto (u_x^2+u_y^2) e^{-u}$$
+其中$u = \sqrt{u_x^2+u_y^2+u_z^2}$为速率。
 \bitem
 \item{求平均速率$\bar{u}$}
 \item{求$z$方向的泻流速率$u_{n, z, \rm leak}$}
