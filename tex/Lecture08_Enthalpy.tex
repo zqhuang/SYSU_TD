@@ -1,16 +1,16 @@
 \documentclass[CJK]{beamer}
 \input{macros.tex}
 \input{titlepage.tex}
-\title{Lesson 08 Enthalpy}
+\title{Lesson 08 Heat}
   \author{}
   \date{}
 \begin{document}
-\tpage{8}{焓}
+\tpage{8}{热量的本质}
 
 \section{Review}
 
 \begin{frame}
-\chtitle{上讲需要掌握的内容非常少}
+\chtitle{上讲内容回顾}
 \bch
 \bitem
 \item{内能是态函数}
@@ -19,8 +19,6 @@
 \item{大气的绝热近似：空气中的声速$u_s =\sqrt{\gamma}$；干燥空气垂直温度梯度$\frac{dT}{dz} \approx -10 \SIK/\SIkm$。}
 \item{多方过程气体对外做功$A' = -\frac{\nu R}{n-1}\Delta T$ （等温过程$n=1$则需要另算）。}
 \item{多方过程热容$C_n =C_V -\frac{\nu R}{n-1}$ （等温过程$C = \infty$）。}
-\item{吸热的本质；内能和状态方程的关系$\pfrac UVT = T\pfrac pTV - p$；克拉珀龙方程；范德瓦尔斯气体的内能；热力学第二定律；孤立系它熵不减原理；卡诺定理……}
-
 \eitem
 \ech
 \end{frame}
@@ -37,16 +35,79 @@ $$pdV + Vdp = \nu R dT + \nu \Lambda dc$$
 $$ Vdp = C_p  dT + \nu \Lambda dc $$
 再由力学平衡$ dp = -\rho g dz$，即有
 $$ \frac{dT}{dz} =-\frac{\rho g V + \nu\Lambda\frac{dc}{dz}}{C_p} = -\frac{\gamma-1}{\gamma}\left(\frac{M^{\rm mol}g}{R}+\frac{\Lambda}{R}\frac{dc}{dz}\right)$$
-因为饱和蒸气压随着温度降低而降低（请回忆三相图），在有饱和蒸汽的空气里，气团继续上升会造成水蒸气凝结，$ \frac{dc}{dz} < 0 $，垂直温度梯度就会小于$-10\SIK/\SIs$。
+因为饱和蒸气压随着温度降低而降低（请回忆三相图），在有饱和蒸汽的空气里，气团继续上升会造成水蒸气凝结，$ \frac{dc}{dz} < 0 $，垂直温度梯度就会小于$-10\SIK/\SIkm$。
 }
 \ech
 \end{frame}
 
 
 \begin{frame}
-\chtitle{传热的本质}
+\chtitle{本讲内容}
 \bch
-初中物理复习完了，下面我们开始深邃的思考
+\bitem
+\item{数学准备知识：循环偏微分乘积定理}
+\item{热量的本质}
+\item{焓}
+\item{节流过程（等焓的非准静态过程)}
+\item{化学反应和生成焓}
+\eitem
+\ech
+\end{frame}
+
+\section{Math}
+
+\begin{frame}
+\chtitle{数学准备知识：循环偏微分乘积定理}
+\bch
+设三个变量$X$, $Y$, $Z$满足某状态方程，则
+{\blue 
+$$\pfrac XYZ  \pfrac YZX \pfrac ZXY = -1$$
+}
+当然，我们这是讨论物理问题，可以假设状态方程足够光滑，且不出现偏导数无穷大的情况。
+
+\skipline
+
+\bye不会证的请默默捧起数学书。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{什么，数学书早卖了？}
+\bch
+{\scriptsize
+证明：设状态方程为$S(X, Y, Z) = 0$，取状态方程曲面上的一条等高线($dZ = 0$)，在等高线上有
+$$\pfrac SX{YZ} dX + \pfrac SY{ZX} dY = 0$$
+又根据偏导数的定义，等高线上的$dX/dY$即$\pfrac XYZ$。故有
+$$\pfrac XYZ = -\frac{\pfrac SY{ZX}}{\pfrac SX{ZY}}$$
+同理可证
+$$\pfrac YZX = -\frac{\pfrac SZ{XY}}{\pfrac SY{ZX}}$$
+$$\pfrac ZXY = -\frac{\pfrac SX{YZ}}{\pfrac SZ{XY}}$$
+三式相乘即得证
+}
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{1}{songfen2.jpg}
+
+证明气体定体比热容可以写成:
+
+$$
+C_V =  - \pfrac UVT \pfrac VTU 
+$$
+
+\ech
+\end{frame}
+
+\section{Essence of Heat}
+
+\begin{frame}
+\chtitle{热量的本质}
+\bch
 
 \addfig{2}{think4.jpg}
 
@@ -261,65 +322,6 @@ $$ \dbar Q  = T dS$$
 \ech
 \end{frame}
 
-
-\begin{frame}
-\chtitle{本讲内容}
-\bch
-\bitem
-\item{数学准备知识：循环偏微分乘积定理}
-\item{焓}
-\item{节流过程（等焓的非准静态过程)}
-\item{化学反应和生成焓}
-\eitem
-\ech
-\end{frame}
-
-\section{Math}
-
-\begin{frame}
-\chtitle{数学准备知识：循环偏微分乘积定理}
-\bch
-设三个变量$X$, $Y$, $Z$满足某状态方程，则
-{\blue 
-$$\pfrac XYZ  \pfrac YZX \pfrac ZXY = -1$$
-}
-当然，我们这是讨论物理问题，可以假设状态方程足够光滑，且不出现偏导数无穷大的情况。
-
-\skipline
-
-\bye不会证的请默默捧起数学书。
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{什么，数学书早卖了？}
-\bch
-{\scriptsize
-证明：设状态方程为$S(X, Y, Z) = 0$，取状态方程曲面上的一条等高线($dZ = 0$)，在等高线上有
-$$\pfrac SX{YZ} dX + \pfrac SY{ZX} dY = 0$$
-又根据偏导数的定义，等高线上的$dX/dY$即$\pfrac XYZ$。故有
-$$\pfrac XYZ = -\frac{\pfrac SY{ZX}}{\pfrac SX{ZY}}$$
-同理可证
-$$\pfrac YZX = -\frac{\pfrac SZ{XY}}{\pfrac SY{ZX}}$$
-$$\pfrac ZXY = -\frac{\pfrac SX{YZ}}{\pfrac SZ{XY}}$$
-三式相乘即得证
-}
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{思考题}
-\bch
-\addfig{1}{songfen2.jpg}
-
-证明气体定体比热容可以写成:
-
-$$
-C_V =  - \pfrac UVT \pfrac VTU 
-$$
-
-\ech
-\end{frame}
 
 
 \section{Enthalpy}
@@ -557,10 +559,10 @@ $$\pfrac TpH \pfrac pHT \pfrac HTp = -1$$
 \chtitle{第九周作业（序号接第八周）}
 \bch
 \bitem
-\item[22]{证明气体的定压比热容$C_p$可以写成
+\item[21]{证明气体的定压比热容$C_p$可以写成
 $$C_p = - \pfrac pTH \pfrac HpT $$}
-\item[23]{教材习题3-14}
-\item[24]{教材习题3-24}
+\item[22]{教材习题3-5}
+\item[23]{教材习题3-24}
 \eitem
 \ech
 \end{frame}
