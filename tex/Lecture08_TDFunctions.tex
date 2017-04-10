@@ -5,7 +5,7 @@
   \author{}
   \date{}
 \begin{document}
-\tpage{8}{热量的本质}
+\tpage{8}{热力学函数的大家庭}
 
 \section{Review}
 
@@ -23,33 +23,16 @@
 \ech
 \end{frame}
 
-\begin{frame}
-\chtitle{关于大气垂直温差的补充知识}
-\bch
-{\small
-对水蒸气饱和的空气，做功等于内能改变量加上汽化热：
-$$ -pdV = C_V dT + \Lambda d(c\nu) $$
-其中$\nu$为空气摩尔数，$c$为空气中水蒸气的摩尔百分比，$\Lambda$为摩尔汽化热。又
-$$pdV + Vdp = \nu R dT + \nu \Lambda dc$$
-两式相加得到
-$$ Vdp = C_p  dT + \nu \Lambda dc $$
-再由力学平衡$ dp = -\rho g dz$，即有
-$$ \frac{dT}{dz} =-\frac{\rho g V + \nu\Lambda\frac{dc}{dz}}{C_p} = -\frac{\gamma-1}{\gamma}\left(\frac{M^{\rm mol}g}{R}+\frac{\Lambda}{R}\frac{dc}{dz}\right)$$
-因为饱和蒸气压随着温度降低而降低（请回忆三相图），在有饱和蒸汽的空气里，气团继续上升会造成水蒸气凝结，$ \frac{dc}{dz} < 0 $，垂直温度梯度就会小于$-10\SIK/\SIkm$。
-}
-\ech
-\end{frame}
-
 
 \begin{frame}
 \chtitle{本讲内容}
 \bch
 \bitem
-\item{数学准备知识：循环偏微分乘积定理}
-\item{热量的本质}
-\item{焓}
-\item{节流过程（等焓的非准静态过程)}
-\item{化学反应和生成焓}
+\item{数学小技巧：循环偏微分乘积定理}
+\item{准静态过程热量的显式表达式}
+\item{熵函数$S$}
+\item{热力学函数大家庭：A HUG}
+\item{焓的物理意义和等焓过程}
 \eitem
 \ech
 \end{frame}
@@ -57,7 +40,7 @@ $$ \frac{dT}{dz} =-\frac{\rho g V + \nu\Lambda\frac{dc}{dz}}{C_p} = -\frac{\gamm
 \section{Math}
 
 \begin{frame}
-\chtitle{数学准备知识：循环偏微分乘积定理}
+\chtitle{数学小技巧：循环偏微分乘积定理}
 \bch
 设三个变量$X$, $Y$, $Z$满足某状态方程，则
 {\blue 
@@ -92,9 +75,9 @@ $$\pfrac ZXY = -\frac{\pfrac SX{YZ}}{\pfrac SZ{XY}}$$
 \begin{frame}
 \chtitle{思考题}
 \bch
-\addfig{1}{songfen2.jpg}
+\addfig{1}{songfen.jpg}
 
-证明气体定体比热容可以写成:
+证明物质的定体比热容可以写成:
 
 $$
 C_V =  - \pfrac UVT \pfrac VTU 
@@ -102,6 +85,7 @@ $$
 
 \ech
 \end{frame}
+
 
 \section{Essence of Heat}
 
@@ -118,7 +102,7 @@ $$
 
 
 \begin{frame}
-\chtitle{吸热的本质（续）}
+\chtitle{热量的本质（续）}
 \bch
 我们把热一律写成“收入=存款+开支”的形式：
 $$ \dbar Q =  d U + \dbar A'$$
@@ -138,7 +122,7 @@ $$ d U_{\rm global} = - \dbar A'_U$$
 
 
 \begin{frame}
-\chtitle{吸热的本质（续）}
+\chtitle{热量的本质（续）}
 \bch
 因为$d U_{\rm global}$和$\dbar A'_U$互相抵消，热一律就可以写成：
 $$ \dbar Q = d U_{\rm local}  +\dbar A'_k  $$
@@ -164,7 +148,7 @@ $$d U_{\rm local} = f(T) dT$$
 动理压强$p_k = \frac{2}{3}n_{\rm eff}\overline{\varepsilon}$，其中分子平均平动动能$\overline{\varepsilon}$和温度成正比，但这里的“有效分子数密度”$n_{\rm eff}$一般来讲不是真正的分子数密度，因为在大多数物质中分子并不能随心所欲地在整个体积内运动（只有理想气体分子可以）。我们可以一般地假设$n_{\rm eff}$是体积的函数，并把动理压强写成
 {\blue
 $$ p_k = g(V) T$$}
-这样，动理压强做功为$g(V)T dV$。最后得到热量显式方程：$$\dbar Q = f(T)dT + Tg(V) dV$$
+这样，动理压强做功为$g(V)T dV$。最后得到热量的显式方程：$$\dbar Q = f(T)dT + Tg(V) dV$$
 下面我们来求$f(T)$和$g(V)$。
 
 \ech
@@ -193,11 +177,10 @@ $$\pfrac pTV = \pfrac {p_k}TV = g(V)$$}
 \bch
 准静态过程热量的显式方程
 \tbox
-{$$\dbar Q = C_V(T)dT + T g(V) dV$$}
-其中$C_V(T)$代表了分子自由度数目随温度变化的情况；$Tg(V)$是动理压强，其中
-\tbox{
-$$g(V) = \pfrac pTV $$}
-代表了能够和环境发生碰撞的有效分子数密度随总体积变化的情况。
+{\blue $$\dbar Q = C_V(T)dT + T \pfrac pTV dV$$}
+其中$C_V(T)$代表了分子自由度数目随温度变化的情况；
+$T\pfrac pTV$是动理压强，其中$\pfrac pTV  = g(V)$
+只是体积的函数，代表了能够和环境发生碰撞的有效分子数密度随总体积变化的情况。
 
 \ech
 \end{frame}
@@ -234,6 +217,30 @@ $$\pfrac UVT = T \pfrac pTV - p$$
 $$\pfrac UVT = T \pfrac pTV - p$$
 这个方程的右边是什么物理量？试直接给出该方程的物理诠释。
 
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{定压比热容和定体比热容的普适关系式}
+\bch
+我们把体积的微分写成$dV = \pfrac VTp dT + \pfrac VpT dp$，则
+{\scriptsize
+\bea
+\dbar Q &=& C_V dT + T\pfrac pTV   \pfrac VTp dT + \pfrac VpT dp \newl
+&=& \left[C_V + T \pfrac pTV \pfrac VTp\right]dT +  T\pfrac pTV \pfrac VpT dp \newl
+&=& \left[C_V + T \pfrac pTV \pfrac VTp\right]dT - T\pfrac VTp dp 
+\eea
+}
+我们因此得到了{\blue 
+ 定压比热容和定体比热容的普适关系式
+$$
+\frac{C_p-C_V}{T} =  \pfrac pTV \pfrac VTp 
+$$
+}
+以及{\blue 热量的第二种显式方程：
+$$ \dbar Q = C_p dT - T\pfrac VTp dp$$
+}
 \ech
 \end{frame}
 
@@ -296,8 +303,10 @@ $$U(V, T) = \int_{T_0}^T C_V(T) dT -\frac{\nu^2a}{V} + U_0$$
 \ech
 \end{frame}
 
+\section{Entropy}
+
 \begin{frame}
-\chtitle{克劳修斯熵}
+\chtitle{熵函数$S$}
 \bch
 假设物质从状态$(T_1, V_1)$经过准静态过程变化到$(T_2, V_2)$，则可以定义{\blue（克劳修斯）熵变：
 $$ \Delta S \equiv \int\frac{\dbar Q}{T} = \int_{T_1}^{T_2} \frac{C_V(T)}{T}dT + \int_{V_1}^{V_2} g(V)dV$$}
@@ -311,36 +320,106 @@ $$ \dbar Q  = T dS$$
 \end{frame}
 
 \begin{frame}
-\chtitle{偏导数的噩梦}
+\chtitle{熵的全微分}
 \bch
-根据上面熵$S$的积分表达式，不难写出
+根据熵函数$S$的定义和热量的第一种显式表达式，有
+{\blue $$ dS = \frac{\dbar Q}{T} = \frac{C_V}{T}dT + \pfrac pTV dV$$
+}
+
+由此即有
+{\blue
 \bea
-\pfrac STV &=& \frac{C_V}{T} = \frac{1}{T} \pfrac UTV \newl
-\pfrac SVT &=& g(V) = \pfrac pTV \newl
+ \pfrac STV &=& \frac{C_V}{T} \newl
+ \pfrac SVT &=& \pfrac pTV 
 \eea
-热学里可以写出几十个这样“莫名其妙”的偏导数等式，我们之后会系统地学习怎样推导它们（三四章的难点）。
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{熵函数$S$（续）}
+\bch
+
+利用热量的第二种显式表达式，容易得到{\blue
+$$dS = \frac{\dbar Q}{T} = \frac{C_p}{T} dT - \pfrac VTp dp $$
+}
+由此即有
+{\blue
+\bea
+ \pfrac STp &=& \frac{C_p}{T} \newl
+ \pfrac SpT &=& -\pfrac VTp 
+\eea
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{0.8}{songfen.jpg}
+证明
+{\blue
+$$\pfrac TVS = -\pfrac pSV$$
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{0.8}{songfen2.jpg}
+证明
+{\blue
+$$\pfrac TpS = \pfrac VSp$$
+}
 \ech
 \end{frame}
 
 
-
-\section{Enthalpy}
+\section{TD functions}
+\begin{frame}
+\chtitle{焓(Enthalpy)}
+\bch
+{\blue 焓}定义为
+{\blue
+$$H \equiv U + pV$$}
+\ech
+\end{frame}
 
 \begin{frame}
-\chtitle{焓}
+\chtitle{自由能和自由焓}
 \bch
+{\blue 自由能}定义为
+{\blue 
+$$ A \equiv U - TS $$}
+{\blue 自由焓}定义为
+{\blue 
+$$ G \equiv H - TS $$}
+\ech
+\end{frame}
 
-内能 $\Rightarrow$ 你房子的价值
+\begin{frame}
+\chtitle{AHUG的全微分}
+\bch
+\bitem
+\item{\blue $dU = TdS - pdV$}
+\item{\blue $dH = TdS + Vdp$}
+\item{\blue $dA = -SdT - pdV$}
+\item{\blue $dG = -SdT + Vdp$}
+\eitem
+\ech
+\end{frame}
 
-焓$\Rightarrow$你房子的价值 + 你房子所占空间的价值
-
-\skipline
-
-自然界很多过程都是等压过程而非等体过程，当体积发生变化时就需要对环境做功以“获得生存空间”。这部分额外做的功做为“无形资产”加到内能上，就是“焓”(enthalpy)。
-
-$$ H \equiv U + pV$$
-
-
+\begin{frame}
+\chtitle{AHUG的偏微分}
+\bch
+由AHUG的全微分立即可以写出：
+\bitem
+\item{\blue $\pfrac USV = \pfrac HSp = T$}
+\item{\blue $\pfrac UVS = \pfrac AVT = -p$}
+\item{\blue $\pfrac ATV = \pfrac GTp = -S$}
+\item{\blue $\pfrac HpS = \pfrac GpT = V$}
+\eitem
 \ech
 \end{frame}
 
@@ -348,69 +427,82 @@ $$ H \equiv U + pV$$
 \chtitle{思考题}
 \bch
 \addfig{0.8}{think3.jpg}
-焓是态函数吗？
-\ech
-\end{frame}
 
-
-\begin{frame}
-\chtitle{理想气体的焓只是温度的函数}
-\bch
-固定摩尔数的理想气体的内能只是温度的函数，故焓
-$$H = U(T) + pV = U(T) + \nu R T$$
-也只是温度的函数。
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{实际气体的焓}
-\bch
-由于理想气体近似已经给出
-$$\pfrac HTp =  C_V+ \nu R > 0$$
-实际气体一般只是对上式稍有偏离，并不会影响$\pfrac HTp $的正负符号。
-
-比较不确定的是$H$对$p$的依赖关系，因为理想气体近似给出$\pfrac HpT = 0$，实际气体如果有所偏离的话，是往哪个方向偏离呢？
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{焓和状态方程的关系}
-\bch
-{\small
-我们上一讲中提到内能和状态方程的关系{\blue
-$$\pfrac UVT = T\pfrac pTV - p$$}
-由此可以得到
-$$\pfrac UpT = \pfrac UVT\pfrac VpT= \left(T\pfrac pTV - p\right) \pfrac VpT$$
-所以
-$$\pfrac HpT = \pfrac UpT  + p\pfrac VpT + V = T\pfrac pTV \pfrac VpT + V$$
-最后我们利用循环偏微分乘积定理，得到$\pfrac pTV \pfrac VpT = - \pfrac VTp$，即
-{\blue
-$$\pfrac HpT = - T\pfrac VTp + V$$
-}}
-\ech
-\end{frame}
-
-
-
-\begin{frame}
-\chtitle{实际气体的$\pfrac HpT$}
-\bch
-
-对范德瓦尔斯气体，我们可以直接算出
-$$\pfrac HpT = V\frac{\frac{\nu b}{V} + \frac{2p_U}{p_k}\left(1- \frac{\nu b}{V}\right)}{1 + \frac{2p_U}{p_k}\left(1-\frac{\nu b}{V}\right)}\approx V\left(\frac{\nu b}{V} +\frac{2p_U}{p_k}\right)$$
-
-注意$p_U/p_k<0$，所以上式的符号取决于体积修正和压强修正的相对大小。
-
-\bmini{0.48}
-\lfig{1.9}{pfracHpT.jpg}
-\emini
-\bmini{0.48}
-{\small 
-实验表明，在常温常压下，氢气和氦气$\pfrac HpT > 0$，而大多数其他气体则有$\pfrac HpT < 0$。
-
-在高温高压下，体积修正是主导项，所有气体均有$\pfrac HpT > 0$。
+证明下述{\blue Gibbs-Helmholtz方程
+\bitem
+\item{\blue $$\pfrac{\left(\frac{G}{T}\right)}Tp = -\frac{H}{T^2}$$}
+\item{\blue $$\pfrac{\left(\frac{A}{T}\right)}TV = -\frac{U}{T^2}$$}
+\eitem
 }
-\emini
+\ech
+\end{frame}
+
+\section{Enthalpy}
+
+\begin{frame}
+\chtitle{焓的物理意义}
+\bch
+
+内能 $\Rightarrow$ 房子的价值
+
+\skipline
+
+焓$\Rightarrow$房子的价值 + 房子所占空间的价值
+
+\skiplines
+
+自然界很多过程都是等压过程而非等体过程，当体积发生变化时就需要对环境做功以“获得生存空间”。这部分额外做的功做为“无形资产”加到内能上，就是焓$H$。
+
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{焓和状态方程的普适关系}
+\bch
+{\scriptsize
+由热量的第二种显式表达式
+\bea
+dH &=& \dbar Q + Vdp \newl
+&=& C_p dT - T\pfrac VTp dp + Vdp \newl
+&=& C_p dT + \left[ V - T\pfrac VTp\right]dp
+\eea
+}
+由此即得定压比热容和焓变的关系
+{\blue 
+$$\pfrac HTp = C_p$$
+}
+
+{\blue 焓和状态方程的普适关系
+$$ \pfrac HpT = V - T\pfrac VTp$$
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题：实际气体的$\pfrac HpT$}
+\bch
+
+\addfig{0.8}{think3.jpg}
+
+对范德瓦尔斯气体，证明$\pfrac HpT$的一阶近似表达式为：
+$$\pfrac HpT \approx V\left(\frac{\nu b}{V} +\frac{2p_U}{p_k}\right)$$
+其中$p_U = -\frac{\nu^2 a}{V^2}$为内压强。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{体积修正vs压强修正}
+\bch
+
+对范德瓦尔斯气体，$\pfrac HpT$的一阶近似表达式为：
+$$\pfrac HpT \approx V\left(\frac{\nu b}{V} +\frac{2p_U}{p_k}\right)$$
+注意$p_U/p_k<0$，所以上式的符号取决于体积修正$\nu b/V$和压强修正$p_U/p_k$的相对大小。
+
+实验表明，在{\blue 常温常压下，除了氢气，氦气等极小数小分子气体，大多数气体的内压强修正占主导，有$\pfrac HpT < 0$}。
 
 \ech
 \end{frame}
@@ -420,9 +512,31 @@ $$\pfrac HpT = V\frac{\frac{\nu b}{V} + \frac{2p_U}{p_k}\left(1- \frac{\nu b}{V}
 \bch
 \addfig{0.8}{think.jpg}
 
-根据范德瓦尔斯模型，$$\pfrac HpT\approx V\left(\frac{\nu b}{V} + \frac{2p_U}{p_k}\right)$$
-可以看成体积修正项($>0$)与压强修正项（$<0$)相互竞争的结果。在常温常压下，对小分子气体，为什么反而结果是$\pfrac HpT > 0$，即体积修正项为主导呢？
+常温常压下，“小分子”气体的体积修正项反而为主导，这是否自相矛盾？
 
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{0.8}{think2.jpg}
+
+在高温高压下所有气体均有$\pfrac HpT > 0$，试用范德瓦尔斯模型解释其物理原因。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{等焓过程}
+\bch
+\addfig{0.8}{songfen.jpg}
+证明等焓过程中温度随压强的变化为
+{\blue
+$$\pfrac TpH = - \frac{\pfrac HpT}{C_p}$$
+}
 \ech
 \end{frame}
 
@@ -454,17 +568,18 @@ $$ U_1 + p_1V_1 = U_2 + p_2V_2 $$
 \end{frame}
 
 
+
 \begin{frame}
 \chtitle{焦耳-汤姆孙效应}
 \bch
 {\small
 我们可以根据焦耳-汤姆孙系数$\alpha \equiv \pfrac TpH$来计算的温度的升降。
 
-根据循环偏微分乘积定理：
-$$\pfrac TpH \pfrac pHT \pfrac HTp = -1$$
-和$\pfrac HTp > 0$，就知道$\pfrac TpH$和$\pfrac HpT$符号相反。
+根据我们刚刚证明的
+$$\pfrac TpH = - \frac{\pfrac HpT}{C_p}$$
+知道$\pfrac TpH$和$\pfrac HpT$符号相反。
 
-也就是说，在常温常压下，对氢气和氦气$\pfrac TpH < 0$， 对大多数其他气体$\pfrac TpH > 0$。
+也就是说，在常温常压下，氢气和氦气$\pfrac TpH < 0$， 大多数其他气体$\pfrac TpH > 0$。
 
 因为节流过程是降压过程，所以对{\bf 大部分气体（空气，氮气，氧气等）节流过程是降温过程（正节流效应），而对氢气和氦气是升温过程（负节流效应）}。这些效应统称{\bf 焦耳-汤姆孙效应}。
 }
@@ -493,77 +608,19 @@ $$\pfrac TpH \pfrac pHT \pfrac HTp = -1$$
 \ech
 \end{frame}
 
-\section{Enthalpy of Reaction}
 
-
-\begin{frame}
-\chtitle{化学反应热和生成焓}
-\bch
-定义化学反应热 = 外界给系统的热量
-
-\skipline
-
-\bitem
-\item{定体化学反应 $\Rightarrow$ 内能变化 = 反应热}
-\item{定压化学反应 $\Rightarrow$ 焓变化 = 反应热}
-\eitem
-
-\skipline
-
-定压反应的反应热又称为{\blue 反应焓}。
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{焓的参考点：标准生成焓}
-\bch
-焓和势能一样，可以取任意参考点，{\blue 习惯上定义 $1\atm$, $25\cdeg$的纯元素的焓为零}。
-
-\skipline
-
-{\blue $1\atm$，$25\cdeg$下化合物的生成焓定义为化合物的标准生成焓(用$\stdHf$表示)}。
-
-\skipline
-
-{\blue $1\atm$，$25\cdeg$下，
-
- 反应焓 = 合成物的标准生成焓 - 反应物的标准生成焓}
-
-\skiplines
-
-标准生成焓可以通过查表获得。见教材145页表3-3。
-
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{反应焓计算举例}
-\bch
-\bex
-教材习题3-23
-\eex
-
-\skipline
-
-记给的三个燃烧反应为$A, B, C$。则 $2A + \frac{3}{2}B - \frac{1}{2}C$就等价于所需要的纯元素合成反应。故
-{\small
-\bea
-\stdHf({\rm C_2H_6}) &=&\left[ 2\times (-393.5) + \frac{3}{2}\times (-571.7)-\frac{1}{2}\times(-1560)\right]\SIkJ/\SImol\newl
-&=&-864.6\SIkJ/\SImol
-\eea
-}
-\ech
-\end{frame}
 
 \begin{frame}
 \chtitle{第九周作业（序号接第八周）}
 \bch
+{\small 
 \bitem
-\item[21]{证明气体的定压比热容$C_p$可以写成
-$$C_p = - \pfrac pTH \pfrac HpT $$}
+\item[21]{教材习题3-2}
 \item[22]{教材习题3-5}
-\item[23]{教材习题3-24}
+\item[23]{证明热力学函数恒等式
+ $$ \pfrac TpS = \frac{T\pfrac VTp}{C_p} $$}
 \eitem
+}
 \ech
 \end{frame}
 \end{document}
