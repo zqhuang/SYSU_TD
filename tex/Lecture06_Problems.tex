@@ -1084,7 +1084,6 @@ $$ n = \frac{\ln \frac{\frac{0.99}{0.01}}{\frac{0.007}{0.993}}}{\ln 1.0042888} =
 \skipline
 
 {\small
-
 理想气体内能为$\nu C_V^{\rm mol} T = \frac{C_V^{\rm mol}}{R} pV$，故压强的降低百分比即内能的降低百分比。内能降低百分比可以用单原子理想气体的泻能速率进行计算：
 $$\frac{1}{3}\overline{\upsilon} \frac{S\Delta t}{V} = 10^{-3}$$
 
@@ -1103,7 +1102,22 @@ $$\frac{1}{3}\overline{\upsilon} \frac{S\Delta t}{V} = 10^{-3}$$
 \ech
 \end{frame}
 
-
+\begin{frame}
+\chtitle{思考题参考答案}
+\bch
+{\scriptsize
+设能量密度为$\rho$，根据泻能速率的定义：
+$$\frac{1}{\rho S} \frac{d(\rho V)}{dt} = -\frac{1}{3}\overline{\upsilon}  $$
+设分子数密度为$n$，根据泄流速率的定义
+$$\frac{1}{n S} \frac{d(n V)}{dt} = -\frac{1}{4}\overline{\upsilon}  $$
+两式相减，并利用$\rho \propto n T$，即$\frac{d\rho}{\rho} - \frac{dn}{n} = \frac{dT}{T}$，得到
+$$ \frac{d(\ln T)}{dt} = -\frac{S}{12V}\overline{\upsilon}  $$
+由于$\overline{\upsilon} \propto \sqrt{T}$，上式等价于
+$$ \frac{d (T^{-1/2})}{dt} = \const $$
+所以$T^{-1/2}$均匀变化，再过一小时$T = (2\times 270^{-1/2}-300^{-1/2})^{-2}\SIK = 244.3 \SIK$
+}
+\ech
+\end{frame}
 
 \begin{frame}
 \chtitle{思考题 （难度稍大的内容）}
@@ -1111,9 +1125,29 @@ $$\frac{1}{3}\overline{\upsilon} \frac{S\Delta t}{V} = 10^{-3}$$
 \addfig{1}{think3.jpg}
 
 很大的真空室内有体积为$1\SIm^3$的绝热容器，容器内装有分子平均速率为$400\SIm/\SIs$的热平衡单原子理想气体，现在容器上打一个面积为$10^{-6}\SIm^2$的孔，问：经过一小时容器内气体分子平均速率变为多少？
+
 \ech
 \end{frame}
 
+\begin{frame}
+\chtitle{思考题参考答案}
+\bch
+{\scriptsize
+设能量密度为$\rho$，根据泻能速率的定义：
+$$\frac{1}{\rho S} \frac{d(\rho V)}{dt} = -\frac{1}{3}\overline{\upsilon}  $$
+设分子数密度为$n$，根据泄流速率的定义
+$$\frac{1}{n S} \frac{d(n V)}{dt} = -\frac{1}{4}\overline{\upsilon}  $$
+两式相减，并利用$\rho \propto n T$，即$\frac{d\rho}{\rho} - \frac{dn}{n} = \frac{dT}{T}$，得到
+$$ \frac{d(\ln T)}{dt} = -\frac{S}{12V}\overline{\upsilon}  $$
+由于$T\propto \overline{\upsilon}^2 $，上式等价于
+$$ \frac{1}{\overline{\upsilon}^2}\frac{d\overline{\upsilon}}{dt} = -\frac{S}{24V}$$
+积分得到
+$$ \Delta\left(\frac{1}{\overline{\upsilon}}\right)= \frac{S}{24V}\Delta t$$
+经过一小时
+$$ \overline{\upsilon} = \left(\frac{1}{400} + \frac{10^{-6}}{24\times 1}\times 3600\right)^{-1}\SIm/\SIs = 377.4\SIm/\SIs$$
+}
+\ech
+\end{frame}
 
 \begin{frame}
 \chtitle{能均分定理}

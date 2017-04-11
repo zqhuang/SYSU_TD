@@ -70,6 +70,19 @@ $$\pfrac ZXY = -\frac{\pfrac SX{YZ}}{\pfrac SZ{XY}}$$
 \ech
 \end{frame}
 
+\begin{frame}
+\chtitle{第二种证法}
+\bch
+{\scriptsize
+证明：固定$Z$时，$dZ = 0$可以写成
+$$\pfrac ZXY dX + \pfrac ZYX dY = 0$$
+又固定$Z$时的$dX/dY$就是$\pfrac XYZ$，故
+$$\pfrac XYZ \pfrac ZXY + \pfrac ZYX = 0$$
+上式乘以$\pfrac YZX$即得
+$$\pfrac XYZ \pfrac YZX \pfrac ZXY + 1 = 0$$
+}
+\ech
+\end{frame}
 
 
 \begin{frame}
@@ -110,7 +123,7 @@ $$ \dbar Q =  d U + \dbar A'$$
 
 \skipline
 
-先把内能分为两部分。我们知道每个分子单独具有的平均能量只是温度的函数，我们把这样的能量加起来，称之为{\blue 局部内能$U_{\rm local}$}。此外，分子之间还有相互作用的势能，我们把这部分能量称为{\blue 全局内能$U_{\rm global}$}。
+先把内能分为两部分。我们知道每个分子单独具有的平均能量只是温度的函数，我们把这样的能量加起来，称之为{\blue 分子独立内能$U_{\rm local}$}。此外，分子之间还有相互作用的势能，我们把这部分能量称为{\blue 相互作用内能$U_{\rm global}$}。
 
 
 再把物质对外做功也分为两部分。因为分子运动造成的{\blue 动理压强$p_k$对外做功记$ A_k'$}，因为分子之间相互吸引造成的{\blue 内压强$p_U$对外做功记为$ A'_U$}。显然
@@ -128,18 +141,18 @@ $$ d U_{\rm global} = - \dbar A'_U$$
 $$ \dbar Q = d U_{\rm local}  +\dbar A'_k  $$
 它揭示了准静态过程的吸热量$Q$的本质：
 
-\tbox{\blue 准静态过程吸热量用来提高系统的局部内能和提供系统动理压强做功。}
+\tbox{\blue 准静态过程吸热量用来提高系统的分子独立内能和提供系统动理压强做功。}
 
-更具体地说：吸热确实是很多次系统分子和环境分子的微观碰撞的总和。这些微观碰撞一方面改变了系统分子的平均能量（改变系统局部内能)，另一方面又做了功（宏观上表现为动理压强做功）。
+更具体地说：吸热确实是很多次系统分子和环境分子的微观碰撞的总和。这些微观碰撞一方面改变了系统分子的平均能量（改变系统分子独立内能)，另一方面又做了功（宏观上表现为动理压强做功）。
 
 
 \ech
 \end{frame}
 
 \begin{frame}
-\chtitle{热量的显式方程}
+\chtitle{准静态过程热量的显式方程}
 \bch
-根据能均分定理，{\blue 局部内能只是温度的函数}，
+根据能均分定理，{\blue 分子独立内能只是温度的函数}，
 $$d U_{\rm local} = f(T) dT$$
 其中$f(T)$是由能均分定理决定的函数。
 
@@ -148,7 +161,7 @@ $$d U_{\rm local} = f(T) dT$$
 动理压强$p_k = \frac{2}{3}n_{\rm eff}\overline{\varepsilon}$，其中分子平均平动动能$\overline{\varepsilon}$和温度成正比，但这里的“有效分子数密度”$n_{\rm eff}$一般来讲不是真正的分子数密度，因为在大多数物质中分子并不能随心所欲地在整个体积内运动（只有理想气体分子可以）。我们可以一般地假设$n_{\rm eff}$是体积的函数，并把动理压强写成
 {\blue
 $$ p_k = g(V) T$$}
-这样，动理压强做功为$g(V)T dV$。最后得到热量的显式方程：$$\dbar Q = f(T)dT + Tg(V) dV$$
+这样，动理压强做功为$g(V)T dV$。最后得到准静态过程的热量：$$\dbar Q = f(T)dT + Tg(V) dV$$
 下面我们来求$f(T)$和$g(V)$。
 
 \ech
@@ -159,10 +172,10 @@ $$ p_k = g(V) T$$}
 \begin{frame}
 \chtitle{$f(T)$和$g(V)$的数学表达式}
 \bch
-显然，因为只和分子平均距离有关，{\blue 全局内能和内压强只是体积的函数}。所以固定体积时，
+显然，因为只和分子平均距离有关，{\blue 相互作用内能和内压强只是体积的函数}。所以固定体积时，
 
 \bitem
-\item{内能对温度的偏导数等于局部内能对温度的偏导数：
+\item{内能对温度的偏导数等于分子独立内能对温度的偏导数：
 $$ \pfrac UTV = \pfrac {U_{\rm local}}TV = f(T) $$
 也就是说$f(T)$其实就是$C_V$。}
 \item{
@@ -198,7 +211,7 @@ $T\pfrac pTV$是动理压强，其中$\pfrac pTV  = g(V)$
 \chtitle{内能和物态方程的关系}
 \bch
 固定温度，变化体积时：
-$$\dbar Q = T g(V)dV = T\pfrac pTV dV$$
+$$\dbar Q = T\pfrac pTV dV$$
 $$\dbar A = -pdV$$
 故
 $$dU = \left(T \pfrac pTV - p\right)dV$$
@@ -222,12 +235,12 @@ $$\pfrac UVT = T \pfrac pTV - p$$
 
 
 \begin{frame}
-\chtitle{定压比热容和定体比热容的普适关系式}
+\chtitle{准静态过程热量的第二种显式方程}
 \bch
-我们把体积的微分写成$dV = \pfrac VTp dT + \pfrac VpT dp$，则
 {\scriptsize
+我们把体积的微分写成$dV = \pfrac VTp dT + \pfrac VpT dp$，则
 \bea
-\dbar Q &=& C_V dT + T\pfrac pTV   \pfrac VTp dT + \pfrac VpT dp \newl
+\dbar Q &=& C_V dT + T\pfrac pTV  \left[ \pfrac VTp dT + \pfrac VpT dp \right]\newl
 &=& \left[C_V + T \pfrac pTV \pfrac VTp\right]dT +  T\pfrac pTV \pfrac VpT dp \newl
 &=& \left[C_V + T \pfrac pTV \pfrac VTp\right]dT - T\pfrac VTp dp 
 \eea
@@ -238,7 +251,7 @@ $$
 \frac{C_p-C_V}{T} =  \pfrac pTV \pfrac VTp 
 $$
 }
-以及{\blue 热量的第二种显式方程：
+以及{\blue 准静态过程热量的第二种显式方程：
 $$ \dbar Q = C_p dT - T\pfrac VTp dp$$
 }
 \ech
@@ -293,7 +306,7 @@ $$ \pfrac pTV = \frac{\Lambda^{\rm mol}}{T\left(V_\beta^{\rm mol} - V_\alpha^{\r
 \chtitle{范德瓦尔斯气体的内能}
 \bch
 {\small
-固定温度改变体积时，局部内能不变，全局内能因内压强做功而改变。
+固定温度改变体积时，分子独立内能不变，相互作用内能因内压强做功而改变。
 
 对范德瓦尔斯气体，我们假设了内压强$P_U = -\frac{a\nu^2}{V^2}$，故
 $$\pfrac UVT = \frac{a\nu^2}{V^2}$$
