@@ -39,18 +39,59 @@
 \end{frame}
 
 \begin{frame}
+\chtitle{参考答案}
+\bch
+{\scriptsize
+\bitem
+\item[1]{最概然速率是使得速率分布函数取到最大值的速率。}
+\item[2]{平均速率等于所有分子的速率之和除以总分子数。}
+\item[3]{方均根速率等于所有分子的速率平方之和除以总分子数再求平方根。}
+\item[4]{泻流速率是当容器有一小孔时，单位时间单位面积逸出的分子数与容器内分子数密度之比。}
+\item[5]{泻能速率是当容器有一小孔时，单位时间单位面积逸出的分子携带的能量与容器内的气体能量密度之比。}
+\item[6]{方均根速率 $\ge$ 平均速率 $\ge$ 泻流速率，第一个$\ge$号的证明见第六讲，第二个$\ge$号是对$\upsilon\ge \upsilon_x\theta(\upsilon_x)$求平均得到。 }
+\item[7]{泻能速率$\ge$泻流速率。设单位时间单位面积逸出分子数为$N_{\rm out}$，则泻流速率为
+$$ \upsilon_{n,\rm leak} = \frac{N_{\rm out}}{n} $$
+而泻能速率等于
+$$ \upsilon_{\varepsilon,\rm leak} = \frac{N_{\rm out}\overline{\varepsilon_{\rm out}}}{n\overline{\varepsilon}} $$
+其中逸出分子的平均能量$\overline{\varepsilon_{\rm out}}$不小于容器内分子的平均能量$\overline{\varepsilon}$（因为快分子更容易逸出），所以泻能速率$\ge$泄流速率。
+}
+\item[8]{最概然速率和其他速率之间的大小关系不确定，这是因为可以在速率分布函数的任何位置加一个无限窄的很高的峰。这个峰不影响其他任何需要对速率分布函数积分得到的速率，而最概然速率的位置由这个峰决定。}
+\eitem
+}
+\ech
+\end{frame}
+
+\begin{frame}
 \chtitle{不信的话来检测一下}
 \bch
 { 已知无量纲速度的概率密度函数正比于
 $$f(u_x,u_y,u_z) \propto u_x^2 e^{-u}$$
 $u = \sqrt{u_x^2+u_y^2+u_z^2}$为速率。
 \bitem
-\item{求$u$的概率密度函数}
-\item{求平均速率$\bar{u}$}
-\item{求方均根速率$u_{\rm rms}$}
-\item{求最概然速率$u_{\max}$}
-\item{求$x$方向的泻流速率$u_{n, x, \rm leak}$}
-\item{求$z$方向的泻流速率$u_{n, z, \rm leak}$}
+\item[1]{求$u$的概率密度函数}
+\item[2]{求平均速率$\bar{u}$}
+\item[3]{求方均根速率$u_{\rm rms}$}
+\item[4]{求最概然速率$u_{\max}$}
+\item[5]{求$x$方向的泻流速率$u_{n, x, \rm leak}$}
+\item[6]{求$z$方向的泻流速率$u_{n, z, \rm leak}$}
+\eitem
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{参考答案}
+\bch
+{\scriptsize
+\bitem
+\item[1]{转换到以$x$轴为南北极的球坐标系并对$\theta$ (或$\mu\equiv \cos\theta$), $\varphi$积分，得到$F(u) \propto \frac{1}{24} u^4 e^{-u}$。}
+\item[2]{$$\bar{u} = \frac{\int_0^\infty u^5 e^{-u} du}{\int_0^\infty u^4 e^{-u} du} = \frac{5!}{4!} = 5$$}
+\item[3]{$$ u_{\rm rms} = \sqrt{\frac{\int_0^\infty u^6 e^{-u} du}{\int_0^\infty u^4 e^{-u} du}} = \sqrt{\frac{6!}{4!}} = \sqrt{30}$$}
+\item[4]{对$F(u)$求最大值点($dF/du = 0$)得到$u_{\max} = 4$}
+\item[5]{$$u_{n, x, \rm leak} = \frac{\int_0^\infty u^5du \int_0^1\mu^3 d\mu \int_0^{2\pi} d\varphi}{\int_0^\infty u^4du \int_{-1}^1\mu^2 d\mu \int_0^{2\pi} d\varphi} = \frac{15}{8} $$}
+\item[6]{改取$z$轴为南北极方向，
+$$u_{n, z, \rm leak} = \frac{\int_0^\infty u^5du \int_0^{\pi/2} \cos\theta \sin^3\theta d\theta \int_0^{2\pi} \cos^2\varphi d\varphi}{\int_0^\infty u^4du \int_{0}^{\pi} \sin^3\theta d\theta \int_0^{2\pi} \cos^2\varphi d\varphi} = \frac{15}{16}$$}
 \eitem
 }
 \ech
