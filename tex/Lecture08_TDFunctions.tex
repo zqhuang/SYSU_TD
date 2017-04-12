@@ -54,24 +54,9 @@ $$\pfrac XYZ  \pfrac YZX \pfrac ZXY = -1$$
 \ech
 \end{frame}
 
-\begin{frame}
-\chtitle{什么，数学书早卖了？}
-\bch
-{\scriptsize
-证明：设状态方程为$S(X, Y, Z) = 0$，取状态方程曲面上的一条等高线($dZ = 0$)，在等高线上有
-$$\pfrac SX{YZ} dX + \pfrac SY{ZX} dY = 0$$
-又根据偏导数的定义，等高线上的$dX/dY$即$\pfrac XYZ$。故有
-$$\pfrac XYZ = -\frac{\pfrac SY{ZX}}{\pfrac SX{ZY}}$$
-同理可证
-$$\pfrac YZX = -\frac{\pfrac SZ{XY}}{\pfrac SY{ZX}}$$
-$$\pfrac ZXY = -\frac{\pfrac SX{YZ}}{\pfrac SZ{XY}}$$
-三式相乘即得证
-}
-\ech
-\end{frame}
 
 \begin{frame}
-\chtitle{第二种证法}
+\chtitle{什么，数学书早卖了？}
 \bch
 {\scriptsize
 证明：固定$Z$时，$dZ = 0$可以写成
@@ -103,7 +88,7 @@ $$
 \section{Essence of Heat}
 
 \begin{frame}
-\chtitle{热量的本质}
+\chtitle{热传导的本质}
 \bch
 
 \addfig{2}{think4.jpg}
@@ -113,9 +98,15 @@ $$
 \ech
 \end{frame}
 
+\begin{frame}
+\chtitle{热传导和对流}
+\bch
+热传导没有物质交换；对流有物质交换。
+\ech
+\end{frame}
 
 \begin{frame}
-\chtitle{热量的本质（续）}
+\chtitle{热传导的本质（续）}
 \bch
 我们把热一律写成“收入=存款+开支”的形式：
 $$ \dbar Q =  d U + \dbar A'$$
@@ -135,7 +126,7 @@ $$ d U_{\rm global} = - \dbar A'_U$$
 
 
 \begin{frame}
-\chtitle{热量的本质（续）}
+\chtitle{热传导的本质（续）}
 \bch
 因为$d U_{\rm global}$和$\dbar A'_U$互相抵消，热一律就可以写成：
 $$ \dbar Q = d U_{\rm local}  +\dbar A'_k  $$
@@ -148,6 +139,8 @@ $$ \dbar Q = d U_{\rm local}  +\dbar A'_k  $$
 
 \ech
 \end{frame}
+
+
 
 \begin{frame}
 \chtitle{准静态过程热量的显式方程}

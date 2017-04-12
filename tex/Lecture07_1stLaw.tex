@@ -89,9 +89,9 @@ $u = \sqrt{u_x^2+u_y^2+u_z^2}$为速率。
 \item[2]{$$\bar{u} = \frac{\int_0^\infty u^5 e^{-u} du}{\int_0^\infty u^4 e^{-u} du} = \frac{5!}{4!} = 5$$}
 \item[3]{$$ u_{\rm rms} = \sqrt{\frac{\int_0^\infty u^6 e^{-u} du}{\int_0^\infty u^4 e^{-u} du}} = \sqrt{\frac{6!}{4!}} = \sqrt{30}$$}
 \item[4]{对$F(u)$求最大值点($dF/du = 0$)得到$u_{\max} = 4$}
-\item[5]{$$u_{n, x, \rm leak} = \frac{\int_0^\infty u^5du \int_0^1\mu^3 d\mu \int_0^{2\pi} d\varphi}{\int_0^\infty u^4du \int_{-1}^1\mu^2 d\mu \int_0^{2\pi} d\varphi} = \frac{15}{8} $$}
+\item[5]{$$u_{n, x, \rm leak} = \frac{\int_0^\infty u^5e^{-u}du \int_0^1\mu^3 d\mu \int_0^{2\pi} d\varphi}{\int_0^\infty u^4e^{-u}du \int_{-1}^1\mu^2 d\mu \int_0^{2\pi} d\varphi} = \frac{15}{8} $$}
 \item[6]{改取$z$轴为南北极方向，
-$$u_{n, z, \rm leak} = \frac{\int_0^\infty u^5du \int_0^{\pi/2} \cos\theta \sin^3\theta d\theta \int_0^{2\pi} \cos^2\varphi d\varphi}{\int_0^\infty u^4du \int_{0}^{\pi} \sin^3\theta d\theta \int_0^{2\pi} \cos^2\varphi d\varphi} = \frac{15}{16}$$}
+$$u_{n, z, \rm leak} = \frac{\int_0^\infty u^5e^{-u}du \int_0^{\pi/2} \cos\theta \sin^3\theta d\theta \int_0^{2\pi} \cos^2\varphi d\varphi}{\int_0^\infty u^4e^{-u}du \int_{0}^{\pi} \sin^3\theta d\theta \int_0^{2\pi} \cos^2\varphi d\varphi} = \frac{15}{16}$$}
 \eitem
 }
 \ech
