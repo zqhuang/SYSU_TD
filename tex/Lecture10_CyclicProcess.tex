@@ -1,0 +1,261 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\input{titlepage.tex}
+\title{Lesson 10 Cyclic Process}
+  \author{}
+  \date{}
+\begin{document}
+\tpage{10}{循环过程}
+
+\section{Review}
+
+\begin{frame}
+\chtitle{上讲内容回顾}
+\bch 
+\bitem
+\item{态函数的大家庭：温度$T$，熵$S$，压强$p$，体积$V$，内能$U$，焓$H=U+pV$，自由能$F=U-TS$和自由焓$G=H-TS$}
+\item{内能的物理内涵:
+ $$\pfrac UVT = \pfrac p{\ln T}V - p $$
+其中$\pfrac p{\ln T}V$称为热压强}
+\item{准静态过程吸热量为按照定体比热容计算的吸热量加上热压强做功消耗的能量。}
+\eitem
+\ech
+\end{frame}
+
+\begin{frame}
+\bch
+先补充一下焓的物理内涵的探讨。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{焓的物理意义}
+\bch
+
+内能 $\Rightarrow$ 房子的价值
+
+\skipline
+
+焓$\Rightarrow$房子的价值 + 房子所占空间的价值
+
+\skiplines
+
+自然界很多过程都是等压过程而非等体过程，当体积发生变化时就需要对环境做功以“获得生存空间”。这部分额外做的功做为“无形资产”加到内能上，就是焓$H$。
+
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{焓和状态方程的关系}
+\bch
+因为$d G = - SdT + Vdp$是全微分，所以
+{\blue
+$$ \pfrac SpT = - \pfrac VTp$$
+}
+
+固定温度，变化压强时，
+$$ dH = TdS + Vdp = \left( T\pfrac SpT + V\right) dp = \left( V - T\pfrac VTp\right) dp$$
+即
+{\blue
+$$\pfrac HpT = V - \pfrac V{\ln T}p$$  
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题：实际气体的$\pfrac HpT$}
+\bch
+
+\addfig{0.8}{think3.jpg}
+
+对范德瓦尔斯气体，证明$\pfrac HpT$的一阶近似表达式为：
+$$\pfrac HpT \approx V\left(\frac{\nu b}{V} +\frac{2p_U}{p_k}\right)$$
+其中$p_U = -\frac{\nu^2 a}{V^2}$为内压强，$p_k = p - p_U$为动理压强。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{体积修正vs压强修正}
+\bch
+
+对范德瓦尔斯气体，$\pfrac HpT$的一阶近似表达式为：
+$$\pfrac HpT \approx V\left(\frac{\nu b}{V} +\frac{2p_U}{p_k}\right)$$
+注意$p_U/p_k<0$，所以上式的符号取决于体积修正$\nu b/V$和压强修正$p_U/p_k$的相对大小。
+
+实验表明，在{\blue 常温常压下，除了氢气，氦气等极小数小分子气体，大多数气体的内压强修正占主导，有$\pfrac HpT < 0$}。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{0.8}{think.jpg}
+
+常温常压下，“小分子”气体的体积修正项反而为主导，这是否自相矛盾？
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{0.8}{think2.jpg}
+
+在高温高压下所有气体均有$\pfrac HpT > 0$，试用范德瓦尔斯模型解释其物理原因。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{等焓过程}
+\bch
+\addfig{0.8}{songfen.jpg}
+证明等焓过程中温度随压强的变化为
+{\blue
+$$\pfrac TpH = - \frac{\pfrac HpT}{C_p}$$
+}
+\ech
+\end{frame}
+
+\section{Throttling Process}
+
+\begin{frame}
+\chtitle{节流过程和焦耳-汤姆孙效应}
+\bch
+
+\bmini{0.48}
+\addfig{2}{throttling_process.png}
+\emini
+\bmini{0.48}
+用多孔塞把绝热箱隔开，两端分别施以恒定压强$p_1$, $p_2$ （$p_1>p_2$）。
+\emini
+
+{\small
+
+假设一开始气体都在左边，体积为$V_1$，内能为$U_1$。经过一段时间，左边的气体都通过多孔塞被压到了右边，体积和内能变为$V_2$, $U_2$。
+
+那么由于左边活塞对气体做功$p_1V_1$，右边活塞对气体做功$-p_2V_2$，所以气体内能变化为
+
+$$U_2 - U_1  = p_1V_1 - p_2V_2$$
+
+即
+$$ U_1 + p_1V_1 = U_2 + p_2V_2 $$
+{\blue \bf 节流过程是等焓过程} （注意：节流过程一般不是准静态过程）
+
+}
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{焦耳-汤姆孙效应}
+\bch
+{\small
+我们可以根据焦耳-汤姆孙系数$\alpha \equiv \pfrac TpH$来计算的温度的升降。
+
+根据我们刚刚证明的
+$$\pfrac TpH = - \frac{\pfrac HpT}{C_p}$$
+知道$\pfrac TpH$和$\pfrac HpT$符号相反。
+
+也就是说，在常温常压下，氢气和氦气$\pfrac TpH < 0$， 大多数其他气体$\pfrac TpH > 0$。
+
+因为节流过程是降压过程，所以对{\bf 大部分气体（空气，氮气，氧气等）节流过程是降温过程（正节流效应），而对氢气和氦气是升温过程（负节流效应）}。这些效应统称{\bf 焦耳-汤姆孙效应}。
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{节流液化气体}
+\bch
+{\small
+根据范德瓦尔斯状态方程的定性分析，在高温高压下，气体呈现负节流效应，在低温低压下，气体呈现正节流效应。那么只要把气体降温到某个温度之下使得节流效应为正，则节流效应可以对气体无限降温使它最终液化。
+
+\skiplines
+
+请参考教材图3-15的节流液化装置。
+
+\skiplines
+
+\bitem
+\item{实际气体在极低温时未必符合范德瓦尔斯模型，具体例子可见教材140页图3-13，氢气在极低温时也有一部分负节流效应区域。这样氢气的节流液化过程就会有一定的参数限制。}
+\item{自由膨胀也能给气体降温。柯林斯液化机就是结合自由膨胀和节流两种方法。}
+\eitem
+
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{定体摩尔热容和定压摩尔热容的普适关系}
+\bch
+
+\addfig{1.}{songfen.jpg}
+
+证明定压摩尔热容$C_p$和定体摩尔热容$C_V$之间有如下关系
+{\blue
+$$\frac{C_p-C_V}{T} =  \pfrac VTp \pfrac pTV$$
+}
+
+{\small
+提示：定体摩尔热容和定压摩尔热容分别可以写成
+{\blue 
+$$C_V = \pfrac UTV$$
+$$C_p = \pfrac HTp$$}
+}
+
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{准静态过程吸热量的第二种显式方程}
+\bch
+
+对准静态过程
+
+{\scriptsize
+\bea
+\dbar Q &=& TdS  = dH - Vdp \newl
+&=& \pfrac HTp dT + \pfrac HpT dp - Vdp \newl
+&=& C_p dT + \left( V - \pfrac V{\ln T}p\right) dp - Vdp \newl
+&=& C_p dT - \pfrac V{\ln T}p dp
+\eea
+}
+即{\blue 准静态过程吸热量的第二种显式方程：
+$$ \dbar Q = C_p dT - \pfrac V{\ln T}p dp$$
+}
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{本讲内容}
+\bch
+\bitem
+\item{循环过程}
+\item{理想气体卡诺循环及其效率}
+\eitem
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{第十周作业（序号接第九周）}
+\bch
+\bitem
+\item[24]{ 教材习题3-14}
+\eitem
+\ech
+\end{frame}
+
+\end{document}
