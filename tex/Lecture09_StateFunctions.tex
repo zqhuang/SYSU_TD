@@ -24,6 +24,17 @@
 \section{Math}
 
 \begin{frame}
+\chtitle{据说你们学过多元函数}
+\bch
+
+根据以往经验，我觉得你们可能学了假多元函数。
+
+\addfig{2.5}{miji.jpg}
+
+\ech
+\end{frame}
+
+\begin{frame}
 \chtitle{数学准备知识I：循环偏微分乘积定理}
 \bch
 设三个变量$X$, $Y$, $Z$满足某状态方程，则
@@ -199,7 +210,6 @@ $$d\ln \lambda = \left(\frac{\partial f}{\partial y} - \frac{\partial g}{\partia
 \ech
 \end{frame}
 
-
 \section{Extensive/Intensive Quantities}
 
 
@@ -311,7 +321,8 @@ $$ T(\clubsuit + \spadesuit) = \mathrm{undefined}$$
 $$ dU + pdV$$
 其中$U$为内能，$p$为压强，$V$为体积。
 
-这对应于全微分判定法则中的$f = 1$, $g = p$的情形，而
+这对应于全微分判定法则中的$f = 1$, $g = p$的情形。
+用全微分判断法则来判断：
 $\pfrac fVU = 0$, $\pfrac gUV=\pfrac pUV$一般不为零，故$dU + pdV$一般不是全微分。
 
 \ech
@@ -434,11 +445,13 @@ dG &=& -SdT + Vdp \newl
 \end{frame}
 
 
-\section{U and H}
+\section{Physics of Internal Energy}
 
 \begin{frame}
 \bch
-下面我们来发掘一下内能的物理内涵。
+下面我们来挖掘一下内能的物理内涵。
+
+\addfig{3}{wajueji.png}
 \ech
 \end{frame}
 
@@ -470,7 +483,7 @@ $$\pfrac UVT = \pfrac p{\ln T}V - p$$
 $$\dbar Q = C_V dT + \pfrac p{\ln T}V dV$$}
 我们把$\pfrac p{\ln T}V$称为{\bf 热压强}。即:
 
-{\blue 一般过程的吸热量等于按定体比热容计算的吸热量，再加上热压强做功消耗的能量。}
+{\blue 吸热量等于按定体比热容计算的吸热量，再加上热压强做功消耗的能量。}
 
 \ech
 \end{frame}
@@ -498,6 +511,8 @@ $$\dbar Q = C_V dT + \pfrac p{\ln T}V dV$$}
 {\small
 对范德瓦尔斯气体，我们假设了内压强$P_U = -\frac{a\nu^2}{V^2}$，按上面思考题的讨论结果，有
 $$\pfrac UVT = -p_U = \frac{a\nu^2}{V^2}$$
+{\small (也可对范德瓦尔斯方程用$\pfrac UVT = \pfrac p{\ln T}V - p$直接计算得到)}
+
 由此可以积分得到
 $$U(V, T) = \int_{T_0}^T C_V(T) dT -\frac{\nu^2a}{V} + U_0$$
 }
@@ -516,7 +531,7 @@ $$U(V, T) = \int_{T_0}^T C_V(T) dT -\frac{\nu^2a}{V} + U_0$$
 \begin{frame}
 \chtitle{克拉珀龙方程}
 \bch
-当物质从$\alpha$态相变到$\beta$态，温度固定在相变温度$T$，则可以计算相变潜热为
+当物质从$\alpha$态相变到$\beta$态，温度固定在相变温度$T$，则相变潜热为热压强做功消耗的能量
 $$ \Lambda^{\rm mol} = \pfrac p{\ln T}V \Delta V = T \pfrac pTV \left(V_{\beta}^{\rm mol}-V_{\alpha}^{\rm mol}\right)$$
 由此即得到{\blue 克拉珀龙方程
 $$\pfrac pTV = \frac{\Lambda^{\rm mol}}{T \left(V_{\beta}^{\rm mol}-V_{\alpha}^{\rm mol}\right)} $$}
@@ -535,7 +550,11 @@ $$\pfrac pTV = \frac{\Lambda^{\rm mol}}{T \left(V_{\beta}^{\rm mol}-V_{\alpha}^{
 \bitem
 \item[21]{ 教材习题3-1}
 \item[22]{ 教材习题3-11}
-\item[24]{ 对$pVT$系统证明$\pfrac SpT = - \pfrac VTp$}
+\item[23]{ 对$pVT$系统，利用自由焓$G$的全微分表达式证明
+$$\pfrac SpT = - \pfrac VTp$$
+然后考虑温度固定，压强变化$dp$时焓的变化$dH$，证明
+$$\pfrac HpT = V - \pfrac V{\ln T}p$$
+}
 \eitem
 \ech
 \end{frame}
