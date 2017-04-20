@@ -1,11 +1,11 @@
 \documentclass[CJK]{beamer}
 \input{macros.tex}
 \input{titlepage.tex}
-\title{Lesson 10 Cyclic Process}
+\title{Lesson 10 Enthalpy}
   \author{}
   \date{}
 \begin{document}
-\tpage{10}{循环过程}
+\tpage{10}{焓}
 
 \section{Review}
 
@@ -17,14 +17,31 @@
 \item{内能的物理内涵:
  $$\pfrac UVT = \pfrac p{\ln T}V - p $$
 其中$\pfrac p{\ln T}V$称为热压强}
-\item{准静态过程吸热量为按照定体比热容计算的吸热量加上热压强做功消耗的能量。}
+\item{准静态过程吸热量为按照定体比热容计算的吸热量加上热压强做功消耗的能量:
+$$ \dbar Q = C_V dT + \pfrac p{\ln T}V dV$$}
 \eitem
 \ech
 \end{frame}
 
 \begin{frame}
+\chtitle{本讲内容}
 \bch
-先补充一下焓的物理内涵的探讨。
+\bitem
+\item{焓和定压热容}
+\item{焦耳实验及其改进}
+\item{焦耳-汤姆逊效应}
+\item{节流膨胀液化气体}
+\item{化学反应和生成焓}
+\eitem
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{挖掘一下焓的物理内涵}
+\bch
+
+\addfig{3.5}{wajueji_H.png}
+
 \ech
 \end{frame}
 
@@ -45,6 +62,59 @@
 
 \ech
 \end{frame}
+
+
+\begin{frame}
+\chtitle{定压热容}
+\bch
+\addfig{0.8}{songfen.jpg}
+
+证明定压热容和焓之间的关系：
+$$ C_p = \pfrac HTp $$
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{用定压热容计算准静态过程吸热量}
+\bch
+
+对准静态过程
+
+{\scriptsize
+\bea
+\dbar Q &=& TdS  = dH - Vdp \newl
+&=& \pfrac HTp dT + \pfrac HpT dp - Vdp \newl
+&=& C_p dT + \left( V - \pfrac V{\ln T}p\right) dp - Vdp \newl
+&=& C_p dT - \pfrac V{\ln T}p dp
+\eea
+}
+即{\blue 准静态过程吸热量：
+$$ \dbar Q = C_p dT - \pfrac V{\ln T}p dp$$
+}
+
+请和定体热容计算吸热量的公式比较。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{定体摩尔热容和定压摩尔热容的普适关系}
+\bch
+
+\addfig{1.}{songfen2.jpg}
+
+证明定压摩尔热容$C_p$和定体摩尔热容$C_V$之间有如下关系
+{\blue
+$$\frac{C_p-C_V}{T} =  \pfrac VTp \pfrac pTV$$
+}
+
+\ech
+\end{frame}
+
+
+
 
 \begin{frame}
 \chtitle{焓和状态方程的关系}
@@ -193,67 +263,15 @@ $$\pfrac TpH = - \frac{\pfrac HpT}{C_p}$$
 \ech
 \end{frame}
 
-\begin{frame}
-\chtitle{定体摩尔热容和定压摩尔热容的普适关系}
-\bch
-
-\addfig{1.}{songfen.jpg}
-
-证明定压摩尔热容$C_p$和定体摩尔热容$C_V$之间有如下关系
-{\blue
-$$\frac{C_p-C_V}{T} =  \pfrac VTp \pfrac pTV$$
-}
-
-{\small
-提示：定体摩尔热容和定压摩尔热容分别可以写成
-{\blue 
-$$C_V = \pfrac UTV$$
-$$C_p = \pfrac HTp$$}
-}
-
-\ech
-\end{frame}
-
-
-
-\begin{frame}
-\chtitle{准静态过程吸热量的第二种显式方程}
-\bch
-
-对准静态过程
-
-{\scriptsize
-\bea
-\dbar Q &=& TdS  = dH - Vdp \newl
-&=& \pfrac HTp dT + \pfrac HpT dp - Vdp \newl
-&=& C_p dT + \left( V - \pfrac V{\ln T}p\right) dp - Vdp \newl
-&=& C_p dT - \pfrac V{\ln T}p dp
-\eea
-}
-即{\blue 准静态过程吸热量的第二种显式方程：
-$$ \dbar Q = C_p dT - \pfrac V{\ln T}p dp$$
-}
-
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{本讲内容}
-\bch
-\bitem
-\item{循环过程}
-\item{理想气体卡诺循环及其效率}
-\eitem
-\ech
-\end{frame}
-
-
 
 \begin{frame}
 \chtitle{第十周作业（序号接第九周）}
 \bch
 \bitem
-\item[24]{ 教材习题3-14}
+\item[24]{ 教材习题3-13}
+\item[25]{ 教材习题3-14}
+\item[26]{ 对$pVT$系统，证明
+$$C_p \pfrac TpS = T \pfrac VTp $$ }
 \eitem
 \ech
 \end{frame}
