@@ -24,23 +24,111 @@ $$ \dbar Q = C_V dT + \pfrac p{\ln T}V dV$$}
 \end{frame}
 
 \begin{frame}
-\chtitle{本讲内容}
+\chtitle{百前的困惑}
 \bch
-\bitem
-\item{焓和定压热容}
-\item{焦耳实验及其改进}
-\item{焦耳-汤姆逊效应}
-\item{节流膨胀液化气体}
-\item{化学反应和生成焓}
-\eitem
+在第七讲介绍内能时，我们用脚趾头就想出来了实际气体$\pfrac UVT > 0$（或者等价地$\pfrac UpT < 0$）
+
+而在一两百年之前，物理学家们还在焦头烂额地做实验测量实际气体的$\pfrac UVT $：
+\bmini{0.35}
+盖吕萨克实验: 打开活塞，空气自由膨胀后测量温度变化。
+\emini
+\bmini{0.6}
+\addfig{1.8}{GLexperiment.jpg}
+\emini
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{送分题}
+\bch
+试先证明:
+$$\pfrac TVU = -\frac{1}{C_V} \pfrac UVT $$
+然后根据脚趾头定律（$\pfrac UVT >0$）说明盖吕萨克实验中气体自由绝热膨胀（假设瓶子是绝热的）后温度上升还是下降？
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{盖吕萨克实验的结果}
+\bch
+装置太简陋（漏），没测出温度变化 \bye
 \ech
 \end{frame}
 
 \begin{frame}
-\chtitle{挖掘一下焓的物理内涵}
+\chtitle{焦耳实验}
+\bch
+焦耳意识到瓶子可能漏热，就……
+
+\bmini{0.35}
+焦耳实验: 打开活塞，空气自由膨胀后测量水温的变化。
+\emini
+\bmini{0.6}
+\addfig{2}{Joule_experiment.jpg}
+\emini
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{焦耳实验的结果}
+\bch
+温度计不够准，还是没测出温度变化 \bye
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{后来}
+\bch
+1932年，Rossini和Frandsen改进了焦耳实验，终于测出了
+$$\pfrac UpT < 0 $$
+
+因为测出来了很没意思，细节不讲了（自己看书\bye)
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{脚趾头想不出来的问题}
+\bch
+实际气体固定温度增大压强（减小体积）时，因分子间的吸引势能变低，故内能变少。
+
+\addfig{0.5}{think2.jpg}
+
+那么，当固定温度增大压强（减小体积）时，焓$H\equiv U + pV$会如何变化呢？
+
+\skipline
+
+\bye反正我的脚趾头想不出来。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{本讲内容}
+\bch
+\bitem
+\item{焓和定压热容}
+\item{焦耳-汤姆逊效应}
+\item{节流膨胀液化气体}
+\item{化学反应和生成焓}
+\item{关于内能和焓的一些练习}
+\eitem
+\ech
+\end{frame}
+
+\section{Enthalpy}
+
+\begin{frame}
+\chtitle{本讲仍然考虑$pVT$系统，挖掘一下焓的物理内涵}
 \bch
 
-\addfig{3.5}{wajueji_H.png}
+\addfig{3.2}{wajueji_H.png}
 
 \ech
 \end{frame}
@@ -53,15 +141,33 @@ $$ \dbar Q = C_V dT + \pfrac p{\ln T}V dV$$}
 
 \skipline
 
-焓$\Rightarrow$房子的价值 + 房子所占空间的价值
+焓 $\Rightarrow$ 房子的价值 + 房子所占空间的价值
 
-\skiplines
 
-自然界很多过程都是等压过程而非等体过程，当体积发生变化时就需要对环境做功以“获得生存空间”。这部分额外做的功做为“无形资产”加到内能上，就是焓$H$。
+\addfig{2}{houses.jpg}
+
+（空间价值有时候可以占主导）
 
 
 \ech
 \end{frame}
+
+\begin{frame}
+\chtitle{焓的物理意义}
+\bch
+
+
+很多过程都是等压过程（例如开放环境下的化学反应，自然界物态变化等）。
+
+\lfig{1.1}{chemical_reaction.jpg}\hspace{0.1in}\lfig{1.4}{ice_melt.jpg}
+
+当体积发生变化时就需要对环境做功以“获得生存空间”。这部分额外做的功做为“无形资产”加到内能上，就是焓$H$。
+
+$$ H  \equiv U + pV$$ 
+
+\ech
+\end{frame}
+
 
 
 \begin{frame}
@@ -75,35 +181,23 @@ $$ C_p = \pfrac HTp $$
 \ech
 \end{frame}
 
-
 \begin{frame}
-\chtitle{用定压热容计算准静态过程吸热量}
+\chtitle{定压热容}
 \bch
+\addfig{0.8}{songfen2.jpg}
 
-对准静态过程
-
-{\scriptsize
-\bea
-\dbar Q &=& TdS  = dH - Vdp \newl
-&=& \pfrac HTp dT + \pfrac HpT dp - Vdp \newl
-&=& C_p dT + \left( V - \pfrac V{\ln T}p\right) dp - Vdp \newl
-&=& C_p dT - \pfrac V{\ln T}p dp
-\eea
-}
-即{\blue 准静态过程吸热量：
-$$ \dbar Q = C_p dT - \pfrac V{\ln T}p dp$$
-}
-
-请和定体热容计算吸热量的公式比较。
+证明定压热容和熵之间的关系：
+$$ C_p = T\pfrac STp $$
 
 \ech
 \end{frame}
+
 
 \begin{frame}
 \chtitle{定体摩尔热容和定压摩尔热容的普适关系}
 \bch
 
-\addfig{1.}{songfen2.jpg}
+\addfig{1.}{think3.jpg}
 
 证明定压摩尔热容$C_p$和定体摩尔热容$C_V$之间有如下关系
 {\blue
@@ -134,16 +228,49 @@ $$\pfrac HpT = V - \pfrac V{\ln T}p$$
 \end{frame}
 
 
+
 \begin{frame}
-\chtitle{思考题：实际气体的$\pfrac HpT$}
+\chtitle{焓和状态方程的关系应用举例I：用定压热容计算准静态过程吸热量}
 \bch
 
-\addfig{0.8}{think3.jpg}
+对准静态过程
 
-对范德瓦尔斯气体，证明$\pfrac HpT$的一阶近似表达式为：
-$$\pfrac HpT \approx V\left(\frac{\nu b}{V} +\frac{2p_U}{p_k}\right)$$
-其中$p_U = -\frac{\nu^2 a}{V^2}$为内压强，$p_k = p - p_U$为动理压强。
+{\scriptsize
+\bea
+\dbar Q &=& TdS  = dH - Vdp \newl
+&=& \pfrac HTp dT + \pfrac HpT dp - Vdp \newl
+&=& C_p dT + \left( V - \pfrac V{\ln T}p\right) dp - Vdp \newl
+&=& C_p dT - \pfrac V{\ln T}p dp
+\eea
+}
+即{\blue 准静态过程吸热量：
+$$ \dbar Q = C_p dT - \pfrac V{\ln T}p dp$$
+}
 
+请和定体热容计算吸热量的公式比较。
+
+\ech
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\chtitle{焓和状态方程的关系应用举例II：实际气体的$\pfrac HpT$}
+\bch
+{\small
+对范德瓦尔斯气体，
+$$\left(p + \frac{\nu a^2}{V^2}\right) \left(V - \nu b\right) = \nu RT$$
+固定$p$，两边取微分，并只保留到一阶近似，得到
+$$ \left(1+ 2\frac{p_U}{p_k}\right) p_k dV \approx \nu R dT $$
+其中$p_U = -\frac{a \nu^2}{V^2}$为内压强，$p_k = p - p_U$为动理压强。
+
+$$T\pfrac VTp  \approx  \frac{\nu RT}{p_k }  \left(1- 2\frac{p_U}{p_k} \right) = V\left(1-\frac{\nu b}{V} - 2\frac{p_U}{p_k}\right)$$
+
+
+$$\pfrac HpT = V - T\pfrac VTp \approx V\left(\frac{\nu b}{V} +\frac{2p_U}{p_k}\right)$$
+}
 \ech
 \end{frame}
 
@@ -181,6 +308,8 @@ $$\pfrac HpT \approx V\left(\frac{\nu b}{V} +\frac{2p_U}{p_k}\right)$$
 \ech
 \end{frame}
 
+\section{Throttling Process}
+
 
 \begin{frame}
 \chtitle{等焓过程}
@@ -193,7 +322,7 @@ $$\pfrac TpH = - \frac{\pfrac HpT}{C_p}$$
 \ech
 \end{frame}
 
-\section{Throttling Process}
+
 
 \begin{frame}
 \chtitle{节流过程和焦耳-汤姆孙效应}
@@ -241,28 +370,51 @@ $$\pfrac TpH = - \frac{\pfrac HpT}{C_p}$$
 \ech
 \end{frame}
 
-
 \begin{frame}
-\chtitle{节流液化气体}
+\chtitle{转换曲线图}
 \bch
-{\small
-根据范德瓦尔斯状态方程的定性分析，在高温高压下，气体呈现负节流效应，在低温低压下，气体呈现正节流效应。那么只要把气体降温到某个温度之下使得节流效应为正，则节流效应可以对气体无限降温使它最终液化。
+
+\bmini{0.4}
+按照范德瓦尔斯模型，气体在高温高压是负节流效应，低温低压是正节流效应。
 
 \skiplines
 
-请参考教材图3-15的节流液化装置。
-
-\skiplines
-
-\bitem
-\item{实际气体在极低温时未必符合范德瓦尔斯模型，具体例子可见教材140页图3-13，氢气在极低温时也有一部分负节流效应区域。这样氢气的节流液化过程就会有一定的参数限制。}
-\item{自由膨胀也能给气体降温。柯林斯液化机就是结合自由膨胀和节流两种方法。}
-\eitem
-
-}
+（燃鹅）实际气体在极低温时一般不符合范德瓦尔斯模型，实际的结果如右图所示（正负节流的交界线称为转换曲线)。
+\emini
+\bmini{0.55}
+\lfig{2}{throttling_curve.png}
+\emini
 \ech
 \end{frame}
 
+
+\begin{frame}
+\chtitle{节流液化气体的原理}
+\bch
+{\bf (绝热膨胀或其他方法)预冷 $\rightarrow$进入正节流区域$\rightarrow$节流降温$\rightarrow$液化}
+
+\skiplines
+
+请参考教材P143图3-15 （凡是比系鞋带说明图复杂的图我都拒绝放到讲义里\bye)
+
+\skiplines
+
+目前定型的液化机：柯林斯机（原理：绝热膨胀法+节流）
+\ech
+\end{frame}
+
+\section{Chemical Reaction}
+
+\begin{frame}
+\chtitle{化学反应焓}
+\bch
+很多化学反应是在大气中（定压）进行的，所以吸（放）热量等于焓的增（减）量。“反应热”其实应该叫做“反应焓”。
+
+\skiplines
+
+化学反应焓的计算{\bf \Huge 不考}。
+\ech
+\end{frame}
 
 \begin{frame}
 \chtitle{第十周作业（序号接第九周）}
