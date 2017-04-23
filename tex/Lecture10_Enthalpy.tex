@@ -5,7 +5,7 @@
   \author{}
   \date{}
 \begin{document}
-\tpage{10}{焓}
+\tpage{10}{焓和定压热容}
 
 \section{Review}
 
@@ -43,9 +43,24 @@ $$ \dbar Q = C_V dT + \pfrac p{\ln T}V dV$$}
 \begin{frame}
 \chtitle{送分题}
 \bch
-试先证明:
-$$\pfrac TVU = -\frac{1}{C_V} \pfrac UVT $$
-然后根据脚趾头定律（$\pfrac UVT >0$）说明盖吕萨克实验中气体自由绝热膨胀（假设瓶子是绝热的）后温度上升还是下降？
+\addfig{0.9}{songfen.jpg}
+请用脚趾头思考：盖吕萨克实验中气体自由绝热膨胀（假设瓶子是绝热的）后温度应该上升还是下降？
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{送分题}
+\bch
+\addfig{0.9}{songfen2.jpg}
+实际气体$\pfrac UVT>0$（因增大体积使得分子间势能增大）。绝热自由膨胀既无吸热也无做功，故内能不变。根据循环偏微分乘积定理有
+$$\pfrac TVU = -\pfrac TUV \pfrac UVT = -\frac{1}{C_V} \pfrac UVT < 0$$
+即得出自由绝热膨胀后温度应该降低。
+
+\skipline
+
+但是，绝热自由膨胀不是准静态过程，上面这样推导是否有bug？
+
 \ech
 \end{frame}
 
@@ -53,7 +68,10 @@ $$\pfrac TVU = -\frac{1}{C_V} \pfrac UVT $$
 \begin{frame}
 \chtitle{盖吕萨克实验的结果}
 \bch
-装置太简陋（漏），没测出温度变化 \bye
+
+\addfig{1.5}{cry2.jpg}
+
+装置太简陋（漏），没测出温度变化 
 \ech
 \end{frame}
 
@@ -76,7 +94,10 @@ $$\pfrac TVU = -\frac{1}{C_V} \pfrac UVT $$
 \begin{frame}
 \chtitle{焦耳实验的结果}
 \bch
-温度计不够准，还是没测出温度变化 \bye
+
+\addfig{1.5}{cry1.png}
+
+温度计不够准，没测出温度变化 
 \ech
 \end{frame}
 
@@ -86,8 +107,9 @@ $$\pfrac TVU = -\frac{1}{C_V} \pfrac UVT $$
 \bch
 1932年，Rossini和Frandsen改进了焦耳实验，终于测出了
 $$\pfrac UpT < 0 $$
+（教材138-139页）
 
-因为测出来了很没意思，细节不讲了（自己看书\bye)
+因为测出来了很没意思，细节不讲了\bye
 \ech
 \end{frame}
 
@@ -100,10 +122,6 @@ $$\pfrac UpT < 0 $$
 \addfig{0.5}{think2.jpg}
 
 那么，当固定温度增大压强（减小体积）时，焓$H\equiv U + pV$会如何变化呢？
-
-\skipline
-
-\bye反正我的脚趾头想不出来。
 
 \ech
 \end{frame}
@@ -177,7 +195,7 @@ $$ H  \equiv U + pV$$
 
 证明定压热容和焓之间的关系：
 $$ C_p = \pfrac HTp $$
-
+并解释其物理意义。
 \ech
 \end{frame}
 
@@ -221,89 +239,47 @@ $$ \pfrac SpT = - \pfrac VTp$$
 固定温度，变化压强时，
 $$ dH = TdS + Vdp = \left( T\pfrac SpT + V\right) dp = \left( V - T\pfrac VTp\right) dp$$
 即
+
 {\blue
 $$\pfrac HpT = V - \pfrac V{\ln T}p$$  
 }
-\ech
-\end{frame}
 
-
-
-\begin{frame}
-\chtitle{焓和状态方程的关系应用举例I：用定压热容计算准静态过程吸热量}
-\bch
-
-对准静态过程
-
-{\scriptsize
-\bea
-\dbar Q &=& TdS  = dH - Vdp \newl
-&=& \pfrac HTp dT + \pfrac HpT dp - Vdp \newl
-&=& C_p dT + \left( V - \pfrac V{\ln T}p\right) dp - Vdp \newl
-&=& C_p dT - \pfrac V{\ln T}p dp
-\eea
-}
-即{\blue 准静态过程吸热量：
-$$ \dbar Q = C_p dT - \pfrac V{\ln T}p dp$$
-}
-
-请和定体热容计算吸热量的公式比较。
+下面我们用范德瓦尔斯模型来研究实际气体$\pfrac HpT$的符号。
 
 \ech
 \end{frame}
 
 
 
-
-
 \begin{frame}
-\chtitle{焓和状态方程的关系应用举例II：实际气体的$\pfrac HpT$}
+\chtitle{实际气体的$\pfrac HpT$}
 \bch
 {\small
-对范德瓦尔斯气体，
-$$\left(p + \frac{\nu a^2}{V^2}\right) \left(V - \nu b\right) = \nu RT$$
-固定$p$，两边取微分，并只保留到一阶近似，得到
-$$ \left(1+ 2\frac{p_U}{p_k}\right) p_k dV \approx \nu R dT $$
-其中$p_U = -\frac{a \nu^2}{V^2}$为内压强，$p_k = p - p_U$为动理压强。
 
-$$T\pfrac VTp  \approx  \frac{\nu RT}{p_k }  \left(1- 2\frac{p_U}{p_k} \right) = V\left(1-\frac{\nu b}{V} - 2\frac{p_U}{p_k}\right)$$
+对范德瓦尔斯气体，由状态方程
+$$\left(p + \frac{\nu^2 a}{V^2}\right) \left(V - \nu b\right) = \nu RT$$
+以及焓和状态方程的关系，得到
+$$\pfrac HpT = V \left(\delta_V - \frac{2\delta_p}{1+2\delta_p}\right) \frac{1+2\delta_p}{1-2\delta_p\left(1-\delta_V\right)}$$
+其中$\delta_p \equiv \frac{\frac{\nu^2a}{V^2}}{p+\frac{\nu^2 a}{V^2}}$为压强修正的大小，$\delta_V\equiv \frac{\nu b}{V}$为体积修正的大小。
 
+\bitem
+\item{小修正情形：在$\delta_p \ll 1$, $\delta_V \ll 1$的情况下，很容易推算出：当$T>\frac{2a}{bR}$时,$\pfrac HpT>0$；反之则$\pfrac HpT<0$}
+\item{大修正情形：在极低温(接近液化温度)以及高压的情形，$\delta_V\rightarrow 1$，显然$\pfrac HpT>0$。}
+\eitem
 
-$$\pfrac HpT = V - T\pfrac VTp \approx V\left(\frac{\nu b}{V} +\frac{2p_U}{p_k}\right)$$
 }
 \ech
 \end{frame}
 
-\begin{frame}
-\chtitle{体积修正vs压强修正}
-\bch
-
-对范德瓦尔斯气体，$\pfrac HpT$的一阶近似表达式为：
-$$\pfrac HpT \approx V\left(\frac{\nu b}{V} +\frac{2p_U}{p_k}\right)$$
-注意$p_U/p_k<0$，所以上式的符号取决于体积修正$\nu b/V$和压强修正$p_U/p_k$的相对大小。
-
-实验表明，在{\blue 常温常压下，除了氢气，氦气等极小数小分子气体，大多数气体的内压强修正占主导，有$\pfrac HpT < 0$}。
-
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{思考题}
-\bch
-\addfig{0.8}{think.jpg}
-
-常温常压下，“小分子”气体的体积修正项反而为主导，这是否自相矛盾？
-
-\ech
-\end{frame}
 
 
 \begin{frame}
-\chtitle{思考题}
+\chtitle{实际气体的$\pfrac HpT$（续）}
 \bch
-\addfig{0.8}{think2.jpg}
+由前面的讨论，我们定性地知道$\pfrac HpT>0$的区域近似为满足$T<\frac{2a}{bR}$的高温区域，以及体积修正比较大的低温高压区域。
 
-在高温高压下所有气体均有$\pfrac HpT > 0$，试用范德瓦尔斯模型解释其物理原因。
+下图是对某个范德瓦尔斯气体的数值计算结果：
+\addfig{2}{dHdp.pdf}
 
 \ech
 \end{frame}
@@ -325,7 +301,7 @@ $$\pfrac TpH = - \frac{\pfrac HpT}{C_p}$$
 
 
 \begin{frame}
-\chtitle{节流过程和焦耳-汤姆孙效应}
+\chtitle{节流过程}
 \bch
 
 \bmini{0.48}
@@ -354,19 +330,23 @@ $$ U_1 + p_1V_1 = U_2 + p_2V_2 $$
 
 
 \begin{frame}
-\chtitle{焦耳-汤姆孙效应}
+\chtitle{焦耳-汤姆孙系数}
 \bch
-{\small
-我们可以根据焦耳-汤姆孙系数$\alpha \equiv \pfrac TpH$来计算的温度的升降。
+我们用焦耳-汤姆孙系数$\alpha \equiv \pfrac TpH$来计算的温度的升降。如果$\alpha>0$，则称为正节流效应，温度随压强降低而降低（注意节流过程总是压强降低的过程）。反之若$\alpha<0$，则为负节流效应，温度随压强降低而升高。
 
 根据我们刚刚证明的
 $$\pfrac TpH = - \frac{\pfrac HpT}{C_p}$$
 知道$\pfrac TpH$和$\pfrac HpT$符号相反。
 
-也就是说，在常温常压下，氢气和氦气$\pfrac TpH < 0$， 大多数其他气体$\pfrac TpH > 0$。
+\ech
+\end{frame}
 
-因为节流过程是降压过程，所以对{\bf 大部分气体（空气，氮气，氧气等）节流过程是降温过程（正节流效应），而对氢气和氦气是升温过程（负节流效应）}。这些效应统称{\bf 焦耳-汤姆孙效应}。
-}
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{1}{think3.jpg}
+
+既然节流过程不是准静态过程，为什么能用$\pfrac TpH$来计算的温度的升降呢？
 \ech
 \end{frame}
 
@@ -375,11 +355,15 @@ $$\pfrac TpH = - \frac{\pfrac HpT}{C_p}$$
 \bch
 
 \bmini{0.4}
-按照范德瓦尔斯模型，气体在高温高压是负节流效应，低温低压是正节流效应。
+{
+\small
+前面我们按照范德瓦尔斯模型定性地计算了气体的$\pfrac HpT$的符号。焦耳-汤姆孙系数$\pfrac TpH$则符号相反，如右图所示。
 
-\skiplines
+\skipline
 
-（燃鹅）实际气体在极低温时一般不符合范德瓦尔斯模型，实际的结果如右图所示（正负节流的交界线称为转换曲线)。
+正负节流的交界线称为转换曲线。
+
+}
 \emini
 \bmini{0.55}
 \lfig{2}{throttling_curve.png}
@@ -389,13 +373,35 @@ $$\pfrac TpH = - \frac{\pfrac HpT}{C_p}$$
 
 
 \begin{frame}
+\chtitle{焦耳-汤姆孙效应}
+\bch
+
+在常温常压下，气体的体积修正和压强修正总是很小。气体的正节流条件$\pfrac TpH>0$等价于$T<\frac{2a}{Rb} \approx \frac{27}{4} T_K$ (我们曾推导了范德瓦尔斯气体的临界温度$T_K = \frac{8a}{27Rb}$)。
+
+\skipline
+
+在教材52页查得，氢气和氦气的临界温度较低，$\frac{27}{4} T_K$在室温之下，而其他大部分气体的临界温度较高，$\frac{27}{4} T_K$在室温之上。所以在{\bf 常温常压下，氢气和氦气有负节流（升温）效应。而其他大部分气体（空气，氮气，氧气等）有正节流（降温）效应}。这些效应统称{\bf 焦耳-汤姆孙效应}。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{1.}{think3.jpg}
+
+节流转变温度$\frac{2a}{Rb}$可以看成压强修正和体积修正的比值，为什么小分子气体的节流转变温度反而更低呢?
+
+\ech
+\end{frame}
+
+\begin{frame}
 \chtitle{节流液化气体的原理}
 \bch
-{\bf (绝热膨胀或其他方法)预冷 $\rightarrow$进入正节流区域$\rightarrow$节流降温$\rightarrow$液化}
+{\bf (绝热膨胀或其他方法)预冷到节流转变温度之下（进入正节流区域）$\rightarrow$反复节流降温$\rightarrow$液化}
 
 \skiplines
 
-请参考教材P143图3-15 （凡是比系鞋带说明图复杂的图我都拒绝放到讲义里\bye)
+请参考教材P143图3-15 
 
 \skiplines
 
@@ -416,12 +422,14 @@ $$\pfrac TpH = - \frac{\pfrac HpT}{C_p}$$
 \ech
 \end{frame}
 
+
 \begin{frame}
 \chtitle{第十周作业（序号接第九周）}
 \bch
 \bitem
 \item[24]{ 教材习题3-13}
-\item[25]{ 教材习题3-14}
+\item[25]{ 对$pVT$系统，利用焓和状态方程的关系证明准静态过程中的吸热量为
+$$ \dbar Q = C_p dT - \pfrac V{\ln T}p dp$$}
 \item[26]{ 对$pVT$系统，证明
 $$C_p \pfrac TpS = T \pfrac VTp $$ }
 \eitem
