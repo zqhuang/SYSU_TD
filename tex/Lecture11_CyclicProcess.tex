@@ -1,0 +1,143 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\input{titlepage.tex}
+\title{Lesson 11 Cyclic Process}
+  \author{}
+  \date{}
+\begin{document}
+\tpage{11}{循环过程}
+
+\section{Review}
+
+\begin{frame}
+\chtitle{上讲内容回顾}
+\bch 
+\bitem
+\item{焓和状态方程的关系$\pfrac HpT = V - \pfrac V{\ln T}p$}
+\item{定压比热$C_p = \pfrac HTp$}
+\item{节流是等焓的不可逆过程。焦耳-汤姆孙系数$\alpha \equiv \pfrac TpH$}
+\item{焦耳-汤姆孙效应：正节流效应($\alpha >0$)降温和负节流效应$\alpha<0$升温}
+\item{节流过程液化气体：预冷降温到正节流区，反复节流液化气体。}
+\eitem
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{本讲内容}
+\bch
+\bitem
+\item{循环过程}
+\item{$pVT$系统的循环过程}
+\item{卡诺循环及其效率}
+\eitem
+\ech
+\end{frame}
+
+
+\section{Cyclic Process}
+
+\begin{frame}
+\chtitle{蒸汽机}
+\bch
+\addfig{3}{steam_engine.jpg}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{循环过程}
+\bch
+循环过程：一系统由某个状态出发，经过一系列过程，最后回到原状态。
+
+\skiplines
+
+因循环过程的内能不变，按照热一律即有$Q+A = 0$。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{正循环和逆循环}
+\bch
+
+系统对外界做功($A'>0$)的循环为正循环。外界对系统做功($A>0$)的循环为逆循环。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+下列过程是正循环还是逆循环？
+\bitem
+\item{蒸汽机的一个循环}
+\item{制冷机的一个循环}
+\item{$pV$图上顺时针的闭合曲线}
+\item{$pV$图上逆时针的闭合曲线}
+\item{$Q>0$的循环}
+\item{$Q'>0$的循环}
+\eitem
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{正循环热机的效率}
+\bch
+{\bf 正循环把热量转化为机械功。}设正循环热机从高温热源1吸热$Q_1$，对外做功$A'$，并对低温热源2放热$Q_2'$。{\bf 热量转化为机械能的百分比称为正循环热机的效率，记作$\eta$。}
+
+$$\eta \equiv \frac{A'}{Q_1}=\frac{Q_1-Q_2'}{Q_1} $$
+
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{逆循环热机的效率}
+\bch
+{\bf 逆循环利用外界提供的机械功从低温热源吸热制冷。}设外界对逆循环热机做功$A$，使它从低温热源2吸热$Q_2$，并对高温热源放热$Q_1'$。{\bf 制冷量$Q_2$与外功$A$之比称为逆循环热机的制冷系数，记作$\varepsilon$。}
+
+$$\varepsilon \equiv \frac{Q_2}{A}=\frac{Q_2}{Q_1'-Q_2} $$
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{正循环的效率}
+\bch
+
+设热机从温度恒为$T_1$的高温热源1吸热$Q_1$，对外做功$A'$，并对温度恒为$T_2$的低温热源2放热$Q_2'$。则
+$$\eta = \frac{Q_1-Q_2'}{Q_1} = 1-\frac{T_2\Delta S_2}{T_1\Delta S_1}$$
+其中$\Delta S_1$为高温热源的熵减少量，$\Delta S_2$为低温热源的熵增加量。
+
+如果整个循环过程{\bf 可逆}，则环境的总熵不变：$\Delta S_1 = \Delta S_2$。
+
+$$ \eta = 1 - \frac{T_2}{T_1}$$
+
+如果整个循环过程{\bf 不可逆}，则环境总熵增大：$\Delta S_2 > \Delta S_1$，即
+$$\eta < 1 - \frac{T_2}{T_1} $$
+
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{逆循环的制冷效率}
+\bch
+
+设外界对热机做功$A$，使热机从温度恒为$T_2$的低温热源2吸热$Q_2$，并对温度恒为$T_1$的高温热源1放热$Q_1'$。则
+$$\varepsilon = \frac{1}{Q_1'/Q_2 - 1} = \frac{1}{\frac{T_1\Delta S_1}{T_2\Delta S_2}-1}$$
+其中$\Delta S_1$为高温热源的熵增加量，$\Delta S_2$为低温热源的熵减少量。
+
+如果整个循环过程{\bf 可逆}，则环境的总熵不变：$\Delta S_1 = \Delta S_2$。
+
+$$ \varepsilon = \frac{1}{\frac{T_1}{T_2}-1}=\frac{T_2}{T_1-T_2}$$
+
+如果整个循环过程{\bf 不可逆}，则环境总熵增大：$\Delta S_2 < \Delta S_1$，即
+$$\varepsilon < \frac{1}{\frac{T_1}{T_2}-1} = \frac{T_2}{T_1-T_2} $$
+
+
+\ech
+\end{frame}
+
+
+\end{document}
