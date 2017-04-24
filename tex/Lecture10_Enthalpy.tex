@@ -14,7 +14,8 @@
 \bch 
 \bitem
 \item{态函数的大家庭：温度$T$，熵$S$，压强$p$，体积$V$，内能$U$，焓$H=U+pV$，自由能$F=U-TS$和自由焓$G=H-TS$}
-\item{内能的物理内涵:
+\item{$dU = TdS - pdV$, $dH = TdS + Vdp$, $dF = -SdT - pdV$, $dG = -SdT + Vdp$}
+\item{内能和状态方程的关系:
  $$\pfrac UVT = \pfrac p{\ln T}V - p $$
 其中$\pfrac p{\ln T}V$称为热压强}
 \item{准静态过程吸热量为按照定体比热容计算的吸热量加上热压强做功消耗的能量:
@@ -52,14 +53,15 @@ $$ \dbar Q = C_V dT + \pfrac p{\ln T}V dV$$}
 \begin{frame}
 \chtitle{送分题}
 \bch
-\addfig{0.9}{songfen2.jpg}
+\addfig{0.6}{songfen2.jpg}
+
 实际气体$\pfrac UVT>0$（因增大体积使得分子间势能增大）。绝热自由膨胀既无吸热也无做功，故内能不变。根据循环偏微分乘积定理有
 $$\pfrac TVU = -\pfrac TUV \pfrac UVT = -\frac{1}{C_V} \pfrac UVT < 0$$
 即得出自由绝热膨胀后温度应该降低。
 
 \skipline
 
-但是，绝热自由膨胀不是准静态过程，上面这样推导是否有bug？
+但是，绝热自由膨胀不是准静态过程，上面的推理是否正确？
 
 \ech
 \end{frame}
@@ -123,6 +125,9 @@ $$\pfrac UpT < 0 $$
 
 那么，当固定温度增大压强（减小体积）时，焓$H\equiv U + pV$会如何变化呢？
 
+\skiplines
+
+下面我们将对这个问题进行探讨。然后利用这个问题的结果引出焦耳-汤姆孙效应。
 \ech
 \end{frame}
 
@@ -131,25 +136,17 @@ $$\pfrac UpT < 0 $$
 \chtitle{本讲内容}
 \bch
 \bitem
-\item{焓和定压热容}
+\item{焓和状态方程的关系}
+\item{焓随压强的变化}
 \item{焦耳-汤姆逊效应}
 \item{节流膨胀液化气体}
 \item{化学反应和生成焓}
-\item{关于内能和焓的一些练习}
+\item{关于内能和焓的概念的一些练习}
 \eitem
 \ech
 \end{frame}
 
 \section{Enthalpy}
-
-\begin{frame}
-\chtitle{本讲仍然考虑$pVT$系统，挖掘一下焓的物理内涵}
-\bch
-
-\addfig{3.2}{wajueji_H.png}
-
-\ech
-\end{frame}
 
 \begin{frame}
 \chtitle{焓的物理意义}
@@ -194,7 +191,8 @@ $$ H  \equiv U + pV$$
 \addfig{0.8}{songfen.jpg}
 
 证明定压热容和焓之间的关系：
-$$ C_p = \pfrac HTp $$
+{\blue
+$$ C_p = \pfrac HTp $$}
 并解释其物理意义。
 \ech
 \end{frame}
@@ -205,8 +203,9 @@ $$ C_p = \pfrac HTp $$
 \addfig{0.8}{songfen2.jpg}
 
 证明定压热容和熵之间的关系：
+{\blue
 $$ C_p = T\pfrac STp $$
-
+}
 \ech
 \end{frame}
 
@@ -281,8 +280,10 @@ $$\pfrac HpT = V \left(\delta_V - \frac{2\delta_p}{1+2\delta_p}\right) \frac{1+2
 下图是对某个范德瓦尔斯气体的数值计算结果：
 \addfig{2}{dHdp.pdf}
 
+下面我们用这个结果来引出等焓过程的温度随压强的变化规律。
 \ech
 \end{frame}
+
 
 \section{Throttling Process}
 
@@ -332,7 +333,12 @@ $$ U_1 + p_1V_1 = U_2 + p_2V_2 $$
 \begin{frame}
 \chtitle{焦耳-汤姆孙系数}
 \bch
-我们用焦耳-汤姆孙系数$\alpha \equiv \pfrac TpH$来计算的温度的升降。如果$\alpha>0$，则称为正节流效应，温度随压强降低而降低（注意节流过程总是压强降低的过程）。反之若$\alpha<0$，则为负节流效应，温度随压强降低而升高。
+
+\bitem
+\item{用{\bf 焦耳-汤姆孙系数$$\alpha \equiv \pfrac TpH$$}来计算节流过程温度的升降。}
+\item{如果$\alpha>0$，则称为{\bf 正节流效应，温度随压强降低而降低}（注意节流过程总是压强降低的过程）。}
+\item{反之若$\alpha<0$，则为{\bf 负节流效应，温度随压强降低而升高}。}
+\eitem
 
 \ech
 \end{frame}
@@ -356,7 +362,7 @@ $$ U_1 + p_1V_1 = U_2 + p_2V_2 $$
 
 根据我们刚刚证明的
 $$\pfrac TpH = - \frac{\pfrac HpT}{C_p}$$
-知道$\pfrac TpH$和$\pfrac HpT$符号相反，实际气体如右图所示。
+知道$\pfrac TpH$和$\pfrac HpT$符号相反，几种实际气体的节流方向如右图所示。
 
 \skipline
 
@@ -369,6 +375,19 @@ $$\pfrac TpH = - \frac{\pfrac HpT}{C_p}$$
 \emini
 \ech
 \end{frame}
+
+\begin{frame}
+\chtitle{用节操图记忆节流图}
+\bch
+压力过大，严寒酷暑都会导致节操变负。
+
+只有当压力不是太大，温度适中的情况下节操才是正的。
+
+\lfig{3}{jiecao.png}
+
+\ech
+\end{frame}
+
 
 
 \begin{frame}
@@ -388,36 +407,182 @@ $$\pfrac TpH = - \frac{\pfrac HpT}{C_p}$$
 \bch
 \addfig{1.}{think3.jpg}
 
-节流转变温度$\frac{2a}{Rb}$可以看成压强修正和体积修正的比值，为什么小分子气体的节流转变温度反而更低呢?
+节流转变温度$\frac{2a}{Rb}$可以看成压强修正和体积修正的比值，为什么小分子气体（氢气，氦气）的节流转变温度反而更低呢?
 
 \ech
 \end{frame}
 
+
+
+
 \begin{frame}
-\chtitle{节流液化气体的原理}
+\chtitle{节流液化气体的原理(只要求理解关键步骤：预冷+节流)}
 \bch
-{\bf (绝热膨胀或其他方法)预冷到节流转变温度之下（进入正节流区域）$\rightarrow$反复节流降温$\rightarrow$液化}
+\bmini{0.45}
+\bitem
+\item{(绝热膨胀或用液氦等)预冷到节流转变温度之下（进入正节流区域）}
+\item{反复节流降温直至气体液化}
+\eitem
+简单地说就是 {\bf 预冷+节流}
 
-\skiplines
+{\scriptsize 注：绝热膨胀是除了节流之外的另一种常用降温手段。目前定型的柯林斯液化机用把节流和绝热膨胀相结合的方法。}
+\emini
+\bmini{0.51}
+教材143页图3-15
 
-请参考教材P143图3-15 
+\addfig{1.8}{throttling_liquefy.jpg}
+\emini
 
-\skiplines
-
-目前定型的液化机：柯林斯机（原理：绝热膨胀法+节流）
 \ech
 \end{frame}
 
 \section{Chemical Reaction}
 
 \begin{frame}
-\chtitle{化学反应焓}
+\chtitle{化学反应焓（仅供娱乐）}
 \bch
 很多化学反应是在大气中（定压）进行的，所以吸（放）热量等于焓的增（减）量。“反应热”其实应该叫做“反应焓”。
 
 \skiplines
 
-化学反应焓的计算{\bf \Huge 不考}。
+焓和能量一样，可以取任意参考点。在化学中规定$1\atm$, $25\cdeg$的状态下，纯元素物质的焓为零，然后把各种化合物的焓通过测量反应焓推算出来列成表格。见教材145页表3-3。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{化学反应焓的计算举例（仅供娱乐）}
+\bch
+{\blue 教材习题3-22}
+
+按题意，电池从负极到正极每搬运4个电子，就会生成2个水分子。
+
+假设生成$1\SImol$水，则电池搬运了$2N_A$个电子。做功：
+$$A' = 2N_A eU = 2\times 6.02\times 10^{23}\times 1.6\times 10^{-19} \times 1.229 \SIJ = 237 \SIkJ$$
+燃料电池的效率为
+$$\eta = \frac{237\SIkJ}{285.84\SIkJ} =0.83$$ 
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{关于内能和焓的一些练习(送分）}
+\bch
+
+\addfig{0.8}{think.jpg}
+
+推断过程中$Q$, $A$, $\Delta U$, $\Delta H$的正负或零值。
+
+\bitem
+\item[(1)]{理想气体准静态绝热膨胀；}
+\eitem
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{关于内能和焓的一些练习(送分）}
+\bch
+
+\addfig{0.8}{think.jpg}
+
+推断过程中$Q$, $A$, $\Delta U$, $\Delta H$的正负或零值。
+
+\bitem
+\item[(2)]{理想气体准静态等温膨胀；}
+\eitem
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{关于内能和焓的一些练习(送分）}
+\bch
+
+\addfig{0.8}{think.jpg}
+
+推断过程中$Q$, $A$, $\Delta U$, $\Delta H$的正负或零值。
+
+\bitem
+\item[(3)]{理想气体准静态等体加热；}
+\eitem
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{关于内能和焓的一些练习(送分）}
+\bch
+
+\addfig{0.8}{think.jpg}
+
+推断过程中$Q$, $A$, $\Delta U$, $\Delta H$的正负或零值。
+
+\bitem
+\item[(4)]{理想气体准静态等压加热；}
+\eitem
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{关于内能和焓的一些练习(送分）}
+\bch
+
+\addfig{0.8}{think.jpg}
+
+推断过程中$Q$, $A$, $\Delta U$, $\Delta H$的正负或零值。
+
+\bitem
+\item[(5)]{理想气体绝热节流；}
+\eitem
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{关于内能和焓的一些练习(送分）}
+\bch
+
+\addfig{0.8}{think.jpg}
+
+推断过程中$Q$, $A$, $\Delta U$, $\Delta H$的正负或零值。
+
+\bitem
+\item[(6)]{理想气体自由绝热膨胀；}
+\eitem
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{关于内能和焓的一些练习(送分）}
+\bch
+
+\addfig{0.8}{think.jpg}
+
+推断过程中$Q$, $A$, $\Delta U$, $\Delta H$的正负或零值。
+
+\bitem
+\item[(7)]{理想气体$n=2$的多方过程膨胀；}
+\eitem
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{关于内能和焓的一些练习(送分）}
+\bch
+
+\addfig{0.8}{think.jpg}
+
+推断过程中$Q$, $A$, $\Delta U$, $\Delta H$的正负或零值。
+
+\bitem
+\item[(8)]{冰在$1\atm$，$0\cdeg$时熔化；}
+\eitem
+
 \ech
 \end{frame}
 
