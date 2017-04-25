@@ -52,7 +52,12 @@ $$ \Delta S = C_V \Delta \left(pV^\gamma\right) = C_V\Delta\left(TV^{\gamma-1}\r
 \ech
 \end{frame}
 
-
+\begin{frame}
+\chtitle{课堂练习}
+\bch
+教材习题3-19
+\ech
+\end{frame}
 
 
 \begin{frame}
@@ -278,7 +283,7 @@ $$\varepsilon <  \frac{T_2}{T_1-T_2} $$
 \end{frame}
 
 \begin{frame}
-\chtitle{环保常识}
+\chtitle{环保常识: 空调温度别开太低}
 \bch
 设夏天室外温度为$30\cdeg$。把空调近似看成可逆热机。试估算制冷温度分别为$28\cdeg$和$20\cdeg$时空调制冷效率之比。
 \ech
@@ -334,9 +339,17 @@ $$\varepsilon <  \frac{T_2}{T_1-T_2} $$
 \begin{frame}
 \chtitle{卡诺循环的$p$-$V$图}
 \bch
-\addfig{2.5}{Carnot_cycle.png}
+\addfig{2.3}{Carnot_cycle.png}
 
-思考题：对理想气体计算卡诺热机的效率。
+思考题：对理想气体计算可逆卡诺循环的效率（设等温过程的$T_1$, $T_2$已知）。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{猜一猜}
+\bch
+刚才算出理想气体可逆卡诺循环的效率为$\eta = 1-\frac{T_2}{T_1}$，这个结果对非理想气体成立吗？
 \ech
 \end{frame}
 
@@ -351,14 +364,54 @@ $$\eta = \frac{A'}{Q_1} = \frac{(T_1-T_2)(S_2-S_1)}{T_1(S_2-S_1)} = 1- \frac{T_2
 \ech
 \end{frame}
 
+
+
+
 \begin{frame}
 \chtitle{奥托循环(Otto Cycle)}
 \bch
 
 阅读教材160页例题7，并试用$T$-$S$图计算。
 
+\skiplines
+
+{\small
+提示：利用熵的表达式得出
+$$ T \propto V^{1-\gamma} e^\frac{S}{C_V}$$
+从而得出$T$-$S$图上两条等体线的比值为常数。
+}
 \ech
 \end{frame}
+
+\begin{frame}
+\chtitle{多方循环}
+\bch
+设一个循环由两个绝热过程和两个多方过程组成，如图所示：
+\bmini{0.5}
+\addfig{1.6}{polytropic_cycle.jpg}
+\emini
+\bmini{0.46}
+{\small
+已知参数：
+\bitem
+\item{多方指数$n_1, n_2$}
+\item{绝热压缩比$r=\frac{V_D}{V_A}>1$}
+\item{体积交叉因子$\rho =\frac{V_BV_D}{V_AV_C}$}
+\eitem
+}
+\emini
+
+{\small
+
+证明该循环的效率为
+$$\eta = 1 - \frac{C_{n_2}}{C_{n_1}}\frac{1}{r^{\gamma-1}}\frac{\rho^{\frac{(1-n_2)(\gamma-n_1)}{n_1-n_2}}-1}{\rho^{\frac{(1-n_1)(\gamma-n_2)}{n_1-n_2}}-1} $$
+当$n_1\rightarrow n_2$，上式成为
+$$\eta = 1- \frac{1}{r^{\gamma-1}}$$
+}
+
+\ech
+\end{frame}
+
 
 
 \begin{frame}
