@@ -14,10 +14,10 @@
 \bch 
 \bitem
 \item{焓和状态方程的关系$\pfrac HpT = V - \pfrac V{\ln T}p$}
-\item{定压比热$C_p = \pfrac HTp$}
+\item{定压比热$C_p = \pfrac HTp = T\pfrac STp$}
 \item{节流是等焓的不可逆过程。焦耳-汤姆孙系数$\alpha \equiv \pfrac TpH$}
 \item{焦耳-汤姆孙效应：正节流效应($\alpha >0$)降温和负节流效应$\alpha<0$升温}
-\item{节流过程液化气体：预冷降温到正节流区，反复节流液化气体。}
+\item{节流过程液化气体：预冷降温到正节流区$\alpha$较大的区域，节流液化气体。}
 \eitem
 \ech
 \end{frame}
@@ -26,7 +26,7 @@
 \chtitle{本讲内容}
 \bch
 \bitem
-\item{定体热容固定的理想气体的熵}
+\item{理想气体的熵}
 \item{孤立系统的熵增大原理}
 \item{循环过程}
 \item{卡诺循环}
@@ -38,17 +38,15 @@
 \section{2nd Law}
 
 \begin{frame}
-\chtitle{热容固定的理想气体的熵}
+\chtitle{理想气体的熵}
 \bch
-如果理想气体的$C_V$为常数（单原子理想气体，或者多原子理想气体在一定温度范围内），则
-$$ dS = \frac{\dbar Q}{T} = \frac{C_VdT +  p dV}{T} = \frac{C_V}{T}dT + \nu R\frac{dV}{V} $$
-利用理想气体状态方程，有$\frac{dT}{T} = \frac{dp}{p}+\frac{dV}{V}$，代入上式，并利用$C_p = C_V+\nu R$以及$\gamma = \frac{C_p}{C_V}$，得到
-$$ dS = C_V \left(\frac{dp}{p} + \gamma \frac{dV}{V}\right)$$
-所以{\blue 理想气体 
-$$ \Delta S = C_V \Delta \left(pV^\gamma\right) = C_V\Delta\left(TV^{\gamma-1}\right) = C_p\Delta\left(p^{\frac{1}{\gamma}-1}T\right)$$
-}
-利用熵的表达式立刻可以得到理想气体绝热方程。
-
+{\blue
+$$ dS = \frac{\dbar Q}{T} = \frac{C_VdT +  p dV}{T} = C_Vd\ln T+ \nu R d\ln V $$}
+因理想气体定体热容只是温度的函数，积分即得
+$$\Delta S = \int \frac{C_V}{T} dT + \nu R \Delta \ln V$$
+如果热容$C_V$是常数，则容易从上式得到
+$$ \Delta S = C_V \Delta \left[\ln\left(pV^\gamma\right) \right] = C_V \Delta \left[\ln\left(TV^{\gamma-1}\right) \right] = C_p \Delta \left[\ln\left(Tp^{\frac{1}{\gamma}-1}\right) \right]$$
+由此易得理想气体绝热方程。
 \ech
 \end{frame}
 
@@ -78,9 +76,9 @@ $$S = \sum_i S_i$$
 \chtitle{孤立系统的熵增大原理(续)}
 \bch
 因系统处于非热平衡状态，总有两个互相接触的子系统温度不同，不妨设$T_i>T_j$。
-我们假设{\bf 在宏观尺度上，热量会且只会自发地从高温物体传递到低温物体}，在很短时间内$\Sigma_i$对$\Sigma_j$传热$Q_{i\rightarrow j}$ ($Q_{i\rightarrow j}>0$)。那么系统的总熵变化为
+我们假设{\bf 在宏观尺度上，热量会且只会自发地从高温物体传递到低温物体}，$\Sigma_i$对$\Sigma_j$传热$Q_{i\rightarrow j}$ ($Q_{i\rightarrow j}>0$)。那么系统的总熵变化为
 $$\Delta S = \Delta S_i + \Delta S_j = - \frac{Q_{i\rightarrow j}}{T_i}+ \frac{Q_{i\rightarrow j}}{T_j}  > 0$$
-这样的熵增大过程会持续进行，直到系统达到热平衡（所有的$T_i = T_j$）后熵不再变化。
+这样的熵增大过程会持续进行，直到系统达到平衡态（这时所有的$T_i = T_j$）后熵不再变化。
 
 {\bf 孤立系统熵增大是一个不可逆的过程（因为无法使熵减小），熵不变的过程则原则上都可逆。}
 
@@ -285,7 +283,11 @@ $$\varepsilon <  \frac{T_2}{T_1-T_2} $$
 \begin{frame}
 \chtitle{环保常识: 空调温度别开太低}
 \bch
+
+\addfig{1.5}{aclife2.png}
+
 设夏天室外温度为$30\cdeg$。把空调近似看成可逆热机。试估算制冷温度分别为$28\cdeg$和$20\cdeg$时空调制冷效率之比。
+
 \ech
 \end{frame}
 
@@ -328,16 +330,29 @@ $$\varepsilon <  \frac{T_2}{T_1-T_2} $$
 \ech
 \end{frame}
 
+\begin{frame}
+\chtitle{dalao也有长得帅的}
+\bch
+
+\addfig{1.3}{carnot.jpg}
+\bcenter
+Nicolas Léonard Sadi Carnot
+\ecenter
+\ech
+\end{frame}
+
 
 \begin{frame}
 \chtitle{卡诺循环(Carnot Cycle)}
 \bch
-卡诺循环 = 等温膨胀+ 绝热膨胀 + 等温压缩 + 绝热压缩
+
+\addfig{2}{carnotcycle.jpg}
+
 \ech
 \end{frame}
 
 \begin{frame}
-\chtitle{卡诺循环的$p$-$V$图}
+\chtitle{理想气体卡诺循环的$p$-$V$图}
 \bch
 \addfig{2.3}{Carnot_cycle.png}
 
@@ -368,7 +383,7 @@ $$\eta = \frac{A'}{Q_1} = \frac{(T_1-T_2)(S_2-S_1)}{T_1(S_2-S_1)} = 1- \frac{T_2
 
 
 \begin{frame}
-\chtitle{奥托循环(Otto Cycle)}
+\chtitle{理想气体的奥托循环(Otto Cycle)}
 \bch
 
 阅读教材160页例题7，并试用$T$-$S$图计算。
@@ -384,9 +399,10 @@ $$ T \propto V^{1-\gamma} e^\frac{S}{C_V}$$
 \end{frame}
 
 \begin{frame}
-\chtitle{多方循环}
+\chtitle{理想气体的多方循环}
 \bch
-设一个循环由两个绝热过程和两个多方过程组成，如图所示：
+{\small
+多方循环由两个绝热过程和两个多方过程组成（设$C_V$为常数）：}
 \bmini{0.5}
 \addfig{1.6}{polytropic_cycle.jpg}
 \emini
@@ -405,8 +421,8 @@ $$ T \propto V^{1-\gamma} e^\frac{S}{C_V}$$
 
 证明该循环的效率为
 $$\eta = 1 - \frac{C_{n_2}}{C_{n_1}}\frac{1}{r^{\gamma-1}}\frac{\rho^{\frac{(1-n_2)(\gamma-n_1)}{n_1-n_2}}-1}{\rho^{\frac{(1-n_1)(\gamma-n_2)}{n_1-n_2}}-1} $$
-当$n_1\rightarrow n_2$，上式成为
-$$\eta = 1- \frac{1}{r^{\gamma-1}}$$
+当$n_1\rightarrow n_2$，两条多方线的温度成正比，上式成为
+$$\eta = 1-\frac{T_D}{T_A} = 1- \frac{T_C}{T_B} = 1- \frac{1}{r^{\gamma-1}}$$
 }
 
 \ech
@@ -418,9 +434,9 @@ $$\eta = 1- \frac{1}{r^{\gamma-1}}$$
 \chtitle{第十一周作业（序号接第十周）}
 \bch
 \bitem
-\item[27]{教材习题4-1}
-\item[28]{教材习题3-8}
-\item[29]{教材习题3-18}
+\item[27]{教材习题3-8}
+\item[28]{教材习题3-18}
+\item[29]{教材习题4-1}
 \eitem
 
 \ech
