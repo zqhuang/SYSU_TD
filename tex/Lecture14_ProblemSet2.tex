@@ -11,7 +11,7 @@
 
 
 \begin{frame}
-\chtitle{Ruchhardt测$\gamma$法}
+\chtitle{补充知识：Ruchhardt测$\gamma$法}
 \bch
 参考教材150页图3-19
 
@@ -25,7 +25,7 @@ $$\omega = \sqrt{\frac{k}{m}} = \sqrt{\frac{\gamma p S^2}{mV}}$$
 \end{frame}
 
 \begin{frame}
-\chtitle{关于大气垂直温差的补充知识}
+\chtitle{补充知识：大气垂直温差的修正}
 \bch
 {\small
 对水蒸气饱和的空气，做功等于内能改变量加上汽化热：
@@ -46,6 +46,9 @@ $$ \frac{dT}{dz} =-\frac{\rho g V + \nu\Lambda\frac{dc}{dz}}{C_p} = -\frac{\gamm
 \begin{frame}
   \bch
   第一篇：令人头疼的偏导数
+
+\addfig{4.2}{piantouteng.png}
+
   \ech
 \end{frame}
 
@@ -53,33 +56,79 @@ $$ \frac{dT}{dz} =-\frac{\rho g V + \nu\Lambda\frac{dc}{dz}}{C_p} = -\frac{\gamm
 \begin{frame}
   \chtitle{例题1}
   \bch
-  {\blue }
+  对$pVT$系统证明下述Maxwell关系：
+\bitem
+\item{$\pfrac TVS = -\pfrac pSV$}
+\item{$\pfrac TpS = \pfrac VSp$}
+\item{$\pfrac SVT = \pfrac pTV$}
+\item{$\pfrac SpT = -\pfrac VTp$}
+\eitem
+
+\ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{例题1解答}
+  \bch
+\bitem
+\item{由$dU = TdS - pdV$为全微分以及全微分成立条件得到$\pfrac TVS = -\pfrac pSV$。}
+\item{由$dH = TdS + Vdp$为全微分以及全微分成立条件得到$\pfrac TpS = \pfrac VSp$。}
+\item{由$dF = -SdT - pdV$为全微分以及全微分成立条件得到$\pfrac SVT = \pfrac pTV$。}
+\item{由$dG = -SdT + Vdp$为全微分以及全微分成立条件得到$\pfrac SpT = -\pfrac VTp$。}
+\eitem
   \ech
 \end{frame}
 
 \begin{frame}
-  \chtitle{}
+  \chtitle{例题2}
   \bch
+某气体的物态方程为
+$$p(V-\nu b) = \nu R T$$
+其中$b$为常量。
+
+证明该气体的定压热容和定体热容之差为
+$$ C_p - C_V = \nu R $$
+
   \ech
 \end{frame}
 
 \begin{frame}
-  \chtitle{}
+  \chtitle{例题2解法1}
   \bch
+由$C_p  =\pfrac HTp = T \pfrac STp$, $C_V = \pfrac UTp = T\pfrac STV$
+得到
+$$\frac{C_p - C_V}{T} = \pfrac STp - \pfrac STV = \pfrac SVT  \pfrac VTp $$
+最后一步我们用了四变量的偏微分链式法则。然后根据$dF = - SdT - pdV$为全微分得到$\pfrac SVT = \pfrac pTV$，代入上式
+$$ C_p - C_V = T\pfrac pTV \pfrac VTp = T \frac{\nu R}{V-\nu b} \frac{\nu R}{p} = \nu R$$
+
   \ech
 \end{frame}
 
 
 \begin{frame}
-  \chtitle{}
+  \chtitle{例题2解法2}
   \bch
+由内能和状态方程的关系得到（准静态过程吸热量的第一种表达方式）
+{\scriptsize 
+$$ T dS  = dU + pdV = C_V dT + \left(T\pfrac pTV -p\right)dV+pdV = C_V dT + T\pfrac pTV dV  $$}
+由焓和状态方程的关系得到（准静态过程吸热量的第二种表达方式）
+{\scriptsize 
+$$ TdS = dH - Vdp = C_p dT + (V-T\pfrac VTp)dp - Vdp = C_p dT - T\pfrac VTp dp$$}
+两式相减得到
+$$ (C_p- C_V)dT =  T\pfrac VTp dp + T\pfrac pTV dV = (V-\nu b)dp + p dV $$
+又根据状态方程有$ \nu R dT = (V-\nu b) dp + p dV$，与上式比较即得证$C_p - C_V = \nu R$。
   \ech
 \end{frame}
 
 
 \begin{frame}
-  \chtitle{}
+  \chtitle{例题3}
   \bch
+某$pVT$系统，当固定压强为$1\atm$时，在一定温度范围内($200\SIK < T< 400 \SIK$)内能和温度有如下关系：
+  $$U =  aT^2 $$
+  其中$a=1 \SIJ/\SIK^2$。
+  初始时该系统在压强$1\atm$，温度$250\SIK$的状态下，自由能$F = 100 \SIkJ$。
+  当系统保持压强不变升温到$350\SIK$，求系统自由能$F$。
   \ech
 \end{frame}
 
