@@ -5,7 +5,7 @@
   \author{}
   \date{}
 \begin{document}
-\tpage{14}{第三四章知识的应用(题霸重出江湖)}
+\tpage{14}{第三四章知识的应用(题霸升级版)}
 
 \section{Review}
 
@@ -44,8 +44,9 @@ $$ \frac{dT}{dz} =-\frac{\rho g V + \nu\Lambda\frac{dc}{dz}}{C_p} = -\frac{\gamm
 \section{Problems}
 
 \begin{frame}
+  \chtitle{  第一篇：令人头疼的偏导数}
   \bch
-  第一篇：令人头疼的偏导数
+
 
 \addfig{4.2}{piantouteng.png}
 
@@ -124,35 +125,211 @@ $$ (C_p- C_V)dT =  T\pfrac VTp dp + T\pfrac pTV dV = (V-\nu b)dp + p dV $$
 \begin{frame}
   \chtitle{例题3}
   \bch
-某$pVT$系统，当固定压强为$1\atm$时，在一定温度范围内($200\SIK < T< 400 \SIK$)内能和温度有如下关系：
+某固定体积的$pVT$系统，在一定温度范围内($200\SIK < T< 400 \SIK$)内能和温度有如下关系：
   $$U =  aT^2 $$
   其中$a=1 \SIJ/\SIK^2$。
-  初始时该系统在压强$1\atm$，温度$250\SIK$的状态下，自由能$F = 100 \SIkJ$。
-  当系统保持压强不变升温到$350\SIK$，求系统自由能$F$。
+  初始时该系统温度$250\SIK$，自由能$F = 100 \SIkJ$。
+  当系统升温到$350\SIK$，求系统自由能$F$。
   \ech
 \end{frame}
 
 \begin{frame}
-  \chtitle{}
+  \chtitle{例题3解法1}
   \bch
+  初始状态时，
+  $$ S_{\rm ini} = \frac{U_{\rm ini}-F_{\rm ini}}{T_{\rm ini}} = \frac{1\times 250^2 - 10^5}{250} \SIJ/\SIK = -150\SIJ/\SIK$$
+  在体积不变的情况下
+  $$ dU = T\pfrac STV dT  =  2aTdT$$
+  故
+  $$ \pfrac STV = 2a $$
+  积分得到
+  $$ S_{\rm final}  = S_{\rm ini} + 2a\Delta T =  \left[-150 + 2\times 1\times (350-250) \right] \SIJ/\SIK = 50 \SIJ/\SIK $$
+  $$ F_{\rm final} = U_{\rm final}-T_{\rm final}S_{\rm final} = \left[1\times 350^2 - 350\times 50\right] \SIJ = 105\SIkJ$$
+  
   \ech
 \end{frame}
+
+\begin{frame}
+  \chtitle{例题3解法2}
+  \bch
+  $$\pfrac {(F/T)}TV = \frac{1}{T}\pfrac FTV - \frac{F}{T^2} = -\frac{F+TS}{T^2} = -\frac{U}{T^2} = -a $$
+  积分得到
+  $$\frac{F}{350\SIK} = \frac{10^5\SIJ}{250\SIK} - 1\SIJ/\SIK^2\times(350\SIK - 250\SIK) = 300 \SIJ/\SIK$$
+  即
+  $$F = 105 \SIkJ$$
+
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{例题4}
+  \bch
+  $pVT$系统中，证明
+  $$ \pfrac TpV \pfrac SVp - \pfrac TVp \pfrac SpV = 1 $$
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{例题4解答}
+  \bch
+  等式左边是$(T,S)\rightarrow (p, V)$的Jaccobi行列式，代表$(T,S)$和$(p,V)$图上的面积元之比。在研究准静态循环时，我们根据热力学第一定律已经知道了$(T,S)$和$(p,V)$图上的对应的任何闭合曲线包围的面积相等（这包括面积的符号，即闭合曲线的绕行方向）。面积元只是很小的闭合曲线围绕的面积而已，所以得证。
+
+  \skipline
+
+  补充$T$-$S$图和$p$-$V$图上闭合曲线包围面积相等的证明：
+$$ \oint TdS - \oint pdV = \oint dU = 0$$
+  
+  \ech
+\end{frame}
+
+
+
+\begin{frame}
+  \chtitle{例题5}
+  \bch
+  $pVT$系统中，设$x, y$为任意两个独立变量，证明：
+      {\small $$ \pfrac Txy \pfrac Syx - \pfrac Tyx \pfrac Sxy = \pfrac pxy \pfrac Vyx - \pfrac pyx \pfrac Vxy $$}  
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{例题5解答}
+  \bch
+等式左边是$(T,S)\rightarrow (x, y)$的Jaccobi行列式，代表$(T,S)$和$(x,y)$图上的面积元之比。等式右边是$(p,V)\rightarrow (x, y)$的Jaccobi行列式，代表$(p,V)$和$(x,y)$图上的面积元之比。由于$(T,S)\rightarrow (p,V)$是保面积映射，故得证。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{习题6}
+  \bch
+  $pVT$系统中，设$x, y$为任意两个独立变量，证明：
+      {\scriptsize $$ \pfrac {\left(\frac{1}{T}\right)}xy \pfrac Uyx - \pfrac {\left(\frac{1}{T}\right)}yx \pfrac Uxy = \pfrac Vxy \pfrac {\left(\frac{p}{T}\right)}yx - \pfrac Vyx \pfrac {\left(\frac{p}{T}\right)}xy $$}  
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{习题6解答}
+  \bch
+  同样只要证明$\frac{1}{T}$-$U$图上的闭合曲线包围的面积和$V$-$\frac{p}{T}$图上对应的闭合曲线包围的面积相等。
+  注意应用环路积分计算$x$-$y$图上闭合曲线面积时既可以用$\oint ydx$，也可以用$\oint -x dy$。对$V$-$\frac{p}{T}$图我们采取后者。
+  
+  $$\oint \frac{dU}{T} - \oint \frac{-pdV}{T} = \oint \frac{\dbar Q}{T} = \oint dS = 0$$
+  
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{习题7}
+  \bch
+  对$pVT$系统证明
+  $$\pfrac UpV = -T\pfrac VTS$$
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{习题7解答}
+  \bch
+  证明:固定熵时
+  $$ \dbar Q = C_V dT + T \pfrac pTV dV = 0 $$
+  即
+  $$ \pfrac VTS = -\frac{C_V}{T\pfrac pTV} = -\frac{\pfrac UTV}{T\pfrac pTV} = -\frac{1}{T} \pfrac UpV $$
+  两边乘以$-T$即得证。
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{习题8}
+  \bch
+  对$pVT$系统证明
+  $$\pfrac UVp = T\pfrac pTS - p$$
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{习题8解答}
+  \bch
+  证明:固定熵时
+  $$ \dbar Q = C_p dT - T\pfrac VTp dp = 0 $$
+  即
+  $$ T\pfrac pTS = \frac{C_p}{\pfrac VTp} = \frac{\pfrac HTp}{\pfrac VTp} =  \pfrac HVp = \pfrac UVp + p $$
+  两边减去$p$即得证。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{习题9}
+  \bch
+  对$pVT$系统证明
+  $$\pfrac TVU = p\pfrac TUV - T\pfrac pUV $$
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{习题9解答}
+  \bch
+  证明：固定内能时
+  $$ dU = C_V dT + \left(T\pfrac pTV - p\right)dV = 0$$
+  即
+  {\scriptsize
+  $$ \pfrac TVU = \frac{p-T\pfrac pTV }{C_V} = p\pfrac TUV - T\frac{\pfrac pTV}{\pfrac UTV}  = p\pfrac TUV - T\pfrac pUV $$}
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{习题10}
+  \bch
+  对$pVT$系统证明
+  $$\pfrac TSH +\frac{T^2}{V} \pfrac VHp = \frac{T}{C_p} $$
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{习题10解答}
+  \bch
+  {\scriptsize
+  证明：由$C_p = T\pfrac STp$得到
+  $$ \frac{T}{C_p} - \pfrac TSH = \pfrac TSp - \pfrac TSH = \pfrac THS \pfrac HSp $$
+  最后一步我们使用了四变量的链式法则。由$dH = TdS + Vdp$即知$\pfrac HSp = T$，所以
+  \begin{equation}
+    \frac{T}{C_p} - \pfrac TSH = T \pfrac THS = \frac{T}{V} \pfrac TpS \label{eq1}
+  \end{equation}
+  上面最后一步我们利用了$S$不变时,$ dH = Vdp$。
+  最后，利用$dH  = TdS +Vdp$为全微分，得到
+  \begin{equation}
+    \pfrac TpS = \pfrac VSp = T\pfrac VHp \label{eq2}
+  \end{equation}
+  其中最后一步利用了$p$不变时，$dH = TdS$。
+
+  把\eqref{eq2}带入 \eqref{eq1}即证毕。
+  
+  }
+  \ech
+\end{frame}
+
 
 \section{Homework}
 
 \begin{frame}
   \chtitle{第14周作业（序号接第13周）}
   \bch
+  {\small 
   \bitem
 \item{教材习题3-14}
-\item{教材习题3-17}
-\item{某$pVT$系统，当固定压强为$1\atm$时，在一定温度范围内($200\SIK < T< 400 \SIK$)焓和温度有如下关系：
+\item{对$pVT$系统证明$\pfrac TpH = T \pfrac VHp - V\pfrac THp$}
+\item{某固定压强的$pVT$系统，在一定温度范围内($200\SIK < T< 400 \SIK$)焓和温度有如下关系：
   $$H =  aT^2 $$
   其中$a=1 \SIJ/\SIK^2$。
-  初始时该系统在压强$1\atm$，温度$250\SIK$的状态下，自由焓$G = 100 \SIkJ$。
-  当系统保持压强不变升温到$350\SIK$，求系统自由焓$G$。
+  初始时该系统温度$250\SIK$，自由焓$G = 100 \SIkJ$。
+  当系统升温到$350\SIK$，求系统自由焓$G$。
 }
   \eitem
+  }
   \ech
 \end{frame}
 
