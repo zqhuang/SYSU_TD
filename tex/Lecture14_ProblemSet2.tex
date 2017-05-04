@@ -41,7 +41,7 @@ $$ \frac{dT}{dz} =-\frac{\rho g V + \nu\Lambda\frac{dc}{dz}}{C_p} = -\frac{\gamm
 \ech
 \end{frame}
 
-\section{Problems}
+\section{PDEs}
 
 \begin{frame}
   \chtitle{  第一篇：令人头疼的偏导数}
@@ -312,6 +312,101 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \ech
 \end{frame}
 
+\section{Thermaldynamic Process}
+
+\begin{frame}
+  \chtitle{第二篇：热力学过程}
+\addfig{4.2}{process.png}
+\end{frame}
+
+\begin{frame}
+  \chtitle{几个名词}
+  \bch
+  \bitem
+\item{绝热：$Q  = 0$,  $\Delta S = 0$}
+\item{自由：$A=0$}
+\item{节流：$\Delta H = 0$}
+\item{准静态过程 = 可逆过程； 非准静态过程=不可逆过程}
+\item{正循环：对外做功的热机$A'>0$；$p$-$V$图和$T$-$S$图上都是顺时针。}
+\item{逆循环：外界对系统做功的制冷机$A>0$；$p$-$V$图和$T$-$S$图上都是逆时针。}
+\item{可逆循环：对外界影响可以通过相反的一个循环来完全消除。环境熵变为零。}
+\item{不可逆循环：对外界影响不能通过任何方式完全消除。环境熵变大于零。}
+\eitem
+  \ech  
+\end{frame}
+
+\begin{frame}
+  \chtitle{理想气体的准静态过程}
+  \bch
+  \bitem
+  \item{理想气体内能和体积无关:$dU = C_V dT$}
+  \item{等温过程对外做功$A'=\nu RT \Delta \ln V$}
+  \item{
+  多方过程($n\ne 1$)对外做功
+  $A' = -\frac{\nu R}{n-1}\Delta T$
+  
+  热容相应地即
+  $C_n = C_V - \frac{\nu R}{n-1}$}
+  \item{理想气体的熵变$ dS = C_V d \ln T + \nu R d\ln V$}
+  \item{常数$\gamma$近似下绝热方程$pV^\gamma = C$, $TV^{\gamma-1} =C$, $Tp^{\frac{1}{\gamma}-1} = C$}
+  \item{可逆多方循环热机效率$\eta = 1- \frac{T_2}{T_1}$其中$T_2$, $T_1$分别是任意一条绝热线两端的低温值和高温值。可逆多方循环的制冷剂效率则是$T_2/(T_1-T_2)$}
+  \eitem
+  \ech  
+\end{frame}
+
+\begin{frame}
+  \chtitle{例题11}
+  \bch
+  教材166页思考题3-20
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{例题11解答}
+  \bch
+  对任何工作物质成立。用$T$-$S$图计算一目了然。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{例题12}
+  \bch
+  教材166页思考题3-19
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{例题12解答}
+  \bch
+  空调机比较省电。空调的制热原理是把室外当成需要制冷的低温热源。如果看成可逆循环，空调释放给室内（高温热源）的热量大于外界对空调做功（即空调耗能）。用电炉的话释放的热量不会大于消耗的电能。当然，这些讨论都是基于空调可以看成高效率的可逆制冷机的前提。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{例题13}
+  \bch
+  教材166页习题3-2
+  
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{例题13解答}
+  \bch
+  {\scriptsize
+  氮气的摩尔数$\nu = \frac{14\SIg}{28\SIg/\SImol} = 0.5\SImol$
+  \bitem
+\item{等温过程$\Delta U = 0$, $A = -\nu R T\Delta \ln V = 787\SIJ$, $Q = \Delta U - A = - 787\SIJ$
+}
+\item{绝热过程$Q=0$, $\Delta U = C_V \Delta T = \frac{5}{2}\nu R (2^{\gamma-1}T -T) = 907\SIJ$, $A = \Delta U - Q = 907\SIJ$}
+\item{等压过程$A = -p\Delta V = \frac{pV}{2} = \frac{1}{2}\nu R T = 567\SIJ$，$\Delta U = C_V \Delta T = \frac{5}{2}\nu R (\frac{T}{2}-T) = -1419\SIJ$，$Q = \Delta U - A = -1986 \SIJ$}
+  \eitem
+  }
+  \ech
+\end{frame}
 
 \section{Homework}
 
