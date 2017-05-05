@@ -5,7 +5,7 @@
   \author{}
   \date{}
 \begin{document}
-\tpage{14}{第三四章知识的应用(题霸升级版)}
+\tpage{14}{第三四章知识的应用I(题霸2.0)}
 
 \section{Review}
 
@@ -196,7 +196,7 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 \begin{frame}
   \chtitle{例题5解答}
   \bch
-等式左边是$(T,S)\rightarrow (x, y)$的Jaccobi行列式，代表$(T,S)$和$(x,y)$图上的面积元之比。等式右边是$(p,V)\rightarrow (x, y)$的Jaccobi行列式，代表$(p,V)$和$(x,y)$图上的面积元之比。由于$(T,S)\rightarrow (p,V)$是保面积映射，故得证。
+等式左边是$(T,S)\rightarrow (x, y)$的Jaccobi行列式，代表$(T,S)$和$(x,y)$图上的面积元之比。等式右边是$(p,V)\rightarrow (x, y)$的Jaccobi行列式，代表$(p,V)$和$(x,y)$图上的面积元之比。由于$(T,S)$和$(p,V)$图上面积元相等，故得证。
   \ech
 \end{frame}
 
@@ -213,7 +213,7 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \chtitle{习题6解答}
   \bch
   同样只要证明$\frac{1}{T}$-$U$图上的闭合曲线包围的面积和$V$-$\frac{p}{T}$图上对应的闭合曲线包围的面积相等。
-  注意应用环路积分计算$x$-$y$图上闭合曲线面积时既可以用$\oint ydx$，也可以用$\oint -x dy$。对$V$-$\frac{p}{T}$图我们采取后者。
+  注意应用环路积分计算$x$-$y$图上闭合曲线包围的面积时既可以用$\oint ydx$，也可以用$\oint -x dy$。对$V$-$\frac{p}{T}$图我们采取后者。
   
   $$\oint \frac{dU}{T} - \oint \frac{-pdV}{T} = \oint \frac{\dbar Q}{T} = \oint dS = 0$$
   
@@ -312,6 +312,34 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \ech
 \end{frame}
 
+\begin{frame}
+  \chtitle{例题11(难度\sfour)}
+  \bch
+  某物质在一定范围内的物态方程为
+  $$ pV = \nu R T\left(1+\ln\frac{T}{T_0}\right) $$
+  $1\SImol$的该物质经过等温膨胀之后，体积增大一倍，问定体热容增加了多少？
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{例题11解答}
+  \bch
+  {\scriptsize
+    本题考察的是$C_V$在固定温度时对体积对依赖。先利用内能和状态方程对关系得到
+    $$\pfrac UVT = T\pfrac pTV - p = \frac{\nu RT}{V} $$
+    
+  $$\pfrac {C_V}VT = \frac{\partial^2U}{\partial T\partial V} = \frac{\partial^2U}{\partial V\partial T} = \pfrac {\left(\frac{\nu RT}{V}\right)}{T}V =\frac{\nu R}{V} $$
+
+    积分得到
+
+    $$ C_V(T, V) = C_V(T, V_0) + \nu R \ln\frac{V}{V_0}$$
+    因此在等温过程$V$增大一倍时，$C_V$增大$\nu R \ln 2 = 5.76 \SIJ/\SIK$。
+
+  }
+  \ech
+\end{frame}
+
+
 \section{Thermaldynamic Process}
 
 \begin{frame}
@@ -354,20 +382,6 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \ech  
 \end{frame}
 
-\begin{frame}
-  \chtitle{例题11  (难度\stwo)}
-  \bch
-  教材166页思考题3-20
-  \ech
-\end{frame}
-
-
-\begin{frame}
-  \chtitle{例题11解答}
-  \bch
-  对任何工作物质成立。用$T$-$S$图计算一目了然。
-  \ech
-\end{frame}
 
 \begin{frame}
   \chtitle{例题12  (难度\sthree)}
@@ -396,7 +410,7 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 \begin{frame}
   \chtitle{例题13解答}
   \bch
-  {\scriptsize
+  {\small
   氮气的摩尔数$\nu = \frac{14\SIg}{28\SIg/\SImol} = 0.5\SImol$
   \bitem
 \item{等温过程$\Delta U = 0$, $A = -\nu R T\Delta \ln V = 787\SIJ$, $Q = \Delta U - A = - 787\SIJ$
@@ -432,6 +446,162 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \ech
 \end{frame}
 
+\begin{frame}
+  \chtitle{例题15  (难度\stwo)}
+  \bch
+  教材166页习题3-4
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{例题15解答}
+  \bch
+      {\small
+        \bitem
+      \item{
+        多方过程$pV^n = C$，取对数并考虑其变化量，即$\Delta \ln p + n \Delta \ln V = 0$，故
+        $$n = - \frac{\Delta ln p}{\Delta \ln V} = -\frac{\ln\frac{0.5}{1}}{\ln\frac{4.1}{2.3}} = 1.20 $$}
+      \item{内能的变化$\Delta U  = C_V\Delta T = \frac{C_V^{\rm mol}}{R}\Delta (\nu RT) = \frac{5}{2}\Delta(pV) = -63.3\SIJ$}
+      \item{吸收热量$Q = C_n \Delta T = \frac{\gamma-n}{1-n}C_V\Delta T = -C_V\Delta T = -\Delta U = 63.3\SIJ$}
+      \item{对外做功$A'=-A = Q-\Delta U = 127\SIJ$}
+        \eitem
+        \skipline
+        
+注：本题也可以利用$A' = -\frac{\nu R \Delta T}{n-1} =-\frac{\Delta(pV)}{n-1}$计算对外做功。然后根据$\Delta U = Q-A'$来计算内能改变。        
+  }
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{例题16(难度\sone)}
+  \bch
+  教材166页习题3-5
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{例题16解答}
+  \bch
+  $$T=T_0\left(\frac{V_0}{V}\right)^{\gamma-1} = 300\SIK\times 8^{2/3} = 1200\SIK $$
+  绝热过程$Q=0$,
+  $$A = \Delta U =C_V\Delta T  = 1.12\times 10^4\SIJ$$
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{例题17(难度\sthree)}
+  \bch
+  教材168页习题3-15
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{例题17解答}
+  \bch
+  {\small
+    大气密度为$ \rho = \frac{M^{\rm mol}}{V^{\rm mol}} = \frac{M^{\rm mol}p}{RT} $,   按绝热大气模型，$T = \left(\frac{p}{p_0}\right)^{1-\frac{1}{\gamma}} T_0$。
+    
+  由力学平衡，考虑一个面积为$S$的水平空气薄层的力学平衡$-S dp = (\rho S dz)g $， 即
+  $$ dz =-\frac{dp}{\rho g} = -\frac{RT }{M^{\rm mol}gp}dp= -\frac{RT_0}{M^{\rm mol}gp_0^{1-\frac{1}{\gamma}}} p^{-\frac{1}{\gamma}} dp$$
+  从$0$到$h$积分，得到
+  $$ h = \frac{\gamma}{\gamma-1}\frac{RT_0}{M^{\rm mol}g}\left[1-\left(\frac{p}{p_0}\right)^{1-\frac{1}{\gamma}}\right]$$
+  再利用$\frac{\gamma}{\gamma-1} = \frac{C_p^{\rm mol}}{C_p^{\rm mol}-C_V^{\rm mol}} = \frac{C_p^{\rm mol}}{R}$
+    即得证。
+  }
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{例题18(难度\stwo)}
+  \bch
+  教材167页习题3-10
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{例题18解答}
+  \bch
+  {\small
+  设过程的热容为$C_X$。由$\gamma$为常数知$C_V$为常数。
+
+  由热一律$\dbar Q = dU + pdV$以及$\dbar Q = C_X dT$, $dU = C_V dT$，得到
+  $$ C_X dT = C_V dT + p dV$$
+  若$C_X = C_V$，则$dV = 0$，即已经是等体过程（多方过程$n=\infty$的特殊情况)。
+    
+    否则，两边同乘以$\nu R$， 再由$\nu R dT =  (pdV + Vdp) $，
+  $$ (C_V-C_X + \nu R) pdV + (C_V-C_X) Vdp = 0$$
+  令$n =\frac{C_V-C_X + \nu R}{C_V-C_X }$，则
+  $$ \frac{dp}{p} + n\frac{dV}{V} = 0$$
+  或更明确地写成
+  $$ d \ln (pV^n) = 0$$
+  即$pV^n$为常数。
+  }
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{例题19(难度\stwo)}
+  \bch
+  教材168页习题3-17
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{例题19解答}
+  \bch
+  {\scriptsize
+    右边是绝热过程，右侧气体末态温度为
+    $T_R = T_0\left(\frac{p_0}{p}\right)^{\frac{1}{\gamma}-1} = \frac{3}{2}T_0$
+    
+    终压强$p_L=p_R=\frac{27}{8}p_0$，右侧终体积
+    $$V_R = V_0\left(\frac{p_0}{p_R}\right)^{\frac{1}{\gamma}} = \frac{4}{9}V_0$$
+    $$C_V = \frac{\nu R}{\gamma - 1} = 2 \nu R = \frac{2p_0V_0}{T_0}$$
+  
+    \bitem
+  \item[1]{对右边气体做功等于右边气体内能对增加
+    $$A = C_V(T_R-T_0) = \frac{2p_0V_0}{T_0}\left(\frac{3}{2}T_0-T_0\right) = p_0V_0$$}
+  \item[2]{上面已经算出右侧气体对终温为$\frac{3}{2}T_0$}
+  \item[3]{左侧气体终体积为$V_L=2V_0-V_R = \frac{14}{9}V_0$，温度
+    $$T_L = \frac{p_LV_L}{\nu R} = \frac{21}{4}T_0$$}
+  \item[4]{左侧气体吸热用于做功和增加左侧气体内能：
+    $$ Q = \Delta U_L + A = C_V(T_L-T_0) + p_0V_0 = \frac{19}{2}p_0V_0$$}
+    \eitem
+  }
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{例题20(难度\stwo)}
+  \bch
+  \addfig{1.5}{nncycle.png}
+
+  如图，某定体热容$C_V$为常数的理想气体的可逆循环由两个绝热过程和$n=2$的多方过程组成。其中的绝热压缩过程（即CD线）中温度升高一倍。求该循环的效率$\eta$。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{例题20解答}
+  \bch
+  按照第11讲讨论，多方循环的效率为$1-T_2/T_1$，其中$T_1$, $T_2$为任意一条绝热线上的高温值和低温值。故本题答案为$\eta = 1 - \frac{1}{2} = \frac{1}{2}$。
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{例题21(难度\sfour)}
+  \bch
+  
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{例题21解答}
+  \bch
+  \ech
+\end{frame}
+
+
 \section{Homework}
 
 \begin{frame}
@@ -439,14 +609,9 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \bch
   {\small 
   \bitem
+\item{教材习题3-6}
 \item{教材习题3-14}
 \item{对$pVT$系统证明$\pfrac TpH = T \pfrac VHp - V\pfrac THp$}
-\item{某固定压强的$pVT$系统，在一定温度范围内($200\SIK < T< 400 \SIK$)焓和温度有如下关系：
-  $$H =  aT^2 $$
-  其中$a=1 \SIJ/\SIK^2$。
-  初始时该系统温度$250\SIK$，自由焓$G = 100 \SIkJ$。
-  当系统升温到$350\SIK$，求系统自由焓$G$。
-}
   \eitem
   }
   \ech
