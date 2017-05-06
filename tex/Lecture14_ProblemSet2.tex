@@ -7,39 +7,18 @@
 \begin{document}
 \tpage{14}{第三四章知识的应用I(题霸2.0)}
 
-\section{Review}
-
 
 \begin{frame}
-\chtitle{补充知识：Ruchhardt测$\gamma$法}
-\bch
-参考教材150页图3-19
-
-这是个力学问题，显然由$p$, $V$这些力学量来描述比较合理。选取绝热方程$pV^\gamma = \const$
-$$ \frac{dp}{p} + \gamma \frac{dV}{V} = 0$$
-把$dp = dF/S$，$dV = S dx$代入上式，
-$$ dF = -\gamma \frac{S^2p}{V} dx $$
-即等效回复系数$k =\gamma \frac{S^2p}{V} $ 简谐振动圆频率
-$$\omega = \sqrt{\frac{k}{m}} = \sqrt{\frac{\gamma p S^2}{mV}}$$
-\ech
+  \chtitle{本讲内容}
+  \bch
+  \bitem
+\item{$pVT$系统偏导数运算技巧}
+\item{（主要是理想气体的）热力学过程}
+  \eitem
+  \ech
 \end{frame}
 
-\begin{frame}
-\chtitle{补充知识：大气垂直温差的修正}
-\bch
-{\small
-对水蒸气饱和的空气，做功等于内能改变量加上汽化热：
-$$ -pdV = C_V dT + \Lambda d(c\nu) $$
-其中$\nu$为空气摩尔数，$c$为空气中水蒸气的摩尔百分比，$\Lambda$为摩尔汽化热。又
-$$pdV + Vdp = \nu R dT$$
-两式相加得到
-$$ Vdp = C_p  dT + \nu \Lambda dc $$
-再由力学平衡$ dp = -\rho g dz$，即有
-$$ \frac{dT}{dz} =-\frac{\rho g V + \nu\Lambda\frac{dc}{dz}}{C_p} = -\frac{\gamma-1}{\gamma}\left(\frac{M^{\rm mol}g}{R}+\frac{\Lambda}{R}\frac{dc}{dz}\right)$$
-因为饱和蒸气压随着温度降低而降低（请回忆三相图），在有饱和蒸汽的空气里，气团继续上升会造成水蒸气凝结，$ \frac{dc}{dz} < 0 $，垂直温度梯度就会小于$-10\SIK/\SIkm$。
-}
-\ech
-\end{frame}
+
 
 \section{PDEs}
 
@@ -325,7 +304,7 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \chtitle{例题11解答}
   \bch
   {\scriptsize
-    本题考察的是$C_V$在固定温度时对体积对依赖。先利用内能和状态方程对关系得到
+    本题考察的是$C_V$在固定温度时对体积的依赖。先利用内能和状态方程对关系得到
     $$\pfrac UVT = T\pfrac pTV - p = \frac{\nu RT}{V} $$
     
   $$\pfrac {C_V}VT = \frac{\partial^2U}{\partial T\partial V} = \frac{\partial^2U}{\partial V\partial T} = \pfrac {\left(\frac{\nu RT}{V}\right)}{T}V =\frac{\nu R}{V} $$
@@ -340,7 +319,7 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 \end{frame}
 
 
-\section{Thermaldynamic Process}
+\section{Thermodynamic Process}
 
 \begin{frame}
   \chtitle{第二篇：热力学过程}
@@ -589,8 +568,11 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 
 
 \begin{frame}
-  \chtitle{例题21(难度\sfour)}
+  \chtitle{例题21(难度\sthree)}
   \bch
+  \addfig{1.5}{Tpcycle.png}
+
+  如图，某单原子理想气体的可逆循环ABCD。已知等温压缩过程CD的温度为$T$，等压膨胀过程中温度从$T_A=\frac{3}{2}T$升高到$T_B=2T$。求该循环的效率。
   
   \ech
 \end{frame}
@@ -598,6 +580,21 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 \begin{frame}
   \chtitle{例题21解答}
   \bch
+  {\scriptsize
+  单原子理想气体的$\gamma = \frac{5}{3}$， $C_p = \frac{5}{2}\nu R$。易得等压膨胀过程中吸热
+  $$Q_1 = C_p(T_B-T_A) = \frac{5}{4}\nu R T$$
+
+  绝热过程中$p \propto T^{5/2}$.
+  所以
+  $$\frac{p_c}{p_B} = \left(\frac{T_c}{T_B}\right)^{5/2} = \left(\frac{1}{2}\right)^{5/2}$$
+  $$\frac{p_D}{p_A} =\left(\frac{T_D}{T_A}\right)^{5/2} = \left(\frac{2}{3}\right)^{5/2}$$
+  再由$p_A=p_B$，得到
+  $$\frac{p_D}{p_C} =   \left(\frac{4}{3}\right)^{5/2}$$
+  由此可算出等温压缩过程放热
+  $$ Q_2' = \nu R T \ln \frac{V_C}{V_D} = \nu R T \ln \frac{p_D}{p_C} = \frac{5\nu RT}{2} \ln\frac{4}{3} $$
+  从而得出循环效率
+  $$\eta = 1 - \frac{Q_2'}{Q_1} = 1 - \frac{\frac{5}{2}\ln\frac{4}{3}}{\frac{5}{4}} = 1-2\ln\frac{4}{3} = 0.425 $$
+  }
   \ech
 \end{frame}
 
@@ -609,9 +606,9 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \bch
   {\small 
   \bitem
-\item{教材习题3-6}
-\item{教材习题3-14}
-\item{对$pVT$系统证明$\pfrac TpH = T \pfrac VHp - V\pfrac THp$}
+\item[36]{教材习题3-6}
+\item[37]{教材习题3-14}
+\item[38]{对$pVT$系统证明$\pfrac TpH = T \pfrac VHp - V\pfrac THp$}
   \eitem
   }
   \ech
