@@ -5,7 +5,9 @@
   \author{}
   \date{}
 \begin{document}
-\tpage{14}{第三四章知识的应用I(题霸2.0)}
+\tpage{14}{第三四章知识的应用I}
+
+\newcounter{problem}
 
 
 \begin{frame}
@@ -32,9 +34,9 @@
   \ech
 \end{frame}
 
-
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{例题1 (难度\stwo)}
+  \chtitle{例题\theproblem (难度\stwo)}
   \bch
   对$pVT$系统证明下述Maxwell关系：
 \bitem
@@ -48,7 +50,7 @@
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题1解答}
+  \chtitle{例题\theproblem 解答}
   \bch
 \bitem
 \item{由$dU = TdS - pdV$为全微分以及全微分成立条件得到$\pfrac TVS = -\pfrac pSV$。}
@@ -59,8 +61,9 @@
   \ech
 \end{frame}
 
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{例题2 (难度\sthree)}
+  \chtitle{例题\theproblem (难度\sthree)}
   \bch
 某气体的物态方程为
 $$p(V-\nu b) = \nu R T$$
@@ -73,7 +76,7 @@ $$ C_p - C_V = \nu R $$
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题2解法1}
+  \chtitle{例题\theproblem 解法1}
   \bch
 由$C_p  =\pfrac HTp = T \pfrac STp$, $C_V = \pfrac UTp = T\pfrac STV$
 得到
@@ -86,7 +89,7 @@ $$ C_p - C_V = T\pfrac pTV \pfrac VTp = T \frac{\nu R}{V-\nu b} \frac{\nu R}{p} 
 
 
 \begin{frame}
-  \chtitle{例题2解法2}
+  \chtitle{例题\theproblem 解法2}
   \bch
 由内能和状态方程的关系得到（准静态过程吸热量的第一种表达方式）
 {\scriptsize 
@@ -101,8 +104,9 @@ $$ (C_p- C_V)dT =  T\pfrac VTp dp + T\pfrac pTV dV = (V-\nu b)dp + p dV $$
 \end{frame}
 
 
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{例题3 (难度\sthree)}
+  \chtitle{例题\theproblem (难度\sthree)}
   \bch
 某固定体积的$pVT$系统，在一定温度范围内($200\SIK < T< 400 \SIK$)内能和温度有如下关系：
   $$U =  aT^2 $$
@@ -113,7 +117,7 @@ $$ (C_p- C_V)dT =  T\pfrac VTp dp + T\pfrac pTV dV = (V-\nu b)dp + p dV $$
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题3解法1}
+  \chtitle{例题\theproblem 解法1}
   \bch
   初始状态时，
   $$ S_{\rm ini} = \frac{U_{\rm ini}-F_{\rm ini}}{T_{\rm ini}} = \frac{1\times 250^2 - 10^5}{250} \SIJ/\SIK = -150\SIJ/\SIK$$
@@ -129,7 +133,7 @@ $$ (C_p- C_V)dT =  T\pfrac VTp dp + T\pfrac pTV dV = (V-\nu b)dp + p dV $$
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题3解法2}
+  \chtitle{例题\theproblem 解法2}
   \bch
   $$\pfrac {(F/T)}TV = \frac{1}{T}\pfrac FTV - \frac{F}{T^2} = -\frac{F+TS}{T^2} = -\frac{U}{T^2} = -a $$
   积分得到
@@ -141,8 +145,9 @@ $$ (C_p- C_V)dT =  T\pfrac VTp dp + T\pfrac pTV dV = (V-\nu b)dp + p dV $$
 \end{frame}
 
 
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{例题4 (难度\stwo)}
+  \chtitle{例题\theproblem (难度\stwo)}
   \bch
   $pVT$系统中，证明
   $$ \pfrac TpV \pfrac SVp - \pfrac TVp \pfrac SpV = 1 $$
@@ -150,7 +155,7 @@ $$ (C_p- C_V)dT =  T\pfrac VTp dp + T\pfrac pTV dV = (V-\nu b)dp + p dV $$
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题4解答}
+  \chtitle{例题\theproblem 解答}
   \bch
   等式左边是$(T,S)\rightarrow (p, V)$的Jaccobi行列式，代表$(T,S)$和$(p,V)$图上的面积元之比。在研究准静态循环时，我们根据热力学第一定律已经知道了$(T,S)$和$(p,V)$图上的对应的任何闭合曲线包围的面积相等（这包括面积的符号，即闭合曲线的绕行方向）。面积元只是很小的闭合曲线围绕的面积而已，所以得证。
 
@@ -163,33 +168,34 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 \end{frame}
 
 
-
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{例题5  (难度\sthree)}
+  \chtitle{例题\theproblem  (难度\sthree)}
   \bch
   $pVT$系统中，设$x, y$为任意两个独立变量，证明：
       {\small $$ \pfrac Txy \pfrac Syx - \pfrac Tyx \pfrac Sxy = \pfrac pxy \pfrac Vyx - \pfrac pyx \pfrac Vxy $$}  
   \ech
 \end{frame}
 
+
 \begin{frame}
-  \chtitle{例题5解答}
+  \chtitle{例题\theproblem 解答}
   \bch
 等式左边是$(T,S)\rightarrow (x, y)$的Jaccobi行列式，代表$(T,S)$和$(x,y)$图上的面积元之比。等式右边是$(p,V)\rightarrow (x, y)$的Jaccobi行列式，代表$(p,V)$和$(x,y)$图上的面积元之比。由于$(T,S)$和$(p,V)$图上面积元相等，故得证。
   \ech
 \end{frame}
 
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{习题6  (难度\sthree)}
+  \chtitle{习题\theproblem  (难度\sthree)}
   \bch
   $pVT$系统中，设$x, y$为任意两个独立变量，证明：
       {\scriptsize $$ \pfrac {\left(\frac{1}{T}\right)}xy \pfrac Uyx - \pfrac {\left(\frac{1}{T}\right)}yx \pfrac Uxy = \pfrac Vxy \pfrac {\left(\frac{p}{T}\right)}yx - \pfrac Vyx \pfrac {\left(\frac{p}{T}\right)}xy $$}  
   \ech
 \end{frame}
 
-
 \begin{frame}
-  \chtitle{习题6解答}
+  \chtitle{习题\theproblem 解答}
   \bch
   同样只要证明$\frac{1}{T}$-$U$图上的闭合曲线包围的面积和$V$-$\frac{p}{T}$图上对应的闭合曲线包围的面积相等。
   注意应用环路积分计算$x$-$y$图上闭合曲线包围的面积时既可以用$\oint ydx$，也可以用$\oint -x dy$。对$V$-$\frac{p}{T}$图我们采取后者。
@@ -199,8 +205,9 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \ech
 \end{frame}
 
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{习题7  (难度\sthree)}
+  \chtitle{习题\theproblem  (难度\sthree)}
   \bch
   对$pVT$系统证明
   $$\pfrac UpV = -T\pfrac VTS$$
@@ -209,7 +216,7 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 
 
 \begin{frame}
-  \chtitle{习题7解答}
+  \chtitle{习题\theproblem 解答}
   \bch
   证明:固定熵时
   $$ \dbar Q = C_V dT + T \pfrac pTV dV = 0 $$
@@ -219,9 +226,9 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \ech
 \end{frame}
 
-
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{习题8  (难度\sthree)}
+  \chtitle{习题\theproblem  (难度\sthree)}
   \bch
   对$pVT$系统证明
   $$\pfrac UVp = T\pfrac pTS - p$$
@@ -230,7 +237,7 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 
 
 \begin{frame}
-  \chtitle{习题8解答}
+  \chtitle{习题\theproblem解答}
   \bch
   证明:固定熵时
   $$ \dbar Q = C_p dT - T\pfrac VTp dp = 0 $$
@@ -240,8 +247,9 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \ech
 \end{frame}
 
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{习题9  (难度\sthree)}
+  \chtitle{习题\theproblem  (难度\sthree)}
   \bch
   对$pVT$系统证明
   $$\pfrac TVU = p\pfrac TUV - T\pfrac pUV $$
@@ -250,7 +258,7 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 
 
 \begin{frame}
-  \chtitle{习题9解答}
+  \chtitle{习题\theproblem解答}
   \bch
   证明：固定内能时
   $$ dU = C_V dT + \left(T\pfrac pTV - p\right)dV = 0$$
@@ -260,8 +268,9 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \ech
 \end{frame}
 
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{习题10  (难度\sfour)}
+  \chtitle{习题\theproblem   (难度\sfour)}
   \bch
   对$pVT$系统证明
   $$\pfrac TSH +\frac{T^2}{V} \pfrac VHp = \frac{T}{C_p} $$
@@ -269,7 +278,7 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 \end{frame}
 
 \begin{frame}
-  \chtitle{习题10解答}
+  \chtitle{习题\theproblem 解答}
   \bch
   {\scriptsize
   证明：由$C_p = T\pfrac STp$得到
@@ -291,8 +300,9 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \ech
 \end{frame}
 
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{例题11(难度\sfour)}
+  \chtitle{例题\theproblem (难度\sfour)}
   \bch
   某物质在一定范围内的物态方程为
   $$ pV = \nu R T\left(1+\ln\frac{T}{T_0}\right) $$
@@ -301,10 +311,10 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题11解答}
+  \chtitle{例题\theproblem 解答}
   \bch
   {\scriptsize
-    本题考察的是$C_V$在固定温度时对体积的依赖。先利用内能和状态方程对关系得到
+    本题考察的是$C_V$在固定温度时对体积的依赖。先利用内能和状态方程的关系得到
     $$\pfrac UVT = T\pfrac pTV - p = \frac{\nu RT}{V} $$
     
   $$\pfrac {C_V}VT = \frac{\partial^2U}{\partial T\partial V} = \frac{\partial^2U}{\partial V\partial T} = \pfrac {\left(\frac{\nu RT}{V}\right)}{T}V =\frac{\nu R}{V} $$
@@ -356,14 +366,14 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   $C_n = C_V - \frac{\nu R}{n-1}$}
   \item{理想气体的熵变$ dS = C_V d \ln T + \nu R d\ln V$}
   \item{常数$\gamma$近似下绝热方程$pV^\gamma = C$, $TV^{\gamma-1} =C$, $Tp^{\frac{1}{\gamma}-1} = C$}
-  \item{可逆多方循环热机效率$\eta = 1- \frac{T_2}{T_1}$其中$T_2$, $T_1$分别是任意一条绝热线两端的低温值和高温值。可逆多方循环的制冷剂效率则是$T_2/(T_1-T_2)$}
+  \item{可逆多方循环热机效率$\eta = 1- \frac{T_2}{T_1}$其中$T_2$, $T_1$分别是任意一条绝热线两端的低温值和高温值。可逆多方循环的制冷机效率则是$T_2/(T_1-T_2)$}
   \eitem
   \ech  
 \end{frame}
 
-
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{例题12  (难度\sthree)}
+  \chtitle{例题\theproblem  (难度\sthree)}
   \bch
   教材166页思考题3-19
   \ech
@@ -371,14 +381,15 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 
 
 \begin{frame}
-  \chtitle{例题12解答}
+  \chtitle{例题\theproblem 解答}
   \bch
   空调机比较省电。空调的制热原理是把室外当成需要制冷的低温热源。如果看成可逆循环，空调释放给室内（高温热源）的热量大于外界对空调做功（即空调耗能）。用电炉的话释放的热量不会大于消耗的电能。当然，这些讨论都是基于空调可以看成高效率的可逆制冷机的前提。
   \ech
 \end{frame}
 
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{例题13  (难度\stwo)}
+  \chtitle{例题\theproblem   (难度\stwo)}
   \bch
   教材166页习题3-2
   
@@ -387,7 +398,7 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 
 
 \begin{frame}
-  \chtitle{例题13解答}
+  \chtitle{例题\theproblem 解答}
   \bch
   {\small
   氮气的摩尔数$\nu = \frac{14\SIg}{28\SIg/\SImol} = 0.5\SImol$
@@ -401,15 +412,16 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \ech
 \end{frame}
 
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{例题14  (难度\stwo)}
+  \chtitle{例题\theproblem   (难度\stwo)}
   \bch
   教材166页习题3-3
   \ech
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题14解答}
+  \chtitle{例题\theproblem 解答}
   \bch
   摩尔数$\nu = \frac{16\SIg}{32\SIg/\SImol} = 0.5\SImol$
   
@@ -425,15 +437,16 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \ech
 \end{frame}
 
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{例题15  (难度\stwo)}
+  \chtitle{例题\theproblem (难度\stwo)}
   \bch
   教材166页习题3-4
   \ech
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题15解答}
+  \chtitle{例题\theproblem 解答}
   \bch
       {\small
         \bitem
@@ -451,15 +464,16 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \ech
 \end{frame}
 
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{例题16(难度\sone)}
+  \chtitle{例题\theproblem (难度\sone)}
   \bch
   教材166页习题3-5
   \ech
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题16解答}
+  \chtitle{例题\theproblem 解答}
   \bch
   $$T=T_0\left(\frac{V_0}{V}\right)^{\gamma-1} = 300\SIK\times 8^{2/3} = 1200\SIK $$
   绝热过程$Q=0$,
@@ -467,15 +481,16 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \ech
 \end{frame}
 
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{例题17(难度\sthree)}
+  \chtitle{例题\theproblem (难度\sthree)}
   \bch
   教材168页习题3-15
   \ech
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题17解答}
+  \chtitle{例题\theproblem 解答}
   \bch
   {\small
     大气密度为$ \rho = \frac{M^{\rm mol}}{V^{\rm mol}} = \frac{M^{\rm mol}p}{RT} $,   按绝热大气模型，$T = \left(\frac{p}{p_0}\right)^{1-\frac{1}{\gamma}} T_0$。
@@ -490,8 +505,9 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \ech
 \end{frame}
 
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{例题18(难度\stwo)}
+  \chtitle{例题\theproblem (难度\stwo)}
   \bch
   教材167页习题3-10
   \ech
@@ -499,7 +515,7 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 
 
 \begin{frame}
-  \chtitle{例题18解答}
+  \chtitle{例题\theproblem 解答}
   \bch
   {\small
   设过程的热容为$C_X$。由$\gamma$为常数知$C_V$为常数。
@@ -519,15 +535,16 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \ech
 \end{frame}
 
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{例题19(难度\stwo)}
+  \chtitle{例题\theproblem (难度\stwo)}
   \bch
   教材168页习题3-17
   \ech
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题19解答}
+  \chtitle{例题\theproblem 解答}
   \bch
   {\scriptsize
     右边是绝热过程，右侧气体末态温度为
@@ -538,9 +555,9 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
     $$C_V = \frac{\nu R}{\gamma - 1} = 2 \nu R = \frac{2p_0V_0}{T_0}$$
   
     \bitem
-  \item[1]{对右边气体做功等于右边气体内能对增加
+  \item[1]{对右边气体做功等于右边气体内能的增加
     $$A = C_V(T_R-T_0) = \frac{2p_0V_0}{T_0}\left(\frac{3}{2}T_0-T_0\right) = p_0V_0$$}
-  \item[2]{上面已经算出右侧气体对终温为$\frac{3}{2}T_0$}
+  \item[2]{上面已经算出右侧气体的终温为$\frac{3}{2}T_0$}
   \item[3]{左侧气体终体积为$V_L=2V_0-V_R = \frac{14}{9}V_0$，温度
     $$T_L = \frac{p_LV_L}{\nu R} = \frac{21}{4}T_0$$}
   \item[4]{左侧气体吸热用于做功和增加左侧气体内能：
@@ -550,8 +567,9 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \ech
 \end{frame}
 
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{例题20(难度\stwo)}
+  \chtitle{例题\theproblem (难度\stwo)}
   \bch
   \addfig{1.5}{nncycle.png}
 
@@ -560,15 +578,15 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题20解答}
+  \chtitle{例题\theproblem 解答}
   \bch
   按照第11讲讨论，多方循环的效率为$1-T_2/T_1$，其中$T_1$, $T_2$为任意一条绝热线上的高温值和低温值。故本题答案为$\eta = 1 - \frac{1}{2} = \frac{1}{2}$。
   \ech
 \end{frame}
 
-
+\stepcounter{problem}
 \begin{frame}
-  \chtitle{例题21(难度\sthree)}
+  \chtitle{例题\theproblem (难度\sthree)}
   \bch
   \addfig{1.5}{Tpcycle.png}
 
@@ -578,7 +596,7 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题21解答}
+  \chtitle{例题\theproblem 解答}
   \bch
   {\scriptsize
   单原子理想气体的$\gamma = \frac{5}{3}$， $C_p = \frac{5}{2}\nu R$。易得等压膨胀过程中吸热

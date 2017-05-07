@@ -81,13 +81,13 @@
 \item{热力学第二定律的多种表述方式}
 \item{克劳修斯不等式和热力学第二定律的“微分”形式}
 \item{自由能和自由焓名称的由来}
-\item{熵的计算举例}
-\item{热力学第二定律概念练习}
+\item{平衡判据}
+\item{课程总结}
 \eitem
 \ech
 \end{frame}
 
-\section{statements of 2nd law}
+\section{2nd Law}
 
 
 \begin{frame}
@@ -234,7 +234,7 @@ $$\Delta S = Q/T_1 - Q/T_2<0$$
 \bch
 热库是指比系统大得多的热源。热库和系统之间的热量交换对热库来说如九牛一毛，不影响热库的温度。
 
-\addfig{1.8}{heatsource.jpg}
+\addfig{1.8}{heatsource.png}
 \ech
 \end{frame}
 
@@ -258,7 +258,7 @@ $$\sum_{i=1}^n \Delta S_i = \sum_{i=1}^n \frac{-\dbar Q_i}{T_i} \ge 0$$
 \begin{frame}
 \chtitle{热力学第二定律的“微分”形式}
 \bch
-假设系统和温度为$T_e$的环境发生接触（假设环境是个始终处于热平衡的热库）。在一个微过程中，
+假设系统和温度为$T_e$的环境(热库)发生接触。在一个微过程中，
 设系统的吸热量为$\dbar Q$，则环境熵变为
 $$ dS_e = \frac{-\dbar Q}{T_e}$$
 把系统和环境的总和看作一个孤立系统，设系统熵变为$dS$，则
@@ -275,7 +275,7 @@ $$dS +dS_e \ge 0$$
 \bch
 教材中证明克劳修斯不等式时，$T$指的是环境温度。证明结束之后（从184页讨论热温比开始）就默默地把$T$当成了系统温度。
 
-\addfig{1.2}{whathappened.png}
+\addfig{1.8}{huangainian.png}
 
 \ech
 \end{frame}
@@ -286,7 +286,7 @@ $$dS +dS_e \ge 0$$
 假设系统和温度为$T$的热库接触，且处于平衡态。当我们给系统一个扰动时，系统各处可能发生热不平衡（各处温度不同），力学不平衡（各处压强不同），和化学不平衡（各处化学势不同）。所谓理想传导热库是指和系统接触非常良好的热库，它使得系统各部分很快地恢复到温度$T$。而恢复力学平衡和化学平衡则要迟缓得多。
 
 \bmini{0.5}
-\addfig{1.5}{idealheatsource.jpg}
+\addfig{1.5}{idealheatsource.png}
 \emini
 \bmini{0.46}
 {\bf 和理想传导热库接触的系统，可处于非平衡态（力学不平衡或者化学不平衡）却仍具有确定的和热库一致的温度$T$。}
@@ -362,166 +362,337 @@ $$ A' \le - \Delta F = -\Delta (G- pV) = - \Delta G + p \Delta V$$
 \ech
 \end{frame}
 
-\section{Applications}
-
-\begin{frame}
-\chtitle{熵的计算举例I}
-\bch
-{计算$1\SImol$冰在标准状态下熔解后的熵的变化，已知标准状态下冰的摩尔熔化热是$333\SIkJ$。}
-
-\skipline
-{
-$$\Delta S = \frac{Q}{T} = \frac{333 \SIkJ}{273.15\SIK} = 1.22 \SIkJ/\SIK $$
-}
-\ech
-\end{frame}
+\section{Equilibrium Conditions}
 
 
 \begin{frame}
-\chtitle{熵的计算举例II}
+\chtitle{眼花撩乱的平衡判据}
 \bch
-{\blue 设理想气体热容量为常量，它经历可逆等温过程从体积$V_1$膨胀到体积$V_2$，求熵的变化。}
+教材从198页开始叨念各种（完全看不懂的）“平衡判据”：
 
-\skipline
+\bitem
+\item{熵判据：在内能和体积不变的情况下，对于一切可能的变动来说，平衡态的熵最大。}
+\item{自由能判据：在温度和体积不变的情况下，对于一切可能的变动来说，平衡态的自由能最小。}
+\item{自由焓判据：在温度和压强不变的情况下，对于一切可能的变动来说，平衡态的自由焓最小。}
+\eitem
 
-{
-理想气体$dS = C_V d\ln T + \nu R d\ln V$。等温过程中：
-\bea
-\Delta S = \nu R \Delta \ln V = \nu R \ln\frac{V_2}{V_1}
-\eea
-}
+\addfig{1.5}{bzdsh.jpg}
 \ech
 \end{frame}
 
 \begin{frame}
-\chtitle{熵的计算举例III}
+\chtitle{背书宝的福音}
 \bch
-{\blue 体积为$V_1$的理想气体绝热自由膨胀，体积变为$V_2$。}
+\addfig{1}{beishubao.jpg}
 
-自由绝热膨胀既不做功，也不吸热，所以内能不变。又理想气体内能只跟温度有关，故温度不变。所以本题的初态，末态都和上题相同，熵的变化也相同（熵是态函数）：
+要写出“$X$判据”，
 
-$$ \Delta S = \nu R \ln\frac{V_2}{V_1}$$
-
-
-\ech
-\end{frame}
-
-
-
-
-\begin{frame}
-\chtitle{熵的计算举例IV}
-\bch
-{\blue 光子气体的内能密度为$aT^4$，其中$a=\frac{\pi^2 k^4}{15\hbar^3c^3}$为常数，$T$为温度。已知$T=0$时光子气体的熵为零。试求温度为$T$的光子气体的熵密度。}
-
-\skipline
-{
-内能$U=aVT^4$，定体热容$\pfrac UTV = 4aVT^3$。
-
-利用$dU = TdS - p dV$得到$\pfrac USV = T$，故
-$$\pfrac STV = \frac{\pfrac UTV}{\pfrac USV} = \frac{4aVT^3}{T} = 4aVT^2$$
-固定体积，对温度从$0$到$T$积分，得到
-$$ S(T, V) = \int_0^T \pfrac STV dT = \frac{4}{3}aVT^3 $$
-即熵密度为
-$$ \frac{S}{V}= \frac{4}{3}aT^3$$
-}
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{熵的计算举例V}
-\bch
-{\blue 把温度和压强都相同的，总摩尔数为$\nu$的$n$种不同的气体混合在一起。每种气体的摩尔分数（单种气体摩尔数/总摩尔数）分别为$c_1$, $c_2$, $\ldots$, $c_n$ （$\sum_i c_i = 1$）。试计算气体混合后相对于混合前的熵变。}
-
-\skipline
-
-{\small
-每种气体温度不变，体积由混合前的$Vc_i$变为$V$，熵增为$(\nu c_i) R\ln \frac{V}{c_iV} = - \nu R c_i\ln c_i$，对$n$种气体求和即得
-$$\Delta S =   -\nu R \sum_{i=1}^n c_i \ln c_i$$}
-
-\skipline
+\bitem
+\item{第一步：把$X$写成全微分：$dX + \ldots dY + \ldots dZ = 0$}
+\item{第二步：背书。在$Y$和$Z$不变的情况下，对于一切可能的变动来说，平衡态的$X$最$\ldots$。}
+\item{第三步：判定是最大还是最小。$dX$, $dY$, $dZ$中必然有一个能量型的量（指$dU, dH, dF, dG$中的一个)，它前面系数为正则为最小，为负则为最大。}
+\eitem
 
 {\scriptsize
-另解：
+似乎有点理解了：
 
-在混合前，任取一个分子，我们知道它是属于那一类气体。混合后，我们只知道它是第$i$种气体的概率为$c_i$，故单个分子熵变为
-$-\sum_{i=1}^{n} kc_i\ln c_i $。 总共有$ \nu N_A $个分子，故总熵变为
-$$ \Delta S =  -\nu N_A k\sum_{i=1}^n c_i \ln c_i = -\nu R \sum_{i=1}^n c_i \ln c_i$$  
+$Y$和$Z$不变，则$dX = 0$，代表$X$是某种极值？
+
+能量型的量当然有下限？
 }
 \ech
 \end{frame}
 
-\begin{frame}
-\chtitle{熵的计算举例VI}
-\bch
-{\small \blue 某气体状态方程为$pV + f(V) = \nu RT$，其中$f$为某函数。气体经过准静态的等温加热膨胀体积从$V_1$变为$V_2$，这个过程的熵变。}
 
+\begin{frame}
+\chtitle{例子1：熵判据}
+\bch
+写出
+$$dS - \frac{1}{T} dU - \frac{p}{T} dV = 0 $$
+$dU$前系数为负，取最大。
+
+在内能$U$和体积$V$不变的情况下，对于一切可能的变动来说，平衡态的熵$S$最大。
+
+\skiplines
+
+熵判据也常常说成，孤立系的平衡态熵最大。内能和体积不变，是孤立系的一种。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{例子2：自由能判据}
+\bch
+写出
+$$dF  + S dT + p dV = 0 $$
+$dF$前系数为正，取最小。
+
+
+在温度$T$和体积$V$不变的情况下，对于一切可能的变动来说，平衡态的自由能$F$最小。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{例子3：自由焓判据}
+\bch
+写出
+$$dG + S dT - V dp = 0$$
+$dG$前系数为正，取最小。
+
+在温度$T$和压强$p$不变的情况下，对于一切可能的变动来说，平衡态的自由焓$G$最小。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{例子4: 压强判据之一}
+\bch
+写出
+$$dp - \frac{1}{V} dH + \frac{T}{V} dS = 0$$
+$dH$前系数为负，取最大。
+
+在焓$H$和熵$S$不变的情况下，对于一切可能的变动来说，平衡态的压强$p$最大。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{真懂了吗}
+\bch
+“一切可能的变动”是什么意思？
+
+\addfig{1.5}{zhendongma.jpg}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{理解熵判据}
+\bch
+熵判据里“一切可能的变动”好理解：就是指孤立系的平衡态和一切非平衡态。对非平衡态，广延量内能和体积都有定义。
+
+
+\addfig{1}{meimaobing.jpg}
+
+证明：根据孤立系的熵增大原理，任何非平衡态的熵会持续增大直至到达平衡态。显然平衡态的熵是最大的。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{理解自由能判据}
+\bch
+自由能判据的条件是定温定体。“一切可能的变动”也包括非平衡态。这时需要假设系统和恒温的理想传导热库接触来理解非平衡态的温度。
+
+\addfig{1}{meimaobing.jpg}
+
+证明：从非平衡态到平衡态的过程为不可逆过程。定体过程不对外做功，又由于恒温条件下对外做功小于自由能的减少（对不可逆过程）。故自由能的减少大于零。即非平衡态的自由能大于平衡态的自由能。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{理解自由焓判据}
+\bch
+自由焓判据的条件是定温定压。“一切可能的变动”也包括非平衡态。这时需要假设系统和恒温的理想传导热库接触来理解非平衡态的温度。
+
+\addfig{1}{meimaobing.jpg}
+
+证明：从非平衡态到平衡态的过程为不可逆过程。定温定压条件下，对不可逆过程，其他形式的做功小于自由焓的减少，又这里不考虑其他形式的做功（即没有额外安装发电机什么的），故自由焓的减少大于零。即非平衡态的自由焓大于平衡态的自由焓。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{三大平衡条件}
+\bch
+\bitem
+\item[1]{\blue 热平衡条件：系统内部温度均匀}
+\item[2]{\blue 力学平衡条件：系统内部压强均匀}
+\item[3]{\blue 相平衡条件：系统内各相化学势相等}
+\eitem
+
+{\scriptsize
+注：第三条仅考虑了物态变化（如液态水和水蒸气之间的平衡），其实它可以推广到涉及化学反应的一般的化学平衡条件。化学反应比相变更为复杂，各种反应物或者产物有可能混合在一起产生额外的混合熵（请参考教材208页）。
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{热平衡条件}
+\bch
+热平衡条件可以从孤立系的熵判据推出：如果有相邻的温度不相等的子系统，则由高温到低温的热量传输必然增大熵。这说明系统还未达到平衡态（熵最大的状态）。
+\addfig{1.5}{eqc1.jpg}
+$$\Delta S = \frac{-Q}{T_1} + \frac{Q}{T_2} > 0$$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{力学平衡条件}
+\bch
+力学平衡条件可以从定温定体系统的自由能判据推出：如果有相邻的压强不相等的子系统，则压强大的子系统等温膨胀$\Delta V$，压强小的子系统等温收缩$\Delta V$，可使系统温度和体积不变的情况下总自由能减小。这说明系统还未达到平衡态（自由能最低的态）。
+\addfig{1.5}{eqc2.jpg}
+$$\Delta F = -p_1 \Delta V + p_2 \Delta V < 0 $$
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{相平衡条件}
+\bch
+设有种可以相互转化的物态。每种物态的粒子数分别为$N_1$, $N_2$, $\ldots$, $N_n$。每种物态成分的化学势即该成分的平均每个粒子的自由焓，即
+$$ \mu_i \equiv \pfrac G{N_i}{T,p,N_1, N_2, \ldots, N_{i-1}, N_{i+1}, \ldots, N_n} $$
+
+\addfig{1.5}{eqc3.jpg}
+
+相平衡条件可以从定温定压系统的自由焓判据推出：如果定温定压条件下$ \mu_i > \mu_j$，则可以通过$i\rightarrow j$的相变降低系统的总自由焓。
+，这说明系统还未达到平衡态。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{经典理想气体的化学势}
+\bch
 {\small
-准静态过程吸热量为按定体热容计算的吸热量加上热压强做功消耗的能量，在等温过程中仅需计算后者。
-\bea
-dS &=& \frac{\dbar Q}{T} \newl
-&=&   \frac{T\pfrac pTV dV}{T} \newl
-&=& \pfrac pTV dV  \newl
-&=& \frac{\nu R}{V} dV
-\eea
-所以等温膨胀后熵变为$\nu R \ln\frac{V_2}{V_1}$。
+考虑经典的理想气体，在$i$态上的分子数为
+$$ n_i = e^{-\frac{\varepsilon_i-\mu}{kT}}$$
+下面我们证明，这里的$\mu$和用自由焓定义的化学势相同}
+
+{\scriptsize
+  我们来计算温度为$T$的处于平衡态的单一成分理想气体的自由焓。
+  $$G = U + pV - TS$$
+  设第i个态上有$n_i$个分子，总分子数$N=\sum_i n_i$。因为要用到熵的绝对数值，我们就不能像以前那样直接忽略粒子的全同性了（混合气体的熵不同于单一成分气体的熵）。因为置换$N$个粒子共有$N!$种可能性。按照熵是状态数的对数的理解，按可区分粒子计算出来的熵则要减去$\ln (N!) \approx N \ln N - N $。最后，按照热力学的单位制，熵以$k$为单位，于是
+  $$\frac{S}{k} = N\sum_i\left(-\frac{n_i}{N}\ln\frac{n_i}{N}\right)  - (N\ln N - N) = N-\sum_i (n_i\ln n_i) = N - \sum_in_i\frac{\mu - \varepsilon_i}{kT} =N+\frac{U-\mu N}{kT}  $$
+  即
+  $$TS = kNT + U - \mu N = pV + U - \mu N$$
+  移项即得结论$$ G = \mu N$$
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{光子气体的化学势}
+\bch
+利用光子气体
+$$U = aV T^4$$
+以及熵
+$$ S = \frac{4}{3}aV T^3$$
+压强
+$$ p = \frac{a}{3} T^4$$
+很容易得到自由焓
+$$ G = U + pV - TS = 0$$
+即化学势为零。
+
+但，光子气体的$U = aVT^4$本身就是我们用化学势为零的假设推导出来的，为了避免循环论证，我们必须用不同的方法进行证明。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{光子气体内能公式的独立推导}
+\bch
+{\small
+把光子气体理解为温度为$T$的黑体辐射，则光子气体的能量密度只能是$T$的函数。我们假设
+$$ U = V f(T)$$
+其中$f$为待定函数。
+我们曾经推导了极端相对论气体的压强公式，并得到了$p = \frac{1}{3} n\overline{\varepsilon} = \frac{U}{3V} $，即
+$$p = \frac{1}{3} f(T)$$
+由内能和状态方程的关系得到
+$$ f(T) = \pfrac UVT = T\pfrac pTV - p = \frac{1}{3} \left[T f'(T) - f(T)\right]$$
+化简即
+$$ \frac{d \ln f}{d\ln T}  = 4 $$
+即$ f = a T^4 $。这个证明无法确定积分常数$a$。但由此可以推出光子气体化学势为零，再按第5讲那样用玻色-爱因斯坦分布可以计算出$a$。
+}
+\ech
+\end{frame}
+
+\section{Review}
+
+\begin{frame}
+  \chtitle{知识结构总结}
+\addfig{4.3}{summary.png}  
+\end{frame}
+
+
+\begin{frame}
+\chtitle{补充知识：Ruchhardt测$\gamma$法}
+\bch
+参考教材150页图3-19
+
+这是个力学问题，显然由$p$, $V$这些力学量来描述比较合理。选取绝热方程$pV^\gamma = \const$
+$$ \frac{dp}{p} + \gamma \frac{dV}{V} = 0$$
+把$dp = dF/S$，$dV = S dx$代入上式，
+$$ dF = -\gamma \frac{S^2p}{V} dx $$
+即等效回复系数$k =\gamma \frac{S^2p}{V} $ 简谐振动圆频率
+$$\omega = \sqrt{\frac{k}{m}} = \sqrt{\frac{\gamma p S^2}{mV}}$$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{补充知识：大气垂直温差的修正}
+\bch
+{\small
+对水蒸气饱和的空气，做功等于内能改变量加上汽化热：
+$$ -pdV = C_V dT + \Lambda d(c\nu) $$
+其中$\nu$为空气摩尔数，$c$为空气中水蒸气的摩尔百分比，$\Lambda$为摩尔汽化热。又
+$$pdV + Vdp = \nu R dT$$
+两式相加得到
+$$ Vdp = C_p  dT + \nu \Lambda dc $$
+再由力学平衡$ dp = -\rho g dz$，即有
+$$ \frac{dT}{dz} =-\frac{\rho g V + \nu\Lambda\frac{dc}{dz}}{C_p} = -\frac{\gamma-1}{\gamma}\left(\frac{M^{\rm mol}g}{R}+\frac{\Lambda}{R}\frac{dc}{dz}\right)$$
+因为饱和蒸气压随着温度降低而降低（请回忆三相图），在有饱和蒸汽的空气里，气团继续上升会造成水蒸气凝结，$ \frac{dc}{dz} < 0 $，垂直温度梯度就会小于$-10\SIK/\SIkm$。
 }
 \ech
 \end{frame}
 
 
 \begin{frame}
-\chtitle{热力学第二定律练习I}
-\bch
+  \chtitle{后记：关于不考的一些内容}
+  \bch
+  问题1: 教材204页至208页在瞎扯什么，完全看不懂……
 
-\addfig{1.}{songfen.jpg}
+  \skiplines
+  
+  答：是这样的，教材在这节开头忘写了这么一段：
 
-\bitem
-\item{论证摩擦生热过程是不可逆的}
-\eitem
+  {\small 假设气态和液态都能用范德瓦尔斯方程描述（看成一种假想的单相态），我们可以计算出理论上的单相$F$-$V$曲线等。实际发生的情况未必和这种假想的单相态理论预言相同，下面我们用自由能判据等来进行判断……}
 
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{热力学第二定律练习II}
-\bch
-
-\addfig{1.}{songfen.jpg}
-
-\bitem
-\item{有人想利用海洋不同深度处温度不同制造一种机器，把海水的内能转化为机械功，这是否违反热力学第二定律？}
-\eitem
-
-\ech
+  \ech
 \end{frame}
 
 
 \begin{frame}
-\chtitle{热力学第二定律练习III}
-\bch
+  \chtitle{后记：关于不考的一些内容}
+  \bch
+  问题2: 直接跳过第五章的知识，是否会对学习后续课程造成影响。
 
-\addfig{1.}{songfen.jpg}
+  \skiplines
+  
+  答：本科阶段肯定不会。研究生阶段基本不会。研究生之后的阶段——你想太多了\bye
 
-\bitem
-\item{给气筒里的气体加热，使它在保持内能不变的情况下膨胀推动活塞做功，这把热完全转化为了功，是否违反热力学第二定律？}
-\eitem
-\ech
+  \ech
 \end{frame}
 
 
 \begin{frame}
-\chtitle{热力学第二定律练习IV}
-\bch
-
-\addfig{1.}{songfen.jpg}
-
-\bitem
-\item{论证绝热线和等温线不能有两个以上的交点。}
-\eitem
-\ech
+  \chtitle{后记：班长问我的一道题（非平衡过程）}
+  \bch
+  如果我们急于喝一杯奶茶，以下哪种冷却方法好？
+  \bitem
+\item[A]{先把热茶冷5分钟，加一匙冷牛奶。}
+\item[B]{先把热茶冷2.5分钟，再加一匙冷牛奶，再冷2.5分钟。}
+\item[C]{先将一匙冷牛奶加入热茶中，再冷却5分钟。}
+\item[D]{以上效果一样}
+  \eitem
+  \ech
 \end{frame}
+
 
 
 \section{Homework}
@@ -529,15 +700,17 @@ dS &=& \frac{\dbar Q}{T} \newl
 \begin{frame}
 \chtitle{第十二周作业（序号接第十一周）}
 \bch
-
+{\small
 \bitem
-\item[30]{教材习题4-27}
-\item[31]{某气体的状态方程为
+\item[30]{某气体的状态方程为
 $$p(V- \nu b) = \nu RT$$
-该气体经过准静态的等温膨胀压强减少了一半。求这个过程的熵变。}
-\item[32]{史瓦西黑洞是一个热力学系统，它的能量正比于质量，熵正比于质量的平方。用热力学第二定律证明一个史瓦西黑洞不可能分裂为两个史瓦西黑洞而不造成其他影响。}
+该气体经过准静态的等温膨胀压强减少了一半。求这个过程气体的熵变。}
+\item[31]{史瓦西黑洞是一个热力学系统，它的内能正比于质量，熵正比于质量的平方。用热力学第二定律证明一个史瓦西黑洞不可能分裂为两个史瓦西黑洞而不造成其他影响。}
+\item[32]{无重力环境下，定温定体容器中装满水蒸气，水蒸气中凝结出一个半径为$R$的悬浮球状液态水滴。这个系统可以看作气相，液相，气液交界处的表面相三相共存。表面相的方程为
+  $$ dU = TdS + \sigma dA $$
+  其中$\sigma$为水的表面张力系数，$A = 4\pi R^2$为水滴表面积。利用自由能判据推导平衡态下液态水和气态水的压强之差(用$\sigma$, $R$表示)。该系统的相平衡条件还是液态水和气态水的化学势相等吗？为什么？}
 \eitem
-
+}
 \ech
 \end{frame}
 
