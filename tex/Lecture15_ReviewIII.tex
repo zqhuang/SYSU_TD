@@ -6,181 +6,36 @@
   \date{}
 \begin{document}
 \tpage{15}{课程复习III}
-\newcounter{problem}
 
-\stepcounter{problem}
-
-\begin{frame}
-  \chtitle{本讲内容}
-  \bch
-  \bitem
-\item{克拉珀龙方程的应用}
-\item{熵的计算}
-\item{热力学第二定律的应用}
-  \eitem
-  \ech
-\end{frame}
-
-\section{Clapeyron Eq.}
-
-\begin{frame}
-  \chtitle{第三篇 克拉珀龙方程的应用}
-  \bch
-  \addfig{4}{clapeyron.png}
-  \ech
-\end{frame}
-
-\begin{frame}
-  \chtitle{克拉珀龙方程回顾}
-  \bch
-  \bmini{0.6}
-  \lfig{2.5}{PVTdiagram.png}
-  \emini
-  \bmini{0.36}
-  克拉珀龙方程是准静态过程吸热公式（准静态过程吸热量等于按照$C_V$计算的吸热量，加上热压强做功消耗的能量）在相变时$dT=0$的特殊情形。
-  \emini
-  
-  \tbox{  $$\pfrac pTV = \frac{\Lambda^{\rm mol}}{T\left(V^{\rm mol}_\beta - V^{\rm mol}_\alpha\right)} $$
-  }
-  \ech
-\end{frame}
-
-\begin{frame}
-  \chtitle{汽化过程的克拉珀龙方程的近似}
-  \bch
-  在汽化过程中，液态的摩尔体积可以忽略。气态的摩尔体积按理想气体近似为$RT/p$。故
-  $$ \frac{dp}{dT} = \frac{p\Lambda^{\rm mol}}{RT^2}$$
-  或者写成
-{\blue  $$ \Lambda^{\rm mol} = RT \frac{d \ln p}{d \ln T} $$}
-  \ech
-\end{frame}
+\newcounter{chap}
+\newcounter{problem}[chap]
+\def\proid{{Problem \thechap.\theproblem}}
 
 
-\begin{frame}
-  \chtitle{蒸气压方程}
-  \bch
-  在一定温度范围内可以对摩尔汽化热$\Lambda^{\rm mol}$作线性近似即可积分得到
-  $$\ln\left(\frac{p}{p_0}\right) = A\left(\frac{1}{T_0} - \frac{1}{T}\right) + B \ln\left(\frac{T}{T_0}\right)$$
-  上式称为蒸气压方程。
-  \ech
-\end{frame}
-
-
-\begin{frame}
-  \chtitle{例题\theproblem (难度\sone)}
-  \bch
-  为什么在远低于$100\cdeg$的室温下，空气中仍含有水蒸气？空气中含有的水蒸气比例有上限吗？平时所说的湿度70\%是什么意思？
-  \ech
-\end{frame}
-
-
-\begin{frame}
-  \chtitle{例题\theproblem 解答}
-  \bch
-  $100\cdeg$是一个大气压下的水的沸点。按照克拉珀龙方程，低压低沸点。空气中水蒸气的分压很小，远低于一个大气压。故沸点可以低于室温。
-
-  \skipline
-
-  如果持续增大空气湿度（即增大水蒸气分压），使得沸点超过室温，那么水滴会自动从空气中凝结出来（降雨，露珠等自然现象）。这个临界的水蒸气分压，称为饱和蒸气压(水的蒸发曲线上对应于室温的压强值)。稳定情况下，空气中的水蒸气比例不能超过饱和蒸气压所限定的水蒸气分压上限。
-
-  \skipline
-  
-  平时所说的湿度70\%，是指水蒸气分压是饱和蒸气压的70\%。当湿度达到100\%，就会出现水滴自动凝结的现象。
-  \ech
-\end{frame}
-
-\stepcounter{problem}
-\begin{frame}
-  \chtitle{例题\theproblem (难度\sone)}
-  \bch
-  教材225页习题4-8
-  \ech
-\end{frame}
-
-
-\begin{frame}
-  \chtitle{例题\theproblem 解答}
-  \bch
-  {\small
-  饱和蒸气压即气液共存态时的压强。
-  
-  按照克拉珀龙方程的汽化近似，
-  
-  $$\Lambda^{\rm mol} = RT \frac{\Delta ln p}{\Delta \ln T} = 8.314\times 373.15 \times \frac{\ln\frac{788}{733.7}}{\ln\frac{374.15}{372.15}} \SIJ/\SImol = 4.13\times 10^4 \SIJ/\SImol$$
-  又$1\SImol$水为$0.018\SIkg$，故按习惯把汽化热写成
-  $$ \Lambda = \frac{4.13\times 10^4}{0.018} \SIJ/\SIkg = 2.29\times 10^6 \SIJ/\SIkg$$
-  }
-  \ech
-\end{frame}
-
-\stepcounter{problem}
-\begin{frame}
-  \chtitle{例题\theproblem (难度\stwo)}
-  \bch
-  教材226页习题4-15
-  \ech
-\end{frame}
-
-
-\begin{frame}
-  \chtitle{例题\theproblem 解答}
-  \bch
-      {\scriptsize
-        三相点既满足固态蒸气压方程，又满足液态蒸气压方程。
-        $$\ln\left(\frac{\pthree}{\SImmHg}\right) = 23.3-\frac{3754\SIK}{\Tthree} = 19.49 - \frac{3063 \SIK}{\Tthree}$$
-        解出
-        $$\Tthree = 181.36\SIK;\ \pthree = 13.48\SImmHg$$
-        忽略固体和液体的体积，计算出升华热：
-        $$\Lambda^{\rm mol}_{\rm sublimate} = R\Tthree \frac{d\ln p}{d\ln T} = R\Tthree \frac{ \frac{3754\SIK }{\Tthree^2} dT }{\frac{1}{\Tthree} dT} = 3.121\times 10^4 \SIJ/\SImol $$
-        汽化热
-        $$\Lambda^{\rm mol}_{\rm evaporate} = R\Tthree \frac{d\ln p}{d\ln T} = R\Tthree \frac{ \frac{3063\SIK }{\Tthree^2} dT }{\frac{1}{\Tthree} dT} = 2.547\times 10^4 \SIJ/\SImol $$
-        在三相点有固定的压强，所以各种潜热即是各种物态的焓差，由此得熔化热为
-        $$\Lambda^{\rm mol}_{\rm melt} = \Lambda^{\rm mol}_{\rm sublimate} - \Lambda^{\rm mol}_{\rm evaporate} = 5.74 \times 10^3 \SIJ/\SImol$$
-        
-      }
-  \ech
-\end{frame}
-
-\stepcounter{problem}
-\begin{frame}
-  \chtitle{例题\theproblem (难度\stwo)}
-  \bch
-  教材226页习题4-13
-  \ech
-\end{frame}
-
-
-\begin{frame}
-  \chtitle{例题\theproblem 解答}
-  \bch
-      {\small
-        考虑$1\SImol$物质，根据热一律
-        $$ \Delta U = Q + A = \Lambda^{\rm mol} - p \Delta V$$
-        又吸热量等于热压强做功
-        $$\Lambda^{\rm mol} = \pfrac p{\ln T}V \Delta V = p\Delta V \pfrac {\ln p}{\ln T}V $$
-        结合上面两式即得证。
-      }
-  \ech
-\end{frame}
 
 \section{Entropy}
+\setcounter{chap}{6}
+\setcounter{problem}{0}
 
 \begin{frame}
-  \chtitle{第四篇：熵的计算}
-
-  \addfig{4}{entropy.png}
+  \chtitle{第六篇：熵的计算}
+  \bch
+  准静态过程：
+  \tbox{$$\Delta S = \int \frac{\dbar Q}{T} $$}
+  对非准静态过程，一般需要构造末态相同的准静态过程来计算熵变。
+  \ech
 \end{frame}
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem (难度\sone)}
+  \chtitle{\proid (\sone)}
   \bch
   计算$1\SImol$冰在标准状态下熔解后的熵的变化，已知标准状态下冰的摩尔熔化热是$333\SIkJ$。
   \ech
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
 $$\Delta S = \frac{Q}{T} = \frac{333 \SIkJ}{273.15\SIK} = 1.22 \SIkJ/\SIK $$
   \ech
@@ -189,15 +44,49 @@ $$\Delta S = \frac{Q}{T} = \frac{333 \SIkJ}{273.15\SIK} = 1.22 \SIkJ/\SIK $$
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem (难度\sone)}
+  \chtitle{\proid (\sone)}
   \bch
-  教材226页习题4-21
+  $1\SImol$的单原子理想气体经过准静态$n=2$多方过程温度从$T_1=300\SIK$变为$T_2 = 400\SIK$。求气体的熵变。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解法1}
+  \bch
+  单原子理想气体$C_V=\frac{3\nu R}{2}$，多方热容
+  $$C_n = C_V - \frac{\nu R}{n-1} = \frac{\nu R}{2}$$
+  故
+  $$\Delta S = \int_{T_1}^{T_2} \frac{C_n dT}{T} = \frac{\nu R}{2} \ln\frac{T_2}{T_1} = 1.20\SIJ/\SIK$$
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解法2}
+  \bch
+  单原子理想气体$C_V=\frac{3\nu R}{2}$，
+  $$dS = C_V d\ln T + \nu R d\ln V$$
+  故
+  $$\Delta S = C_V\ln\frac{T_2}{T_1} + \nu R\ln\frac{V_2}{V_1}$$
+  又因为是$n=2$多方过程$pV^2 = C$，根据理想气体状态方程即$TV$为常量。
+  故$$\ln\frac{V_2}{V_1} = - \ln\frac{T_2}{T_1}$$
+  从而
+  $$\Delta S = \frac{\nu R}{2}\ln\frac{T_2}{T_1} = 1.20\SIJ/\SIK$$
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sone)}
+  \bch
+  教材226页习题4-21：
+
+  一温度为$400\SIK$的热库在与另一温度为$300\SIK$的热库短时间的接触中传递给它$1\SIcal$的热量，两热库构成的系统的熵改变了多少？
   \ech
 \end{frame}
 
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
   $$\Delta S =\Delta S_1 + \Delta S_2 =  \frac{-Q}{T_1} +\frac{Q}{T_2} = 3.49\times 10^{-3} \SIJ/\SIK$$
   \ech
@@ -207,15 +96,17 @@ $$\Delta S = \frac{Q}{T} = \frac{333 \SIkJ}{273.15\SIK} = 1.22 \SIkJ/\SIK $$
 \stepcounter{problem}
 
 \begin{frame}
-  \chtitle{例题\theproblem (难度\sone)}
+  \chtitle{\proid (\sone)}
   \bch
-  教材226页习题4-22
+  教材226页习题4-22：
+
+  冬季房间热量的流失率为$2.5\times 10^4\SIkcal/\mathrm{h}$，室温$21\cdeg$，外界气温$-5\cdeg$，此过程的熵增加率为何？
   \ech
 \end{frame}
 
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
   转化为国际单位制
   $$T_1 = 294.15\SIK, T_2 = 268.15\SIK, \frac{dQ}{dt} = 2.91\times 10^4 \SIJ/\SIs$$
@@ -230,20 +121,28 @@ $$\Delta S = \frac{Q}{T} = \frac{333 \SIkJ}{273.15\SIK} = 1.22 \SIkJ/\SIK $$
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem (难度\stwo)}
+  \chtitle{\proid (\stwo)}
   \bch
-  教材227页习题4-31
+  教材227页习题4-31：
+
+  一实际制冷机工作于两恒温热源之间，其温度分别为 $T_1= 400\SIK$和 $T_2 = 200\SIK$，设工作物质在每一循环中，从低温热源吸收热量为$200\SIcal$，向高温热源释放热量为$600\SIcal$。
+  \bitem
+\item[(1)]{在工作物质进行的每一循环中，外界对制冷机做了多少功？}
+\item[(2)]{制冷机经过一循环后，热源和工作物质熵的总变化$\Delta S$是多少？}
+\item[(3)]{如设上述制冷机为可逆机，仍从低温热源吸收热量$200\SIcal$，则经过一循环后，需要外界对制冷机做多少功？热源和工作物质熵的总变化$\Delta S_0$是多少？}
+  \eitem
+  
   \ech
 \end{frame}
 
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
   {\small
     \bitem
   \item[1]{$A = Q_1'-Q_2  = 400\SIcal = 1674\SIJ$}
-  \item[2]{$\Delta S = \left(\frac{Q_1'}{T_1}+\frac{-Q_2}{T_2} = \frac{600}{400}-\frac{200}{200}\right)\SIcal/\SIK = 0.5\SIcal/\SIK = 2.09\SIJ/\SIK$}
+  \item[2]{$\Delta S = \frac{Q_1'}{T_1}+\frac{-Q_2}{T_2} = \left(\frac{600}{400}-\frac{200}{200}\right)\SIcal/\SIK = 0.5\SIcal/\SIK = 2.09\SIJ/\SIK$}
   \item[3]{卡诺可逆热机的吸放量绝对值与温度成正比。故在高温热源放热为$400\SIcal$。需要外界对制冷机做功$200\SIcal = 837\SIJ$。可逆热机造成的熵变为零。}
   \eitem
   }
@@ -252,15 +151,21 @@ $$\Delta S = \frac{Q}{T} = \frac{333 \SIkJ}{273.15\SIK} = 1.22 \SIkJ/\SIK $$
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem (难度\sthree)}
+  \chtitle{\proid (\sthree)}
   \bch
-  教材227页习题4-30
+  教材227页习题4-30：
+
+  $2100\SIkg$的汽车以$80\SIkm/\mathrm{h}$的速率在水平道路上行驶时突然刹车，停止时闸瓦升温到$60\cdeg$，环境温度为$20\cdeg$。
+  \bitem
+\item[(1)]{在闸瓦处机械能耗散为热时产生了多少熵？}
+\item[(2)]{在闸瓦处热量散布到空气中时产生了多少附加熵？}
+  \eitem
   \ech
 \end{frame}
 
 
 \begin{frame}
-  \chtitle{例题\theproblem 解法1}
+  \chtitle{\proid 解法1}
   \bch
   {\small
   闸瓦一共吸收（自机械能转化而来的）热量
@@ -280,7 +185,7 @@ $$\Delta S = \frac{Q}{T} = \frac{333 \SIkJ}{273.15\SIK} = 1.22 \SIkJ/\SIK $$
 
 
 \begin{frame}
-  \chtitle{例题\theproblem 解法2(不会积分的小白解法)}
+  \chtitle{\proid 解法2(不会积分的小白解法)}
   \bch
       {\small
         $$Q  = \frac{1}{2}m\upsilon^2 = 5.1852\times 10^5 \SIJ$$
@@ -290,22 +195,34 @@ $$\Delta S = \frac{Q}{T} = \frac{333 \SIkJ}{273.15\SIK} = 1.22 \SIkJ/\SIK $$
         $$ \Delta S_{\rm br} = \frac{Q}{\overline{T}} = 1656 \SIJ/\SIK$$
         散热时产生的熵
         $$ \frac{-Q}{\overline{T}} + \frac{Q}{T_0} =   \left(-1656 + \frac{5.1852\times 10^5}{293.15}\right) = 113 \SIJ/\SIK $$
+
+        \skipline
         
+        {\scriptsize
+        跟第一种解法结果比较，小白对近似解法的精度还是比较满意的。}
   }
   \ech
 \end{frame}
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem (难度\stwo)}
+  \chtitle{\proid (\stwo)}
   \bch
-  教材223页思考题4-20
+  教材223页思考题4-20：
+
+  理想气体的体积经下列过程膨胀了4倍，试比较熵增加了多少？
+  \bitem
+\item[(1)]{绝热自由膨胀}
+\item[(2)]{可逆等温膨胀}
+\item[(3)]{可逆绝热膨胀}
+\item[(4)]{绝热节流膨胀}  
+  \eitem
   \ech
 \end{frame}
 
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
   \bitem
 \item[1]{理想气体绝热自由膨胀温度不变，$\Delta S = \nu R \ln\frac{V_2}{V_1} = \nu R \ln 4$}
@@ -318,14 +235,14 @@ $$\Delta S = \frac{Q}{T} = \frac{333 \SIkJ}{273.15\SIK} = 1.22 \SIkJ/\SIK $$
 
 \stepcounter{problem}
 \begin{frame}
-\chtitle{例题\theproblem (难度\stwo)}
+\chtitle{\proid (\stwo)}
 \bch
 光子气体的内能密度为$aT^4$，其中$a=\frac{\pi^2 k^4}{15\hbar^3c^3}$为常数，$T$为温度。已知$T=0$时光子气体的熵为零。试求温度为$T$的光子气体的熵密度。
 \ech
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
 内能$U=aVT^4$，定体热容$\pfrac UTV = 4aVT^3$。
 
@@ -340,14 +257,14 @@ $$ \frac{S}{V}= \frac{4}{3}aT^3$$
 
 \stepcounter{problem}
 \begin{frame}
-\chtitle{例题\theproblem (难度\stwo)}
+\chtitle{\proid (\stwo)}
 \bch
 把温度和压强都相同的，总摩尔数为$\nu$的$n$种不同的气体保持温度和压强不变地混合在一起。每种气体的摩尔分数（单种气体摩尔数/总摩尔数）分别为$c_1$, $c_2$, $\ldots$, $c_n$ （$\sum_i c_i = 1$）。试计算气体混合后相对于混合前的熵变。
 \ech
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
 {\small
 每种气体温度不变，体积由混合前的$Vc_i$变为$V$，熵增为$(\nu c_i) R\ln \frac{V}{c_iV} = - \nu R c_i\ln c_i$，对$n$种气体求和即得
@@ -367,7 +284,7 @@ $$ \Delta S =  -\nu N_A k\sum_{i=1}^n c_i \ln c_i = -\nu R \sum_{i=1}^n c_i \ln 
 
 \stepcounter{problem}
 \begin{frame}
-\chtitle{例题\theproblem (难度\sthree)}
+\chtitle{\proid (\sthree)}
 \bch
  某气体状态方程为$pV + f(V) = \nu RT$，其中$f$为某函数。气体经过准静态的等温加热膨胀体积从$V_1$变为$V_2$，这个过程的熵变。
    \ech
@@ -375,7 +292,7 @@ $$ \Delta S =  -\nu N_A k\sum_{i=1}^n c_i \ln c_i = -\nu R \sum_{i=1}^n c_i \ln 
 
 
 \begin{frame}
-\chtitle{例题\theproblem 解答}
+\chtitle{\proid 解答}
 \bch
 准静态过程吸热量为按定体热容计算的吸热量加上热压强做功消耗的能量，在等温过程中仅需计算后者。
 \bea
@@ -391,7 +308,7 @@ dS &=& \frac{\dbar Q}{T} \newl
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem (难度\sthree)}
+  \chtitle{\proid (\sthree)}
   \bch
  某物质在$T_0 = 300\SIK$附近的物态方程可以写成
   $$ pV = \nu RT \left(1+\ln\frac{T}{T_0}\right) $$
@@ -400,7 +317,7 @@ dS &=& \frac{\dbar Q}{T} \newl
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
   $$d S = \frac{\dbar Q}{T} = \frac{\pfrac p{\ln T}V dV}{T} = \pfrac pTV dV = \nu R\left(2+\ln\frac{T}{T_0}\right)\frac{dV}{V}$$
   在$T=T_0$时对上式积分即得
@@ -412,7 +329,7 @@ dS &=& \frac{\dbar Q}{T} \newl
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem (难度\sfour)}
+  \chtitle{\proid (\sfour)}
   \bch
   {\small
   某气体的焦耳-汤姆孙系数
@@ -429,7 +346,7 @@ dS &=& \frac{\dbar Q}{T} \newl
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
   {\small
     先计算$H(T, p)$的函数形式
@@ -447,7 +364,7 @@ dS &=& \frac{\dbar Q}{T} \newl
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答(续)}
+  \chtitle{\proid 解答(续)}
   \bch
   {\small
     $$ \pfrac STp = \frac{C_p}{T}= \frac{\pfrac HTp}{T}  = \frac{cT}{\left(T^3 +3ap \right)^{\frac{2}{3}}} $$
@@ -463,23 +380,34 @@ dS &=& \frac{\dbar Q}{T} \newl
 
 
 \section{2nd Law}
+\setcounter{chap}{7}
+\setcounter{problem}{0}
 
 \begin{frame}
-  \chtitle{第五篇：热力学第二定律的应用}
-  \addfig{4}{2ndlaw.png}
+  \chtitle{第七篇：热力学第二定律的应用}
+  \bch
+\bitem
+\item{开尔文表述：不可能从单一热源吸热转化为功而无其他影响 （即：第二类永动机不可能）}
+\item{克劳修斯表述：不可能低温物体传热给高温物体而无其他影响}
+\item{孤立系统的熵增大原理：孤立系统在非平衡态熵会持续增大，直到到达平衡态后熵取到极大值不再改变。}
+\item{卡诺定理：所有工作于温度为$T_1$的高温热源和温度为$T_2$的低温热源之间的可逆热机效率均为$1-T_2/T_1$，不可逆热机的效率则低于这个值。}
+  \eitem
+\ech
 \end{frame}
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem (难度\stwo)}
+  \chtitle{\proid (\stwo)}
   \bch
-  教材223页思考题4-14
+  教材223页思考题4-14：
+
+  北方的酷暑季节有时比较干燥，在这种情况下即使气温高过体温，人们还是可以通过汗的蒸发将身体的热量向外散发。这违反热力学第二定律吗？
   \ech
 \end{frame}
 
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
   不违反。因为这个过程造成了汗水的相变。不满足热力学第二定律的“不引起其他变化”这个要求。
   \ech
@@ -488,15 +416,17 @@ dS &=& \frac{\dbar Q}{T} \newl
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem (难度\stwo)}
+  \chtitle{\proid (\stwo)}
   \bch
-  教材223页思考题4-15
+  教材223页思考题4-15：
+
+  用透镜将太阳光聚焦到物体上，可以使那里局部升温。温度的升高有上限吗？
   \ech
 \end{frame}
 
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
   有上限。物体温度不会超过太阳表面温度（约$6000\SIK$）。
   \ech
@@ -504,31 +434,35 @@ dS &=& \frac{\dbar Q}{T} \newl
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem (难度\sthree)}
+  \chtitle{\proid (\sthree)}
   \bch
-  教材223页思考题4-24
+  教材224页思考题4-24：
+
+  地球每天吸收一定太阳光的热量$Q_1$，同时又向太空排放一定的热量$Q_2'$，平均来说$Q_1 = Q_2'$。这两个过程可逆吗？这两个过程合起来使地球的熵增加还是减少？是否违反熵增加原理？
   \ech
 \end{frame}
 
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
-  地球不是一个热平衡系统，因此是不可逆过程。地球熵减少了。但是环境熵增加得更多。不违反熵增加原理。
+  地球不是一个热平衡系统，昼夜交替就有温差，因此是不可逆过程。地球熵减少了（因为白天吸收$Q_1$时温度高于在夜间释放$Q_2‘$时温度）。地球熵虽然减少，但是环境熵增加得更多。不违反熵增加原理。
   \ech
 \end{frame}
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem (难度\stwo)}
+  \chtitle{\proid (\stwo)}
   \bch
-  教材223页思考题4-22
+  教材224页思考题4-22：
+
+  用量热法测水的汽化热时，要把一定量的水蒸气通入盛水的量热器中，此过程可逆吗？在此过程中水蒸气的熵是否增加？这是否违反熵增加原理？
   \ech
 \end{frame}
 
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
   实验中制造的水蒸气温度一般高于水温，过程不可逆。此过程中水蒸气的熵减少了，但水的熵增加得更多，不违反熵增加原理。
   \ech
@@ -536,24 +470,56 @@ dS &=& \frac{\dbar Q}{T} \newl
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem (难度\stwo)}
+  \chtitle{\proid (\stwo)}
   \bch
-  教材223页思考题4-10
+  教材223页思考题4-10:
+
+  下列过程是否可逆？为什么？
+  \bitem
+\item[(1)]{室内一盆水在恒定温度下慢慢蒸发}
+\item[(2)]{通过活塞缓慢地压缩容器中的空气，设活塞与器壁间无摩擦。}
+\item[(3)]{将封闭在导热性能不好的容器里的空气浸到恒温的热浴中，使其温度缓慢地由原来的$T_1$升到热浴的温度$T_2$。}
+\item[(4)]{在一绝热容器内不同温度的两种液体混合。}
+  \eitem
   \ech
 \end{frame}
 
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
   \bitem
 \item[1]{不可逆，因为水的气液两相处于不平衡}
 \item[2]{可逆，因为是准静态过程}
 \item[3]{可逆，因为是准静态过程}
-\item[4]{不可逆，混合时会产生混合熵。}
+\item[4]{不可逆，非热平衡到热平衡是不可逆过程，另外即使温度相同也是不可逆过程，因为是两种不同的液体，混合时会产生混合熵。}
   \eitem
   \ech
 \end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+\chtitle{\proid (\sone)}
+\bch
+
+教材223页思考题4-11:
+
+论证绝热线和等温线不能有两个交点。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{\proid 解答}
+\bch
+若等温线和绝热线有两个交点，如图
+\addfig{2}{twoi.png}
+则取如箭头所示的一个循环，该循环从单一热源吸热做功并未产生其他影响，和热力学第二定律矛盾。
+
+\ech
+\end{frame}
+
 
 \section{Homework}
 
@@ -561,10 +527,10 @@ dS &=& \frac{\dbar Q}{T} \newl
   \chtitle{第15周作业（序号接第14周）}
   \bch
   {\small 
-  \bitem
-\item[39]{教材习题4-9}
+    \bitem
 \item[40]{教材习题4-28}
 \item[41]{教材习题4-20}
+\item[42]{教材思考题4-8}
   \eitem
   }
   \ech

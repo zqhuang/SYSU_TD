@@ -7,59 +7,597 @@
 \begin{document}
 \tpage{13}{课程复习I}
 
+\begin{frame}
+  \chtitle{复习纲要}
+  \bch
+  \bitem
+\item{第一篇：理想气体状态方程}
+\item{第二篇：麦克斯韦分布}
+\item{第三篇：$pVT$系统的态函数}
+\item{第四篇：热力学过程和循环}
+\item{第五篇：克拉珀龙方程的应用}
+\item{第六篇：熵的计算}
+\item{第七篇：热力学第二定律的应用}
+  \eitem
+  \ech
+\end{frame}
+
+\newcounter{chap}
+\newcounter{problem}[chap]
+\def\proid{{Problem \thechap.\theproblem}}
+
+\section{Ideal Gas}
+\setcounter{chap}{1}
+\setcounter{problem}{0}
+
 
 \begin{frame}
-\chtitle{热力学第二定律练习I}
-\bch
+  \chtitle{第一篇 理想气体状态方程}
+  \bch
+  \tbox{$$ pV = \nu RT$$}
+  可以写成
+  $$p = n k T$$
+  或者
+  $$ pV = N k T$$
+  \ech
+\end{frame}
 
-\addfig{1.}{songfen.jpg}
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+一个体积为$0.02494\SIm^3$的恒温容器里的$1\SImol$气体压强为$101200 \SIPa$。抽去$\frac{1}{3}\SImol$气体后，容器内气体达到热平衡时压强变为$67200\SIPa$。再抽去$\frac{1}{3}\SImol$气体，容器内气体达到热平衡时压强变为$33467\SIPa$。试计算恒温容器的温度。 
+  \ech
+\end{frame}
 
-\bitem
-\item{论证摩擦生热过程是不可逆的}
-\eitem
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  如果是理想气体，$\frac{p}{\nu} = \frac{RT}{V}$应该为常数。题目中讨论的是对理想气体有偏离的实际气体。
+  
+  我们把题目所给的$\frac{p}{\nu}$对摩尔数的依赖列出来：
+  $$ \nu = 1\SImol,\ \frac{p}{\nu } = 1.012\times 10^5 \SIPa/\SImol$$
+  $$ \nu = \frac{2}{3}\SImol,\ \frac{p}{\nu } = 1.008\times 10^5 \SIPa/\SImol $$
+  $$ \nu = \frac{1}{3}\SImol,\ \frac{p}{\nu } = 1.004\times 10^5 \SIPa/\SImol$$
+  因为气体越稀薄越接近理想气体，作线性外推得到
+  $ \nu \rightarrow 0$时，  $\frac{p}{\nu} = 1.000\times 10^5\SIPa/\SImol$。
+  所以
+  $$ T = \frac{p}{\nu} \frac{V}{R} = 10^5\times \frac{0.02494}{8.314} \SIK = 300\SIK$$
+  
+  \ech
+\end{frame}
 
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  在标准状态下，某气球里充有$\nu=1\SImol$气体。气球近似可看作半径$r=0.15\SIm$的均匀球面。问它的张力系数（单位长度受力）为多少。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  {\small
+  把气球划分为上下半球，上半球受气体净推力为
+  $$F=(p -p_0)(\pi r^2)$$
+  其中$p$为气球内气压，$p_0=1\atm$为外界大气压。
+
+  上半球受到的气体推力必须和下半球拉它的张力平衡
+  $$ F = \sigma (2\pi r)$$
+  其中$\sigma$为所求的张力系数
+
+  结合上面两式得到熟知的：
+  $$ p-p_0 = \frac{2\sigma}{r} $$
+  再由理想气体状态方程
+  $$\sigma = \frac{r}{2}(p-p_0) = \frac{r}{2}\left(\frac{\nu R T_0}{\frac{4\pi}{3}r^3} - p_0\right) = 4.45\times 10^3 \SIN/\SIm $$
+
+  }
+  \ech
+\end{frame}
+
+
+\section{Maxwell Distribution}
+
+\setcounter{chap}{2}
+\setcounter{problem}{0}
+
+\begin{frame}
+  \chtitle{第二篇 麦克斯韦分布}
+  \bch
+  {\small
+  只需要记住{\bf 无量纲速度的每个分量服从标准正态分布}：
+  $$\tilde{f}_{\rm 1D}(u_x) = \frac{1}{\sqrt{2\pi}}e^{-\frac{u_x^2}{2}}$$
+  可秒推麦克斯韦分布的所有公式：
+  
+  三维无量纲速度分布
+  $$ \tilde{f}(u_x, u_y, u_z) = \tilde{f}_{\rm 1D}(u_x)\tilde{f}_{\rm 1D}(u_y)\tilde{f}_{\rm 1D}(u_z) =\left(\frac{1}{2\pi}\right)^{3/2}e^{-u^2/2}$$
+  
+  速率分布
+  $$ \tilde{F}(u) = 4\pi u^2 \tilde{f}(u_x, u_y, u_z) = \sqrt{\frac{2}{\pi}}u^2e^{-u^2/2}$$
+
+  要换回普通单位制，只需要分析量纲，配以$\upsilon_c$的若干次幂。}
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{第二篇 麦克斯韦分布（续）}
+  \bch
+  {\small
+  服从标准正态分布的变量$x$的绝对值$n$次平均可以写成两种积分式：
+  $$\overline{|x|^n}=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty |x|^n e^{-x^2/2}dx = \sqrt{\frac{2}{\pi}}\int_0^\infty x^n e^{-x^2/2}dx $$
+
+  我们往往是把某个积分式转化为$\overline{|x|^n}$，然后用下面的方法计算：
+  $$\overline{|x|^0} = 1,$$
+  $$\overline{|x|} = \sqrt{\frac{2}{\pi}},$$
+  再利用递推式
+  $$\overline{|x|^n} = (n-1) \overline{|x|^{n-2}}\ \  (n\ge 2),$$
+  可以对任意正整数$n$迅速求出$\overline{|x|^n}$。
+  }
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{第二篇 麦克斯韦分布（续）}
+  \bch
+      {\small
+        或者记住高斯积分公式
+        $$\int_{-\infty}^{\infty} e^{-ax^2}dx = \sqrt{\frac{\pi}{a}}$$
+        用积分号下求导或者分部积分的方式可以求$\int x^n e^{-ax^2}$类的积分。
+  }
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{第二篇 麦克斯韦分布（续）}
+  \bch
+      {\small
+        当然，最重要的是对速度分布函数和速率分布函数有清晰的图像理解。这是写出积分式的前提，然后才是计算积分的问题。
+  }
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  一个装有某常见双原子气体（分子式为$X_2$）的圆柱形恒温容器绕中心轴以每秒$30$转的速度旋转。已知容器的半径为$0.4\SIm$，温度为$300\SIK$。等容器内气体达到热平衡后，测得容器中心轴附近的气体压强为容器壁附近的气体压强的$96.4\%$。问$X$是什么元素？
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  根据$p = nkT$知道压强正比于分子数密度，而分子数密度根据玻尔兹曼分布为
+  $$ n(r) = n_0e^{\frac{m\omega^2 r^2}{2kT}}$$
+  其中$\omega = 60\pi \SIs^{-1}, r= 0.4\SIm$。题目所给条件即
+  $$e^{-\frac{m\omega^2 r^2}{2kT}}=0.964$$
+  由此得气体摩尔质量
+  $$ M^{\rm mol} = N_Am = -\ln 0.964\times \frac{2RT}{\omega^2r^2} = 32\SIg/\SImol$$
+  所以$X$的原子量为16，是氧元素。
+  \ech
+\end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sthree)}
+  \bch
+  假设有某种二维气体的速度分布函数为
+  $$f(\upsilon_x,\upsilon_y)\propto e^{-\left[\left(\frac{m\upsilon^2}{2kT}\right)^2\right]}$$
+  其中$m$为分子质量，$T$为温度。
+
+  求该气体分子的平均动能。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+      {\small
+        无量纲速率的分布函数为（注意速率的分布函数要乘以$2\pi u$):
+        $$F(u) \propto u e^{-u^4/4}$$
+$$        \overline{u^2} = \frac{\int_0^\infty u^3e^{-u^4/4}du}{\int_0^\infty ue^{-u^4/4}du} =      \frac{ -e^{-u^4/4}|_0^\infty }{\int_0^\infty e^{-x^2}dx} =\frac{1}{\frac{1}{2}\sqrt{\pi}} = \frac{2}{\sqrt{\pi}} $$
+        换算回普通单位制即
+        $$\overline{\upsilon^2} = \frac{2}{\sqrt{\pi}} \frac{kT}{m}$$
+        即平均动能
+        $$\frac{1}{2}m \overline{\upsilon^2} = \frac{kT}{\sqrt{\pi}}$$
+  }
+  \ech
+\end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sfour)}
+  \bch
+  置于很大的真空室内的绝热容器里装有稀薄氦气。在容器壁上开一个小孔，经过一段时间后把小孔堵上，发现容器内氦气压强降低了$0.4\%$，问容器内氦气的分子数减少了百分之多少？漏气的过程很缓慢，可以近似认为整个过程中容器内氦气一直处于热平衡。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+        稀薄氦气可以看成单原子理想气体。
+        由内能$U = \frac{3}{2}\nu RT = \frac{3}{2}pV$。压强降低$0.4\%$即内能降低$0.4\%$。对单原子理想气体，泻能速率为$\frac{1}{3}\overline{\upsilon}$，泻流速率为$\frac{1}{4}\overline{\upsilon}$，故分子数减少百分比是内能减少百分比的$3/4$，即为$0.3\%$。        
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sfour)}
+  \bch
+  假设内径为$5\SIm$的封闭球形飞船绕中子星做每秒一周的匀速圆周运动。飞船的质心在球心，且自转和公转同步（即保持同一面对着中子星）。飞船内有温度为$285\SIK$的氧气。问：氧气的压强是均匀的吗？如果不均匀，最小压强和最大压强之比为多少？
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  {\small
+  取旋转参考系。氧气分子的离心力势能为$-\frac{1}{2}mr^2\omega^2$，重力势能为$-GMm/r$。两者之和为
+  $$\varepsilon(r) = -\frac{1}{2}mr^2\omega^2 -\frac{GMm}{r}$$
+  其中$M$为中子星质量，$r$为氧气分子距离中子星的距离，$\omega = 2\pi \SIs^{-1}$。
+  
+  当然，我们考察的是飞船内部不同位置的势能差，我们取质心位置$r_0$为基准把上述势能进行泰勒展开近似。注意到势能的一阶导数即质心处离心力与引力之和为零(即$mr_0\omega^2 = \frac{GMm}{r_0^2}$)。所以考虑二阶项
+  $$\varepsilon(r_0+\delta r) = \varepsilon(r_0) + \frac{1}{2}\left(-m\omega^2 -\frac{2GMm}{r_0^3}\right)\delta r^2 =  \varepsilon(r_0) - \frac{3}{2}m\omega^2\delta r^2 $$
+  由此得出飞船边缘($\delta r = 5\SIm$)处分子数密度和中心分子数密度差别最大，两者之比为
+  $$e^{\frac{3m \omega^2\delta r^2}{2kT}}= 1.02 $$
+    }
+  \ech
+\end{frame}
+
+
+\section{PDEs}
+\setcounter{chap}{3}
+\setcounter{problem}{0}
+
+\begin{frame}
+  \chtitle{第三篇：令人头疼的偏导数}
+  \bch
+  对{\bf 仅有两个独立变量}的态函数们，有普通链式法则
+  $$\pfrac XYS \pfrac YZS = \pfrac XZS$$
+
+  三变量新链式法则
+  $$\pfrac XYZ \pfrac YZX = -\pfrac XZY$$
+
+  和四变量新链式法则
+  $$ \pfrac WZX \pfrac ZXY = \pfrac WXY - \pfrac WXZ  $$
+  
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{第三篇：全微分成立条件}
+  \bch
+  $ f dX + g dY$为全微分的充要条件为
+  $$\pfrac fYX = \pfrac gXY $$
+  
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{第三篇：令人头疼的偏导数}
+  \bch
+  {\small
+  内能和状态方程的关系：
+    $$\pfrac UVT = \pfrac p{\ln T}V - p $$
+  焓和状态方程的关系
+  $$\pfrac HpT = V - \pfrac V{\ln T}p  $$
+  上面两式分别可推导出准静态过程中吸热量的两种计算方式：
+    $$ \dbar Q = C_VdT + \pfrac p{\ln T}V dV $$
+  $$ \dbar Q = C_pdT - \pfrac V{\ln T}p dp $$  
+}
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{第三篇：令人头疼的偏导数（续）}
+  \bch
+  当然，最重要的是对偏导数有清晰的图像理解。这样才能打开思路，不拘泥于公式。
+  \ech
+\end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sone)}
+  \bch
+  证明焦耳汤姆孙系数$$ \alpha$$可以写成
+  $$ \alpha = -\frac{\pfrac HpT}{C_p} $$
 \ech
 \end{frame}
 
 \begin{frame}
-\chtitle{热力学第二定律练习II}
-\bch
-
-\addfig{1.}{songfen.jpg}
-
-\bitem
-\item{有人想利用海洋不同深度处温度不同制造一种机器，把海水的内能转化为机械功，这是否违反热力学第二定律？}
-\eitem
-
+  \chtitle{\proid 解答}
+  \bch
+  焓的物理意义为计入了等压过程做功的“总能量”，所以根据热力学第一定律，等压过程中
+  $$C_p dT = \dbar Q = dH$$
+  即$$C_p = \pfrac HTp$$
+  因此
+  $$ \frac{\pfrac HpT}{C_p} = \pfrac HpT \pfrac THp = -\pfrac TpH  = -\alpha$$
+  上述推导中我们用了三变量的新链式法则。
+  
 \ech
+\end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  对$pVT$系统证明下述Maxwell关系：
+\bitem
+\item{$\pfrac TVS = -\pfrac pSV$}
+\item{$\pfrac TpS = \pfrac VSp$}
+\item{$\pfrac SVT = \pfrac pTV$}
+\item{$\pfrac SpT = -\pfrac VTp$}
+\eitem
+\ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+\bitem
+\item{由$dU = TdS - pdV$为全微分以及全微分成立条件得到$\pfrac TVS = -\pfrac pSV$。}
+\item{由$dH = TdS + Vdp$为全微分以及全微分成立条件得到$\pfrac TpS = \pfrac VSp$。}
+\item{由$dF = -SdT - pdV$为全微分以及全微分成立条件得到$\pfrac SVT = \pfrac pTV$。}
+\item{由$dG = -SdT + Vdp$为全微分以及全微分成立条件得到$\pfrac SpT = -\pfrac VTp$。}
+\eitem
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sthree)}
+  \bch
+某气体的物态方程为
+$$p(V-\nu b) = \nu R T$$
+其中$b$为常量。
+
+证明该气体的定压热容和定体热容之差为
+$$ C_p - C_V = \nu R $$
+
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解法1}
+  \bch
+由$C_p  =\pfrac HTp = T \pfrac STp$, $C_V = \pfrac UTp = T\pfrac STV$
+得到
+$$\frac{C_p - C_V}{T} = \pfrac STp - \pfrac STV = \pfrac SVT  \pfrac VTp $$
+最后一步我们用了四变量的偏微分链式法则。然后根据$dF = - SdT - pdV$为全微分得到$\pfrac SVT = \pfrac pTV$，代入上式
+$$ C_p - C_V = T\pfrac pTV \pfrac VTp = T \frac{\nu R}{V-\nu b} \frac{\nu R}{p} = \nu R$$
+
+  \ech
 \end{frame}
 
 
 \begin{frame}
-\chtitle{热力学第二定律练习III}
-\bch
+  \chtitle{\proid 解法2}
+  \bch
+由内能和状态方程的关系得到（准静态过程吸热量的第一种表达方式）
+{\scriptsize 
+$$ T dS  = dU + pdV = C_V dT + \left(T\pfrac pTV -p\right)dV+pdV = C_V dT + T\pfrac pTV dV  $$}
+由焓和状态方程的关系得到（准静态过程吸热量的第二种表达方式）
+{\scriptsize 
+$$ TdS = dH - Vdp = C_p dT + (V-T\pfrac VTp)dp - Vdp = C_p dT - T\pfrac VTp dp$$}
+两式相减得到
+$$ (C_p- C_V)dT =  T\pfrac VTp dp + T\pfrac pTV dV = (V-\nu b)dp + p dV $$
+又根据状态方程有$ \nu R dT = (V-\nu b) dp + p dV$，与上式比较即得证$C_p - C_V = \nu R$。
+  \ech
+\end{frame}
 
-\addfig{1.}{songfen.jpg}
 
-\bitem
-\item{给气筒里的气体加热，使它在保持内能不变的情况下膨胀推动活塞做功，这把热完全转化为了功，是否违反热力学第二定律？}
-\eitem
-\ech
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sthree)}
+  \bch
+某固定体积的$pVT$系统，在一定温度范围内($200\SIK < T< 400 \SIK$)内能和温度有如下关系：
+  $$U =  aT^2 $$
+  其中$a=1 \SIJ/\SIK^2$。
+  初始时该系统温度$250\SIK$，自由能$F = 100 \SIkJ$。
+  当系统升温到$350\SIK$，求系统自由能$F$。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解法1}
+  \bch
+  初始状态时，
+  $$ S_{\rm ini} = \frac{U_{\rm ini}-F_{\rm ini}}{T_{\rm ini}} = \frac{1\times 250^2 - 10^5}{250} \SIJ/\SIK = -150\SIJ/\SIK$$
+  在体积不变的情况下
+  $$ dU = T\pfrac STV dT  =  2aTdT$$
+  故
+  $$ \pfrac STV = 2a $$
+  积分得到
+  $$ S_{\rm final}  = S_{\rm ini} + 2a\Delta T =  \left[-150 + 2\times 1\times (350-250) \right] \SIJ/\SIK = 50 \SIJ/\SIK $$
+  $$ F_{\rm final} = U_{\rm final}-T_{\rm final}S_{\rm final} = \left[1\times 350^2 - 350\times 50\right] \SIJ = 105\SIkJ$$
+  
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解法2}
+  \bch
+  $$\pfrac {(F/T)}TV = \frac{1}{T}\pfrac FTV - \frac{F}{T^2} = -\frac{F+TS}{T^2} = -\frac{U}{T^2} = -a $$
+  积分得到
+  $$\frac{F}{350\SIK} = \frac{10^5\SIJ}{250\SIK} - 1\SIJ/\SIK^2\times(350\SIK - 250\SIK) = 300 \SIJ/\SIK$$
+  即
+  $$F = 105 \SIkJ$$
+
+  \ech
+\end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  $pVT$系统中，证明
+  $$ \pfrac TpV \pfrac SVp - \pfrac TVp \pfrac SpV = 1 $$
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  等式左边是$(T,S)\rightarrow (p, V)$的Jaccobi行列式，代表$(T,S)$和$(p,V)$图上的面积元之比。在研究准静态循环时，我们根据热力学第一定律已经知道了$(T,S)$和$(p,V)$图上的对应的任何闭合曲线包围的面积相等（这包括面积的符号，即闭合曲线的绕行方向）。面积元只是很小的闭合曲线围绕的面积而已，所以得证。
+
+  \skipline
+
+  补充$T$-$S$图和$p$-$V$图上闭合曲线包围面积相等的证明：
+$$ \oint TdS - \oint pdV = \oint dU = 0$$
+  
+  \ech
+\end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid  (\sthree)}
+  \bch
+  $pVT$系统中，设$x, y$为任意两个独立变量，证明：
+      {\small $$ \pfrac Txy \pfrac Syx - \pfrac Tyx \pfrac Sxy = \pfrac pxy \pfrac Vyx - \pfrac pyx \pfrac Vxy $$}  
+  \ech
 \end{frame}
 
 
 \begin{frame}
-\chtitle{热力学第二定律练习IV}
-\bch
-
-\addfig{1.}{songfen.jpg}
-
-\bitem
-\item{论证绝热线和等温线不能有两个以上的交点。}
-\eitem
-\ech
+  \chtitle{\proid 解答}
+  \bch
+等式左边是$(T,S)\rightarrow (x, y)$的Jaccobi行列式，代表$(T,S)$和$(x,y)$图上的面积元之比。等式右边是$(p,V)\rightarrow (x, y)$的Jaccobi行列式，代表$(p,V)$和$(x,y)$图上的面积元之比。由于$(T,S)$和$(p,V)$图上面积元相等，故得证。
+  \ech
 \end{frame}
 
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{习题\proid  (\sthree)}
+  \bch
+  $pVT$系统中，设$x, y$为任意两个独立变量，证明：
+      {\scriptsize $$ \pfrac {\left(\frac{1}{T}\right)}xy \pfrac Uyx - \pfrac {\left(\frac{1}{T}\right)}yx \pfrac Uxy = \pfrac Vxy \pfrac {\left(\frac{p}{T}\right)}yx - \pfrac Vyx \pfrac {\left(\frac{p}{T}\right)}xy $$}  
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{习题\proid 解答}
+  \bch
+  同样只要证明$\frac{1}{T}$-$U$图上的闭合曲线包围的面积和$V$-$\frac{p}{T}$图上对应的闭合曲线包围的面积相等。
+  注意应用环路积分计算$x$-$y$图上闭合曲线包围的面积时既可以用$\oint ydx$，也可以用$\oint -x dy$。对$V$-$\frac{p}{T}$图我们采取后者。
+  
+  $$\oint \frac{dU}{T} - \oint \frac{-pdV}{T} = \oint \frac{\dbar Q}{T} = \oint dS = 0$$
+  
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{习题\proid  (\sthree)}
+  \bch
+  对$pVT$系统证明
+  $$\pfrac UpV = -T\pfrac VTS$$
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{习题\proid 解答}
+  \bch
+  证明:固定熵时
+  $$ \dbar Q = C_V dT + T \pfrac pTV dV = 0 $$
+  即
+  $$ \pfrac VTS = -\frac{C_V}{T\pfrac pTV} = -\frac{\pfrac UTV}{T\pfrac pTV} = -\frac{1}{T} \pfrac UpV $$
+  两边乘以$-T$即得证。
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{习题\proid  (\sthree)}
+  \bch
+  对$pVT$系统证明
+  $$\pfrac TVU = p\pfrac TUV - T\pfrac pUV $$
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{习题\proid解答}
+  \bch
+  证明：固定内能时
+  $$ dU = C_V dT + \left(T\pfrac pTV - p\right)dV = 0$$
+  即
+  {\scriptsize
+  $$ \pfrac TVU = \frac{p-T\pfrac pTV }{C_V} = p\pfrac TUV - T\frac{\pfrac pTV}{\pfrac UTV}  = p\pfrac TUV - T\pfrac pUV $$}
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{习题\proid   (\sfour)}
+  \bch
+  对$pVT$系统证明
+  $$\pfrac TSH +\frac{T^2}{V} \pfrac VHp = \frac{T}{C_p} $$
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{习题\proid 解答}
+  \bch
+  {\scriptsize
+  证明：由$C_p = T\pfrac STp$得到
+  $$ \frac{T}{C_p} - \pfrac TSH = \pfrac TSp - \pfrac TSH = \pfrac THS \pfrac HSp $$
+  最后一步我们使用了四变量的链式法则。由$dH = TdS + Vdp$即知$\pfrac HSp = T$，所以
+  \begin{equation}
+    \frac{T}{C_p} - \pfrac TSH = T \pfrac THS = \frac{T}{V} \pfrac TpS \label{eq1}
+  \end{equation}
+  上面最后一步我们利用了$S$不变时,$ dH = Vdp$。
+  最后，利用$dH  = TdS +Vdp$为全微分，得到
+  \begin{equation}
+    \pfrac TpS = \pfrac VSp = T\pfrac VHp \label{eq2}
+  \end{equation}
+  其中最后一步利用了$p$不变时，$dH = TdS$。
+
+  把\eqref{eq2}带入 \eqref{eq1}即证毕。
+  
+  }
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sfour)}
+  \bch
+  某物质在一定范围内的物态方程为
+  $$ pV = \nu R T\left(1+\ln\frac{T}{T_0}\right) $$
+  $1\SImol$的该物质经过等温膨胀之后，体积增大一倍，问定体热容增加了多少？
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  {\small
+    本题考察的是$C_V$在固定温度时对体积的依赖。先利用内能和状态方程的关系得到
+    $$\pfrac UVT = T\pfrac pTV - p = \frac{\nu RT}{V} $$
+    
+  $$\pfrac {C_V}VT = \frac{\partial^2U}{\partial T\partial V} = \frac{\partial^2U}{\partial V\partial T} = \pfrac {\left(\frac{\nu RT}{V}\right)}{T}V =\frac{\nu R}{V} $$
+
+    积分得到
+
+    $$ C_V(T, V) = C_V(T, V_0) + \nu R \ln\frac{V}{V_0}$$
+    因此在等温过程$V$增大一倍时，$C_V$增大$\nu R \ln 2 = 5.76 \SIJ/\SIK$。
+
+  }
+  \ech
+\end{frame}
 
 \section{Homework}
 
@@ -68,15 +606,17 @@
   \bch
   {\small
   \bitem
-\item[33]{补充完整下列平衡判据：
-  \bitem
-\item[(1)]{在\_\_和\_\_不变的情况下，平衡态的焓$H$最\_\_。}
-\item[(2)]{在自由能$F$和\_\_不变的情况下，平衡态的温度$T$最\_\_。}
-\item[(3)]{在焓$H$和\_\_不变的情况下，平衡态的熵$S$最\_\_。}
-\item[(4)]{在自由焓$G$和\_\_不变的情况下，平衡态的压强$p$最\_\_。}
-  \eitem}
+\item[33]{ 考虑温度为$T$，分子质量为$m$的热平衡理想气体。
+    \bitem
+	\item[(1)] {写出所有速率超过$3\upsilon_{\rm rms}$的分子的平均速率的积分表达式。}
+	\item[(2)] {由于分子的速率分布是指数衰减的，所以大多数速率大于$3\upsilon_{\rm rms}$的分子的速率都会集中在$3\upsilon_{\rm rms}$附近。我们近似认为速率大于$3\upsilon_{\rm rms}$的分子的平均速率为$3\upsilon_{\rm rms}$。由此估算分子速率大于$3\upsilon_{\rm rms}$的概率。}
+          \eitem
+}
+\item[34]{对$pVT$系统证明  $$\pfrac HVp = T\pfrac pTS $$}
+\item[35]{对$pVT$系统证明$$\pfrac TpH = T \pfrac VHp - V\pfrac THp$$}
   \eitem
-  }
+}
+  
   \ech
 \end{frame}
 

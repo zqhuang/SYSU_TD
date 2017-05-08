@@ -7,338 +7,45 @@
 \begin{document}
 \tpage{14}{课程复习II}
 
-\newcounter{problem}
-
-
-\begin{frame}
-  \chtitle{本讲内容}
-  \bch
-  \bitem
-\item{$pVT$系统偏导数运算技巧}
-\item{（主要是理想气体的）热力学过程}
-  \eitem
-  \ech
-\end{frame}
-
-\section{PDEs}
-
-\begin{frame}
-  \chtitle{  第一篇：令人头疼的偏导数}
-  \bch
-
-
-\addfig{4.2}{piantouteng.png}
-
-  \ech
-\end{frame}
-
-\stepcounter{problem}
-\begin{frame}
-  \chtitle{例题\theproblem (难度\stwo)}
-  \bch
-  对$pVT$系统证明下述Maxwell关系：
-\bitem
-\item{$\pfrac TVS = -\pfrac pSV$}
-\item{$\pfrac TpS = \pfrac VSp$}
-\item{$\pfrac SVT = \pfrac pTV$}
-\item{$\pfrac SpT = -\pfrac VTp$}
-\eitem
-
-\ech
-\end{frame}
-
-\begin{frame}
-  \chtitle{例题\theproblem 解答}
-  \bch
-\bitem
-\item{由$dU = TdS - pdV$为全微分以及全微分成立条件得到$\pfrac TVS = -\pfrac pSV$。}
-\item{由$dH = TdS + Vdp$为全微分以及全微分成立条件得到$\pfrac TpS = \pfrac VSp$。}
-\item{由$dF = -SdT - pdV$为全微分以及全微分成立条件得到$\pfrac SVT = \pfrac pTV$。}
-\item{由$dG = -SdT + Vdp$为全微分以及全微分成立条件得到$\pfrac SpT = -\pfrac VTp$。}
-\eitem
-  \ech
-\end{frame}
-
-\stepcounter{problem}
-\begin{frame}
-  \chtitle{例题\theproblem (难度\sthree)}
-  \bch
-某气体的物态方程为
-$$p(V-\nu b) = \nu R T$$
-其中$b$为常量。
-
-证明该气体的定压热容和定体热容之差为
-$$ C_p - C_V = \nu R $$
-
-  \ech
-\end{frame}
-
-\begin{frame}
-  \chtitle{例题\theproblem 解法1}
-  \bch
-由$C_p  =\pfrac HTp = T \pfrac STp$, $C_V = \pfrac UTp = T\pfrac STV$
-得到
-$$\frac{C_p - C_V}{T} = \pfrac STp - \pfrac STV = \pfrac SVT  \pfrac VTp $$
-最后一步我们用了四变量的偏微分链式法则。然后根据$dF = - SdT - pdV$为全微分得到$\pfrac SVT = \pfrac pTV$，代入上式
-$$ C_p - C_V = T\pfrac pTV \pfrac VTp = T \frac{\nu R}{V-\nu b} \frac{\nu R}{p} = \nu R$$
-
-  \ech
-\end{frame}
-
-
-\begin{frame}
-  \chtitle{例题\theproblem 解法2}
-  \bch
-由内能和状态方程的关系得到（准静态过程吸热量的第一种表达方式）
-{\scriptsize 
-$$ T dS  = dU + pdV = C_V dT + \left(T\pfrac pTV -p\right)dV+pdV = C_V dT + T\pfrac pTV dV  $$}
-由焓和状态方程的关系得到（准静态过程吸热量的第二种表达方式）
-{\scriptsize 
-$$ TdS = dH - Vdp = C_p dT + (V-T\pfrac VTp)dp - Vdp = C_p dT - T\pfrac VTp dp$$}
-两式相减得到
-$$ (C_p- C_V)dT =  T\pfrac VTp dp + T\pfrac pTV dV = (V-\nu b)dp + p dV $$
-又根据状态方程有$ \nu R dT = (V-\nu b) dp + p dV$，与上式比较即得证$C_p - C_V = \nu R$。
-  \ech
-\end{frame}
-
-
-\stepcounter{problem}
-\begin{frame}
-  \chtitle{例题\theproblem (难度\sthree)}
-  \bch
-某固定体积的$pVT$系统，在一定温度范围内($200\SIK < T< 400 \SIK$)内能和温度有如下关系：
-  $$U =  aT^2 $$
-  其中$a=1 \SIJ/\SIK^2$。
-  初始时该系统温度$250\SIK$，自由能$F = 100 \SIkJ$。
-  当系统升温到$350\SIK$，求系统自由能$F$。
-  \ech
-\end{frame}
-
-\begin{frame}
-  \chtitle{例题\theproblem 解法1}
-  \bch
-  初始状态时，
-  $$ S_{\rm ini} = \frac{U_{\rm ini}-F_{\rm ini}}{T_{\rm ini}} = \frac{1\times 250^2 - 10^5}{250} \SIJ/\SIK = -150\SIJ/\SIK$$
-  在体积不变的情况下
-  $$ dU = T\pfrac STV dT  =  2aTdT$$
-  故
-  $$ \pfrac STV = 2a $$
-  积分得到
-  $$ S_{\rm final}  = S_{\rm ini} + 2a\Delta T =  \left[-150 + 2\times 1\times (350-250) \right] \SIJ/\SIK = 50 \SIJ/\SIK $$
-  $$ F_{\rm final} = U_{\rm final}-T_{\rm final}S_{\rm final} = \left[1\times 350^2 - 350\times 50\right] \SIJ = 105\SIkJ$$
-  
-  \ech
-\end{frame}
-
-\begin{frame}
-  \chtitle{例题\theproblem 解法2}
-  \bch
-  $$\pfrac {(F/T)}TV = \frac{1}{T}\pfrac FTV - \frac{F}{T^2} = -\frac{F+TS}{T^2} = -\frac{U}{T^2} = -a $$
-  积分得到
-  $$\frac{F}{350\SIK} = \frac{10^5\SIJ}{250\SIK} - 1\SIJ/\SIK^2\times(350\SIK - 250\SIK) = 300 \SIJ/\SIK$$
-  即
-  $$F = 105 \SIkJ$$
-
-  \ech
-\end{frame}
-
-
-\stepcounter{problem}
-\begin{frame}
-  \chtitle{例题\theproblem (难度\stwo)}
-  \bch
-  $pVT$系统中，证明
-  $$ \pfrac TpV \pfrac SVp - \pfrac TVp \pfrac SpV = 1 $$
-  \ech
-\end{frame}
-
-\begin{frame}
-  \chtitle{例题\theproblem 解答}
-  \bch
-  等式左边是$(T,S)\rightarrow (p, V)$的Jaccobi行列式，代表$(T,S)$和$(p,V)$图上的面积元之比。在研究准静态循环时，我们根据热力学第一定律已经知道了$(T,S)$和$(p,V)$图上的对应的任何闭合曲线包围的面积相等（这包括面积的符号，即闭合曲线的绕行方向）。面积元只是很小的闭合曲线围绕的面积而已，所以得证。
-
-  \skipline
-
-  补充$T$-$S$图和$p$-$V$图上闭合曲线包围面积相等的证明：
-$$ \oint TdS - \oint pdV = \oint dU = 0$$
-  
-  \ech
-\end{frame}
-
-
-\stepcounter{problem}
-\begin{frame}
-  \chtitle{例题\theproblem  (难度\sthree)}
-  \bch
-  $pVT$系统中，设$x, y$为任意两个独立变量，证明：
-      {\small $$ \pfrac Txy \pfrac Syx - \pfrac Tyx \pfrac Sxy = \pfrac pxy \pfrac Vyx - \pfrac pyx \pfrac Vxy $$}  
-  \ech
-\end{frame}
-
-
-\begin{frame}
-  \chtitle{例题\theproblem 解答}
-  \bch
-等式左边是$(T,S)\rightarrow (x, y)$的Jaccobi行列式，代表$(T,S)$和$(x,y)$图上的面积元之比。等式右边是$(p,V)\rightarrow (x, y)$的Jaccobi行列式，代表$(p,V)$和$(x,y)$图上的面积元之比。由于$(T,S)$和$(p,V)$图上面积元相等，故得证。
-  \ech
-\end{frame}
-
-\stepcounter{problem}
-\begin{frame}
-  \chtitle{习题\theproblem  (难度\sthree)}
-  \bch
-  $pVT$系统中，设$x, y$为任意两个独立变量，证明：
-      {\scriptsize $$ \pfrac {\left(\frac{1}{T}\right)}xy \pfrac Uyx - \pfrac {\left(\frac{1}{T}\right)}yx \pfrac Uxy = \pfrac Vxy \pfrac {\left(\frac{p}{T}\right)}yx - \pfrac Vyx \pfrac {\left(\frac{p}{T}\right)}xy $$}  
-  \ech
-\end{frame}
-
-\begin{frame}
-  \chtitle{习题\theproblem 解答}
-  \bch
-  同样只要证明$\frac{1}{T}$-$U$图上的闭合曲线包围的面积和$V$-$\frac{p}{T}$图上对应的闭合曲线包围的面积相等。
-  注意应用环路积分计算$x$-$y$图上闭合曲线包围的面积时既可以用$\oint ydx$，也可以用$\oint -x dy$。对$V$-$\frac{p}{T}$图我们采取后者。
-  
-  $$\oint \frac{dU}{T} - \oint \frac{-pdV}{T} = \oint \frac{\dbar Q}{T} = \oint dS = 0$$
-  
-  \ech
-\end{frame}
-
-\stepcounter{problem}
-\begin{frame}
-  \chtitle{习题\theproblem  (难度\sthree)}
-  \bch
-  对$pVT$系统证明
-  $$\pfrac UpV = -T\pfrac VTS$$
-  \ech
-\end{frame}
-
-
-\begin{frame}
-  \chtitle{习题\theproblem 解答}
-  \bch
-  证明:固定熵时
-  $$ \dbar Q = C_V dT + T \pfrac pTV dV = 0 $$
-  即
-  $$ \pfrac VTS = -\frac{C_V}{T\pfrac pTV} = -\frac{\pfrac UTV}{T\pfrac pTV} = -\frac{1}{T} \pfrac UpV $$
-  两边乘以$-T$即得证。
-  \ech
-\end{frame}
-
-\stepcounter{problem}
-\begin{frame}
-  \chtitle{习题\theproblem  (难度\sthree)}
-  \bch
-  对$pVT$系统证明
-  $$\pfrac UVp = T\pfrac pTS - p$$
-  \ech
-\end{frame}
-
-
-\begin{frame}
-  \chtitle{习题\theproblem解答}
-  \bch
-  证明:固定熵时
-  $$ \dbar Q = C_p dT - T\pfrac VTp dp = 0 $$
-  即
-  $$ T\pfrac pTS = \frac{C_p}{\pfrac VTp} = \frac{\pfrac HTp}{\pfrac VTp} =  \pfrac HVp = \pfrac UVp + p $$
-  两边减去$p$即得证。
-  \ech
-\end{frame}
-
-\stepcounter{problem}
-\begin{frame}
-  \chtitle{习题\theproblem  (难度\sthree)}
-  \bch
-  对$pVT$系统证明
-  $$\pfrac TVU = p\pfrac TUV - T\pfrac pUV $$
-  \ech
-\end{frame}
-
-
-\begin{frame}
-  \chtitle{习题\theproblem解答}
-  \bch
-  证明：固定内能时
-  $$ dU = C_V dT + \left(T\pfrac pTV - p\right)dV = 0$$
-  即
-  {\scriptsize
-  $$ \pfrac TVU = \frac{p-T\pfrac pTV }{C_V} = p\pfrac TUV - T\frac{\pfrac pTV}{\pfrac UTV}  = p\pfrac TUV - T\pfrac pUV $$}
-  \ech
-\end{frame}
-
-\stepcounter{problem}
-\begin{frame}
-  \chtitle{习题\theproblem   (难度\sfour)}
-  \bch
-  对$pVT$系统证明
-  $$\pfrac TSH +\frac{T^2}{V} \pfrac VHp = \frac{T}{C_p} $$
-  \ech
-\end{frame}
-
-\begin{frame}
-  \chtitle{习题\theproblem 解答}
-  \bch
-  {\scriptsize
-  证明：由$C_p = T\pfrac STp$得到
-  $$ \frac{T}{C_p} - \pfrac TSH = \pfrac TSp - \pfrac TSH = \pfrac THS \pfrac HSp $$
-  最后一步我们使用了四变量的链式法则。由$dH = TdS + Vdp$即知$\pfrac HSp = T$，所以
-  \begin{equation}
-    \frac{T}{C_p} - \pfrac TSH = T \pfrac THS = \frac{T}{V} \pfrac TpS \label{eq1}
-  \end{equation}
-  上面最后一步我们利用了$S$不变时,$ dH = Vdp$。
-  最后，利用$dH  = TdS +Vdp$为全微分，得到
-  \begin{equation}
-    \pfrac TpS = \pfrac VSp = T\pfrac VHp \label{eq2}
-  \end{equation}
-  其中最后一步利用了$p$不变时，$dH = TdS$。
-
-  把\eqref{eq2}带入 \eqref{eq1}即证毕。
-  
-  }
-  \ech
-\end{frame}
-
-\stepcounter{problem}
-\begin{frame}
-  \chtitle{例题\theproblem (难度\sfour)}
-  \bch
-  某物质在一定范围内的物态方程为
-  $$ pV = \nu R T\left(1+\ln\frac{T}{T_0}\right) $$
-  $1\SImol$的该物质经过等温膨胀之后，体积增大一倍，问定体热容增加了多少？
-  \ech
-\end{frame}
-
-\begin{frame}
-  \chtitle{例题\theproblem 解答}
-  \bch
-  {\scriptsize
-    本题考察的是$C_V$在固定温度时对体积的依赖。先利用内能和状态方程的关系得到
-    $$\pfrac UVT = T\pfrac pTV - p = \frac{\nu RT}{V} $$
-    
-  $$\pfrac {C_V}VT = \frac{\partial^2U}{\partial T\partial V} = \frac{\partial^2U}{\partial V\partial T} = \pfrac {\left(\frac{\nu RT}{V}\right)}{T}V =\frac{\nu R}{V} $$
-
-    积分得到
-
-    $$ C_V(T, V) = C_V(T, V_0) + \nu R \ln\frac{V}{V_0}$$
-    因此在等温过程$V$增大一倍时，$C_V$增大$\nu R \ln 2 = 5.76 \SIJ/\SIK$。
-
-  }
-  \ech
-\end{frame}
-
+\newcounter{chap}
+\newcounter{problem}[chap]
+\def\proid{{Problem \thechap.\theproblem}}
 
 \section{Thermodynamic Process}
+\setcounter{chap}{4}
+\setcounter{problem}{0}
 
 \begin{frame}
-  \chtitle{第二篇：热力学过程}
-\addfig{4.2}{process.png}
+  \chtitle{第四篇：热力学过程}
+  \addfig{4}{process.png}
+  \skipline
+  
+  \bch
+  这。是。期。末。考。试。重。点。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{纲要：热力学第一定律}
+  \bch
+  \tbox{$$\Delta U = Q + A$$}
+
+  符号约定：不带撇的为外界给系统能量（系统吸热量，外界对系统做功等），带撇的为系统给外界能量（系统放热量，系统对外界做功等）。
+
+  对$pVT$系统，$\dbar A = -pdV$，即
+  \tbox{$$dU = \dbar Q - pdV$$}
+
+  对{\bf 准静态多过程}$\dbar Q = TdS$
+  \tbox{$$dU = TdS - pdV$$}
+  
+  \ech
 \end{frame}
 
 \begin{frame}
   \chtitle{几个名词}
   \bch
   \bitem
-\item{绝热：$Q  = 0$,  $\Delta S = 0$}
+\item{绝热：$Q  = 0$ ($\Rightarrow$准静态绝热$\Delta S = 0$)}
 \item{自由：$A=0$}
 \item{节流：$\Delta H = 0$}
 \item{准静态过程 = 可逆过程； 非准静态过程=不可逆过程}
@@ -354,7 +61,7 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \chtitle{理想气体的准静态过程}
   \bch
   \bitem
-  \item{理想气体内能和体积无关:$dU = C_V dT$}
+  \item{理想气体内能和焓均只是温度的函数:$dU = C_V dT$, $dH = C_p dT$, $C_p = C_V+\nu R$}
   \item{等温过程对外做功$A'=\nu RT \Delta \ln V$}
   \item{
   多方过程($n\ne 1$)对外做功
@@ -371,15 +78,20 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem  (难度\sthree)}
+  \chtitle{\proid  (\sthree)}
   \bch
-  教材166页思考题3-19
+
+  教材166页思考题3-19:
+  
+  冬天用空调机或者电炉取暖，何者较省电？
+
+
   \ech
 \end{frame}
 
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
   空调机比较省电。空调的制热原理是把室外当成需要制冷的低温热源。如果看成可逆循环，空调释放给室内（高温热源）的热量大于外界对空调做功（即空调耗能）。用电炉的话释放的热量不会大于消耗的电能。当然，这些讨论都是基于空调可以看成高效率的可逆制冷机的前提。
   \ech
@@ -387,16 +99,18 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem   (难度\stwo)}
+  \chtitle{\proid   (\stwo)}
   \bch
-  教材166页习题3-2
+  教材166页习题3-2:
+
+  分别通过下列过程把标准状态下的$0.014\SIkg$氮气压缩为原体积的一半：(1)等温过程；(2)绝热过程；(3)等压过程。试分别求出这些过程中内能的改变，传递的热量和外界对气体做的功。设氮气可以看作理想气体，且$C_V^{\rm mol} = \frac{5}{2}R$。
   
   \ech
 \end{frame}
 
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
   {\small
   氮气的摩尔数$\nu = \frac{14\SIg}{28\SIg/\SImol} = 0.5\SImol$
@@ -412,14 +126,17 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem   (难度\stwo)}
+  \chtitle{\proid   (\stwo)}
   \bch
-  教材166页习题3-3
+  教材166页习题3-3：
+
+  
+  在标准状态下$0.016\SIkg$的氧气，分别经过下列过程从外界吸收了$80\SIcal$的热量。(1)若为等温过程，求终态体积。(2)若为等体过程，求终态压强。(3)若为等压过程，求气体内能的变化。设氧气可看作理想气体，且$C_V^{\rm mol} = \frac{5}{2}R$。
   \ech
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
   摩尔数$\nu = \frac{16\SIg}{32\SIg/\SImol} = 0.5\SImol$
   
@@ -437,14 +154,16 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem (难度\stwo)}
+  \chtitle{\proid (\stwo)}
   \bch
-  教材166页习题3-4
+  教材166页习题3-4：
+
+  室温下一定理想气体氧的体积为$2.3\SIL$，压强为$1.0\atm$，经过以多方过程体积变为$4.1\SIL$，压强变为$0.5\atm$。试求：(1)多方指数$n$；(2)内能的变化；(3)吸收的热量；(4)氧膨胀对外界所作的功。设氧的$C_V^{\rm mol}=\frac{5R}{2}$。
   \ech
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
       {\small
         \bitem
@@ -464,14 +183,16 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem (难度\sone)}
+  \chtitle{\proid (\sone)}
   \bch
-  教材166页习题3-5
+  教材166页习题3-5：
+
+  $1\SImol$的理想气体氦，原来的体积为$8.0\SIL$，温度为$27\cdeg$，设经过准静态绝热过程后体积倍压缩到$1.0\SIL$，求在压缩过程中外界对系统所作的功。设氦的$C_V^{\rm mol} = \frac{3}{2}R$。
   \ech
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
   $$T=T_0\left(\frac{V_0}{V}\right)^{\gamma-1} = 300\SIK\times 8^{2/3} = 1200\SIK $$
   绝热过程$Q=0$,
@@ -481,14 +202,18 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem (难度\sthree)}
+  \chtitle{\proid (\sthree)}
   \bch
-  教材168页习题3-15
+  教材168页习题3-15：
+
+  试证明：按绝热大气模型，高度$h$与压强$p$的关系为
+  $$ h = \frac{C_p^{\rm mol}T_0}{M^{\rm mol}g}\left[1-\left(\frac{p}{p_0}\right)^{1-\frac{1}{\gamma}}\right],$$
+  式中$p_0$和$T_0$为地面$h=0$处的压强和温度。
   \ech
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
   {\small
     大气密度为$ \rho = \frac{M^{\rm mol}}{V^{\rm mol}} = \frac{M^{\rm mol}p}{RT} $,   按绝热大气模型，$T = \left(\frac{p}{p_0}\right)^{1-\frac{1}{\gamma}} T_0$。
@@ -505,15 +230,17 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem (难度\stwo)}
+  \chtitle{\proid (\stwo)}
   \bch
-  教材167页习题3-10
+  教材167页习题3-10：
+
+  证明：当$\gamma$为常数时，若理想气体在某一过程中的热容量也是常量，则这个过程一定是多方过程。
   \ech
 \end{frame}
 
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
   {\small
   设过程的热容为$C_X$。由$\gamma$为常数知$C_V$为常数。
@@ -535,14 +262,16 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem (难度\stwo)}
+  \chtitle{\proid (\stwo)}
   \bch
-  教材168页习题3-17
+  教材168页习题3-17：
+
+  （题图请参考教材）
   \ech
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
   {\scriptsize
     右边是绝热过程，右侧气体末态温度为
@@ -567,7 +296,31 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem (难度\stwo)}
+  \chtitle{\proid (\sthree)}
+  \bch
+  (摘自你们的微信群讨论)
+
+  火箭通过高速喷射燃气产生推力，设温度为$T_1$，压强$p_1$的炽热高压气体在燃烧室不断生成，并通过管道由狭窄的喷气口排入气压$p_2$的环境，假设燃气可视为理想气体，其摩尔质量为$\mu$，每摩尔燃气内能为$C_VT$($C_V$为常量，$T$为燃气温度)，在快速流动过程中，对管道内任意处两个非常靠近对横截面间对气体，可以认为它与周围没有热交换，但其内部则达到平衡状态且满足绝热方程。求喷气口处气体的温度与相对火箭的喷射速率。
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  绝热过程$T\propto p^{\frac{R}{C_V+R}}$，故
+  $$T_2 = T_1\left(\frac{p_2}{p_1}\right)^{\frac{R}{C_V+R}}$$
+  由于是连续不断的过程，内能损失率和动能产生率平衡：
+  $$  C_V(T_1-T_2) =  \frac{1}{2}\mu\upsilon^2$$
+  即
+  $$\upsilon = \sqrt{\frac{2C_VT_1\left[1-\left(\frac{p_2}{p_1}\right)^{\frac{R}{C_V+R}}\right]}{\mu}}$$
+  
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
   \bch
   \addfig{1.5}{nncycle.png}
 
@@ -576,15 +329,15 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
-  按照第11讲讨论，多方循环的效率为$1-T_2/T_1$，其中$T_1$, $T_2$为任意一条绝热线上的高温值和低温值。故本题答案为$\eta = 1 - \frac{1}{2} = \frac{1}{2}$。
+  按照第11讲讨论，可逆多方循环的效率为$1-T_2/T_1$，其中$T_1$, $T_2$为任意一条绝热线上的高温值和低温值。故本题答案为$\eta = 1 - \frac{1}{2} = \frac{1}{2}$。
   \ech
 \end{frame}
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{例题\theproblem (难度\sthree)}
+  \chtitle{\proid (\sthree)}
   \bch
   \addfig{1.5}{Tpcycle.png}
 
@@ -594,7 +347,7 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
 \end{frame}
 
 \begin{frame}
-  \chtitle{例题\theproblem 解答}
+  \chtitle{\proid 解答}
   \bch
   {\scriptsize
   单原子理想气体的$\gamma = \frac{5}{3}$， $C_p = \frac{5}{2}\nu R$。易得等压膨胀过程中吸热
@@ -614,6 +367,159 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \ech
 \end{frame}
 
+\section{Clapeyron Eq.}
+\setcounter{chap}{5}
+\setcounter{problem}{0}
+
+\begin{frame}
+  \chtitle{第五篇 克拉珀龙方程的应用}
+  \bch
+  \bmini{0.6}
+  \lfig{2.5}{PVTdiagram.png}
+  \emini
+  \bmini{0.36}
+  克拉珀龙方程是准静态过程吸热公式（准静态过程吸热量等于按照$C_V$计算的吸热量，加上热压强做功消耗的能量）在相变时$dT=0$的特殊情形。
+  \emini
+  
+  \tbox{  $$\pfrac pTV = \frac{\Lambda^{\rm mol}}{T\left(V^{\rm mol}_\beta - V^{\rm mol}_\alpha\right)} $$
+  }
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{汽化过程的克拉珀龙方程的近似}
+  \bch
+  在汽化过程中，液态的摩尔体积可以忽略。气态的摩尔体积按理想气体近似为$RT/p$。故
+  $$ \frac{dp}{dT} = \frac{p\Lambda^{\rm mol}}{RT^2}$$
+  或者写成
+{\blue  $$ \Lambda^{\rm mol} = RT \frac{d \ln p}{d \ln T} $$}
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{蒸气压方程}
+  \bch
+  在一定温度范围内可以对摩尔汽化热$\Lambda^{\rm mol}$作线性近似即可积分得到
+  $$\ln\left(\frac{p}{p_0}\right) = A\left(\frac{1}{T_0} - \frac{1}{T}\right) + B \ln\left(\frac{T}{T_0}\right)$$
+  上式称为蒸气压方程。
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sone)}
+  \bch
+  为什么在远低于$100\cdeg$的室温下，空气中仍含有水蒸气？空气中含有的水蒸气比例有上限吗？平时所说的湿度70\%是什么意思？
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  $100\cdeg$是一个大气压下的水的沸点。按照克拉珀龙方程，低压低沸点。空气中水蒸气的分压很小，远低于一个大气压。故沸点可以低于室温。
+
+  \skipline
+
+  如果持续增大空气湿度（即增大水蒸气分压），使得沸点超过室温，那么水滴会自动从空气中凝结出来（降雨，露珠等自然现象）。这个临界的水蒸气分压，称为饱和蒸气压(水的蒸发曲线上对应于室温的压强值)。稳定情况下，空气中的水蒸气比例不能超过饱和蒸气压所限定的水蒸气分压上限。
+
+  \skipline
+  
+  平时所说的湿度70\%，是指水蒸气分压是饱和蒸气压的70\%。当湿度达到100\%，就会出现水滴自动凝结的现象。
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sone)}
+  \bch
+  教材225页习题4-8：
+
+  水从温度$99\cdeg$升高到$101\cdeg$时，饱和蒸气压从$733.7\SImmHg$增大到$788.0\SImmHg$。假定这时水蒸气可看作理想气体，求$100\cdeg$时水的汽化热。
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  {\small
+  饱和蒸气压即气液共存态时的压强。
+  
+  按照克拉珀龙方程的汽化近似，
+  
+  $$\Lambda^{\rm mol} = RT \frac{\Delta ln p}{\Delta \ln T} = 8.314\times 373.15 \times \frac{\ln\frac{788}{733.7}}{\ln\frac{374.15}{372.15}} \SIJ/\SImol = 4.13\times 10^4 \SIJ/\SImol$$
+  又$1\SImol$水为$0.018\SIkg$，故按习惯把汽化热写成
+  $$ \Lambda = \frac{4.13\times 10^4}{0.018} \SIJ/\SIkg = 2.29\times 10^6 \SIJ/\SIkg$$
+  }
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  教材226页习题4-15:
+
+  固态氨的蒸气压方程和液态氨的蒸气压方程分别为
+  
+  固态$\ln(p/\SImmHg) = 23.3 - \frac{3754\SIK}{T}$
+
+  液态$\ln(p/\SImmHg) = 19.49 -\frac{3063\SIK}{T}$
+
+  求：
+
+  (1)三相点的压强和温度。
+
+  (2)三相点的汽化热，熔化热和升华热。
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+      {\scriptsize
+        三相点既满足固态蒸气压方程，又满足液态蒸气压方程。
+        $$\ln\left(\frac{\pthree}{\SImmHg}\right) = 23.3-\frac{3754\SIK}{\Tthree} = 19.49 - \frac{3063 \SIK}{\Tthree}$$
+        解出
+        $$\Tthree = 181.36\SIK;\ \pthree = 13.48\SImmHg$$
+        忽略固体和液体的体积，计算出升华热：
+        $$\Lambda^{\rm mol}_{\rm sublimate} = R\Tthree \frac{d\ln p}{d\ln T} = R\Tthree \frac{ \frac{3754\SIK }{\Tthree^2} dT }{\frac{1}{\Tthree} dT} = 3.121\times 10^4 \SIJ/\SImol $$
+        汽化热
+        $$\Lambda^{\rm mol}_{\rm evaporate} = R\Tthree \frac{d\ln p}{d\ln T} = R\Tthree \frac{ \frac{3063\SIK }{\Tthree^2} dT }{\frac{1}{\Tthree} dT} = 2.547\times 10^4 \SIJ/\SImol $$
+        在三相点有固定的压强，所以各种潜热即是各种物态的焓差，由此得熔化热为
+        $$\Lambda^{\rm mol}_{\rm melt} = \Lambda^{\rm mol}_{\rm sublimate} - \Lambda^{\rm mol}_{\rm evaporate} = 5.74 \times 10^3 \SIJ/\SImol$$
+        
+      }
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  教材226页习题4-13：
+
+  证明相变时内能的变化为：
+  $$U_2^{\rm mol}-U^{\rm mol}_1 = \Lambda^{\rm mol}\left(1-\frac{d\ln T}{d\ln p}\right).$$
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+      {\small
+        考虑$1\SImol$物质，根据热一律
+        $$ \Delta U = Q + A = \Lambda^{\rm mol} - p \Delta V$$
+        又温度不变时，吸热量等于热压强做功
+        $$\Lambda^{\rm mol} = \pfrac p{\ln T}V \Delta V = p\Delta V \pfrac {\ln p}{\ln T}V $$
+        结合上面两式即得证。
+      }
+  \ech
+\end{frame}
 
 \section{Homework}
 
@@ -621,10 +527,10 @@ $$ \oint TdS - \oint pdV = \oint dU = 0$$
   \chtitle{第14周作业（序号接第13周）}
   \bch
   {\small 
-  \bitem
+    \bitem
 \item[36]{教材习题3-6}
 \item[37]{教材习题3-14}
-\item[38]{对$pVT$系统证明$\pfrac TpH = T \pfrac VHp - V\pfrac THp$}
+\item[38]{教材习题4-9}
   \eitem
   }
   \ech
