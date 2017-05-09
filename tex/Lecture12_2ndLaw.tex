@@ -35,19 +35,19 @@
 \end{frame}
 
 \begin{frame}
-\chtitle{汤姆孙就是开尔文\bigwulian}
+\chtitle{原来汤姆孙就是开尔文\bigwulian}
 \bch
 \bitem
-\item{James Prescott Joule (詹姆斯$\cdot$普雷斯科特 焦耳)
-
+\item{James Prescott Joule
+  
 \addfig{0.5}{Joule.jpg}
 }
-\item{William Thomson, 1st Baron Kelvin (威廉姆$\cdot$汤姆孙，第一男爵开尔文)
+\item{William Thomson, 1st Baron Kelvin 
 
 \addfig{0.5}{Kelvin.jpg}
 }
 \eitem
-这两位可不止是提出了焦耳-汤姆孙效应(\wulian也叫焦耳-开尔文效应)那么简单
+这两位可不止是提出了焦耳-汤姆孙效应那么简单
 \ech
 \end{frame}
 
@@ -221,6 +221,8 @@ $$\Delta S = Q/T_1 - Q/T_2<0$$
 \chtitle{热力学第二定律练习I}
 \bch
 
+\addfig{1.}{songfen.jpg}
+
 \bitem
 \item{论证摩擦生热过程是不可逆的}
 \eitem
@@ -232,7 +234,7 @@ $$\Delta S = Q/T_1 - Q/T_2<0$$
 \chtitle{热力学第二定律练习II}
 \bch
 
-\addfig{1.}{songfen.jpg}
+\addfig{1.}{songfen2.jpg}
 
 \bitem
 \item{有人想利用海洋不同深度处温度不同制造一种机器，把海水的内能转化为机械功，这是否违反热力学第二定律？}
@@ -298,7 +300,7 @@ $$\sum_{i=1}^n \Delta S_i = \sum_{i=1}^n \frac{-\dbar Q_i}{T_i} \ge 0$$
 \bch
 假设系统和温度为$T_e$的环境(热库)发生接触。在一个微过程中，
 设系统的吸热量为$\dbar Q$，则环境熵变为
-$$ dS_e = \frac{-\dbar Q}{T_e}$$
+$$ dS_e = \frac{-\dbar Q}{T_e} $$
 把系统和环境的总和看作一个孤立系统，设系统熵变为$dS$，则
 $$dS +dS_e \ge 0$$
 综合上面两式即有
@@ -311,58 +313,76 @@ $$dS +dS_e \ge 0$$
 \begin{frame}
 \chtitle{现在问题来了}
 \bch
+
 教材中证明克劳修斯不等式时，$T$指的是环境温度。证明结束之后（从184页讨论热温比开始）就默默地把$T$当成了系统温度。
 
 \addfig{1.8}{huangainian.png}
+\ech
+\end{frame}
 
+
+\begin{frame}
+\chtitle{另一个头疼的问题}
+\bch
+使用温度的概念的前提是系统处处达到热平衡。如果是不可逆过程，系统不是时时处于平衡态，那么教材里的克劳修斯不等式$\oint \frac{\dbar Q}{T} < 0$和热力学第二定律微分表达式$\dbar Q < TdS$里的$T$都是什么意思？
 \ech
 \end{frame}
 
 \begin{frame}
-\chtitle{理想传导热库}
+\chtitle{接近平衡态时的近似温度概念}
 \bch
-假设系统和温度为$T$的热库接触，且处于平衡态。当我们给系统一个扰动时，系统各处可能发生热不平衡（各处温度不同），力学不平衡（各处压强不同），和化学不平衡（各处化学势不同）。所谓理想传导热库是指和系统接触非常良好的热库，它使得系统各部分很快地恢复到温度$T$。而恢复力学平衡和化学平衡则要迟缓得多。
-
-\bmini{0.5}
-\addfig{1.5}{idealheatsource.png}
-\emini
-\bmini{0.46}
-{\bf 和理想传导热库接触的系统，可处于非平衡态（力学不平衡或者化学不平衡）却仍具有确定的和热库一致的温度$T$。}
-\emini
+如果一个系统虽然处于非平衡态，但很接近温度为$T$的平衡态（即在不受外界影响的情况下，它会很快达到温度为$T$的平衡态），我们有理由近似认为它的“温度”近似为$T$。实际上，日常生活中很少有完美地处于平衡态的物体，我们所说的温度都是指这个近似意义下的温度。
 \ech
 \end{frame}
+
 
 \begin{frame}
-\chtitle{就把$T$当系统温度吧，教材开心就好}
+\chtitle{$\dbar Q \le TdS$取不等号时的物理解释}
 \bch
-当我们{\blue 仅考虑和理想传导热库接触的系统}时，克劳修斯不等式就可以妥妥地写成
-{\blue $$\oint \frac{\dbar Q}{T} \le 0 $$}
-这时，$T$是指系统的温度了（反正等于热库温度\wulian)。
+一个近似温度为$T$的非平衡态系统，吸收了热量$\dbar Q$之后，熵的改变不仅有平衡态计算公式$dS_{\rm eq} = \frac{\dbar Q}{T}$的贡献，还有非平衡态自发地往平衡态靠拢的$dS_{\rm neq}>0$的贡献，这两个贡献可能是同数量级的，故而有
+$$\dbar Q = T dS_{\rm eq} = T(dS - dS_{\rm neq}) = TdS- TdS_{\rm neq} < TdS$$
 
-同样，热二律的“微分”形式也可以写成{\blue
-$$ TdS \ge \dbar Q $$}
-或者{\blue
-$$ TdS \ge dU + pdV $$}
-{\small 注意，当上式取大于号时，描述的是包含非平衡态(力学不平衡或者化学不平衡)的不可逆过程。这并不和我们之前对只包含平衡态的准静态过程引入的$ dS = \frac{1}{T}\left(dU + pdV\right)$矛盾。}
+\skipline
+
+这就是教材上的热力学第二定律的“微分”表达式取不等号时的物理解释。
+
+如果系统足够接近平衡态，则$dS_{\rm neq}$的贡献可能是高阶无穷小，不等式转化为我们熟悉的平衡态等式。
+
+\skipline
+
+{\scriptsize 你可能对直接用$\dbar Q = TdS_{\rm eq} $有点疑问，既然只是温度近似为$T$，则使用
+$\dbar Q = (T+\delta T) dS_{\rm eq}$似乎更为妥当，其中的$\delta T$并无明确的数值，只是作为系统偏离平衡态的一种定性描述。但是，当你写一个一阶微分等式或者不等式时，任何二阶小量都要舍去。所以无论你是否加上一个$\delta T$，对结果无影响。}
 
 \ech
 \end{frame}
-
 
 \begin{frame}
 \chtitle{总结}
 \bch
-克劳修斯不等式和热二律的“微分”形式：
+如果把克劳修斯不等式和热力学第二定律中的温度解释为环境热库温度，则
 {\blue $$\oint \frac{\dbar Q}{T_e} \le 0 $$
 $$ T_edS \ge \dbar Q $$}
-具有一般的意义：无须假设是理想传导热库也无须假设系统温度和热库一致。
+严格成立。无须作额外假设。
 
 \skipline
-
-仅考虑和理想传导热库接触的系统时，可以把$T_e$替换为系统温度$T$（这是流行版本，也是教材采用的描述方式）。
+如果假设系统始终接近平衡态，则克劳修斯不等式和热力学第二定律“微分”表述中的环境热库温度$T_e$可以替换为系统的（近似）温度$T$。因为这个表述里不涉及环境，思考起来相对简洁一些，为大多数书（包括教材）所采用。
 \ech
 \end{frame}
 
+
+\begin{frame}
+\chtitle{另一种写法}
+\bch
+对$pVT$系统，根据$\dbar Q = dU + pdV$即有
+\tbox{$$dU \le TdS - pdV$$}
+这也被看作热力学第二定律的“微分”表达式。
+
+\skiplines
+
+{\scriptsize
+注意：我始终在“微分”上加个引号。当取不等号时，$dU < TdS - pdV$不是态函数的微分表达式。因为这时的系统不是平衡态，$T$也不是严格的态函数。对严格的态函数而言，$dU = TdS - pdV$才是真正的态函数全微分表达式。}
+\ech
+\end{frame}
 
 \section{Free Energy and Free Enthalpy}
 
@@ -370,12 +390,12 @@ $$ T_edS \ge \dbar Q $$}
 \chtitle{自由能}
 \bch
 {\small
-{\blue  设系统和温度恒为$T$的理想传导热库接触。在某个过程中系统对外做功$A'$，自由能改变了$\Delta F$。证明: $A'\le -\Delta F$，等号当且仅当过程可逆时成立。}
+{\blue  设系统（近似）温度固定为$T$。在某个过程中系统对外做功$A'$，自由能改变了$\Delta F$。证明: $A'\le -\Delta F$，等号当且仅当过程可逆时成立。}
 
 设系统从环境吸热$Q$，则由热一律有$Q = A' + \Delta U$。
 由$F$的定义，有
 $$\Delta F = \Delta U - \Delta (TS) = \Delta U - T\Delta S $$
-又根据热二律的“微分”形式，有$T\Delta S \ge Q = A' +\Delta U$。故
+又根据热二律的微分形式，有$T\Delta S \ge Q = A' +\Delta U$。故
 $$A' \le - \Delta F$$
 等号当且仅当过程可逆时成立。
 
@@ -389,7 +409,7 @@ $$A' \le - \Delta F$$
 \chtitle{自由焓}
 \bch
 
-{\blue  设某系统处在温度恒为$T$，压强恒为$p$的大气中（当作理想传导热库）。在某个过程中系统对外功$A'$，体积改变了$\Delta V$，自由焓改变了$\Delta G$。我们往往对系统对大气做的功$p\Delta V$并不感兴趣，而只考虑系统做的其他有用功$A'_{\rm else} = A'-p\Delta V$ （例如，额外装了发电装置等）。证明: $A'_{\rm else}  \le -\Delta G$，等号当且仅当过程可逆时成立。}
+{\blue  设某系统（近似）温度固定为$T$，压强固定为$p$。在某个过程中系统对外功$A'$，体积改变了$\Delta V$，自由焓改变了$\Delta G$。我们往往对系统对定压环境做的功$p\Delta V$并不感兴趣，而只考虑系统做的其他有用功$A'_{\rm else} = A'-p\Delta V$ （例如，额外装了发电装置等）。证明: $A'_{\rm else}  \le -\Delta G$，等号当且仅当过程可逆时成立。}
 
 由于是定温条件下的过程，对外做功不大于自由能的减少：
 $$ A' \le - \Delta F = -\Delta (G- pV) = - \Delta G + p \Delta V$$
@@ -602,8 +622,7 @@ $$ \mu_i \equiv \pfrac G{N_i}{T,p,N_1, N_2, \ldots, N_{i-1}, N_{i+1}, \ldots, N_
 
 \addfig{1.5}{eqc3.jpg}
 
-相平衡条件可以从定温定压系统的自由焓判据推出：如果定温定压条件下$ \mu_i > \mu_j$，则可以通过$i\rightarrow j$的相变降低系统的总自由焓。
-，这说明系统还未达到平衡态。
+相平衡条件可以从定温定压系统的自由焓判据推出：假设已经达到热平衡和力学平衡，若定温定压条件下有$ \mu_i > \mu_j$，则可以通过$i\rightarrow j$的相变降低系统的总自由焓，这说明系统还未达到平衡态。
 \ech
 \end{frame}
 
