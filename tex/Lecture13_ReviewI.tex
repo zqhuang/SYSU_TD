@@ -67,6 +67,42 @@
   \ech
 \end{frame}
 
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  物质的膨胀系数定义为
+  $$\alpha \equiv \frac{1}{V}\pfrac VTp $$
+  压缩系数定义为
+  $$\kappa \equiv -\frac{1}{V}\pfrac VpT $$
+  \bitem
+\item[(1)]{求理想气体的膨胀系数和压缩系数。}
+\item[(2)]{反过来，若已知膨胀系数和压缩系数为(1)问求出的结果，能否推出该物质一定满足理想气体状态方程?}
+  \eitem
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  {\small
+  \bitem
+\item[(1)]{$$\alpha = \frac{1}{V}\frac{\nu R}{p} = \frac{1}{T}$$
+  $$\kappa = \frac{1}{V}\frac{\nu RT}{p^2} = \frac{1}{p}$$
+}
+\item[(2)]{如果膨胀系数和压缩系数为上述结果。即
+  $$\pfrac {\ln V}{\ln T}p = 1,\ \pfrac {\ln V}{\ln p}T = -1$$
+  积分即得
+  $$ \ln V(T, p)  = \ln V(T_0, p_0) + \ln\frac{T}{T_0} - \ln\frac{p}{p_0} $$
+  即$\frac{pV}{T}$为常量。又$\frac{pV}{T}$为广延量，所以$\frac{pV}{T} = C\nu$，其中$C$为和摩尔数无关的常量。所以用上述条件可以确定理想气体状态方程。
+  
+}  
+  \eitem
+  }
+  \ech
+\end{frame}
+
 \stepcounter{problem}
 \begin{frame}
   \chtitle{\proid (\stwo)}
@@ -300,9 +336,45 @@ $$        \overline{u^2} = \frac{\int_0^\infty u^3e^{-u^4/4}du}{\int_0^\infty ue
   \chtitle{第三篇：令人头疼的偏导数（续）}
   \bch
   当然，最重要的是对偏导数有清晰的图像理解。这样才能打开思路，不拘泥于公式。
+
+  \skiplines
+  
+  要明确$X$变化$dX$时，$Y$的变化$dY$，必须先让$Y$唯一地依赖于$X$。当系统有$n$个独立函数时，一般就要加$n-1$个附加条件才能使$Y$成为$X$的确定的函数。对只有两个独立函数的$pVT$系统，就只要加一个附加条件。这个附加条件并不需要局限于一般数学教材上的固定某个自变量，而是可以固定任意一个态函数$Z$——这就是$\pfrac XYZ$的物理意义。
+
+  \skipline
+  
+  所以，在对固定量都是$Z$的偏微分进行计算时，我们可以肆无忌惮地使用一元函数的微分法则。因为这些所谓偏微分其实都是一元函数的微分。
+
+  \skipline
+  当我们对不同的附加条件的偏微分进行混合计算时，就需要用到上面提到的各种新链式法则了。原则上这些法则也能用定义推导出来，只是熟练掌握它们可以提高我们计算的效率。
+  
   \ech
 \end{frame}
 
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sone)}
+  \bch
+  对一个$pVT$系统，膨胀系数定义为
+  $$\alpha \equiv \frac{1}{V}\pfrac VTp$$
+  压强系数定义为
+  $$\beta \equiv \frac{1}{p}\pfrac pTV$$
+  压缩系数定义为
+  $$\kappa \equiv -\frac{1}{V}\pfrac VpT$$
+  试证明：
+  $$\alpha = \kappa \beta p$$
+\ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  证明：
+  $$\kappa\beta p = -\frac{1}{V}\pfrac VpT \frac{1}{p}\pfrac pTV p = -\frac{1}{V}\pfrac VpT \pfrac pTV = \frac{1}{V}\pfrac VTp = \alpha$$
+  其中我们用了三变量的新链式法则。
+  \ech
+\end{frame}
 
 \stepcounter{problem}
 \begin{frame}
@@ -321,7 +393,7 @@ $$        \overline{u^2} = \frac{\int_0^\infty u^3e^{-u^4/4}du}{\int_0^\infty ue
   即$$C_p = \pfrac HTp$$
   因此
   $$ \frac{\pfrac HpT}{C_p} = \pfrac HpT \pfrac THp = -\pfrac TpH  = -\alpha$$
-  上述推导中我们用了三变量的新链式法则。
+  上述推导的第二个等号我们用了三变量的新链式法则。
   
 \ech
 \end{frame}

@@ -298,6 +298,59 @@
 \begin{frame}
   \chtitle{\proid (\sthree)}
   \bch
+  教材习题3-20:
+
+  $1\SImol$氩气从初始温度$300\SIK$和初始体积$10^{-3}\SIm^3$分别经过下列三过程膨胀到$2\times 10^{-3}\SIm^3$的体积，计算温度的降低。
+  \bitem
+\item[(1)]{自由膨胀}
+\item[(2)]{可逆绝热膨胀}
+\item[(3)]{绝热节流膨胀}
+  \eitem
+  设$C_V^{\rm mol} = 12.6\SIJ/(\SImol\cdot\SIK)$, $C_p^{\rm mol} = 20.9\SIJ/(\SImol\cdot\SIK)$，在(3)中设氩气满足范德瓦尔斯方程，其中$a = 0.136\SIm^6\cdot Pa/\SImol^2$, $b =3.22\times 10^{-5}\SIm^3/\SImol$。
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  {\scriptsize
+    (1)因未指明自由膨胀中是否绝热，无法计算温度变化。
+    
+  (2)可逆绝热膨胀用理想气体近似
+  $$T_2 = T_1 \left(\frac{V_1}{V_2}\right)^{\gamma-1} = 190 \SIK $$
+    即温度降低了$110\SIK$。
+    
+  (3) 对范德瓦尔斯气体，由状态方程
+$$\left(p + \frac{\nu^2 a}{V^2}\right) \left(V - \nu b\right) = \nu RT$$
+以及焓和状态方程的关系，得到
+$$\pfrac HpT = V \left(\delta_V - \frac{2\delta_p}{1+2\delta_p}\right) \frac{1+2\delta_p}{1-2\delta_p\left(1-\delta_V\right)}$$
+其中$\delta_p \equiv \frac{\frac{\nu^2a}{V^2}}{p+\frac{\nu^2 a}{V^2}}$为压强修正的大小，$\delta_V\equiv \frac{\nu b}{V}$为体积修正的大小。
+  }
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答(续)}
+  \bch
+      {\scriptsize
+        易估算出初态和末态的$\delta_p\approx 0.05, \delta_V \approx 0.03$，作为粗略的估算，我们用线性近似，并取$\delta_p\approx 0.05,\delta_V=0.03$对线性项对系数做二级修正：
+        $$\pfrac HpT \approx 1.2 V\left(\frac{\nu b}{V} - 1.7\frac{a\nu^2}{pV^2}\right) = 1.2 \nu b - 2.0\frac{a\nu}{RT}$$
+        于是由三变量的新链式法则易得焦耳-汤姆孙系数
+        $$\pfrac TpH = -\frac{\pfrac HpT}{C_p} \approx \frac{2.0\frac{a}{RT}-1.2b}{C_p^{\rm mol}} =  3.37\times 10^{-6}\SIK/\SIPa$$
+        由状态方程得到
+        $$\Delta p = \nu RT\left(\frac{1}{V_2-\nu b}-\frac{1}{V_1-\nu b}\right) -a\nu^2\left(\frac{1}{V_2^2}-\frac{1}{V_1^2}\right)= -1.21\times 10^6\SIPa$$
+        故
+        $$\Delta T \approx \pfrac TpH \Delta p = -4.07\SIK$$
+        （跟书上较为精确的答案差了9\%）
+  }
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sthree)}
+  \bch
   (摘自你们的微信群讨论)
 
   火箭通过高速喷射燃气产生推力，设温度为$T_1$，压强$p_1$的炽热高压气体在燃烧室不断生成，并通过管道由狭窄的喷气口排入气压$p_2$的环境，假设燃气可视为理想气体，其摩尔质量为$\mu$，每摩尔燃气内能为$C_VT$($C_V$为常量，$T$为燃气温度)，在快速流动过程中，对管道内任意处两个非常靠近对横截面间对气体，可以认为它与周围没有热交换，但其内部则达到平衡状态且满足绝热方程。求喷气口处气体的温度与相对火箭的喷射速率。
@@ -366,6 +419,42 @@
   }
   \ech
 \end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sfour)}
+  \bch
+  光子气体的状态方程为
+  $$ U = a T^4 V$$
+  其中$a$为常量。考虑光子气体的一个准静态循环：先由体积$V_2$等体加热升温，然后绝热膨胀直至体积为$V_1$，然后等体放热降温，最后绝热压缩至初始状态。求这个循环的效率。
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  {\scriptsize
+
+\begin{equation}
+    \pfrac STV = \frac{1}{T}\pfrac UTV = 4aT^2 V \label{eq1}
+\end{equation}
+极端相对论气体压强为能量密度的$1/3$，即
+$$p = \frac{1}{3}aT^4$$
+又根据$ dF = -SdT - pdV$为全微分，得到
+\begin{equation}
+  \pfrac SVT = \pfrac pTV = \frac{4}{3}aT^3 \label{eq2}
+\end{equation}
+  结合\eqref{eq1}和\eqref{eq2}得到
+  $$ S = S_0 + \frac{4}{3} aT^3 V $$
+  
+  故两个等体过程在$T$-$S$图上是成正比的，比例为$\left(\frac{V_2}{V_1}\right)^{1/3}$。
+  效率为$1$减去两条等体线下面积之比，即
+  $$\eta = 1 - \left(\frac{V_2}{V_1}\right)^{1/3}$$
+  }
+  \ech
+\end{frame}
+
 
 \section{Clapeyron Eq.}
 \setcounter{chap}{5}
