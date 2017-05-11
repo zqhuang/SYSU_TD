@@ -329,8 +329,87 @@ $$dS +dS_e \ge 0$$
 \chtitle{另一个头疼的问题}
 \bch
 使用温度的概念的前提是系统处处达到热平衡。如果是不可逆过程，系统不是时时处于平衡态，那么教材里的克劳修斯不等式$\oint \frac{\dbar Q}{T} < 0$和热力学第二定律微分表达式$\dbar Q < TdS$里的$T$都是什么意思？
+
+\skiplines
+
+为了能理解这些概念，我们要先深入理解下什么是可逆过程。
 \ech
 \end{frame}
+
+
+\begin{frame}
+\chtitle{关于可逆传热过程}
+\bch
+阅读教材191页的“热传递过程”，然后思考
+
+\addfig{1.8}{think3.jpg}
+
+只要温度梯度趋向于零，传热足够缓慢，就一定是可逆过程吗？
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{反例}
+\bch
+
+\addfig{3.1}{dTdx0.png}
+
+假设导热棒上形成了稳恒热流，则它的状态不发生改变（这是在外界帮助下形成稳恒的非平衡态的例子）。导热棒的熵显然没有任何理由发生变化。
+
+\skipline
+
+但是，无论温度梯度多小，传热多么缓慢，熵变
+$$ \Delta S = Q\left(\frac{1}{T_2} - \frac{1}{T_1}\right) $$
+并不趋向于零。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{热传递的可逆判据}
+\bch
+对$N$次热传递过程，如果每次热传递物体之间的温差$\Delta T$和传递的热量$\Delta Q$满足
+{\blue $$N\, \Delta T\,\Delta Q\rightarrow 0$$}
+（即$\Delta T\Delta Q$是$1/N$的高阶无穷小）
+且{\blue 传热过程足够缓慢}，则该过程是{\blue 可逆}的。
+
+不满足该判据的热传递过程则不可逆。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{热传递的可逆判据举例}
+\bch
+\bex
+对于可逆卡诺热机，热传递只发生两次($N=2$固定)，若每次温差$\Delta T$趋于零，传递热量$\Delta Q$固定，则$N\Delta T\Delta Q$显然趋向于零，故在传热过程足够缓慢时可以理想为可逆过程。
+\eex
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{热传递的可逆判据举例}
+\bch
+\bex
+对于教材191页的$N$个热库逐级加热的例子，$\Delta T$为$1/N$的量级，$\Delta Q$也是$1/N$的量级。显然$N\Delta T\Delta Q$当$N\rightarrow \infty$时趋向于零。故在传热过程足够缓慢时可以理想为可逆过程。
+\eex
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{热传递的可逆判据举例}
+\bch
+
+\addfig{3.1}{dTdx0.png}
+
+在这个例子中，我们可以把热传导棒划分成$N$段，每相邻两段的温度差$\Delta T$为$1/N$的量级，相邻两端之间传递的热量是固定的有限大小。于是$N\Delta T \Delta Q$并不趋向于零。故是不可逆过程。
+\ech
+\end{frame}
+
+
 
 \begin{frame}
 \chtitle{接近平衡态时的近似温度概念}
@@ -352,7 +431,7 @@ $$\dbar Q = T dS_{\rm eq} = T(dS - dS_{\rm neq}) = TdS- TdS_{\rm neq} < TdS$$
 
 这就是教材上的热力学第二定律的“微分”表达式取不等号时的物理解释。
 
-如果系统足够接近平衡态，则$dS_{\rm neq}$的贡献可能是高阶无穷小，不等式转化为我们熟悉的平衡态等式。
+如果系统足够接近平衡态，则$dS_{\rm neq}$的贡献可能是满足可逆判据的高阶无穷小，不等式转化为我们熟悉的平衡态等式。
 
 \skipline
 
@@ -708,109 +787,6 @@ $$ \frac{d \ln f}{d\ln T}  = 4 $$
 \ech
 \end{frame}
 
-\begin{frame}
-\chtitle{关于可逆传热过程}
-\bch
-阅读教材191页的“热传递过程”，然后思考
-
-\addfig{1.8}{think3.jpg}
-
-只要温度梯度趋向于零，传热足够缓慢，就一定是可逆过程吗？
-
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{反例}
-\bch
-
-\addfig{3.1}{dTdx0.png}
-
-假设导热棒上形成了稳恒热流，则它的状态不发生改变（这是在外界帮助下形成稳恒的非平衡态的例子）。导热棒的熵显然没有任何理由发生变化。
-
-\skipline
-
-但是，无论温度梯度多小，传热多么缓慢，熵变
-$$ \Delta S = Q\left(\frac{1}{T_2} - \frac{1}{T_1}\right) $$
-并不趋向于零。
-
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{热传递的可逆判据}
-\bch
-对$N$次热传递过程，如果每次热传递物体之间的温差$\Delta T$和传递的热量$\Delta Q$满足
-{\blue $$N\, \Delta T\,\Delta Q\rightarrow 0$$}
-（即$\Delta T\Delta Q$是$1/N$的高阶无穷小）
-且{\blue 传热过程足够缓慢}，则该过程是{\blue 可逆}的。
-
-不满足该判据的热传递过程则不可逆。
-
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{热传递的可逆判据举例}
-\bch
-\bex
-对于可逆卡诺热机，热传递只发生两次($N=2$固定)，若每次温差$\Delta T$趋于零，传递热量$\Delta Q$固定，则$N\Delta T\Delta Q$显然趋向于零，故在传热过程足够缓慢时可以理想为可逆过程。
-\eex
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{热传递的可逆判据举例}
-\bch
-\bex
-对于教材191页的$N$个热库逐级加热的例子，$\Delta T$为$1/N$的量级，$\Delta Q$也是$1/N$的量级。显然$N\Delta T\Delta Q$当$N\rightarrow \infty$时趋向于零。故在传热过程足够缓慢时可以理想为可逆过程。
-\eex
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{热传递的可逆判据举例}
-\bch
-
-\addfig{3.1}{dTdx0.png}
-
-在这个例子中，我们可以把热传导棒划分成$N$段，每相邻两段的温度差$\Delta T$为$1/N$的量级，相邻两端之间传递的热量$Q$确实固定的有限大小。于是$N\Delta T Q$并不趋向于零。故是不可逆过程。
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{补充知识：Ruchhardt测$\gamma$法}
-\bch
-参考教材150页图3-19
-
-这是个力学问题，显然由$p$, $V$这些力学量来描述比较合理。选取绝热方程$pV^\gamma = \const$
-$$ \frac{dp}{p} + \gamma \frac{dV}{V} = 0$$
-把$dp = dF/S$，$dV = S dx$代入上式，
-$$ dF = -\gamma \frac{S^2p}{V} dx $$
-即等效回复系数$k =\gamma \frac{S^2p}{V} $ 简谐振动圆频率
-$$\omega = \sqrt{\frac{k}{m}} = \sqrt{\frac{\gamma p S^2}{mV}}$$
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{补充知识：大气垂直温差的修正}
-\bch
-{\small
-对水蒸气饱和的空气，做功等于内能改变量加上汽化热：
-$$ -pdV = C_V dT + \Lambda d(c\nu) $$
-其中$\nu$为空气摩尔数，$c$为空气中水蒸气的摩尔百分比，$\Lambda$为摩尔汽化热。又
-$$pdV + Vdp = \nu R dT$$
-两式相加得到
-$$ Vdp = C_p  dT + \nu \Lambda dc $$
-再由力学平衡$ dp = -\rho g dz$，即有
-$$ \frac{dT}{dz} =-\frac{\rho g V + \nu\Lambda\frac{dc}{dz}}{C_p} = -\frac{\gamma-1}{\gamma}\left(\frac{M^{\rm mol}g}{R}+\frac{\Lambda}{R}\frac{dc}{dz}\right)$$
-因为饱和蒸气压随着温度降低而降低（请回忆三相图），在有饱和蒸汽的空气里，气团继续上升会造成水蒸气凝结，$ \frac{dc}{dz} < 0 $，垂直温度梯度就会小于$-10\SIK/\SIkm$。
-}
-\ech
-\end{frame}
 
 
 \begin{frame}

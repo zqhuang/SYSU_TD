@@ -76,6 +76,38 @@
   \ech  
 \end{frame}
 
+
+\begin{frame}
+\chtitle{补充知识：Ruchhardt测$\gamma$法}
+\bch
+参考教材150页图3-19
+
+这是个力学问题，显然由$p$, $V$这些力学量来描述比较合理。选取绝热方程$pV^\gamma = \const$
+$$ \frac{dp}{p} + \gamma \frac{dV}{V} = 0$$
+把$dp = dF/S$，$dV = S dx$代入上式，
+$$ dF = -\gamma \frac{S^2p}{V} dx $$
+即等效回复系数$k =\gamma \frac{S^2p}{V} $ 简谐振动圆频率
+$$\omega = \sqrt{\frac{k}{m}} = \sqrt{\frac{\gamma p S^2}{mV}}$$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{补充知识：大气垂直温差的修正}
+\bch
+{\small
+对水蒸气饱和的空气，做功等于内能改变量加上汽化热：
+$$ -pdV = C_V dT + \Lambda d(c\nu) $$
+其中$\nu$为空气摩尔数，$c$为空气中水蒸气的摩尔百分比，$\Lambda$为摩尔汽化热。又
+$$pdV + Vdp = \nu R dT$$
+两式相加得到
+$$ Vdp = C_p  dT + \nu \Lambda dc $$
+再由力学平衡$ dp = -\rho g dz$，即有
+$$ \frac{dT}{dz} =-\frac{\rho g V + \nu\Lambda\frac{dc}{dz}}{C_p} = -\frac{\gamma-1}{\gamma}\left(\frac{M^{\rm mol}g}{R}+\frac{\Lambda}{R}\frac{dc}{dz}\right)$$
+因为饱和蒸气压随着温度降低而降低（请回忆三相图），在有饱和蒸汽的空气里，气团继续上升会造成水蒸气凝结，$ \frac{dc}{dz} < 0 $，垂直温度梯度就会小于$-10\SIK/\SIkm$。
+}
+\ech
+\end{frame}
+
 \stepcounter{problem}
 \begin{frame}
   \chtitle{\proid  (\sthree)}
