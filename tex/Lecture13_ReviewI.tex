@@ -337,9 +337,9 @@ $$        \overline{u^2} = \frac{\int_0^\infty u^3e^{-u^4/4}du}{\int_0^\infty ue
   \bch
   当然，最重要的是对偏导数有清晰的图像理解。这样才能打开思路，不拘泥于公式。
 
-  \skiplines
+  \skipline
   
-  要明确$X$变化$dX$时，$Y$的变化$dY$，必须先让$Y$唯一地依赖于$X$。当系统有$n$个独立函数时，一般就要加$n-1$个附加条件才能使$Y$成为$X$的确定的函数。对只有两个独立函数的$pVT$系统，就只要加一个附加条件。这个附加条件并不需要局限于一般数学教材上的固定某个自变量，而是可以固定任意一个态函数$Z$——这就是$\pfrac XYZ$的物理意义。
+  $X$变化$dX$时，要使$\frac{\partial Y}{\partial X}$有确定数值，必须先让$Y$唯一地依赖于$X$。当系统有$n$个独立函数时，一般就要加$n-1$个附加条件才能使$Y$成为$X$的确定的函数。对只有两个独立函数的$pVT$系统，就只要加一个附加条件。这个附加条件并不需要局限于一般数学教材上的固定某个自变量，而是可以固定任意一个态函数$Z$——这就是$\pfrac YXZ$的物理意义。
 
   \skipline
   
@@ -371,8 +371,13 @@ $$        \overline{u^2} = \frac{\int_0^\infty u^3e^{-u^4/4}du}{\int_0^\infty ue
   \chtitle{\proid 解答}
   \bch
   证明：
-  $$\kappa\beta p = -\frac{1}{V}\pfrac VpT \frac{1}{p}\pfrac pTV p = -\frac{1}{V}\pfrac VpT \pfrac pTV = \frac{1}{V}\pfrac VTp = \alpha$$
-  其中我们用了三变量的新链式法则。
+  \bea
+  \kappa\beta p &=& -\frac{1}{V}\pfrac VpT \frac{1}{p}\pfrac pTV p \newl
+  &=& -\frac{1}{V}\pfrac VpT \pfrac pTV \newl
+  &=& \frac{1}{V}\pfrac VTp \newl
+  &=&\alpha
+  \eea
+  其中在倒数第二步我们用了三变量的新链式法则。
   \ech
 \end{frame}
 
@@ -380,7 +385,7 @@ $$        \overline{u^2} = \frac{\int_0^\infty u^3e^{-u^4/4}du}{\int_0^\infty ue
 \begin{frame}
   \chtitle{\proid (\sone)}
   \bch
-  证明焦耳汤姆孙系数$$ \alpha$$可以写成
+  证明焦耳汤姆孙系数$\alpha$可以写成
   $$ \alpha = -\frac{\pfrac HpT}{C_p} $$
 \ech
 \end{frame}
@@ -388,7 +393,7 @@ $$        \overline{u^2} = \frac{\int_0^\infty u^3e^{-u^4/4}du}{\int_0^\infty ue
 \begin{frame}
   \chtitle{\proid 解答}
   \bch
-  焓的物理意义为计入了等压过程做功的“总能量”，所以根据热力学第一定律，等压过程中
+  焓的物理意义为“计入了等压过程做功的总能”，所以根据热力学第一定律，等压过程中
   $$C_p dT = \dbar Q = dH$$
   即$$C_p = \pfrac HTp$$
   因此

@@ -16,10 +16,14 @@
 \item{孤立系统的熵增大原理}
 \item{循环过程：可逆循环与不可逆循环；正循环与逆循环；}
 \item{卡诺定理$\eta \le 1 -\frac{T_2}{T_1}$ (对制冷机则$\varepsilon \le \frac{T_2}{T_1-T_2}$)}
-\item{理想气体循环效率的计算}
+\item{理想气体循环效率的计算: 一般在$T$-$S$图上计算比较方便。有时要用到理想气体熵变：
+  {\blue $$ dS = C_V d\ln T + \nu R d\ln V$$}
+  把熵理解为微观态数目的对数的话，第一项代表动量空间的大小改变带来微观态数目的变化，第二项代表位置空间大小的改变带来微观态数目的变化。(还记得微观态数目正比于相空间体积吗？)
+}
 \eitem
 \ech
 \end{frame}
+
 
 \begin{frame}
 \chtitle{汤姆孙是谁}
@@ -105,7 +109,7 @@
 \chtitle{容易漏掉的一些关键词}
 \bch
 \bitem
-\item{“单一热源”（指温度唯一的热源）不可省略。如果允许多热源的话，很容易找到反例，例如可逆卡诺循环。}
+\item{“单一热源”（指达到热平衡的，即温度唯一的热源）不可省略。如果允许多热源的话，很容易找到反例，例如可逆卡诺循环。}
 \item{“不产生其他影响”不可忽略。如果允许产生其他影响，则从单一热源给气体加热使之膨胀做功就是反例。}
 \eitem
 
@@ -690,6 +694,90 @@ $$ \frac{d \ln f}{d\ln T}  = 4 $$
 \begin{frame}
   \chtitle{知识结构总结}
 \addfig{4.3}{summary.png}  
+\end{frame}
+
+
+\begin{frame}
+\chtitle{关于可逆传热过程}
+\bch
+
+我们提到，温差很小的两个物体（设温度为$T$和$T+\delta T$)之间传递热量$Q$，若传递过程足够缓慢，则熵变的数量级为
+  $$\Delta S \sim Q\left(\frac{1}{T}-\frac{1}{T+\delta T}\right) \approx \frac{Q}{T^2}\delta T $$
+  可见，这样的过程若只进行固定的次数，则当$\delta T\rightarrow 0$时，熵变趋向于零。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{关于可逆传热过程}
+\bch
+阅读教材191页的“热传递过程”，然后思考
+
+\addfig{1.8}{think3.jpg}
+
+只要温度梯度趋向于零，传热足够缓慢，就一定是可逆过程吗？
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{反例}
+\bch
+
+\addfig{3.1}{dTdx0.png}
+
+假设导热棒上形成了稳恒热流，则它的状态不发生改变（这是在外界帮助下形成稳恒的非平衡态的例子）。导热棒的熵显然没有任何理由发生变化。
+
+\skipline
+
+但是，无论温度梯度多小，传热多么缓慢，熵变
+$$ \Delta S = Q\left(\frac{1}{T_2} - \frac{1}{T_1}\right) $$
+并不趋向于零。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{热传递的可逆判据}
+\bch
+对$N$次热传递过程，如果每次热传递物体之间的温差$\Delta T$和传递的热量$\Delta Q$满足
+{\blue $$N\, \Delta T\,\Delta Q\rightarrow 0$$}
+（即$\Delta T\Delta Q$是$1/N$的高阶无穷小）
+且{\blue 传热过程足够缓慢}，则该过程是{\blue 可逆}的。
+
+不满足该判据的热传递过程则不可逆。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{热传递的可逆判据举例}
+\bch
+\bex
+对于可逆卡诺热机，热传递只发生两次($N=2$固定)，若每次温差$\Delta T$趋于零，传递热量$\Delta Q$固定，则$N\Delta T\Delta Q$显然趋向于零，故在传热过程足够缓慢时可以理想为可逆过程。
+\eex
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{热传递的可逆判据举例}
+\bch
+\bex
+对于教材191页的$N$个热库逐级加热的例子，$\Delta T$为$1/N$的量级，$\Delta Q$也是$1/N$的量级。显然$N\Delta T\Delta Q$当$N\rightarrow \infty$时趋向于零。故在传热过程足够缓慢时可以理想为可逆过程。
+\eex
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{热传递的可逆判据举例}
+\bch
+
+\addfig{3.1}{dTdx0.png}
+
+在这个例子中，我们可以把热传导棒划分成$N$段，每相邻两段的温度差$\Delta T$为$1/N$的量级，相邻两端之间传递的热量$Q$确实固定的有限大小。于是$N\Delta T Q$并不趋向于零。故是不可逆过程。
+\ech
 \end{frame}
 
 
