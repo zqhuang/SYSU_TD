@@ -346,18 +346,17 @@ $$ \frac{dT}{dz} =-\frac{\rho g V + \nu\Lambda\frac{dc}{dz}}{C_p} = -\frac{\gamm
 \begin{frame}
   \chtitle{\proid 解答}
   \bch
-  {\scriptsize
+  {\small
     (1)因未指明自由膨胀中是否绝热，无法计算温度变化。
     
-  (2)可逆绝热膨胀用理想气体近似
+    (2)可逆绝热膨胀用理想气体近似
   $$T_2 = T_1 \left(\frac{V_1}{V_2}\right)^{\gamma-1} = 190 \SIK $$
     即温度降低了$110\SIK$。
     
-  (3) 对范德瓦尔斯气体，由状态方程
-$$\left(p + \frac{\nu^2 a}{V^2}\right) \left(V - \nu b\right) = \nu RT$$
-以及焓和状态方程的关系，得到
-$$\pfrac HpT = V \left(\delta_V - \frac{2\delta_p}{1+2\delta_p}\right) \frac{1+2\delta_p}{1-2\delta_p\left(1-\delta_V\right)}$$
-其中$\delta_p \equiv \frac{\frac{\nu^2a}{V^2}}{p+\frac{\nu^2 a}{V^2}}$为压强修正的大小，$\delta_V\equiv \frac{\nu b}{V}$为体积修正的大小。
+    (3)我们曾提到范德瓦尔斯气体的内能由独立的分子平均能量和分子之间势能构成，前者由能均分定理得到，后者由克服内压强做功得到。
+    $$ U = \nu C_V^{\rm mol}T - \int p_U dV = U_0 + \nu C_V^{\rm mol}T - \frac{\nu^2 a}{V}$$
+    故焓$H= U +pV$可以化简得到为
+    $$ H  = U_0 + \left(C_V^{\rm mol} + \frac{V}{V-\nu b}R\right) \nu T -\frac{2a\nu^2}{V}$$
   }
   \ech
 \end{frame}
@@ -365,16 +364,50 @@ $$\pfrac HpT = V \left(\delta_V - \frac{2\delta_p}{1+2\delta_p}\right) \frac{1+2
 \begin{frame}
   \chtitle{\proid 解答(续)}
   \bch
-      {\scriptsize
-        易估算出初态和末态的$\delta_p\approx 0.05, \delta_V \approx 0.03$，作为粗略的估算，我们用线性近似，并取$\delta_p\approx 0.05,\delta_V=0.03$对线性项对系数做二级修正：
-        $$\pfrac HpT \approx 1.2 V\left(\frac{\nu b}{V} - 1.7\frac{a\nu^2}{pV^2}\right) = 1.2 \nu b - 2.0\frac{a\nu}{RT}$$
-        于是由三变量的新链式法则易得焦耳-汤姆孙系数
-        $$\pfrac TpH = -\frac{\pfrac HpT}{C_p} \approx \frac{2.0\frac{a}{RT}-1.2b}{C_p^{\rm mol}} =  3.37\times 10^{-6}\SIK/\SIPa$$
+      {\small
+        不妨取$U_0=0$，
+    $$ H  = \left(C_V^{\rm mol} + \frac{V}{V-\nu b}R\right) \nu T -\frac{2a\nu^2}{V}$$
+        由初始状态算出
+        $H = 6085.2\SIJ$。
+        绝热节流是等焓过程，对末状态就有
+        $$T = \frac{H+\frac{2a\nu^2}{V}}{\nu \left(C_V^{\rm mol}+ \frac{V}{V-\nu b}R\right)} = 295.54\SIK $$
+        故温度改变量为$\Delta T = -4.46 \SIK$
+
+        \skipline
+        {\scriptsize
+        注意: 按照范德瓦尔斯模型。$C_V$可以为常量，但$C_p-C_V$必然依赖于体积和温度（请参考习题4-7)。题目给的$C_p -C_V$为常量，和范德瓦尔斯模型不自洽。所以题目本身有点小问题。这里的解法为了自洽，则直接忽略$C_p$这个条件。}
+      }
+  \ech
+\end{frame}
+\begin{frame}
+  \chtitle{\proid 解答(第（3）小问的第二种解法)}
+  \bch
+      {\small
+        (3)的第二种解法：利用焦耳汤姆孙系数计算
+
+         对范德瓦尔斯气体，由状态方程
+$$\left(p + \frac{\nu^2 a}{V^2}\right) \left(V - \nu b\right) = \nu RT$$
+以及焓和状态方程的关系，得到
+$$\pfrac HpT = V \left(\delta_V - \frac{2\delta_p}{1+2\delta_p}\right) \frac{1+2\delta_p}{1-2\delta_p\left(1-\delta_V\right)}$$
+其中$\delta_p \equiv \frac{\frac{\nu^2a}{V^2}}{p+\frac{\nu^2 a}{V^2}}$为压强修正的大小，$\delta_V\equiv \frac{\nu b}{V}$为体积修正的大小。
+        
+由于压强修正和体积修正不大，我们用线性近似，
+        $$\pfrac HpT \approx V\left(\frac{\nu b}{V} - 2\frac{a\nu^2}{pV^2}\right)\approx \nu b - 2\frac{a\nu}{RT}$$
+      }
+
+      \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答(第（3）小问的第二种解法 续)}
+  \bch
+  {\small
+  由三变量的新链式法则易得焦耳-汤姆孙系数
+        $$\pfrac TpH = -\frac{\pfrac HpT}{C_p} \approx \frac{2\frac{a}{RT}-b}{C_p^{\rm mol}} =  3.68\times 10^{-6}\SIK/\SIPa$$
         由状态方程得到
         $$\Delta p = \nu RT\left(\frac{1}{V_2-\nu b}-\frac{1}{V_1-\nu b}\right) -a\nu^2\left(\frac{1}{V_2^2}-\frac{1}{V_1^2}\right)= -1.21\times 10^6\SIPa$$
         故
-        $$\Delta T \approx \pfrac TpH \Delta p = -4.07\SIK$$
-        （跟书上较为精确的答案差了9\%）
+        $$\Delta T \approx \pfrac TpH \Delta p = -4.45\SIK$$
   }
   \ech
 \end{frame}
