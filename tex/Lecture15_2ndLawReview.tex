@@ -1,0 +1,484 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\input{titlepage.tex}
+\title{Lesson 15 Course 2nd Law Review}
+  \author{}
+  \date{}
+\begin{document}
+\tpage{15}{热学知识回顾第三篇：熵和热力学第二定律}
+
+\newcounter{chap}
+\newcounter{problem}[chap]
+\def\proid{{Problem \thechap.\theproblem}}
+
+
+\section{Entropy and 2nd Law}
+\setcounter{chap}{3}
+\setcounter{problem}{0}
+
+\begin{frame}
+  \chtitle{第六篇：熵的计算}
+  \bch
+  准静态过程：
+  \tbox{$$\Delta S = \int \frac{\dbar Q}{T} $$}
+  对非准静态过程，一般需要构造末态相同的准静态过程来计算熵变。
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sone)}
+  \bch
+  计算$1\SImol$冰在标准状态下熔解后的熵的变化，已知标准状态下冰的摩尔熔化热是$333\SIkJ$。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+$$\Delta S = \frac{Q}{T} = \frac{333 \SIkJ}{273.15\SIK} = 1.22 \SIkJ/\SIK $$
+  \ech
+\end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sone)}
+  \bch
+  $1\SImol$的单原子理想气体经过准静态$n=2$多方过程温度从$T_1=300\SIK$变为$T_2 = 400\SIK$。求气体的熵变。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解法1}
+  \bch
+  单原子理想气体$C_V=\frac{3\nu R}{2}$，多方热容
+  $$C_n = C_V - \frac{\nu R}{n-1} = \frac{\nu R}{2}$$
+  故
+  $$\Delta S = \int_{T_1}^{T_2} \frac{C_n dT}{T} = \frac{\nu R}{2} \ln\frac{T_2}{T_1} = 1.20\SIJ/\SIK$$
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解法2}
+  \bch
+  单原子理想气体$C_V=\frac{3\nu R}{2}$，
+  $$dS = C_V d\ln T + \nu R d\ln V$$
+  故
+  $$\Delta S = C_V\ln\frac{T_2}{T_1} + \nu R\ln\frac{V_2}{V_1}$$
+  又因为是$n=2$多方过程$pV^2 = C$，根据理想气体状态方程即$TV$为常量。
+  故$$\ln\frac{V_2}{V_1} = - \ln\frac{T_2}{T_1}$$
+  从而
+  $$\Delta S = \frac{\nu R}{2}\ln\frac{T_2}{T_1} = 1.20\SIJ/\SIK$$
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sone)}
+  \bch
+  教材226页习题4-21：
+
+  一温度为$400\SIK$的热库在与另一温度为$300\SIK$的热库短时间的接触中传递给它$1\SIcal$的热量，两热库构成的系统的熵改变了多少？
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  $$\Delta S =\Delta S_1 + \Delta S_2 =  \frac{-Q}{T_1} +\frac{Q}{T_2} = 3.49\times 10^{-3} \SIJ/\SIK$$
+  \ech
+\end{frame}
+
+
+\stepcounter{problem}
+
+\begin{frame}
+  \chtitle{\proid (\sone)}
+  \bch
+  教材226页习题4-22：
+
+  冬季房间热量的流失率为$2.5\times 10^4\SIkcal/\mathrm{h}$，室温$21\cdeg$，外界气温$-5\cdeg$，此过程的熵增加率为何？
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  转化为国际单位制
+  $$T_1 = 294.15\SIK, T_2 = 268.15\SIK, \frac{dQ}{dt} = 2.91\times 10^4 \SIJ/\SIs$$
+  
+  $$\frac{d S}{dt} = \frac{d S_1}{dt} + \frac{d S_2}{dt} = \frac{-\frac{dQ}{dt}}{T_1} +\frac{\frac{dQ}{dt}}{T_2} = 9.58 \SIJ/(\SIK\cdot\SIs)$$
+  \ech
+\end{frame}
+
+
+\stepcounter{problem}
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  教材227页习题4-31：
+
+  一实际制冷机工作于两恒温热源之间，其温度分别为 $T_1= 400\SIK$和 $T_2 = 200\SIK$，设工作物质在每一循环中，从低温热源吸收热量为$200\SIcal$，向高温热源释放热量为$600\SIcal$。
+  \bitem
+\item[(1)]{在工作物质进行的每一循环中，外界对制冷机做了多少功？}
+\item[(2)]{制冷机经过一循环后，热源和工作物质熵的总变化$\Delta S$是多少？}
+\item[(3)]{如设上述制冷机为可逆机，仍从低温热源吸收热量$200\SIcal$，则经过一循环后，需要外界对制冷机做多少功？热源和工作物质熵的总变化$\Delta S_0$是多少？}
+  \eitem
+  
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  {\small
+    \bitem
+  \item[1]{$A = Q_1'-Q_2  = 400\SIcal = 1674\SIJ$}
+  \item[2]{$\Delta S = \frac{Q_1'}{T_1}+\frac{-Q_2}{T_2} = \left(\frac{600}{400}-\frac{200}{200}\right)\SIcal/\SIK = 0.5\SIcal/\SIK = 2.09\SIJ/\SIK$}
+  \item[3]{卡诺可逆热机的吸放量绝对值与温度成正比。故在高温热源放热为$400\SIcal$。需要外界对制冷机做功$200\SIcal = 837\SIJ$。可逆热机造成的熵变为零。}
+  \eitem
+  }
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sthree)}
+  \bch
+  教材227页习题4-30：
+
+  $2100\SIkg$的汽车以$80\SIkm/\mathrm{h}$的速率在水平道路上行驶时突然刹车，停止时闸瓦升温到$60\cdeg$，环境温度为$20\cdeg$。
+  \bitem
+\item[(1)]{在闸瓦处机械能耗散为热时产生了多少熵？}
+\item[(2)]{在闸瓦处热量散布到空气中时产生了多少附加熵？}
+  \eitem
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解法1}
+  \bch
+  {\small
+  闸瓦一共吸收（自机械能转化而来的）热量
+  $$Q  = \frac{1}{2}m\upsilon^2 = 5.1852\times 10^5 \SIJ$$
+  设闸瓦有固定的比热容并忽略刹车过程中的散热，则比热为
+  $$ c = \frac{Q}{\Delta T} = \frac{5.1852\times 10^5}{60-20}\SIJ/\SIK = 1.30\times 10^4 \SIJ/\SIK$$
+  
+  增加的熵为
+  $$ \Delta S_{\rm br} = \int_{T_0}^{T_1} \frac{c dT}{T} = c\ln\frac{T_1}{T_0} = \left(1.30\times 10^4 \times \ln\frac{333.15}{293.15}\right) \SIJ/\SIK = 1658 \SIJ/\SIK$$
+
+  闸瓦散热时增加的熵为
+  $$\int_{T_1}^{T_0} \left(\frac{cdT}{T} -\frac{cdT}{T_0} \right) = -\Delta S_{\rm br} + \frac{Q}{T_0} = \left(-1658 + \frac{5.185\times 10^5}{293.15}\right) = 111 \SIJ/\SIK$$
+  
+  }
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解法2(不会积分的小白解法)}
+  \bch
+      {\small
+        $$Q  = \frac{1}{2}m\upsilon^2 = 5.1852\times 10^5 \SIJ$$
+        闸瓦的吸热过程和散热过程都不是等温过程。不会积分的高数小白决定采用近似的办法，取中间温度$\overline{T} = 313.15\SIK$来计算熵增。
+        
+        刹车时产生的熵
+        $$ \Delta S_{\rm br} = \frac{Q}{\overline{T}} = 1656 \SIJ/\SIK$$
+        散热时产生的熵
+        $$ \frac{-Q}{\overline{T}} + \frac{Q}{T_0} =   \left(-1656 + \frac{5.1852\times 10^5}{293.15}\right) = 113 \SIJ/\SIK $$
+
+        \skipline
+        
+        {\scriptsize
+        跟第一种解法结果比较，小白对近似解法的精度还是比较满意的。}
+  }
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  教材223页思考题4-20：
+
+  理想气体的体积经下列过程膨胀了4倍，试比较熵增加了多少？
+  \bitem
+\item[(1)]{绝热自由膨胀}
+\item[(2)]{可逆等温膨胀}
+\item[(3)]{可逆绝热膨胀}
+\item[(4)]{绝热节流膨胀}  
+  \eitem
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  \bitem
+\item[1]{理想气体绝热自由膨胀温度不变，$\Delta S = \nu R \ln\frac{V_2}{V_1} = \nu R \ln 4$}
+\item[2]{与(1)相同}
+\item[3]{可逆绝热过程熵变为零}
+\item[4]{理想气体没有节流效应。节流过程后温度不变。所以结果也和(1)相同。}
+  \eitem
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+\chtitle{\proid (\stwo)}
+\bch
+光子气体的内能密度为$aT^4$，其中$a=\frac{\pi^2 k^4}{15\hbar^3c^3}$为常数，$T$为温度。已知$T=0$时光子气体的熵为零。试求温度为$T$的光子气体的熵密度。
+\ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+内能$U=aVT^4$，定体热容$\pfrac UTV = 4aVT^3$。
+
+利用$dU = TdS - p dV$得到$\pfrac USV = T$，故
+$$\pfrac STV = \frac{\pfrac UTV}{\pfrac USV} = \frac{4aVT^3}{T} = 4aVT^2$$
+固定体积，对温度从$0$到$T$积分，得到
+$$ S(T, V) = \int_0^T \pfrac STV dT = \frac{4}{3}aVT^3 $$
+即熵密度为
+$$ \frac{S}{V}= \frac{4}{3}aT^3$$
+\ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+\chtitle{\proid (\stwo)}
+\bch
+把温度和压强都相同的，总摩尔数为$\nu$的$n$种不同的气体保持温度和压强不变地混合在一起。每种气体的摩尔分数（单种气体摩尔数/总摩尔数）分别为$c_1$, $c_2$, $\ldots$, $c_n$ （$\sum_i c_i = 1$）。试计算气体混合后相对于混合前的熵变。
+\ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+{\small
+每种气体温度不变，体积由混合前的$Vc_i$变为$V$，熵增为$(\nu c_i) R\ln \frac{V}{c_iV} = - \nu R c_i\ln c_i$，对$n$种气体求和即得
+$$\Delta S =   -\nu R \sum_{i=1}^n c_i \ln c_i$$}
+
+\skipline
+
+{\scriptsize
+另解：
+
+在混合前，任取一个分子，我们知道它是属于那一类气体。混合后，我们只知道它是第$i$种气体的概率为$c_i$，故单个分子熵变为
+$-\sum_{i=1}^{n} kc_i\ln c_i $。 总共有$ \nu N_A $个分子，故总熵变为
+$$ \Delta S =  -\nu N_A k\sum_{i=1}^n c_i \ln c_i = -\nu R \sum_{i=1}^n c_i \ln c_i$$  
+}
+\ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+\chtitle{\proid (\sthree)}
+\bch
+ 某气体状态方程为$pV + f(V) = \nu RT$，其中$f$为某函数。气体经过准静态的等温加热膨胀体积从$V_1$变为$V_2$，这个过程的熵变。
+   \ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{\proid 解答}
+\bch
+准静态过程吸热量为按定体热容计算的吸热量加上热压强做功消耗的能量，在等温过程中仅需计算后者。
+\bea
+dS &=& \frac{\dbar Q}{T} \newl
+&=&   \frac{T\pfrac pTV dV}{T} \newl
+&=& \pfrac pTV dV  \newl
+&=& \frac{\nu R}{V} dV
+\eea
+所以等温膨胀后熵变为$\nu R \ln\frac{V_2}{V_1}$。
+\ech
+\end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sthree)}
+  \bch
+ 某物质在$T_0 = 300\SIK$附近的物态方程可以写成
+  $$ pV = \nu RT \left(1+\ln\frac{T}{T_0}\right) $$
+ 现有$1\SImol$的该物质在温度为$T_0$时等温膨胀体积变大一倍，求它的熵变。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  $$d S = \frac{\dbar Q}{T} = \frac{\pfrac p{\ln T}V dV}{T} = \pfrac pTV dV = \nu R\left(2+\ln\frac{T}{T_0}\right)\frac{dV}{V}$$
+  在$T=T_0$时对上式积分即得
+  $$\Delta S = 2\nu R \Delta\ln V = 11.5\SIJ/\SIK$$
+  
+  \ech
+\end{frame}
+
+
+
+
+\begin{frame}
+  \chtitle{热力学第二定律}
+  \bch
+\bitem
+\item{\blue 开尔文表述：不可能从单一热源吸热转化为功而无其他影响 （即：第二类永动机不可能）}
+\item{\blue 克劳修斯表述：不可能低温物体传热给高温物体而无其他影响}
+\item{孤立系统的熵增大原理：孤立系统在非平衡态熵会持续增大，直到到达平衡态后熵取到极大值不再改变。}
+\item{卡诺定理：所有工作于温度为$T_1$的高温热源和温度为$T_2$的低温热源之间的可逆热机效率均为$1-T_2/T_1$，不可逆热机的效率则低于这个值。}
+  \eitem
+\ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  教材223页思考题4-14：
+
+  北方的酷暑季节有时比较干燥，在这种情况下即使气温高过体温，人们还是可以通过汗的蒸发将身体的热量向外散发。这违反热力学第二定律吗？
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  不违反。因为这个过程造成了汗水的相变。不满足热力学第二定律的“不引起其他变化”这个要求。
+  \ech
+\end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  教材223页思考题4-15：
+
+  用透镜将太阳光聚焦到物体上，可以使那里局部升温。温度的升高有上限吗？
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  有上限。物体温度不会超过太阳表面温度（约$6000\SIK$）。
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sthree)}
+  \bch
+  教材224页思考题4-24：
+
+  地球每天吸收一定太阳光的热量$Q_1$，同时又向太空排放一定的热量$Q_2'$，平均来说$Q_1 = Q_2'$。这两个过程可逆吗？这两个过程合起来使地球的熵增加还是减少？是否违反熵增加原理？
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  地球不是一个热平衡系统，昼夜交替就有温差，因此是不可逆过程。地球熵减少了（因为白天吸收$Q_1$时温度高于在夜间释放$Q_2‘$时温度）。地球熵虽然减少，但是环境熵增加得更多。不违反熵增加原理。
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  教材224页思考题4-22：
+
+  用量热法测水的汽化热时，要把一定量的水蒸气通入盛水的量热器中，此过程可逆吗？在此过程中水蒸气的熵是否增加？这是否违反熵增加原理？
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  实验中制造的水蒸气温度一般高于水温，过程不可逆。此过程中水蒸气的熵减少了，但水的熵增加得更多，不违反熵增加原理。
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  教材223页思考题4-10:
+
+  下列过程是否可逆？为什么？
+  \bitem
+\item[(1)]{室内一盆水在恒定温度下慢慢蒸发}
+\item[(2)]{通过活塞缓慢地压缩容器中的空气，设活塞与器壁间无摩擦。}
+\item[(3)]{将封闭在导热性能不好的容器里的空气浸到恒温的热浴中，使其温度缓慢地由原来的$T_1$升到热浴的温度$T_2$。}
+\item[(4)]{在一绝热容器内不同温度的两种液体混合。}
+  \eitem
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  \bitem
+\item[1]{不可逆，因为水的气液两相处于不平衡}
+\item[2]{可逆，因为是准静态过程}
+\item[3]{可逆，因为是准静态过程}
+\item[4]{不可逆，非热平衡到热平衡是不可逆过程，另外即使温度相同也是不可逆过程，因为是两种不同的液体，混合时会产生混合熵。}
+  \eitem
+  \ech
+\end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+\chtitle{\proid (\sone)}
+\bch
+
+教材223页思考题4-11:
+
+论证绝热线和等温线不能有两个交点。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{\proid 解答}
+\bch
+若等温线和绝热线有两个交点，如图
+\addfig{2}{twoi.png}
+则取如箭头所示的一个循环，该循环从单一热源吸热做功并未产生其他影响，和热力学第二定律矛盾。
+
+\ech
+\end{frame}
+
+
+\section{Homework}
+
+\begin{frame}
+  \chtitle{第15周作业（序号接第14周）}
+  \bch
+  {\small 
+    \bitem
+\item[40]{教材习题4-28}
+\item[41]{教材习题4-20}
+\item[42]{教材思考题4-8 (注意是思考题不是习题)}
+  \eitem
+  }
+  \ech
+\end{frame}
+
+\end{document}

@@ -126,6 +126,24 @@
   \ech
 \end{frame}
 
+\begin{frame}
+\chtitle{补充知识：大气垂直温差的修正}
+\bch
+{\small
+对水蒸气饱和的空气，做功等于内能改变量加上汽化热：
+$$ -pdV = C_V dT + \Lambda d(c\nu) $$
+其中$\nu$为空气摩尔数，$c$为空气中水蒸气的摩尔百分比，$\Lambda$为摩尔汽化热。又
+$$pdV + Vdp = \nu R dT$$
+两式相加得到
+$$ Vdp = C_p  dT + \nu \Lambda dc $$
+再由力学平衡$ dp = -\rho g dz$，即有
+$$ \frac{dT}{dz} =-\frac{\rho g V + \nu\Lambda\frac{dc}{dz}}{C_p} = -\frac{\gamma-1}{\gamma}\left(\frac{M^{\rm mol}g}{R}+\frac{\Lambda}{R}\frac{dc}{dz}\right)$$
+因为饱和蒸气压随着温度降低而降低（请回忆三相图），在有饱和蒸汽的空气里，气团继续上升会造成水蒸气凝结，$ \frac{dc}{dz} < 0 $，垂直温度梯度就会小于$-10\SIK/\SIkm$。
+}
+\ech
+\end{frame}
+
+
 \stepcounter{problem}
 \begin{frame}
   \chtitle{\proid (\stwo)}
@@ -534,7 +552,7 @@ $$\pfrac HpT = V \left(\delta_V - \frac{2\delta_p}{1+2\delta_p}\right) \frac{1+2
 
 \stepcounter{problem}
 \begin{frame}
-  \chtitle{习题\proid  (\sthree)}
+  \chtitle{\proid  (\sthree)}
   \bch
   对$pVT$系统证明
   $$\pfrac UpV = -T\pfrac VTS$$
@@ -543,13 +561,35 @@ $$\pfrac HpT = V \left(\delta_V - \frac{2\delta_p}{1+2\delta_p}\right) \frac{1+2
 
 
 \begin{frame}
-  \chtitle{习题\proid 解答}
+  \chtitle{\proid 解答}
   \bch
   证明:固定熵时
   $$ \dbar Q = C_V dT + T \pfrac pTV dV = 0 $$
   即
   $$ \pfrac VTS = -\frac{C_V}{T\pfrac pTV} = -\frac{\pfrac UTV}{T\pfrac pTV} = -\frac{1}{T} \pfrac UpV $$
   两边乘以$-T$即得证。
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sthree)}
+  \bch
+  $pVT$系统中，证明
+  $$ \pfrac TpV \pfrac SVp - \pfrac TVp \pfrac SpV = 1 $$
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  等式左边是$(T,S)\rightarrow (p, V)$的Jaccobi行列式，代表$(T,S)$和$(p,V)$图上的面积元之比。在研究准静态循环时，我们根据热力学第一定律已经知道了$(T,S)$和$(p,V)$图上的对应的任何闭合曲线包围的面积相等（这包括面积的符号，即闭合曲线的绕行方向）。面积元只是很小的闭合曲线围绕的面积而已，所以得证。
+
+  \skipline
+
+  补充$T$-$S$图和$p$-$V$图上闭合曲线包围面积相等的证明：
+$$ \oint TdS - \oint pdV = \oint dU = 0$$
+  
   \ech
 \end{frame}
 
