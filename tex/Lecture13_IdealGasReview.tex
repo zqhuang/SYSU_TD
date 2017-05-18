@@ -1,0 +1,838 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\input{titlepage.tex}
+\title{Lesson 13: Ideal Gas Review}
+  \author{}
+  \date{}
+\begin{document}
+\tpage{13}{热学知识回顾第一篇：理想气体}
+
+
+\begin{frame}
+  \chtitle{今天开始复习}
+  \bch
+  \addfig{3}{xiaopingguo.jpg}
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{热一律和热二律都是普遍定律}
+  \bch
+  热力学第一定律
+  \tbox{$$\Delta U = Q + A$$}
+  是对可逆过程和不可逆过程都成立的普遍定律。
+
+  \skipline
+  
+  热力学第二定律也是对可逆和不可逆过程均成立的普遍定律。但是其微分表达式
+  \tbox{$$\dbar Q \le TdS$$}  
+  仅对可逆过程或偏离平衡态很小的不可逆过程适用（偏离平衡态很远则没有温度的概念）。  
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{态函数和推广的态函数}
+  \bch
+  \bitem
+  \item{
+  严格意义上的态函数：
+  
+  平衡态热学的核心是研究八大态函数之间的关系。态函数里的``态''指的是平衡态。
+
+  \addfig{2}{eightSF.png}
+}
+  \item{
+    推广的（非平衡）态函数：
+  
+    广延量($V$, $S$, $U$, $H$, $F$, $G$）很容易推广到非平衡态的情形。对偏离平衡态很小的非平衡态，也可以平均温度和平均压强当作近似的温度和压强。在讨论热力学第二定律时会涉及这些概念。}
+\eitem
+
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{到底该叫态函数还是……}
+  \bch
+
+  也许你有特别的理由非要弄清推广的态函数是该叫态函数还是叫非态函数，假态函数，或变态函数，但
+
+  \addfig{2.5}{rengleshijuan.png}
+  
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{（严格意义上的）态函数的微分关系}
+  \bch
+
+  态函数的定义(多了$pV$就是焓，少了$TS$就自由)
+  \bitem
+\item{\blue 焓$H\equiv U + pV$}
+\item{\blue 自由能$F\equiv U - TS$}
+\item{\blue 自由焓$G\equiv H - TS$}
+  \eitem
+{\scriptsize （至于自由能也叫亥姆霍兹自由能，自由焓也叫吉布斯自由能这件命名混乱的事情，只好忍一下了\wulian)}
+
+  \skipline
+  
+  $pVT$系统的态函数微分关系
+  \bitem
+\item{\blue $dU = TdS - pdV $}
+\item{\blue $dH = TdS + Vdp $}
+\item{\blue $dF = -SdT - pdV $}
+\item{\blue $dG = -SdT+ Vdp $}
+  \eitem
+  
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{推广的态函数和热二律}
+  \bch
+
+  热力学第二定律则描述推广的态函数：
+  \tbox{$$\dbar Q \le TdS$$}
+  不等号的方向和成立条件很好理解：当过程不可逆时，$dS$里额外包含了自发从非平衡态往平衡态转变的熵增大量。
+
+  写成$\frac{\dbar Q}{T}\le dS$并对一个循环过程积分，利用$\oint dS = 0$(熵是态函数，故循环后回到初始值)，即得到克劳修斯不等式
+  \tbox{$$\oint \frac{\dbar Q}{T} \le 0$$}
+
+  
+  最后，对$pVT$系统，结合热一律即有
+  \tbox{$$ dU \le TdS - pdV$$}  
+  \ech
+\end{frame}
+
+\begin{frame}
+  \bch
+  纸上谈兵的理论就以上这些了。但要不挂科，还需掌握——
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{$pVT$系统四大实用公式}
+  \bch
+  \tbox{$$\pfrac UVT = \pheat - p$$}
+  \tbox{$$\pfrac HpT = V - \vheat $$}
+  \tbox{$$\dbar Q = C_V dT + \pheat dV$$}
+  \tbox{$$\dbar Q = C_p dT - \vheat dp $$}
+  \ech
+\end{frame}
+
+
+
+\begin{frame}
+  \chtitle{内能和状态方程的关系}
+  \bch
+  \tbox{$$\pfrac UVT = \pheat - p$$}
+  证明：固定温度，变化体积时
+  \bea
+  dU &=& TdS - pdV \newl
+  &=& \left(T\pfrac SVT - p \right) dV \newl
+  &=& \left( T\pfrac pTV - p \right) dV 
+  \eea
+  最后一步我们应用了$\pfrac SVT = \pfrac pTV$，这可以直接从$dF = -SdT - pdV$为全微分得到。
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{焓和状态方程的关系}
+  \bch
+  \tbox{$$\pfrac HpT = V - \vheat $$}
+  证明：固定温度，变化压强时
+  \bea
+  dH &=& TdS + Vdp \newl
+  &=& \left(T\pfrac SpT + V \right) dp \newl
+  &=& \left( -T\pfrac VTp  +V \right) dp 
+  \eea
+  最后一步我们应用了$\pfrac SpT = -\pfrac VTp$，这可以直接从$dG = -SdT + Vdp$为全微分得到。
+  \ech
+\end{frame}
+
+
+
+\begin{frame}
+  \chtitle{$C_V$和$C_p$}
+  \bch
+  $pVT$系统的
+  \tbox{$$C_V = \pfrac UTV;\ \ \ \ \ C_p = \pfrac HTp$$}
+  必须熟练掌握。
+
+  (如果你觉得这两个式子很陌生，期末考试就危险了\bye)
+  \skipline
+  
+  直观上很好理解：体积不变时没有做功，所以吸热量等于内能的增加；压强不变时，对外做功消耗的能量已经包含在焓的定义中，故吸热量等于焓的增加。
+
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{准静态过程吸热量的第一种表达式}
+  \bch
+  \tbox{$$\dbar Q = C_V dT + \pheat dV$$}
+  证明：
+  \bea
+  \dbar Q &=& dU + pdV \newl
+  &=& \pfrac UTV dT + \pfrac UVT dV + pdV \newl
+  &=& C_VdT + \left(\pheat - p\right) dV + pdV \newl  
+  &=& C_V dT + \pheat dV
+  \eea
+  
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{准静态过程吸热量的第二种表达式}
+  \bch
+  \tbox{$$\dbar Q = C_p dT - \vheat dp$$}
+  证明：
+  \bea
+  \dbar Q &=& dH - Vdp \newl
+  &=& \pfrac HTp dT + \pfrac HpT dp - Vdp \newl
+  &=& C_p dT + \left(V-\vheat \right) dp - Vdp \newl
+  &=& C_pdT - \vheat dp
+  \eea
+  
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{我们将依次以讲解习题的方式复习下述知识点：}
+  \bch
+
+  \bitem
+\item[1]{理想气体；}
+\item[2]{更一般的$pVT$系统；}
+\item[3]{熵的计算和热力学第二定律；}
+\item[4]{一二章回顾：速度分布的理解和计算。}
+  \eitem
+  \ech
+\end{frame}
+
+\newcounter{chap}
+\newcounter{problem}[chap]
+\def\proid{{Problem \thechap.\theproblem}}
+
+\section{Ideal Gas}
+\setcounter{chap}{1}
+\setcounter{problem}{0}
+
+\begin{frame}
+  \bch
+  {\Huge
+    第一篇： 理想{\gray 气体}}
+
+  \skiplines
+
+  我们来谈谈理想……
+
+  \skiplines
+
+  \addfig{2.5}{noideal.png}
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{理想气体状态方程}
+  \bch
+  \tbox{$$ pV = \nu RT$$}
+  可以写成
+  \tbox{$$p = n k T$$}
+  或者
+  \tbox{$$ pV = N k T$$}
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{理想气体的摩尔定体热容，摩尔定压热容，摩尔内能，摩尔焓都只是温度的函数}
+  \bch
+  直观上理解：理想气体分子间无势能，故内能由每个分子的平均能量决定，而根据能均分定理，分子的平均能量只和温度有关。
+
+  焓$H = U + pV = U + \nu RT$。因此焓也仅和温度有关。
+
+  最后，$C_V = \pfrac UTV$,  $C_p = \pfrac HTp$则都显然只依赖于温度了。
+
+  \skiplines
+  
+ {\scriptsize 注：以后我们会证明一个普遍的定理：{\bf 若$pVT$系统固定体积时压强线性地依赖于温度，则$C_V$只和温度有关。}所以$C_V$仅依赖于温度适用于更普遍的情形，而$C_p$, $U$, $H$仅依赖于温度的情况则比较少见。}
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{理想气体的摩尔定体热容$C_V^{\rm mol}$}
+  \bch
+  单原子理想气体的$C_V^{\rm mol} = \frac{3R}{2}$; 双原子理想气体和多原子理想气体的定体热容则对温度有依赖关系。室温下双原子气体$C_V^{\rm mol} \approx \frac{5R}{2}$。
+
+  \skipline
+
+  当我们讨论理想气体过程时，常常把双原子甚至多原子气体的$C_V$当作常量，这仅是在一定温度范围内而言的。
+  
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{理想气体的摩尔定体热容$C_p^{\rm mol}$}
+  \bch
+  理想气体的$C_p^{\rm mol} = C_V^{\rm mol}  + R$。证明如下：
+  \bea
+  C_p &=& \pfrac HTp \newl
+  &=& \pfrac {(U+pV)}Tp \newl
+   &=& \pfrac {(U+\nu RT)}Tp \newl
+  &=& \pfrac UTp + \nu R \newl
+  &=& C_V + \nu R
+  \eea
+  (注意理想气体的内能只依赖于温度，故$\pfrac UTp = \pfrac UTV = C_V$)
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{理想气体过程中内能的改变}
+  \bch
+  由于理想气体的内能只跟温度有关，
+  $$ dU = C_V dT$$
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{理想气体过程中的焓的改变}
+  \bch
+  由于理想气体的焓只跟温度有关，
+  $$ dH = C_p dT$$
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{理想气体过程中熵的改变}
+  \bch
+  $$dS = C_V d\ln T  + \nu R d\ln V$$
+
+  证明：
+  \bea
+  dS &=&  \frac{\dbar Q}{T}  \newl
+  &=& \frac{dU + pdV}{T} \newl
+  &=& \frac{C_V dT}{T} + \frac{pdV}{T} \newl
+  &=& \frac{C_V dT}{T} + \nu R \frac{dV}{V} \newl
+  &=& C_V d\ln T + \nu R d\ln V
+  \eea
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{理想气体绝热过程}
+  \bch
+  理想气体绝热方程可以从$dS = 0$推导出来为：
+  \tbox{$$pV^\gamma = \const$$}
+  一般把$\gamma$当成常数进行计算的结果都不会太坏。
+
+  利用理想气体状态方程，可以把绝热方程改写为
+  \tbox{$$T \propto V^{1-\gamma}$$}
+  或者
+  \tbox{$$ T\propto p^{1-\frac{1}{\gamma}}$$}
+  \ech
+\end{frame}
+
+\begin{frame}
+\chtitle{补充知识：Ruchhardt测$\gamma$法}
+\bch
+参考教材150页图3-19
+
+这是个力学问题，显然由$p$, $V$这些力学量来描述比较合理。选取绝热方程$pV^\gamma = \const$
+$$ \frac{dp}{p} + \gamma \frac{dV}{V} = 0$$
+把$dp = dF/S$，$dV = S dx$代入上式，
+$$ dF = -\gamma \frac{S^2p}{V} dx $$
+即等效回复系数$k =\gamma \frac{S^2p}{V} $ 简谐振动圆频率
+$$\omega = \sqrt{\frac{k}{m}} = \sqrt{\frac{\gamma p S^2}{mV}}$$
+\ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{理想气体多方过程}
+  \bch
+  理想气体多方过程$pV^n = \const$。
+
+  对外做功
+  \tbox{$$A' = - \frac{\nu R}{n-1}\Delta T$$}
+  因此多方热容
+  \tbox{$$C_n = C_V- \frac{\nu R}{n-1}$$}
+
+  $n=0$对应等压过程，$n=\infty$对应等体过程，$n=\gamma$(如果$\gamma$为常数)对应绝热过程；$n=1$时对应等温过程，等温过程做功需要用另外的公式$A' = \int pdV = \nu R T\Delta \ln V$来计算。
+
+
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{理想气体多方过程(续）}
+  \bch
+  理想气体准静态多方过程中，若把$C_V$当作常量，则$C_n$为常量：
+  $$dS = \frac{\dbar Q}{T} = \frac{C_n dT}{T}$$
+  积分得到
+\tbox{  $$ T \propto e^{S/C_n}$$}
+由此可以得出，多方循环（两个绝热和两个$n$相同的多方过程相间而成的循环）的效率为$1-T_2/T_1$。其中$T_1, T_2$分别为循环中任何一条绝热线上的最高温与最低温。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{自由绝热膨胀和节流}
+  \bch
+  \bitem
+\item{理想气体自由绝热膨胀，自由指$A=0$, 绝热指$Q=0$，结果内能不变。又理想气体内能和温度有一一对应关系，故温度也不变。从而焓也不变。}
+\item{理想气体绝热节流后温度不变，从而内能也不变。这是因为理想气体焓和温度有一一对应关系，节流是等焓过程，焓不变则温度不变。}
+  \eitem
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+一个体积为$0.02494\SIm^3$的恒温容器里的$1\SImol$气体压强为$101200 \SIPa$。抽去$\frac{1}{3}\SImol$气体后，容器内气体达到热平衡时压强变为$67200\SIPa$。再抽去$\frac{1}{3}\SImol$气体，容器内气体达到热平衡时压强变为$33467\SIPa$。试计算恒温容器的温度。 
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  如果是恒温恒体积的理想气体，$\frac{p}{\nu} = \frac{RT}{V}$应该为常数。题目中讨论的是对理想气体有偏离的实际气体。
+  
+  我们把题目所给的$\frac{p}{\nu}$对摩尔数的依赖列出来：
+  $$ \nu = 1\SImol,\ \frac{p}{\nu } = 1.012\times 10^5 \SIPa/\SImol$$
+  $$ \nu = \frac{2}{3}\SImol,\ \frac{p}{\nu } = 1.008\times 10^5 \SIPa/\SImol $$
+  $$ \nu = \frac{1}{3}\SImol,\ \frac{p}{\nu } = 1.004\times 10^5 \SIPa/\SImol$$
+  因为气体越稀薄越接近理想气体，作线性外推得到
+  $ \nu \rightarrow 0$时，  $\frac{p}{\nu} = 1.000\times 10^5\SIPa/\SImol$。
+  所以
+  $$ T = \frac{p}{\nu} \frac{V}{R} = 10^5\times \frac{0.02494}{8.314} \SIK = 300\SIK$$
+  
+  \ech
+\end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  物质的膨胀系数定义为
+  $$\alpha \equiv \frac{1}{V}\pfrac VTp $$
+  压缩系数定义为
+  $$\kappa \equiv -\frac{1}{V}\pfrac VpT $$
+  \bitem
+\item[(1)]{求理想气体的膨胀系数和压缩系数。}
+\item[(2)]{反过来，若已知膨胀系数和压缩系数为(1)问求出的结果，能否推出该物质一定满足理想气体状态方程?}
+  \eitem
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  {\small
+  \bitem
+\item[(1)]{$$\alpha = \frac{1}{V}\frac{\nu R}{p} = \frac{1}{T}$$
+  $$\kappa = \frac{1}{V}\frac{\nu RT}{p^2} = \frac{1}{p}$$
+}
+\item[(2)]{如果膨胀系数和压缩系数为上述结果。即
+  $$\pfrac {\ln V}{\ln T}p = 1,\ \pfrac {\ln V}{\ln p}T = -1$$
+  积分即得
+  $$ \ln V(T, p)  = \ln V(T_0, p_0) + \ln\frac{T}{T_0} - \ln\frac{p}{p_0} $$
+  即$\frac{pV}{T}$为常量。又$\frac{pV}{T}$为广延量，所以$\frac{pV}{T} = C\nu$，其中$C$为和摩尔数无关的常量。所以用上述条件可以确定理想气体状态方程。
+  
+}  
+  \eitem
+  }
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  在标准状态下，某气球里充有$\nu=1\SImol$气体。气球近似可看作半径$r=0.15\SIm$的均匀球面。问它的张力系数（单位长度受力）为多少。
+
+  \addfig{1.5}{balloon.jpg}
+  
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  {\small
+  把气球划分为上下半球，上半球受气体净推力为
+  $$F=(p -p_0)(\pi r^2)$$
+  其中$p$为气球内气压，$p_0=1\atm$为外界大气压。
+
+  上半球受到的气体推力必须和下半球拉它的张力平衡
+  $$ F = \sigma (2\pi r)$$
+  其中$\sigma$为所求的张力系数
+
+  结合上面两式得到熟知的：
+  $$ p-p_0 = \frac{2\sigma}{r} $$
+  再由理想气体状态方程
+  $$\sigma = \frac{r}{2}(p-p_0) = \frac{r}{2}\left(\frac{\nu R T_0}{\frac{4\pi}{3}r^3} - p_0\right) = 4.45\times 10^3 \SIN/\SIm $$
+
+  }
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid  (\sthree)}
+  \bch
+
+  教材166页思考题3-19:
+  
+  冬天用空调机或者电炉取暖，何者较省电？
+
+
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  空调机比较省电。空调的制热原理是把室外当成需要制冷的低温热源。如果看成可逆循环，空调释放给室内（高温热源）的热量大于外界对空调做功（即空调耗能）。用电炉的话释放的热量不会大于消耗的电能。当然，这些讨论都是基于空调可以看成高效率的可逆制冷机的前提。
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid   (\stwo)}
+  \bch
+  教材166页习题3-2:
+
+  分别通过下列过程把标准状态下的$0.014\SIkg$氮气压缩为原体积的一半：(1)等温过程；(2)绝热过程；(3)等压过程。试分别求出这些过程中内能的改变，传递的热量和外界对气体做的功。设氮气可以看作理想气体，且$C_V^{\rm mol} = \frac{5}{2}R$。
+  
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  {\small
+  氮气的摩尔数$\nu = \frac{14\SIg}{28\SIg/\SImol} = 0.5\SImol$
+  \bitem
+\item{等温过程$\Delta U = 0$, $A = -\nu R T\Delta \ln V = 787\SIJ$, $Q = \Delta U - A = - 787\SIJ$
+}
+\item{绝热过程$Q=0$, $\Delta U = C_V \Delta T = \frac{5}{2}\nu R (2^{\gamma-1}T -T) = 907\SIJ$, $A = \Delta U - Q = 907\SIJ$}
+\item{等压过程$A = -p\Delta V = \frac{pV}{2} = \frac{1}{2}\nu R T = 567\SIJ$，$\Delta U = C_V \Delta T = \frac{5}{2}\nu R (\frac{T}{2}-T) = -1419\SIJ$，$Q = \Delta U - A = -1986 \SIJ$}
+  \eitem
+  }
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid   (\stwo)}
+  \bch
+  教材166页习题3-3：
+
+  
+  在标准状态下$0.016\SIkg$的氧气，分别经过下列过程从外界吸收了$80\SIcal$的热量。(1)若为等温过程，求终态体积。(2)若为等体过程，求终态压强。(3)若为等压过程，求气体内能的变化。设氧气可看作理想气体，且$C_V^{\rm mol} = \frac{5}{2}R$。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  摩尔数$\nu = \frac{16\SIg}{32\SIg/\SImol} = 0.5\SImol$
+  
+  体积$V_0 = 22.4\SIL/\SImol \times 0.5\SImol = 11.2\SIL$
+
+  $Q = 80\times 4.185 \SIJ = 335\SIJ$
+  \bitem
+\item{等温过程$Q = -A = \nu RT \ln\frac{V}{V_0}$，由此推出$V = V_0e^{\frac{Q}{\nu RT}} = 15.0\SIL$}
+\item{等体过程$T = T_0+ \frac{Q}{C_V} = 273.15\SIK + \frac{335}{0.5\times 5/2\times 8.31}\SIK = 305\SIK$, $p = p_0 T/T_0 = 1\atm \times 305/273.15 = 1.12 \atm = 1.13\times 10^5\SIPa$}
+\item{等压过程$\gamma = 7/5$, 内能变化$\Delta U = C_V\Delta T = C_p\Delta T /\gamma = Q/\gamma = 239\SIJ$}
+  \eitem
+  
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  教材166页习题3-4：
+
+  室温下一定理想气体氧的体积为$2.3\SIL$，压强为$1.0\atm$，经过以多方过程体积变为$4.1\SIL$，压强变为$0.5\atm$。试求：(1)多方指数$n$；(2)内能的变化；(3)吸收的热量；(4)氧膨胀对外界所作的功。设氧的$C_V^{\rm mol}=\frac{5R}{2}$。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+      {\small
+        \bitem
+      \item{
+        多方过程$pV^n = C$，取对数并考虑其变化量，即$\Delta \ln p + n \Delta \ln V = 0$，故
+        $$n = - \frac{\Delta ln p}{\Delta \ln V} = -\frac{\ln\frac{0.5}{1}}{\ln\frac{4.1}{2.3}} = 1.20 $$}
+      \item{内能的变化$\Delta U  = C_V\Delta T = \frac{C_V^{\rm mol}}{R}\Delta (\nu RT) = \frac{5}{2}\Delta(pV) = -63.3\SIJ$}
+      \item{吸收热量$Q = C_n \Delta T = \frac{\gamma-n}{1-n}C_V\Delta T = -C_V\Delta T = -\Delta U = 63.3\SIJ$}
+      \item{对外做功$A'=-A = Q-\Delta U = 127\SIJ$}
+        \eitem
+        \skipline
+        
+注：本题也可以利用$A' = -\frac{\nu R \Delta T}{n-1} =-\frac{\Delta(pV)}{n-1}$计算对外做功。然后根据$\Delta U = Q-A'$来计算内能改变。        
+  }
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sone)}
+  \bch
+  教材166页习题3-5：
+
+  $1\SImol$的理想气体氦，原来的体积为$8.0\SIL$，温度为$27\cdeg$，设经过准静态绝热过程后体积倍压缩到$1.0\SIL$，求在压缩过程中外界对系统所作的功。设氦的$C_V^{\rm mol} = \frac{3}{2}R$。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  $$T=T_0\left(\frac{V_0}{V}\right)^{\gamma-1} = 300\SIK\times 8^{2/3} = 1200\SIK $$
+  绝热过程$Q=0$,
+  $$A = \Delta U =C_V\Delta T  = 1.12\times 10^4\SIJ$$
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sthree)}
+  \bch
+  教材168页习题3-15：
+
+  试证明：按绝热大气模型，高度$h$与压强$p$的关系为
+  $$ h = \frac{C_p^{\rm mol}T_0}{M^{\rm mol}g}\left[1-\left(\frac{p}{p_0}\right)^{1-\frac{1}{\gamma}}\right],$$
+  式中$p_0$和$T_0$为地面$h=0$处的压强和温度。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  {\small
+    大气密度为$ \rho = \frac{M^{\rm mol}}{V^{\rm mol}} = \frac{M^{\rm mol}p}{RT} $,   按绝热大气模型，$T = \left(\frac{p}{p_0}\right)^{1-\frac{1}{\gamma}} T_0$。
+    
+  由力学平衡，考虑一个面积为$S$的水平空气薄层的力学平衡$-S dp = (\rho S dz)g $， 即
+  $$ dz =-\frac{dp}{\rho g} = -\frac{RT }{M^{\rm mol}gp}dp= -\frac{RT_0}{M^{\rm mol}gp_0^{1-\frac{1}{\gamma}}} p^{-\frac{1}{\gamma}} dp$$
+  从$0$到$h$积分，得到
+  $$ h = \frac{\gamma}{\gamma-1}\frac{RT_0}{M^{\rm mol}g}\left[1-\left(\frac{p}{p_0}\right)^{1-\frac{1}{\gamma}}\right]$$
+  再利用$\frac{\gamma}{\gamma-1} = \frac{C_p^{\rm mol}}{C_p^{\rm mol}-C_V^{\rm mol}} = \frac{C_p^{\rm mol}}{R}$
+    即得证。
+  }
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  教材167页习题3-10：
+
+  证明：当$\gamma$为常数时，若理想气体在某一过程中的热容量也是常量，则这个过程一定是多方过程。
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  {\small
+  设过程的热容为$C_X$。由$\gamma$为常数知$C_V$为常数。
+
+  由热一律$\dbar Q = dU + pdV$以及$\dbar Q = C_X dT$, $dU = C_V dT$，得到
+  $$ C_X dT = C_V dT + p dV$$
+  若$C_X = C_V$，则$dV = 0$，即已经是等体过程（多方过程$n=\infty$的特殊情况)。
+    
+    否则，两边同乘以$\nu R$， 再由$\nu R dT =  (pdV + Vdp) $，
+  $$ (C_V-C_X + \nu R) pdV + (C_V-C_X) Vdp = 0$$
+  令$n =\frac{C_V-C_X + \nu R}{C_V-C_X }$，则
+  $$ \frac{dp}{p} + n\frac{dV}{V} = 0$$
+  或更明确地写成
+  $$ d \ln (pV^n) = 0$$
+  即$pV^n$为常数。
+  }
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  教材168页习题3-17：
+  
+  如图，用绝热壁作成一圆柱形容器，中间放置一无摩擦都绝热活塞。活塞两侧充有等量同种气体，初始状态为$p_0$, $V_0$, $T_0$，设气体定体容量$C_V$为常量，$\gamma = 1.5$。将一通电线圈放到活塞左侧气体中，对气体缓慢地加热。左侧气体膨胀对同时通过活塞压缩右方气体，最后使右方气体压强增强为$\frac{27}{8}p_0$。问：
+  \bmini{0.5}
+  \bitem
+\item[(1)]{活塞对右侧气体做了多少功？}
+\item[(2)]{右侧气体的终温是多少？}
+\item[(3)]{左侧气体的终温是多少？}
+\item[(4)]{左侧气体吸收了多少热量？}  
+  \eitem
+  \emini
+  \bmini{0.46}
+  \addfig{2}{problem3-17.png}
+  \emini
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  {\scriptsize
+    右边是绝热过程，右侧气体末态温度为
+    $T_R = T_0\left(\frac{p_0}{p}\right)^{\frac{1}{\gamma}-1} = \frac{3}{2}T_0$
+    
+    终压强$p_L=p_R=\frac{27}{8}p_0$，右侧终体积
+    $$V_R = V_0\left(\frac{p_0}{p_R}\right)^{\frac{1}{\gamma}} = \frac{4}{9}V_0$$
+    $$C_V = \frac{\nu R}{\gamma - 1} = 2 \nu R = \frac{2p_0V_0}{T_0}$$
+  
+    \bitem
+  \item[1]{对右边气体做功等于右边气体内能的增加
+    $$A = C_V(T_R-T_0) = \frac{2p_0V_0}{T_0}\left(\frac{3}{2}T_0-T_0\right) = p_0V_0$$}
+  \item[2]{上面已经算出右侧气体的终温为$\frac{3}{2}T_0$}
+  \item[3]{左侧气体终体积为$V_L=2V_0-V_R = \frac{14}{9}V_0$，温度
+    $$T_L = \frac{p_LV_L}{\nu R} = \frac{21}{4}T_0$$}
+  \item[4]{左侧气体吸热用于做功和增加左侧气体内能：
+    $$ Q = \Delta U_L + A = C_V(T_L-T_0) + p_0V_0 = \frac{19}{2}p_0V_0$$}
+    \eitem
+  }
+  \ech
+\end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sthree)}
+  \bch
+  (本题来自一个神秘的群)
+
+  \skipline
+  
+  火箭通过高速喷射燃气产生推力，设温度为$T_1$，压强$p_1$的炽热高压气体在燃烧室不断生成，并通过管道由狭窄的喷气口排入气压$p_2$的环境，假设燃气可视为理想气体，其摩尔质量为$\mu$，每摩尔燃气内能为$C_VT$($C_V$为常量，$T$为燃气温度)，在快速流动过程中，对管道内任意处两个非常靠近对横截面间对气体，可以认为它与周围没有热交换，但其内部则达到平衡状态且满足绝热方程。求喷气口处气体的温度与相对火箭的喷射速率。
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  绝热过程$T\propto p^{\frac{R}{C_V+R}}$，故
+  $$T_2 = T_1\left(\frac{p_2}{p_1}\right)^{\frac{R}{C_V+R}}$$
+  由于是连续不断的过程，内能损失率和动能产生率平衡：
+  $$  C_V(T_1-T_2) =  \frac{1}{2}\mu\upsilon^2$$
+  即
+  $$\upsilon = \sqrt{\frac{2C_VT_1\left[1-\left(\frac{p_2}{p_1}\right)^{\frac{R}{C_V+R}}\right]}{\mu}}$$
+  
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  \addfig{1.5}{nncycle.png}
+
+  如图，某定体热容$C_V$为常数的理想气体的可逆循环由两个绝热过程和$n=2$的多方过程组成。其中的绝热压缩过程（即CD线）中温度升高一倍。求该循环的效率$\eta$。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  按照第11讲讨论，可逆多方循环的效率为$1-T_2/T_1$，其中$T_1$, $T_2$为任意一条绝热线上的高温值和低温值。故本题答案为$\eta = 1 - \frac{1}{2} = \frac{1}{2}$。
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sthree)}
+  \bch
+  \addfig{1.5}{Tpcycle.png}
+
+  如图，某单原子理想气体的可逆循环ABCD。已知等温压缩过程CD的温度为$T$，等压膨胀过程中温度从$T_A=\frac{3}{2}T$升高到$T_B=2T$。求该循环的效率。
+  
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  {\scriptsize
+  单原子理想气体的$\gamma = \frac{5}{3}$， $C_p = \frac{5}{2}\nu R$。易得等压膨胀过程中吸热
+  $$Q_1 = C_p(T_B-T_A) = \frac{5}{4}\nu R T$$
+
+  绝热过程中$p \propto T^{5/2}$.
+  所以
+  $$\frac{p_c}{p_B} = \left(\frac{T_c}{T_B}\right)^{5/2} = \left(\frac{1}{2}\right)^{5/2}$$
+  $$\frac{p_D}{p_A} =\left(\frac{T_D}{T_A}\right)^{5/2} = \left(\frac{2}{3}\right)^{5/2}$$
+  再由$p_A=p_B$，得到
+  $$\frac{p_D}{p_C} =   \left(\frac{4}{3}\right)^{5/2}$$
+  由此可算出:
+  $$ Q_2' = \nu R T \ln \frac{V_C}{V_D} = \nu R T \ln \frac{p_D}{p_C} = \frac{5\nu RT}{2} \ln\frac{4}{3} $$
+  $$\eta = 1 - \frac{Q_2'}{Q_1} = 1 - \frac{\frac{5}{2}\ln\frac{4}{3}}{\frac{5}{4}} = 1-2\ln\frac{4}{3} = 0.425 $$
+  }
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sfour)}
+  \bch
+  光子气体的状态方程为
+  $$ U = a T^4 V$$
+  其中$a$为常量。考虑光子气体的一个准静态循环：先由体积$V_2$等体加热升温，然后绝热膨胀直至体积为$V_1$，然后等体放热降温，最后绝热压缩至初始状态。求这个循环的效率。
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  {\scriptsize
+
+\begin{equation}
+    \pfrac STV = \frac{1}{T}\pfrac UTV = 4aT^2 V \label{eq1}
+\end{equation}
+极端相对论气体压强为能量密度的$1/3$，即
+$$p = \frac{1}{3}aT^4$$
+又根据$ dF = -SdT - pdV$为全微分，得到
+\begin{equation}
+  \pfrac SVT = \pfrac pTV = \frac{4}{3}aT^3 \label{eq2}
+\end{equation}
+  结合\eqref{eq1}和\eqref{eq2}得到
+  $$ S = S_0 + \frac{4}{3} aT^3 V $$
+  
+  故两个等体过程在$T$-$S$图上是成正比的，比例为$\left(\frac{V_2}{V_1}\right)^{1/3}$。
+  效率为$1$减去两条等体线下面积之比，即
+  $$\eta = 1 - \left(\frac{V_2}{V_1}\right)^{1/3}$$
+  }
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{第13周作业(序号接第12周)}
+  \bch
+  \bitem
+  \item[33]{教材习题3-6}
+  \item[34]{教材习题3-7}
+  \item[35]{教材习题3-16}
+  \eitem
+  \ech
+\end{frame}
+
+
+
+\end{document}

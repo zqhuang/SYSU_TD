@@ -1,0 +1,624 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\input{titlepage.tex}
+\title{Lesson 14 General $pVT$ System Review}
+  \author{}
+  \date{}
+\begin{document}
+\tpage{14}{热学知识回顾第二篇：一般$pVT$系统}
+
+
+\newcounter{chap}
+\newcounter{problem}[chap]
+\def\proid{{Problem \thechap.\theproblem}}
+
+\begin{frame}
+  \chtitle{本讲内容摘要}
+  \bch
+  \bitem
+\item{总纲}
+\item{相变，饱和蒸汽和克拉珀龙方程}
+\item{从一般物态方程推导态函数的性质}
+  \eitem
+  \ech
+\end{frame}
+
+
+\section{General $pVT$ System}
+\setcounter{chap}{2}
+\setcounter{problem}{0}
+
+\begin{frame}
+  \chtitle{总纲}
+  \bch
+  \bitem
+  \item{一般的$pVT$系统有两个独立自由函数。通常以固定某个态函数的办法使得本来意义不明确的微商变为普通的一元函数微商。}
+  \item{  当固定量不变时，任何一元函数微商的技巧都可以放心使用。}
+  \item{
+    当固定量改变时，需要掌握一点额外的数学技巧来简化推导。}
+    \eitem
+  
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{链式法则}
+  \bch
+  对{\bf 仅有两个独立变量}的态函数们，有普通链式法则
+  $$\pfrac XYS \pfrac YZS = \pfrac XZS$$
+
+  三变量新链式法则
+  $$\pfrac XYZ \pfrac YZX = -\pfrac XZY$$
+
+  和四变量新链式法则
+  $$ \pfrac WZX \pfrac ZXY = \pfrac WXY - \pfrac WXZ  $$
+  
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{全微分成立条件}
+  \bch
+  $ f dX + g dY$为全微分的充要条件为
+  $$\pfrac fYX = \pfrac gXY $$
+  
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{再回顾下$pVT$系统四大实用公式}
+  \bch
+  \tbox{$$\pfrac UVT = \pheat - p$$}
+  \tbox{$$\pfrac HpT = V - \vheat $$}
+  \tbox{$$\dbar Q = C_V dT + \pheat dV$$}
+  \tbox{$$\dbar Q = C_p dT - \vheat dp $$}
+  \ech
+\end{frame}
+
+\begin{frame}
+  \bch
+  {\Huge 第一部分：相变，饱和蒸汽和克拉珀龙方程}
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{克拉珀龙方程}
+  \bch
+  \bmini{0.6}
+  \lfig{2.5}{PVTdiagram.png}
+  \emini
+  \bmini{0.36}
+  克拉珀龙方程是$\dbar Q$第一种表达式在相变时$dT=0$的特殊情形。
+  \emini
+  
+  \tbox{  $$\pfrac pTV = \frac{\Lambda^{\rm mol}}{T\left(V^{\rm mol}_\beta - V^{\rm mol}_\alpha\right)} $$
+  }
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{克拉珀龙方程的近似}
+  \bch
+  在升华或者汽化过程中，固液态的摩尔体积可以忽略。气态的摩尔体积按理想气体近似为$RT/p$。故
+  $$ \frac{dp}{dT} = \frac{p\Lambda^{\rm mol}}{RT^2}$$
+  或者写成
+  \tbox{  $$ \Lambda^{\rm mol} = -R \frac{d \ln p}{d \left(\frac{1}{T}\right)} $$}
+  从实用角度讲，这个近似方程的重要性更大。记住它的口诀是：{\bf 对数$p$，倒数$T$，乘上负$R$才有戏}。
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{蒸气压方程}
+  \bch
+  \bitem
+  \item{
+  若温度范围较小，可以假设摩尔汽化热为常数，得到
+  $$\ln\left(\frac{p}{p_0}\right) = -\frac{\Lambda^{\rm mol}}{R}\left(\frac{1}{T}-\frac{1}{T_0}\right)$$
+  }
+  \item{若温度范围较大，可以对摩尔汽化热$\Lambda^{\rm mol}$作线性近似，可积分得到
+    $$\ln\left(\frac{p}{p_0}\right) = A \left(\frac{1}{T_0} - \frac{1}{T}\right) + B \ln\left(\frac{T}{T_0}\right)$$}
+    \eitem
+  这些方程称为蒸气压方程。
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  为什么在远低于$100\cdeg$的室温下，空气中仍含有水蒸气？空气中含有的水蒸气比例有上限吗？平时所说的湿度70\%是什么意思？
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  $100\cdeg$是一个大气压下的水的沸点。按照克拉珀龙方程，低压下沸点也低。空气中水蒸气的分压很小，远低于一个大气压。故沸点可以低于室温。
+
+  \skipline
+
+  如果持续增大空气湿度（即增大水蒸气分压），使得沸点超过室温，那么水滴会自动从空气中凝结出来（降雨，露珠等自然现象）。这个临界的水蒸气分压，称为饱和蒸气压(水的蒸发曲线上对应于室温的压强值)。稳定情况下，空气中的水蒸气比例不能超过饱和蒸气压所限定的水蒸气分压上限。
+
+  \skipline
+  
+  平时所说的湿度70\%，是指水蒸气分压是饱和蒸气压的70\%。当湿度达到100\%，就会出现水滴自动凝结的现象。
+  \ech
+\end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  教材习题4-11:
+
+  在三相点处水的汽化热为$10.9\SIkcal/\SImol$，气相的摩尔体积为$11.2\SIm^3/\SImol$。液态和固态的摩尔体积都可以忽略不计。求三相点处汽化曲线和升华曲线的斜率。二者之中哪个大？
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  根据克拉珀龙方程，当忽略固态和液态摩尔体积时，汽化曲线和升华曲线的斜率均为
+  $$\frac{dp}{dT} = \frac{\Lambda^{\rm mol}}{T\Delta V} = \frac{10.9\times 10^3 \times 4.185 \SIJ}{273.16\SIK\times 11.2\SIm^3/\SImol} = 14.9 \SIPa/\SIK$$
+  \ech
+\end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  教材习题4-14:
+
+  已知$100\cdeg$时水的饱和蒸气压为$9.81\times 10^4 \SIPa$，求$15\cdeg$时水的饱和蒸气压。
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  题目少给了汽化热的信息所以无法计算。
+
+  若设水的汽化热$4.06\times 10^4\SIJ/\SImol$已知。则可以用最粗略的蒸气压方程估算
+  
+  \bea
+  \ln\frac{p}{p_0} &=& -\frac{\Lambda^{\rm mol}}{R}\left(\frac{1}{T} - \frac{1}{T_0}\right) \newl
+  &=&  -\frac{4.06\times 10^4}{8.314}\times\left(\frac{1}{288.15}-\frac{1}{300}\right) \SIPa \newl
+  &=& -3.86
+  \eea
+  即$$ p = e^{-3.86}\times 9.81\times 10^4\SIPa = 2.07\times 10^3 \SIPa$$
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sone)}
+  \bch
+  教材226页习题4-10：
+
+  在$700\SIK$到$739\SIK$范围内，镁的饱和蒸气压$p$与$T$的关系为
+  $$\lg(p/\SImmHg) = -\frac{7527\SIK}{T} +8.589$$
+  将镁的饱和蒸汽看作理想气体，求镁的升华热。
+  
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  注意常用对数和自然对数的差别，
+  $$\ln(p/\SImmHg) = \ln 10 \times \lg(p/\SImmHg)$$
+  所以
+  $$\Lambda^{\rm mol} = -R\frac{d\ln p}{d\left(\frac{1}{T}\right)} = 8.314\times \ln 10 \times 7527 \SIJ/\SImol = 1.44\times 10^5\SIJ/\SImol$$
+  \ech
+\end{frame}
+
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sone)}
+  \bch
+  教材225页习题4-8：
+
+  水从温度$99\cdeg$升高到$101\cdeg$时，饱和蒸气压从$733.7\SImmHg$增大到$788.0\SImmHg$。假定这时水蒸气可看作理想气体，求$100\cdeg$时水的汽化热。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  {\small
+  饱和蒸气压即给定温度下气液共存态时的压强。
+  
+  按照克拉珀龙方程的近似，
+  
+  $$\Lambda^{\rm mol} = -R \frac{\Delta \ln p}{\Delta\left(\frac{1}{T}\right)} = -8.314 \times \frac{\ln\frac{788}{733.7}}{\frac{1}{374.15}-\frac{1}{372.15}} \SIJ/\SImol = 4.13\times 10^4 \SIJ/\SImol$$
+  又$1\SImol$水为$0.018\SIkg$，故按习惯把汽化热写成
+  $$ \Lambda = \frac{4.13\times 10^4}{0.018} \SIJ/\SIkg = 2.29\times 10^6 \SIJ/\SIkg$$
+  }
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  教材226页习题4-15:
+
+  固态氨的蒸气压方程和液态氨的蒸气压方程分别为
+  
+  固态$\ln(p/\SImmHg) = 23.3 - \frac{3754\SIK}{T}$
+
+  液态$\ln(p/\SImmHg) = 19.49 -\frac{3063\SIK}{T}$
+
+  求：
+
+  (1)三相点的压强和温度。
+
+  (2)三相点的汽化热，熔化热和升华热。
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+      {\small
+        三相点既满足固态蒸气压方程，又满足液态蒸气压方程。
+        $$\ln\left(\frac{\pthree}{\SImmHg}\right) = 23.3-\frac{3754\SIK}{\Tthree} = 19.49 - \frac{3063 \SIK}{\Tthree}$$
+        解出
+        $$\Tthree = 181.36\SIK;\ \pthree = 13.48\SImmHg$$
+        升华热和汽化热分别为
+        $$\Lambda^{\rm mol}_{\rm sublimate} = - R\frac{d\ln p}{d\left(\frac{1}{T}\right)} =8.314\times 3754\SIJ/\SImol = 3.121\times 10^4 \SIJ/\SImol $$
+        $$\Lambda^{\rm mol}_{\rm evaporate} = -R \frac{d\ln p}{d\left(\frac{1}{T}\right)} = 8.314\times 3063\SIJ/\SImol = 2.547\times 10^4 \SIJ/\SImol $$
+        在三相点有固定压强，各种潜热即是各种物态的焓差，所以熔化热为
+        $$\Lambda^{\rm mol}_{\rm melt} = \Lambda^{\rm mol}_{\rm sublimate} - \Lambda^{\rm mol}_{\rm evaporate} = 5.74 \times 10^3 \SIJ/\SImol$$
+        
+      }
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  教材226页习题4-13：
+
+  证明相变时内能的变化为：
+  $$U_2^{\rm mol}-U^{\rm mol}_1 = \Lambda^{\rm mol}\left(1-\frac{d\ln T}{d\ln p}\right).$$
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+      {\small
+        考虑$1\SImol$物质，根据热一律
+        $$ \Delta U = Q + A = \Lambda^{\rm mol} - p \Delta V$$
+        又温度不变时，吸热量等于热压强做功
+        $$\Lambda^{\rm mol} = \pfrac p{\ln T}V \Delta V = p\Delta V \pfrac {\ln p}{\ln T}V $$
+        结合上面两式即得证。
+      }
+  \ech
+\end{frame}
+
+
+
+
+
+\begin{frame}
+  \bch
+  {\Huge 第二部分：从一般物态方程推导态函数}
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sone)}
+  \bch
+  对一个$pVT$系统，膨胀系数定义为
+  $$\alpha \equiv \frac{1}{V}\pfrac VTp$$
+  压强系数定义为
+  $$\beta \equiv \frac{1}{p}\pfrac pTV$$
+  压缩系数定义为
+  $$\kappa \equiv -\frac{1}{V}\pfrac VpT$$
+  试证明：
+  $$\alpha = \kappa \beta p$$
+\ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  证明：
+  \bea
+  \kappa\beta p &=& -\frac{1}{V}\pfrac VpT \frac{1}{p}\pfrac pTV p \newl
+  &=& -\frac{1}{V}\pfrac VpT \pfrac pTV \newl
+  &=& \frac{1}{V}\pfrac VTp \newl
+  &=&\alpha
+  \eea
+  其中在倒数第二步我们用了三变量的新链式法则。
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  对$pVT$系统证明下述Maxwell关系：
+\bitem
+\item{$\pfrac TVS = -\pfrac pSV$}
+\item{$\pfrac TpS = \pfrac VSp$}
+\item{$\pfrac SVT = \pfrac pTV$}
+\item{$\pfrac SpT = -\pfrac VTp$}
+\eitem
+\ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+\bitem
+\item{由$dU = TdS - pdV$为全微分以及全微分成立条件得到$\pfrac TVS = -\pfrac pSV$。}
+\item{由$dH = TdS + Vdp$为全微分以及全微分成立条件得到$\pfrac TpS = \pfrac VSp$。}
+\item{由$dF = -SdT - pdV$为全微分以及全微分成立条件得到$\pfrac SVT = \pfrac pTV$。}
+\item{由$dG = -SdT + Vdp$为全微分以及全微分成立条件得到$\pfrac SpT = -\pfrac VTp$。}
+\eitem
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sthree)}
+  \bch
+某气体的物态方程为
+$$p(V-\nu b) = \nu R T$$
+其中$b$为常量。
+
+证明该气体的定压热容和定体热容之差为
+$$ C_p - C_V = \nu R $$
+
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解法1}
+  \bch
+由$C_p  =\pfrac HTp = T \pfrac STp$, $C_V = \pfrac UTp = T\pfrac STV$
+得到
+$$\frac{C_p - C_V}{T} = \pfrac STp - \pfrac STV = \pfrac SVT  \pfrac VTp $$
+最后一步我们用了四变量的偏微分链式法则。然后根据$dF = - SdT - pdV$为全微分得到$\pfrac SVT = \pfrac pTV$，代入上式
+$$ C_p - C_V = T\pfrac pTV \pfrac VTp = T \frac{\nu R}{V-\nu b} \frac{\nu R}{p} = \nu R$$
+
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解法2}
+  \bch
+$\dbar Q$的两种表达式：
+$$ \dbar Q  =  C_V dT + T\pfrac pTV dV  $$
+$$ \dbar Q =  C_p dT - T\pfrac VTp dp$$
+两式相减得到
+$$ (C_p- C_V)dT =  T\pfrac VTp dp + T\pfrac pTV dV = (V-\nu b)dp + p dV $$
+又根据状态方程有$ \nu R dT = (V-\nu b) dp + p dV$，与上式比较即得证$C_p - C_V = \nu R$。
+  \ech
+\end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sthree)}
+  \bch
+  对$pVT$系统，证明
+  $$\pfrac {C_V}VT = T\left(\frac{\partial^2p}{\partial T^2}\right)_V $$
+  由此推出：当且仅当状态方程中$p$对$T$的依赖关系为线性关系时，$C_V$只是温度的函数。
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  证明：固定取$T$, $V$为自变量，按照假数学书的语言，即有
+  \bea
+  \frac{\partial C_V}{\partial V} &=& \frac{\partial^2U}{\partial T\partial V} \newl
+  &=& \frac{\partial^2U}{\partial V\partial T} \newl
+  &=& \frac{\partial\left(T\frac{\partial p}{\partial T} - p \right)}{\partial T} \newl
+  &=& T\frac{\partial^2p}{\partial T^2}
+  \eea
+  至于数学老师说二阶偏导数未必可交换偏导次序？再见\bye
+  \ech
+\end{frame}
+
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sthree)}
+  \bch
+  教材习题3-20:
+
+  $1\SImol$氩气从初始温度$300\SIK$和初始体积$10^{-3}\SIm^3$分别经过下列三过程膨胀到$2\times 10^{-3}\SIm^3$的体积，计算温度的降低。
+  \bitem
+\item[(1)]{自由膨胀}
+\item[(2)]{可逆绝热膨胀}
+\item[(3)]{绝热节流膨胀}
+  \eitem
+  设$C_V^{\rm mol} = 12.6\SIJ/(\SImol\cdot\SIK)$, $C_p^{\rm mol} = 20.9\SIJ/(\SImol\cdot\SIK)$，在(3)中设氩气满足范德瓦尔斯方程，其中$a = 0.136\SIm^6\cdot Pa/\SImol^2$, $b =3.22\times 10^{-5}\SIm^3/\SImol$。
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  {\small
+    (1)因未指明自由膨胀中是否绝热，无法计算温度变化。
+    
+    (2)可逆绝热膨胀用理想气体近似
+  $$T_2 = T_1 \left(\frac{V_1}{V_2}\right)^{\gamma-1} = 190 \SIK $$
+    即温度降低了$110\SIK$。
+    
+    (3)我们曾提到范德瓦尔斯气体的内能由独立的分子平均能量和分子之间势能构成，前者由能均分定理得到，后者由克服内压强做功得到。
+    $$ U = \nu C_V^{\rm mol}T - \int p_U dV = U_0 + \nu C_V^{\rm mol}T - \frac{\nu^2 a}{V}$$
+    故焓$H= U +pV$可以化简得到为
+    $$ H  = U_0 + \left(C_V^{\rm mol} + \frac{V}{V-\nu b}R\right) \nu T -\frac{2a\nu^2}{V}$$
+  }
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答(续)}
+  \bch
+      {\small
+        不妨取$U_0=0$，
+    $$ H  = \left(C_V^{\rm mol} + \frac{V}{V-\nu b}R\right) \nu T -\frac{2a\nu^2}{V}$$
+        由初始状态算出
+        $H = 6085.2\SIJ$。
+        绝热节流是等焓过程，对末状态就有
+        $$T = \frac{H+\frac{2a\nu^2}{V}}{\nu \left(C_V^{\rm mol}+ \frac{V}{V-\nu b}R\right)} = 295.54\SIK $$
+        故温度改变量为$\Delta T = -4.46 \SIK$
+
+        \skipline
+        {\scriptsize
+        注意: 按照范德瓦尔斯模型。$C_V$可以为常量，但$C_p-C_V$必然依赖于体积和温度（请参考习题4-7)。题目给的$C_p -C_V$为常量，和范德瓦尔斯模型不自洽。所以题目本身有点小问题。这里的解法为了自洽，则直接忽略$C_p$这个条件。}
+      }
+  \ech
+\end{frame}
+\begin{frame}
+  \chtitle{\proid 解答(第（3）小问的第二种解法)}
+  \bch
+      {\small
+        (3)的第二种解法：利用焦耳汤姆孙系数计算
+
+         对范德瓦尔斯气体，由状态方程
+$$\left(p + \frac{\nu^2 a}{V^2}\right) \left(V - \nu b\right) = \nu RT$$
+以及焓和状态方程的关系，得到
+$$\pfrac HpT = V \left(\delta_V - \frac{2\delta_p}{1+2\delta_p}\right) \frac{1+2\delta_p}{1-2\delta_p\left(1-\delta_V\right)}$$
+其中$\delta_p \equiv \frac{\frac{\nu^2a}{V^2}}{p+\frac{\nu^2 a}{V^2}}$为压强修正的大小，$\delta_V\equiv \frac{\nu b}{V}$为体积修正的大小。
+        
+由于压强修正和体积修正不大，我们用线性近似，
+        $$\pfrac HpT \approx V\left(\frac{\nu b}{V} - 2\frac{a\nu^2}{pV^2}\right)\approx \nu b - 2\frac{a\nu}{RT}$$
+      }
+
+      \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答(第（3）小问的第二种解法 续)}
+  \bch
+  {\small
+  由三变量的新链式法则易得焦耳-汤姆孙系数
+        $$\pfrac TpH = -\frac{\pfrac HpT}{C_p} \approx \frac{2\frac{a}{RT}-b}{C_p^{\rm mol}} =  3.68\times 10^{-6}\SIK/\SIPa$$
+        由状态方程得到
+        $$\Delta p = \nu RT\left(\frac{1}{V_2-\nu b}-\frac{1}{V_1-\nu b}\right) -a\nu^2\left(\frac{1}{V_2^2}-\frac{1}{V_1^2}\right)= -1.21\times 10^6\SIPa$$
+        故
+        $$\Delta T \approx \pfrac TpH \Delta p = -4.45\SIK$$
+  }
+  \ech
+\end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{习题\proid  (\sthree)}
+  \bch
+  对$pVT$系统证明
+  $$\pfrac UpV = -T\pfrac VTS$$
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{习题\proid 解答}
+  \bch
+  证明:固定熵时
+  $$ \dbar Q = C_V dT + T \pfrac pTV dV = 0 $$
+  即
+  $$ \pfrac VTS = -\frac{C_V}{T\pfrac pTV} = -\frac{\pfrac UTV}{T\pfrac pTV} = -\frac{1}{T} \pfrac UpV $$
+  两边乘以$-T$即得证。
+  \ech
+\end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sfour)}
+  \bch
+  {\small
+  某气体的焦耳-汤姆孙系数
+  $$\alpha = \pfrac TpH =-\frac{a}{T^2}$$
+  $a>0$为常量。
+
+  当$p\rightarrow 0$时，该气体的定压比热容趋向于常量
+  $$\lim_{p\rightarrow 0}C_p = c$$
+  当温度趋向于零时，该气体的熵趋向于零。
+  $$ \lim_{T\rightarrow 0} S = 0$$
+  在标准状态下的该气体，经过准静态绝热压缩，压强增强为$8\atm$。求末态气体温度。
+  }
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  {\small
+    先计算$H(T, p)$在固定$p=0$时的函数形式
+    $$H(T, p=0) = H(0, 0)+\int_0^T c dT = H_0+cT$$
+    由于能量的基点可以任意选取，不妨取$H_0=0$。
+  
+    在$p$-$T$图上考察焓固定为$H$的等焓线，对$\pfrac pTH = -\frac{T^2}{a}$积分得到
+    $$ p = -\frac{T^3}{3a} + C $$
+    其中积分常数$C$只和$H$有关，取$p=0$可以获得积分常数
+    $$ p = \frac{-T^3 + \frac{H^3}{c^3}}{3a} $$
+    即
+    $$H = c\left(T^3 + 3ap\right)^{\frac{1}{3}} $$
+  }
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答(续)}
+  \bch
+  {\small
+    $$ \pfrac STp = \frac{C_p}{T}= \frac{\pfrac HTp}{T}  = \frac{cT}{\left(T^3 +3ap \right)^{\frac{2}{3}}} $$
+    再把上式从$0$到$T$积分
+    $$ S(T, p) = c \int_0^T  \frac{x}{\left(x^3 +3ap \right)^{\frac{2}{3}}} dx$$
+    令$x = (3ap)^{1/3}t$还可以把上式化简
+    $$S(T, p) = c \int_0^{\frac{T}{(3ap)^{1/3}}} \frac{tdt}{\left(t^3+1\right)^{2/3}} $$
+    可见熵只依赖于$Tp^{-1/3}$，绝热方程为$T\propto p^{1/3}$。即末态温度为$8^{1/3}\times 273.15\SIK = 546.3\SIK$。
+}
+  \ech
+\end{frame}
+
+
+
+
+\section{Homework}
+
+\begin{frame}
+  \chtitle{第14周作业(序号接第13周)}
+  \bch
+  \bitem
+\item[36]{教材习题4-9}
+\item[37]{教材习题4-12}
+\item[38]{对$pVT$系统证明  $$\pfrac HVp = T\pfrac pTS $$}
+\eitem
+  
+  \ech
+\end{frame}
+
+\end{document}
