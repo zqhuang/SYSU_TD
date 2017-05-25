@@ -8,6 +8,110 @@
 \tpage{14}{热学知识回顾第二篇：一般$pVT$系统}
 
 
+\begin{frame}
+  \chtitle{上讲内容回顾}
+  \bch
+  \bitem
+\item{理想气体过程}
+\item{其他一堆看不懂的东西}
+  \eitem
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{理想气体准静态过程的核心方程}
+  \bch
+  \tbox{$$\Delta U = Q +A,$$}
+  \tbox{$$ pV = \nu RT.$$}
+  \tbox{$$dU = C_V dT$$}
+  以及绝热方程
+  \tbox{$$ pV^\gamma = C$$}  
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{思考题}
+  \bch
+  \addfig{0.6}{think.jpg}
+  对一个给定摩尔数，给定$C_V$（允许是$T$的函数)且给定守恒量的理想气体准静态过程，初态$p_1, V_1, T_1$，末态$p_2, V_2, T_2$，吸热量$Q$，对外做功$A'$，这些变量里有多少个是独立的？
+
+  \skipline
+
+  {\scriptsize 注：给定守恒量的例子：等温过程$T$是守恒量（或者说$pV$是守恒量)；等压过程$p$是守恒量；等体过程$V$是守恒量；绝热过程$pV^\gamma$是守恒量（当$\gamma$可以近似为常数时）；多方过程$pV^n$是守恒量。}
+  \ech
+\end{frame}
+
+
+
+\begin{frame}
+  \chtitle{套路1：初态两个独立量 + 末态一个独立量}
+  \bch
+  
+  {\scriptsize (理想气体$\Delta U = 0$和$\Delta H=0$(节流)都等价于$T_2=T_1$。)}
+  
+  \addfig{0.8}{doushitaolu.jpg}
+  
+  \bitem
+  \item{初态两个独立量+状态方程$\Rightarrow$ 初态的$p_1$, $V_1$, $T_1$;}
+  \item{末态一个独立量+守恒量+状态方程 $\Rightarrow$末态的$p_2$, $V_2$, $T_2$;}
+  \item{守恒量$\Rightarrow$ $p(V)$的函数关系$\Rightarrow$ $A' = \int_{V_1}^{V_2} pdV$;}
+  \item{$\Delta U = \int_{T_1}^{T_2} C_VdT$;}
+  \item{热一律 $\Rightarrow$ $Q = A'+\Delta U$.}
+    \eitem
+
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{套路2：初态两个独立量 + $Q$或者$A'$}
+  \bch
+ 
+
+  {\scriptsize (绝热等价于$Q=0$; 自由等价于$A'=0$;)}
+  
+  \addfig{0.8}{doushitaolu.jpg}
+  
+  \bitem
+  \item{初态两个独立量+状态方程$\Rightarrow$ 初态的$p_1$, $V_1$, $T_1$;}
+  \item{守恒量$\Rightarrow$ $p(V)$的函数关系$\Rightarrow$ $A' = \int_{V_1}^{V_2} pdV$，把$V_2$当作待定量保留在计算结果中；}
+  \item{$C_V$ $\Rightarrow$ $\Delta U = \int_{T_1}^{T_2} C_VdT$，把$T_2$当作待定量保留在计算结果中；}
+  \item{热一律 $\Rightarrow$ $Q = A'+\Delta U$，结果包含了待定量$V_2$和$T_2$；}
+  \item{根据已知$Q$或者$A'$得到$V_2, T_2$的一个方程 + 守恒量条件 + 状态方程 $\Rightarrow$ 末态的$p_2, V_2, T_2$。}
+  \eitem
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{阴沟里翻船的常见原因}
+  \bch
+  考试第二定律：
+  \tbox{
+  不会做 $\Rightarrow$ 做不对}
+  \tbox{
+  会做 $\slashed{\Rightarrow}$ 做对
+  }
+  \skiplines
+  
+  \begin{tabular}{ll}
+    \hline
+    \hline
+    {\bf 翻船事件} & {\bf 翻船原因} \\
+    \hline
+    弄错分子式或分子量\wulian & 化学是数学老师教的\\
+    \hline
+    积分永远积不对\bye & 数学是化学老师教的      \\
+    \hline
+    加撇不加撇，傻傻分不清 & 语文是物理老师教的 \\
+    \hline
+    看到题后内心没有丝毫波动，甚至想写诗 & 物理是语文老师教的\\
+    \hline
+  \end{tabular}
+  
+  \ech
+\end{frame}
+
+
 \newcounter{chap}
 \newcounter{problem}[chap]
 \def\proid{{Problem \thechap.\theproblem}}
@@ -103,6 +207,21 @@
 \end{frame}
 
 \begin{frame}
+  \chtitle{克拉珀龙方程}
+  \bch
+  \bmini{0.6}
+  \lfig{2.5}{PTdiagram.png}
+  \emini
+  \bmini{0.36}
+  把$pVT$图的$V$自由度投影掉之后，相变曲面成为相变曲线。这时可以省略固定$V$的下标。写成
+  \emini
+
+  \tbox{  $$\frac{dp}{dT}= \frac{\Lambda^{\rm mol}}{T\left(V^{\rm mol}_\beta - V^{\rm mol}_\alpha\right)} $$  }
+  \ech
+\end{frame}
+
+
+\begin{frame}
   \chtitle{克拉珀龙方程的近似}
   \bch
   在升华或者汽化过程中，固液态的摩尔体积可以忽略。气态的摩尔体积按理想气体近似为$RT/p$。故
@@ -122,7 +241,7 @@
   若温度范围较小，可以假设摩尔汽化热为常数，得到
   $$\ln\left(\frac{p}{p_0}\right) = -\frac{\Lambda^{\rm mol}}{R}\left(\frac{1}{T}-\frac{1}{T_0}\right)$$
   }
-  \item{若温度范围较大，可以对摩尔汽化热$\Lambda^{\rm mol}$作线性近似，可积分得到
+  \item{若温度范围较大，可以对摩尔汽化热$\Lambda^{\rm mol}$作$T$的线性近似，可积分得到
     $$\ln\left(\frac{p}{p_0}\right) = A \left(\frac{1}{T_0} - \frac{1}{T}\right) + B \ln\left(\frac{T}{T_0}\right)$$}
     \eitem
   这些方程称为蒸气压方程。
@@ -423,7 +542,7 @@ $$ C_p - C_V = \nu R $$
 \begin{frame}
   \chtitle{\proid 解法1}
   \bch
-由$C_p  =\pfrac HTp = T \pfrac STp$, $C_V = \pfrac UTp = T\pfrac STV$
+由$C_p  =\pfrac HTp = T \pfrac STp$, $C_V = \pfrac UTV = T\pfrac STV$
 得到
 $$\frac{C_p - C_V}{T} = \pfrac STp - \pfrac STV = \pfrac SVT  \pfrac VTp $$
 最后一步我们用了四变量的偏微分链式法则。然后根据$dF = - SdT - pdV$为全微分得到$\pfrac SVT = \pfrac pTV$，代入上式
