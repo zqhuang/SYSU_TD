@@ -12,18 +12,31 @@
 \def\proid{{Problem \thechap.\theproblem}}
 
 
-\section{Entropy and 2nd Law}
 \setcounter{chap}{3}
 \setcounter{problem}{0}
 
+\section{Entropy}
 \begin{frame}
-  \chtitle{第六篇：熵的计算}
+  \chtitle{熵的计算}
   \bch
   准静态过程：
   \tbox{$$\Delta S = \int \frac{\dbar Q}{T} $$}
   对非准静态过程，一般需要构造末态相同的准静态过程来计算熵变。
+
   \ech
 \end{frame}
+
+\begin{frame}
+  \chtitle{第一种套路: 直接告诉$Q$和$T$}
+  \bch
+  \tbox{$$\Delta S = \frac{Q}{T}$$}
+  
+  \bigjianxiao 最喜欢这种侮辱智商的代公式题
+
+
+  \ech
+\end{frame}
+
 
 \stepcounter{problem}
 \begin{frame}
@@ -41,35 +54,16 @@ $$\Delta S = \frac{Q}{T} = \frac{333 \SIkJ}{273.15\SIK} = 1.22 \SIkJ/\SIK $$
 \end{frame}
 
 
-\stepcounter{problem}
 \begin{frame}
-  \chtitle{\proid (\sone)}
+  \chtitle{第二种套路: 不等温热库间传热}
   \bch
-  $1\SImol$的单原子理想气体经过准静态$n=2$多方过程温度从$T_1=300\SIK$变为$T_2 = 400\SIK$。求气体的熵变。
-  \ech
-\end{frame}
+  温度为$T_1$的热库1向温度为$T_2$的热库2传热$Q$ ($T_1>T_2, Q>0$)。这可以看成热库1吸收$-Q$的热量，热库2吸收$Q$的热量，总熵变为：
 
-\begin{frame}
-  \chtitle{\proid 解法1}
-  \bch
-  单原子理想气体$C_V=\frac{3\nu R}{2}$，多方热容
-  $$C_n = C_V - \frac{\nu R}{n-1} = \frac{\nu R}{2}$$
-  故
-  $$\Delta S = \int_{T_1}^{T_2} \frac{C_n dT}{T} = \frac{\nu R}{2} \ln\frac{T_2}{T_1} = 1.20\SIJ/\SIK$$
-  \ech
-\end{frame}
+  \tbox{$$\Delta S = -\frac{Q}{T_1}+\frac{Q}{T_2}$$}
+  
+  \bigbye 我觉得代两次公式已经是你的智商上限
 
-\begin{frame}
-  \chtitle{\proid 解法2}
-  \bch
-  单原子理想气体$C_V=\frac{3\nu R}{2}$，
-  $$dS = C_V d\ln T + \nu R d\ln V$$
-  故
-  $$\Delta S = C_V\ln\frac{T_2}{T_1} + \nu R\ln\frac{V_2}{V_1}$$
-  又因为是$n=2$多方过程$pV^2 = C$，根据理想气体状态方程即$TV$为常量。
-  故$$\ln\frac{V_2}{V_1} = - \ln\frac{T_2}{T_1}$$
-  从而
-  $$\Delta S = \frac{\nu R}{2}\ln\frac{T_2}{T_1} = 1.20\SIJ/\SIK$$
+
   \ech
 \end{frame}
 
@@ -91,9 +85,7 @@ $$\Delta S = \frac{Q}{T} = \frac{333 \SIkJ}{273.15\SIK} = 1.22 \SIkJ/\SIK $$
   \ech
 \end{frame}
 
-
 \stepcounter{problem}
-
 \begin{frame}
   \chtitle{\proid (\sone)}
   \bch
@@ -102,7 +94,6 @@ $$\Delta S = \frac{Q}{T} = \frac{333 \SIkJ}{273.15\SIK} = 1.22 \SIkJ/\SIK $$
   冬季房间热量的流失率为$2.5\times 10^4\SIkcal/\mathrm{h}$，室温$21\cdeg$，外界气温$-5\cdeg$，此过程的熵增加率为何？
   \ech
 \end{frame}
-
 
 \begin{frame}
   \chtitle{\proid 解答}
@@ -113,10 +104,6 @@ $$\Delta S = \frac{Q}{T} = \frac{333 \SIkJ}{273.15\SIK} = 1.22 \SIkJ/\SIK $$
   $$\frac{d S}{dt} = \frac{d S_1}{dt} + \frac{d S_2}{dt} = \frac{-\frac{dQ}{dt}}{T_1} +\frac{\frac{dQ}{dt}}{T_2} = 9.58 \SIJ/(\SIK\cdot\SIs)$$
   \ech
 \end{frame}
-
-
-\stepcounter{problem}
-
 
 \stepcounter{problem}
 \begin{frame}
@@ -145,6 +132,197 @@ $$\Delta S = \frac{Q}{T} = \frac{333 \SIkJ}{273.15\SIK} = 1.22 \SIkJ/\SIK $$
   \item[3]{卡诺可逆热机的吸放量绝对值与温度成正比。故在高温热源放热为$400\SIcal$。需要外界对制冷机做功$200\SIcal = 837\SIJ$。可逆热机造成的熵变为零。}
   \eitem
   }
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{第三种套路: 不直接给$Q$的理想气体过程}
+  \bch
+  理想气体$dU = C_V dT$，可以直接由
+  $$ dU = TdS - pdV$$
+  得到
+  $$ dS = \frac{dU}{T} + \frac{pdV}{T} = \frac{C_VdT}{T} + \nu R\frac{dV}{V}$$
+  即
+  \tbox{$$dS = C_Vd\ln T + \nu R d\ln V$$}
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{关于熵的零点选取问题}
+  \bch
+  先考虑比较简单的单原子理想气体的熵。
+
+  
+  单原子气体$C_V=\frac{3\nu R}{2}$为常量，对固定体积容器内气体的熵进行积分之后，得到
+  $$ S  = \frac{3\nu R}{2} \ln\frac{T}{T_0}, $$
+  积分常数$T_0$是一个和体积有关的量，如何选取$T_0$呢?
+  
+  当温度低于某个量子温度$T_q$（见第五讲）之前，上述经典积分的公式并不适用，而且气体的量子态数目跟经典情况下相比显得微不足道。在经典图像下我们可以认为$T\sim T_q$时熵近似为零，即：
+  $$S \approx \frac{3\nu R}{2} \ln\frac{T}{T_q}$$
+  当然，目前为止我们都是在固定体积情况下讨论。积分常数$T_q$肯定会和体积有关。
+   
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{关于熵的零点选取问题（续）}
+  \bch
+  $$S \approx \frac{3\nu R}{2} \ln\frac{T}{T_q}$$  
+  固定温度和摩尔数时$dS = \nu R d\ln V$，所以猜想$T_q \propto V^{-2/3}$
+
+  事实上，我们在第五讲曾求出
+  $$T_q = \left(\frac{6\pi^2 n}{ g}\right)^{2/3} \frac{\hbar^2}{2mk}$$
+  其中粒子数密度$n\propto 1/V$，上述猜想正确。
+
+  对典型的常温常压下的理想气体，容易估算出$T_q\sim 0.01\SIK$。所以平均每摩尔的气体的熵
+  $$S^{\rm mol} \approx \frac{3}{2}R\ln\frac{T}{T_q}$$
+  在室温附近的变化是很缓慢的。例如取$T_q = 0.01\SIK$，$T$从$250\SIK$到$350\SIK$时，摩尔熵仅变化了$3\%$。
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{关于熵的零点选取问题（续）}
+  \bch
+  对于双原子和多原子理想气体，可以取某个足够低的温度$T^*> T_q$，使得除了平动自由度之外，其他自由度在这个温度均被冻结。固定体积时，熵可以写成
+  $$S \approx \frac{3\nu R}{2} \ln\frac{T^*}{T_q} + \int_{T^*}^T \frac{C_VdT}{T}$$
+  显然，上式的结果跟$T^*$的选择无关。
+  $$ S \sim C_V\ln\frac{T}{T_q}$$
+  仍然在定性上成立。并且同样{\blue 在室温附近，摩尔熵的变化非常缓慢}。（忘掉前面的各种量子统计讨论，最后记住这句话就行。）
+  \ech
+\end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  $1\SImol$的单原子理想气体经过准静态$n=2$多方过程温度从$T_1=300\SIK$变为$T_2 = 400\SIK$。求气体的熵变。
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解法1}
+  \bch
+  单原子理想气体$C_V=\frac{3\nu R}{2}$，
+  $$dS = C_V d\ln T + \nu R d\ln V$$
+  故
+  $$\Delta S = C_V\ln\frac{T_2}{T_1} + \nu R\ln\frac{V_2}{V_1}$$
+  又因为是$n=2$多方过程$pV^2 = C$，再根据理想气体状态方程即$TV$为常量。
+  故$$\ln\frac{V_2}{V_1} = - \ln\frac{T_2}{T_1}$$
+  从而
+  $$\Delta S = (C_V-\nu R)\ln\frac{T_2}{T_1} = \frac{\nu R}{2}\ln\frac{T_2}{T_1} = 1.20\SIJ/\SIK$$
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解法2}
+  \bch
+  单原子理想气体$C_V=\frac{3\nu R}{2}$，多方热容
+  $$C_n = C_V - \frac{\nu R}{n-1} = \frac{\nu R}{2}$$
+  故
+  $$\Delta S = \int_{T_1}^{T_2} \frac{C_n dT}{T} = \frac{\nu R}{2} \ln\frac{T_2}{T_1} = 1.20\SIJ/\SIK$$
+  \ech
+\end{frame}
+
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\stwo)}
+  \bch
+  教材223页思考题4-20：
+
+  理想气体的体积经下列过程膨胀了4倍，试比较熵增加了多少？
+  \bitem
+\item[(1)]{绝热自由膨胀}
+\item[(2)]{可逆等温膨胀}
+\item[(3)]{可逆绝热膨胀}
+\item[(4)]{绝热节流膨胀}  
+  \eitem
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  \bitem
+\item[1]{理想气体绝热自由膨胀温度不变，所以和(2)的初末态均相同，熵变可以用(2)的准静态过程来计算
+  $$\Delta S = \nu R \ln\frac{V_2}{V_1} = \nu R \ln 4;$$}
+\item[2]{上面已经计算$\Delta S = \nu R \ln 4$；}
+\item[3]{可逆绝热过程熵变为零；}
+\item[4]{理想气体没有节流效应。节流过程后温度不变。初末态都和(2)相同，所以结果也和(2)相同：$\Delta S = \nu R \ln 4$。}
+  \eitem
+  \ech
+\end{frame}
+
+\stepcounter{problem}
+\begin{frame}
+  \chtitle{\proid (\sfour)}
+  \bch
+  教材习题4-33：
+
+  \skipline
+  
+  容积为$V$的房间四壁都是绝热的，但有小的漏洞可以使得房间内压强始终保持和室外一致为$p_0=1\atm$。现在生火使室内温度从$T_0$升高到$T$，试讨论室内空气的内能，焓和熵的变化。
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+  空气可以近似看成双原子理想气体，按能均分定理其内能为
+  $$U=\frac{5}{2}NkT = \frac{5}{2}\nu R T = \frac{5}{2}pV;$$
+  焓为
+  $$H = U + pV = \frac{7}{2} pV.$$
+  因室内空气压强和体积不变，故内能和焓都不变。
+
+  \skipline
+
+  要保持$p$和$V$不变，室内空气的摩尔数随着温度升高而减少（$\nu\propto 1/T$）。室温附近摩尔熵的变化非常缓慢，所以近似地有
+  $$S\propto \nu \propto \frac{1}{T}.$$
+  即室内空气的熵会减少。
+  \ech
+\end{frame}
+
+
+
+\stepcounter{problem}
+\begin{frame}
+\chtitle{\proid (\sthree)}
+\bch
+把温度和压强都相同的，总摩尔数为$\nu$的$n$种不同的气体保持温度和压强不变地混合在一起。每种气体的摩尔分数（单种气体摩尔数/总摩尔数）分别为$c_1$, $c_2$, $\ldots$, $c_n$ （$\sum_i c_i = 1$）。试计算气体混合后相对于混合前的熵变。
+\ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+{\small
+每种气体温度不变，体积由混合前的$Vc_i$变为$V$，熵增为$(\nu c_i) R\ln \frac{V}{c_iV} = - \nu R c_i\ln c_i$，对$n$种气体求和即得
+$$\Delta S =   -\nu R \sum_{i=1}^n c_i \ln c_i$$}
+
+\skipline
+
+{\scriptsize
+另解：
+
+在混合前，任取一个分子，我们知道它是属于那一类气体。混合后，我们只知道它是第$i$种气体的概率为$c_i$，故单个分子熵变为
+$-\sum_{i=1}^{n} kc_i\ln c_i $。 总共有$ \nu N_A $个分子，故总熵变为
+$$ \Delta S =  -\nu N_A k\sum_{i=1}^n c_i \ln c_i = -\nu R \sum_{i=1}^n c_i \ln c_i$$  
+}
+\ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{第四种套路：均匀加热过程}
+  \bch
+  一个不能看作热库的物体吸热后温度会升高，当加热过程比较缓慢时，可以认为温度随着吸热量均匀升高。设比热$c$为常数，
+  \tbox{$$\Delta S = \int \frac{c dT}{T} $$ }
   \ech
 \end{frame}
 
@@ -203,82 +381,13 @@ $$\Delta S = \frac{Q}{T} = \frac{333 \SIkJ}{273.15\SIK} = 1.22 \SIkJ/\SIK $$
   \ech
 \end{frame}
 
-\stepcounter{problem}
 \begin{frame}
-  \chtitle{\proid (\stwo)}
+  \chtitle{第五种套路：利用一般$pVT$系统恒等式}
   \bch
-  教材223页思考题4-20：
-
-  理想气体的体积经下列过程膨胀了4倍，试比较熵增加了多少？
-  \bitem
-\item[(1)]{绝热自由膨胀}
-\item[(2)]{可逆等温膨胀}
-\item[(3)]{可逆绝热膨胀}
-\item[(4)]{绝热节流膨胀}  
-  \eitem
+  \tbox{$$\dbar Q = C_VdT + \pheat dV $$}
+  \tbox{$$\dbar Q = C_pdT - \vheat dp $$}  
+  \addfig{1.2}{shaodiantaolu.jpg}    
   \ech
-\end{frame}
-
-
-\begin{frame}
-  \chtitle{\proid 解答}
-  \bch
-  \bitem
-\item[1]{理想气体绝热自由膨胀温度不变，$\Delta S = \nu R \ln\frac{V_2}{V_1} = \nu R \ln 4$}
-\item[2]{与(1)相同}
-\item[3]{可逆绝热过程熵变为零}
-\item[4]{理想气体没有节流效应。节流过程后温度不变。所以结果也和(1)相同。}
-  \eitem
-  \ech
-\end{frame}
-
-\stepcounter{problem}
-\begin{frame}
-\chtitle{\proid (\stwo)}
-\bch
-光子气体的内能密度为$aT^4$，其中$a=\frac{\pi^2 k^4}{15\hbar^3c^3}$为常数，$T$为温度。已知$T=0$时光子气体的熵为零。试求温度为$T$的光子气体的熵密度。
-\ech
-\end{frame}
-
-\begin{frame}
-  \chtitle{\proid 解答}
-  \bch
-内能$U=aVT^4$，定体热容$\pfrac UTV = 4aVT^3$。
-
-利用$dU = TdS - p dV$得到$\pfrac USV = T$，故
-$$\pfrac STV = \frac{\pfrac UTV}{\pfrac USV} = \frac{4aVT^3}{T} = 4aVT^2$$
-固定体积，对温度从$0$到$T$积分，得到
-$$ S(T, V) = \int_0^T \pfrac STV dT = \frac{4}{3}aVT^3 $$
-即熵密度为
-$$ \frac{S}{V}= \frac{4}{3}aT^3$$
-\ech
-\end{frame}
-
-\stepcounter{problem}
-\begin{frame}
-\chtitle{\proid (\stwo)}
-\bch
-把温度和压强都相同的，总摩尔数为$\nu$的$n$种不同的气体保持温度和压强不变地混合在一起。每种气体的摩尔分数（单种气体摩尔数/总摩尔数）分别为$c_1$, $c_2$, $\ldots$, $c_n$ （$\sum_i c_i = 1$）。试计算气体混合后相对于混合前的熵变。
-\ech
-\end{frame}
-
-\begin{frame}
-  \chtitle{\proid 解答}
-  \bch
-{\small
-每种气体温度不变，体积由混合前的$Vc_i$变为$V$，熵增为$(\nu c_i) R\ln \frac{V}{c_iV} = - \nu R c_i\ln c_i$，对$n$种气体求和即得
-$$\Delta S =   -\nu R \sum_{i=1}^n c_i \ln c_i$$}
-
-\skipline
-
-{\scriptsize
-另解：
-
-在混合前，任取一个分子，我们知道它是属于那一类气体。混合后，我们只知道它是第$i$种气体的概率为$c_i$，故单个分子熵变为
-$-\sum_{i=1}^{n} kc_i\ln c_i $。 总共有$ \nu N_A $个分子，故总熵变为
-$$ \Delta S =  -\nu N_A k\sum_{i=1}^n c_i \ln c_i = -\nu R \sum_{i=1}^n c_i \ln c_i$$  
-}
-\ech
 \end{frame}
 
 \stepcounter{problem}
@@ -325,8 +434,30 @@ dS &=& \frac{\dbar Q}{T} \newl
   \ech
 \end{frame}
 
+\stepcounter{problem}
+\begin{frame}
+\chtitle{\proid (\sthree)}
+\bch
+光子气体的内能密度为$aT^4$，其中$a=\frac{\pi^2 k^4}{15\hbar^3c^3}$为常数，$T$为温度。已知$T=0$时光子气体的熵为零。试求温度为$T$的光子气体的熵密度。
+\ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{\proid 解答}
+  \bch
+内能$U=aVT^4$，定体热容$\pfrac UTV = 4aVT^3$。
+
+利用$dU = TdS - p dV$得到$\pfrac USV = T$，故
+$$\pfrac STV = \frac{\pfrac UTV}{\pfrac USV} = \frac{4aVT^3}{T} = 4aVT^2$$
+固定体积，对温度从$0$到$T$积分，得到
+$$ S(T, V) = \int_0^T \pfrac STV dT = \frac{4}{3}aVT^3 $$
+即熵密度为
+$$ \frac{S}{V}= \frac{4}{3}aT^3$$
+\ech
+\end{frame}
 
 
+\section{2nd Law}
 
 \begin{frame}
   \chtitle{热力学第二定律}
