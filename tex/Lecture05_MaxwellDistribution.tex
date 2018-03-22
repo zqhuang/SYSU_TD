@@ -1,0 +1,408 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\input{titlepage.tex}
+\title{Lesson 05 - Maxwell Distribution}
+  \author{}
+  \date{}
+\begin{document}
+\tpage{5}{麦克斯韦分布}
+
+\section{Reivew}
+
+\begin{frame}
+\chtitle{上讲内容回顾}
+\bch
+{\large
+\bitem
+\item{概率密度函数}
+\item{高斯分布}
+\eitem}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+    {\large
+
+      计算积分
+      $$\int_0^\infty r^8e^{-r^2/2}dr. $$
+      }
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{本讲内容}
+\bch
+\bitem
+\item{径向概率密度函数}
+\item{麦克斯韦分布}
+\eitem
+\ech
+\end{frame}
+
+\section{Radial PDF}
+
+
+\secpage{径向概率密度函数}{$$F(r) = \frac{G_1}{G_{n-1}} r^{n-1} e^{-r^2/2}.$$}
+
+\begin{frame}
+\bch
+{\large
+  我们先来讨论一下一个专题：{\bf 径向概率密度函数}。
+
+  \skiplines
+  
+  简单讲，它就是{\bf 随机点到原点距离$r$的概率密度函数$F(r)$}。
+
+  \skiplines
+
+  显然对$r < 0$， $F(r)=0$。这个简单事实我们之后将不再重复，默认只讨论$r\ge 0$的情形。 
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{径向概率密度函数：一维情形}
+\bch
+\addfig{0.6}{think1.jpg}
+{\large 
+  如果$x$服从标准正态分布
+  $$f(x) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}},$$
+  定义新的随机变量$r=|x|$（即$r$是“到原点的距离”)，那么$r$的概率密度函数$F(r)$是怎样的？}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{解答}
+\bch
+根据上节课所讲的随机变量替换法：
+{\large
+  $$F(r) |dr| = \sum_{x\rightarrow r} f(x) |dx| = f(r)|dr| + f(-r)|dr|,$$
+  所以
+  $$F(r) = f(r)+f(-r) = \sqrt{\frac{2}{\pi}}e^{-\frac{r^2}{2}}.$$
+}
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{讨论}
+\bch
+{\large
+回顾一开始写出的等式：
+$$F(r) |dr| = \sum_{x\rightarrow r} f(x) |dx| $$
+等式左边的物理意义是：根据概率密度函数$F(r)$的定义计算随机点$x$落在离原点距离$r$和$r+dr$之间的概率。
+
+\skipline
+
+等式右边的物理意义是：根据概率密度函数$f(x)$的定义计算随机点$x$落在离原点距离$r$和
+$r+dr$之间的概率 (通过列举所有满足条件的$x$得到结果)。
+
+\skipline
+因为同一个统计事件的概率是唯一的，所以左边等于右边。
+
+\skipline
+
+ 这种计算方法可以推广到任意维： 
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{0.6}{think1.jpg}
+{\large
+如果$x$, $y$分别都服从标准正态分布，且$x,y$之间没有统计关联，定义新的随机变量$r=\sqrt{x^2+y^2}$，那么$r$的概率密度函数是怎样的？
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{解答}
+    \bch
+    {\large
+      $x$的概率密度函数为$\frac{1}{\sqrt{2\pi}}e^{-x^2/2}$； $y$的概率密度函数为$\frac{1}{\sqrt{2\pi}}e^{-y^2/2}$。
+
+      \skipline
+      
+      根据上节课所讲，{\bf 独立}随机变量的概率密度可以直接进行反投影，得到二元随机变量$(x,y)$的概率密度函数：
+
+      $$ f(x,y) = \frac{1}{2\pi}e^{-(x^2+y^2)/2} = \frac{1}{2\pi}e^{-r^2/2}.$$
+
+      {\bf 注意：这里为了偷懒把结果形式上写成了$r$的函数，但它是$(x,y)$的概率密度函数，不是$r$的概率密度函数。。}}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{解答(续)}
+\bch
+\bmini{0.5}
+\lfig{2}{ringprob.png}
+\emini
+\bmini{0.45}
+{\large
+  如图，考虑距离原点为$r$，宽度为$dr\ll r$的一个圆环形区域。在这个区域内，二元随机变量$(x,y)$的概率密度处处都是$f(x,y)=\frac{1}{2\pi}e^{-r^2/2}$，所以$(x,y)$落在圆环内的概率为}
+\emini
+    {
+     \large
+  $$ f(x,y) (2\pi r dr) = \frac{1}{2\pi}e^{-r^2/2} (2\pi r dr) = re^{-r^2/2}dr. $$
+  
+
+  另一方面，根据$r$的概率密度函数$F(r)$的定义，上述事件的概率又等于 $F(r)dr$，根据统计事件概率唯一性得到
+  $$F(r) = r e^{-r^2/2}. $$
+
+  (注意：只要$f(x,y)$是归一化的，那么推导出来的$F(r)$的归一化是自然满足的，请自行验证。)
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{0.6}{think1.jpg}
+{\large
+如果$x$, $y$, $z$分别都服从标准正态分布，且$x,y,z$之间没有统计关联，定义新的随机变量$r=\sqrt{x^2+y^2+z^2}$，那么$r$的概率密度函数是怎样的？
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{解答}
+    \bch
+        {\large
+          同样地，三元随机变量$(x,y,z)$的概率密度函数为
+
+          $$ f(x,y,z) = \frac{1}{(2\pi)^{3/2}}e^{-r^2/2} $$
+
+          考虑$(x,y,z)$落在距离原点为$r$，厚度$dr\ll r$的一个薄球壳内的概率，就有
+          $$ \frac{1}{(2\pi)^{3/2}}e^{-r^2/2} (4\pi r^2dr) = F(r) dr $$
+          即
+          $$ F(r)=\sqrt{\frac{2}{\pi}} r^2 e^{-r^2/2}. $$
+
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{一般维数}
+\bch
+{\large
+在$n$维空间里，如果$n$维球的体积为$V_n(r)=S_n r^n$ ($S_n$为常数，例如$S_1 = 2$, $S_2 = \pi$, $S_3 = \frac{4\pi}{3}$\ldots)，则$n$维“薄球壳”的体积为
+$$ dV_n = n S_n r^{n-1} dr $$
+用同样的方法可以得到
+$$F(r) = \frac{nS_n}{(2\pi)^{n/2}} r^{n-1} e^{-r^2/2} \equiv C_n r^{n-1} e^{-r^2/2}. $$
+其中$C_n$定义为$\frac{nS_n}{(2\pi)^{n/2}}$。
+
+\lfig{0.5}{think1.jpg}对一般的$n$，你有什么办法可以求出$C_n$的确切值吗？}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{归一化}
+\bch
+{\large
+  利用归一化条件
+  $$C_n \int_0^\infty r^{n-1}e^{-r^2/2}dr = 1.$$
+  以及上节课学习过的
+  $$G_{n-1} = \int_{-\infty}^\infty \frac{1}{\sqrt{2\pi}}|x|^{n-1}e^{-x^2/2}dx =  \sqrt{\frac{2}{\pi}} \int_0^\infty x^{n-1}e^{-x^2/2}dx $$
+  可以得到归一化系数
+  \tbox{$$C_n = \sqrt{\frac{2}{\pi}}\frac{1}{G_{n-1}}. $$}
+  }
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{归一化}
+\bch
+
+      上面的结果也可以写成
+        \tbox{$$C_n = \frac{G_1}{G_{n-1}}. $$}
+      前几个$C_n$是：
+      \bea
+      C_1 &=& \sqrt{\frac{2}{\pi}} \newl
+      C_2 &=& 1 \newl
+      C_3 &=& \sqrt{\frac{2}{\pi}} \newl
+      C_4 &=& \frac{1}{2} \nonumber
+      \eea
+
+      (我们还顺便得到了四维空间的球体积等于$\frac{\pi^2}{2}r^4$。）
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{总结}
+\bch
+在$n$维空间的随机点，如果每个维度的分量均独立地满足标准正态分布，则径向概率密度函数为
+\tbox{$$ F(r) = \frac{G_1}{G_{n-1}} r^{n-1} e^{-r^2/2}.$$}
+
+当然，如果你不喜欢死记硬背，对比较小的$n$，直接进行推导也花不了多少功夫。
+\ech
+\end{frame}
+
+
+
+\section{Maxwell Distribution}
+
+\secpage{麦克斯韦分布}{以$\sqrt{\frac{kT}{m}}$为单位，每个维度上的速度分量满足标准正态分布}
+
+
+
+\begin{frame}
+\chtitle{相空间的概率密度函数（非相对论情形)}
+\bch
+{\large 
+
+
+  根据我们第一讲给的“万能法则”，达到热平衡时，分子处在一个能量为$\varepsilon$的微观态的概率正比于$e^{-\frac{\varepsilon}{kT}}$。
+
+  {\bf 因为相空间里微观态是均匀分布的，所以我们也可以说} 分子在相空间坐标$(x,y,z,\upsilon_x,\upsilon_y,\upsilon_z)$附近的（6维)体积元内出现的概率正比于
+$$ e^{-\frac{\varepsilon}{kT}} dx dy dz d\upsilon_x d\upsilon_y d\upsilon_z$$
+  这里的$\varepsilon$确切地说是$x,y,z,\upsilon_x,\upsilon_y,\upsilon_z$的一个函数$\varepsilon(x,y,z,\upsilon_x,\upsilon_y, \upsilon_z)$，本质上我们写出的是一个相空间的概率密度函数：
+  $$ p(x,y,z,\upsilon_x,\upsilon_y, \upsilon_z) = C \exp\left(-\frac{\varepsilon(x,y,z,\upsilon_x,\upsilon_y, \upsilon_z)}{kT}\right).$$
+$C$是待定的归一化常数。
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{麦克斯韦分布}
+\bch
+    {\large
+      当只需要考虑动能时，
+      $$\varepsilon = \frac{m}{2}(\upsilon_x^2+\upsilon_y^2 + \upsilon_z^2)$$
+      这时$p(x,y,z,\upsilon_x,\upsilon_y, \upsilon_z)$只依赖于速度$(\upsilon_x,\upsilon_y, \upsilon_z)$。因此我们只需要考虑投影到3维的速度的概率密度函数
+      $$f(\upsilon_x,\upsilon_y, \upsilon_z) = C e^{-\frac{m}{2kT}(\upsilon_x^2+\upsilon_y^2 + \upsilon_z^2)}.$$
+      为了增强可读性，我们还是用符号$C$来表示待定的归一化常数，但要注意它和之前相空间概率密度函数待定的归一化常数不一样。
+      
+      速度的概率密度函数称为{\blue 速度分布函数}。
+      }
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{麦克斯韦分布(续)}
+\bch
+{\large
+速度分布函数$f(\upsilon_x,\upsilon_y, \upsilon_z)$可以继续进行投影，分别得到$\upsilon_x$, $\upsilon_y$, $\upsilon_z$的概率密度函数：
+
+$$ f_{1D}(\upsilon_x) \propto e^{-\frac{m\upsilon_x^2}{2kT}}$$
+$$ f_{1D}(\upsilon_y)  \propto  e^{-\frac{m\upsilon_y^2}{2kT}}$$
+$$ f_{1D}(\upsilon_z)  \propto e^{-\frac{m\upsilon_z^2}{2kT}}$$
+事实上，{\blue $\upsilon_x,\upsilon_y, \upsilon_z$这三个随机变量是独立的}，可以把它们的概率密度函数进行反投影，还原到速度分布函数$f(\upsilon_x,\upsilon_y, \upsilon_z)$。
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{麦克斯韦分布(续)}
+\bch
+    {\large
+      上述讨论给出了一个非常重要的结论：
+      \tbox{当只考虑动能时，理想气体分子的速度任何一个正交分量都独立地服从均值为零，标准差为$\sqrt{\frac{kT}{m}}$的正态分布。}
+      这种速度分布称为{\blue 麦克斯韦分布 (Maxwell Distribution)}，确切地写出来是
+      {\blue $$f(\upsilon_x,\upsilon_y, \upsilon_z) = \left(\frac{m}{2\pi kT}\right)^{3/2} e^{-\frac{m}{2kT}(\upsilon_x^2+\upsilon_y^2 + \upsilon_z^2)}.$$}
+      注意我们已经利用了正态分布的知识把归一化系数$C$确定了。
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{快捷计算的办法}
+\bch
+    {\large
+      当进行速度的各种统计计算时，有效的思考方式是换掉速度的单位：
+      \tbox{当只考虑动能时，以$\upsilon_* = \sqrt{\frac{kT}{m}}$为速度单位，理想气体分子的速度任何一个正交分量都独立地服从标准正态分布。}
+
+     当然，{\bf 完成计算时，要根据量纲把$\upsilon_*$的若干次方写回答案里去。}
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{1}{think1.jpg}
+
+对麦克斯韦分布计算$\upsilon_x^4+\upsilon_y^4+\upsilon_z^4$的期待值。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{速率分布函数}
+\bch
+速率$\upsilon$的概率密度函数称为{\blue 速率分布函数}。它可以看成“速度空间里的径向概率密度函数”。当以$\upsilon_* = \sqrt{\frac{kT}{m}}$为单位时，我们直接写出：
+$$F(\upsilon) =\sqrt{\frac{2}{\pi}}\upsilon^2 e^{-\frac{1}{2}\upsilon^2}. $$
+因为$F(\upsilon)d\upsilon$是无量纲的概率元，所以$F(\upsilon)$的量纲是$\upsilon^{-1}$，把上述结果写回普通单位制就是
+$$ \frac{F(\upsilon)}{\upsilon_*^{-1}} = \sqrt{\frac{2}{\pi}}\left(\frac{\upsilon}{\upsilon_*}\right)^2 e^{-\frac{1}{2}\left(\frac{\upsilon}{\upsilon_*}\right)^2} .$$
+化简得到{\blue 麦克斯韦分布的速率分布函数
+$$F(\upsilon) = \sqrt{\frac{2}{\pi}}\left(\frac{m}{kT}\right)^{3/2}\upsilon^2e^{-\frac{m\upsilon^2}{2kT}} .$$}
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{平均速率}
+\bch
+{\large
+以$\upsilon_*$为单位，平均速率：
+$$\overline{\upsilon} = \int_0^\infty \upsilon F(\upsilon)d\upsilon = \int_0^\infty \sqrt{\frac{2}{\pi}}\upsilon^3 e^{-\frac{1}{2}\upsilon^2} = G_3 =2G_1 = \sqrt{\frac{8}{\pi}} $$
+补回量纲，得到
+{\blue $$\overline{\upsilon} = \sqrt{\frac{8kT}{\pi m}}. $$}}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{速率的平方平均和方均根速率}
+\bch
+以$\upsilon_*$为单位，速率的平方平均：
+$$\overline{\upsilon^2} = \int_0^\infty \upsilon^2 F(\upsilon)d\upsilon = \int_0^\infty \sqrt{\frac{2}{\pi}}\upsilon^4 e^{-\frac{1}{2}\upsilon^2} = G_4 =3G_2 = 3. $$
+补回量纲，得到
+ $$\overline{\upsilon^2} = \frac{3kT}{ m}. $$
+它的平方根称为{\blue 方均根速率$\upsilon_{\rm rms}$
+$$\upsilon_{\rm rms} \equiv \sqrt{\overline{\upsilon^2}} = \sqrt{ \frac{3kT}{ m}} .$$}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{最概然速率}
+\bch
+{\large 让速率分布函数取到最大值的速率称为{\blue 最概然速率$\upsilon_{\max}$}。
+以$\upsilon_*$为单位，对$F(\upsilon)$进行求导并令之等于零：
+$$F'(\upsilon_{\max}) = \sqrt{\frac{2}{\pi}}(2\upsilon_{\max} - \upsilon_{\max}^3)e^{-\upsilon_{\max}^2/2} = 0. $$
+解得$\upsilon_{\max} = \sqrt{2}$。
+
+补回量纲，得到
+{\blue $$\upsilon_{\max} = \sqrt{\frac{2kT}{ m}}. $$}
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+
+\addfig{1}{think3.jpg}
+对一维和二维的平衡态理想气体，分别计算速度分布函数，速率分布函数，平均速率，方均根速率和最概然速率。
+\ech
+\end{frame}
+
+\end{document}

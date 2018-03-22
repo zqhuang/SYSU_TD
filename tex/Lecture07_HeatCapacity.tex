@@ -1,0 +1,519 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\input{titlepage.tex}
+\title{Lesson 07 - Equipartition Theorem and Heat Capacity}
+  \author{}
+  \date{}
+\begin{document}
+\tpage{7}{能均分定理和热容量}
+
+\section{Reivew}
+
+\begin{frame}
+\chtitle{上讲内容回顾}
+\bch
+{\large
+\bitem
+\item{球坐标的概率密度函数以及泻流速率的计算}
+\item{麦克斯韦-玻尔兹曼分布}
+\eitem}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{本讲内容}
+\bch
+\bitem
+\item{广义坐标和广义动量}
+\item{自由度和能均分定理}
+\item{量子物理和自由度激发的条件}    
+\item{物质的热容量}  
+\eitem
+\ech
+\end{frame}
+
+
+\section{$H(p,q)$}
+
+\secpage{广义坐标和广义动量}{每个自由度对应一个广义坐标和广义动量}
+
+
+\begin{frame}
+\chtitle{单摆}
+\bch
+\bmini{0.4}
+\lfig{1.4}{pendulum.jpg}
+\emini
+\bmini{0.55}
+      {\large
+        摆幅很小的单摆可以用坐标
+        $$x = \ell \theta$$
+        以及描述$x$如何变化的动量
+        $$p_x = m \frac{dx}{dt}$$
+        描述。
+        
+     我特地在动量下加了个下标$x$以明确这是对应于坐标$x$的动量。
+      }
+      \emini
+      
+
+      
+{\large 整个系统的总能量可以用$x$和$p_x$表示出来：
+
+$$H = \frac{p_x^2}{2m} + \frac{1}{2}\frac{mg}{\ell} x^2 . $$
+}
+      
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\bmini{0.45}
+\lfig{1.5}{pendulum.jpg}
+\emini
+\bmini{0.5}
+      {\large
+        为什么一定要把$x$作为“坐标”?
+        
+        用$\theta=\frac{x}{\ell}$会怎么样？
+        
+        这时候还有对应的动量$p_\theta$吗？
+}
+     \emini
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{重新定义的坐标和动量}
+\bch
+{\large
+因为相空间的可分辨微观态的体积总是$h$（对我们考虑的一维问题而言）。所以把坐标$x$替换为$\theta = \frac{x}{\ell}$后，必须把动量替换为$p_\theta = \ell p_x$，才能保持可分辨微观态体积不变。
+
+这时的能量
+
+$$H = \frac{p_\theta^2}{2I}+\frac{Ig}{2\ell}  \theta^2. $$
+其中$I=m\ell^2$是单摆的转动惯量。
+
+\skipline
+我们似乎发现了一种很神秘的映射：
+$$ x \rightarrow \theta,\ p_x\rightarrow p_\theta,\ m\rightarrow I.$$}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{广义坐标和广义动量}
+\bch
+{\large
+  前面讨论的是比较简单的线性变量替换。事实上，可以用非线性的替换得到更复杂的坐标和动量。这些操作在《理论力学》里会进行详细的讨论，我们不再展开。
+
+\addfig{1}{classicmechanics.jpg}
+  
+  {\blue 一般的物理系统可以用``广义坐标''和``广义动量''来描述，每一个广义坐标都对应一个广义动量。总能量写成这些坐标和动量的函数，就称为哈密顿量。}
+}
+\ech
+\end{frame}
+
+
+
+
+\section{DOF}
+
+\secpage{自由度}{静态地描述物体状态需要的独立参数个数}
+
+\begin{frame}
+\chtitle{自由度的例子}
+\bch
+    {\large
+      }
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{0.5}{think2.jpg}
+{\large
+如果根据$x=r\cos\theta$, $y=r\sin\theta$，计算
+$$dx dy = (\cos\theta dr - r\sin\theta d\theta)(\sin\theta dr + r\cos\theta d\theta) = \ldots $$
+这样为什么得不到正确的极坐标面积元 $rdrd\theta$？
+
+\skipline
+
+我们通常说的直角坐标$dxdy$等价于极坐标$r dr d\theta$是什么意思？}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{0.5}{think.jpg}
+
+{\Large
+如果已知随机点$(x,y)$的概率密度函数$f(x,y)$，定义新的随机变量$(r,\theta)$为$(x,y)$的极坐标，那么$(r,\theta)$的概率密度函数$F(r,\theta)$是什么呢？}
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{极坐标二元变量的概率密度函数}
+\bch
+
+{\large
+  利用概率元不变
+  $$ F(r,\theta) dr d\theta = f(x, y) dx dy = f(r\cos\theta,r\sin\theta) r dr d\theta$$
+  两边约去$dr d\theta$即得
+  \tbox{
+  $$ F(r,\theta) = r\, f(r\cos\theta, r\sin\theta).$$}}
+{\small
+  {\bf 再强调一遍：不管你写$f(x,y)$，还是$f(r\cos\theta, r\sin\theta)$，它都是$(x,y)$的概率密度函数，满足归一化条件$$\int_{-\infty}^\infty dx \int_{-\infty}^\infty dy f(x,y) = \int_0^\infty rdr \int_0^{2\pi} d\theta\, f(r\cos\theta,r\sin\theta) = 1 $$
+    而$(r,\theta)$的概率密度函数$F(r,\theta)$满足的是
+    $$ \int_0^\infty dr \int_0^{2\pi}d\theta\, F(r,\theta) = 1 $$
+  }}
+    
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{球坐标的体积元}
+\bch
+
+\addfig{2.5}{sphericalcoor.png}
+    {\large
+      球坐标的体积元$ dr (rd\theta)(r\sin\theta d\varphi) = r^2 \sin\theta \,dr d\theta d\varphi$。
+    }
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{球坐标三元变量的概率密度函数}
+\bch
+
+       {\large
+         同样，根据概率元不变写出：}
+       \bea
+       && F(r,\theta,\varphi)\,dr d\theta d\varphi \newl
+       &=& f(x,y,z) dx dy dz  \newl
+       &=& f(r\sin\theta\cos\varphi, r\sin\theta\sin\varphi, r\cos\theta) r^2\sin\theta \,dr d\theta d\varphi \nonumber
+       \eea
+         即\tbox{
+$$ F(r,\theta,\varphi) =  r^2\sin\theta\, f(r\sin\theta\cos\varphi, r\sin\theta\sin\varphi, r\cos\theta).$$}         
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{总结}
+\bch
+二维的极坐标变量$(r,\theta)$的概率密度函数：
+\tbox{
+  $$ F(r,\theta) = r\, f(r\cos\theta, r\sin\theta).$$}
+三维球坐标变量$(r,\theta,\varphi)$的概率密度函数
+\tbox{
+  $$ F(r,\theta,\varphi) =  r^2\sin\theta\, f(r\sin\theta\cos\varphi, r\sin\theta\sin\varphi, r\cos\theta).$$}
+
+
+对于一般的变量替换，则要复杂一些，可以参考附录给出的Jacobi行列式（必杀技)。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+
+\addfig{0.5}{think3.jpg}
+{\large
+  速度的直角坐标形式$(\upsilon_x,\upsilon_y, \upsilon_z)$也可以替换为（速度空间的）球坐标$(\upsilon,\theta,\varphi)$。请对单一成分的平衡态理想气体
+  \bitem
+\item{写出$(\upsilon,\theta,\varphi)$的概率密度函数。}
+\item{对$\theta,\varphi$积分，投影得到速率$\upsilon$的概率密度函数，并和上节课得到的结果进行比较。}
+\item{对$\upsilon,\varphi$积分，投影得到$\theta$的概率密度函数}
+\item{计算$\upsilon_x>\frac{1}{4}\upsilon$的概率。}
+\item{计算$\upsilon_x> \sqrt{3} |\upsilon_z|$的概率。}  
+  \eitem
+}
+\ech
+\end{frame}
+
+
+
+
+\section{Leakage Velocity}
+
+\secpage{泻流速率}{（三维）各向同性的情况下总是平均速率的$1/4$}
+
+\begin{frame}
+\chtitle{泻流速率}
+\bch
+{\large
+  泻流速率$\vleak$定义为：{\blue 单位时间从容器壁单位面积的小孔上逸出的分子数和容器内分子数密度之比。}
+
+  \skipline
+  
+  取小孔所在平面为$xy$平面，速度分布函数为$f(\upsilon_x,\upsilon_y,\upsilon_z)$，则有
+\tbox{  $$\vleak = \overline{\frac{\upsilon_z + |\upsilon_z|}{2}}$$}
+  教材上也把$\frac{\upsilon_z + |\upsilon_z|}{2}$简写为$\upsilon_z^+$，意思是只取正的$\upsilon_z$。
+ 
+}
+
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+
+\addfig{1}{think1.jpg}
+
+{\large
+  计算温度为T，分子质量为$m$的理想气体的泻流速率。
+}
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{结果}
+\bch
+{\large
+以$\sqrt{\frac{kT}{m}}$为单位，$\upsilon_z$满足标准正态分布，所以
+$\overline{\upsilon_z} = 0$, $\overline{|\upsilon_z|} = G_1 = \sqrt{\frac{2}{\pi}}$。结果就是
+$$\vleak = \frac{1}{2}\sqrt{\frac{2}{\pi}} = \frac{1}{\sqrt{2\pi}} $$
+当然，最后结果要把$\sqrt{\frac{kT}{m}}$乘回去。
+
+\skipline
+
+我们发现$\vleak$是平均速率$\overline{\upsilon}$的$\frac{1}{4}$，这是偶然的吗？}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+
+\addfig{1}{think2.jpg}
+
+{\large
+如果三维空间的分子的速度分布是各向同性的，证明泻流速率一定是平均速率的$1/4$。（二维的情况则是$\frac{1}{\pi}.$)
+}
+
+\ech
+\end{frame}
+
+\section{Boltzmann Distribution}
+
+\secpage{玻尔兹曼分布}{重分子喜欢往势能低的地方扎堆}
+
+\begin{frame}
+\chtitle{重力势能的情况}
+\bch
+{\large
+假设沿$z$方向有强度为$g$的重力场，则分子的能量
+$$\varepsilon = \frac{1}{2}m\upsilon^2 + mgz$$
+
+按照“万能法则”，分子在相空间某小块(设坐标为$(x, y, z, \upsilon_x, \upsilon_y, \upsilon_z)$）出现的概率正比于：
+
+$$f_{MB}(x, y, z, \upsilon_x, \upsilon_y,\upsilon_z) \propto e^{-\frac{\frac{1}{2}m\upsilon^2 + mgz}{kT}}$$
+
+注意这是个六维空间的概率密度函数。
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{重力势能的情况}
+\bch
+{\large
+
+上式可以拆成两个独立分布的乘积：
+$$f_{MB}(x, y, z, \upsilon_x, \upsilon_y,\upsilon_z) \propto e^{-\frac{m\upsilon^2}{2kT}} e^{-\frac{mgz}{kT}}$$
+
+可以看到，在速度空间的分布和在位置空间的分布互不干扰，所以我们可以得到分子数密度（等价于粒子在位置空间的概率密度）：
+$$n = n_0 e^{-\frac{mgz}{kT}}\, ,$$
+其中$n_0$为$z=0$处的分子数密度。}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{0.5}{think.jpg}
+{\Large
+假设大气处处温度为$280K$，飞机在地面的压强读数为$1\atm$，起飞后压强读数为$0.8\atm$，请估算飞机的高度。}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{离心力势能}
+\bch
+{
+在旋转参照系中，离心力势能可以写成
+$$U(r) = -\frac{1}{2}m\omega^2r^2$$
+其中$r$为离旋转中心的径向距离，$\omega$为旋转系相对于惯性系的旋转角速度。
+
+\skipline
+
+根据一样的推导过程，可以得到
+$$n = n_0 e^{\frac{m\omega^2r^2}{2kT}}$$
+请不要弄错符号，显然是分子被甩了出去，$r$越大分子数密度越高。
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{0.5}{think2.jpg}
+{\Large
+你能否解释台风的“外围狂风暴雨，中心风和日丽”的奇特现象？}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{麦克斯韦-玻尔兹曼能量分布律}
+\bch
+{\large
+一般地，如果位置空间和速度空间的能量形式没有交叉项，我们可以分离位置空间和速度空间的分布（概率密度），得到分子在相空间的概率密度为：
+{\blue $$f_{MB}(x, y, z,\upsilon_x, \upsilon_y,\upsilon_z) = n_0 \left(\frac{m}{2\pi kT}\right)^{3/2} e^{-\frac{\varepsilon}{kT}} $$}
+其中能量$\varepsilon$是动能与势能之和：
+$$\varepsilon = \frac{1}{2}m\upsilon^2 + U(x,y,z)$$
+这是著名的{\blue 麦克斯韦-玻尔兹曼能量分布律}。}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{附录1：多元变量的概率密度函数换元}
+\bch
+
+    {\large
+      在$n$维空间中，以给定的规则把$\vecx =(x_1,x_2,\ldots,x_n)$映射为$\vecy = (y_1,y_2,\ldots,y_n)$，那么$\vecy$的概率密度函数$F(\vecy)$和$\vecx$的概率密度函数$f(\vecx)$之间有如下关系：
+
+
+      $$F(\vecy) = \sum_{\vecx \rightarrow \vecy} f(\vecx) \left\vert\frac{\partial \vecx}{\partial \vecy}\right\vert$$
+      
+      这里的$\left\vert\frac{\partial \vecy}{\partial \vecx}\right\vert$是{\bf Jacobi行列式}。它的物理意义是：$\vecx$的体积元$dx_1dx_2\ldots dx_n$和$\vecy$的体积元$dy_1dy_2\ldots dy_n$之比。
+
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{附录2：Jacobi行列式的显式表达}
+\bch
+{\large
+$$ \frac{\partial \vecx}{\partial \vecy} \equiv \frac{\partial (x_1, x_2,\ldots, x_n)}{\partial (y_1, y_2,\ldots, y_n)} \equiv \left\vert
+\begin{array}{llll}
+  \frac{\partial x_1}{\partial y_1} &   \frac{\partial x_1}{\partial y_2} & \ldots &   \frac{\partial x_1}{\partial y_n}  \\
+  \frac{\partial x_2}{\partial y_1} &   \frac{\partial x_2}{\partial y_2} & \ldots &   \frac{\partial x_2}{\partial y_n}  \\
+  \ldots & \ldots & \ldots & \ldots \\
+  \frac{\partial x_n}{\partial y_1} &   \frac{\partial x_n}{\partial y_2} & \ldots &   \frac{\partial x_n}{\partial y_n}    
+\end{array}
+\right\vert. $$
+
+也就是说，你要算$n^2$个偏导数，然后求一个$n\times n$方阵的行列式 \bye
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{附录3: 极坐标的Jacobi行列式}
+\bch
+利用$x=r\cos\theta$, $y=r\sin\theta$，直接计算
+$$
+\left\vert
+\begin{array}{ll}
+  \frac{\partial x}{\partial r}   &   \frac{\partial x}{\partial \theta} \\
+  \frac{\partial y}{\partial r}   &   \frac{\partial y}{\partial \theta} \\
+\end{array}
+\right\vert
+ = 
+\left\vert
+\begin{array}{ll}
+  \cos\theta   &   -r\sin\theta \\
+  \sin\theta   &   r\cos\theta \\
+\end{array}
+\right\vert
+=r $$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{附录4: 球坐标的Jacobi行列式}
+\bch
+利用$x=r\cos\sin\theta\cos\varphi$, $y=r\sin\theta\sin\varphi$，$z=r\cos\theta$直接计算
+$$
+\left\vert
+\begin{array}{lll}
+  \frac{\partial x}{\partial r}   &   \frac{\partial x}{\partial \theta}  &   \frac{\partial x}{\partial \varphi} \\
+  \frac{\partial y}{\partial r}   &   \frac{\partial y}{\partial \theta}  &   \frac{\partial y}{\partial \varphi} \\
+  \frac{\partial z}{\partial r}   &   \frac{\partial z}{\partial \theta}  &   \frac{\partial z}{\partial \varphi} 
+\end{array}
+\right\vert
+ = 
+\left\vert
+\begin{array}{lll}
+  \sin\theta\cos\varphi   &   r\cos\theta\cos\varphi & -r\sin\theta\sin\varphi  \\
+  \sin\theta\sin\varphi   &   r\cos\theta\sin\varphi & r\sin\theta\cos\varphi  \\
+  \cos\theta   &   -r\sin\theta &  0 
+\end{array}
+\right\vert
+= r^2\sin\theta $$
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{附录5：$\vleak = \frac{1}{2}\overline{(\upsilon_z+|\upsilon_z|)}$的详细推导}
+\bch
+\bmini{0.4}
+\lfig{1.4}{vleak.jpg}
+\emini
+\bmini{0.55}
+{\small 如图，取小孔开口方向为$z$轴。先考虑速度在速度空间$(\upsilon_x,\upsilon_y,\upsilon_z)$附近的一小块$d\upsilon_xd\upsilon_yd\upsilon_z$之内的那些分子，$dt$时间内能通过面积为$dS$的小孔逃逸的条件是分子在如图所示的青色区域（底面积$dS$，高为$\upsilon_z dt$的斜柱体）内。}
+\emini
+
+当然，青色区域内的分子数为$n dS (\upsilon_z dt)$，但这些分子只有$f(\upsilon_x,\upsilon_y,\upsilon_z)d\upsilon_xd\upsilon_yd\upsilon_z$的概率满足速度在速度空间$(\upsilon_x,\upsilon_y,\upsilon_z)$附近的一小块$d\upsilon_xd\upsilon_yd\upsilon_z$之内。因此，这样逃逸出的分子数为
+$$n dS (\upsilon_z dt) f(\upsilon_x,\upsilon_y,\upsilon_z)d\upsilon_xd\upsilon_yd\upsilon_z $$
+当我们对所有$\upsilon_z>0$的可能性进行求和（积分），并按定义约去$n dS dt$，就得到结果。
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{附录6：分布各向同性时泻流速率和平均速率的关系}
+\bch
+
+设三维概率密度函数为$f(\upsilon_x, \upsilon_y,\upsilon_z) = g(\upsilon)$ (因各向同性所以可以这样设)，则速率$\upsilon$的概率密度函数为$4\pi\upsilon^2g(\upsilon)$。
+
+不妨设小孔开在$z$方向，在球坐标里计算泻流速率，体积元为$\upsilon^2 d\upsilon \sin\theta d\theta d\varphi$，$\upsilon_z = \upsilon\cos\theta$, 因为取$\upsilon_z^+$，所以$\theta$的积分范围只是$0$到$\pi/2$：
+\bea
+\vleak &=& \int_0^\infty \upsilon^2 d\upsilon \int_0^{\frac{\pi}{2}} \sin\theta d\theta \int_0^{2\pi} d\varphi \,(\upsilon \cos\theta) g(\upsilon) \newl
+&=& \pi \int_0^\infty \upsilon^2 d\upsilon\,  \upsilon g(\upsilon) \newl
+&=& \frac{1}{4} \int_0^\infty \upsilon\left(4\pi\upsilon^2g(\upsilon) d\upsilon\right) \newl
+&=& \frac{1}{4} \bar{\upsilon}
+\eea
+二维的情况，用极坐标计算可得结果为$\vleak = \frac{1}{\pi}\overline{\upsilon}$
+
+
+\ech
+\end{frame}
+
+\end{document}

@@ -1,0 +1,84 @@
+\documentclass[12pt,CJK]{article}
+\usepackage{geometry}
+\input{reduced_macros.tex}
+%\geometry{tmargin=0.3in, bmargin=0.5in, lmargin=0.8in, rmargin=0.8in, nohead, nofoot}
+\begin{document}
+\bch
+\title{\S2.1.3 (page 69) 麦克斯韦分布律的导出}
+\author{Zhiqi Huang}
+\date{}
+\maketitle
+教材上这一节的表述非常呵呵。
+
+
+下面我用严谨的数学语言来重复这部分的推导。
+
+{\bf 命题: 如果速度分布律满足如下两个条件
+\bitem
+\item{分布函数连续且各向同性}
+\item{每个维度的速度分量的分布是独立的（即和其他分量没有关联）}
+\eitem
+则速度分布律一定是对应某个温度的麦克斯韦分布。}
+
+证明：由各向同性条件，速度分布函数可以写成$\upsilon$的一个函数(不妨设为$g$)。再根据各维度独立条件，速度分布函数又可以写成各个分量的分布（不妨设为$f$)的乘积。
+  \begin{equation}
+  g(\upsilon) = f(\upsilon_x)f(\upsilon_y)f(\upsilon_z)
+  \end{equation}
+  两边取对数，得到
+  \begin{equation}
+  \ln g(\upsilon) =\ln f(\upsilon_x)+ \ln f(\upsilon_y)+ \ln f(\upsilon_z)
+  \end{equation}
+  令$\upsilon_x=\sqrt{a}$, $\upsilon_y=\upsilon_z=0$，得到
+  \begin{equation}
+  \ln g(\sqrt{a}) = \ln f(\sqrt{a}) + 2 \ln f(0). \label{a1}
+  \end{equation}
+  当然，我可以把$a\ge 0$换成任意$b\ge 0$
+  \begin{equation}
+  \ln g(\sqrt{b}) = \ln f(\sqrt{b}) + 2 \ln f(0). \label{a2}
+  \end{equation}
+  然后令$\upsilon_x= \sqrt{a}$, $\upsilon_y=\sqrt{b}$, $\upsilon_z=0$，则有
+  \begin{equation}
+  \ln g(\sqrt{a+b}) =  \ln f(\sqrt{a}) + \ln f(\sqrt{b}) + \ln f(0). \label{a3}
+  \end{equation}
+  在Eqs.~(\ref{a1}-\ref{a3})中消去$\ln f(\sqrt{a})$, $\ln f(\sqrt{b})$得到
+  \begin{equation}
+    \ln g(\sqrt{a+b}) = \ln g(\sqrt{a}) + \ln g(\sqrt{b})- 3\ln f(0) \label{eqadd}    
+  \end{equation}
+  
+  再定义
+  \begin{equation}
+  G(a)\equiv \ln g(\sqrt{a}) - 3 \ln f(0) \label{eq:def}
+  \end{equation}
+  代入Eq.~\eqref{eqadd}，得到
+  \begin{equation}
+  G(a+b) = G(a)+G(b) \label{eq0}
+  \end{equation}
+  对任意$a\ge 0, b\ge 0$成立。
+  
+  反复利用Eq.~\eqref{eq0}用归纳法容易证明，对任意正整数$n,m$,都有
+  \begin{equation}
+  G(n) = m G\left(\frac{n}{m}\right), \label{eq1}
+  \end{equation}
+  记$G(1)=c$，上式令$m=n$即得到
+  \begin{equation}
+  G(n) = n c
+  \end{equation}
+  代回Eq.~\eqref{eq1}得到
+  \begin{equation}
+  G\left(\frac{n}{m}\right) = c \frac{n}{m}
+  \end{equation}
+  也就是对任意正的有理数$x$都有$G(x) = cx$。由分布函数的连续性知道$G$也是连续的，所以对任意正实数$x$，都有
+  \begin{equation}
+  G(x) = cx.  
+  \end{equation}
+  那么就反解Eq.~\eqref{eq:def}得到
+  \begin{equation}
+  g(\upsilon) \propto e^{G(\upsilon^2)} = e^{c\upsilon^2} 
+  \end{equation}
+  由概率密度函数归一化条件可以确定$c<0$，得到麦克斯韦分布。
+
+  
+  这个推导方法显然可以推广到任意不低于二维的空间。
+
+\ech
+\end{document}
