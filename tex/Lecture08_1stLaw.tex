@@ -1,0 +1,451 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\input{titlepage.tex}
+\title{Lesson 08 - 1st Law of Thermaldynamics}
+  \author{}
+  \date{}
+\begin{document}
+\tpage{8}{热力学第一定律}
+
+
+\section{Review}
+
+\begin{frame}
+\chtitle{上讲内容回顾}
+\bch
+{\large
+\bitem
+\item{能均分定理的严谨表述.}
+\item{气体/固体的$\cvmol$：单原子气体$\frac{3R}{2}$，双原子气体室温下一般是$\frac{5R}{2}$，固体一般是$3R$}
+\eitem
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+
+\addfig{0.8}{songfen.jpg}
+
+{\large
+  为什么讨论气体摩尔热容时要强调是{\bf 定体}摩尔热容？如果不限定体积不变，热容会有所不同吗？
+  
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{定压摩尔热容$\cpmol$}
+\bch
+{\large
+  {\blue 定压摩尔热容$\cpmol$定义为$1\SImol$物质在等压过程中升高$1\SIK$需要吸收的热量。}
+
+  \addfig{1}{think3.jpg}
+  
+  对理想气体证明：$\cpmol = \cvmol + R$.
+  
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{本讲内容}
+\bch
+\bitem
+\item{内能}
+\item{热力学第一定律}
+\eitem
+\ech
+\end{frame}
+
+
+\section{Internal Energy}
+
+\secpage{内能}{物质内部的热运动能量和分子间势能的总和}
+
+\begin{frame}
+\chtitle{内能是个态函数}
+\bch
+{\large
+\bitem
+\item{\bf 态函数里的“态”：指热平衡态。}
+\item{\bf 态函数：由系统的宏观状态参量确定，和如何达到这个状态的过程无关。}
+\item{\bf 内能：物质内部的热运动能量和分子间势能的总和。}  
+\eitem
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+{\large
+下面的量是不是态函数
+\bitem
+\item{温度$T$}
+\item{热量$Q$}
+\item{压强$p$}
+\item{体积$V$}
+\item{做功$A$}
+\item{摩尔数$\nu$}
+\item{平衡态的分子平均速率$\overline{\upsilon}$}
+  \eitem
+  }
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{经典理想气体的内能只跟温度和摩尔数有关}
+\bch
+
+{\large
+  在经典图像下，温度$T\rightarrow 0$时，物质的内能$U\rightarrow 0$，所以内能对摩尔数$\nu$，体积$V$和温度$T$的依赖关系为：
+
+  {\blue  $$ U(\nu, V, T) = \nu \int_0^T\cvmol(T',V) dT' $$ }
+
+  {\blue 理想气体}分子间势能为零，$\cvmol$（根据能均分定理）只和温度有关，因此内能
+  {\blue  $$ U_{\rm ideal\ gas} = \nu \int_0^T\cvmol(T') dT' $$ }
+    只依赖于摩尔数$\nu$和温度$T$。
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{广延量和强度量}
+\bch
+
+{\large
+  \bitem
+\item{像内能这样和物质的量（摩尔数）成正比的量称为{\bf 广延量}}
+
+\item{而像温度，压强这样和物质的量无关的称为{\bf 强度量}}
+
+  \eitem
+
+  
+  判断小技巧：把物质砍掉一半（忽略两半之间的相互作用有可能带来的微弱影响），不变的量是强度量，变成一半的是广延量。
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{1}{songfen.jpg}
+
+{\large
+  当温度$T<T_0$时，某双原子气体的定体摩尔热容近似为
+  $$\cvmol = \left(\frac{3}{2} + \frac{T^2}{T_0^2}\right)R.$$
+  按内能零点取在$T\rightarrow 0$的习惯，计算$1\SImol$该气体在$T<T_0$时的内能。
+}
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\bch
+    {\huge
+因为内能和摩尔数成简单地线性关系，在下面的讨论中，我们默认摩尔数不变，只考虑内能对温度，压强，体积的依赖。
+      }
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{1}{songfen.jpg}
+
+{\large
+考虑实际气体分子之间有微弱的吸引力，实际气体的内能$U(V,T)$对体积有微弱的依赖。问：$\left(\frac{\partial U}{\partial V}\right)_T$一般是正的还是负的？
+}
+\skiplines
+
+注：{\blue 偏微分$\pfrac ABC$表示保持$C$不变时，$A$和$B$的小变化量之比}。显然，这样写的前提是{\blue 默认了$A,B,C$受某个状态方程约束}。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+\addfig{1}{songfen2.jpg}
+
+{\large
+由于$p, V, T$中只有两个是独立的，我们也可以把内能写成$U(p, T)$。那么实际气体的$\pfrac UpT$的符号一般是什么呢？
+}
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{百前的困惑}
+\bch
+我们用脚趾头就想出来了实际气体$\pfrac UVT > 0$（或者等价地$\pfrac UpT < 0$）
+
+而在一两百年之前，物理学家们还在焦头烂额地做实验测量实际气体的$\pfrac UVT $：
+\bmini{0.35}
+盖吕萨克实验: 打开活塞，空气自由膨胀后测量温度变化。
+
+请用脚趾头思考：气体自由绝热膨胀（假设瓶子是绝热的）后温度应该上升还是下降？
+\emini
+\bmini{0.6}
+\addfig{1.8}{GLexperiment.jpg}
+\emini
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{盖吕萨克实验的结果}
+\bch
+
+\addfig{1.5}{cry2.jpg}
+
+装置太简陋（漏），没测出温度变化 
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{焦耳实验}
+\bch
+焦耳意识到瓶子可能漏热，就……
+
+\bmini{0.35}
+焦耳实验: 打开活塞，空气自由膨胀后测量水温的变化。
+\emini
+\bmini{0.6}
+\addfig{2}{Joule_experiment.jpg}
+\emini
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{焦耳实验的结果}
+\bch
+
+\addfig{1.5}{cry1.png}
+
+温度计不够准，没测出温度变化 
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{后来}
+\bch
+1932年，Rossini和Frandsen改进了焦耳实验，终于测出了
+$$\pfrac UpT < 0 $$
+
+\skiplines
+
+因为测出来了很没意思，细节不想讲\bye
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{什么，你很想看？}
+\bch
+\bmini{0.42}
+\addfig{1.8}{njg_experiment.png}
+\emini
+\bmini{0.53}
+Rossini-Frandsen experiment
+
+\lfig{2.2}{RossiniFrandsen.jpg}
+\emini
+
+\ech
+\end{frame}
+
+\section{1st Law}
+
+\secpage{热力学第一定律}{能量守恒的一种形式}
+
+
+\begin{frame}
+\chtitle{热力学第一定律}
+\bch
+内能变化 = 吸收热量 + 环境对系统做功
+
+$$ \Delta U =  Q + A $$
+
+\skiplines
+
+这里功$A$是{\blue 广义功}，可以是机械功$-\int pdV$，也可以是电流做功$\int UIdt$等。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{准静态过程}
+\bch
+准静态过程的定义：{\blue 进行得足够缓慢，以至于系统连续经过的每个中间态都可以近似看成平衡态。}
+
+\skiplines
+
+{\small 例如：缓慢加热的过程，缓慢压缩气体的过程，政府工作人员的办公过程等等}
+
+\addfig{2}{slowmotion.jpg}
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{准静态过程的热力学第一定律表述}
+\bch
+{\large
+准静态过程中内能在过程中间都是有定义的，所以：
+{\blue
+$$dU = \dbar A + \dbar Q$$
+}
+热学里特有的符号$\dbar$代表这个微元和过程有关。
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{$p$-$V$图和做的功}
+\bch
+准静态过程可以用在$p$-$V$图上的一条曲线描述。气体对外界做功
+$$ A' = \int p dV $$
+等于$p$-$V$曲线下的面积
+\addfig{2}{pdVwork.png}
+
+\ech
+\end{frame}
+
+\section{Application}
+
+\begin{frame}
+\chtitle{理想气体等温过程}
+\bch
+理想气体的等温过程比较简单，利用理想气体状态方程$pV = \nu RT$即可求出对理想气体做的功
+$$ A = -\int p dV = -\nu R T \int \frac{dV}{V} =- \nu R T\ln\frac{V_{\rm fin}}{V_{\rm ini}}$$
+如果没有额外的自由度被激发，理想气体的内能不变。则可推算出等温过程吸收的热量为
+$$ Q = - A $$
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{理想气体绝热过程（adiabatic process)}
+\bch
+{\small
+理想气体的绝热过程则稍显复杂，由$\dbar Q=0$得到
+$$ dU = -p dV$$
+又$$ dU = \nu \cvmol dT = \frac{\cvmol}{R}(p dV + V dp)$$
+两式相减得到
+$$ \cvmol Vdp + \cpmol p dV = 0$$
+其中$\cpmol = \cvmol + R$是摩尔定压热容。
+记$$\gamma = \frac{\cpmol}{\cvmol}$$
+如果把$\gamma$近似当成常数（在日常条件下这个近似往往很不错)，由上述方程可推出{\blue 理想气体绝热状态方程}(又称{\bf 泊松公式})
+{\blue 
+$$p V^\gamma = \const$$}
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{各种气体的$\gamma$}
+\bch
+{\small
+对单原子理想气体，$\gamma = \frac{5}{3}$。
+
+\skipline
+
+对室温下的双原子理想气体，$\gamma \approx \frac{7}{5}$。
+
+\skipline
+
+因空气大部分都是氮气和氧气（双原子分子），所以我们可以近似认为室温下空气的$\gamma = \frac{7}{5}$。
+}
+
+由$pV^\gamma = \const $以及理想气体状态方程可推出绝热状态方程的另外两个形式：
+
+$$ TV^{\gamma-1} = \const$$
+
+$$T p^{\frac{1}{\gamma}-1} = \const $$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{空气中声速}
+\bch
+\addfig{1.5}{soundwave.jpg}
+
+{\scriptsize
+力学里无敌公式$F = ma$:
+
+$$ -dp dy dz = (\rho dx dy dz) \left(\frac{d\upsilon}{dx/\upsilon}\right) $$
+即
+$$ dp = - \rho \upsilon d\upsilon $$
+
+然后根据物质流守恒：$ \rho \upsilon = (\rho + d\rho)(\upsilon+d\upsilon)$
+忽略高阶小量即$ -\rho d\upsilon = \upsilon d\rho$
+代入前面的$dp$表达式得到：
+$$ dp = \upsilon ^2 d\rho$$
+即
+$$\upsilon = \sqrt{\frac{dp}{d\rho}}$$
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{空气中声速（续）}
+\bch
+{\small
+空气是热的不良导体，故做绝热近似 
+$$p\rho^{-\gamma} = \const$$
+即 $$\frac{dp}{d\rho} = \gamma \frac{p}{\rho} =  \frac{\gamma R T}{M^{\rm mol}}$$
+其中空气摩尔质量$M^{\rm mol} = 0.0289 \SIkg/\SImol$
+算出空气中声速为
+$$c_s = \sqrt{\frac{\gamma RT}{M^{\rm mol}}} = 347 \sqrt{\frac{T}{300\SIK}} \SIm/\SIs$$
+注意到$\frac{RT}{M^{\rm mol}} = \frac{kT}{m}$，所以声速也能写成$ \sqrt{\frac{\gamma kT}{m}}$。
+因此声速和空气分子方均根速率之比为（见课本习题3-21）
+$$\sqrt{\frac{\gamma}{3}} = \sqrt{\frac{7}{15}} = 0.683$$
+}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{高处不胜寒}
+\bch
+我们以前计算大气压强梯度时把空气温度当成了常数，事实上我们都知道“高处不胜寒”。
+
+\addfig{2}{icemountain.jpg}
+
+因为大气是热的不良导体，绝热近似是更好的描述。
+\ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{高处不胜寒}
+\bch
+由力学平衡有
+$$dp = -\rho g dz$$
+由$Tp^{\frac{1}{\gamma}-1}= \const$，可得$dT = \left(1-\frac{1}{\gamma}\right)\frac{T}{p} dp $，
+故
+$$\frac{dT}{dz} = -\frac{\gamma - 1}{\gamma} \frac{T}{p}\rho g= -\frac{\gamma - 1}{\gamma} \frac{V}{\nu R}\rho g =  -\frac{\gamma - 1}{\gamma} \frac{M^{\rm mol}}{ R} g$$
+取$\gamma  = 7/5$, $M^{\rm mol} = 29\SIg/\SImol$，$g = 9.8 \mathrm{N}/\SIkg$得到
+$$\frac{dT}{dz} \approx -10\SIK/\SIkm$$
+这个结果的数量级是正确的，但实际温度梯度往往比它小。空气里的饱和水蒸气是一个重要的影响因素（见教材152页）。
+\ech
+\end{frame}
+
+
+
+
+
+
+\end{document}
