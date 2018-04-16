@@ -1,0 +1,608 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\input{titlepage.tex}
+\title{Lesson 12 - Entropy}
+  \author{}
+  \date{}
+\begin{document}
+\tpage{12}{熵}
+
+
+\begin{frame}
+\chtitle{玻尔兹曼的墓碑(Boltzmann's Grave)}
+\bchL
+\bmini{0.55}
+\addfig{1.9}{boltzmann_tombstone.jpg}
+\emini
+\bmini{0.4}
+熵 = 微观状态数的对数
+\emini
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{而当你翻开热学书\bigwulian}
+\bchL
+\bitem
+\item{熵=混乱程度(大众理解的熵）
+
+\begin{center}
+$S=$ 男生宿舍
+\end{center}
+}
+\item{熵=微观状态数的对数（玻尔兹曼熵）
+$$S = k\ln \Omega$$
+}
+\item{熵=可逆过程的热温比积分(克劳修斯熵)
+$$S = \int_{\rm reversible} \frac{\dbar Q}{T}$$
+}
+\item{$\ldots$}
+\eitem
+
+之所以熵这么多（这么混乱），是因为没有清晰地区分场景。
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{熵在不同场景中的定义}
+\bchL
+
+概率的熵
+
+$\Rightarrow$
+
+随机事件的熵
+
+$\Rightarrow$
+
+多次随机事件的熵
+
+$\Rightarrow$
+
+克劳修斯熵
+
+\echL
+\end{frame}
+
+\section{Entropy}
+
+\begin{frame}
+\chtitle{概率的熵}
+\bchL
+
+假设任何一个{\blue \bf 概率$p$ ($0\le p\le 1$)都对应一个确定的熵，记为$s(p)$}。在这个阶段我们并不关心概率的物理意义，而仅仅把熵看成定义域为$[0,1]$的一个函数。
+
+\skipline
+
+我们{\bf 假装}已经知道$s(p)$的函数形式，继续进行更复杂的场景的熵的讨论。
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{随机事件和可能结果}
+\bchL
+\bitem
+\item{抛硬币有两种可能结果：正面，反面; 每个可能结果的概率为1/2。
+
+\addfig{0.5}{coins.jpg}
+}
+\item{掷骰子有六种可能结果：1, 2, 3, 4, 5, 6，每个可能结果的概率为1/6。
+
+\addfig{0.25}{touzi.png}
+}
+\item{修热学课有两种可能结果：
+
+挂科, 概率$0.6$ 
+
+不挂科, 概率$0.4$  {\hskip 0.5in} {\small (概率是我随便瞎编的)}
+}
+\eitem
+
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{随机事件和重复随机事件的熵}
+\bchL
+
+设一个随机事件有$m$种可能结果，概率分别为$p_1$, $p_2$, $\ldots$, $p_m$。我们定义这个随机事件的熵为：
+$$\sum_{i=1}^m  s(p_i)$$
+
+如果这个随机事件重复了$N$次，则定义熵为
+$$N \sum_{i=1}^m  s(p_i)$$
+
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bchL
+假设$s(p)$是已知的函数，则下列随机事件的熵分别是多少？
+\bitem
+\item{抛一次硬币}
+\item{抛10次硬币}  
+\item{抛一次骰子}  
+\item{抛10次骰子}
+\item{修一次热学课}
+\item{修10次热学课\lfig{0.3}{blackq.jpg}}    
+\eitem
+
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{玻尔兹曼有点不开心}
+\bchL
+
+
+\addfig{1}{boltzmann_tombstone.jpg}
+\bcenter
+讲了半天，老子的墓碑呢？
+\ecenter
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{宏观实验}
+\bchL
+
+假设有个随机事件有$m$种概率分别为$p_1$,$p_2$,$\ldots$,$p_m$的可能结果。把这个事件重复$N$次($N$是个巨大的数）的实验当成一个``宏观实验''。
+
+{\blue 假如限定所有结果都忠实按概率实现}，这个宏观实验的``微观状态数''为：
+$$\frac{N!}{(Np_1)!(Np_2)!\ldots(Np_m)!}$$
+
+（见附录1的组合数公式）
+
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{万事俱备，召唤墓碑}
+\bchL
+按照玻尔兹曼的想法，熵等于微观状态数的对数（我们暂时忽略$k$，它只是重新定义了熵的单位）
+
+$$N\sum_{i=1}^m s(p_i) = \ln \frac{N!}{(Np_1)!(Np_2)!\ldots(Np_m)!}.$$
+
+
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{运用Stirling公式}
+\bch
+{\large
+当$n$很大时，有Striling公式（见附录2）：
+$$ \ln (n!) \approx n\ln n - n .$$
+于是
+}
+$$\sum_{i=1}^m s(p_i) = \lim_{N\rightarrow\infty} \frac{N\ln N - N - \sum_{i=1}^m \left[Np_i \ln (Np_i) - Np_i\right] }{N}$$
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{概率熵的表达式}
+\bchL
+最后，我们利用 $\sum_{i=1}^m p_i = 1$，化简得到
+$$\sum_{i=1}^m s(p_i) = -\sum_{i=1}^m p_i \ln (p_i) $$
+
+很显然，唯一能令玻尔兹曼开心的办法是{\blue \bf
+定义概率熵为：
+$$s(p) = - p \ln p$$
+}
+
+\skipline
+
+注意：当$p=0$时，$s(p) = \lim_{p\rightarrow 0^+} (-p\ln p) = 0$.
+
+
+\echL
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{熵函数是个凸函数(concave function)}
+\bchL
+\bmini{0.65}
+\addfig{2.6}{xlnx.pdf}
+\emini
+\bmini{0.3}
+在某区间内部二阶导数恒为负数的函数是该区间内的凸函数。
+
+对$0<p<1$
+$$s''(p)  = -\frac{1}{p}<0$$
+\emini
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{琴生不等式(Jensen's Inequality)}
+\bchL
+多个概率的熵满足下面的不等式（{\blue 概率的熵的平均不大于平均概率的熵}）：
+$$\frac{1}{m}\sum_{i=1}^m s(p_i) \le  s\left(\frac{1}{m}\sum_{i=1}^m p_i\right)$$
+或者简写为{\blue
+$$\overline{s(p)} \le s(\bar{p})$$
+等号当且仅当所有$p_i$均相等时取到}。
+
+
+这个不等式其实对所有凸函数都成立 （见附录3）
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{等概率原理}
+\bchL
+考虑有$m$种可能结果的随机事件, 平均概率$\bar{p} =  \frac{1}{m}$。于是由琴生不等式：
+$$ S = m\, \overline{s(p)} \le m s(\bar{p}) = m\, s\left(\frac{1}{m}\right) = \ln m$$
+等号当且仅当所有$p_i$相等时才能取到。
+
+\skipline
+
+{\bf \blue 结果数固定的随机事件，如果没有额外条件的约束，则当所有结果的概率相等时，熵达到最大。}
+
+这时我们拥有的信息量为零（不知道哪种可能性更容易发生）。
+
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{例子：抛硬币游戏的熵}
+\bchL
+
+\bmini{0.4}
+\addfig{1}{coins.jpg}
+\emini
+\bmini{0.55}
+抛硬币，如果正面向上概率为$x$，反面向上概率为$1-x$，则熵为
+$$S = -x\ln x - (1-x)\ln (1-x)$$
+通过求导易求出$x = 1/2$时熵最大，为$S_{\max} = \ln 2$。
+
+和等概率原理的结论一致。
+\emini
+
+\skiplines
+
+如果我们知道硬币是动过手脚的（有额外信息），$x\ne 1/2$，那么熵就要小一点了。
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{抛骰子游戏的熵}
+\bchL
+\bmini{0.2}
+\addfig{0.5}{touzi.png}
+\emini
+\bmini{0.75}
+掷骰子，根据等概率原理，当且仅当所有$p_i$为$1/6$时熵取到最大值$S_{\max} = \ln 6$.
+\emini
+
+\skiplines
+
+\bmini{0.45}
+\addfig{1.2}{fage_touzi.jpg}
+\emini
+\bmini{0.5}
+如果我们知道谁在掷骰子（有额外信息），就不好说了。
+\emini
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{掷骰子——比小——出老千}
+\bchL
+现在我们去趟澳门，跟赌王掷骰子比小。
+
+\skipline
+
+江湖险恶，十赌九骗，赌王用的是一个高科技骰子。
+
+\addfig{1.2}{fage_touzi.jpg}
+
+\skipline
+
+如果结果为$6$，则会触发骰子里的老千系统，使下一次出现1的概率为1/2，出现2至6中任何一个概率都是1/10。
+
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{掷骰子——比小——出老千（续）}
+\bch
+{\small
+这个老千系统比较简单，很容易列出方程：
+\bea
+p_1 &=& \frac{1}{2}p_6 + \frac{1}{6}(1-p_6) \newl
+p_2 &=& \frac{1}{10}p_6 + \frac{1}{6}(1-p_6) \newl
+p_3 &=& \frac{1}{10}p_6 + \frac{1}{6}(1-p_6) \newl
+p_4 &=& \frac{1}{10}p_6 + \frac{1}{6}(1-p_6) \newl
+p_5 &=& \frac{1}{10}p_6 + \frac{1}{6}(1-p_6) \newl
+p_6 &=& \frac{1}{10}p_6 + \frac{1}{6}(1-p_6) 
+\eea
+解出$ p_2 = p_3 = p_4 = p_5 =p_6= 5/32$, $p_1= 7/32$.
+
+熵 $ S = 1.783 < \ln 6 = 1.792$. 这个老千系统只让熵变小了$0.01$.
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{别小看老千系统}
+\bchL
+但是，可别小看这0.01的熵差。如果你跟赌王掷了10000次骰子，熵差就变为100。
+
+\addfig{1}{bufuzailai.jpg}
+
+如果你还记得玻尔兹曼的墓碑，你就明白赌王通过出老千，得到了一个看起来概率约为$e^{-100}$的“小概率事件”！
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{上帝的老千}
+\bchL
+现在让我们回到物理世界，考虑在相空间有多个可能态的微观粒子。
+
+\skipline
+
+虽然粒子之间可以发生“碰撞”使态发生变化，但“碰撞”受到自然法则的约束：任何碰撞过程能量守恒。
+
+\skipline
+
+{\blue \bf 能量守恒——这就是上帝出的老千。}
+
+\skipline
+
+下面让我们通过研究一个粒子数守恒的封闭系统来揭秘上帝的老千的工作原理。
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{揭秘上帝的老千}
+\bchL
+
+\addfig{1}{scatter.png}
+
+设处于$a$,$b$两态的两粒子可以发生碰撞，成为$a'$, $b'$两态的粒子。单位时间内$a+b\rightarrow a'+b'$发生概率为$\Gamma(a, b; a', b')$。 {\blue 假设微观物理是时间反演对称的}，逆过程$a'+b'\rightarrow a+b$的发生概率相等，即
+$$\Gamma(a', b'; a, b) = \Gamma(a, b; a', b').$$
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{揭秘上帝的老千}
+\bch
+
+{\large 设共有$N$个粒子，考虑粒子在$a$态出现的概率$p_a$随时间的演化（$a'+b'\rightarrow a+b$增大$a$态的粒子数， $a+b\rightarrow a'+b'$减少$a$态粒子数）：}
+  \bea
+  && \frac{d (Np_a)}{dt} \newl
+  &=& \sum_{b;a',b'}\left[(Np_{a'})(Np_{b'})\Gamma(a', b'; a, b)-(Np_a)(Np_b)\Gamma(a, b; a', b')\right] \newl
+  &=& N^2\sum_{b;a',b'} (p_{a'}p_{b'}  -  p_a p_b) \Gamma(a, b; a', b')
+  \eea
+
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{揭秘上帝的老千}
+\bch
+把多粒子系统看成“$N$个重复事件”，其熵
+$$S = -N \sum_ap_a\ln p_a $$
+{\small （这里没有考虑粒子的不可分辨性，如果考虑的话只要减去一个$\ln(N!)$的常数，不影响下面对$dS/dt$的讨论）}
+
+$$\frac{d S}{dt} = -N\sum_a\frac{dp_a}{dt}(\ln p_a+1) = -N\sum_a\frac{dp_a}{dt}\ln p_a  $$
+注意我们利用了总概率守恒$\sum_a \frac{dp_a}{dt} = 0$。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{揭秘上帝的老千(续）}
+\bch
+利用前面的$dp_a/dt$的结果，就有
+$$\frac{d S}{dt} =  N^2 \sum_{a, b; a', b'}\Gamma(a, b; a', b') \left(p_ap_b - p_{a'}p_{b'}\right)\ln p_a    $$
+把求和指标$a, b$互换，
+$$\frac{d S}{dt} =  N^2 \sum_{a, b; a', b'}\Gamma(a, b; a', b') \left(p_ap_b - p_{a'}p_{b'}\right)\ln p_b    $$
+上面两式相加得到
+$$\frac{d S}{dt} =  \frac{N^2}{2} \sum_{a, b; a', b'}\Gamma(a, b; a', b') \left(p_ap_b - p_{a'}p_{b'}\right)\ln(p_ap_b)    $$
+最后，把$a,b$和$a',b'$互换：
+$$\frac{d S}{dt} =  \frac{N^2}{2} \sum_{a, b; a', b'}\Gamma(a', b'; a, b) \left(p_{a'}p_{b'} - p_ap_b\right)\ln(p_{a'}p_{b'})    $$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{细致平衡}
+\bch
+把前页的最后两式相加，得到
+$$\frac{d S}{dt} =  \frac{N^2}{4} \sum_{a, b; a', b'}\Gamma(a, b; a', b') \left(p_ap_b - p_{a'}p_{b'}\right)\ln(\frac{p_ap_b}{p_{a'}p_{b'}})    $$
+只要任何一个$p_ap_b\ne p_{a'}p_{b'}$，上式右边就是正的，熵会持续增大，直到{\blue 所有的 
+$$p_ap_b = p_{a'}p_{b'}$$}
+这称为{\blue细致平衡条件。} 这时我们认为该孤立系统达到了热平衡，它的熵达到了最大并不再变化。
+
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{热力学温度}
+\bchL
+{
+热平衡时，所有“碰撞”过程$a+b \rightarrow a'+b'$都需要满足细致平衡条件：
+$$\ln p_a + \ln p_b = \ln p_{a'} + \ln p_{b'}$$
+在微观上，这是一条碰撞过程的守恒律。显然，把一大堆粒子放在一起并不会产生新的微观守恒律，那么它必然是一条已有的守恒律。
+
+}
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{热力学温度（续）}
+\bchL
+
+$$\ln p_a + \ln p_b = \ln p_{a'} + \ln p_{b'}$$
+
+\skipline
+
+在微观上有能量守恒定律和三个方向上的动量守恒定律，看来让$\ln p_a$和能量或者动量的任何一个分量成线性关系即可满足条件?
+
+\skipline
+
+问题是，无论让$\ln p_a$和哪个方向上的动量成线性关系都将破坏{\blue 微观规律的空间对称性}。
+
+
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{热力学温度(续）}
+\bchL
+至此，别无选择，只能要求对所有的态$a$，$\ln p_a$和能量$\varepsilon_a$成线性关系。另外，我们知道态的能量趋向无穷时，在该态出现的概率就趋向于零，所以$\ln p_a$和$\varepsilon_a$之间的是负线性相关。不妨设
+
+$$\ln p_a = -\frac{\varepsilon_a - \mu}{T},$$
+
+其中$T>0$，$\mu$为能量量纲的常量。
+
+这样定义的$T$的数量级太小，需要重新取一个合适的单位，于是就有了把$T$换成$kT$以及之后的热力学温度的一系列故事。
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{时间的方向}
+\bchL
+我们以后会学到，能量动量守恒定律是时间和空间平移对称性的结果。那么上面的所有的推导，除了随机初条件（即开始时没有额外限制条件）之外，我们只用到了时间和空间的各种对称性。
+
+\skipline
+正是因为熵的单向性，覆水难收，我们无法抹平记忆，回到过去，于是才会有了时间的方向。
+
+\tbox{
+ 随机初始条件 + 微观世界的时间和空间对称性 $\Rightarrow$ 宏观世界时间的方向
+}
+
+是不是不可思议！
+
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{克劳修斯熵}
+\bch
+仍考虑近独立子系统：
+$$S = -N\sum_a p_a\ln p_a,\ U = N \sum_a \varepsilon_a p_a$$
+考虑定体加热的微小可逆过程，由于热量的输入导致各个态上粒子出现的概率发生了变化，但总概率仍然守恒($\sum_a dp_a=0$)：
+\bea
+dS &=& -N \sum_a dp_a (\ln p_a+1) \newl
+ &=& -N \sum_a dp_a \ln p_a \newl
+&=& \frac{N}{T}\sum (\varepsilon_a-\mu) dp_a \newl
+&=& \frac{N}{T}\sum \varepsilon_a  dp_a
+\eea
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{克劳修斯熵}
+\bch
+由热力学第一定律（因为定体无做功），吸热量
+$$\dbar Q = dU = N\sum_a \epsilon_a d p_a$$
+比较前述两个结果即得：
+\tbox{
+ $$ dS = \frac{\dbar Q}{T}$$
+  }
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{(推广到)一般系统}
+\bchL
+在热学课上进行严格推导的大都是近独立子系统（粒子间只有短暂的相互作用交换能量）。对一般的系统（如固体，液体），下述两个结论还是成立的：
+\bitem
+\item{可逆过程熵变
+ $$ dS = \frac{\dbar Q}{T}$$}
+\item{宏观孤立系统的熵会持续增大，直到达到热平衡后熵不再改变。}
+  \eitem
+从逻辑上说，第一条可以理解为对一般系统熵的定义；第二条则是一条实验定律（热力学第二定律）。  
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{总结（需要记住的结论）}
+\bchL
+\bitem
+\item{熵代表了信息的缺失(即混乱程度)}
+\item{熵是（当给定的概率都忠实呈现时）可能的微观状态数的对数}  
+\item{对于可逆过程：$dS = \frac{\dbar Q}{T}$}
+\item{宏观孤立系统的熵会持续增大，直到达到热平衡后熵不再改变}    
+\eitem
+\echL
+\end{frame}
+
+\section{Appendix}
+
+\begin{frame}
+\chtitle{附录1：组合数公式}
+\bch
+在$N$个元素划分为$m$类，要求每类的元素个数分别为$n_1,n_2,\ldots,n_m$个，则共有
+$$\frac{N!}{n_1!n_2!\ldots n_m!}$$
+种分类方法。
+
+\skipline
+
+证明：假想把$N$个元素排成一排，直接排有$N!$种排法。
+另一种排法是先按上述要求进行分类（假设有$x$种分法），再按类的顺序进行排列（先放第1类，再放第2类……），每一类里面又可以进行内部排列（共有$n_1!n_2!\ldots n_m!$种排法）。所以
+$$N! = x (n_1!n_2!\ldots n_m!)$$
+由此解出$x$。
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{附录2：Stirling公式的大致推导}
+\bch
+当$N$很大时，忽略小于$O(N)$的项：
+\bea
+\ln (N!) &=& \sum_{i=1}^N \ln i \newl
+	&\approx & \int_1^{N} \ln x \,dx \newl
+	&=& \left.\left(x\ln x - x\right)\right\vert_1^N \newl
+	&\approx& N\ln N - N
+\eea
+这只是最粗略的估算。以后在《数学物理方法》中会讲到精确版本的Stirling公式：
+$$ n!\approx \sqrt{2\pi n}\left(\frac{n}{e}\right)^n, $$
+以及比上式还要精确的更高阶形式。
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{附录3：琴生不等式的证明}
+\bch
+{\small
+设在考虑的区间内$f''(x)<0$恒成立，对区间内任意$x_1,x_2,\ldots,x_n$以及它们的平均数$\overline{x}$，有
+\bea
+\overline{f(x)} &=& \frac{1}{n}\sum_{i=1}^n f(x_i) \newl
+&=&\frac{1}{n}\sum_{i=1}^n\left[ f(\overline{x})+\int_{\overline{x}}^{x_i} f'(y)dy\right] \newl
+&=&\frac{1}{n}\sum_{i=1}^n\left[ f(\overline{x})+\int_{\overline{x}}^{x_i} dy \int_{\overline{x}}^{y} f''(z)dz \right] \newl
+&\le & \frac{1}{n}\sum_{i=1}^nf(\overline{x}) = f(\overline{x})
+\eea
+注意上述推导中，无论$x_i>\overline{x}$还是$x_i<\overline{x}$，总有$dydz>0$，无法取到等号。即只有当所有$x_i=\overline{x}$时，才能取到等号。
+}
+\ech
+\end{frame}
+
+
+\end{document}
