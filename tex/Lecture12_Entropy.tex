@@ -255,6 +255,8 @@ $$ S = m\, \overline{s(p)} \le m s(\bar{p}) = m\, s\left(\frac{1}{m}\right) = \l
 \echL
 \end{frame}
 
+
+
 \begin{frame}
 \chtitle{例子：抛硬币游戏的熵}
 \bchL
@@ -295,6 +297,26 @@ $$S = -x\ln x - (1-x)\ln (1-x)$$
 \bmini{0.5}
 如果我们知道谁在掷骰子（有额外信息），就不好说了。
 \emini
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bchL
+\addfig{1}{think3.jpg}
+
+如果取熵函数为不同的凸函数，例如$s(p) = p(1-p)$，等概率原理仍然成立，那么为什么物理上不这样定义熵呢？
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bchL
+\addfig{1}{think3.jpg}
+根据生活经验，复杂系统总是趋向于更混乱，即熵趋向于最大。那么为什么达到热平衡时，理想气体分子在各个微观态出现的概率不是均等，而是正比于$e^{-\frac{\varepsilon}{kT}}$呢？
+
 \echL
 \end{frame}
 
@@ -367,6 +389,9 @@ p_6 &=& \frac{1}{10}p_6 + \frac{1}{6}(1-p_6)
 \skipline
 
 下面让我们通过研究一个粒子数守恒的封闭系统来揭秘上帝的老千的工作原理。
+
+
+{\bf \small 注：这里“上帝”指自然法则，是西方发展自然科学时形成的一种习惯用语，和任何宗教理论无关。}
 \echL
 \end{frame}
 
@@ -500,22 +525,22 @@ $$\ln p_a = -\frac{\varepsilon_a - \mu}{T},$$
 
 \begin{frame}
 \chtitle{克劳修斯熵}
-\bch
+\bchL
 仍考虑近独立子系统：
 $$S = -N\sum_a p_a\ln p_a,\ U = N \sum_a \varepsilon_a p_a$$
 考虑定体加热的微小可逆过程，由于热量的输入导致各个态上粒子出现的概率发生了变化，但总概率仍然守恒($\sum_a dp_a=0$)：
 \bea
-dS &=& -N \sum_a dp_a (\ln p_a+1) \newl
- &=& -N \sum_a dp_a \ln p_a \newl
-&=& \frac{N}{T}\sum (\varepsilon_a-\mu) dp_a \newl
-&=& \frac{N}{T}\sum \varepsilon_a  dp_a
+dS &=& -N \sum_a dp_a (\ln p_a+1) 
+ = -N \sum_a dp_a \ln p_a \newl
+&=& \frac{N}{T}\sum (\varepsilon_a-\mu) dp_a 
+= \frac{N}{T}\sum \varepsilon_a  dp_a
 \eea
-\ech
+\echL
 \end{frame}
 
 \begin{frame}
 \chtitle{克劳修斯熵}
-\bch
+\bchL
 由热力学第一定律（因为定体无做功），吸热量
 $$\dbar Q = dU = N\sum_a \epsilon_a d p_a$$
 比较前述两个结果即得：
@@ -523,14 +548,14 @@ $$\dbar Q = dU = N\sum_a \epsilon_a d p_a$$
  $$ dS = \frac{\dbar Q}{T}$$
   }
 
-\ech
+\echL
 \end{frame}
 
 
 \begin{frame}
 \chtitle{(推广到)一般系统}
 \bchL
-在热学课上进行严格推导的大都是近独立子系统（粒子间只有短暂的相互作用交换能量）。对一般的系统（如固体，液体），下述两个结论还是成立的：
+在热学课上进行严格推导的大都是近独立子系统（粒子间只有短暂的相互作用交换能量）。对一般的系统，下述两个结论还是成立的：
 \bitem
 \item{可逆过程熵变
  $$ dS = \frac{\dbar Q}{T}$$}

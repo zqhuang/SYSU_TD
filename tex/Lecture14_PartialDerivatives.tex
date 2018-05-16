@@ -1,0 +1,364 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\input{titlepage.tex}
+\title{Lesson 14 Partial Derivatives}
+  \author{}
+  \date{}
+\begin{document}
+\tpage{14}{偏导数}
+
+
+\begin{frame}
+\chtitle{本讲内容}
+\bchL
+\bitem
+\item{$pVT$系统}
+\item{二自由度系统的偏导数}
+\eitem
+\echL
+\end{frame}
+
+\section{Review}
+
+\begin{frame}
+\chtitle{上一讲内容回顾}
+\bchL
+上一讲引入了新的态函数：熵$S$。它是个广延量。
+
+在{\blue 可逆过程中，熵的改变量等于热温比}（吸热量和温度之比）：
+\tbox{$$ dS = \frac{\dbar Q}{T}$$}
+
+\echL
+\end{frame}
+
+
+\section{$pVT$ System}
+
+\begin{frame}
+\chtitle{$pVT$系统}
+\bchL
+我们曾经讨论过单一成分平衡态物质的孤立系统(简称为{\bf $pVT$系统}): 它可以由压强$p$，体积$V$，温度$T$，内能$U$，熵$S$等态函数来描述。这些态函数中的任何两个已知，其它的就都确定了。这就是一个典型的{\bf 二自由度系统}。
+
+{\small 注： 对理想气体/相变曲线/相变曲面上的一些特殊情况，可以用求极限的办法来逼近。我们不再详细分类讨论。}
+\echL
+\end{frame}
+
+
+
+
+\section{2DOF System}
+
+\begin{frame}
+\chtitle{偏导数的符号}
+\bchL
+热学里的偏导数：
+$$\pfrac XYZ $$
+的含义是：固定$Z$时，$X$的微小变化量和$Y$的微小变化量之比。
+
+\skipline
+
+这样写其实已经默认了二自由度系统。（否则固定$Z$时，$X$的变化不仅仅依赖于$Y$的变化。)
+
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{和数学书符号的差别}
+\bchL
+在数学教材上，有``取$x,y$为自变量''的约定。
+
+二元函数的偏导数
+$$\frac{\partial f}{\partial x}$$
+其实就是$\pfrac{f}{x}{y}$的偷懒写法。同样地，数学教材上的$\frac{\partial f}{\partial y}$是$\pfrac{f}{y}{x}$的意思。
+
+在讨论热学时，如果不特定说明，就不约定自变量。所以写偏导数时必须写清不变量。
+
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bchL
+\addfig{0.5}{think1.jpg}
+
+对日常环境下的固定摩尔数的平衡态实际气体，设$p,V,T,U$分别为压强，体积，温度，内能。
+你能分别确定$\pfrac VTp$和$\pfrac VTU$的符号吗？
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{更多独立自变量的情形}
+\bchL
+如果独立的自变量有$n$个，写偏导数就要注明是哪$n-1$个量固定不变。
+
+数学教材上的三元函数$f(x,y,z)$的偏导数
+$$\frac{\partial f}{\partial x}$$
+是$\pfrac{f}{x}{y,z}$的偷懒写法。
+
+\skipline
+
+{\bf 下面只讨论$n=2$的二自由度系统。}
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{对同一个固定变量的偏导链式法则}
+\bchL
+对二自由度系统，用偏导数的定义证明链式法则：{\blue
+$$\pfrac WXZ\pfrac XYZ = \pfrac WYZ.$$}
+
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{三变量的链式法则}
+\bchL
+对二自由度系统，证明三变量的链式法则：
+{\blue 
+$$\pfrac XYZ  \pfrac YZX = - \pfrac XZY.$$
+}
+或者等价地可以写作：
+{\blue
+$$\pfrac XYZ  \pfrac YZX \pfrac ZXY= -1 .$$
+}
+请体会它和前面的同一固定量的链式法则的区别。
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bchL
+\addfig{1}{songfen.jpg}
+
+对$pVT$系统证明定体热容
+$$C_V = -\pfrac UVT \pfrac VTU. $$
+
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{切换固定量法则}
+\bchL
+对二自由度系统，用偏导数的定义证明下面的“切换固定量公式”：
+{\blue 
+$$ \pfrac WXY = \pfrac WXZ + \pfrac WZX \pfrac ZXY$$
+}
+它也可以看成“四变量链式法则”：
+{\blue 
+$$ \pfrac WZX \pfrac ZXY =  \pfrac WXY - \pfrac WXZ $$
+}
+\echL
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{思考题}
+\bchL
+\addfig{1}{songfen2.jpg}
+
+对$pVT$系统证明
+$$\pfrac UVT \pfrac VTp + \pfrac UpT \pfrac pTV = 0$$
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{全微分条件}
+\bchL
+二自由度系统的微分表达式
+$$ f dx + g dy$$
+是全微分（即等于某个变量$h$的微分$dh$）的充要条件是
+$$\pfrac fyx = \pfrac gxy$$
+处处成立。
+
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{热力学第一定律}
+\bchL
+
+根据热力学第一定律，$pVT$系统满足
+{\blue $$ dU = TdS - pdV.$$}
+这就是一个典型的全微分。
+
+\skipline
+
+{\small 注：这里我们不考虑非平衡态过程，讨论的都是严格意义的平衡态下的热力学函数。}
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bchL
+\addfig{0.5}{think2.jpg}
+
+
+对$pVT$系统，利用内能的全微分证明
+$$\pfrac  USV = T,\  \pfrac UVS = -p. $$
+
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bchL
+\addfig{1}{think3.jpg}
+
+对$pVT$系统证明
+$$\pfrac TVS = - \pfrac pSV. $$
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{焓，自由能，自由焓}
+\bchL
+为了搞事情，我们用已有的态函数构造新的态函数：
+
+\tbox{焓 $ H \equiv U + pV $.}
+
+\tbox{自由能 $ F \equiv U - TS $.}
+
+\tbox{自由焓 $ G \equiv H - TS $.}
+
+它们和内能一样，都是广延量。
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bchL
+\addfig{1}{think3.jpg}
+
+对$pVT$系统分别写出焓$H = U + pV$，自由能$F=U-TS$，和自由焓$G=H-TS$的全微分。
+
+我们前面根据内能的全微分得到
+$$\pfrac TVS = - \pfrac pSV. $$
+你能通过$H,F,G$的全微分得到类似的其它三个等式吗？
+
+\echL
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{内能和状态方程的关系}
+\bch
+
+{\large 因为$d F = -SdT - pdV$是全微分，所以
+{\blue
+$$\pfrac SVT = \pfrac pTV $$
+}
+
+
+因此固定温度，变化体积时，}
+$$ dU = TdS-pdV = \left(T\pfrac SVT - p\right)dV = \left( T\pfrac pTV - p\right) dV$$
+{\large 即
+{\blue
+$$\pfrac UVT = \pfrac p{\ln T}V - p$$
+}}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{积分因子 (课外知识，仅供娱乐)}
+\bchL
+对二自由度系统，对微分表达式
+$$ f dx + g dy$$
+总能找到恒正的变量$\lambda$使 
+$$ \lambda\left( f dx + g dy \right)$$
+为全微分。$\lambda$称为$f dx + g dy$的积分因子。
+
+积分因子不是唯一的：如果 $\lambda$是$f dx + g dy$的积分因子; 设$\lambda (fdx + gdy)=dS$, 则$\lambda \theta(S)$ ($\theta$为任意恒正的函数）也是$f dx + g dy$的积分因子。
+\echL
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{热力学温度和熵的定义的另一种等价方式 (课外知识，仅供娱乐)}
+\bchL
+对$pVT$系统，用全微分条件可以判断$dU + p dV$不是全微分。热力学温度$T$可以按如下的方式定义：
+
+\bitem
+\item{$\frac{1}{T}$是$dU+pdV$的积分因子}
+\item{$T$是强度量 （去除积分因子不唯一性）}
+\item{水的三相点是273.16K（确定单位）}    
+\eitem
+按这个定义，$\frac{dU + pdV}{T}$是某个态函数的微分，不妨定义它（也就是起个名字）为“熵”。
+
+
+
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{附录1：二自由度系统切换固定量}
+\bch
+    {\small
+      对二自由度系统，$W$可以看成$X$和$Z$的函数：
+      $$ dW = \pfrac WXZ dX + \pfrac WZX dZ $$
+      在固定$Y$的情况下，
+      $$ (dW)_Y = \pfrac WXZ (dX)_Y + \pfrac WZX (dZ)_Y $$
+      两边同除以 $(dX)_Y$，得到
+      $$ \pfrac WXY = \pfrac WXZ + \pfrac WZX \pfrac ZXY$$
+      
+(上式如果令$W\equiv Y$，还能顺便得到三变量的链式法则)
+}
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{附录2：二自由度系统全微分条件的证明}
+\bch
+{\small 
+证明：若存在$h(x,y)$使$dh = f dx + g dy$
+
+则$ f = \pfrac hxy; g = \pfrac hyx $， 故
+$$ \pfrac fyx = \frac{\partial^2 h}{\partial x \partial y} = \frac{\partial^2 h}{\partial y \partial x}= \pfrac gxy $$
+（什么？二次偏导未必存在？偏导次序不能随便交换？\bye 数学老师再见）
+
+\skipline
+反之，若 $\pfrac fyx = \pfrac gxy $，则由Stokes定理，沿任意闭合回路(设为区域$C$的边界$\partial C$)的积分
+$$\oint_{\partial C} fdx + gdy = \iint_C \left(\frac{\partial g}{\partial x} -\frac{\partial f}{\partial y} \right)dxdy = 0 $$
+从而可取$h(x, y)$为从原点到$(x,y)$的积分$\int fdx + gdy$ （显然结果和积分路径无关）。
+
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{附录3：二自由度系统积分因子存在性的证明}
+\bch
+{\small
+证明：
+取$dx  = g(x,y) ds$, $dy = -f(x, y) ds$的曲线簇，每条曲线上的$\lambda$由下述微分式积分得到
+$$d\ln \lambda = \left(\frac{\partial f}{\partial y} - \frac{\partial g}{\partial x}\right) ds$$
+初始值可以在和曲线簇垂直的任意一条曲线上取任意光滑函数来确定。
+}
+{\scriptsize
+
+\bea
+ \frac{\partial(\lambda f)}{\partial y} - \frac{\partial(\lambda g)}{\partial x} &=& \lambda\left(\frac{\partial f}{\partial y} - \frac{\partial g}{\partial x} + f\frac{\partial \ln \lambda}{\partial y} -g\frac{\partial \ln \lambda}{\partial x}  \right) \newl 
+&=& \frac{\lambda}{ds} \left[ d\ln \lambda  - dy \frac{\partial \ln \lambda}{\partial y} - dx \frac{\partial \ln \lambda}{\partial x}  \right] \newl 
+&=& 0
+\eea
+}
+{\small
+故$\lambda f dx + \lambda g dy $为全微分。
+}
+\ech
+\end{frame}
+
+
+
+
+\end{document}
