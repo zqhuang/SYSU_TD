@@ -1,0 +1,544 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\input{titlepage.tex}
+\title{Lesson 17 Processes in pVT system }
+  \author{}
+  \date{}
+\begin{document}
+\tpage{17}{pVT系统的热力学过程}
+
+
+\section{Introduction}
+
+\begin{frame}
+  \chtitle{本讲内容摘要}
+  \bchL
+  \bitem
+  \item{准静态过程：等体，等压，等温，准静态绝热，多方过程}
+  \item{非准静态过程：绝热自由膨胀，节流}
+  \item{相变过程和克拉珀龙方程}
+    \eitem
+    \echL
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{$pVT$系统热力学过程大致分类}
+  \bch
+根据过程守恒量不同，$pVT$系统的过程大致有：
+  \bitem
+\item{$V$守恒的{\blue 等体过程}; $p$守恒的{\blue 等压过程};$T$守恒的{\blue 等温过程}; $S$守恒的{\blue 准静态绝热过程};}
+\item{$pV^n$守恒的{\blue 多方过程}($n$称为多方指数);}
+\item{$U$守恒的{\blue 绝热自由过程}（一般为非准静态）;}
+\item{$H$守恒的{\blue 节流过程} (一般为非准静态）;}
+  \eitem
+  此外，还有{\blue 相变过程}，涉及的方程叫{\blue 克拉珀龙(Clapeyron)方程}。
+
+  \skiplines
+  
+  本讲中约定用{\blue 下标1表示初始状态，下标2表示末态}。
+  \ech
+\end{frame}
+
+\section{QS process}
+
+\secpage{准静态过程}{直接对过程进行积分}
+
+\begin{frame}
+  \chtitle{等体过程}
+  \bchL
+  定体过程显然有
+  $$\Delta U = Q = \int C_V dT;\ \ A = 0.$$
+
+  如果$C_V$没有给出，那么按理想气体近似，{\blue 单原子气体（如氦气）的定体热容 $C_V\approx \frac{3}{2}\nu R$；双原子气体在室温附近都默认$C_V\approx \frac{5}{2}\nu R$。}
+  \echL
+\end{frame}
+
+\begin{frame}
+  \chtitle{等压过程}
+  \bchL
+  定压过程显然有
+  $$\Delta H = Q = \int C_p dT;\ \ A=-p\Delta V.$$
+  对{\blue 理想气体, $C_p = C_V + \nu R$}。对一般的$pVT$系统，$C_p = C_V + T\pfrac pTV \pfrac VTp$ (证明参考附录1)。
+  \echL
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{等温过程}
+  \bchL
+  {\blue 理想气体的等温过程内能不变}，如果是准静态过程，则$Q = -A = \int p dV = \nu RT \ln \frac{V_2}{V_1}$。
+
+  \skipline
+  
+  一般$pVT$系统的准静态等温过程则往往需要利用$\dbar Q$的两种形式：
+$$\dbar Q = C_V dT + T \pfrac pTV  dV,$$
+
+ $$\dbar Q = C_p dT - T \pfrac VTp  dp.$$
+
+  \echL
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{实例与练习}
+  \bchL
+  等体，等压，等温过程一般比较简单，基本的计算技巧可以参考附录3-5。
+
+  \addfig{0.6}{hugan.jpg}
+  
+  更有挑战性的一些练习可以在quiz题库中找到。
+
+  \echL
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{准静态绝热过程}
+  \bchL
+  {\blue 准静态绝热过程是等熵过程}。另外，根据热一律，$\Delta U = A$。
+
+
+  \skiplines
+  
+  $C_V$为常量的理想气体准静态{\blue 绝热}过程中，{\blue $pV^\gamma$是不变量}，其中$\gamma = \frac{C_p}{C_V} = \frac{C_V+\nu R}{C_V}$. 再根据理想气体的状态方程，{\blue $TV^{\gamma-1}$和$p^{\frac{1}{\gamma}-1}T$都是不变量}。
+  \echL
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{准静态绝热过程过程举例}
+  \bchL
+  $1\SImol$温度为$400\SIK$的单原子理想气体经历准静态绝热膨胀，压强减小了一半。该过程中气体对外做功多少？
+  \echL
+\end{frame}
+
+\begin{frame}
+  \chtitle{多方过程}
+  \bchL
+  \tbox{$pV^n$不变的过程称为多方过程，$n$称为多方指数。}
+  理想气体的准静态多方过程中，外界对气体做功
+  {\blue $$A = \frac{\nu R\Delta T}{n-1}$$}
+  如果定体热容$C_V$为常量，则多方过程的热容：
+  {\blue $$ C_n = \frac{n-\gamma}{n-1} C_V$$}
+  上述结论的证明见附录2.
+  \echL
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{思考题}
+  \bchL
+  很多常见的过程都是多方过程，说出下列过程对应的多方指数：
+  \bitem
+\item{定体过程}
+\item{等压过程}
+\item{理想气体的等温过程}
+\item{  定体摩尔热容$\cvmol$不变的理想气体的绝热过程}
+  \eitem
+
+  \echL
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{多方过程举例}
+  \bchL
+  $1\SImol$温度为$400\SIK$的理想气体经历多方指数$n=2$的准静态多方过程，体积增大了一倍。该过程中气体对外做功多少？
+  \echL
+\end{frame}
+
+\section{Non-QS process}
+
+\secpage{非准静态过程}{研究方法：设计具有相同末态的准静态过程}
+
+\begin{frame}
+  \chtitle{绝热自由膨胀}
+  \bchL
+      {\blue 绝热自由膨胀（绝热: $Q=0$，  自由: $A=0$）是等内能降压过程，它不是准静态过程。}
+      
+  \bitem
+\item{理想气体：内能和温度有一对一的映射关系，所以温度也不变。}
+\item{实际气体，因为体积增大导致分子间势能增大，所以分子平均动能必须降低，所以温度下降。}
+  \eitem
+
+  \echL
+\end{frame}
+
+\begin{frame}
+  \chtitle{思考题}
+  \bchL
+  范德瓦耳斯气体满足状态方程
+  $$ \left(p+\frac{\nu^2 a}{V^2}\right)(V-\nu b) = \nu RT$$
+  其中$a, b>0$为常量。证明：
+  $$ \pfrac TVU < 0. $$
+  从而说明该气体绝热自由膨胀后确实温度下降。
+  \echL
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{节流过程}
+\bch
+
+\bmini{0.48}
+\addfig{2}{throttling_process.png}
+\emini
+\bmini{0.48}
+用多孔塞把绝热箱隔开，两端分别施以恒定压强$p_1$, $p_2$ （$p_1>p_2$）。一开始气体都在左边，体积为$V_1$，内能为$U_1$。
+\emini
+
+经过一段时间，左边的气体都通过多孔塞被压到了右边，体积和内能变为$V_2$, $U_2$。
+
+由于左边活塞对气体做功$p_1V_1$，右边活塞对气体做功$-p_2V_2$，气体内能变化为
+
+$$U_2 - U_1  = p_1V_1 - p_2V_2$$
+
+即
+$$ U_1 + p_1V_1 = U_2 + p_2V_2 $$
+{\blue 节流过程是等焓降压过程，它一般不是准静态过程。}
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{焦耳-汤姆孙系数(Joule-Thomson coefficient)}
+\bch
+
+\bitem
+\item{用{\bf 焦耳-汤姆孙系数$$\alpha \equiv \pfrac TpH$$}来计算节流过程温度的升降。}
+\item{如果$\alpha>0$，则称为{\bf 正节流效应，温度随压强降低而降低}（注意节流过程总是压强降低的过程）。}
+\item{反之若$\alpha<0$，则为{\bf 负节流效应，温度随压强降低而升高}。}
+\item{（正/负）节流效应统称{\bf 焦耳-汤姆孙效应}。}
+\eitem
+
+
+
+\skiplines
+
+{\scriptsize 注意：$\alpha$一般是$(p,T)$的函数，如果在节流过程对应的等焓线上，$\alpha$的符号发生变化，则节流效应的正负需要积分才能确定。}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{思考题}
+\bch
+
+既然绝热自由膨胀和节流过程都不是准静态过程，为什么分别能用等$U$线上的$\pfrac TVU$和等$H$线上的$\pfrac TpH$来计算的温度的升降呢？
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{转换曲线图}
+\bch
+
+\bmini{0.4}
+几种实际气体的节流方向如右图所示。
+
+\skipline
+
+正负节流的交界线称为转换曲线。
+
+\skipline
+    {\bf 常温常压下，氢气和氦气有负节流（降压升温）效应。而其他大部分气体（氮气，氧气等）有正节流（降压降温）效应}。
+
+    \skipline
+    
+    {\scriptsize 转换曲线的大致形状可以用范德瓦耳斯模型推导出来，见附录6}
+\emini
+\bmini{0.55}
+\lfig{2}{throttling_curve.png}
+\emini
+
+
+
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{节流液化气体的原理(预冷+节流)}
+\bch
+\bmini{0.43}
+\lfig{1.7}{njg_throttling.png}
+\emini
+\bmini{0.52}
+节流装置图
+\addfig{1.8}{throttling_liquefy.jpg}
+\emini
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{思考题}
+\bchL
+为什么节流降温前一般都需要用其他方法（如绝热膨胀）进行预冷？
+\echL
+\end{frame}
+
+\section{Phase Transition}
+
+\secpage{相变过程和克拉珀龙方程}{$$\frac{dp}{dT} = \frac{\Lambda^{\rm mol}}{T\left(V_\beta^{\rm mol} - V_\alpha^{\rm mol}\right)}$$}
+
+\begin{frame}
+\chtitle{相变曲面的$p$, $T$合并现象}
+\bch
+
+在$pVT$系统的多相共存曲面上，$p$和$T$发生了自由度合并现象：$p$和$T$之间有一一对应关系；光用$p, T$无法完整地描述这个二自由度系统；类似$\pfrac VpT,\ \pfrac UTp$之类的符号也失去了物理意义。
+
+\addfig{2.5}{PVTdiagram.png}
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{相变曲面的投影}
+\bchL
+把体积自由度投影掉，相变曲面就成为相变曲线，反映的是$p$-$T$之间的一一映射关系。
+\addfig{3}{PTdiagram.png}
+
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{相变过程}
+\bchL
+通常的相变过程在定压定温条件下进行，体积随着不同物态成分的比例变化而变化。
+\addfig{2.8}{phase_transition.png}
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{相变潜热和相变曲面坡度的关系}
+\bchL
+虽然相变沿着图中“水平方向”进行，相变潜热却和相变曲面的“坡度”有数学关系：
+\addfig{2.8}{phase_transition.png}
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{相变潜热和相变曲面坡度的关系}
+\bch
+从$pT$图上看，相变在相变曲线上固定的一个点发生（如果想象垂直纸面还有个$V$轴，实际上相变沿着垂直纸面方向进行）。但相变潜热却和相变曲线在该点的斜率有关。
+\addfig{2.8}{PTdiagram.png}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{相变潜热和相变曲面坡度的关系}
+\bchL
+这个关系可以用准静态过程吸热量的第一种形式导出：
+$$\dbar Q = C_V dT + T\pfrac pTV dV $$
+在相变过程中$dT=0$，$T\pfrac pTV$是固定不变的常量，所以直接积分得到：
+$$ Q = T\pfrac pTV \Delta V $$
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{克拉珀龙方程}
+\bchL
+考虑$1\SImol$的$\alpha$态物质变化到$\beta$态，吸收的潜热记为$\Lambda^{\rm mol}$，则有
+$$ \Lambda^{\rm mol} = T \pfrac pTV \left(V_\beta^{\rm mol} - V_\alpha^{\rm mol}\right).$$
+写成教材上的{\blue 克拉珀龙方程：
+  $$\frac{dp}{dT} = \frac{\Lambda^{\rm mol}}{T\left(V_\beta^{\rm mol} - V_\alpha^{\rm mol}\right)}$$}
+{\scriptsize 注意这里的$\frac{dp}{dT}$实际上是相变曲面上的$\pfrac pTV$，也可以理解为经过投影的相变曲线上的斜率。}
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{克拉珀龙方程的蒸发/升华近似}
+\bch
+当考虑蒸发或者升华过程时，气态的摩尔体积远大于液态或者固态的摩尔体积，因此可以近似认为
+$$ V_{\beta}^{\rm mol} - V_{\alpha}^{\rm mol} \approx V_{\beta}^{\rm mol} \approx \frac{RT}{p}. $$
+代入克拉珀龙方程，得到：
+$$\frac{dp}{dT} = \frac{p\Lambda^{\rm mol}}{RT^2}$$
+稍作整理，即得到
+{\blue 克拉珀龙方程的蒸发/升华近似
+  $$\Lambda^{\rm mol} = -R\frac{d\ln p}{d\left(\frac{1}{T}\right)} $$
+  }
+\ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{练习}
+  \bchL
+  教材225页习题4-8：
+
+  \skipline
+  
+  水从温度$99\cdeg$升高到$101\cdeg$时，饱和蒸气压从$733.7\SImmHg$增大到$788.0\SImmHg$。假定这时水蒸气可看作理想气体，求$100\cdeg$时水的汽化热。
+  \echL
+\end{frame}
+
+\begin{frame}
+  \chtitle{解答}
+  \bch
+  按照克拉珀龙方程的近似，
+  
+  $$\Lambda^{\rm mol} = -R \frac{\Delta \ln p}{\Delta\left(\frac{1}{T}\right)} = -8.314 \times \frac{\ln\frac{788}{733.7}}{\frac{1}{374.15}-\frac{1}{372.15}} \SIJ/\SImol = 4.13\times 10^4 \SIJ/\SImol$$
+  又$1\SImol$水为$0.018\SIkg$，故按习惯把汽化热写成
+  $$ \Lambda = \frac{4.13\times 10^4}{0.018} \SIJ/\SIkg = 2.29\times 10^6 \SIJ/\SIkg$$
+  \ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{附录1：$C_p$和$C_V$的关系}
+\bch
+{\small
+\bea
+C_p - C_V &=& \left(\frac{\dbar Q}{dT}\right)_p - \left(\frac{\dbar Q}{dT}\right)_V \newl
+&=& \left(\frac{T dS}{dT}\right)_p - \left(\frac{T dS}{dT}\right)_V \newl
+&=& T\left(\pfrac STp - \pfrac STV \right)
+\eea
+利用切换固定量公式，
+$$ C_p-C_V = T \pfrac SVT \pfrac VTp . $$
+最后，利用麦克斯韦关系$\pfrac SVT = \pfrac pTV$，得到
+$$ C_p - C_V = T\pfrac pTV \pfrac VTp .$$}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{附录2：理想气体准静态多方过程}
+\bch
+设多方过程$pV^n = C$，则外界对气体做功：
+\bea
+A &=& -\int pdV \newl
+&=& - \int C V^{-n} dV \newl
+&=& \frac{1}{n-1} \Delta \left(CV^{1-n}\right) \newl
+&=& \frac{\nu R\Delta T}{n-1} 
+\eea
+最后一步是利用了$\nu RT = pV = pV^n V^{1-n} = CV^{1-n}$.
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{附录2：理想气体准静态多方过程}
+\bch
+如果$C_V$是常量，则利用$\nu R = C_p - C_V = (\gamma-1)C_V$，有
+\bea
+Q  &=& \Delta U - A \newl
+&=& C_V\Delta T - \frac{\nu R\Delta T}{n-1} \newl
+&=& C_V\Delta T\left(1 - \frac{\gamma -1}{n-1}\right) \newl
+&=& \frac{n-\gamma}{n-1}C_V\Delta T
+\eea
+由此得到
+$$C_n = \frac{n-\gamma}{n-1}C_V.$$
+\ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{附录3：等体过程举例}
+  \bch
+  $2\SImol$氦气经历等体过程，温度从267K升高到300K，求这个过程中氦气的吸热量$Q$。
+
+  \skipline
+  
+  解答：在题目未做说明的情况下，只能当成理想气体进行计算。氦气是单原子气体，定体热容$C_V = \frac{3\nu R}{2}$。按照定体热容的定义，
+  $$Q = C_V\Delta T = \frac{3\nu R\Delta T}{2} = 823\SIJ $$
+  \ech
+\end{frame}
+
+
+
+\begin{frame}
+  \chtitle{附录4：等压过程举例}
+  \bch
+  $2\SImol$氮气经历等压过程，温度从286K升高到300K，求这个过程中氮气的吸热量。
+
+  \skipline
+  
+  解答：在题目未做说明的情况下，只能当成理想气体进行计算。氮气是双原子气体，定体热容$C_V \approx \frac{5\nu R}{2}$，定压热容$C_p = C_V+\nu R \approx \frac{7\nu R}{2}$。按照定压热容的定义，
+  $$Q = C_p\Delta T = \frac{7\nu R\Delta T}{2} = 815\SIJ $$
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{附录5：等温过程举例}
+  \bch
+  压强为$10^5\SIPa$，体积为$1\SIL$理想气体经历准静态等温过程，压强减小了一半。求该过程中的吸热量$Q$。
+
+  \skipline
+  
+  解答：在题目未做说明的情况下，只能当成理想气体进行计算。理想气体的内能只是温度的函数，所以等温过程中内能不变。根据热一律有
+  $$Q = -A = \nu R T \ln \frac{V_2}{V_1}  =  pV \ln \frac{p_1}{p_2} $$
+  代入数值得到
+  $$ Q =  10^5\SIPa \times 10^{-3} \SIm^3 \times \ln 2 = 69.3\SIJ.$$
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{附录6：焦耳-汤姆逊系数的符号}
+  \bch
+  利用三变量的偏微分链式法则以及上一讲提到过的$C_p = \pfrac HTp$，焦耳-汤姆逊系数可以写成：
+  $$\alpha \equiv \pfrac TpH = - \pfrac THp \pfrac HpT = - \frac{\pfrac HpT}{C_p}$$
+  也就是说，$\alpha$和$\pfrac HpT$符号相反，而$\pfrac HpT$可以由焓和状态方程的关系求出。下面我们用范德瓦耳斯模型计算$\pfrac HpT$。
+  \ech
+\end{frame}
+
+  \begin{frame}
+\chtitle{附录6：焦耳-汤姆逊系数的符号}
+\bch
+{\small
+
+对范德瓦尔斯气体，由状态方程
+$$\left(p + \frac{\nu^2 a}{V^2}\right) \left(V - \nu b\right) = \nu RT$$
+以及焓和状态方程的关系，得到
+$$\pfrac HpT = V \left(\delta_V - \frac{2\delta_p}{1+2\delta_p}\right) \frac{1+2\delta_p}{1-2\delta_p\left(1-\delta_V\right)}$$
+其中$\delta_p \equiv \frac{\frac{\nu^2a}{V^2}}{p+\frac{\nu^2 a}{V^2}}$为压强修正的大小，$\delta_V\equiv \frac{\nu b}{V}$为体积修正的大小。
+
+\bitem
+\item{小修正情形：在$\delta_p \ll 1$, $\delta_V \ll 1$的情况下，很容易推算出：当$T>\frac{2a}{bR}$时,$\pfrac HpT>0$（负节流）；反之则$\pfrac HpT<0$（正节流）}
+\item{大修正情形：在极低温(接近液化温度)以及高压的情形，$\delta_V\rightarrow 1$，显然$\pfrac HpT>0$（负节流)。}
+\eitem
+
+}
+\ech
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{附录6：焦耳-汤姆逊系数的符号}
+\bch
+由前面的讨论，我们定性地知道负节流（$\pfrac HpT>0$）区域近似为满足$T<\frac{2a}{bR}$的高温区域，以及体积修正比较大的低温高压区域。
+
+下图是对某个范德瓦尔斯气体的数值计算结果：
+\addfig{2}{dHdp.pdf}
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{附录6：焦耳-汤姆逊系数的符号}
+\bch
+在非极限情形下，气体的体积修正和压强修正很小，气体的正节流条件为$T<\frac{2a}{Rb} \approx \frac{27}{4} T_K$，其中$T_K$为临界温度。
+
+\skipline
+
+{\scriptsize (对范德瓦耳斯气体，其临界温度$T_K$由条件
+$$\left(\frac{d p}{d V}\right)_{T=T_K} = \left(\frac{d^2 p}{d V^2}\right)_{T=T_K} = 0$$ 
+确定，计算结果为$T_K = \frac{8a}{27Rb}.$)}
+
+\skipline
+
+在教材52页查得，氢气和氦气的临界温度较低，$\frac{27}{4} T_K$在室温之下，而其他大部分气体的临界温度较高，$\frac{27}{4} T_K$在室温之上。所以在{\bf 常温常压下，氢气和氦气有负节流（升温）效应。而其他大部分气体（空气，氮气，氧气等）有正节流（降温）效应}。
+\ech
+\end{frame}
+
+
+  
+
+\end{document}

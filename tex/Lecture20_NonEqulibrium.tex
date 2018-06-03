@@ -1,0 +1,372 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\input{titlepage.tex}
+\title{Lesson 20 - Non-Equilibrium Process}
+  \author{}
+  \date{}
+\begin{document}
+\tpage{20}{非平衡过程}
+
+\begin{frame}
+\chtitle{本讲内容}
+\bch
+\bitem
+\item{平衡判据}
+\item{化学势}
+\item{热传导方程}  
+\eitem
+\ech
+\end{frame}
+
+
+
+\section{Equilibrium Conditions}
+
+
+\begin{frame}
+\chtitle{眼花撩乱的平衡判据}
+\bch
+教材从198页开始叨念各种（完全看不懂的）“平衡判据”：
+
+\bitem
+\item{熵判据：在内能和体积不变的情况下，对于一切可能的变动来说，平衡态的熵最大。}
+\item{自由能判据：在温度和体积不变的情况下，对于一切可能的变动来说，平衡态的自由能最小。}
+\item{自由焓判据：在温度和压强不变的情况下，对于一切可能的变动来说，平衡态的自由焓最小。}
+\eitem
+
+\addfig{1.5}{bzdsh.jpg}
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{背书宝的福音}
+\bch
+\addfig{1}{beishubao.jpg}
+
+要写出“$X$判据”，
+
+\bitem
+\item{第一步：把$X$写成全微分：$dX + \ldots dY + \ldots dZ = 0$}
+\item{第二步：背书。在$Y$和$Z$不变的情况下，对于一切可能的变动来说，平衡态的$X$最$\ldots$。}
+\item{第三步：判定是最大还是最小。$dX$, $dY$, $dZ$中必然有一个能量型的量（指$dU, dH, dF, dG$中的一个)，它前面系数为正则为最小，为负则为最大。}
+\eitem
+
+{\scriptsize
+似乎有点理解了：
+
+$Y$和$Z$不变，则$dX = 0$，代表$X$是某种极值？
+
+能量型的量当然有下限？
+}
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{例子1：熵判据}
+\bch
+写出
+$$dS - \frac{1}{T} dU - \frac{p}{T} dV = 0 $$
+$dU$前系数为负，取最大。
+
+在内能$U$和体积$V$不变的情况下，对于一切可能的变动来说，平衡态的熵$S$最大。
+
+\skiplines
+
+熵判据也常常说成，孤立系的平衡态熵最大。内能和体积不变，是孤立系的一种。
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{例子2：自由能判据}
+\bch
+写出
+$$dF  + S dT + p dV = 0 $$
+$dF$前系数为正，取最小。
+
+
+在温度$T$和体积$V$不变的情况下，对于一切可能的变动来说，平衡态的自由能$F$最小。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{例子3：自由焓判据}
+\bch
+写出
+$$dG + S dT - V dp = 0$$
+$dG$前系数为正，取最小。
+
+在温度$T$和压强$p$不变的情况下，对于一切可能的变动来说，平衡态的自由焓$G$最小。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{例子4: 压强判据之一}
+\bch
+写出
+$$dp - \frac{1}{V} dH + \frac{T}{V} dS = 0$$
+$dH$前系数为负，取最大。
+
+在焓$H$和熵$S$不变的情况下，对于一切可能的变动来说，平衡态的压强$p$最大。
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{练习一下}
+  \bch
+  \addfig{1}{songfen.jpg}
+  补充完整下列平衡判据：
+  \bitem
+\item[(1)]{在\_\_和\_\_不变的情况下，平衡态的焓$H$最\_\_。}
+\item[(2)]{在自由能$F$和\_\_不变的情况下，平衡态的温度$T$最\_\_。}
+\item[(3)]{在焓$H$和\_\_不变的情况下，平衡态的熵$S$最\_\_。}
+\item[(4)]{在自由焓$G$和\_\_不变的情况下，平衡态的压强$p$最\_\_。}
+  \eitem
+  \ech
+\end{frame}
+
+\begin{frame}
+\chtitle{真懂了吗}
+\bchL
+“一切可能的变动”是什么意思？
+
+\addfig{1.5}{zhendongma.jpg}
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{理解熵判据}
+\bchL
+“一切可能的变动”是指平衡态和一切非平衡态。
+
+
+\addfig{1}{meimaobing.jpg}
+
+熵判据的证明：根据孤立系的熵增大原理，任何非平衡态的熵会持续增大直至到达平衡态。显然平衡态的熵是最大的。
+
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{理解自由能判据}
+\bchL
+自由能判据的条件是定温定体。可把“定温”理解为固定环境温度$T_e$。当偏离平衡态不远时，也可以理解为系统的平均温度。
+
+\skiplines
+
+证明：从非平衡态到平衡态的过程为不可逆过程。定体过程不对外做功，又由于恒温条件下对外做功小于自由能的减少（对不可逆过程）。故自由能的减少大于零。即非平衡态的自由能大于平衡态的自由能。
+
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{理解自由焓判据}
+\bchL
+自由焓判据的条件是定温定压。可把“定温”理解为固定环境温度$T_e$。当偏离平衡态不远时，也可以理解为系统的平均温度。
+
+
+\skiplines
+
+证明：从非平衡态到平衡态的过程为不可逆过程。定温定压条件下，对不可逆过程，其他形式的做功小于自由焓的减少，又这里不考虑其他形式的做功（即没有额外安装发电机什么的），故自由焓的减少大于零。即非平衡态的自由焓大于平衡态的自由焓。
+
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{三大平衡条件}
+\bchL
+\bitem
+\item[1]{\blue 热平衡条件：系统内部温度均匀}
+\item[2]{\blue 力学平衡条件：系统内部压强均匀}
+\item[3]{\blue 相平衡条件：系统内各相化学势相等}
+\eitem
+
+{\scriptsize
+注：第三条仅考虑了物态变化（如液态水和水蒸气之间的平衡），其实它可以推广到涉及化学反应的一般的化学平衡条件。化学反应比相变更为复杂，各种反应物或者产物有可能混合在一起产生额外的混合熵（请参考教材208页）。
+}
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{热平衡条件}
+\bch
+热平衡条件可以从孤立系的熵判据推出：如果有相邻的温度不相等的子系统，则由高温到低温的热量传输必然增大熵。这说明系统还未达到平衡态（熵最大的状态）。
+\addfig{1.5}{eqc1.jpg}
+$$\Delta S = \frac{-Q}{T_1} + \frac{Q}{T_2} > 0$$
+\ech
+\end{frame}
+
+\begin{frame}
+\chtitle{力学平衡条件}
+\bch
+力学平衡条件可以从定温定体系统的自由能判据推出：如果有相邻的压强不相等的子系统，则压强大的子系统等温膨胀$\Delta V$，压强小的子系统等温收缩$\Delta V$，可使系统温度和体积不变的情况下总自由能减小。这说明系统还未达到平衡态（自由能最低的态）。
+\addfig{1.5}{eqc2.jpg}
+$$\Delta F = -p_1 \Delta V + p_2 \Delta V < 0 $$
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{相平衡条件}
+\bch
+设有种可以相互转化的物态。每种物态的粒子数分别为$N_1$, $N_2$, $\ldots$, $N_n$。每种物态成分的化学势即该成分的平均每个粒子的自由焓，即
+$$ \mu_i \equiv \pfrac G{N_i}{T,p,N_1, N_2, \ldots, N_{i-1}, N_{i+1}, \ldots, N_n} $$
+
+\addfig{1.5}{eqc3.jpg}
+
+相平衡条件可以从定温定压系统的自由焓判据推出：假设已经达到热平衡和力学平衡，若定温定压条件下有$ \mu_i > \mu_j$，则可以通过$i\rightarrow j$的相变降低系统的总自由焓，这说明系统还未达到平衡态。
+\ech
+\end{frame}
+
+\section{Chemical Potential}
+
+\begin{frame}
+\chtitle{经典理想气体的化学势}
+\bch
+{\small
+考虑经典的理想气体，在$i$态上的分子数为
+$$ n_i = e^{-\frac{\varepsilon_i-\mu}{kT}}$$
+下面我们证明，这里的$\mu$和用自由焓定义的化学势相同}
+
+{\scriptsize
+  我们来计算温度为$T$的处于平衡态的单一成分理想气体的自由焓。
+  $$G = U + pV - TS$$
+  设第i个态上有$n_i$个分子，总分子数$N=\sum_i n_i$。因为要用到熵的绝对数值，我们就不能像以前那样直接忽略粒子的全同性了（混合气体的熵不同于单一成分气体的熵）。因为置换$N$个粒子共有$N!$种可能性。按照熵是状态数的对数的理解，按可区分粒子计算出来的熵则要减去$\ln (N!) \approx N \ln N - N $。最后，按照热力学的单位制，熵以$k$为单位，于是
+  $$\frac{S}{k} = N\sum_i\left(-\frac{n_i}{N}\ln\frac{n_i}{N}\right)  - (N\ln N - N) = N-\sum_i (n_i\ln n_i) = N - \sum_in_i\frac{\mu - \varepsilon_i}{kT} =N+\frac{U-\mu N}{kT}  $$
+  即
+  $$TS = kNT + U - \mu N = pV + U - \mu N$$
+  移项即得结论$$ G = \mu N$$
+}
+\ech
+\end{frame}
+
+\section{Heat Equation}
+
+\begin{frame}
+  \chtitle{一维热传导方程}
+  \bch
+  考虑一根很长的不良导体棒(这里指热的传导)的温度$T(x, t)$，其中$x$是在导体棒上的位置，$t$是时间。
+  在温度梯度不大的情况下，可以用线性近似：{\blue 热流正比于温度梯度}。
+  显然，这个比例系数是负的，
+  $$ j =  -\lambda \frac{\partial T}{\partial x} $$
+  其中$\lambda >0$为常量，称为{\blue 导热系数}。
+
+  \addfig{2.2}{heatflux.png}
+
+  {\small 注：热流是指单位时间通过单位面积的热量。}
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{一维热传导方程}
+  \bch
+
+  \addfig{2.2}{heateq.png}
+{\small
+  考虑长为$dx$的一小段不良导体棒，进入和出去的热流差为
+  $$j(x)-j(x+dx) = -\lambda \left[\left.\frac{\partial T}{\partial x}\right\vert_{x}-\left.\frac{\partial T}{\partial x}\right\vert_{x+dx}\right]\approx \lambda \frac{\partial^2 T}{\partial x^2} dx. $$
+  设材料单位质量的比热为$c$，质量密度为$\rho$，横截面积为$S$，则
+  $$ (c \rho S dx) dT = \dbar Q = [j(x)-j(x+dx)] S dt =  \lambda \frac{\partial^2 T}{\partial x^2} dx  (S dt) $$
+  这里的$dT$和$dt$都是对固定$x$而言，两者之比为$\frac{\partial T}{\partial t}$。令$a = \frac{\lambda}{\rho c}$，则：\tbox{
+  $$ \frac{\partial T}{\partial t} - a \frac{\partial^2T}{\partial x^2} = 0$$
+  }
+
+  }
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{例题}
+  \bch
+  \addfig{2.5}{heatflux2.png}
+  
+  在一根长为$2L$的不良导体棒在$t=0$时刻温度为$T_0$。在$t>0$时刻，不良导体棒两端均有强度为$j$的热流进入。设材料的导热系数$\lambda$，质量密度$\rho$，单位质量的比热$c$均已知，试计算$t\ge 0$时刻不良导体棒各处的温度$T(x,t)$。
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{ 解答}
+  \bch
+  根据对称性，在棒中间处热流和温度梯度均为零。写出如下的方程和边界条件：
+  \bea
+  \frac{\partial T}{\partial t} - a\frac{\partial^2 T}{\partial x^2} &=& 0 \newl
+  \left.\frac{\partial T}{\partial x}\right\vert_{x=0} &=& 0 \newl
+  \left.\frac{\partial T}{\partial x}\right\vert_{x=L} &=& \frac{j}{\lambda}  \newl
+  \left.T\right\vert_{t=0} &=&  T_0 
+  \eea
+  其中$a = \frac{\lambda}{\rho c} $。
+  
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{解答}
+  \bch
+  先分析主要图像。
+
+  \skiplines
+
+  在$t$时刻，累计流入的热量为$Q =  2 j St$ (其中$S$为横截面积)。棒子热容为$C =  c \rho (2SL)$。所以$t$时刻棒子的平均温度为
+  $$ \bar{T} =   T_0  + \frac{Q}{C} = T_0 + \frac{j}{\rho cL}t $$
+  
+  \ech
+\end{frame}
+
+
+\begin{frame}
+  \chtitle{解答 (续)}
+  \bch
+  把平均温度去掉，研究各处温度起伏：$\Delta T(x, t) = T(x, t) - \left(T_0+\frac{j}{\rho cL} t\right)$。显然$\Delta T$满足方程：
+  \bea
+  \frac{\partial \Delta T }{\partial t} - a \frac{\partial^2 \Delta T}{\partial x^2} &=&  -\frac{j}{\rho cL} \newl
+  \left.\frac{\partial \Delta T}{\partial x}\right\vert_{x=0} &=& 0 \newl
+  \left.\frac{\partial \Delta  T}{\partial x}\right\vert_{x=L} &=& \frac{j}{\lambda}  \newl
+  \left.\Delta T\right\vert_{t=0} = 0
+  \eea
+  因为$\Delta T$描述的是温度起伏，还有一个额外条件：
+  $$\int_0^L \Delta T(x, t) dx = 0 $$
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{解答 (续)}
+  \bch
+  当$t$很大时，棒上的温度梯度趋于稳定，即$\Delta T$仅仅依赖于$x$，满足
+  \bea
+  - a \frac{\partial^2 \Delta T}{\partial x^2} &=&  -\frac{j}{\rho cL} \newl
+  \left.\frac{\partial \Delta T}{\partial x}\right\vert_{x=0} &=& 0 \newl
+  \left.\frac{\partial \Delta  T}{\partial x}\right\vert_{x=L} &=& \frac{j}{\lambda}  \newl
+  \int_0^L \Delta T(x, t) dx &=& 0  
+  \eea
+  由此不难解出
+  $$\Delta T = \frac{j}{2\lambda} \left(\frac{x^2}{L} - \frac{L}{3}\right) $$
+  \ech
+\end{frame}
+
+\begin{frame}
+  \chtitle{课后思考题}
+  \bch
+  如果我们急于喝一杯奶茶，以下哪种冷却方法好？
+  \bitem
+\item[A]{先把热茶冷5分钟，加一匙冷牛奶。}
+\item[B]{先把热茶冷2.5分钟，再加一匙冷牛奶，再冷2.5分钟。}
+\item[C]{先将一匙冷牛奶加入热茶中，再冷却5分钟。}
+\item[D]{以上效果一样}
+  \eitem
+  \ech
+\end{frame}
+
+
+\end{document}

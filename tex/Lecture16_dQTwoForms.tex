@@ -1,0 +1,222 @@
+\documentclass[CJK]{beamer}
+\input{macros.tex}
+\input{titlepage.tex}
+\title{Lesson 16 Two Forms of $\dbar Q$}
+  \author{}
+  \date{}
+\begin{document}
+\tpage{16}{准静态过程吸热量的两种表述}
+
+\section{Review}
+
+
+\begin{frame}
+\chtitle{本讲内容提要}  
+\bchL
+\bitem
+\item{类范德瓦耳斯方程}
+\item{内能和状态方程的关系，准静态过程吸热量的第一种表述}
+\item{焓和状态方程的关系，准静态过程吸热量的第二种表述}
+\eitem
+\echL
+\end{frame}
+
+\section{$\dbar Q$ 1$^{st}$ form}
+\secpage{准静态过程吸热量的第一种表述}{从内能的角度出发$$ \dbar Q = C_V dT + T\pfrac pTV dV $$}
+  
+\begin{frame}
+\chtitle{类范德瓦耳斯状态方程}  
+\bchL
+理想气体：
+$$ p = nkT $$
+范德瓦耳斯气体：
+$$ p = \frac{V}{V-\nu b} n kT - \frac{\nu ^2 a}{V^2}.$$
+一般性地，我们考虑状态方程：
+$$p = n_{\rm eff}(V) kT + p_U(V) .$$
+其中$n_{\rm eff}(V)$描述等效（可以运动）的分子数密度；$p_u$是分子间相互作用力导致的内压强。假设两者都只和体积有关。
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{类范德瓦耳斯状态方程}  
+\bchL
+对类范德瓦耳斯状态方程，动理压强可以写成
+$$ p_k = n_{\rm eff}kT = T \pfrac{p}{T}{V}. $$
+于是，内压强
+$$p_U = p-p_k = p - T \pfrac{p}{T}{V}. $$
+是不是有些眼熟？
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{类范德瓦耳斯状态方程：做功}  
+\bchL
+当体积变化时，物质对外界做功为$p dV$。这个功可以分为两部分：
+\bitem
+\item{动理压强做功$p_kdV$，即通过“分子碰撞”（宏观上体现为热量传输）对外界做功；}
+\item{另一部分是内压强做功$p_UdV$，即内部分子间的吸引力做功，这是通过消耗分子间的势能来完成的。}
+\eitem
+\echL
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{类范德瓦耳斯状态方程：吸热量}  
+\bchL
+当体积不变，物质吸收的热量用于改变分子的平均能量(能均分定理给出的$C_V dT$)，以内能的形式存储在物质内部；当体积也同时发生变化时，吸收的热量还可以通过“分子碰撞力直接做功”，即动理压强直接做功($p_kdV$)的形式“挥霍掉”：
+
+{\blue $$ \dbar Q = C_V dT + T\pfrac pTV dV. $$}
+
+这是{\blue 准静态过程吸热量的第一种表述}。
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{类范德瓦耳斯状态方程：内能的变化}  
+\bchL
+那“存起来”的能量($C_VdT$)是否代表了物质内能的全部变化呢？除了能均分定理给出的分子（独立）能量$C_V dT$之外，还有分子间相互作用的总势能，它会因为分子间相互作用力产生的内压强做功而被“挥霍掉”(即变化量为$-p_U dV$)。
+
+{\blue $$ dU = C_V dT - \left(p - T\pfrac{p}{T}{V}\right) dV. $$}
+当然，你也可以用前面$\dbar Q$的结果以及热力学第一定律（$dU = \dbar Q-pdV$）得到一样的结果。
+\echL
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{思考题}  
+\bchL
+
+\addfig{1.2}{think5.jpg}
+
+证明上述讨论结果：
+{\blue $$ \dbar Q = C_V dT + T\pfrac pTV dV $$}
+{\blue $$ dU = C_V dT  - \left(p - T\pfrac{p}{T}{V} \right) dV. $$}
+对任意$pVT$系统的准静态过程成立。
+
+\echL
+\end{frame}
+
+
+\section{$\dbar Q$ 2$^{nd}$ form}
+\secpage{准静态过程吸热量的第二种表述}{从焓的角度出发 $$ \dbar Q = C_p dT - T\pfrac VTp dp.$$}
+
+
+\begin{frame}
+\chtitle{焓的物理意义}
+\bchL
+
+内能 $\Rightarrow$ 房子的价值
+
+\skipline
+
+焓 $\Rightarrow$ 房子的价值 + 房子所占空间的价值
+
+
+\addfig{2}{houses.jpg}
+
+（空间价值有时候可以占主导）
+
+
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{焓的物理意义}
+\bchL
+很多过程都是等压过程（例如开放环境下的化学反应，自然界物态变化等）。
+
+\lfig{1.1}{chemical_reaction.jpg}\hspace{0.1in}\lfig{1.4}{ice_melt.jpg}
+
+当体积发生变化时就需要对环境做功以“获得生存空间”。这部分额外做的功做为“无形资产”加到内能上，就是焓$H$。
+
+$$ H  \equiv U + pV$$ 
+
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{定压热容}
+\bchL
+在{\blue 准静态等体过程}中，因为没有做功，所以{\blue 吸热量等于内能的变化}。定体热容
+$$C_V \equiv \pfrac UTV. $$
+
+在{\blue 准静态等压过程}中，一部分吸热量被消耗于做功，但是因为焓已经计入了做功所需的额外能量，所以{\blue 吸热量等于焓的变化}。定压热容
+$$ C_p \equiv \pfrac HTp $$
+\echL
+\end{frame}
+
+
+\begin{frame}
+\chtitle{焓和状态方程的关系}
+\bch
+
+固定温度，变化压强时，
+$$ (dH)_T = T(dS)_T + V(dp)_T = \left( T\pfrac SpT + V\right) (dp)_T$$
+因为$d G = - SdT + Vdp$是全微分，所以有麦克斯韦关系 $ \pfrac SpT = - \pfrac VTp$，上式变为：
+$$ (dH)_T = \left( V - T\pfrac VTp\right) (dp)_T$$
+两边同除以$(dp)_T$，即得到{\blue 焓和状态方程的关系
+$$\pfrac HpT = V - T\pfrac VTp$$  
+}
+
+\ech
+\end{frame}
+
+
+\begin{frame}
+\chtitle{准静态过程吸热量的第二种表述}
+\bchL
+把焓看成$p, T$的函数，就有全微分：
+{\blue $$ dH = C_p dT + \left(V - T\pfrac VTp\right) dp. $$}
+然后利用$ dH = \dbar Q + Vdp$，即得到{\blue 准静态过程吸热量的第二种表述：
+  $$ \dbar Q = C_p dT - T\pfrac VTp dp.$$}
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{总结}
+\bchL
+内能和焓的全微分为：
+$$ dU = T dS - p dV; \ dH = T dS + V dp.$$
+似乎把内能看成$S, V$的函数，焓看成$S, p$的函数比较自然。
+
+\skipline
+
+但是实际状态方程往往以$p,V,T$之间的关系给出，$S$是一个“比较难用”的态函数。因此我们希望把内能看成$T, V$的函数，焓看成$T, p$的函数。
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{总结}
+\bchL
+通过偏导数的一些运算技巧，我们成功地得到：
+{\blue $$ dU = C_V dT  - \left(p - T\pfrac{p}{T}{V} \right) dV. $$}
+
+{\blue $$ dH = C_p dT + \left(V - T\pfrac VTp\right) dp. $$}
+\echL
+\end{frame}
+
+\begin{frame}
+\chtitle{总结}
+\bchL
+最后根据$ \dbar Q = dU + pdV = dH - Vdp $，可以得到$\dbar Q$的两种表述：
+\tbox{$$ \dbar Q = C_V dT + T\pfrac pTV dV $$}
+\tbox{$$ \dbar Q = C_p dT - T\pfrac VTp dp.$$}
+\echL
+\end{frame}
+
+
+
+\begin{frame}
+\chtitle{思考题}
+\bchL
+范德瓦耳斯气体满足状态方程：
+$$ p = \frac{\nu R T}{V-\nu b} - \frac{\nu^2a}{V^2}. $$ 
+设该气体经历等温准静态过程，体积从$10\nu b$变大到 $20\nu b$，计算该过程气体的摩尔熵（即每摩尔气体的熵）$S^{\rm mol}$的变化。
+\echL
+\end{frame}
+
+\end{document}

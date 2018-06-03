@@ -8,11 +8,9 @@
 \usepackage{simplewick}
 \usepackage{tikz}
 \usepackage{tcolorbox}
-\usepackage{ulem}
 \graphicspath{{../figures/}}
 %%figures
 \def\lfig#1#2{\includegraphics[width=#1 in]{#2}}
-\def\tfig#1#2{\includegraphics[height=#1 in]{#2}}
 \def\addfig#1#2{\begin{center}\includegraphics[width=#1 in]{#2}\end{center}}
 \def\wulian{\includegraphics[width=0.18in]{emoji_wulian.jpg}}
 \def\bigwulian{\includegraphics[width=0.35in]{emoji_wulian.jpg}}
@@ -22,7 +20,6 @@
 \def\bighuaixiao{\includegraphics[width=0.35in]{emoji_huaixiao.jpg}}
 \def\jianxiao{\includegraphics[width=0.18in]{emoji_jianxiao.jpg}}
 \def\bigjianxiao{\includegraphics[width=0.35in]{emoji_jianxiao.jpg}}
-\def\haoqi{\includegraphics[width=0.18in]{emoji_haoqi.jpg}}
 %% colors
 \def\blacktext#1{{\color{black}#1}}
 \def\bluetext#1{{\color{blue}#1}}
@@ -36,36 +33,17 @@
 \def\gray{\color[rgb]{0.4,0.4,0.4}}
 \def\blue{\color{blue}}
 \def\red{\color{red}}
-\def\orange{\color[rgb]{1.,0.8,0.}}
 \def\green{\color{green}}
 \def\darkgreen{\color[rgb]{0,0.4,0.1}}
 \def\darkblue{\color[rgb]{0,0.2,0.6}}
 \def\skyblue{\color[rgb]{0.2,0.7,1.}}
 %%control
-\def\uline#1{\underline{\ \hspace{#1 in}\ }}
-\def\bral{\left(\begin{array}{l}}
-\def\brar{\end{array}\right)}
-\def\brall{\left(\begin{array}{ll}}
-\def\brarr{\end{array}\right)}
-\def\bralll{\left(\begin{array}{lll}}
-\def\brarrr{\end{array}\right)}
-\def\branchl{\left\{\begin{array}{l}}
-\def\branchr{\end{array}\right.}
-\def\branchll{\left\{\begin{array}{ll}}
-\def\branchrr{\end{array}\right.}
-\def\branchlll{\left\{\begin{array}{lll}}
-\def\branchrrr{\end{array}\right.}
-\def\sfgamma#1{\,\Gamma\left( #1 \right)\,}
 \def\be{\begin{equation}}
 \def\ee{\nonumber\end{equation}}
 \def\bea{\begin{eqnarray}}
 \def\eea{\nonumber\end{eqnarray}}
 \def\bch{\begin{CJK}{UTF8}{gbsn}}
 \def\ech{\end{CJK}}
-\def\bchl{\bch\begin{large}}
-\def\echl{\end{large}\ech}
-\def\bchL{\bch\begin{Large}}
-\def\echL{\end{Large}\ech}
 \def\bitem{\begin{itemize}}
 \def\eitem{\end{itemize}}
 \def\bcenter{\begin{center}}
@@ -81,18 +59,7 @@
 \def\emini{\end{minipage}}
 \def\tbox#1{\begin{tcolorbox}#1\end{tcolorbox}}
 \def\pfrac#1#2#3{\left(\frac{\partial #1}{\partial #2}\right)_{#3}}
-\def\res#1#2{\,\mathrm{res}\,#1\left(#2\right)\,}
-\def\newt#1#2{\left(\begin{array}{c}#1\\ #2\end{array}\right)}
-\def\reof#1{\,\mathrm{Re}{\left(#1\right)\,}}
-\def\imof#1{\,\mathrm{Im}{\left(#1\right)\,}}
-\def\Arg#1{\,\mathrm{Arg}\,#1\,}
 %%symbols
-%%symbols
-\def\bropt{\,(\ \ \ )}
-\def\cvmol{C_V^{\rm mol}}
-\def\cpmol{C_p^{\rm mol}}
-\def\intfull{\int_{-\infty}^\infty}
-\def\inthalf{\int_0^\infty}
 \def\bropt{\,(\ \ \ )}
 \def\optlist#1#2#3{(A)\;#1\ \ \ (B)\;#2\ \ \ (C)\;#3}
 \def\sone{$\star$}
@@ -136,7 +103,6 @@
 \def\hatb{{\hat{b}}}
 \def\hatc{{\hat{c}}}
 \def\hatd{{\hat{d}}}
-\def\hatD{{\,\hat{D}}}
 \def\hatN{{\hat{N}}}
 \def\hatH{{\hat{H}}}
 \def\hatp{{\hat{p}}}
@@ -151,12 +117,6 @@
 \def\baru{\bar{u}}
 \def\barv{\bar{\upsilon}}
 \def\qeq{\stackrel{?}{=}}
-\def\ftf{\stackrel{\mathcal{FT}}{\Longrightarrow}}
-\def\ftb{\stackrel{\mathcal{FT}}{\Longleftarrow}}
-\def\ftfb{\stackrel{\mathcal{FT}}{\Longleftrightarrow}}
-\def\ltf{\stackrel{\mathcal{LT}}{\Longrightarrow}}
-\def\ltb{\stackrel{\mathcal{LT}}{\Longleftarrow}}
-\def\ltfb{\stackrel{\mathcal{LT}}{\Longleftrightarrow}}
 \def\torder#1{\mathcal{T}\left(#1\right)}
 \def\rorder#1{\mathcal{R}\left(#1\right)}
 \def\contr#1#2{\contraction{}{#1}{}{#2}#1#2}
@@ -172,7 +132,7 @@
 \def\pthree{p_{\tiny \textcircled{3}}}
 \def\dbar{{\,\mathchar'26\mkern-12mu d}}
 \def\erf{\mathrm{erf}}
-\def\const{\mathrm{const.}}
+\def\const{\mathrm{constant}}
 \def\pheat{\pfrac p{\ln T}V}
 \def\vheat{\pfrac V{\ln T}p}
 %%units
@@ -210,5 +170,3 @@
 \def\SIK{\,\mathrm{K}}
 \def\SImmHg{\,\mathrm{mmHg}}
 \def\SIPa{\,\mathrm{Pa}}
-%page
-\def\secpage#1#2{\begin{frame}\bch\bcenter{\bf \Huge #1} \skipline \tbox{#2}\ecenter\ech\end{frame}}

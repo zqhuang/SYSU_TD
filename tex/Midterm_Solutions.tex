@@ -1,0 +1,101 @@
+\documentclass[12pt,CJK]{article}
+\usepackage{geometry}
+\input{reduced_macros.tex}
+%\geometry{tmargin=0.3in, bmargin=0.5in, lmargin=0.8in, rmargin=0.8in, nohead, nofoot}
+\begin{document}
+\bch
+\title{Midterm Solutions}
+\author{Zhiqi Huang}
+\date{}
+\maketitle
+
+(一) ABAACB （每题5分）
+
+
+(二) \bitem
+\item[1.]{$0.08\,\mathrm{m}^3$ (5分)
+
+ {\gray 或等价的 $80\SIL$，或四舍五入后为该结果的答案都可以; 否则，如果结果大于$10\SIL$且小于$1000\SIL$，则说明对气体体积有正确的数量级概念，给1分。} }
+\item[2.]{$0.11$； （5分）
+
+  {\gray 如果写估算值 $0.1$ 则给4分。如果写反了$100:11$给2分。} }
+\item[3.]{$kT$； （5分）
+
+  {\gray如果写 $\frac{kT}{2}$ 给2分。}}
+\item[4.]{$\frac{\sqrt{\pi}}{2}$
+
+  {\gray如果写了不正确，但是大于$0.1$且小于$1$的答案，说明知道两者为同一数量级，且平均速率小于方均根速率，给2分；如果写了大于等于$1$且小于$10$的答案，说明仅知道两者为同一数量级，给1分。}}
+\item[5.]{$1.008\atm$  （5分）
+
+  {\gray 或四舍五入为该结果的答案都可以，如果写了大于$1.002\atm$且小于$1.01\atm$的结果，则说明定性地知道越往外分子数密度越高，且有正确的数量级概念，给2分。}}
+  \eitem
+
+  （三）
+  \bitem
+\item[1.]{速度分布函数是速度的概率密度函数；速率分布函数是速率(速度的大小)的概率密度函数。（15分）
+
+  {\gray 如果没有说出这个意思，仅仅提到两者量纲不同或单位不同，则给5分; 如果大致提到了这个意思，但是因为没有明确理解或小学语文是体育老师教的而导致描述错误（例如错误地说速度分布函数有正有负/是矢量/具有方向），则给10分。}
+}
+\item[2.]{
+
+  (1)泻流速率是平均速率的$1/4$，所以是$\upsilon_{\rm leak} = 200\SIm/\SIs$。（5分）
+
+  {\gray 如果用定义积分求， 求出正确结果也可以。正确写出平均速度的积分给1分，计算正确再得1分；正确写出泻流速率的积分给2分，计算正确再得1分；}
+
+  (2)根据泻流速率定义，单位时间单位面积小孔逸出分子数$\Delta N$等于泻流速率乘以容器内分子数密度，结果导致分子数密度变化
+  $$\Delta n = -\frac{\Delta N}{V} = - \frac{n \upsilon_{\rm leak} S \Delta t}{V}$$
+  也就是分子数密度变化的比例为：
+  $$\frac{\Delta n}{n} = - \frac{ \upsilon_{\rm leak} S \Delta t}{V} = -\frac{200\times 10^{-6}\times 1}{0.1} = -0.2\%.$$
+  (10分)
+{\gray 如果写出正确式子但是计算结果错误，给8分；如果忘了除以体积，给4分；如果语言描述大致靠谱但无法正确写出计算式子，给2分。}
+}
+
+
+\item[3.]{
+
+  (1) 记分子离地面距离为$z$，则$z$服从玻尔兹曼分布：$f(z) \propto e^{-\frac{mgz}{kT}}\ (z\ge 0)$。利用归一化条件可以确定
+    \begin{equation}
+      f(z) =\left\{\begin{array}{ll}
+      0, &  \text{if } z<0 \\
+       \frac{mg}{kT} e^{-\frac{mgz}{kT}}, & \text{if } z\ge 0.
+      \end{array}\right.
+      \label{eq}
+    \end{equation}
+      
+  $$ \overline{mgz} = \frac{mg}{kT} \int_0^\infty mgz e^{-\frac{mgz}{kT}}\,dz = kT.$$
+(5分)
+
+    {\gray 如计算结果错误，但是写对了玻尔兹曼分布+2分；写对势能平均值的积分式再+2分。}
+    {\gray 此外，也可以用能均分定理直接得到该结果。}
+
+      \skiplines
+    (2)不妨重新把高度的零点取在比较低的那个分子，则比较高的那个分子的高度$z$服从和\eqref{eq}同样的概率分布$f(z)$。所以$z>h$的概率为：
+    
+    $$P(z>h) = \int_h^\infty \frac{mg}{kT}e^{-\frac{mgz}{kT}} dz = e^{-\frac{mgh}{kT}}.$$
+    （10分)
+
+      {\gray     如果因为考虑对称性失误导致结果相差一半，则给6分。   }
+      
+      {\gray
+
+      解法2： 对两个分子的高度$z_1,z_2$的联合概率密度
+      $$F(z_1, z_2) = \left(\frac{mg}{kT}\right)^2e^{-\frac{mg(z_1+z_2)}{kT}},\ (z_1,z_2>0)$$
+      (2分）
+    
+     进行积分
+     $$P(|z_1-z_2|> h) = 1- P(|z_1-z_2|\le h) = 1- \int_0^\infty dz_1 \int_{\max(z_1-h,0)}^{z_1+h} F(z_1,z_2) dz_2 $$
+     或者直接写
+     $$P(|z_1-z_2|> h) = \int_0^\infty dz_1 \int_{z_1+h}^\infty F(z_1,z_2) dz_2 + \int_h^\infty dz_1 \int_0^{z_1-h} F(z_1,z_2) dz_2.$$
+     (4分）
+    
+    计算出结果为  $P(|z_1-z_2|> h)  = e^{-\frac{mgh}{kT}}$。 (4分)
+
+
+    }
+}
+
+  \eitem
+
+
+\ech
+\end{document}

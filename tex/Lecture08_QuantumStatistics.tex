@@ -1,23 +1,24 @@
 \documentclass[CJK]{beamer}
 \input{macros.tex}
 \input{titlepage.tex}
-\title{Lesson 05 - Quantum Statistics}
+\title{Lesson 08 - Quantum Statistics}
   \author{}
   \date{}
 \begin{document}
-\tpage{5}{量子统计}
+\tpage{8}{量子统计}
 
 \section{Reivew}
 
 \begin{frame}
 \chtitle{上一讲内容回顾}
 \bch
+{\large
 \bitem
-\item{能均分定理}
-\item{{\bf 理想}摩尔定体热容 = $\frac{R}{2}\times$ 二次型能量的项数}
-\item{概率的熵，多可能性事件的熵，多次重复多可能性事件的熵 （理解即可）}
-\item{孤立系统的熵增大原理$\Rightarrow$热平衡与热力学温度的数学定义（理解即可）}
-\eitem
+\item{能均分定理：如果$\theta f$在$\theta$的上下界抵消，则$\overline{\theta\frac{\partial\varepsilon}{\partial\theta}}=kT$}
+\item{最小转动惯量$\frac{\hbar^2}{kT}$；最大本征频率$\frac{kT}{\hbar}$}
+\item{室温下：单原子气体$\cvmol \approx \frac{3R}{2}$，双原子气体$\cvmol\approx\frac{5R}{2}$(大分子/弱化学键可能例外)，固体$\cvmol \approx 3R$(小分子/强化学键可能例外)}
+  \eitem
+  }
 \ech
 \end{frame}
 
@@ -26,223 +27,33 @@
 \chtitle{本讲内容}
 \bch
 \bitem
-\item{离散能级和实际摩尔定体热容}
 \item{玻色气体和费米气体}
 \eitem
 \ech
 \end{frame}
 
-\section{Quantum States}
 
 \begin{frame}
-\chtitle{生活中有很多“理想很丰满，现实很骨感”的例子}
+  \chtitle{量子统计内容在本课程——不——考}
 \bch
-\includegraphics[height=1.5in]{expectation_nn.png}\includegraphics[height=1.52in]{reality_nn.png}
+\includegraphics[width=1.5in]{notlove.jpg} \hspace{0.25in} \includegraphics[width=1.5in]{notexam.jpg}
 \ech
 \end{frame}
 
-\begin{frame}
-\chtitle{理想很丰满，现实很骨感}
-\bch
-上节课由能均分定理计算了{\bf 理想}摩尔定体热容。
-
-但实际气体或固体的摩尔定体热容往往比理想值要低很多，这是为什么呢？
-
-
-\addfig{2}{expectation_and_reality.jpg}
-
-\skipline
-
-赶紧去翻翻上节课后习题11是不是做对了\bye
-
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{量子力学的离散能级}
-\bch
-\bmini{0.45}
-经典图像：粒子的能量可以连续变化 
-
-\includegraphics[width=1.5in]{slope.jpg}
-\emini
-\hspace{0.2in}
-\bmini{0.45}
-量子力学：束缚态的能级一般是离散的
-
- \includegraphics[width=1.4in]{steps.jpg}  
-\emini
-\ech
-\end{frame}
-
-
-
-\begin{frame}
-\chtitle{束缚系统量子态的离散性-谐振子}
-\bch
-{\small 
-考虑一个质量为$m$，固有圆频率为$\omega$(即弹性系数为$m\omega^2$)的谐振子
-\addfig{1.5}{harmonic_oscillator.png}
-现在考虑所有能量小于$E$的谐振子的态的个数。若能量小于$E$，谐振子的位移$x$和动量$\calp$满足
-$$\frac{1}{2}m \omega^2 x^2 + \frac{p^2}{2m} \le E $$
-写成椭圆方程标准形式：
-$$\frac{x^2} {a^2} + \frac{p^2}{b^2} \le 1 $$
-其中$a = \frac{1}{\omega}\sqrt{\frac{2E}{m}}$, $b = \sqrt{2mE}$。故上述方程描述的相空间椭圆的面积为$ \pi a b = \frac{2\pi E}{\omega}$。
-}
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{束缚系统量子态的离散性-谐振子}
-\bch
-{\small 
-谐振子能量小于$E$的相空间的态的个数为
-$$n = \frac{2\pi E}{ h \omega}$$
-若把态按能量从低到高排，则第$n$个态的能量为
-$$ E_n \approx \frac{ n h\omega}{2\pi}$$
-量子力学的严格计算结果为
-$$ E_n = \frac{ (n+1/2) h\omega}{2\pi}\ \ (n = 0,1,2,\ldots)$$
-量子力学里经常用一个符号{\blue $\hbar = \frac{h}{2\pi}$}，则
-$$ E_n = \left(n + \frac{1}{2}\right) \hbar\omega\ \ (n = 0,1,2,\ldots)$$
-
-}
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{振动特征温度}
-\bch
-{\small 
-显然，要使处于能量最低($n=0$)态的谐振子发生振动（即到$n>0$的态去)，最起码要给予它$\hbar \omega$的能量。
-
-\skipline
-
-如果$kT\ll \hbar\omega$ ，则谐振子无法被热运动激发（因分子碰撞只能把$\sim kT$的动能传递给谐振子)。我们把$\Theta_{\rm osc} = \frac{\hbar\omega}{k}$叫做振动特征温度。
-}
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{振动特征温度的数量级}
-\bch
-{\small
-我们考虑一个“长度”为$1\angstrom$的共价键，典型的键能为$100\SIkcal/\SImol$，即每个键结合能为
-$E_b\sim \frac{4.2\times 10^5J}{6.02\times 10^{23}} \sim 0.7\times 10^{-18}J$
-
-我们近似取弹性系数
-$m\omega^2 \sim  \frac{2E_b}{(1 \angstrom)^2} \sim 140 \SIN/\SIm$，并取等效质量$m = \frac{A_1A_2}{(A_1+A_2)\times 6.02\times 10^{26}} \SIkg$，则$\omega \sim 10^{14}\SIHz \times \sqrt{\frac{8.4(A_1+A_2)}{A_1A_2}} $
-
-故振动特征温度
-$$\Theta_{\rm osc} =\frac{\hbar \omega}{k} \sim 10^3\SIK \times \sqrt{\frac{5(A_1+A_2)}{A_1A_2}} $$
-该估算比较粗糙，实际材料会有一个数量级的上下浮动。
-\bitem
-\item{大多数双原子气体的$\Theta_{\rm osc}$一般在若干个$10^3\SIK$之上。所以{\blue 室温下大多数双原子气体的振动自由度不被激发}。}
-\item{固体的$\Theta_{\rm osc}$则通常要小于室温。所以{\blue 室温下大多数固体的振动自由度是被激发的}。}
-\eitem
-}
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{转动的离散能级}
-\bch
-现在考虑绕固定轴的逆时针转动，设转动惯量为$I$。广义位置为转动角$\theta$，广义动量为$\calp = I\omega$ (这里$\omega = \frac{d\theta}{dt}$为转动角速度）。
-
-若要转动能量低于$E$，则$\frac{1}{2}I\omega^2 \le E$，或者写成$0\le \calp \le \sqrt{2I E}$。又$0\le \theta \le 2\pi$。则相空间内能量低于$E$的态个数为
-$$n = \frac{2\pi \sqrt{2IE}}{h} = \frac{\sqrt{2IE}}{\hbar}$$
-若把态按能量从低到高排，则第$n$个态的能量为
-$$E_n \approx \frac{n^2\hbar^2}{2I}$$
-严格的量子力学计算结果为
-$$E_n = \frac{n(n+1)\hbar^2}{2I}$$
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{转动特征温度}
-\bch
-同样道理，若$kT\ll \frac{\hbar^2}{2I}$，则热运动无法激发转动，我们把$\Theta_{\rm rot} = \frac{\hbar^2}{2kI}$叫做转动特征温度。
-
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{转动特征温度的数量级}
-\bch
-我们考虑一个双原子气体分子，设两个原子间的距离为$r$，两个原子的原子量分别为$A_1$和$A_2$，则转动惯量为
-$$I = 10^{-46} \SIkg\cdot\SIm^2 \times \frac{ A_1A_2}{6.02(A_1+A_2)} \left(\frac{r}{1\angstrom}\right)^2 $$
- 特征温度为
-$$\Theta_{\rm rot} =  \frac{\hbar^2}{2kI} = 24\SIK \times \frac{(A_1+A_2)}{ A_1A_2} \left(\frac{1\angstrom}{r}\right)^2$$
-一般都远远低于室温（特别是当$A_1$, $A_2$都较大时）。
-
-所以{\blue 室温下气体分子的转动自由度一般是被激发的}。
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{思考题}
-\bch
-先考虑简单的一维情形，设分子被限制在$0<x<L$的一维盒子里。
-\bitem
-\item{能量小于$E$的相空间的态有多少个？}
-\item{估算第$n$个能级的能量。}
-\eitem
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{平动特征温度}
-\bch
-把思考题的结果推广到三维，就可以得到边长为$L$的容器内气体的平动特征温度：
-$$\Theta_{\rm trans} = \frac{h^2}{8mkL^2} = 2.4\times 10^{-18}\SIK \times \frac{1}{A}\left(\frac{1\SIm}{L}\right)^2$$
-可见，在{\blue 宏观尺度的容器里，平动自由度一般都是被激发的}。
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{双原子气体的摩尔定体热容随温度的变化}
-\bch
-如果从低温开始到高温，双原子气体的转动自由度，振动自由度会被相继激发。摩尔定体热容就从$\frac{3}{2}R$增长到$\frac{5}{2}R$再到$\frac{7}{2}R$.
-
-\addfig{2.5}{CVmol_T.png}
-
-请再参考教材85页 图2-14
-\ech
-\end{frame}
 
 \section{Bosons and Fermions}
 
-\begin{frame}
-\bch
-需要理解的内容讲完了。
-
-\skipline
-
-下面我要开始乱讲，听不懂不要慌，因为——不——考。
-
-\skiplines
-
-\includegraphics[width=1.5in]{notlove.jpg} \hspace{0.25in} \includegraphics[width=1.5in]{notexam.jpg}
-
-\ech
-\end{frame}
 
 \begin{frame}
 \chtitle{玻尔兹曼不知道的绕口令}
 \bch
+{\large
 在玻尔兹曼的时代，量子力学还没被发现，遑论后来量子力学里的再次革命——“二次量子化”。
 
 \skiplines
 
 在二次量子化之后，我们把“测量到a态上有两个粒子”这句话重新进行了描述：“测量到有两个a粒子的态”。
-
+}
 \skipline
 
 \wulian绕口令说得不错
@@ -718,26 +529,6 @@ $$j = \sigma T^4 = 10^8 \SIW/\SIm^2 $$
 
 为什么地面上接收到的实际可用的太阳能往往比上述计算结果几乎要小一个数量级。
 
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{第五周作业(序号接第四周）}
-\bch
-\bitem
-\item[13]{能均分定理也适用于水中的浮游微粒，试由此求解教材习题2-24。}
-\item[14]{把室温下$1\SImol$稀薄氢气保持{\bf 压强不变}缓慢地加热，使得它温度升高$1\SIK$。在这个过程中氢气吸收了多少热量？
-
-\scriptsize
-提示：注意气体会膨胀做功，跟定体加热相比需要更多的热量。利用摩尔定体热容和理想气体状态方程。
-}
-\item[15]{计算温度为$T$的光子气体的光子数密度$n$。
-
-\skipline
-
-{\scriptsize 提示 ： 要用到数学常数Ap{\'e}ry's constant
-$$\zeta(3) = \sum_{n=1}^\infty \frac{1}{n^3} \approx 1.2020569\ldots $$}}
-\eitem
 \ech
 \end{frame}
 
