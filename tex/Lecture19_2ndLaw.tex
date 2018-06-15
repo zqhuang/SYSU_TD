@@ -1,17 +1,29 @@
-\documentclass[CJK]{beamer}
+\documentclass[CJK, 14pt]{beamer}
 \input{macros.tex}
 \input{titlepage.tex}
 \title{Lesson 19 - 2$^{\rm nd}$ Law of Thermodynamics}
   \author{}
   \date{}
-\begin{document}
+
+  \begin{document}
+  \bch
 \tpage{19}{热力学第二定律}
 
 \section{Review}
 
 \begin{frame}
-\chtitle{汤姆孙是谁}
-\bchL
+\frametitle{知识点回顾：节流}
+           {\blue 节流过程是等焓降压过程。}
+           
+  \bitem
+\item{当焦耳-汤姆孙系数$\pfrac TpH>0$时，节流效应为正，温度随着压强降低而\uline{1}；}
+\item{当焦耳-汤姆孙系数$\pfrac TpH<0$时，节流效应为负，温度随着压强降低而\uline{1}。}
+  \eitem
+  这两种效应都称为{\blue 焦耳-汤姆孙效应}。
+\end{frame}  
+
+\begin{frame}
+\frametitle{汤姆孙是谁}
 学习焦耳-汤姆孙效应时，我有个疑问：
 
 \skipline
@@ -19,12 +31,11 @@
 焦耳这位dalao我熟，但汤姆孙我怎么没听说过？
 \addfig{1.3}{tom.jpg}
 
-\echL
 \end{frame}
 
 \begin{frame}
-\chtitle{原来汤姆孙就是开尔文\bigwulian}
-\bch
+\frametitle{原来汤姆孙就是开尔文\bigwulian}
+
 \bitem
 \item{James Prescott Joule
   
@@ -35,73 +46,137 @@
 \addfig{0.5}{Kelvin.jpg}
 }
 \eitem
-这两位可不止是提出了焦耳-汤姆孙效应那么简单
-\ech
+这两位可不止是提出了焦耳-汤姆孙效应那么简单……
+
 \end{frame}
 
 
 
 \begin{frame}
-\chtitle{这两位dalao还摧毁了人类的梦想}
-\bch
-\bitem
-\item{最早人们经常幻想可以{\bf 无限制产生能量的机器（第一类永动机）}。}
-\item{人们逐渐熟悉能量守恒定律，特别是{\bf 焦耳确定了热功当量}之后，明白了{\bf 能量不能无中生有}，第一类永动机只是痴人说梦。}
-\item{梦想不能停：既然热量是能量的一种形式，海水中储藏着大量的热能（内能）。如果这些能量能够无条件地转化为有用的机械功，岂非几乎取之不尽？这类假想的{\bf 可以无条件从单一热源中吸收热量转化为机械功的机器称为第二类永动机。它并不违反能量守恒定律。}}
-\item{最后，开尔文提出热力学第二定律的开尔文表述：{\bf 第二类永动机不可能}。}
-\eitem
+  \frametitle{第一类永动机(perpetuum mobile of the 1st kind)}
+  \bmini{0.46}
 
-\ech
+  西方的永动机
+  
+  \lfig{1.6}{magiccycle.jpg}
+  
+       {\scriptsize 法国人亨内考在13世纪提出的“魔轮”}
+
+  \emini
+  \bmini{0.5}
+  中国风永动机
+
+
+
+  \addfig{0.5}{zuojiaoyoujiao.jpg}
+  
+  \lfig{2.5}{leftright.png}
+
+  {\scriptsize 摘自温瑞安《惊艳一枪》的精彩片段}
+
+  
+  \emini
+  
+  
 \end{frame}
 
 \begin{frame}
-\bch
+  
+  \frametitle{{\bf 焦耳确定了热功当量}之后，人们逐渐总结出了{\bf 能量守恒定律}}
+  
+  \addfig{1.5}{bucunzai_diyilei.jpg}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{第二类永动机(perpetuum mobile of the 2nd kind)}
+
+  假想的可以{\bf 从单一热源中吸收热量转化为机械功，并不产生其他影响的机器称为第二类永动机。}
+
+  \addfig{2.5}{pm2nd.jpg}
+
+
+
+ 
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{热力学第二定律的开尔文表述}
+
+  \tbox{\bf 不可能从单一热源吸取热量，使之完全变为有用的功而不产生其他影响。}
+
+  \addfig{1.8}{bucunzai_dierlei.jpg}       
+
+
+\end{frame}
+
+
+
+\begin{frame}
 \addfig{1}{xdldt.jpg}
 
 为了纪念毁梦者，我们把能量的国际标准单位叫做焦耳($\SIJ$)，把温度的国际标准单位叫做开尔文($\SIK$)。
-\ech
 \end{frame}
 
 \begin{frame}
-\chtitle{本讲内容}
-\bch
+\frametitle{本讲内容}
 \bitem
 \item{热力学第二定律的多种表述方式}
 \item{克劳修斯不等式和热力学第二定律的“微分”形式}
-\item{自由能和自由焓名称的由来}
 \eitem
-\ech
 \end{frame}
 
 \section{2nd Law}
-\secpage{热力学第二定律}{开尔文表述：不可能从单一热源吸取热量，使之完全变为有用的功而不产生其他影响；\\
-克劳修斯表述：不可能把热量从低温物体传到高温物体而不引起其他变化。}
+\secpage{热力学第二定律}{无条件地把内能拿出来做功？或许在梦里可以吧\bye}
 
 \begin{frame}
-\chtitle{热力学第二定律的开尔文表述}
-\bch
-热力学第二定律的{\bf 开尔文表述(Kelvin Statement)}简单地说就是：
-\tbox{\bf 第二类永动机不可能。}
+\frametitle{热力学第二定律的开尔文表述}
 
-或者把第二类永动机的定义进行一番解释的说法就是：
 \tbox{\bf 不可能从单一热源吸取热量，使之完全变为有用的功而不产生其他影响。}
-\ech
-\end{frame}
 
-\begin{frame}
-\chtitle{容易漏掉的一些关键词}
-\bch
+  这个表述里涉及到三个对象：作为单一热源的热库A，机械系统B，从A吸热并对B做功的热机C。
+  
 \bitem
-\item{“单一热源”（指达到热平衡的，即温度唯一的热源）不可省略。如果允许多热源的话，很容易找到反例，例如可逆卡诺循环。}
-\item{“不产生其他影响”不可忽略。如果允许产生其他影响，则从单一热源给气体加热使之膨胀做功就是反例。}
-\eitem
+\item{“单一热源”指只有一个热库（温度唯一）。}
+\item{“吸热”是指净吸热。}
+\item{“不产生其他影响”是指C必须恢复原状。}
+  \eitem
 
-\ech
+{\scriptsize “其他”是指“A内能减少”和“对B做功”之外}。  
+
+
+  
 \end{frame}
 
+
 \begin{frame}
-\chtitle{我们再来谈谈另一位dalao}
-\bch
+\frametitle{热库的概念}
+
+热库是指比系统大得多，且一直处于平衡态的热源。热库和系统之间的热量交换对热库来说如九牛一毛，不影响热库的温度。
+
+\addfig{1.8}{heatsource.png}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+  \frametitle{思考题}
+
+  \addfig{1}{think3.jpg}
+  
+  热力学第二定律的开尔文表述：{\bf 不可能从单一热源吸取热量，使之完全变为有用的功而不产生其他影响}。如果去掉“单一”或者去掉“不产生其他影响”还成立吗？如果不成立，请举出反例。
+             
+  
+\end{frame}
+
+
+\begin{frame}
+\frametitle{我们再来谈谈另一位dalao}
 
 \bcenter
 克劳修斯(Rudolf Clausius)
@@ -114,98 +189,75 @@ $\uparrow$
 
 这位dalao提出了熵
 \ecenter
-\ech
+
 \end{frame}
 
 \begin{frame}
-\chtitle{热力学第二定律的克劳修斯表述}
-\bch
-热力学第二定律的{\bf 克劳修斯表述(Clausius Statement)}：
+\frametitle{热力学第二定律的克劳修斯表述}
 \tbox{\bf 不可能把热量从低温物体传到高温物体而不引起其他变化。}
-\ech
+
 \end{frame}
 
 \begin{frame}
-\chtitle{补充点逻辑学常识}
-\bch
-如果两个逻辑命题等价：$A=B$， 则两个命题的否命题也等价：$\mathrm{not}\ A = \mathrm{not}\ B$
-\ech
+\frametitle{补充点逻辑学常识}
+
+\tbox{如果两个逻辑命题等价：$A=B$， 则两个命题的否命题也等价：$\mathrm{not}\ A = \mathrm{not}\ B$}
+
 \end{frame}
 
 \begin{frame}
-\chtitle{开尔文表述等价于克劳修斯表述的证明}
-\bch
+\frametitle{两种表述的等价性}
 {\small
 \bitem
 \item{
-开尔文表述的否命题是：
-
-A）可以从单一热源吸热，使之完全变为有用的功而不产生其他影响。
+开尔文表述的否命题是： A）可以从单一热源吸热，使之完全变为有用的功而不产生其他影响。
 }
 \item{
-克劳修斯表述的否命题是：
-
-B） 可以把热量从低温物体传到高温物体而不引起其他变化。
+克劳修斯表述的否命题是： B） 可以把热量从低温物体传到高温物体而不引起其他变化。
 }
 \eitem
-
-只要证明A和B等价，则开尔文表述和克劳修斯表述等价。
-
-先证A $\rightarrow$ B
-
-设A成立，则可以从高温物体吸热，转化为驱动（可逆）制冷机的功，从低温物体吸热传递给高温物体。其净效果为从低温热源吸热传递给高温热源。
-
-\skipline
-
-再证B $\rightarrow$ A
-
-设B成立，则可以从低温物体传热到高温物体，然后在高温物体和低温物体之间通过一个（可逆）卡诺循环把热量返还给低温物体，并额外做功。净效果就是从高温物体吸热做功。
+\bitem
+\item{A $\rightarrow$ B： 设A成立，则可以从高温物体吸热，转化为驱动可逆制冷机的功，从低温物体吸热传递给高温物体。其净效果为从低温热源吸热传递给高温热源。}
+\item{B $\rightarrow$ A： 设B成立，则可以从低温物体传热到高温物体，然后在高温物体和低温物体之间通过一个可逆卡诺循环把热量返还给低温物体，并额外做功。净效果就是从高温物体吸热做功。}
+  \eitem
 }
-\ech
+
 \end{frame}
 
 \begin{frame}
-\chtitle{孤立系统的熵增大原理和热力学第二定律等价}
-\bchL
+\frametitle{孤立系统的熵增大原理和热力学第二定律等价}
+
 克劳修斯表述实际上和孤立系统的熵增大原理是一回事情。因为热量$Q$($Q>0$)从低温物体（设温度为$T_2$)向高温物体(设温度为$T_1$)传递，等价于熵减过程
 $$\Delta S = Q/T_1 - Q/T_2<0$$
-\echL
+
 \end{frame}
 
 \begin{frame}
-\chtitle{卡诺定理和热力学第二定律的等价}
-\bchL
+\frametitle{卡诺定理和热力学第二定律的等价}
+
 卡诺定理是熵增大原理推出来的，故热二律$\rightarrow$卡诺定理。
 
 反之，若热二律不成立，存在一个热机A可以从单一热源吸热做功而不引起其他变化，则该热机的效率为$1>1-T_2/T_1$，与卡诺定理矛盾。所以卡诺定理$\rightarrow$热二律。
 
-\echL
+
 \end{frame}
 
 \begin{frame}
-\chtitle{热力学温标的理想热机定义法}
-\bchL
-如果一开始不引入热力学温标，而仅仅把卡诺定理表述为在两个恒温（“恒温”的定义可以由热力学第零定律得到，不需要具体温标）热源之间工作的热机具有相同效率。则我们可以用可逆热机来定义热力学温标。
-即取定某标准点$T_1$后，通过可逆热机效率$\eta$来定义$T_2 \equiv (1-\eta)T_1$。这种定义热力学温标的方法和测温物质无关。
-\echL
-\end{frame}
+\frametitle{总结热力学第二定律的多种表述方式}
 
-\begin{frame}
-\chtitle{总结热力学第二定律的多种表述方式}
-\bchL
 \bitem
 \item{开尔文表述：不可能从单一热源吸热转化为功而无其他影响 （即：第二类永动机不可能）}
 \item{克劳修斯表述：不可能低温物体传热给高温物体而无其他影响}
 \item{孤立系统的熵增大原理：孤立系统在非平衡态熵会持续增大，直到到达平衡态后熵取到极大值不再改变。}
 \item{卡诺定理：所有工作于温度为$T_1$的高温热源和温度为$T_2$的低温热源之间的可逆热机效率均为$1-T_2/T_1$，不可逆热机的效率则低于这个值。}
 \eitem
-\echL
+
 \end{frame}
 
 
 \begin{frame}
-\chtitle{热力学第二定律练习I}
-\bchL
+\frametitle{热力学第二定律练习I}
+
 
 \addfig{1.}{songfen.jpg}
 
@@ -213,12 +265,12 @@ $$\Delta S = Q/T_1 - Q/T_2<0$$
 \item{论证摩擦生热过程是不可逆的}
 \eitem
 
-\echL
+
 \end{frame}
 
 \begin{frame}
-\chtitle{热力学第二定律练习II}
-\bchL
+\frametitle{热力学第二定律练习II}
+
 
 \addfig{1.}{songfen2.jpg}
 
@@ -226,270 +278,82 @@ $$\Delta S = Q/T_1 - Q/T_2<0$$
 \item{有人想利用海洋不同深度处温度不同制造一种机器，把海水的内能转化为机械功，这是否违反热力学第二定律？}
 \eitem
 
-\echL
+
 \end{frame}
 
 
 \begin{frame}
-\chtitle{热力学第二定律练习III}
-\bchL
+\frametitle{热力学第二定律练习III}
+
 
 \addfig{1.}{songfen.jpg}
 
 \bitem
 \item{给气筒里的气体加热，使它在保持内能不变的情况下膨胀推动活塞做功，这把热完全转化为了功，是否违反热力学第二定律？}
 \eitem
-\echL
+
 \end{frame}
 
 \section{Clausius Inequality}
 
-\secpage{克劳修斯不等式}{$$\sum_{i=1}^n \Delta S_i = \sum_{i=1}^n \frac{-\dbar Q_i}{T_i} \ge 0$$}
+\secpage{克劳修斯不等式}{$$\oint \frac{\dbar Q}{T_e} \le 0 $$}
 
 
 
 \begin{frame}
-\chtitle{热库的概念}
-\bch
-热库是指比系统大得多的热源。热库和系统之间的热量交换对热库来说如九牛一毛，不影响热库的温度。
+\frametitle{克劳修斯不等式}
 
-\addfig{1.8}{heatsource.png}
-\ech
+设在一个循环中，系统依次和温度为$T_1, T_2, \ldots, T_n$的环境接触，分别吸收热量$\dbar Q_1, \dbar Q_2, \ldots, \dbar Q_n$。环境的总熵不减：
+$$\sum_{i=1}^n \Delta S_i = \sum_{i=1}^n \frac{-\dbar Q_i}{T_i} \ge 0.$$
+当热源温度连续变化时，
+{\blue $$\oint \frac{\dbar Q}{T_e} \le 0, $$}
+{\bf 等号对且仅对可逆循环成立}。
+
+{\scriptsize 我们用符号$T_e$ 明确这里的温度为环境(environment)热源的温度。}
+
 \end{frame}
 
 
 \begin{frame}
-\chtitle{克劳修斯不等式}
-\bch
-{\small
-设在一个循环中，系统依次和温度为$T_1, T_2, \ldots, T_n$的环境（热库）接触，分别吸收热量$\dbar Q_1, \dbar Q_2, \ldots, \dbar Q_n$。根据孤立系熵增大原理，如果循环可逆，系统和环境的总熵不变；若循环不可逆，系统和环境的总熵必须增大。又，熵是态函数，故系统的熵经过循环后不变。那么环境的熵对可逆循环而言不变，对不可逆循环而言必须增大。写成数学表达式：
-$$\sum_{i=1}^n \Delta S_i = \sum_{i=1}^n \frac{-\dbar Q_i}{T_i} \ge 0$$
-其中等号对且仅对可逆循环成立。
+\frametitle{热力学第二定律的微分形式}
 
-当热源温度连续变化时，上述结果即称为积分形式的{\bf 克劳修斯不等式}：
-{\blue $$\oint \frac{\dbar Q}{T_e} \le 0 $$}
-{\bf 等号对且仅对可逆循环成立}。我们用符号$T_e$ 明确这里的温度为环境热源的温度（下标e指environment)。
-}
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{热力学第二定律的“微分”形式}
-\bch
-假设系统和温度为$T_e$的环境(热库)发生接触。在一个微过程中，
-设系统的吸热量为$\dbar Q$，则环境熵变为
+设系统和温度为$T_e$的环境发生接触。在一个微过程中，系统的吸热量为$\dbar Q$，则环境熵变为
 $$ dS_e = \frac{-\dbar Q}{T_e} $$
 把系统和环境的总和看作一个孤立系统，设系统熵变为$dS$，则
 $$dS +dS_e \ge 0$$
 综合上面两式即有
 {\blue $$\dbar Q \le T_e dS $$
 等号当且仅当过程可逆时成立}。
-\ech
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{热二律微分形式的另一种写法}
+
+对$pVT$系统，根据热力学第一定律
+  $$dU = \dbar Q - p_edV$$
+这里$p_e$为环境的压强，以及热力学第二定律
+$$ \dbar Q \le T_e dS $$
+即有
+{\blue $$dU \le T_edS - p_edV$$
+等号当且仅当过程可逆时成立}
+
+{\scriptsize 注意不要和态函数全微分$dU = TdS - pdV$混淆。}
 \end{frame}
 
 
 \begin{frame}
-\chtitle{现在问题来了}
-\bch
+\frametitle{附录：热力学温标的理想热机定义法}
 
-教材中证明克劳修斯不等式时，$T$指的是环境温度。证明结束之后（从184页讨论热温比开始）就默默地把$T$当成了系统温度。
+如果一开始不引入热力学温标，而仅仅把卡诺定理表述为在两个恒温（“恒温”的定义可以由热力学第零定律得到，不需要具体温标）热源之间工作的热机具有相同效率。则我们可以用可逆热机来定义热力学温标:
 
-\addfig{1.8}{huangainian.png}
-\ech
+取定某标准点$T_1$后，通过可逆热机效率$\eta$来定义$T_2 \equiv (1-\eta)T_1$。这种定义热力学温标的方法和测温物质无关。
+
 \end{frame}
 
 
-\begin{frame}
-\chtitle{另一个头疼的问题}
-\bch
-使用温度的概念的前提是系统处处达到热平衡。如果是不可逆过程，系统不是时时处于平衡态，那么教材里的克劳修斯不等式$\oint \frac{\dbar Q}{T} < 0$和热力学第二定律微分表达式$\dbar Q < TdS$里的$T$都是什么意思？
-
-\skiplines
-
-为了能理解这些概念，我们要先深入理解下什么是可逆过程。
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{关于可逆传热过程}
-\bch
-
-我们提到，温差很小的两个物体（设温度为$T$和$T+\delta T$)之间传递热量$Q$，若传递过程足够缓慢，则熵变的数量级为
-  $$\Delta S \sim Q\left(\frac{1}{T}-\frac{1}{T+\delta T}\right) \approx \frac{Q}{T^2}\delta T $$
-  可见，这样的过程若只进行固定的次数，则当$\delta T\rightarrow 0$时，熵变趋向于零。
 
 \ech
-\end{frame}
-
-\begin{frame}
-\chtitle{关于可逆传热过程}
-\bch
-阅读教材191页的“热传递过程”，然后思考
-
-\addfig{1.8}{think3.jpg}
-
-只要温度梯度趋向于零，传热足够缓慢，就一定是可逆过程吗？
-
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{反例}
-\bch
-
-\addfig{3.1}{dTdx0.png}
-
-假设导热棒上形成了稳恒热流，则它的状态不发生改变（这是在外界帮助下形成稳恒的非平衡态的例子）。导热棒的熵显然没有任何理由发生变化。
-
-\skipline
-
-但是，无论温度梯度多小，传热多么缓慢，熵变
-$$ \Delta S = Q\left(\frac{1}{T_2} - \frac{1}{T_1}\right) $$
-并不趋向于零。
-
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{热传递的可逆判据}
-\bch
-对$N$次热传递过程，如果每次热传递物体之间的温差$\Delta T$和传递的热量$\Delta Q$满足
-{\blue $$N\, \Delta T\,\Delta Q\rightarrow 0$$}
-（即$\Delta T\Delta Q$是$1/N$的高阶无穷小）
-且{\blue 传热过程足够缓慢}，则该过程是{\blue 可逆}的。
-
-不满足该判据的热传递过程一般不可逆。
-
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{热传递的可逆判据举例}
-\bch
-\bex
-对于可逆卡诺热机，热传递只发生两次($N=2$固定)，若每次温差$\Delta T$趋于零，传递热量$\Delta Q$固定，则$N\Delta T\Delta Q$显然趋向于零，故在传热过程足够缓慢时可以理想为可逆过程。
-\eex
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{热传递的可逆判据举例}
-\bch
-\bex
-对于教材191页的$N$个热库逐级加热的例子，$\Delta T$为$1/N$的量级，$\Delta Q$也是$1/N$的量级。显然$N\Delta T\Delta Q$当$N\rightarrow \infty$时趋向于零。故在传热过程足够缓慢时可以理想为可逆过程。
-\eex
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{热传递的可逆判据举例}
-\bch
-
-\addfig{3.1}{dTdx0.png}
-
-在这个例子中，我们可以把热传导棒划分成$N$段，每相邻两段的温度差$\Delta T$为$1/N$的量级，相邻两端之间传递的热量是固定的有限大小。于是$N\Delta T \Delta Q$并不趋向于零。故是不可逆过程。
-\ech
-\end{frame}
-
-
-
-\begin{frame}
-\chtitle{接近平衡态时的近似温度概念}
-\bch
-如果一个系统虽然处于非平衡态，但很接近温度为$T$的平衡态，即它可以划分为很多可以看成平衡态的子系统，每个子系统的温度相对于平均温度$T$的偏离$\delta T$都满足：
-$$ \frac{|\delta T|}{T} \ll 1$$
-我们有理由近似认为这个系统的“温度”近似为$T$。实际上，日常生活中很少有完美地处于平衡态的物体，我们所说的温度大都是指近似意义下的平均温度。
-\ech
-\end{frame}
-
-
-\begin{frame}
-\chtitle{$\dbar Q \le TdS$取不等号时的物理解释}
-\bch
-一个近似温度为$T$的非平衡态系统，吸收了热量$\dbar Q$之后，熵的改变不仅有平衡态计算公式$dS_{\rm eq} = \frac{\dbar Q}{T}$的贡献，还有非平衡态自发地往平衡态靠拢的$dS_{\rm neq}>0$的贡献，这两个贡献可能是同数量级的，故而有
-$$\dbar Q = T dS_{\rm eq} = T(dS - dS_{\rm neq}) = TdS- TdS_{\rm neq} < TdS$$
-
-\skipline
-
-这就是教材上的热力学第二定律的“微分”表达式取不等号时的物理解释。
-
-如果系统足够接近平衡态，则$dS_{\rm neq}$的贡献可能是满足可逆判据的高阶无穷小，不等式转化为我们熟悉的平衡态等式。
-
-\skipline
-
-{\scriptsize 你可能对直接用$\dbar Q = TdS_{\rm eq} $有点疑问，既然只是温度近似为$T$，则使用
-$\dbar Q = (T+\delta T) dS_{\rm eq}$似乎更为妥当。但是，由于$|\delta T|/T\ll 1$，所得的修正只是一个二阶小量，对一阶小量的等式和不等式都无影响。}
-
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{总结}
-\bchL
-如果把克劳修斯不等式和热力学第二定律中的温度解释为环境热库温度，则
-{\blue $$\oint \frac{\dbar Q}{T_e} \le 0 $$
-$$ T_edS \ge \dbar Q $$}
-严格成立。无须作额外假设。
-
-\skipline
-如果假设系统始终接近平衡态，则克劳修斯不等式和热力学第二定律“微分”表述中的环境热库温度$T_e$可以替换为系统的近似温度$T$。因为这个表述里不涉及环境，思考起来相对简洁一些。
-\echL
-\end{frame}
-
-
-\begin{frame}
-\chtitle{另一种写法}
-\bchL
-对$pVT$系统，根据$\dbar Q = dU + pdV$即有
-\tbox{$$dU \le TdS - pdV$$}
-这也被看作热力学第二定律的“微分”表达式。
-
-\skiplines
-
-{\scriptsize
-注意：我始终在“微分”上加个引号。当取不等号时，$dU < TdS - pdV$不是态函数的微分表达式。因为这时的系统不是平衡态，$T$也不是严格的态函数。对严格的态函数而言，$dU = TdS - pdV$才是真正的态函数全微分表达式。}
-\echL
-\end{frame}
-
-\section{Free Energy and Free Enthalpy}
-
-\begin{frame}
-\chtitle{自由能}
-\bch
-{\small
-{\blue  设系统（近似）温度固定为$T$。在某个过程中系统对外做功$A'$，自由能改变了$\Delta F$。证明: $A'\le -\Delta F$，等号当且仅当过程可逆时成立。}
-
-设系统从环境吸热$Q$，则由热一律有$Q = A' + \Delta U$。
-由$F$的定义，有
-$$\Delta F = \Delta U - \Delta (TS) = \Delta U - T\Delta S $$
-又根据热二律的微分形式，有$T\Delta S \ge Q = A' +\Delta U$。故
-$$A' \le - \Delta F$$
-等号当且仅当过程可逆时成立。
-
-也就是说，{\bf 定温过程中，对外做功不大于自由能的减少}。可以把自由能理解为恒温条件下“能自由对外做功”的那部分内能。这就是“自由能”的名称的由来。
-}
-
-\ech
-\end{frame}
-
-\begin{frame}
-\chtitle{自由焓}
-\bch
-
-{\blue  设某系统（近似）温度固定为$T$，压强固定为$p$。在某个过程中系统对外功$A'$，体积改变了$\Delta V$，自由焓改变了$\Delta G$。我们往往对系统对定压环境做的功$p\Delta V$并不感兴趣，而只考虑系统做的其他有用功$A'_{\rm else} = A'-p\Delta V$ （例如，额外装了发电装置等）。证明: $A'_{\rm else}  \le -\Delta G$，等号当且仅当过程可逆时成立。}
-
-由于是定温条件下的过程，对外做功不大于自由能的减少：
-$$ A' \le - \Delta F = -\Delta (G- pV) = - \Delta G + p \Delta V$$
-两边减去$p\Delta V$即得结论。
-
-也就是说，{\bf 定温定压过程中，系统做额外有用功不大于自由焓的减少}。可以把自由焓理解为恒温恒压条件下“能自由对外做的额外有用功”的那部分焓。这就是“自由焓”的名称的由来。
-
-\ech
-\end{frame}
-
-
 \end{document}

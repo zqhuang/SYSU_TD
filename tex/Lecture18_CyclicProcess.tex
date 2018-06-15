@@ -85,7 +85,7 @@ $$\Delta S = \Delta S_i + \Delta S_j = - \frac{Q_{i\rightarrow j}}{T_i}+ \frac{Q
 
 
 \section{Cyclic Process}
-\secpage{循环过程}{(正循环)热机效率 = 对外做功/吸收热量; \\(逆循环)制冷机效率 = 吸收热量/消耗的功}
+\secpage{循环过程}{(正循环)热机效率 = 对外净做功/吸收热量; \\(逆循环)制冷机效率 = 吸收热量/消耗的功}
 
 \begin{frame}
 \chtitle{蒸汽机}
@@ -133,7 +133,7 @@ $$\Delta S = \Delta S_i + \Delta S_j = - \frac{Q_{i\rightarrow j}}{T_i}+ \frac{Q
 \chtitle{正循环热机}
 \bchL
 
-系统对外界做功($A'>0$)的循环为正循环。
+系统对外界净做功$A'_{\rm net}>0$的循环为正循环。
 
 \addfig{3}{heat_engine.jpg}
 \echL
@@ -143,7 +143,7 @@ $$\Delta S = \Delta S_i + \Delta S_j = - \frac{Q_{i\rightarrow j}}{T_i}+ \frac{Q
 \chtitle{逆循环制冷机}
 \bchL
 
-外界对系统做功($A>0$)的循环为逆循环。逆循环热机也叫制冷机。
+外界对系统净做功$A_{\rm net}>0$的循环为逆循环。逆循环热机也叫制冷机。
 
 \addfig{3}{cold_engine.jpg}
 \echL
@@ -156,8 +156,8 @@ $$\Delta S = \Delta S_i + \Delta S_j = - \frac{Q_{i\rightarrow j}}{T_i}+ \frac{Q
 \bitem
 \item{蒸汽机的一个循环}
 \item{制冷机的一个循环}
-\item{净吸热量$Q>0$的循环}
-\item{净放热量$Q'>0$的循环}
+\item{净吸热量$Q_{\rm net}$大于零的循环}
+\item{净放热量$Q_{\rm net}'$大于零的循环}
 \item{$p$-$V$图上顺时针的闭合曲线}
 \item{$p$-$V$图上逆时针的闭合曲线}
 \item{$T$-$S$图上顺时针的闭合曲线}
@@ -174,8 +174,8 @@ $$\Delta S = \Delta S_i + \Delta S_j = - \frac{Q_{i\rightarrow j}}{T_i}+ \frac{Q
 \addfig{2}{heat_engine.jpg}
 
 
-{\bf 正循环把热量转化为机械功。}设正循环热机从高温热源1吸热$Q_1$，对外做功$A'$，并对低温热源2放热$Q_2'$。{\bf 热量转化为机械能的百分比称为正循环热机的效率，记作$\eta$。}
-$$\eta \equiv \frac{A'}{Q_1}=\frac{Q_1-Q_2'}{Q_1} $$
+{\bf 正循环把热量转化为机械功。}设正循环热机从高温热源1吸热$Q_1$，对外净做功$A'_{\rm net}$，并对低温热源2放热$Q_2'$。{\bf 热量转化为机械能的百分比称为正循环热机的效率，记作$\eta$。}
+$$\eta \equiv \frac{A'_{\rm net}}{Q_1}=\frac{Q_1-Q_2'}{Q_1} $$
 
 
 \echL
@@ -215,8 +215,8 @@ $$\eta = \frac{Q_1-Q_2'}{Q_1} = 1-\frac{T_2|\Delta S_2|}{T_1|\Delta S_1|}$$
 
 \addfig{2}{cold_engine.jpg}
 
-{\bf 逆循环利用外界提供的机械功从低温热源吸热制冷。}设外界对逆循环热机做功$A$，使它从低温热源2吸热$Q_2$，并对高温热源放热$Q_1'$。{\bf 制冷量$Q_2$与外功$A$之比称为逆循环热机的制冷系数，记作$\varepsilon$。}
-$$\varepsilon \equiv \frac{Q_2}{A}=\frac{Q_2}{Q_1'-Q_2} $$
+{\bf 逆循环利用外界提供的机械功从低温热源吸热制冷。}设外界对逆循环热机净做功$A_{\rm net}$，使它从低温热源2吸热$Q_2$，并对高温热源放热$Q_1'$。{\bf 制冷量$Q_2$与外功$A$之比称为逆循环热机的制冷系数，记作$\varepsilon$。}
+$$\varepsilon \equiv \frac{Q_2}{A_{\rm net}}=\frac{Q_2}{Q_1'-Q_2} $$
 
 \echL
 \end{frame}
@@ -247,6 +247,8 @@ $$\varepsilon <  \frac{T_2}{T_1-T_2} $$
 如果把一个{\bf 可逆的}正循环热机反向运转，就是逆循环热机，容易根据定义得出两者的效率$\eta$, $\varepsilon$存在如下关系
 
 \tbox{$$\eta(1+\varepsilon) = 1$$}
+
+注意：如果循环不可逆，则不存在反向运转的操作。
 \echL
 \end{frame}
 
@@ -355,9 +357,9 @@ $$\eta = \frac{A'}{Q_1} = \frac{(T_1-T_2)(S_2-S_1)}{T_1(S_2-S_1)} = 1- \frac{T_2
 
 
 \begin{frame}
-\chtitle{理想气体多方循环}
+\chtitle{理想气体的可逆多方循环}
 \bchL
-设理想气体定体热容$C_V$为常量。把卡诺循环的两个等温过程换成多方指数为$n$的多方过程（即整个循环为 多方-绝热-多方-绝热），则正循环热机的效率仍然可以写成
+设理想气体定体热容$C_V$为常量。把卡诺循环的两个等温过程换成多方指数为$n$的多方过程（即整个循环为 多方-绝热-多方-绝热），则可逆热机的效率仍然可以写成
 {\blue $$\eta = 1-\frac{T_2}{T_1}$$}
 其中$T_1, T_2$ ($T_1>T_2$) 是（循环中任一个绝热过程对应的）绝热线的两端的温度。
 
