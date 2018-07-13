@@ -1,4 +1,4 @@
-\documentclass[12pt,CJK]{article}
+\documentclass[10pt,CJK]{article}
 \usepackage{geometry}
 \input{reduced_macros.tex}
 \geometry{tmargin=0.3in, bmargin=0.5in, lmargin=0.7in, rmargin=0.7in, nohead, nofoot}
@@ -6,13 +6,12 @@
 \renewcommand{\thepage}{}
 \begin{document}
 \bch
-{\large 热学课堂练习 II 诸神黄昏版 (总分$\times 0.05$换算成平时分);}
+{\large 热学课堂练习 诸神黄昏版}
 
-%{\vskip 0.3in}
+{\vskip 0.05in}
 
 姓名 ....................... {\hskip 0.5in}    学号 .......................{\hskip 0.5in}  分数 ...................
 
-%{\vskip 0.1in}
 \bitem
 
 \item[(一)]{选择题，每题10分。
@@ -21,12 +20,12 @@
 
 \item[(1)]{设实际气体的定体热容为$C_V$，定压热容为$C_p$。下列哪个表达式和焦耳汤姆孙系数$\pfrac TpH${\bf 不一定}等价 \bropt
   
-  \optlist{$-\frac{\pfrac HpT}{C_p}$}{$T \pfrac VHp - V\pfrac THp$}{$\frac{T\pfrac VTp  -V}{C_V+\nu R}$}
+  \optlist{$\frac{T\pfrac VTp  -V}{C_V+\nu R}$}{$-\frac{\pfrac HpT}{C_p}$}{$T \pfrac VHp - V\pfrac THp$}
 }
   
-\item[(2)]{处于热平衡的单一成分理想气体中任取一个分子，其速率超过方均根速率的$\sqrt{6}$倍，且速度的三个分量满足$\upsilon_x>\upsilon_y>\upsilon_z$的概率约为 \bropt
+\item[(2)]{处于热平衡的单一成分理想气体中任取一个分子，其速率超过方均根速率的$2$倍，但速度的$x$方向分量的大小不超过方均根速率（即$\upsilon>2\upsilon_{\rm rms}, |\upsilon_x|<\upsilon_{\rm rms}$）的概率为 \bropt
   
-  \optlist{$2.21\times 10^{-4}$}{$1.47\times 10^{-4}$}{$7.35\times 10^{-5}$}
+  \optlist{$\sqrt{\frac{3}{2\pi}}e^{-3/2}$}{$\sqrt{\frac{3}{2\pi}}e^{-6}$}{$\sqrt{\frac{6}{\pi}}e^{-6}$}
 
 }    
 \item[(3)]{某气体的状态方程为$\left(p+\frac{\nu^2 a}{V^2T}\right)V = \nu R T$，其中$\nu$为摩尔数，$p, V, T$分别为压强，体积和热力学温度，$a>0$为常量。则该气体的摩尔定体热容 \bropt
@@ -49,18 +48,24 @@
   \eitem
 }
 
+  
 \item[(二)]{
   对只有两个独立变量的$pVT$系统证明：
   $$\pfrac TSH +\frac{T^2}{V} \pfrac VHp = \frac{T}{C_p}, $$
-  其中$C_p$为定压热容。(25分)
+  其中$C_p$为定压热容；$T, V, p, S, H$分别为温度，体积，压强，熵和焓。\mark{25}
   
   \vspace{5in}
   }
 
-\item[]{\
+\item[(三)]{  某气体的焦耳-汤姆孙系数
+  $$\alpha = \pfrac TpH =-\frac{a}{T^2},$$
+  其中$a>0$为常量。
+  
+  当$p\rightarrow 0$时，该气体的定压比热容趋向于常量: $\lim_{p\rightarrow 0}C_p = c.$
 
-  \vspace{2 in}}  
-\item[(三)]{ 假设内径为$5\SIm$的封闭球形飞船绕中子星做每秒一周的匀速圆周运动。飞船的质心在球心，且自转和公转同步（即保持同一面对着中子星）。飞船内有温度为$285\SIK$的氧气。问：氧气的压强是均匀的吗？如果不均匀，最小压强和最大压强之比为多少？ （25分)   
+  当温度趋向于零时，该气体的熵趋向于零: $ \lim_{T\rightarrow 0} S = 0.$
+  
+  在标准状态下的该气体，经过准静态绝热压缩，压强增强为$8\atm$。求末态气体温度。\mark{25}
   }
   
   

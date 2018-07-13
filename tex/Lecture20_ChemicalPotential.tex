@@ -1,0 +1,394 @@
+\documentclass[CJK,13pt]{beamer}
+\input{macros.tex}
+\input{titlepage.tex}
+\title{Lesson 20 - Non-Equilibrium Process}
+  \author{}
+  \date{}
+\begin{document}
+\bch
+  
+\tpage{20}{化学势和平衡判据}
+
+\begin{frame}
+\frametitle{本讲内容}
+
+\bitem
+\item{学渣守恒定理}
+\item{从克拉珀龙方程说起}
+\item{理想气体的化学势}
+\item{平衡判据}
+\eitem
+  
+\end{frame}
+
+\section{Study God and Study Weak}
+\secpage{学渣守恒定理}{学霸化学势 = 学渣化学势}
+
+\begin{frame}
+  \frametitle{学渣守恒定理}
+
+  一个班级，总是有1/3的学霸和2/3的学渣。
+
+  \addfig{4}{sanrenxing.jpg}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{平衡是这样达到的}
+
+
+  当学霸个数过多时，那部分挤不进前1/3的学霸会逐渐心灰意冷，逐渐转化为学渣。
+
+  \addfig{2}{meiyisi.jpg}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{平衡是这样达到的}
+  
+  当学渣个数过多时，有些学渣逐渐发现稍稍学一下就能成为学霸，就逐渐转化为学霸。
+  
+  \addfig{1.5}{yebucuo.jpg}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{化学平衡}
+
+  一般来说，当条件允许$A$和$B$互相转化时，
+  $$A\leftrightarrow B$$
+  $A$的量和$B$的量会自发地达到一定比例的平衡。
+
+  这种平衡既不是{\blue 热平衡}(平衡态物质各处温度均匀)，也不是{\blue 力学平衡}(平衡态物质各方向压强均匀)，而是一种新的平衡，叫{\blue 化学平衡}。
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{化学势}
+
+  正如热平衡时温度$T$相同，力学平衡时压强$p$相同一样，化学平衡时各种成分之间也有一个量相同：{\blue 化学势$\mu$}。
+  
+  $$A\leftrightarrow B$$
+  达到平衡时：$\mu_A = \mu_B.$
+
+    \skipline
+
+  如果人为地增加一些$A$，则$\mu_A$上升，化学平衡被破坏，化学势大的成分转化为化学势小的成分，直至达到新的平衡。
+
+  \skipline
+  
+  和温度，压强一样，{\blue 化学势也是个强度量}。
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{总结}
+
+一个孤立系统要达到平衡态，必须满足如下的平衡条件：
+\bitem
+\item[1]{\blue 热平衡条件：系统内部温度均匀}
+\item[2]{\blue 力学平衡条件：系统内部压强均匀}
+\item[3]{\blue 化学平衡条件：系统内各种可以互相转化的成分之间的化学势相等}
+\eitem
+
+相平衡条件（各种物态的化学势相等) 是化学平衡条件的一种特殊情形。
+
+\end{frame}
+
+
+
+\section{Review Clapeyron Eq.}
+\secpage{说了半天，你倒是告诉我化学势怎么算啊！}{别急，让我们从克拉珀龙方程说起……}
+
+\begin{frame}
+  \frametitle{相变}
+  相变描述的是两种物态的相互转化，也可以看作化学反应的一种特殊情形：
+
+  \bcenter
+  物态$\alpha\, \leftrightarrow\,$物态$\beta$
+  
+  \ecenter
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{克拉珀龙方程}
+  $$ \frac{dp}{dT} = \frac{\Lambda^{\rm mol}}{T(V_\beta^{\rm mol} - V_\alpha^{\rm mol})}. $$
+  上面是你们已经忘得差不多了（“一干二净”的委婉说法）的{\blue 克拉珀龙方程}，描述的是每$\SImol$的$\alpha$相变为$\beta$相时吸收的潜热$\Lambda^{\rm mol}$和$p$-$T$图上相变曲线在相变发生点处的斜率$dp/dT$的关系。
+
+  \skipline
+
+  把$\alpha$态和$\beta$态的摩尔熵分别记作$S_\alpha^{\rm mol}$和$S_\beta^{\rm mol}$，则潜热 $\Lambda$也可以看成准静态过程吸热量
+  $$\Lambda^{\rm mol} = T\left(S_\beta^{\rm mol} - S_\alpha^{\rm mol}\right)$$
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{克拉珀龙方程}
+  于是突然间克拉珀龙方程变得十分工整：
+  $$ \frac{dp}{dT} = \frac{S_\beta^{\rm mol} - S_\alpha^{\rm mol} }{V_\beta^{\rm mol} - V_\alpha^{\rm mol}}. $$
+  再利用$dG = -SdT + Vdp$，上式可简写为
+  $$ dG^{\rm mol}_\beta = dG^{\rm mol}_\alpha.$$
+  由此可见，摩尔自由焓起到了类似化学势的作用：两相平衡时，摩尔自由焓（的增量）始终保持相同。
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{克拉珀龙方程}
+  实际上，化学势正是利用自由焓的增量来定义的，只不过把$\SImol$换成一个粒子：
+
+  \skipline
+  
+  {\blue 在定温定压条件下，每增加某个种类的一个粒子(并保持其他种类粒子数不变）时自由焓的增量称为该种类的化学势。
+  $$ \mu_i = \pfrac{G}{N_i}{p,T,N_1,N_2,\ldots,N_{i-1},N_{i+1},\ldots}. $$}
+\end{frame}
+
+
+\section{Ideal Gas}
+\secpage{平衡态理想气体的化学势}{$$ N = e^{-\frac{\varepsilon-\mu}{kT}}. $$}
+
+\begin{frame}
+\frametitle{平衡态理想气体的化学势}
+
+考虑经典的平衡态理想气体，在第$i$（$i=1,2,\ldots$)个微观态上的平均分子数
+$$ N_i = c e^{-\frac{\varepsilon_i}{kT}} $$
+我们把和$i$无关(但是可能依赖于$T$)的常数$c$写成$e^{\frac{\mu}{kT}}$。
+$$ N_i = e^{-\frac{\varepsilon_i-\mu}{kT}},$$
+下面证明：这里的$\mu$就是前面按自由焓定义的化学势。
+\end{frame}
+
+
+\begin{frame}
+\frametitle{平衡态理想气体的化学势}
+设$N$为总分子数，$p_i=\frac{N_i}{N}$为出现在第$i$个微观态的概率，假如按照概率熵的定义：
+\bmini{0.65}
+\bea
+ S &=& N(-\sum_i p_i\ln p_i) \newl
+  &=&  -\sum_i N_i\ln\frac{N_i}{N} \newl
+  &=& \sum_i N_i\ln N -\sum_i N_i\ln N_i \newl
+  &=& N\ln N - \sum_i N_i\ln N_i 
+  \eea
+  \emini
+  \bmini{0.31} {\small \blue
+  按量子力学“全同分子不可分辨”的观点，左边的结果（微观状态数的对数）要减去$$\ln (N!) \approx N \ln N - N. $$（以前不在意熵的零点时没有讨论这个修正)}
+  \emini
+\end{frame}
+
+\begin{frame}
+  \frametitle{平衡态理想气体的化学势}
+  考虑了粒子不可分辨性的修正，并遵循热力学的熵多乘个$k$的习惯，  
+  \bea
+  S &=& k\left( N-\sum_i N_i\ln N_i\right) \newl
+  &=& k\left(N + \sum_iN_i\frac{\varepsilon_i-\mu}{kT}\right) \newl
+  &=& k N+\frac{U-\mu N}{T}.
+  \eea
+\end{frame}
+
+\begin{frame}
+  \frametitle{平衡态理想气体的化学势}
+  两边同乘以$T$，并利用$pV = nkTV =NkT$
+  即可得到
+  $$TS = pV + U -  N \mu .$$
+  也就是说自由焓
+  $$ G = N\mu$$
+  定温定压条件下增加一个分子，自由焓增加$\mu$，所以$\mu$就是化学势。
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{单原子理想气体的化学势}
+  如果是单原子理想气体，$\varepsilon = \frac{m\upsilon^2}{2}$，就可以简单算出化学势的显示表达式。
+  
+  根据平衡态理想气体的麦克斯韦分布，在相空间的体积元内的分子数为
+  $$ (n\, dx\, dy\, dz) \left(\frac{m}{2\pi kT}\right)^{3/2}e^{-\frac{m\upsilon^2}{2kT}}\, d\upsilon_xd\upsilon_yd\upsilon_z,$$
+  其中$n$为分子数密度。因为每个可分辨微观态体积为$h^3$，所以在这个相空间体积元内共包含了
+  $$ \frac{dx\,dy\,dz\, d(m\upsilon_x)d(m\upsilon_y)d(m\upsilon_z)}{h^3}$$
+  个微观态。  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{单原子理想气体的化学势}
+  两式相除，得到了每个微观态上的粒子数为：
+  $$  nh^3 \left(\frac{1}{2\pi m kT}\right)^{3/2}e^{-\frac{m\upsilon^2}{2kT}}. $$
+  根据前面的讨论，上式又应该等于：
+  $$ e^{-\frac{m\upsilon^2/2 - \mu}{kT}}.$$
+  所以得到
+  $$ \mu = kT \ln\left[ nh^3 \left(\frac{1}{2\pi m kT}\right)^{3/2} \right]. $$
+\end{frame}
+
+\begin{frame}
+  \frametitle{单原子理想气体的化学势}
+  乘以分子个数就得到自由焓
+  $$ G = NkT \ln\left[ nh^3 \left(\frac{1}{2\pi m kT}\right)^{3/2} \right]. $$
+  利用$NkT = nkTV = pV = \nu RT$，上式可以写为
+  $$ G = \nu R T \ln\left[ nh^3 \left(\frac{1}{2\pi m kT}\right)^{3/2} \right]. $$
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{单原子理想气体的化学势}
+  再利用$G = U + pV - TS = \frac{5}{2}\nu RT - TS$,  可以得到
+  \bea
+  S &=& \nu R\left\{\frac{5}{2} - \ln\left[ \frac{Nh^3}{V} \left(\frac{1}{2\pi m kT}\right)^{3/2} \right] \right\} \newl
+  &=& \frac{3}{2}\nu R \ln T + \nu R \ln V + \nu R\left\{\frac{5}{2} - \ln\left[ Nh^3 \left(\frac{1}{2\pi m k}\right)^{3/2} \right] \right\}
+  \eea
+  
+
+  另一方面，如果从熵的克劳修斯定义出发：
+  \bea S &=& \int \frac{\dbar Q}{T} = \int \frac{dU + pdV }{T} = \int \frac{C_VdT + pdV}{T} \newl
+  &=& \int \frac{C_VdT}{T} + \int\frac{\nu RdV}{V} = \frac{3}{2}\nu R \ln T + \nu R \ln V + S_0
+  \eea
+
+  两个结果显然是一致的，区别是前面的计算可以给出熵的零点。
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{思考题}
+  \addfig{1}{think1.jpg}
+  
+  利用克劳修斯的熵公式，可以计算出$C_V$不变的理想气体的熵为
+  $$S = C_V\ln T + \nu R \ln V + S_0 .$$
+  那么，当$T\rightarrow 0$时，熵就发散了吗？
+\end{frame}
+
+
+
+\section{Equilibrium Conditions}
+
+\secpage{平衡判据}{平衡判据，研究的其实是非平衡态。}
+
+\begin{frame}
+\frametitle{平衡判据}
+
+对$pVT$系统，我们经常假想一些虚变动（偏离平衡态的微扰，实际上并不会自发产生），并使用下列平衡判据：
+\bitem
+\item{\blue 熵判据：在内能和体积不变的情况下，对于一切可能的变动来说，平衡态的熵最大。}
+\item{\blue 自由能判据：在温度和体积不变的情况下，对于一切可能的变动来说，平衡态的自由能最小。}
+\item{\blue 自由焓判据：在温度和压强不变的情况下，对于一切可能的变动来说，平衡态的自由焓最小。}
+\eitem
+\end{frame}
+
+
+\begin{frame}
+
+  看了这些判据后的感受是：
+
+  \skipline
+
+\addfig{1.2}{bzdsh.jpg}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{一分为二}
+为了理解上述判据，我们假想有一个孤立系统处于平衡态，并把它人为地划分为两个宏观状态完全相同的子系统$\Sigma_1$和$\Sigma_2$。
+
+\addfig{2}{sigma12.jpg}
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{理解熵判据}
+ {\blue 熵判据：在内能和体积不变的情况下，对于一切可能的变动来说，平衡态的熵最大。}
+
+ \addfig{2}{sigma12_S.jpg}
+
+ 假设$\Sigma_1$突然抽风，内能和体积分别变化了$\Delta U, \Delta V$，则要保持系统的内能和体积不变，$\Sigma_2$的内能和体积必须变化
+ $-\Delta U, -\Delta V$。
+
+
+ 在这样的非平衡态下，经过一段时间，孤立系统必将恢复到原先的平衡态。根据孤立系统的熵增大原理，（现在这样）经过（虚）变动的系统的熵一定小于平衡态的熵。
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{理解熵判据}
+
+\addfig{1}{think3.jpg}
+
+如果明确地写出抽风后系统的熵的二阶近似，并和平衡态的熵比较，会得到什么结果？
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{理解自由能判据}
+{\blue 自由能判据：在温度和体积不变的情况下，对于一切可能的虚变动来说，平衡态的自由能最小。}
+
+
+假设$\Sigma_1$突然抽风，体积膨胀了$\Delta V$，则要保持体积不变，$\Sigma_2$的体积必须收缩$-\Delta V$。（注意：温度是强度量，不能通过这种方式“补偿”。所谓温度不变，就是指温度处处不变。）
+
+\skipline
+
+
+$$ \Delta F_1 = \pfrac FVT \Delta V + \frac{1}{2} \left(\frac{\partial^2 F}{\partial V^2}\right)_T \Delta V^2 $$
+$$ \Delta F_2 = -\pfrac FVT \Delta V + \frac{1}{2} \left(\frac{\partial^2 F}{\partial V^2}\right)_T \Delta V^2 $$
+两式相加得到
+$$\Delta F =  \left(\frac{\partial^2 F}{\partial V^2}\right)_T \Delta V^2. $$
+
+\end{frame}
+
+\begin{frame}
+\frametitle{理解自由能判据}
+注意由$dF = -SdT - pdV$可以得到$\pfrac FVT = -p$，所以
+
+$$\left(\frac{\partial^2 F}{\partial V^2}\right)_T = -\pfrac pVT > 0.  $$
+（最后的不等式是说：等温条件下，压缩物质会使压强增大。）
+
+所以 $\Delta F>0$. 也就是说，抽风（偏离平衡态）的结果总是使自由能增大，所以平衡态的自由能最小。
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{思考题}
+{\blue 自由焓判据：在温度和压强不变的情况下，对于一切可能的虚变动来说，平衡态的自由焓最小。}
+
+\addfig{1}{think3.jpg}
+
+你能以前面“一分为二”的系统为例说说这个判据的物理涵义吗？
+
+\skipline
+
+{\small 题示：粒子数增多会导致化学势上升，失去化学平衡。}
+
+\end{frame}
+
+
+
+
+
+\section{Appendix}
+
+\begin{frame}
+\frametitle{附录：写平衡判据的套路}
+
+热学书里的“$X$判据”可以这样快速地写出来：
+
+\bitem
+\item{第一步：把$X$写成全微分：$dX + \ldots dY + \ldots dZ = 0$}
+\item{第二步：背书。“在$Y$和$Z$不变的情况下，对于一切可能的变动来说，平衡态的$X$最$\ldots$”}
+\item{第三步：判定第二步中的$\ldots$应该写“大”还是“小”。$dX$, $dY$, $dZ$中必然有一个能量型的量（指$dU, dH, dF, dG$中的一个)，它前面系数为正则为“小”，为负则为“大”。}
+\eitem
+
+请自行拿熵判据，自由能判据，自由焓判据验证。
+
+除了这三个判据之外，还有各种形形色色的判据(详见王竹溪的《热学》)，都可以这样搞定。
+\end{frame}
+
+
+\ech
+\end{document}
